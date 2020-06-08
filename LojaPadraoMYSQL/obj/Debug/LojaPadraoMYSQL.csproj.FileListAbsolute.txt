@@ -1,0 +1,142 @@
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csprojAssemblyReference.cache
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroGrupo.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaGrupo.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.MenuPrincipal.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Properties.Resources.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csproj.GenerateResource.cache
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\LojaPadraoMYSQL.exe.config
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\LojaPadraoMYSQL.exe
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\LojaPadraoMYSQL.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\BLL.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\DAL.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Modelos.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\MySql.Data.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Google.Protobuf.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Zstandard.Net.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\BouncyCastle.Crypto.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Ubiety.Dns.Core.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Renci.SshNet.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\System.Buffers.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\K4os.Compression.LZ4.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\K4os.Hash.xxHash.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\System.Memory.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\BLL.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\DAL.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Modelos.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\MySql.Data.xml
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.exe.config
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csproj.CopyComplete
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.exe
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroSubGrupo.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaSubGrupo.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroCidade.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaCidade.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroDepartamento.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaDepartamento.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroFuncao.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaFuncao.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroUsuario.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaUsuario.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmSenhaAdm.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroCliente.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaCliente.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Ferramentas.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Ferramentas.pdb
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\LojaPadraoMYSQL.exe.config
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\LojaPadraoMYSQL.exe
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\LojaPadraoMYSQL.pdb
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\BLL.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\DAL.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Ferramentas.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Modelos.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\MySql.Data.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Google.Protobuf.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Zstandard.Net.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Renci.SshNet.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\System.Buffers.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\System.Memory.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\BLL.pdb
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\DAL.pdb
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Ferramentas.pdb
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Modelos.pdb
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\MySql.Data.xml
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csprojAssemblyReference.cache
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.exe.config
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroCidade.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroCliente.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroDepartamento.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroFuncao.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroGrupo.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroSubGrupo.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroUsuario.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaCidade.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaCliente.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaDepartamento.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaFuncao.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaGrupo.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaSubGrupo.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaUsuario.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmSenhaAdm.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.MenuPrincipal.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Properties.Resources.resources
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csproj.GenerateResource.cache
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csproj.CopyComplete
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.exe
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.pdb
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\LojaPadraoMYSQL.exe.config
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\LojaPadraoMYSQL.exe
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\LojaPadraoMYSQL.pdb
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\BLL.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\DAL.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Ferramentas.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Modelos.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\MySql.Data.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Google.Protobuf.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Zstandard.Net.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\K4os.Compression.LZ4.Streams.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\BouncyCastle.Crypto.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Ubiety.Dns.Core.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Renci.SshNet.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\System.Buffers.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\K4os.Compression.LZ4.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\K4os.Hash.xxHash.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\System.Memory.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\BLL.pdb
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\DAL.pdb
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Ferramentas.pdb
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Modelos.pdb
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\MySql.Data.xml
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csprojAssemblyReference.cache
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.exe.config
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroCidade.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroCliente.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroDepartamento.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroFuncao.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroGrupo.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroSubGrupo.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroUsuario.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaCidade.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaCliente.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaDepartamento.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaFuncao.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaGrupo.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaSubGrupo.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaUsuario.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmSenhaAdm.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.MenuPrincipal.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Properties.Resources.resources
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csproj.GenerateResource.cache
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csproj.CoreCompileInputs.cache
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csproj.CopyComplete
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.exe
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.pdb

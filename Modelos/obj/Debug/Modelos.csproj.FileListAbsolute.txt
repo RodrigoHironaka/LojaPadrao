@@ -1,0 +1,16 @@
+C:\_Projetos\DESKTOP\LojaPadrao\Modelos\bin\Debug\Modelos.dll
+C:\_Projetos\DESKTOP\LojaPadrao\Modelos\bin\Debug\Modelos.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+C:\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Debug\Modelos.dll
+C:\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Debug\Modelos.pdb
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\Modelos\bin\Debug\Modelos.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\Modelos\bin\Debug\Modelos.pdb
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Debug\Modelos.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Debug\Modelos.pdb
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\Modelos\bin\Debug\Modelos.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\Modelos\bin\Debug\Modelos.pdb
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Debug\Modelos.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Debug\Modelos.pdb

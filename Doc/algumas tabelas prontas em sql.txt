@@ -1,0 +1,65 @@
+CREATE TABLE cidade(
+id int NOT NULL AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL,
+uf VARCHAR(2) NOT NULL,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE grupo(
+id int NOT NULL AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE grupo(
+id int NOT NULL AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE departamento(
+id int NOT NULL AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL,
+PRIMARY KEY(id)
+);
+
+CREATE TABLE funcao(
+id int NOT NULL AUTO_INCREMENT,
+nome VARCHAR(50) NOT NULL,
+descricao VARCHAR(300),
+PRIMARY KEY(id)
+);
+
+CREATE TABLE usuario(
+id int NOT NULL AUTO_INCREMENT,
+nome VARCHAR(50) NOT NULL,
+senha varchar(15) not null,
+confirmaSenha varchar(15) not null,
+tipo VARCHAR(20),
+`status` CHAR(1),
+PRIMARY KEY(id)
+);
+
+CREATE TABLE cliente(
+id int NOT NULL AUTO_INCREMENT,
+nomefantasia VARCHAR(100) NOT NULL,
+razaosocial VARCHAR(100),
+rgie VARCHAR(20),
+cpfcnpj VARCHAR(20),
+endereco VARCHAR(100),
+numero VARCHAR(10),
+complemento VARCHAR(20),
+bairro VARCHAR(20),
+cep VARCHAR(10),
+idCidade int,
+email VARCHAR(50),
+telefone VARCHAR(13),
+celular VARCHAR(14),
+celular2 VARCHAR(14),
+observacao VARCHAR(300),
+dataCadastro Date,
+`status` char(1),
+PRIMARY KEY(id),
+constraint fk_cliente_cidade FOREIGN KEY (idCidade)
+  REFERENCES cidade (id)
+);

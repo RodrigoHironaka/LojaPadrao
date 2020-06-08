@@ -1,0 +1,16 @@
+C:\_Projetos\DESKTOP\LojaPadrao\Ferramentas\bin\Debug\Ferramentas.dll
+C:\_Projetos\DESKTOP\LojaPadrao\Ferramentas\bin\Debug\Ferramentas.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.csprojAssemblyReference.cache
+C:\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.dll
+C:\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.pdb
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\Ferramentas\bin\Debug\Ferramentas.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\Ferramentas\bin\Debug\Ferramentas.pdb
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.csprojAssemblyReference.cache
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.dll
+C:\Users\HIRO\Google Drive\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.pdb
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\Ferramentas\bin\Debug\Ferramentas.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\Ferramentas\bin\Debug\Ferramentas.pdb
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.csprojAssemblyReference.cache
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.csproj.CoreCompileInputs.cache
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.dll
+C:\Users\Hironaka\Google Drive\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.pdb
