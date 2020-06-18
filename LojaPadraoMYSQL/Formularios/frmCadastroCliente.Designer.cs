@@ -31,10 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroCliente));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tpageDadosPrincipais = new System.Windows.Forms.TabPage();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.pbFoto = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btAddFoto = new System.Windows.Forms.Button();
+            this.btRemFoto = new System.Windows.Forms.Button();
             this.monthCalNasc = new System.Windows.Forms.MonthCalendar();
             this.btProcurarCidade = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -87,7 +87,7 @@
             this.lbDataNasc = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpageDadosPrincipais.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCpfcnpjInvalido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCalendario)).BeginInit();
@@ -107,10 +107,10 @@
             // 
             // tpageDadosPrincipais
             // 
-            this.tpageDadosPrincipais.Controls.Add(this.pictureBox1);
+            this.tpageDadosPrincipais.Controls.Add(this.pbFoto);
             this.tpageDadosPrincipais.Controls.Add(this.label2);
-            this.tpageDadosPrincipais.Controls.Add(this.button1);
-            this.tpageDadosPrincipais.Controls.Add(this.button2);
+            this.tpageDadosPrincipais.Controls.Add(this.btAddFoto);
+            this.tpageDadosPrincipais.Controls.Add(this.btRemFoto);
             this.tpageDadosPrincipais.Controls.Add(this.monthCalNasc);
             this.tpageDadosPrincipais.Controls.Add(this.btProcurarCidade);
             this.tpageDadosPrincipais.Controls.Add(this.label1);
@@ -171,15 +171,16 @@
             this.tpageDadosPrincipais.UseVisualStyleBackColor = true;
             this.tpageDadosPrincipais.Click += new System.EventHandler(this.tpageDadosPrincipais_Click);
             // 
-            // pictureBox1
+            // pbFoto
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(660, 29);
-            this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(150, 185);
-            this.pictureBox1.TabIndex = 312;
-            this.pictureBox1.TabStop = false;
+            this.pbFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbFoto.Location = new System.Drawing.Point(660, 29);
+            this.pbFoto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.pbFoto.Name = "pbFoto";
+            this.pbFoto.Size = new System.Drawing.Size(150, 185);
+            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFoto.TabIndex = 312;
+            this.pbFoto.TabStop = false;
             // 
             // label2
             // 
@@ -193,30 +194,32 @@
             this.label2.TabIndex = 311;
             this.label2.Text = "Foto:";
             // 
-            // button1
+            // btAddFoto
             // 
-            this.button1.Location = new System.Drawing.Point(819, 29);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(38, 38);
-            this.button1.TabIndex = 310;
-            this.button1.Text = "+";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btAddFoto.Location = new System.Drawing.Point(819, 29);
+            this.btAddFoto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btAddFoto.Name = "btAddFoto";
+            this.btAddFoto.Size = new System.Drawing.Size(38, 38);
+            this.btAddFoto.TabIndex = 310;
+            this.btAddFoto.Text = "+";
+            this.btAddFoto.UseVisualStyleBackColor = true;
+            this.btAddFoto.Click += new System.EventHandler(this.btAddFoto_Click);
             // 
-            // button2
+            // btRemFoto
             // 
-            this.button2.Location = new System.Drawing.Point(819, 77);
-            this.button2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(38, 38);
-            this.button2.TabIndex = 309;
-            this.button2.Text = "-";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btRemFoto.Location = new System.Drawing.Point(819, 77);
+            this.btRemFoto.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btRemFoto.Name = "btRemFoto";
+            this.btRemFoto.Size = new System.Drawing.Size(38, 38);
+            this.btRemFoto.TabIndex = 309;
+            this.btRemFoto.Text = "-";
+            this.btRemFoto.UseVisualStyleBackColor = true;
+            this.btRemFoto.Click += new System.EventHandler(this.btRemFoto_Click);
             // 
             // monthCalNasc
             // 
             this.monthCalNasc.Location = new System.Drawing.Point(310, 123);
-            this.monthCalNasc.Margin = new System.Windows.Forms.Padding(14, 14, 14, 14);
+            this.monthCalNasc.Margin = new System.Windows.Forms.Padding(14);
             this.monthCalNasc.Name = "monthCalNasc";
             this.monthCalNasc.TabIndex = 287;
             this.monthCalNasc.Visible = false;
@@ -829,7 +832,7 @@
             this.Text = "frmCadastroCliente";
             this.tpageDadosPrincipais.ResumeLayout(false);
             this.tpageDadosPrincipais.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCpfcnpjInvalido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCalendario)).EndInit();
@@ -893,9 +896,9 @@
         private System.Windows.Forms.Label lbCelular;
         private System.Windows.Forms.Label lbDataNasc;
         private System.Windows.Forms.TabControl tabControl1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btAddFoto;
+        private System.Windows.Forms.Button btRemFoto;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox pbFoto;
     }
 }

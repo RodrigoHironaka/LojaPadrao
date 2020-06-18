@@ -22,8 +22,8 @@ namespace DAL
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
-            cmd.CommandText = "insert into cliente(nomefantasia,cpfcnpj,rgie,razaosocial,tipoPessoa,cep,endereco,numero,complemento,bairro,dataNasc,telefone,celular,celular2,email,idCidade,observacao,datacadastro,status)" +
-                " values (@nomefantasia,@cpfcnpj,@rgie,@razaosocial,@tipoPessoa,@cep,@endereco,@numero,@complemento,@bairro,@dataNasc,@telefone,@celular,@celular2,@email,@idCidade,@observacao,@datacadastro,@status);";
+            cmd.CommandText = "insert into cliente(nomefantasia,cpfcnpj,rgie,razaosocial,tipoPessoa,cep,endereco,numero,complemento,bairro,dataNasc,telefone,celular,celular2,email,idCidade,observacao,datacadastro,status, foto)" +
+                " values (@nomefantasia,@cpfcnpj,@rgie,@razaosocial,@tipoPessoa,@cep,@endereco,@numero,@complemento,@bairro,@dataNasc,@telefone,@celular,@celular2,@email,@idCidade,@observacao,@datacadastro,@status, @foto);";
             cmd.Parameters.AddWithValue("@nomefantasia", modelo.NomeFantasia);
             cmd.Parameters.AddWithValue("@cpfcnpj", modelo.CPFCNPJ);
             cmd.Parameters.AddWithValue("@rgie", modelo.RGIE);
@@ -43,6 +43,15 @@ namespace DAL
             cmd.Parameters.AddWithValue("@observacao", modelo.Observacao);
             cmd.Parameters.AddWithValue("@datacadastro", modelo.DataCadastro);
             cmd.Parameters.AddWithValue("@status", modelo.Status);
+            cmd.Parameters.Add("@foto", MySqlDbType.LongBlob);
+            if (modelo.Foto == null)
+            {
+                cmd.Parameters["@foto"].Value = DBNull.Value;
+            }
+            else
+            {
+                cmd.Parameters["@foto"].Value = modelo.Foto;
+            }
             conexao.Conectar();
             modelo.CidadeId = Convert.ToInt32(cmd.ExecuteScalar());
             conexao.Desconectar();
@@ -52,7 +61,7 @@ namespace DAL
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
-            cmd.CommandText = "update cliente set nomefantasia=@nomefantasia,cpfcnpj=@cpfcnpj,rgie=@rgie,razaosocial=@razaosocial,tipoPessoa=@tipoPessoa,cep=@cep,endereco=@endereco,numero=@numero,complemento=@complemento,bairro=@bairro,dataNasc=@dataNasc,telefone=@telefone,celular=@celular,celular2=@celular2,email=@email,idCidade=@idCidade,observacao=@observacao,datacadastro=@datacadastro,status=@status where id=@codigo;";
+            cmd.CommandText = "update cliente set nomefantasia=@nomefantasia,cpfcnpj=@cpfcnpj,rgie=@rgie,razaosocial=@razaosocial,tipoPessoa=@tipoPessoa,cep=@cep,endereco=@endereco,numero=@numero,complemento=@complemento,bairro=@bairro,dataNasc=@dataNasc,telefone=@telefone,celular=@celular,celular2=@celular2,email=@email,idCidade=@idCidade,observacao=@observacao,datacadastro=@datacadastro,status=@status, foto=@foto where id=@codigo;";
             cmd.Parameters.AddWithValue("@nomefantasia", modelo.NomeFantasia);
             cmd.Parameters.AddWithValue("@cpfcnpj", modelo.CPFCNPJ);
             cmd.Parameters.AddWithValue("@rgie", modelo.RGIE);
@@ -72,6 +81,15 @@ namespace DAL
             cmd.Parameters.AddWithValue("@observacao", modelo.Observacao);
             cmd.Parameters.AddWithValue("@datacadastro", modelo.DataCadastro);
             cmd.Parameters.AddWithValue("@status", modelo.Status);
+            cmd.Parameters.Add("@foto", MySqlDbType.LongBlob);
+            if (modelo.Foto == null)
+            {
+                cmd.Parameters["@foto"].Value = DBNull.Value;
+            }
+            else
+            {
+                cmd.Parameters["@foto"].Value = modelo.Foto;
+            }
             cmd.Parameters.AddWithValue("@codigo", modelo.ClienteId);
             conexao.Conectar();
             cmd.ExecuteNonQuery();
@@ -221,6 +239,11 @@ namespace DAL
                 modelo.Observacao = Convert.ToString(registro["observacao"]);
                 modelo.DataCadastro = Convert.ToString(registro["datacadastro"]);
                 modelo.Status = Convert.ToChar(registro["status"]);
+                try
+                {
+                    modelo.Foto = (byte[])registro["foto"];
+                }
+                catch { }
             }
             registro.Close();
             conexao.Desconectar();

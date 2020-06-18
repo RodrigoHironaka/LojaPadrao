@@ -7,7 +7,7 @@ namespace DAL
         public static String servidor = "localhost";
         public static String banco = "loja";
         public static String id = "root";
-        public static String senha = "#PADAxrFZ9";
+        public static String senha = "hiro";
         public static String StringDeConexao
         {
             get

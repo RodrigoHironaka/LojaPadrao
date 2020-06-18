@@ -3,6 +3,7 @@ using DAL;
 using Ferramentas;
 using Modelos;
 using System;
+using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using static Ferramentas.ValidaCEP;
 
@@ -18,7 +19,35 @@ namespace LojaPadraoMYSQL.Formularios
             cbTipoPessoa.Focus();
             txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
         }
-
+        public frmCadastroCliente(ModeloCliente modelo)
+        {
+            InitializeComponent();
+            txtID.Text = Convert.ToString(modelo.ClienteId);
+            txtNomeFantasia.Text = modelo.NomeFantasia;
+            txtRazaoSocial.Text = modelo.RazaoSocial;
+            mskRgIe.Text = modelo.RGIE;
+            mskCpfCnpj.Text = modelo.CPFCNPJ;
+            cbTipoPessoa.Text = modelo.TipoPessoa;
+            txtEndereco.Text = modelo.Endereco;
+            txtNumero.Text = modelo.Numero;
+            txtComplemento.Text = modelo.Complemento;
+            txtBairro.Text = modelo.Bairro;
+            mskCep.Text = modelo.CEP;
+            mskDataNasc.Text = modelo.DataNasc;
+            txtIdCidade.Text = Convert.ToString(modelo.CidadeId);
+            txtEmail.Text = modelo.Email;
+            mskTelefone.Text = modelo.Telefone;
+            mskCelular.Text = modelo.Celular;
+            mskCelular2.Text = modelo.Celular2;
+            txtObservacao.Text = modelo.Observacao;
+            txtDataCadastro.Text = modelo.DataCadastro;
+            pbFoto.ImageLocation = Convert.ToString(modelo.Foto);
+            if (modelo.Status.Equals("A"))
+                chbAtivo.Checked = true;
+            else if (modelo.Status.Equals("I"))
+                chbAtivo.Checked = false;
+        }
+        
         private void pctCalendario_Click(object sender, EventArgs e)
         {
             monthCalNasc.Visible = true;
@@ -181,7 +210,7 @@ namespace LojaPadraoMYSQL.Formularios
         }
 
         private void btSalvar_Click(object sender, EventArgs e)
-        { 
+        {
             try
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
@@ -208,7 +237,8 @@ namespace LojaPadraoMYSQL.Formularios
                 {
                     MessageBox.Show("Digite um valor válido no campo CEP!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
-                }else if ((txtIdCidade.Text == "") && (txtNomeCidade.Text == "") && (txtUf.Text == ""))
+                }
+                else if ((txtIdCidade.Text == "") && (txtNomeCidade.Text == "") && (txtUf.Text == ""))
                 {
                     MessageBox.Show("CEP Inválido!!! Digite novamente.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                     return;
@@ -229,15 +259,25 @@ namespace LojaPadraoMYSQL.Formularios
                     modelo.Status = Convert.ToChar("A");
                 else if (chbAtivo.Checked == false)
                     modelo.Status = Convert.ToChar("I");
-                
+
                 if (txtID.Text == "")
                 {
+                    modelo.CarregaImagem(this.foto);
                     bll.Incluir(modelo);
                     this.Close();
                 }
                 else
                 {
                     modelo.ClienteId = Int32.Parse(txtID.Text);
+                    if (this.foto == "Foto Original")
+                    {
+                        ModeloCliente mt = bll.CarregaModeloCliente(modelo.CidadeId);
+                        modelo.Foto = mt.Foto;
+                    }
+                    else
+                    {
+                        modelo.CarregaImagem(this.foto);
+                    }
                     bll.Alterar(modelo);
                     MessageBox.Show("Cadastro alterado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.Close();
@@ -277,12 +317,31 @@ namespace LojaPadraoMYSQL.Formularios
         private void pctCalendario_DoubleClick(object sender, EventArgs e)
         {
             monthCalNasc.Visible = false;
-            
+
         }
 
         private void tpageDadosPrincipais_Click(object sender, EventArgs e)
         {
 
+        }
+
+        //---------------------------------------------------------------------
+        public string foto = "";
+        private void btAddFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog od = new OpenFileDialog();
+            od.ShowDialog();
+            if (!string.IsNullOrEmpty(od.FileName))
+            {
+                this.foto = od.FileName;
+                pbFoto.Load(this.foto);
+            }
+        }
+
+        private void btRemFoto_Click(object sender, EventArgs e)
+        {
+            this.foto = "";
+            pbFoto.Image = null;
         }
     }
 }

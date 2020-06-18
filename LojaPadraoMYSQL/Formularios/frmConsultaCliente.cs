@@ -46,14 +46,14 @@ namespace LojaPadraoMYSQL.Formularios
             }
             else
             {
-                //this.id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid
-                //ModeloCliente modelo = bll.CarregaModeloCliente(id);
-                //frmCadastroCliente f = new frmCadastroCliente(modelo);
-                //f.ShowDialog();
-                //f.Dispose();
-                //dgvDados.DataSource = bll.CarregaGridAtivo();
-                //cbStatus.SelectedIndex = 1;
-                //cbFiltroTipo.SelectedIndex = 1;
+                this.id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid
+                ModeloCliente modelo = bll.CarregaModeloCliente(id);
+                frmCadastroCliente f = new frmCadastroCliente(modelo);
+                f.ShowDialog();
+                f.Dispose();
+                dgvDados.DataSource = bll.CarregaGridAtivo();
+                cbStatus.SelectedIndex = 1;
+                cbFiltroTipo.SelectedIndex = 1;
             }
         }
 
