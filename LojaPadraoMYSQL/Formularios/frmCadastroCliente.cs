@@ -3,6 +3,8 @@ using DAL;
 using Ferramentas;
 using Modelos;
 using System;
+using System.Drawing;
+using System.IO;
 using System.Runtime.CompilerServices;
 using System.Windows.Forms;
 using static Ferramentas.ValidaCEP;
@@ -11,6 +13,22 @@ namespace LojaPadraoMYSQL.Formularios
 {
     public partial class frmCadastroCliente : Form
     {
+        //Converte imagem um Byte[] array
+        public byte[] ConverterEmByte(System.Drawing.Image imagem)
+        {
+            MemoryStream ms = new MemoryStream();
+            imagem.Save(ms, System.Drawing.Imaging.ImageFormat.Png);
+            return ms.ToArray();
+        }
+        //Converte byte[] array para imagem
+        public Image ConverterImagem(byte[] foto)
+        {
+            MemoryStream ms = new MemoryStream(foto);
+            Image retornaImagem = Image.FromStream(ms);
+            return retornaImagem;
+        }
+        //------------------------------------------------------------------
+
         public string nome = "";
         public frmCadastroCliente()
         {
@@ -35,19 +53,41 @@ namespace LojaPadraoMYSQL.Formularios
             mskCep.Text = modelo.CEP;
             mskDataNasc.Text = modelo.DataNasc;
             txtIdCidade.Text = Convert.ToString(modelo.CidadeId);
+            if (txtIdCidade.Text != "")
+            {
+
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCidade bll = new BLLCidade(cx);
+                ModeloCidade modelocidade = bll.CarregaModeloCidade(Convert.ToInt32(txtIdCidade.Text));
+                txtNomeCidade.Text = modelocidade.Nome;
+                txtUf.Text = modelocidade.UF;
+            }
+            else
+            {
+                txtIdCidade.Clear();
+                txtNomeCidade.Clear();
+                txtUf.Clear();
+            }
             txtEmail.Text = modelo.Email;
             mskTelefone.Text = modelo.Telefone;
             mskCelular.Text = modelo.Celular;
             mskCelular2.Text = modelo.Celular2;
             txtObservacao.Text = modelo.Observacao;
             txtDataCadastro.Text = modelo.DataCadastro;
-            pbFoto.ImageLocation = Convert.ToString(modelo.Foto);
-            if (modelo.Status.Equals("A"))
+            if (modelo.Foto != null)
+            {
+                pbFoto.Image = ConverterImagem(modelo.Foto);
+            }
+            else
+            {
+                pbFoto.Image = null;
+            }
+            if (modelo.Status.Equals('A'))
                 chbAtivo.Checked = true;
-            else if (modelo.Status.Equals("I"))
+            else if (modelo.Status.Equals('I'))
                 chbAtivo.Checked = false;
         }
-        
+
         private void pctCalendario_Click(object sender, EventArgs e)
         {
             monthCalNasc.Visible = true;
@@ -255,6 +295,15 @@ namespace LojaPadraoMYSQL.Formularios
                 modelo.Celular2 = mskCelular2.Text;
                 modelo.Observacao = txtObservacao.Text;
                 modelo.DataCadastro = txtDataCadastro.Text;
+                if(pbFoto.Image != null)
+                {
+                    modelo.Foto = ConverterEmByte(pbFoto.Image);
+                }
+                else
+                {
+                    modelo.Foto = null;
+                }
+                
                 if (chbAtivo.Checked == true)
                     modelo.Status = Convert.ToChar("A");
                 else if (chbAtivo.Checked == false)
@@ -271,7 +320,7 @@ namespace LojaPadraoMYSQL.Formularios
                     modelo.ClienteId = Int32.Parse(txtID.Text);
                     if (this.foto == "Foto Original")
                     {
-                        ModeloCliente mt = bll.CarregaModeloCliente(modelo.CidadeId);
+                        ModeloCliente mt = bll.CarregaModeloCliente(modelo.ClienteId);
                         modelo.Foto = mt.Foto;
                     }
                     else
