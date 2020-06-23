@@ -47,9 +47,9 @@ namespace LojaPadraoMYSQL.Formularios
             txtID.Text = Convert.ToString(modelo.SubGrupoId);
             txtNome.Text = modelo.Nome;
             cbGrupo.SelectedValue = modelo.GrupoId.ToString();
-            if (modelo.Status.Equals("A"))
+            if (modelo.Status.Equals('A'))
                 chkAtivo.Checked = true;
-            else if (modelo.Status.Equals("I"))
+            else if (modelo.Status.Equals('I'))
                 chkAtivo.Checked = false;
             
         }

@@ -25,9 +25,9 @@ namespace LojaPadraoMYSQL.Formularios
             InitializeComponent();
             txtID.Text = Convert.ToString(modelo.GrupoId);
             txtNome.Text = modelo.Nome;
-            if (modelo.Status.Equals("A"))
+            if (modelo.Status.Equals('A'))
                 chkAtivo.Checked = true;
-            else if (modelo.Status.Equals("I"))
+            else if (modelo.Status.Equals('I'))
                 chkAtivo.Checked = false;
         }
 

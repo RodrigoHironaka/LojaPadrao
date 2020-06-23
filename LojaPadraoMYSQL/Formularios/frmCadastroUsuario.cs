@@ -31,9 +31,9 @@ namespace LojaPadraoMYSQL.Formularios
             txtSenha.Text = modelo.Senha;
             txtConfirmaSenha.Text = modelo.ConfirmaSenha;
             cbTipo.Text = modelo.Tipo;
-            if (modelo.Status.Equals("A"))
+            if (modelo.Status.Equals('A'))
                 chkAtivo.Checked = true;
-            else if (modelo.Status.Equals("I"))
+            else if (modelo.Status.Equals('I'))
                 chkAtivo.Checked = false;
         }
 
