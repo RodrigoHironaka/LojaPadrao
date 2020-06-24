@@ -176,6 +176,44 @@ namespace BLL
             return DALObj.LocalizarInativo(valor);
         }
 
+        //---------------------------------------------------------
+        public DataTable LocalizarAtivoFisica(String valor)
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.LocalizarAtivoFisica(valor);
+        }
+
+        public DataTable LocalizarInativoFisica(String valor)
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.LocalizarInativoFisica(valor);
+        }
+
+        public DataTable LocalizarAtivoJuridica(String valor)
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.LocalizarAtivoJuridica(valor);
+        }
+
+        public DataTable LocalizarInativoJuridica(String valor)
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.LocalizarInativoJuridica(valor);
+        }
+
+        public DataTable LocalizarFisica(String valor)
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.LocalizarFisica(valor);
+        }
+
+        public DataTable LocalizarJuridica(String valor)
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.LocalizarJuridica(valor);
+        }
+        //---------------------------------------------------------
+
         public ModeloCidade LocalizarPorNomeCidade(String nome)
         {
             DALCliente DALObj = new DALCliente(conexao);
@@ -200,6 +238,44 @@ namespace BLL
             return DALObj.CarregarGridInativo();
         }
 
+        //--------------------------------------------------------
+        public DataTable CarregaGridAtivoFisica()
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.CarregarGridAtivoFisica();
+        }
+
+        public DataTable CarregaGridInativoFisica()
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.CarregarGridInativoFisica();
+        }
+
+        public DataTable CarregaGridAtivoJuridica()
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.CarregarGridAtivoJuridica();
+        }
+
+        public DataTable CarregaGridInativoJuridica()
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.CarregarGridInativoJuridica();
+        }
+
+        public DataTable CarregaGridFisica()
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.CarregarGridFisica();
+        }
+
+        public DataTable CarregaGridJuridica()
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.CarregarGridJuridica();
+        }
+
+        //--------------------------------------------------------
         public ModeloCliente CarregaModeloCliente(int codigo)
         {
             DALCliente DALObj = new DALCliente(conexao);

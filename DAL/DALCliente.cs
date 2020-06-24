@@ -110,7 +110,7 @@ namespace DAL
         public DataTable Localizar(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where nome like '%" + valor + "%' or id like '%" + valor + "%'", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where nomefantasia like '%" + valor + "%' or id like '%" + valor + "%'", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -118,7 +118,7 @@ namespace DAL
         public DataTable LocalizarAtivo(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nome like '%" + valor + "%' or (id like '%" + valor + "%')) and status='A'", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and status='A')", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -126,11 +126,60 @@ namespace DAL
         public DataTable LocalizarInativo(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nome like '%" + valor + "%' or (id like '%" + valor + "%')) and status='I'", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and status='I')", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
 
+        //-------------------------------------------------------------
+        public DataTable LocalizarAtivoFisica(String valor)
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and status='A' and tipoPessoa='FISICA') ", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+
+        public DataTable LocalizarInativoFisica(String valor)
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and status='I' and tipoPessoa='FISICA')", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+
+        public DataTable LocalizarAtivoJuridica(String valor)
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and status='A' and tipoPessoa='JURIDICA')", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+
+        public DataTable LocalizarInativoJuridica(String valor)
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and status='I' and tipoPessoa='JURIDICA')", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+
+        public DataTable LocalizarFisica(String valor)
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and tipoPessoa='FISICA')", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+
+        public DataTable LocalizarJuridica(String valor)
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and tipoPessoa='JURIDICA')", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+        //-------------------------------------------------------------
         public ModeloCidade LocalizarPorNomeCidade(String nome)
         {
             ModeloCidade modelo = new ModeloCidade();
@@ -206,6 +255,123 @@ namespace DAL
                 throw;
             }
         }
+
+        //-------------------------------------------------------------
+        public DataTable CarregarGridAtivoFisica()
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conexao.ObjetoConexao;
+                conexao.Conectar();
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from cliente where status='A' and tipoPessoa='FISICA' order by id", conexao.StringConexao);
+                DataTable dataTable = new DataTable();
+                fbDataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
+        public DataTable CarregarGridInativoFisica()
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conexao.ObjetoConexao;
+                conexao.Conectar();
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from cliente where status='I' and tipoPessoa='FISICA' order by id", conexao.StringConexao);
+                DataTable dataTable = new DataTable();
+                fbDataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
+        public DataTable CarregarGridAtivoJuridica()
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conexao.ObjetoConexao;
+                conexao.Conectar();
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from cliente where status='A' and tipoPessoa='JURIDICA' order by id", conexao.StringConexao);
+                DataTable dataTable = new DataTable();
+                fbDataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
+        public DataTable CarregarGridInativoJuridica()
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conexao.ObjetoConexao;
+                conexao.Conectar();
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from cliente where status='I' and tipoPessoa='JURIDICA' order by id", conexao.StringConexao);
+                DataTable dataTable = new DataTable();
+                fbDataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
+        public DataTable CarregarGridFisica()
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conexao.ObjetoConexao;
+                conexao.Conectar();
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from cliente where tipoPessoa='FISICA' order by id", conexao.StringConexao);
+                DataTable dataTable = new DataTable();
+                fbDataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
+        public DataTable CarregarGridJuridica()
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conexao.ObjetoConexao;
+                conexao.Conectar();
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from cliente where tipoPessoa='JURIDICA' order by id", conexao.StringConexao);
+                DataTable dataTable = new DataTable();
+                fbDataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
+
+        //-------------------------------------------------------------
 
         public ModeloCliente CarregaModeloCliente(int codigo)
         {

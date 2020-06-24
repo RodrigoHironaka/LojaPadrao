@@ -94,50 +94,192 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
-            if (cbStatus.SelectedIndex == 1)
+
+            if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 0))
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.LocalizarAtivo(txtPesquisa.Text);
             }
-            else if (cbStatus.SelectedIndex == 2)
+            else if ((cbStatus.SelectedIndex == 2)&&(cbFiltroTipo.SelectedIndex == 0))
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.LocalizarInativo(txtPesquisa.Text);
             }
-            else if (cbStatus.SelectedIndex == 0)
+            else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 1))
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.LocalizarAtivoFisica(txtPesquisa.Text);
+            }
+            else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 2))
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.LocalizarAtivoJuridica(txtPesquisa.Text);
+            }
+            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 1))
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.LocalizarInativoFisica(txtPesquisa.Text);
+            }
+            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 2))
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.LocalizarInativoJuridica(txtPesquisa.Text);
+            }
+            else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 0))
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.Localizar(txtPesquisa.Text);
             }
+            
+            if (txtPesquisa.Text == "")
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridAtivoFisica();
+            }
+           
         }
 
         private void frmConsultaCliente_Load(object sender, EventArgs e)
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLCliente bll = new BLLCliente(cx);
-            dgvDados.DataSource = bll.CarregaGridAtivo();
+            dgvDados.DataSource = bll.CarregaGridAtivoFisica();
         }
 
         private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbStatus.SelectedIndex == 1)
+            if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 0))
             {
                 txtPesquisa.Clear();
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridAtivo();
             }
-            else if (cbStatus.SelectedIndex == 2)
+            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 0))
             {
                 txtPesquisa.Clear();
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridInativo();
             }
-            else
+            else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 1))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridAtivoFisica();
+            }
+            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 1))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridInativoFisica();
+            }
+            else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 2))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridAtivoJuridica();
+            }
+            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 2))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridInativoJuridica();
+            }
+            else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 1))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridFisica();
+            }
+            else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 2))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridJuridica();
+            }
+            else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 0))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGrid();
+            }
+        }
+
+        private void cbFiltroTipo_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 0))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridAtivo();
+            }
+            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 0))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridInativo();
+            }
+            else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 1))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridAtivoFisica();
+            }
+            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 1))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridInativoFisica();
+            }
+            else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 2))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridAtivoJuridica();
+            }
+            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 2))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridInativoJuridica();
+            }
+            else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 1))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridFisica();
+            }
+            else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 2))
+            {
+                txtPesquisa.Clear();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLCliente bll = new BLLCliente(cx);
+                dgvDados.DataSource = bll.CarregaGridJuridica();
+            }
+            else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 0))
             {
                 txtPesquisa.Clear();
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
