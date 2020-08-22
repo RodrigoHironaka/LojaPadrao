@@ -44,6 +44,7 @@
     <Compile Include="ModeloCidade.cs" />
     <Compile Include="ModeloCliente.cs" />
     <Compile Include="ModeloDepartamento.cs" />
+    <Compile Include="ModeloFornecedor.cs" />
     <Compile Include="ModeloFuncao.cs" />
     <Compile Include="ModeloGrupo.cs" />
     <Compile Include="ModeloSubGrupo.cs" />

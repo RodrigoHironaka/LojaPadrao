@@ -94,64 +94,68 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
-
-            if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 0))
-            {
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.LocalizarAtivo(txtPesquisa.Text);
-            }
-            else if ((cbStatus.SelectedIndex == 2)&&(cbFiltroTipo.SelectedIndex == 0))
-            {
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.LocalizarInativo(txtPesquisa.Text);
-            }
-            else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 1))
-            {
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.LocalizarAtivoFisica(txtPesquisa.Text);
-            }
-            else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 2))
-            {
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.LocalizarAtivoJuridica(txtPesquisa.Text);
-            }
-            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 1))
-            {
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.LocalizarInativoFisica(txtPesquisa.Text);
-            }
-            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 2))
-            {
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.LocalizarInativoJuridica(txtPesquisa.Text);
-            }
-            else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 0))
-            {
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.Localizar(txtPesquisa.Text);
-            }
-            
             if (txtPesquisa.Text == "")
             {
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridAtivoFisica();
+                this.cbStatus_SelectedIndexChanged(sender, e);
+                this.cbFiltroTipo_SelectedIndexChanged(sender, e);
             }
+            else
+            {
+                if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 0))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.LocalizarAtivo(txtPesquisa.Text);
+                }
+                else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 0))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.LocalizarInativo(txtPesquisa.Text);
+                }
+                else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 1))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.LocalizarAtivoFisica(txtPesquisa.Text);
+                }
+                else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 2))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.LocalizarAtivoJuridica(txtPesquisa.Text);
+                }
+                else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 1))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.LocalizarInativoFisica(txtPesquisa.Text);
+                }
+                else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 2))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.LocalizarInativoJuridica(txtPesquisa.Text);
+                }
+                else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 0))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.Localizar(txtPesquisa.Text);
+                }
+            }
+
+           
+            
+           
            
         }
 
         private void frmConsultaCliente_Load(object sender, EventArgs e)
         {
-            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLCliente bll = new BLLCliente(cx);
-            dgvDados.DataSource = bll.CarregaGridAtivoFisica();
+            //DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            //BLLCliente bll = new BLLCliente(cx);
+            //dgvDados.DataSource = bll.CarregaGridAtivoFisica();
         }
 
         private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)

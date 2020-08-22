@@ -60,5 +60,11 @@ namespace LojaPadraoMYSQL
             frmConsultaCliente f = new frmConsultaCliente();
             f.ShowDialog();
         }
+
+        private void fornecedorToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaFornecedor f = new frmConsultaFornecedor();
+            f.ShowDialog();
+        }
     }
 }

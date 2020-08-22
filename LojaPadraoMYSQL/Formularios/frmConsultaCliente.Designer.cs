@@ -149,6 +149,7 @@
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.dgvDados);
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
             this.Name = "frmConsultaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmConsultaCliente";

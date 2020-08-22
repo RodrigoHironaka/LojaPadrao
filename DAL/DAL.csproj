@@ -48,6 +48,7 @@
     <Compile Include="DALCliente.cs" />
     <Compile Include="DALConexao.cs" />
     <Compile Include="DALDepartamento.cs" />
+    <Compile Include="DALFornecedor.cs" />
     <Compile Include="DALFuncao.cs" />
     <Compile Include="DALGrupo.cs" />
     <Compile Include="DALSubGrupo.cs" />

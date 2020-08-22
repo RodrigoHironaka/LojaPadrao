@@ -1,6 +1,6 @@
 ﻿namespace LojaPadraoMYSQL.Formularios
 {
-    partial class frmConsultaUsuario
+    partial class frmConsultaFornecedor
     {
         /// <summary>
         /// Required designer variable.
@@ -45,53 +45,53 @@
             "Todos",
             "Ativos",
             "Inativos"});
-            this.cbStatus.Location = new System.Drawing.Point(240, 17);
+            this.cbStatus.Location = new System.Drawing.Point(802, 19);
             this.cbStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(102, 28);
-            this.cbStatus.TabIndex = 20;
+            this.cbStatus.TabIndex = 28;
             this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
             // btSair
             // 
-            this.btSair.Location = new System.Drawing.Point(543, 15);
+            this.btSair.Location = new System.Drawing.Point(1104, 17);
             this.btSair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(54, 35);
-            this.btSair.TabIndex = 19;
+            this.btSair.TabIndex = 27;
             this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // btExc
             // 
-            this.btExc.Location = new System.Drawing.Point(480, 15);
+            this.btExc.Location = new System.Drawing.Point(1041, 17);
             this.btExc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btExc.Name = "btExc";
             this.btExc.Size = new System.Drawing.Size(54, 35);
-            this.btExc.TabIndex = 18;
+            this.btExc.TabIndex = 26;
             this.btExc.Text = "exc";
             this.btExc.UseVisualStyleBackColor = true;
             this.btExc.Click += new System.EventHandler(this.btExc_Click);
             // 
             // btEdt
             // 
-            this.btEdt.Location = new System.Drawing.Point(417, 15);
+            this.btEdt.Location = new System.Drawing.Point(978, 17);
             this.btEdt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btEdt.Name = "btEdt";
             this.btEdt.Size = new System.Drawing.Size(54, 35);
-            this.btEdt.TabIndex = 17;
+            this.btEdt.TabIndex = 25;
             this.btEdt.Text = "edt";
             this.btEdt.UseVisualStyleBackColor = true;
             this.btEdt.Click += new System.EventHandler(this.btEdt_Click);
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(354, 15);
+            this.btAdd.Location = new System.Drawing.Point(915, 17);
             this.btAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(54, 35);
-            this.btAdd.TabIndex = 16;
+            this.btAdd.TabIndex = 24;
             this.btAdd.Text = "add";
             this.btAdd.UseVisualStyleBackColor = true;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
@@ -99,11 +99,11 @@
             // txtPesquisa
             // 
             this.txtPesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPesquisa.Location = new System.Drawing.Point(18, 18);
+            this.txtPesquisa.Location = new System.Drawing.Point(18, 20);
             this.txtPesquisa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(211, 26);
-            this.txtPesquisa.TabIndex = 15;
+            this.txtPesquisa.Size = new System.Drawing.Size(776, 26);
+            this.txtPesquisa.TabIndex = 23;
             this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // dgvDados
@@ -111,20 +111,20 @@
             this.dgvDados.AllowUserToAddRows = false;
             this.dgvDados.AllowUserToDeleteRows = false;
             this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDados.Location = new System.Drawing.Point(18, 58);
+            this.dgvDados.Location = new System.Drawing.Point(18, 60);
             this.dgvDados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.ReadOnly = true;
             this.dgvDados.RowHeadersWidth = 62;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDados.Size = new System.Drawing.Size(579, 369);
-            this.dgvDados.TabIndex = 14;
+            this.dgvDados.Size = new System.Drawing.Size(1140, 632);
+            this.dgvDados.TabIndex = 22;
             // 
-            // frmConsultaUsuario
+            // frmConsultaFornecedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 462);
+            this.ClientSize = new System.Drawing.Size(1176, 709);
             this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.btSair);
             this.Controls.Add(this.btExc);
@@ -132,12 +132,10 @@
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.dgvDados);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
-            this.Name = "frmConsultaUsuario";
+            this.Name = "frmConsultaFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmConsultaUsuario";
-            this.Load += new System.EventHandler(this.frmConsultaUsuario_Load);
+            this.Text = "frmConsultaFornecedor";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

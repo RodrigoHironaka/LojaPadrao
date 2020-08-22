@@ -20,3 +20,4 @@ C:\_Projetos\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.csprojAssemblyReferenc
 C:\_Projetos\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.csproj.CoreCompileInputs.cache
 C:\_Projetos\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.dll
 C:\_Projetos\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Debug\Ferramentas.csproj.CoreCompileInputs.cache

@@ -143,7 +143,7 @@ namespace DAL
         public DataTable LocalizarInativoFisica(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and status='I' and tipoPessoa='FISICA')", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and (status='I')) and (tipoPessoa='FISICA') ", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -151,7 +151,7 @@ namespace DAL
         public DataTable LocalizarAtivoJuridica(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and status='A' and tipoPessoa='JURIDICA')", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and (status='A')) and tipoPessoa='JURIDICA'", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -159,7 +159,7 @@ namespace DAL
         public DataTable LocalizarInativoJuridica(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and status='I' and tipoPessoa='JURIDICA')", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and (status='I')) and tipoPessoa='JURIDICA'", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }

@@ -189,3 +189,5 @@ C:\_Projetos\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csproj.CopyCom
 C:\_Projetos\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.exe
 C:\_Projetos\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.pdb
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csproj.CoreCompileInputs.cache
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroFornecedor.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaFornecedor.resources

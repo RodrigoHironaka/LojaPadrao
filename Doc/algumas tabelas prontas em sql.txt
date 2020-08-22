@@ -63,3 +63,28 @@ PRIMARY KEY(id),
 constraint fk_cliente_cidade FOREIGN KEY (idCidade)
   REFERENCES cidade (id)
 );
+
+CREATE TABLE fornecedor(
+id int NOT NULL AUTO_INCREMENT,
+nomeVendedor VARCHAR(100) NOT NULL,
+nomeFantasia VARCHAR(100) NOT NULL,
+razaoSocial VARCHAR(100),
+ie VARCHAR(20),
+cnpj VARCHAR(20),
+endereco VARCHAR(100),
+numero VARCHAR(10),
+complemento VARCHAR(20),
+bairro VARCHAR(20),
+cep VARCHAR(10),
+idCidade int,
+email VARCHAR(50),
+telefone VARCHAR(13),
+celular VARCHAR(14),
+celular2 VARCHAR(14),
+observacao VARCHAR(300),
+dataCadastro Date,
+`status` char(1),
+PRIMARY KEY(id),
+constraint fk_fornecedor_cidade FOREIGN KEY (idCidade)
+  REFERENCES cidade (id)
+);
