@@ -64,6 +64,12 @@
     <Compile Include="Formularios\frmCadastroDepartamento.Designer.cs">
       <DependentUpon>frmCadastroDepartamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmCadastroFormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCadastroFormaPagamento.Designer.cs">
+      <DependentUpon>frmCadastroFormaPagamento.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmCadastroFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +117,12 @@
     </Compile>
     <Compile Include="Formularios\frmConsultaDepartamento.Designer.cs">
       <DependentUpon>frmConsultaDepartamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmConsultaFormaPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmConsultaFormaPagamento.Designer.cs">
+      <DependentUpon>frmConsultaFormaPagamento.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmConsultaFornecedor.cs">
       <SubType>Form</SubType>
@@ -165,6 +177,9 @@
     <EmbeddedResource Include="Formularios\frmCadastroDepartamento.resx">
       <DependentUpon>frmCadastroDepartamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCadastroFormaPagamento.resx">
+      <DependentUpon>frmCadastroFormaPagamento.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCadastroFornecedor.resx">
       <DependentUpon>frmCadastroFornecedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -188,6 +203,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsultaDepartamento.resx">
       <DependentUpon>frmConsultaDepartamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmConsultaFormaPagamento.resx">
+      <DependentUpon>frmConsultaFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsultaFornecedor.resx">
       <DependentUpon>frmConsultaFornecedor.cs</DependentUpon>

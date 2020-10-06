@@ -2,24 +2,28 @@ CREATE TABLE cidade(
 id int NOT NULL AUTO_INCREMENT,
 nome VARCHAR(100) NOT NULL,
 uf VARCHAR(2) NOT NULL,
+`status` CHAR(1),
 PRIMARY KEY(id)
 );
 
 CREATE TABLE grupo(
 id int NOT NULL AUTO_INCREMENT,
 nome VARCHAR(100) NOT NULL,
+`status` CHAR(1),
 PRIMARY KEY(id)
 );
 
 CREATE TABLE grupo(
 id int NOT NULL AUTO_INCREMENT,
 nome VARCHAR(100) NOT NULL,
+`status` CHAR(1),
 PRIMARY KEY(id)
 );
 
 CREATE TABLE departamento(
 id int NOT NULL AUTO_INCREMENT,
 nome VARCHAR(100) NOT NULL,
+`status` CHAR(1),
 PRIMARY KEY(id)
 );
 
@@ -27,6 +31,7 @@ CREATE TABLE funcao(
 id int NOT NULL AUTO_INCREMENT,
 nome VARCHAR(50) NOT NULL,
 descricao VARCHAR(300),
+`status` CHAR(1),
 PRIMARY KEY(id)
 );
 
@@ -82,9 +87,18 @@ telefone VARCHAR(13),
 celular VARCHAR(14),
 celular2 VARCHAR(14),
 observacao VARCHAR(300),
-dataCadastro Date,
+dataCadastro varchar(50),
 `status` char(1),
+foto blob,
 PRIMARY KEY(id),
 constraint fk_fornecedor_cidade FOREIGN KEY (idCidade)
   REFERENCES cidade (id)
+);
+
+CREATE TABLE formaPagamento(
+id int NOT NULL AUTO_INCREMENT,
+nome VARCHAR(50) NOT NULL,
+qtdParcelas int,
+`status` CHAR(1),
+PRIMARY KEY(id)
 );
