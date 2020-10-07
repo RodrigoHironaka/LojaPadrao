@@ -48,6 +48,7 @@
     <Compile Include="ModeloFornecedor.cs" />
     <Compile Include="ModeloFuncao.cs" />
     <Compile Include="ModeloGrupo.cs" />
+    <Compile Include="ModeloMarca.cs" />
     <Compile Include="ModeloSubGrupo.cs" />
     <Compile Include="ModeloUnidadeMedida.cs" />
     <Compile Include="ModeloUsuario.cs" />

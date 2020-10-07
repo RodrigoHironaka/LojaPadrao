@@ -13,31 +13,31 @@ using System.Windows.Forms;
 
 namespace LojaPadraoMYSQL.Formularios
 {
-    public partial class frmConsultaUnidadeMedida : Form
+    public partial class frmConsultaMarca : Form
     {
         public int id = 0;
-        public frmConsultaUnidadeMedida()
+        public frmConsultaMarca()
         {
             InitializeComponent();
             cbStatus.SelectedIndex = 1;
         }
 
-        public frmConsultaUnidadeMedida(bool selecao)
+        public frmConsultaMarca(bool selecao)
         {
             InitializeComponent();
             cbStatus.SelectedIndex = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLUnidadeMedida bll = new BLLUnidadeMedida(cx);
+            BLLMarca bll = new BLLMarca(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
             dgvDados.Select();
         }
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            frmCadastroUnidadeMedida f = new frmCadastroUnidadeMedida();
+            frmCadastroMarca f = new frmCadastroMarca();
             f.ShowDialog();
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLUnidadeMedida bll = new BLLUnidadeMedida(cx);
+            BLLMarca bll = new BLLMarca(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
             cbStatus.SelectedIndex = 1;
         }
@@ -45,7 +45,7 @@ namespace LojaPadraoMYSQL.Formularios
         private void btEdt_Click(object sender, EventArgs e)
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLUnidadeMedida bll = new BLLUnidadeMedida(cx);
+            BLLMarca bll = new BLLMarca(cx);
 
             if (dgvDados.SelectedRows.Count == 0) //verifica se uma linha esta selecionada no grid ou nao
             {
@@ -55,8 +55,8 @@ namespace LojaPadraoMYSQL.Formularios
             else
             {
                 this.id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid
-                ModeloUnidadeMedida modelo = bll.CarregaModeloUnidadeMedida(id);
-                frmCadastroUnidadeMedida f = new frmCadastroUnidadeMedida(modelo);
+                ModeloMarca modelo = bll.CarregaModeloMarca(id);
+                frmCadastroMarca f = new frmCadastroMarca(modelo);
                 f.ShowDialog();
                 f.Dispose();
                 dgvDados.DataSource = bll.CarregaGridAtivo();
@@ -79,7 +79,7 @@ namespace LojaPadraoMYSQL.Formularios
                     if (d.ToString() == "Yes")
                     {
                         DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                        BLLUnidadeMedida bll = new BLLUnidadeMedida(cx);
+                        BLLMarca bll = new BLLMarca(cx);
                         bll.Excluir(Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value));
                         MessageBox.Show("Registro excluído com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgvDados.DataSource = bll.CarregaGridAtivo();
@@ -103,27 +103,27 @@ namespace LojaPadraoMYSQL.Formularios
             if (cbStatus.SelectedIndex == 1)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLUnidadeMedida bll = new BLLUnidadeMedida(cx);
+                BLLMarca bll = new BLLMarca(cx);
                 dgvDados.DataSource = bll.LocalizarAtivo(txtPesquisa.Text);
             }
             else if (cbStatus.SelectedIndex == 2)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLUnidadeMedida bll = new BLLUnidadeMedida(cx);
+                BLLMarca bll = new BLLMarca(cx);
                 dgvDados.DataSource = bll.LocalizarInativo(txtPesquisa.Text);
             }
             else if (cbStatus.SelectedIndex == 0)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLUnidadeMedida bll = new BLLUnidadeMedida(cx);
+                BLLMarca bll = new BLLMarca(cx);
                 dgvDados.DataSource = bll.Localizar(txtPesquisa.Text);
             }
         }
 
-        private void frmConsultaUnidadeMedida_Load(object sender, EventArgs e)
+        private void frmConsultaMarca_Load(object sender, EventArgs e)
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLUnidadeMedida bll = new BLLUnidadeMedida(cx);
+            BLLMarca bll = new BLLMarca(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
         }
 
@@ -133,37 +133,23 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 txtPesquisa.Clear();
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLUnidadeMedida bll = new BLLUnidadeMedida(cx);
+                BLLMarca bll = new BLLMarca(cx);
                 dgvDados.DataSource = bll.CarregaGridAtivo();
             }
             else if (cbStatus.SelectedIndex == 2)
             {
                 txtPesquisa.Clear();
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLUnidadeMedida bll = new BLLUnidadeMedida(cx);
+                BLLMarca bll = new BLLMarca(cx);
                 dgvDados.DataSource = bll.CarregaGridInativo();
             }
             else
             {
                 txtPesquisa.Clear();
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLUnidadeMedida bll = new BLLUnidadeMedida(cx);
+                BLLMarca bll = new BLLMarca(cx);
                 dgvDados.DataSource = bll.CarregaGrid();
             }
         }
-
-        //private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        //{
-        //    if (dgvDados.SelectedRows.Count == 0)
-        //    {
-        //        MessageBox.Show("Nenhum registro selecionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        //        return;
-        //    }
-        //    else if (e.RowIndex >= 0)
-        //    {
-        //        this.id = Convert.ToInt32(dgvDados.Rows[e.RowIndex].Cells[0].Value);
-        //        this.Close();
-        //    }
-        //}
     }
 }

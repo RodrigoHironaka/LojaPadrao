@@ -106,7 +106,16 @@ PRIMARY KEY(id)
 CREATE TABLE unidademedida(
 id int NOT NULL AUTO_INCREMENT,
 nome VARCHAR(100) NOT NULL,
-sigla char(5) NOT NULL,
+sigla VARCHAR(11) NOT NULL,
+`status` char(1),
+PRIMARY KEY (id)
+);
+
+CREATE TABLE marca(
+id int NOT NULL AUTO_INCREMENT,
+nome VARCHAR(50) NOT NULL,
+modelo VARCHAR(50),
+ano int,
 `status` char(1),
 PRIMARY KEY (id)
 );

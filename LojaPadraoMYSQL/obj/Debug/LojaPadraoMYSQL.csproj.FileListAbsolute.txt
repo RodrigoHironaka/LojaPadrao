@@ -197,3 +197,5 @@ C:\_Projetos\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.fr
 C:\_Projetos\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaFormaPagamento.resources
 C:\_Projetos\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroUnidadeMedida.resources
 C:\_Projetos\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaUnidadeMedida.resources
+C:\_Projetos\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroMarca.resources
+C:\_Projetos\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmConsultaMarca.resources

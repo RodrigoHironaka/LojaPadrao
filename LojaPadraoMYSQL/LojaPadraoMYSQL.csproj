@@ -88,6 +88,12 @@
     <Compile Include="Formularios\frmCadastroGrupo.Designer.cs">
       <DependentUpon>frmCadastroGrupo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmCadastroMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCadastroMarca.Designer.cs">
+      <DependentUpon>frmCadastroMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmCadastroSubGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,12 @@
     <Compile Include="Formularios\frmConsultaGrupo.Designer.cs">
       <DependentUpon>frmConsultaGrupo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmConsultaMarca.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmConsultaMarca.Designer.cs">
+      <DependentUpon>frmConsultaMarca.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmConsultaSubGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -201,6 +213,9 @@
     <EmbeddedResource Include="Formularios\frmCadastroGrupo.resx">
       <DependentUpon>frmCadastroGrupo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCadastroMarca.resx">
+      <DependentUpon>frmCadastroMarca.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCadastroSubGrupo.resx">
       <DependentUpon>frmCadastroSubGrupo.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +245,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsultaGrupo.resx">
       <DependentUpon>frmConsultaGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmConsultaMarca.resx">
+      <DependentUpon>frmConsultaMarca.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsultaSubGrupo.resx">
       <DependentUpon>frmConsultaSubGrupo.cs</DependentUpon>

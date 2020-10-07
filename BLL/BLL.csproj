@@ -48,6 +48,7 @@
     <Compile Include="BLLFornecedor.cs" />
     <Compile Include="BLLFuncao.cs" />
     <Compile Include="BLLGrupo.cs" />
+    <Compile Include="BLLMarca.cs" />
     <Compile Include="BLLSubGrupo.cs" />
     <Compile Include="BLLUnidadeMedida.cs" />
     <Compile Include="BLLUsuario.cs" />

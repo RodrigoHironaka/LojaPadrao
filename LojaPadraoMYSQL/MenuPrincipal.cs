@@ -78,5 +78,11 @@ namespace LojaPadraoMYSQL
             frmConsultaUnidadeMedida f = new frmConsultaUnidadeMedida();
             f.ShowDialog();
         }
+
+        private void marcaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaMarca f = new frmConsultaMarca();
+            f.ShowDialog();
+        }
     }
 }
