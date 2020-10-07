@@ -49,6 +49,7 @@
     <Compile Include="BLLFuncao.cs" />
     <Compile Include="BLLGrupo.cs" />
     <Compile Include="BLLSubGrupo.cs" />
+    <Compile Include="BLLUnidadeMedida.cs" />
     <Compile Include="BLLUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

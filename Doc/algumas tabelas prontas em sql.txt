@@ -102,3 +102,25 @@ qtdParcelas int,
 `status` CHAR(1),
 PRIMARY KEY(id)
 );
+
+CREATE TABLE unidademedida(
+id int NOT NULL AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL,
+sigla char(5) NOT NULL,
+`status` char(1),
+PRIMARY KEY (id)
+);
+
+CREATE TABLE produto(
+id int NOT NULL AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL,
+precoCusto DECIMAL,
+precoVenda DECIMAL,
+idFornecedor int,
+observacao VARCHAR(300),
+dataCadastro Date,
+`status` char(1),
+PRIMARY KEY(id),
+constraint fk_produto_fornecedor FOREIGN KEY (idFornecedor)
+  REFERENCES fornecedor (id)
+);
