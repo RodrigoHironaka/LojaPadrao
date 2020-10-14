@@ -25,7 +25,7 @@ namespace DAL
             cmd.CommandText = "insert into marca(nome, modelo, ano, status) values (@nome, @modelo, @ano, @status);";
             cmd.Parameters.AddWithValue("@nome", modelo.Nome);
             cmd.Parameters.AddWithValue("@modelo", modelo.Modelo);
-            cmd.Parameters.AddWithValue("@ano", modelo.Ano);
+            cmd.Parameters.AddWithValue("@ano", Convert.ToInt32(modelo.Ano));
             cmd.Parameters.AddWithValue("@status", modelo.Status);
             conexao.Conectar();
             modelo.MarcaId = Convert.ToInt32(cmd.ExecuteScalar());

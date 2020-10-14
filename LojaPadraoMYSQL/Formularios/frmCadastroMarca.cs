@@ -36,6 +36,10 @@ namespace LojaPadraoMYSQL.Formularios
             txtNome.Text = modelo.Nome;
             txtModelo.Text = modelo.Modelo;
             txtAno.Text = Convert.ToString(modelo.Ano);
+            if(txtAno.Text == "0")
+            {
+                txtAno.Text = "";
+            }
             if (modelo.Status.Equals('A'))
                 chkAtivo.Checked = true;
             else if (modelo.Status.Equals('I'))
@@ -65,7 +69,15 @@ namespace LojaPadraoMYSQL.Formularios
                 ModeloMarca modelo = new ModeloMarca();
                 modelo.Nome = txtNome.Text;
                 modelo.Modelo = Convert.ToString(txtModelo.Text);
-                modelo.Ano = Convert.ToInt32(txtAno.Text);
+                if(txtAno.Text == "")
+                {
+                    modelo.Ano = 0;
+                }
+                else
+                {
+                    modelo.Ano = Convert.ToInt32(txtAno.Text);
+                }
+                
                 if (chkAtivo.Checked)
                 {
                     modelo.Status = Convert.ToChar("A");

@@ -25,7 +25,9 @@ namespace LojaPadraoMYSQL.Formularios
 
         public frmCadastroFormaPagamento()
         {
+            
             InitializeComponent();
+            cbQtdParcelas.SelectedIndex = 0;
         }
 
         public frmCadastroFormaPagamento(ModeloFormaPagamento modelo)

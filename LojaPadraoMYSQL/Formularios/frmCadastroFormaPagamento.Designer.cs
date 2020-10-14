@@ -120,6 +120,7 @@
             this.cbQtdParcelas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbQtdParcelas.FormattingEnabled = true;
             this.cbQtdParcelas.Items.AddRange(new object[] {
+            "0",
             "1",
             "2",
             "3",
