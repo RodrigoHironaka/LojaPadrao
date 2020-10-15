@@ -94,6 +94,12 @@
     <Compile Include="Formularios\frmCadastroMarca.Designer.cs">
       <DependentUpon>frmCadastroMarca.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmCadastroProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCadastroProduto.Designer.cs">
+      <DependentUpon>frmCadastroProduto.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmCadastroSubGrupo.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCadastroMarca.resx">
       <DependentUpon>frmCadastroMarca.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCadastroProduto.resx">
+      <DependentUpon>frmCadastroProduto.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCadastroSubGrupo.resx">
       <DependentUpon>frmCadastroSubGrupo.cs</DependentUpon>

@@ -122,12 +122,22 @@ PRIMARY KEY (id)
 
 CREATE TABLE produto(
 id int NOT NULL AUTO_INCREMENT,
+dataCadastro Date,
+tipoProduto VARCHAR(20)
 nome VARCHAR(100) NOT NULL,
 precoCusto DECIMAL,
-precoVenda DECIMAL,
+precoAvista DECIMAL,
+precoPrazo DECIMAL,
+PorcentagemCusto DECIMAL,
+PorcentagemAvista DECIMAL,
+qtdEstoque DECIMAL,
 idFornecedor int,
+idMarca int,
+idUN int,
+idGrupo int,
+idSubGrupo int,
 observacao VARCHAR(300),
-dataCadastro Date,
+foto LONGBLOB,
 `status` char(1),
 PRIMARY KEY(id),
 constraint fk_produto_fornecedor FOREIGN KEY (idFornecedor)
