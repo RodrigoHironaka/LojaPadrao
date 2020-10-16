@@ -122,24 +122,39 @@ PRIMARY KEY (id)
 
 CREATE TABLE produto(
 id int NOT NULL AUTO_INCREMENT,
-dataCadastro Date,
-tipoProduto VARCHAR(20)
+numSerie int,
+tipoProduto VARCHAR(20),
+dataCadastro VARCHAR(30),
 nome VARCHAR(100) NOT NULL,
-precoCusto DECIMAL,
-precoAvista DECIMAL,
-precoPrazo DECIMAL,
-PorcentagemCusto DECIMAL,
-PorcentagemAvista DECIMAL,
-qtdEstoque DECIMAL,
-idFornecedor int,
-idMarca int,
+apelido VARCHAR(100),
 idUN int,
 idGrupo int,
 idSubGrupo int,
+idFornecedor int,
+idMarca int,
+precoCusto DECIMAL,
+porcentagemCusto DECIMAL,
+precoAvista DECIMAL,
+porcentagemAvista DECIMAL,
+precoPrazo DECIMAL,
+porcentagemDesconto DECIMAL,
+precoDesconto DECIMAL,
+estoqueAtual DECIMAL,
+estoqueMax DECIMAL,
+estoqueMin DECIMAL,
+controleEstoque char(1),
 observacao VARCHAR(300),
 foto LONGBLOB,
 `status` char(1),
 PRIMARY KEY(id),
-constraint fk_produto_fornecedor FOREIGN KEY (idFornecedor)
-  REFERENCES fornecedor (id)
+constraint fk_produto_UN FOREIGN KEY (idUN)
+  REFERENCES unidademedida (id),
+constraint fk_produto_Grupo FOREIGN KEY (idGrupo)
+  REFERENCES grupo (id),
+constraint fk_produto_SubGrupo FOREIGN KEY (idSubGrupo)
+  REFERENCES subgrupo (id),
+constraint fk_produto_Fornecedor FOREIGN KEY (idFornecedor)
+  REFERENCES fornecedor (id),
+constraint fk_produto_Marca FOREIGN KEY (idMarca)
+  REFERENCES marca (id)
 );
