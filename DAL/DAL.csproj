@@ -53,6 +53,7 @@
     <Compile Include="DALFuncao.cs" />
     <Compile Include="DALGrupo.cs" />
     <Compile Include="DALMarca.cs" />
+    <Compile Include="DALProduto.cs" />
     <Compile Include="DALSubGrupo.cs" />
     <Compile Include="DALUnidadeMedida.cs" />
     <Compile Include="DALUsuario.cs" />
