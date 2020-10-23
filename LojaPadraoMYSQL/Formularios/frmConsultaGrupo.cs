@@ -16,6 +16,16 @@ namespace LojaPadraoMYSQL.Formularios
             cbStatus.SelectedIndex = 1;
         }
 
+        public frmConsultaGrupo(bool selecao)
+        {
+            InitializeComponent();
+            cbStatus.SelectedIndex = 1;
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLGrupo bll = new BLLGrupo(cx);
+            dgvDados.DataSource = bll.CarregaGridAtivo();
+            dgvDados.Select();
+        }
+
         private void btAdd_Click(object sender, EventArgs e)
         {
             frmCadastroGrupo f = new frmCadastroGrupo();
@@ -134,6 +144,20 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLGrupo bll = new BLLGrupo(cx);
                 dgvDados.DataSource = bll.CarregaGrid();
+            }
+        }
+
+        private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDados.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhum registro selecionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else if (e.RowIndex >= 0)
+            {
+                this.id = Convert.ToInt32(dgvDados.Rows[e.RowIndex].Cells[0].Value);
+                this.Close();
             }
         }
     }

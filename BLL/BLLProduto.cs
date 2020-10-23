@@ -102,6 +102,12 @@ namespace BLL
             DALProduto DALObj = new DALProduto(conexao);
             return DALObj.CarregaModeloProduto(codigo);
         }
+
+        public DataTable CarregaComboUN()
+        {
+            DALProduto DALObj = new DALProduto(conexao);
+            return DALObj.CarregaComboUN();
+        }
     }
 }
 

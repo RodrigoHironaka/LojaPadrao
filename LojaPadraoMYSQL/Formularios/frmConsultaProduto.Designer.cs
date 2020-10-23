@@ -112,6 +112,7 @@
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDados.Size = new System.Drawing.Size(760, 412);
             this.dgvDados.TabIndex = 14;
+            this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // frmConsultaProduto
             // 
@@ -126,6 +127,7 @@
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.dgvDados);
             this.Name = "frmConsultaProduto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmConsultaProduto";
             this.Load += new System.EventHandler(this.frmConsultaProduto_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();

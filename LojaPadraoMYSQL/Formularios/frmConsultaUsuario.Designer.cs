@@ -45,19 +45,17 @@
             "Todos",
             "Ativos",
             "Inativos"});
-            this.cbStatus.Location = new System.Drawing.Point(240, 17);
-            this.cbStatus.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.cbStatus.Location = new System.Drawing.Point(160, 11);
             this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(102, 28);
+            this.cbStatus.Size = new System.Drawing.Size(69, 21);
             this.cbStatus.TabIndex = 20;
             this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
             // btSair
             // 
-            this.btSair.Location = new System.Drawing.Point(543, 15);
-            this.btSair.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btSair.Location = new System.Drawing.Point(362, 10);
             this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(54, 35);
+            this.btSair.Size = new System.Drawing.Size(36, 23);
             this.btSair.TabIndex = 19;
             this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
@@ -65,10 +63,9 @@
             // 
             // btExc
             // 
-            this.btExc.Location = new System.Drawing.Point(480, 15);
-            this.btExc.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btExc.Location = new System.Drawing.Point(320, 10);
             this.btExc.Name = "btExc";
-            this.btExc.Size = new System.Drawing.Size(54, 35);
+            this.btExc.Size = new System.Drawing.Size(36, 23);
             this.btExc.TabIndex = 18;
             this.btExc.Text = "exc";
             this.btExc.UseVisualStyleBackColor = true;
@@ -76,10 +73,9 @@
             // 
             // btEdt
             // 
-            this.btEdt.Location = new System.Drawing.Point(417, 15);
-            this.btEdt.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btEdt.Location = new System.Drawing.Point(278, 10);
             this.btEdt.Name = "btEdt";
-            this.btEdt.Size = new System.Drawing.Size(54, 35);
+            this.btEdt.Size = new System.Drawing.Size(36, 23);
             this.btEdt.TabIndex = 17;
             this.btEdt.Text = "edt";
             this.btEdt.UseVisualStyleBackColor = true;
@@ -87,10 +83,9 @@
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(354, 15);
-            this.btAdd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btAdd.Location = new System.Drawing.Point(236, 10);
             this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(54, 35);
+            this.btAdd.Size = new System.Drawing.Size(36, 23);
             this.btAdd.TabIndex = 16;
             this.btAdd.Text = "add";
             this.btAdd.UseVisualStyleBackColor = true;
@@ -99,10 +94,9 @@
             // txtPesquisa
             // 
             this.txtPesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPesquisa.Location = new System.Drawing.Point(18, 18);
-            this.txtPesquisa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtPesquisa.Location = new System.Drawing.Point(12, 12);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(211, 26);
+            this.txtPesquisa.Size = new System.Drawing.Size(142, 20);
             this.txtPesquisa.TabIndex = 15;
             this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
@@ -111,20 +105,20 @@
             this.dgvDados.AllowUserToAddRows = false;
             this.dgvDados.AllowUserToDeleteRows = false;
             this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDados.Location = new System.Drawing.Point(18, 58);
-            this.dgvDados.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dgvDados.Location = new System.Drawing.Point(12, 38);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.ReadOnly = true;
             this.dgvDados.RowHeadersWidth = 62;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDados.Size = new System.Drawing.Size(579, 369);
+            this.dgvDados.Size = new System.Drawing.Size(386, 240);
             this.dgvDados.TabIndex = 14;
+            this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // frmConsultaUsuario
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(624, 462);
+            this.ClientSize = new System.Drawing.Size(416, 300);
             this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.btSair);
             this.Controls.Add(this.btExc);
@@ -132,7 +126,6 @@
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.dgvDados);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
             this.Name = "frmConsultaUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

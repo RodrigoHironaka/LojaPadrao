@@ -401,6 +401,7 @@
             this.btnPesqGrupo.TabIndex = 338;
             this.btnPesqGrupo.Text = "...";
             this.btnPesqGrupo.UseVisualStyleBackColor = true;
+            this.btnPesqGrupo.Click += new System.EventHandler(this.btnPesqGrupo_Click);
             // 
             // txtCodGrupo
             // 
@@ -412,6 +413,7 @@
             this.txtCodGrupo.Name = "txtCodGrupo";
             this.txtCodGrupo.Size = new System.Drawing.Size(48, 20);
             this.txtCodGrupo.TabIndex = 336;
+            this.txtCodGrupo.Leave += new System.EventHandler(this.txtCodGrupo_Leave);
             // 
             // label11
             // 
@@ -456,7 +458,6 @@
             this.txtPrecoPrazo.Name = "txtPrecoPrazo";
             this.txtPrecoPrazo.Size = new System.Drawing.Size(70, 20);
             this.txtPrecoPrazo.TabIndex = 332;
-            this.txtPrecoPrazo.TextChanged += new System.EventHandler(this.textBox6_TextChanged);
             // 
             // label10
             // 
@@ -468,7 +469,6 @@
             this.label10.Size = new System.Drawing.Size(50, 13);
             this.label10.TabIndex = 333;
             this.label10.Text = "P. Prazo:";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // txtPorcAvista
             // 
@@ -480,7 +480,6 @@
             this.txtPorcAvista.Name = "txtPorcAvista";
             this.txtPorcAvista.Size = new System.Drawing.Size(34, 20);
             this.txtPorcAvista.TabIndex = 330;
-            this.txtPorcAvista.TextChanged += new System.EventHandler(this.textBox5_TextChanged);
             // 
             // label9
             // 
@@ -492,7 +491,6 @@
             this.label9.Size = new System.Drawing.Size(15, 13);
             this.label9.TabIndex = 331;
             this.label9.Text = "%";
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // txtPorcCusto
             // 
@@ -504,7 +502,6 @@
             this.txtPorcCusto.Name = "txtPorcCusto";
             this.txtPorcCusto.Size = new System.Drawing.Size(34, 20);
             this.txtPorcCusto.TabIndex = 328;
-            this.txtPorcCusto.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
             // 
             // label1
             // 
@@ -516,7 +513,6 @@
             this.label1.Size = new System.Drawing.Size(15, 13);
             this.label1.TabIndex = 329;
             this.label1.Text = "%";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // btnPesqMarca
             // 
@@ -526,7 +522,6 @@
             this.btnPesqMarca.TabIndex = 327;
             this.btnPesqMarca.Text = "...";
             this.btnPesqMarca.UseVisualStyleBackColor = true;
-            this.btnPesqMarca.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnPesqFornecedor
             // 
@@ -536,7 +531,6 @@
             this.btnPesqFornecedor.TabIndex = 326;
             this.btnPesqFornecedor.Text = "...";
             this.btnPesqFornecedor.UseVisualStyleBackColor = true;
-            this.btnPesqFornecedor.Click += new System.EventHandler(this.button2_Click);
             // 
             // cnbUN
             // 
@@ -546,9 +540,8 @@
             this.cnbUN.FormattingEnabled = true;
             this.cnbUN.Location = new System.Drawing.Point(240, 59);
             this.cnbUN.Name = "cnbUN";
-            this.cnbUN.Size = new System.Drawing.Size(38, 21);
+            this.cnbUN.Size = new System.Drawing.Size(47, 21);
             this.cnbUN.TabIndex = 323;
-            this.cnbUN.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label8
             // 
@@ -560,7 +553,6 @@
             this.label8.Size = new System.Drawing.Size(26, 13);
             this.label8.TabIndex = 324;
             this.label8.Text = "UN:";
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // txtCodMarca
             // 
@@ -572,7 +564,6 @@
             this.txtCodMarca.Name = "txtCodMarca";
             this.txtCodMarca.Size = new System.Drawing.Size(48, 20);
             this.txtCodMarca.TabIndex = 321;
-            this.txtCodMarca.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // label6
             // 
@@ -584,7 +575,6 @@
             this.label6.Size = new System.Drawing.Size(32, 13);
             this.label6.TabIndex = 322;
             this.label6.Text = "Cod.:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // txtNomeMarca
             // 
@@ -596,7 +586,6 @@
             this.txtNomeMarca.Name = "txtNomeMarca";
             this.txtNomeMarca.Size = new System.Drawing.Size(335, 20);
             this.txtNomeMarca.TabIndex = 319;
-            this.txtNomeMarca.TextChanged += new System.EventHandler(this.textBox3_TextChanged);
             // 
             // label7
             // 
@@ -608,7 +597,6 @@
             this.label7.Size = new System.Drawing.Size(40, 13);
             this.label7.TabIndex = 320;
             this.label7.Text = "Marca:";
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // txtCodFornecedor
             // 
@@ -620,7 +608,6 @@
             this.txtCodFornecedor.Name = "txtCodFornecedor";
             this.txtCodFornecedor.Size = new System.Drawing.Size(48, 20);
             this.txtCodFornecedor.TabIndex = 317;
-            this.txtCodFornecedor.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // label5
             // 
@@ -632,7 +619,6 @@
             this.label5.Size = new System.Drawing.Size(32, 13);
             this.label5.TabIndex = 318;
             this.label5.Text = "Cod.:";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // txtEstqAtual
             // 
@@ -644,7 +630,6 @@
             this.txtEstqAtual.Name = "txtEstqAtual";
             this.txtEstqAtual.Size = new System.Drawing.Size(112, 20);
             this.txtEstqAtual.TabIndex = 315;
-            this.txtEstqAtual.TextChanged += new System.EventHandler(this.txtQtd_TextChanged);
             // 
             // label4
             // 
@@ -656,7 +641,6 @@
             this.label4.Size = new System.Drawing.Size(76, 13);
             this.label4.TabIndex = 316;
             this.label4.Text = "Estoque Atual:";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // txtPrecoAvista
             // 
@@ -668,7 +652,6 @@
             this.txtPrecoAvista.Name = "txtPrecoAvista";
             this.txtPrecoAvista.Size = new System.Drawing.Size(70, 20);
             this.txtPrecoAvista.TabIndex = 313;
-            this.txtPrecoAvista.TextChanged += new System.EventHandler(this.txtAvista_TextChanged);
             // 
             // label3
             // 
@@ -680,7 +663,6 @@
             this.label3.Size = new System.Drawing.Size(52, 13);
             this.label3.TabIndex = 314;
             this.label3.Text = "P. Avista:";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // pbFoto
             // 
@@ -754,7 +736,6 @@
             this.txtPrecoCusto.Name = "txtPrecoCusto";
             this.txtPrecoCusto.Size = new System.Drawing.Size(71, 20);
             this.txtPrecoCusto.TabIndex = 4;
-            this.txtPrecoCusto.TextChanged += new System.EventHandler(this.txtCusto_TextChanged);
             // 
             // txtNome
             // 
@@ -777,7 +758,6 @@
             this.txtNomeFornecedor.Name = "txtNomeFornecedor";
             this.txtNomeFornecedor.Size = new System.Drawing.Size(335, 20);
             this.txtNomeFornecedor.TabIndex = 9;
-            this.txtNomeFornecedor.TextChanged += new System.EventHandler(this.txtEmail_TextChanged);
             // 
             // txtDataCadastro
             // 
@@ -818,6 +798,7 @@
             this.btSalvar.TabIndex = 18;
             this.btSalvar.Text = "sal";
             this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // chbAtivo
             // 
@@ -842,7 +823,6 @@
             this.lbRazaoSocial.Size = new System.Drawing.Size(50, 13);
             this.lbRazaoSocial.TabIndex = 263;
             this.lbRazaoSocial.Text = "P. Custo:";
-            this.lbRazaoSocial.Click += new System.EventHandler(this.lbRazaoSocial_Click);
             // 
             // lbNomeFantasia
             // 
@@ -879,7 +859,6 @@
             this.lbEmail.Size = new System.Drawing.Size(64, 13);
             this.lbEmail.TabIndex = 276;
             this.lbEmail.Text = "Fornecedor:";
-            this.lbEmail.Click += new System.EventHandler(this.lbEmail_Click);
             // 
             // lbDataCadastro
             // 
@@ -931,6 +910,7 @@
             this.ClientSize = new System.Drawing.Size(616, 503);
             this.Controls.Add(this.tabControl1);
             this.Name = "frmCadastroProduto";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadastroProduto";
             this.tabControl1.ResumeLayout(false);
             this.tpageDadosPrincipais.ResumeLayout(false);

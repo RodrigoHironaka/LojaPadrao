@@ -14,7 +14,7 @@ namespace Modelos
         public string TipoProduto { get; set; }
         public string DataCadastro { get; set; }
         public string Nome { get; set; }
-        public istringnt Apelido { get; set; }
+        public string Apelido { get; set; }
         public int UNID { get; set; }
         public int GrupoID { get; set; }
         public int SubGruooID { get; set; }

@@ -136,5 +136,19 @@ namespace LojaPadraoMYSQL.Formularios
                 dgvDados.DataSource = bll.CarregaGrid();
             }
         }
+
+        private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dgvDados.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhum registro selecionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else if (e.RowIndex >= 0)
+            {
+                this.id = Convert.ToInt32(dgvDados.Rows[e.RowIndex].Cells[0].Value);
+                this.Close();
+            }
+        }
     }
 }

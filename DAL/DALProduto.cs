@@ -242,5 +242,24 @@ namespace DAL
             conexao.Desconectar();
             return modelo;
         }
+
+        public DataTable CarregaComboUN()
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conexao.ObjetoConexao;
+                conexao.Conectar();
+                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter("SELECT id, sigla FROM unidademedida where status = 'A' ORDER BY sigla", conexao.StringConexao);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
+        }
     }
 }
