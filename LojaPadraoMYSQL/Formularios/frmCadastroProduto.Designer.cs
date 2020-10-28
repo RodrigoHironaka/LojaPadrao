@@ -196,6 +196,8 @@
             this.txtEstqMax.Name = "txtEstqMax";
             this.txtEstqMax.Size = new System.Drawing.Size(112, 20);
             this.txtEstqMax.TabIndex = 358;
+            this.txtEstqMax.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtEstqMax_MouseClick);
+            this.txtEstqMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstqMax_KeyPress);
             // 
             // label19
             // 
@@ -232,7 +234,6 @@
             // 
             // txtNumSerie
             // 
-            this.txtNumSerie.Enabled = false;
             this.txtNumSerie.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumSerie.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtNumSerie.Location = new System.Drawing.Point(82, 19);
@@ -262,6 +263,9 @@
             this.txtPrecoDesconto.Name = "txtPrecoDesconto";
             this.txtPrecoDesconto.Size = new System.Drawing.Size(70, 20);
             this.txtPrecoDesconto.TabIndex = 350;
+            this.txtPrecoDesconto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoDesconto_MouseClick);
+            this.txtPrecoDesconto.TextChanged += new System.EventHandler(this.txtPrecoDesconto_TextChanged);
+            this.txtPrecoDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoDesconto_KeyPress);
             // 
             // label17
             // 
@@ -284,6 +288,8 @@
             this.txtPorcDesconto.Name = "txtPorcDesconto";
             this.txtPorcDesconto.Size = new System.Drawing.Size(34, 20);
             this.txtPorcDesconto.TabIndex = 348;
+            this.txtPorcDesconto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPorcDesconto_MouseClick);
+            this.txtPorcDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcDesconto_KeyPress);
             // 
             // label18
             // 
@@ -306,6 +312,8 @@
             this.txtEstqMin.Name = "txtEstqMin";
             this.txtEstqMin.Size = new System.Drawing.Size(112, 20);
             this.txtEstqMin.TabIndex = 346;
+            this.txtEstqMin.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtEstqMin_MouseClick);
+            this.txtEstqMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstqMin_KeyPress);
             // 
             // label16
             // 
@@ -348,6 +356,7 @@
             this.btnPesqSubGrupo.TabIndex = 343;
             this.btnPesqSubGrupo.Text = "...";
             this.btnPesqSubGrupo.UseVisualStyleBackColor = true;
+            this.btnPesqSubGrupo.Click += new System.EventHandler(this.btnPesqSubGrupo_Click);
             // 
             // txtCodSubGrupo
             // 
@@ -359,6 +368,8 @@
             this.txtCodSubGrupo.Name = "txtCodSubGrupo";
             this.txtCodSubGrupo.Size = new System.Drawing.Size(48, 20);
             this.txtCodSubGrupo.TabIndex = 341;
+            this.txtCodSubGrupo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodSubGrupo_KeyPress);
+            this.txtCodSubGrupo.Leave += new System.EventHandler(this.txtCodSubGrupo_Leave);
             // 
             // label13
             // 
@@ -379,6 +390,7 @@
             this.txtNomeSubGrupo.Location = new System.Drawing.Point(100, 214);
             this.txtNomeSubGrupo.MaxLength = 50;
             this.txtNomeSubGrupo.Name = "txtNomeSubGrupo";
+            this.txtNomeSubGrupo.ReadOnly = true;
             this.txtNomeSubGrupo.Size = new System.Drawing.Size(333, 20);
             this.txtNomeSubGrupo.TabIndex = 339;
             // 
@@ -413,6 +425,7 @@
             this.txtCodGrupo.Name = "txtCodGrupo";
             this.txtCodGrupo.Size = new System.Drawing.Size(48, 20);
             this.txtCodGrupo.TabIndex = 336;
+            this.txtCodGrupo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodGrupo_KeyPress);
             this.txtCodGrupo.Leave += new System.EventHandler(this.txtCodGrupo_Leave);
             // 
             // label11
@@ -434,6 +447,7 @@
             this.txtNomeGrupo.Location = new System.Drawing.Point(100, 174);
             this.txtNomeGrupo.MaxLength = 50;
             this.txtNomeGrupo.Name = "txtNomeGrupo";
+            this.txtNomeGrupo.ReadOnly = true;
             this.txtNomeGrupo.Size = new System.Drawing.Size(333, 20);
             this.txtNomeGrupo.TabIndex = 334;
             // 
@@ -458,6 +472,9 @@
             this.txtPrecoPrazo.Name = "txtPrecoPrazo";
             this.txtPrecoPrazo.Size = new System.Drawing.Size(70, 20);
             this.txtPrecoPrazo.TabIndex = 332;
+            this.txtPrecoPrazo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoPrazo_MouseClick);
+            this.txtPrecoPrazo.TextChanged += new System.EventHandler(this.txtPrecoPrazo_TextChanged);
+            this.txtPrecoPrazo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoPrazo_KeyPress);
             // 
             // label10
             // 
@@ -480,6 +497,8 @@
             this.txtPorcAvista.Name = "txtPorcAvista";
             this.txtPorcAvista.Size = new System.Drawing.Size(34, 20);
             this.txtPorcAvista.TabIndex = 330;
+            this.txtPorcAvista.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPorcAvista_MouseClick);
+            this.txtPorcAvista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcAvista_KeyPress);
             // 
             // label9
             // 
@@ -502,6 +521,8 @@
             this.txtPorcCusto.Name = "txtPorcCusto";
             this.txtPorcCusto.Size = new System.Drawing.Size(34, 20);
             this.txtPorcCusto.TabIndex = 328;
+            this.txtPorcCusto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPorcCusto_MouseClick);
+            this.txtPorcCusto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcCusto_KeyPress);
             // 
             // label1
             // 
@@ -522,6 +543,7 @@
             this.btnPesqMarca.TabIndex = 327;
             this.btnPesqMarca.Text = "...";
             this.btnPesqMarca.UseVisualStyleBackColor = true;
+            this.btnPesqMarca.Click += new System.EventHandler(this.btnPesqMarca_Click);
             // 
             // btnPesqFornecedor
             // 
@@ -531,6 +553,7 @@
             this.btnPesqFornecedor.TabIndex = 326;
             this.btnPesqFornecedor.Text = "...";
             this.btnPesqFornecedor.UseVisualStyleBackColor = true;
+            this.btnPesqFornecedor.Click += new System.EventHandler(this.btnPesqFornecedor_Click);
             // 
             // cnbUN
             // 
@@ -564,6 +587,8 @@
             this.txtCodMarca.Name = "txtCodMarca";
             this.txtCodMarca.Size = new System.Drawing.Size(48, 20);
             this.txtCodMarca.TabIndex = 321;
+            this.txtCodMarca.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodMarca_KeyPress);
+            this.txtCodMarca.Leave += new System.EventHandler(this.txtCodMarca_Leave);
             // 
             // label6
             // 
@@ -584,6 +609,7 @@
             this.txtNomeMarca.Location = new System.Drawing.Point(100, 298);
             this.txtNomeMarca.MaxLength = 50;
             this.txtNomeMarca.Name = "txtNomeMarca";
+            this.txtNomeMarca.ReadOnly = true;
             this.txtNomeMarca.Size = new System.Drawing.Size(335, 20);
             this.txtNomeMarca.TabIndex = 319;
             // 
@@ -608,6 +634,8 @@
             this.txtCodFornecedor.Name = "txtCodFornecedor";
             this.txtCodFornecedor.Size = new System.Drawing.Size(48, 20);
             this.txtCodFornecedor.TabIndex = 317;
+            this.txtCodFornecedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodFornecedor_KeyPress);
+            this.txtCodFornecedor.Leave += new System.EventHandler(this.txtCodFornecedor_Leave);
             // 
             // label5
             // 
@@ -630,6 +658,8 @@
             this.txtEstqAtual.Name = "txtEstqAtual";
             this.txtEstqAtual.Size = new System.Drawing.Size(112, 20);
             this.txtEstqAtual.TabIndex = 315;
+            this.txtEstqAtual.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtEstqAtual_MouseClick);
+            this.txtEstqAtual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstqAtual_KeyPress);
             // 
             // label4
             // 
@@ -652,6 +682,9 @@
             this.txtPrecoAvista.Name = "txtPrecoAvista";
             this.txtPrecoAvista.Size = new System.Drawing.Size(70, 20);
             this.txtPrecoAvista.TabIndex = 313;
+            this.txtPrecoAvista.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoAvista_MouseClick);
+            this.txtPrecoAvista.TextChanged += new System.EventHandler(this.txtPrecoAvista_TextChanged);
+            this.txtPrecoAvista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoAvista_KeyPress);
             // 
             // label3
             // 
@@ -693,6 +726,7 @@
             this.btAddFoto.TabIndex = 310;
             this.btAddFoto.Text = "+";
             this.btAddFoto.UseVisualStyleBackColor = true;
+            this.btAddFoto.Click += new System.EventHandler(this.btAddFoto_Click);
             // 
             // btRemFoto
             // 
@@ -702,6 +736,7 @@
             this.btRemFoto.TabIndex = 309;
             this.btRemFoto.Text = "-";
             this.btRemFoto.UseVisualStyleBackColor = true;
+            this.btRemFoto.Click += new System.EventHandler(this.btRemFoto_Click);
             // 
             // txtObservacao
             // 
@@ -736,6 +771,9 @@
             this.txtPrecoCusto.Name = "txtPrecoCusto";
             this.txtPrecoCusto.Size = new System.Drawing.Size(71, 20);
             this.txtPrecoCusto.TabIndex = 4;
+            this.txtPrecoCusto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoCusto_MouseClick);
+            this.txtPrecoCusto.TextChanged += new System.EventHandler(this.txtPrecoCusto_TextChanged);
+            this.txtPrecoCusto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoCusto_KeyPress);
             // 
             // txtNome
             // 
@@ -756,6 +794,7 @@
             this.txtNomeFornecedor.Location = new System.Drawing.Point(100, 257);
             this.txtNomeFornecedor.MaxLength = 50;
             this.txtNomeFornecedor.Name = "txtNomeFornecedor";
+            this.txtNomeFornecedor.ReadOnly = true;
             this.txtNomeFornecedor.Size = new System.Drawing.Size(335, 20);
             this.txtNomeFornecedor.TabIndex = 9;
             // 

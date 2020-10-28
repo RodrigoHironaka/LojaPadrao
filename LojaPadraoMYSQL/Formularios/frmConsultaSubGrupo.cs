@@ -22,6 +22,16 @@ namespace LojaPadraoMYSQL.Formularios
             cbStatus.SelectedIndex = 1;
         }
 
+        public frmConsultaSubGrupo(bool selecao)
+        {
+            InitializeComponent();
+            cbStatus.SelectedIndex = 1;
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLSubGrupo bll = new BLLSubGrupo(cx);
+            dgvDados.DataSource = bll.CarregaGridAtivo();
+            dgvDados.Select();
+        }
+
         private void btAdd_Click(object sender, EventArgs e)
         {
             frmCadastroSubGrupo f = new frmCadastroSubGrupo();
