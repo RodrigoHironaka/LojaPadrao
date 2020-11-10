@@ -2,7 +2,6 @@ C:\_Projetos\DESKTOP\LojaPadrao\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
 C:\_Projetos\DESKTOP\LojaPadrao\DAL\bin\Debug\DAL.dll
 C:\_Projetos\DESKTOP\LojaPadrao\DAL\bin\Debug\DAL.pdb
 C:\_Projetos\DESKTOP\LojaPadrao\DAL\bin\Debug\Modelos.dll
-C:\_Projetos\DESKTOP\LojaPadrao\DAL\bin\Debug\MySql.Data.dll
 C:\_Projetos\DESKTOP\LojaPadrao\DAL\bin\Debug\Google.Protobuf.dll
 C:\_Projetos\DESKTOP\LojaPadrao\DAL\bin\Debug\Zstandard.Net.dll
 C:\_Projetos\DESKTOP\LojaPadrao\DAL\bin\Debug\K4os.Compression.LZ4.Streams.dll

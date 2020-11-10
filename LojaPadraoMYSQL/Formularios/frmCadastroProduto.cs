@@ -648,23 +648,18 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void txtPrecoAvista_Leave(object sender, EventArgs e)
         {
-            try
+            if(txtPrecoAvista.Text == String.Empty)
             {
-                if (txtPrecoAvista.Text == String.Empty)
-                { 
-                    txtPrecoAvista.Text = txtPrecoCusto.Text;
-                }
-
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLProduto bll = new BLLProduto(cx);
-                double avista = Convert.ToDouble(txtPrecoAvista.Text);
-                double custo = Convert.ToDouble(txtPrecoCusto.Text);
-                if(avista == 0)
-                {
-                    txtPrecoAvista.Text = custo.ToString("N2");
-                   
-                }
-                else
+                txtPrecoAvista.Text = txtPrecoCusto.Text;
+            }
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLProduto bll = new BLLProduto(cx);
+            double avista = Convert.ToDouble(txtPrecoAvista.Text);
+            double custo = Convert.ToDouble(txtPrecoCusto.Text);
+            txtPrecoAvista.Text = avista.ToString("N2");
+            try
+            { 
+                if(avista != 0)
                 {
                     if (custo != 0)
                     {
@@ -675,50 +670,127 @@ namespace LojaPadraoMYSQL.Formularios
                         txtPorcCusto.Text = "0";
                     }
                 }
-                txtPrecoAvista.Text = avista.ToString("N2");
+                else
+                {
+                    txtPrecoAvista.Text = txtPrecoCusto.Text;
+                }                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }           
+        }
+
+        private void txtPorcAvista_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLProduto bll = new BLLProduto(cx);
+                double avista = Convert.ToDouble(txtPrecoAvista.Text);
+                double porcAvista = Convert.ToDouble(txtPorcAvista.Text);
+                if ((porcAvista == 0) || (txtPorcAvista.TextLength <= 0))
+                {
+                    txtPrecoPrazo.Text = avista.ToString("N2");
+                }
+                else
+                {
+                    txtPrecoPrazo.Text = bll.CalculaPorPorcentagem(avista, porcAvista).ToString("N2");
+                }
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
-
-        }
-
-        private void txtPorcAvista_Leave(object sender, EventArgs e)
-        {
-            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLProduto bll = new BLLProduto(cx);
-            double avista = Convert.ToDouble(txtPrecoAvista.Text);
-            double porcAvista = Convert.ToDouble(txtPorcAvista.Text);
-            txtPrecoPrazo.Text = bll.CalculaPorPorcentagem(avista, porcAvista).ToString("N2");
         }
 
         private void txtPrecoPrazo_Leave(object sender, EventArgs e)
         {
-
+            if (txtPrecoPrazo.Text == String.Empty)
+            {
+                txtPrecoPrazo.Text = txtPrecoAvista.Text;
+            }
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLProduto bll = new BLLProduto(cx);
+            double prazo = Convert.ToDouble(txtPrecoPrazo.Text);
+            double avista = Convert.ToDouble(txtPrecoAvista.Text);
+            txtPrecoPrazo.Text = prazo.ToString("N2");
+            try
+            {
+                if (prazo != 0)
+                {
+                    if (avista != 0)
+                    {
+                        txtPorcAvista.Text = bll.CalculaRegraDeTresPorcentagem(avista, prazo).ToString("N2");
+                    }
+                    else
+                    {
+                        txtPorcAvista.Text = "0";
+                    }
+                }
+                else
+                {
+                    txtPrecoPrazo.Text = txtPrecoAvista.Text;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         private void txtPorcDesconto_Leave(object sender, EventArgs e)
         {
-            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLProduto bll = new BLLProduto(cx);
-            double avista = Convert.ToDouble(txtPrecoAvista.Text);
-            double porcDesconto = Convert.ToDouble(txtPorcDesconto.Text);
-            txtPrecoDesconto.Text = bll.CalculaPorPorcentagemDesconto(avista, porcDesconto).ToString("N2");
+            try
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLProduto bll = new BLLProduto(cx);
+                double avista = Convert.ToDouble(txtPrecoAvista.Text);
+                double porcDesconto = Convert.ToDouble(txtPorcDesconto.Text);
+                if ((porcDesconto == 0) || (txtPorcDesconto.TextLength <= 0))
+                {
+                    txtPrecoDesconto.Text = "0,00";
+                }
+                else
+                {
+                    txtPrecoDesconto.Text = bll.CalculaPorPorcentagemDesconto(avista, porcDesconto).ToString("N2");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }   
         }
 
         private void txtPrecoDesconto_Leave(object sender, EventArgs e)
         {
             try
             {
-                if (txtPrecoDesconto.Text == "")
+                if (txtPrecoDesconto.Text == String.Empty)
                 {
                     txtPrecoDesconto.Text = "0,00";
+                    txtPorcDesconto.Text = "0";
+                }
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLProduto bll = new BLLProduto(cx);
+                double avista = Convert.ToDouble(txtPrecoAvista.Text);
+                double desconto = Convert.ToDouble(txtPrecoDesconto.Text);
+                txtPrecoDesconto.Text = desconto.ToString("N2");
+                if (desconto != 0)
+                {
+                    if (avista != 0)
+                    {
+                        txtPorcDesconto.Text = bll.CalculaRegraDeTresPorcentagemDesconto(avista, desconto).ToString("N2");
+                    }
+                    else
+                    {
+                        txtPorcDesconto.Text = "0";
+                    }
                 }
                 else
                 {
-                    double desconto = Convert.ToDouble(txtPrecoDesconto.Text);
-                    txtPrecoDesconto.Text = desconto.ToString("N2");
+                    txtPrecoDesconto.Text = "0,00";
+                    txtPorcDesconto.Text = "0";
                 }
             }
             catch (Exception ex)
@@ -747,6 +819,20 @@ namespace LojaPadraoMYSQL.Formularios
             }
 
 
+        }
+
+        private void btSair_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DialogResult resultado = MessageBox.Show("Deseja sair sem salvar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                    Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possivel sair! Erro: " + ex.Message);
+            }
         }
     }
 }

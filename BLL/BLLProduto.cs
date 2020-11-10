@@ -126,6 +126,12 @@ namespace BLL
             DALProduto DALObj = new DALProduto(conexao);
             return DALObj.CalculaPorPorcentagemDesconto(valor, porcentagem);
         }
+
+        public double CalculaRegraDeTresPorcentagemDesconto(double valor, double valor2)
+        {
+            DALProduto DALObj = new DALProduto(conexao);
+            return DALObj.CalculaRegraDeTresPorcentagemDesconto(valor, valor2);
+        }
     }
 }
 
