@@ -261,5 +261,25 @@ namespace DAL
                 throw;
             }
         }
+
+        public double CalculaPorPorcentagem(double valor, double porcentagem)
+        {
+            double resultado = (valor*(porcentagem / 100)+valor);
+            return resultado;
+        }
+
+        public double CalculaRegraDeTresPorcentagem(double valor, double valor2)
+        {
+            double res = valor2 - valor;
+            double porcentagem = (100 * res) /valor;
+            return porcentagem;
+        }
+
+        public double CalculaPorPorcentagemDesconto(double valor, double porcentagem)
+        {
+            double resultado = valor * (porcentagem / 100);
+            return resultado;
+        }
+
     }
 }

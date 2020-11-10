@@ -42,9 +42,38 @@ namespace LojaPadraoMYSQL.Formularios
             Image retornaImagem = Image.FromStream(ms);
             return retornaImagem;
         }
-        //---------------------------------------------------------------------------------------------
 
-        
+        //------------------------FUNCAO LIMPA OS CAMPOS DIGITADOS-------------------------------------
+        public void LimpaTela()
+        {
+            txtNumSerie.Clear();
+            cbTipoProduto.SelectedIndex = 0;
+            txtNome.Clear();
+            txtApelido.Clear();
+            cnbUN.SelectedValue = 1;
+            txtCodGrupo.Clear();
+            txtNomeGrupo.Clear();
+            txtCodSubGrupo.Clear();
+            txtNomeSubGrupo.Clear();
+            txtCodFornecedor.Clear();
+            txtNomeFornecedor.Clear();
+            txtCodMarca.Clear();
+            txtNomeMarca.Clear();
+            txtPrecoCusto.Text = "0,00";
+            txtPorcCusto.Text = "0";
+            txtPrecoAvista.Text = "0,00";
+            txtPorcAvista.Text = "0";
+            txtPrecoPrazo.Text = "0,00";
+            txtPorcDesconto.Text = "0";
+            txtPrecoDesconto.Text = "0,00";
+            txtEstqAtual.Text = "0,00";
+            txtEstqMax.Text = "0,00";
+            txtEstqMin.Text = "0,00";
+            txtObservacao.Clear();
+            pbFoto.Image = null;
+        }
+
+        //------------------------VARIAVEIS------------------------------------------------------------
         public string nome = "";
 
         //----------------------------INICIALIZA FORMULARIO PARA NOVO CADASTRO-------------------------
@@ -57,7 +86,7 @@ namespace LojaPadraoMYSQL.Formularios
             cbTipoProduto.Focus();
             txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
 
-            
+
         }
 
         //----------------------------CARREGA DADOS PARA ALTERAR---------------------------------------
@@ -139,7 +168,7 @@ namespace LojaPadraoMYSQL.Formularios
                 chbAtivo.Checked = true;
             else if (modelo.Status.Equals('N'))
                 chbAtivo.Checked = false;
-            txtObservacao.Text = modelo.Observacao;            
+            txtObservacao.Text = modelo.Observacao;
             if (modelo.Foto != null)
             {
                 pbFoto.Image = ConverterImagem(modelo.Foto);
@@ -224,7 +253,6 @@ namespace LojaPadraoMYSQL.Formularios
 
         //----------------------------BUSCA POR CODIGO--------------------------------------------------
         //----------------------------BOTAO PARA BUSCAR NO FORMULARIO ESPECIFICO------------------------
-        
         private void txtCodGrupo_Leave(object sender, EventArgs e)
         {
             try
@@ -375,24 +403,24 @@ namespace LojaPadraoMYSQL.Formularios
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
             {
-                e.Handled = true; 
+                e.Handled = true;
             }
             if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf('.') > -1))
             {
-                e.Handled = true;  
+                e.Handled = true;
             }
-            
+
         }
 
         private void txtPorcCusto_KeyPress(object sender, KeyPressEventArgs e)
         {
-            txtPrecoCusto_KeyPress(sender,e);
+            txtPrecoCusto_KeyPress(sender, e);
         }
 
         private void txtPrecoAvista_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtPrecoCusto_KeyPress(sender, e);
-            
+
         }
 
         private void txtPorcAvista_KeyPress(object sender, KeyPressEventArgs e)
@@ -432,10 +460,10 @@ namespace LojaPadraoMYSQL.Formularios
 
 
         //----------------------------SELECIONA TODO O TEXTO QNDO O FOCO ESTA NELE----------------------
-        //----------------------------DIGITA APENAS NUMEROS NOS CAMPOS----------------------------------
+        //----------------------------CONVERTE EM MOEDA-------------------------------------------------
         private void txtPrecoCusto_TextChanged(object sender, EventArgs e)
-        {          
-            Moeda.ConversaoMoeda(ref txtPrecoCusto);           
+        {
+            //Moeda.ConversaoMoeda(ref txtPrecoCusto);           
         }
 
         private void txtPrecoCusto_MouseClick(object sender, MouseEventArgs e)
@@ -446,7 +474,7 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void txtPrecoAvista_TextChanged(object sender, EventArgs e)
         {
-            Moeda.ConversaoMoeda(ref txtPrecoAvista);
+            //Moeda.ConversaoMoeda(ref txtPrecoAvista);
         }
 
         private void txtPrecoAvista_MouseClick(object sender, MouseEventArgs e)
@@ -456,7 +484,7 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void txtPrecoPrazo_TextChanged(object sender, EventArgs e)
         {
-            Moeda.ConversaoMoeda(ref txtPrecoPrazo);
+            //Moeda.ConversaoMoeda(ref txtPrecoPrazo);
         }
 
         private void txtPrecoPrazo_MouseClick(object sender, MouseEventArgs e)
@@ -466,7 +494,7 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void txtPrecoDesconto_TextChanged(object sender, EventArgs e)
         {
-            Moeda.ConversaoMoeda(ref txtPrecoDesconto);
+            //Moeda.ConversaoMoeda(ref txtPrecoDesconto);
         }
 
 
@@ -549,6 +577,176 @@ namespace LojaPadraoMYSQL.Formularios
         {
             this.foto = "";
             pbFoto.Image = null;
+        }
+
+        //----------------------------BOTÃO PARA VERIFICAR SE CONTROLA OU NÃO----------------------------------
+        private void chbControlarEstq_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbControlarEstq.Checked)
+            {
+                txtEstqAtual.Enabled = true;
+                txtEstqMax.Enabled = true;
+                txtEstqMin.Enabled = true;
+            }
+            else
+            {
+                txtEstqAtual.Clear();
+                txtEstqMax.Clear();
+                txtEstqMin.Clear();
+                txtEstqAtual.Enabled = false;
+                txtEstqMax.Enabled = false;
+                txtEstqMin.Enabled = false;
+            }
+        }
+
+
+        //----------------------------BOTÃO GERA NUM DE SERIE REFERENTE AO CODIDO DO PRODUTO-------------------
+        private void btnGeraNumSerie_Click(object sender, EventArgs e)
+        {
+            try
+            {
+
+                if (txtID.Text == "")
+                {
+                    MessageBox.Show("Voce deve salvar o produto antes de gerar o Numero de Serie!!!");
+                }
+                else
+                {
+                    var id = txtID.Text;
+                    txtNumSerie.Text = (id.PadLeft(13, '0'));
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        //----------------------------OPÇÕES DE CALCULOS COM PORCENTAGENS E VALORES----------------------------
+        private void txtPorcCusto_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLProduto bll = new BLLProduto(cx);
+                double custo = Convert.ToDouble(txtPrecoCusto.Text);
+                double porcCusto = Convert.ToDouble(txtPorcCusto.Text);
+                if ((porcCusto == 0) || (txtPorcCusto.TextLength <= 0))
+                {
+                    txtPrecoAvista.Text = custo.ToString("N2");
+                }
+                else
+                {
+                    txtPrecoAvista.Text = bll.CalculaPorPorcentagem(custo, porcCusto).ToString("N2");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txtPrecoAvista_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtPrecoAvista.Text == String.Empty)
+                { 
+                    txtPrecoAvista.Text = txtPrecoCusto.Text;
+                }
+
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLProduto bll = new BLLProduto(cx);
+                double avista = Convert.ToDouble(txtPrecoAvista.Text);
+                double custo = Convert.ToDouble(txtPrecoCusto.Text);
+                if(avista == 0)
+                {
+                    txtPrecoAvista.Text = custo.ToString("N2");
+                   
+                }
+                else
+                {
+                    if (custo != 0)
+                    {
+                        txtPorcCusto.Text = bll.CalculaRegraDeTresPorcentagem(custo, avista).ToString("N2");
+                    }
+                    else
+                    {
+                        txtPorcCusto.Text = "0";
+                    }
+                }
+                txtPrecoAvista.Text = avista.ToString("N2");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+        }
+
+        private void txtPorcAvista_Leave(object sender, EventArgs e)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLProduto bll = new BLLProduto(cx);
+            double avista = Convert.ToDouble(txtPrecoAvista.Text);
+            double porcAvista = Convert.ToDouble(txtPorcAvista.Text);
+            txtPrecoPrazo.Text = bll.CalculaPorPorcentagem(avista, porcAvista).ToString("N2");
+        }
+
+        private void txtPrecoPrazo_Leave(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPorcDesconto_Leave(object sender, EventArgs e)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLProduto bll = new BLLProduto(cx);
+            double avista = Convert.ToDouble(txtPrecoAvista.Text);
+            double porcDesconto = Convert.ToDouble(txtPorcDesconto.Text);
+            txtPrecoDesconto.Text = bll.CalculaPorPorcentagemDesconto(avista, porcDesconto).ToString("N2");
+        }
+
+        private void txtPrecoDesconto_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtPrecoDesconto.Text == "")
+                {
+                    txtPrecoDesconto.Text = "0,00";
+                }
+                else
+                {
+                    double desconto = Convert.ToDouble(txtPrecoDesconto.Text);
+                    txtPrecoDesconto.Text = desconto.ToString("N2");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txtPrecoCusto_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtPrecoCusto.Text == "")
+                {
+                    txtPrecoCusto.Text = "0,00";
+                }
+                else
+                {
+                    double custo = Convert.ToDouble(txtPrecoCusto.Text);
+                    txtPrecoCusto.Text = custo.ToString("N2");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+
+
         }
     }
 }

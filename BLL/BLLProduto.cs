@@ -108,6 +108,24 @@ namespace BLL
             DALProduto DALObj = new DALProduto(conexao);
             return DALObj.CarregaComboUN();
         }
+
+        public double CalculaPorPorcentagem(double valor, double porcentagem)
+        {
+            DALProduto DALObj = new DALProduto(conexao);
+            return DALObj.CalculaPorPorcentagem(valor, porcentagem);
+        }
+
+        public double CalculaRegraDeTresPorcentagem(double valor, double valor2)
+        {
+            DALProduto DALObj = new DALProduto(conexao);
+            return DALObj.CalculaRegraDeTresPorcentagem(valor, valor2);
+        }
+
+        public double CalculaPorPorcentagemDesconto(double valor, double porcentagem)
+        {
+            DALProduto DALObj = new DALProduto(conexao);
+            return DALObj.CalculaPorPorcentagemDesconto(valor, porcentagem);
+        }
     }
 }
 

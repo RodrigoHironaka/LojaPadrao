@@ -196,6 +196,7 @@
             this.txtEstqMax.Name = "txtEstqMax";
             this.txtEstqMax.Size = new System.Drawing.Size(112, 20);
             this.txtEstqMax.TabIndex = 358;
+            this.txtEstqMax.Text = "0";
             this.txtEstqMax.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtEstqMax_MouseClick);
             this.txtEstqMax.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstqMax_KeyPress);
             // 
@@ -222,6 +223,7 @@
             this.chbControlarEstq.TabIndex = 357;
             this.chbControlarEstq.Text = "Controlar?";
             this.chbControlarEstq.UseVisualStyleBackColor = true;
+            this.chbControlarEstq.CheckedChanged += new System.EventHandler(this.chbControlarEstq_CheckedChanged);
             // 
             // btnGeraNumSerie
             // 
@@ -231,6 +233,7 @@
             this.btnGeraNumSerie.TabIndex = 356;
             this.btnGeraNumSerie.Text = "...";
             this.btnGeraNumSerie.UseVisualStyleBackColor = true;
+            this.btnGeraNumSerie.Click += new System.EventHandler(this.btnGeraNumSerie_Click);
             // 
             // txtNumSerie
             // 
@@ -263,9 +266,11 @@
             this.txtPrecoDesconto.Name = "txtPrecoDesconto";
             this.txtPrecoDesconto.Size = new System.Drawing.Size(70, 20);
             this.txtPrecoDesconto.TabIndex = 350;
+            this.txtPrecoDesconto.Text = "0,00";
             this.txtPrecoDesconto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoDesconto_MouseClick);
             this.txtPrecoDesconto.TextChanged += new System.EventHandler(this.txtPrecoDesconto_TextChanged);
             this.txtPrecoDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoDesconto_KeyPress);
+            this.txtPrecoDesconto.Leave += new System.EventHandler(this.txtPrecoDesconto_Leave);
             // 
             // label17
             // 
@@ -288,8 +293,10 @@
             this.txtPorcDesconto.Name = "txtPorcDesconto";
             this.txtPorcDesconto.Size = new System.Drawing.Size(34, 20);
             this.txtPorcDesconto.TabIndex = 348;
+            this.txtPorcDesconto.Text = "0";
             this.txtPorcDesconto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPorcDesconto_MouseClick);
             this.txtPorcDesconto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcDesconto_KeyPress);
+            this.txtPorcDesconto.Leave += new System.EventHandler(this.txtPorcDesconto_Leave);
             // 
             // label18
             // 
@@ -312,6 +319,7 @@
             this.txtEstqMin.Name = "txtEstqMin";
             this.txtEstqMin.Size = new System.Drawing.Size(112, 20);
             this.txtEstqMin.TabIndex = 346;
+            this.txtEstqMin.Text = "0";
             this.txtEstqMin.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtEstqMin_MouseClick);
             this.txtEstqMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstqMin_KeyPress);
             // 
@@ -472,9 +480,11 @@
             this.txtPrecoPrazo.Name = "txtPrecoPrazo";
             this.txtPrecoPrazo.Size = new System.Drawing.Size(70, 20);
             this.txtPrecoPrazo.TabIndex = 332;
+            this.txtPrecoPrazo.Text = "0,00";
             this.txtPrecoPrazo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoPrazo_MouseClick);
             this.txtPrecoPrazo.TextChanged += new System.EventHandler(this.txtPrecoPrazo_TextChanged);
             this.txtPrecoPrazo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoPrazo_KeyPress);
+            this.txtPrecoPrazo.Leave += new System.EventHandler(this.txtPrecoPrazo_Leave);
             // 
             // label10
             // 
@@ -497,8 +507,10 @@
             this.txtPorcAvista.Name = "txtPorcAvista";
             this.txtPorcAvista.Size = new System.Drawing.Size(34, 20);
             this.txtPorcAvista.TabIndex = 330;
+            this.txtPorcAvista.Text = "0";
             this.txtPorcAvista.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPorcAvista_MouseClick);
             this.txtPorcAvista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcAvista_KeyPress);
+            this.txtPorcAvista.Leave += new System.EventHandler(this.txtPorcAvista_Leave);
             // 
             // label9
             // 
@@ -521,8 +533,10 @@
             this.txtPorcCusto.Name = "txtPorcCusto";
             this.txtPorcCusto.Size = new System.Drawing.Size(34, 20);
             this.txtPorcCusto.TabIndex = 328;
+            this.txtPorcCusto.Text = "0";
             this.txtPorcCusto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPorcCusto_MouseClick);
             this.txtPorcCusto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcCusto_KeyPress);
+            this.txtPorcCusto.Leave += new System.EventHandler(this.txtPorcCusto_Leave);
             // 
             // label1
             // 
@@ -658,6 +672,7 @@
             this.txtEstqAtual.Name = "txtEstqAtual";
             this.txtEstqAtual.Size = new System.Drawing.Size(112, 20);
             this.txtEstqAtual.TabIndex = 315;
+            this.txtEstqAtual.Text = "0";
             this.txtEstqAtual.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtEstqAtual_MouseClick);
             this.txtEstqAtual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstqAtual_KeyPress);
             // 
@@ -682,9 +697,11 @@
             this.txtPrecoAvista.Name = "txtPrecoAvista";
             this.txtPrecoAvista.Size = new System.Drawing.Size(70, 20);
             this.txtPrecoAvista.TabIndex = 313;
+            this.txtPrecoAvista.Text = "0,00";
             this.txtPrecoAvista.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoAvista_MouseClick);
             this.txtPrecoAvista.TextChanged += new System.EventHandler(this.txtPrecoAvista_TextChanged);
             this.txtPrecoAvista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoAvista_KeyPress);
+            this.txtPrecoAvista.Leave += new System.EventHandler(this.txtPrecoAvista_Leave);
             // 
             // label3
             // 
@@ -752,7 +769,6 @@
             // 
             // txtID
             // 
-            this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtID.Location = new System.Drawing.Point(15, 19);
@@ -771,9 +787,11 @@
             this.txtPrecoCusto.Name = "txtPrecoCusto";
             this.txtPrecoCusto.Size = new System.Drawing.Size(71, 20);
             this.txtPrecoCusto.TabIndex = 4;
+            this.txtPrecoCusto.Text = "0,00";
             this.txtPrecoCusto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoCusto_MouseClick);
             this.txtPrecoCusto.TextChanged += new System.EventHandler(this.txtPrecoCusto_TextChanged);
             this.txtPrecoCusto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoCusto_KeyPress);
+            this.txtPrecoCusto.Leave += new System.EventHandler(this.txtPrecoCusto_Leave);
             // 
             // txtNome
             // 
@@ -881,8 +899,8 @@
             this.cbTipoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTipoProduto.FormattingEnabled = true;
             this.cbTipoProduto.Items.AddRange(new object[] {
-            "Produto",
-            "Serviço"});
+            "PRODUTO",
+            "SERVIÇO"});
             this.cbTipoProduto.Location = new System.Drawing.Point(16, 58);
             this.cbTipoProduto.Name = "cbTipoProduto";
             this.cbTipoProduto.Size = new System.Drawing.Size(97, 21);
