@@ -10,7 +10,7 @@ namespace Modelos
     public class ModeloProduto
     {
         public int ProdutoID { get; set; }
-        public int NumSerie { get; set; }
+        public string NumSerie { get; set; }
         public string TipoProduto { get; set; }
         public string DataCadastro { get; set; }
         public string Nome { get; set; }

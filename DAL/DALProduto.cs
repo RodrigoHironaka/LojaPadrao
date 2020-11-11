@@ -209,7 +209,7 @@ namespace DAL
             {
                 registro.Read();
                 modelo.ProdutoID = Convert.ToInt32(registro["id"]);
-                modelo.NumSerie = Convert.ToInt32(registro["numSerie"]);
+                modelo.NumSerie = Convert.ToString(registro["numSerie"]);
                 modelo.TipoProduto = Convert.ToString(registro["tipoProduto"]);
                 modelo.DataCadastro = Convert.ToString(registro["dataCadastro"]);
                 modelo.Nome = Convert.ToString(registro["nome"]);

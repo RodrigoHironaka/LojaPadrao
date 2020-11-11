@@ -186,69 +186,77 @@ namespace LojaPadraoMYSQL.Formularios
         //----------------------------SALVA PRODUTO----------------------------------------------------
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            //try
-            //{
-            //    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            //    BLLProduto bll = new BLLProduto(cx);
-            //    ModeloProduto modelo = new ModeloProduto();
-            //    modelo.NomeFantasia = txtNomeFantasia.Text;
-            //    modelo.RazaoSocial = txtRazaoSocial.Text;
-            //    modelo.RGIE = mskRgIe.Text;
-            //    modelo.TipoPessoa = cbTipoPessoa.Text;
-            //    modelo.Endereco = txtEndereco.Text;
-            //    modelo.Numero = txtNumero.Text;
-            //    modelo.Complemento = txtComplemento.Text;
-            //    modelo.Bairro = txtBairro.Text;
-            //    modelo.DataNasc = mskDataNasc.Text;
-            //    modelo.CidadeId = Convert.ToInt32(txtIdCidade.Text);
-            //    modelo.Email = txtEmail.Text;
-            //    modelo.Telefone = mskTelefone.Text;
-            //    modelo.Celular = mskTelefone.Text;
-            //    modelo.Celular2 = mskCelular2.Text;
-            //    modelo.Observacao = txtObservacao.Text;
-            //    modelo.DataCadastro = txtDataCadastro.Text;
-            //    if (pbFoto.Image != null)
-            //    {
-            //        modelo.Foto = ConverterEmByte(pbFoto.Image);
-            //    }
-            //    else
-            //    {
-            //        modelo.Foto = null;
-            //    }
+            try
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLProduto bll = new BLLProduto(cx);
+                ModeloProduto modelo = new ModeloProduto();
+                modelo.NumSerie = txtNumSerie.Text;
+                modelo.TipoProduto = cbTipoProduto.Text;
+                modelo.DataCadastro = txtDataCadastro.Text;
+                modelo.Nome = txtNome.Text;
+                modelo.Apelido = txtApelido.Text;
+                modelo.UNID = Convert.ToInt32(cnbUN.SelectedValue);
+                modelo.GrupoID = Convert.ToInt32(txtCodGrupo.Text);
+                modelo.SubGruooID = Convert.ToInt32(txtCodSubGrupo.Text);
+                modelo.FornecedorID = Convert.ToInt32(txtCodFornecedor.Text);
+                modelo.MarcaID = Convert.ToInt32(txtCodMarca.Text);
+                modelo.PrecoCusto = Convert.ToDecimal(txtPrecoCusto.Text);
+                modelo.PorcentagemCusto = Convert.ToDecimal(txtPorcCusto.Text);
+                modelo.PrecoAvista = Convert.ToDecimal(txtPrecoAvista.Text);
+                modelo.PorcentagemAvista = Convert.ToDecimal(txtPorcAvista.Text);
+                modelo.PrecoPrazo = Convert.ToDecimal(txtPrecoPrazo.Text);
+                modelo.PorcentagemDesconto = Convert.ToDecimal(txtPorcDesconto.Text);
+                modelo.PrecoDesconto = Convert.ToDecimal(txtPrecoDesconto.Text);
+                modelo.EstoqueAtual = Convert.ToDecimal(txtEstqAtual.Text);
+                modelo.EstoqueMax = Convert.ToDecimal(txtEstqMax.Text);
+                modelo.EstoqueMin = Convert.ToDecimal(txtEstqMin.Text);
+                modelo.Observacao = txtObservacao.Text;
+                if (pbFoto.Image != null)
+                {
+                    modelo.Foto = ConverterEmByte(pbFoto.Image);
+                }
+                else
+                {
+                    modelo.Foto = null;
+                }
+                if(chbControlarEstq.Checked == true)
+                    modelo.ControlarEstoque = Convert.ToChar("S");
+                else if(chbControlarEstq.Checked == false)
+                    modelo.ControlarEstoque = Convert.ToChar("N");
+                if (chbAtivo.Checked == true)
+                    modelo.Status = Convert.ToChar("A");
+                else if (chbAtivo.Checked == false)
+                    modelo.Status = Convert.ToChar("I");
 
-            //    if (chbAtivo.Checked == true)
-            //        modelo.Status = Convert.ToChar("A");
-            //    else if (chbAtivo.Checked == false)
-            //        modelo.Status = Convert.ToChar("I");
-
-            //    if (txtID.Text == "")
-            //    {
-            //        modelo.CarregaImagem(this.foto);
-            //        bll.Incluir(modelo);
-            //        this.Close();
-            //    }
-            //    else
-            //    {
-            //        modelo.ClienteId = Int32.Parse(txtID.Text);
-            //        if (this.foto == "Foto Original")
-            //        {
-            //            ModeloCliente mt = bll.CarregaModeloCliente(modelo.ClienteId);
-            //            modelo.Foto = mt.Foto;
-            //        }
-            //        else
-            //        {
-            //            modelo.CarregaImagem(this.foto);
-            //        }
-            //        bll.Alterar(modelo);
-            //        MessageBox.Show("Cadastro alterado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            //        this.Close();
-            //    }
-            //    this.LimpaTela();
-            //}
-            //catch (Exception erro)
-            //{
-            //    MessageBox.Show(erro.Message);
-            //}
+                if (txtID.Text == "")
+                {
+                    modelo.CarregaImagem(this.foto);
+                    bll.Incluir(modelo);
+                    this.Close();
+                }
+                else
+                {
+                    modelo.ProdutoID = Int32.Parse(txtID.Text);
+                    if (this.foto == "Foto Original")
+                    {
+                        ModeloProduto mt = bll.CarregaModeloProduto(modelo.ProdutoID);
+                        modelo.Foto = mt.Foto;
+                    }
+                    else
+                    {
+                        modelo.CarregaImagem(this.foto);
+                    }
+                    bll.Alterar(modelo);
+                    MessageBox.Show("Cadastro alterado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                this.LimpaTela();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
         }
 
         //----------------------------BUSCA POR CODIGO--------------------------------------------------
@@ -821,6 +829,7 @@ namespace LojaPadraoMYSQL.Formularios
 
         }
 
+        //----------------------------BOTÃO SAIR-------------------------------------------------------------
         private void btSair_Click(object sender, EventArgs e)
         {
             try
@@ -833,6 +842,12 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 MessageBox.Show("Não foi possivel sair! Erro: " + ex.Message);
             }
+        }
+
+        //----------------------------DIGITA APENAS NUMEROS NO CAMPO CODIGO----------------------------------
+        private void txtNumSerie_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtCodGrupo_KeyPress(sender, e);
         }
     }
 }

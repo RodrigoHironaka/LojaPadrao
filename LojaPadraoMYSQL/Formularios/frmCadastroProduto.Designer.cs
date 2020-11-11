@@ -244,6 +244,7 @@
             this.txtNumSerie.Name = "txtNumSerie";
             this.txtNumSerie.Size = new System.Drawing.Size(152, 20);
             this.txtNumSerie.TabIndex = 1;
+            this.txtNumSerie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumSerie_KeyPress);
             // 
             // label20
             // 
@@ -769,6 +770,7 @@
             // 
             // txtID
             // 
+            this.txtID.Enabled = false;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtID.Location = new System.Drawing.Point(15, 19);
