@@ -85,8 +85,6 @@ namespace LojaPadraoMYSQL.Formularios
             cbTipoProduto.SelectedIndex = 0;
             cbTipoProduto.Focus();
             txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
-
-
         }
 
         //----------------------------CARREGA DADOS PARA ALTERAR---------------------------------------
@@ -102,9 +100,9 @@ namespace LojaPadraoMYSQL.Formularios
             txtNome.Text = modelo.Nome;
             txtApelido.Text = modelo.Apelido;
             cnbUN.SelectedValue = modelo.UNID.ToString();
+            txtCodGrupo.Text = Convert.ToString(modelo.GrupoID);
             if (txtCodGrupo.Text != "")
             {
-
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLGrupo bll = new BLLGrupo(cx);
                 ModeloGrupo modelogrupo = bll.CarregaModeloGrupo(Convert.ToInt32(txtCodGrupo.Text));
@@ -115,9 +113,9 @@ namespace LojaPadraoMYSQL.Formularios
                 txtCodGrupo.Clear();
                 txtNomeGrupo.Clear();
             }
+            txtCodSubGrupo.Text = Convert.ToString(modelo.SubGruooID);
             if (txtCodSubGrupo.Text != "")
             {
-
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLSubGrupo bll = new BLLSubGrupo(cx);
                 ModeloSubGrupo modelosubgrupo = bll.CarregaModeloSubGrupo(Convert.ToInt32(txtCodSubGrupo.Text));
@@ -128,6 +126,7 @@ namespace LojaPadraoMYSQL.Formularios
                 txtCodSubGrupo.Clear();
                 txtNomeSubGrupo.Clear();
             }
+            txtCodFornecedor.Text = Convert.ToString(modelo.FornecedorID);
             if (txtCodFornecedor.Text != "")
             {
 
@@ -141,6 +140,7 @@ namespace LojaPadraoMYSQL.Formularios
                 txtCodFornecedor.Clear();
                 txtNomeFornecedor.Clear();
             }
+            txtCodMarca.Text = Convert.ToString(modelo.MarcaID);
             if (txtCodMarca.Text != "")
             {
 
@@ -197,10 +197,38 @@ namespace LojaPadraoMYSQL.Formularios
                 modelo.Nome = txtNome.Text;
                 modelo.Apelido = txtApelido.Text;
                 modelo.UNID = Convert.ToInt32(cnbUN.SelectedValue);
-                modelo.GrupoID = Convert.ToInt32(txtCodGrupo.Text);
-                modelo.SubGruooID = Convert.ToInt32(txtCodSubGrupo.Text);
-                modelo.FornecedorID = Convert.ToInt32(txtCodFornecedor.Text);
-                modelo.MarcaID = Convert.ToInt32(txtCodMarca.Text);
+                if(txtCodGrupo.Text == String.Empty)
+                {
+                    modelo.GrupoID = 1;
+                }
+                else
+                {
+                    modelo.GrupoID = Convert.ToInt32(txtCodGrupo.Text);
+                }
+                if (txtCodSubGrupo.Text == String.Empty)
+                {
+                    modelo.SubGruooID = 1;
+                }
+                else
+                {
+                    modelo.SubGruooID = Convert.ToInt32(txtCodSubGrupo.Text);
+                }
+                if (txtCodFornecedor.Text == String.Empty)
+                {
+                    modelo.FornecedorID = 1;
+                }
+                else
+                {
+                    modelo.FornecedorID = Convert.ToInt32(txtCodFornecedor.Text);
+                }
+                if (txtCodMarca.Text == String.Empty)
+                {
+                    modelo.MarcaID = 1;
+                }
+                else
+                {
+                    modelo.MarcaID = Convert.ToInt32(txtCodMarca.Text);
+                }
                 modelo.PrecoCusto = Convert.ToDecimal(txtPrecoCusto.Text);
                 modelo.PorcentagemCusto = Convert.ToDecimal(txtPorcCusto.Text);
                 modelo.PrecoAvista = Convert.ToDecimal(txtPrecoAvista.Text);

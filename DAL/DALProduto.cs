@@ -22,8 +22,14 @@ namespace DAL
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
-            cmd.CommandText = "insert into produto(numSerie,tipoProduto,nome,apelido,idUN,idGrupo,idSubGrupo,idFornecedor,idMarca,precoCusto,porcentagemCusto,precoAvista,porcentagemAvista,precoPrazo,porcentagemDesconto,precoDesconto,estoqueAtual,estoqueMax,estoqueMin,controleEstoque,observacao,foto,status)" +
-                " values (@numSerie,@tipoProduto,@dataCadastro,@nome,@apelido,@idUN,@idGrupo,@idSubGrupo,@idFornecedor,@idMarca,@precoCusto,@porcentagemCusto,@precoAvista,@porcentagemAvista,@precoPrazo,@porcentagemDesconto,@precoDesconto,@estoqueAtual,@estoqueMax,@estoqueMin,@controleEstoque,@observacao,@foto,@status);";
+            cmd.CommandText = "insert into produto("+
+                "numSerie,tipoProduto,dataCadastro,nome,apelido,idUN,idGrupo,idSubGrupo,idFornecedor,idMarca,precoCusto,porcentagemCusto,"+
+                "precoAvista,porcentagemAvista,precoPrazo,porcentagemDesconto,precoDesconto,estoqueAtual,estoqueMax,estoqueMin,"+
+                "controleEstoque,observacao,foto,status)" +
+                " values ("+
+                "@numSerie,@tipoProduto,@dataCadastro,@nome,@apelido,@idUN,@idGrupo,@idSubGrupo,@idFornecedor,@idMarca,@precoCusto,"+
+                "@porcentagemCusto,@precoAvista,@porcentagemAvista,@precoPrazo,@porcentagemDesconto,@precoDesconto,@estoqueAtual,"+
+                "@estoqueMax,@estoqueMin,@controleEstoque,@observacao,@foto,@status);";
             cmd.Parameters.AddWithValue("@numSerie", modelo.NumSerie);
             cmd.Parameters.AddWithValue("@tipoProduto", modelo.TipoProduto);
             cmd.Parameters.AddWithValue("@dataCadastro", modelo.DataCadastro);
