@@ -165,5 +165,33 @@ namespace LojaPadraoMYSQL.Formularios
                 this.Close();
             }
         }
+
+        private void frmConsultaCidade_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(this.ActiveControl, !e.Shift, true, true, true);
+            }
+            if (e.KeyValue.Equals(27)) //ESC
+            {
+                btSair_Click(sender, e);
+            }
+        }
+
+        private void frmConsultaCidade_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                btAdd_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F2)
+            {
+                btEdt_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F3)
+            {
+                btExc_Click(sender, e);
+            }
+        }
     }
 }

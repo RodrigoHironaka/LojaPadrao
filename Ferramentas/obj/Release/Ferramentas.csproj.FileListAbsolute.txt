@@ -1,0 +1,6 @@
+C:\_Projetos\DESKTOP\LojaPadrao\Ferramentas\bin\Release\Ferramentas.dll
+C:\_Projetos\DESKTOP\LojaPadrao\Ferramentas\bin\Release\Ferramentas.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Release\Ferramentas.csprojAssemblyReference.cache
+C:\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Release\Ferramentas.csproj.CoreCompileInputs.cache
+C:\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Release\Ferramentas.dll
+C:\_Projetos\DESKTOP\LojaPadrao\Ferramentas\obj\Release\Ferramentas.pdb

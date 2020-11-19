@@ -49,7 +49,7 @@
             this.dgvDados.RowHeadersWidth = 62;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDados.Size = new System.Drawing.Size(386, 240);
-            this.dgvDados.TabIndex = 0;
+            this.dgvDados.TabIndex = 6;
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // txtPesquisa
@@ -58,7 +58,7 @@
             this.txtPesquisa.Location = new System.Drawing.Point(12, 16);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(142, 20);
-            this.txtPesquisa.TabIndex = 1;
+            this.txtPesquisa.TabIndex = 0;
             this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // btAdd
@@ -111,7 +111,7 @@
             this.cbStatus.Location = new System.Drawing.Point(160, 15);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(69, 21);
-            this.cbStatus.TabIndex = 6;
+            this.cbStatus.TabIndex = 1;
             this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
             // frmConsultaGrupo
@@ -126,11 +126,16 @@
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.dgvDados);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmConsultaGrupo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmConsultaGrupo";
             this.Load += new System.EventHandler(this.frmConsultaGrupo_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmConsultaGrupo_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmConsultaGrupo_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

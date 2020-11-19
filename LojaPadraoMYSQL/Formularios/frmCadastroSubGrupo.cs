@@ -116,5 +116,17 @@ namespace LojaPadraoMYSQL.Formularios
             cbGrupo.DisplayMember = "nNome";
             
         }
+
+        private void frmCadastroSubGrupo_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(this.ActiveControl, !e.Shift, true, true, true);
+            }
+            if (e.KeyValue.Equals(27)) //ESC
+            {
+                btSair_Click(sender, e);
+            }
+        }
     }
 }

@@ -1,0 +1,2 @@
+C:\_Projetos\DESKTOP\LojaPadrao\DAL\obj\Release\DAL.csprojAssemblyReference.cache
+C:\_Projetos\DESKTOP\LojaPadrao\DAL\obj\Release\DAL.csproj.CoreCompileInputs.cache

@@ -47,8 +47,7 @@
             this.txtAno.Location = new System.Drawing.Point(184, 105);
             this.txtAno.Name = "txtAno";
             this.txtAno.Size = new System.Drawing.Size(61, 20);
-            this.txtAno.TabIndex = 33;
-           
+            this.txtAno.TabIndex = 3;
             // 
             // label3
             // 
@@ -58,7 +57,6 @@
             this.label3.Size = new System.Drawing.Size(26, 13);
             this.label3.TabIndex = 32;
             this.label3.Text = "Ano";
-            
             // 
             // txtID
             // 
@@ -68,7 +66,6 @@
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(78, 20);
             this.txtID.TabIndex = 31;
-            
             // 
             // label2
             // 
@@ -78,14 +75,13 @@
             this.label2.Size = new System.Drawing.Size(40, 13);
             this.label2.TabIndex = 30;
             this.label2.Text = "Código";
-            
             // 
             // btSair
             // 
             this.btSair.Location = new System.Drawing.Point(209, 26);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(36, 23);
-            this.btSair.TabIndex = 29;
+            this.btSair.TabIndex = 5;
             this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
@@ -95,7 +91,7 @@
             this.btSalvar.Location = new System.Drawing.Point(167, 26);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(36, 23);
-            this.btSalvar.TabIndex = 28;
+            this.btSalvar.TabIndex = 4;
             this.btSalvar.Text = "sal";
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
@@ -108,10 +104,9 @@
             this.chkAtivo.Location = new System.Drawing.Point(99, 28);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(50, 17);
-            this.chkAtivo.TabIndex = 27;
+            this.chkAtivo.TabIndex = 0;
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
-            
             // 
             // txtNome
             // 
@@ -119,8 +114,7 @@
             this.txtNome.Location = new System.Drawing.Point(15, 66);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(230, 20);
-            this.txtNome.TabIndex = 26;
-            
+            this.txtNome.TabIndex = 1;
             // 
             // label1
             // 
@@ -130,7 +124,6 @@
             this.label1.Size = new System.Drawing.Size(37, 13);
             this.label1.TabIndex = 25;
             this.label1.Text = "Marca";
-            
             // 
             // txtModelo
             // 
@@ -138,7 +131,7 @@
             this.txtModelo.Location = new System.Drawing.Point(15, 105);
             this.txtModelo.Name = "txtModelo";
             this.txtModelo.Size = new System.Drawing.Size(163, 20);
-            this.txtModelo.TabIndex = 35;
+            this.txtModelo.TabIndex = 2;
             // 
             // label4
             // 
@@ -165,9 +158,14 @@
             this.Controls.Add(this.chkAtivo);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCadastroMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadastroMarca";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroMarca_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

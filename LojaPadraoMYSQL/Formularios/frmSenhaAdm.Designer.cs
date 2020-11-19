@@ -58,7 +58,7 @@
             this.btSair.Location = new System.Drawing.Point(179, 12);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(36, 23);
-            this.btSair.TabIndex = 30;
+            this.btSair.TabIndex = 3;
             this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
@@ -68,7 +68,7 @@
             this.btConfirmar.Location = new System.Drawing.Point(137, 12);
             this.btConfirmar.Name = "btConfirmar";
             this.btConfirmar.Size = new System.Drawing.Size(36, 23);
-            this.btConfirmar.TabIndex = 29;
+            this.btConfirmar.TabIndex = 2;
             this.btConfirmar.Text = "ok";
             this.btConfirmar.UseVisualStyleBackColor = true;
             this.btConfirmar.Click += new System.EventHandler(this.btConfirmar_Click);
@@ -78,7 +78,7 @@
             this.txtUsuarioAdmin.Location = new System.Drawing.Point(12, 41);
             this.txtUsuarioAdmin.Name = "txtUsuarioAdmin";
             this.txtUsuarioAdmin.Size = new System.Drawing.Size(200, 20);
-            this.txtUsuarioAdmin.TabIndex = 32;
+            this.txtUsuarioAdmin.TabIndex = 0;
             // 
             // label2
             // 
@@ -102,9 +102,11 @@
             this.Controls.Add(this.txtSenhaAdmin);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.KeyPreview = true;
             this.Name = "frmSenhaAdm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmSenhaAdm";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmSenhaAdm_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

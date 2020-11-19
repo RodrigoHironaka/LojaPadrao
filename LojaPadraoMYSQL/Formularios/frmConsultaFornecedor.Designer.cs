@@ -48,7 +48,7 @@
             this.cbStatus.Location = new System.Drawing.Point(535, 12);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(69, 21);
-            this.cbStatus.TabIndex = 28;
+            this.cbStatus.TabIndex = 1;
             this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
             // btSair
@@ -56,7 +56,7 @@
             this.btSair.Location = new System.Drawing.Point(736, 11);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(36, 23);
-            this.btSair.TabIndex = 27;
+            this.btSair.TabIndex = 5;
             this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
@@ -66,7 +66,7 @@
             this.btExc.Location = new System.Drawing.Point(694, 11);
             this.btExc.Name = "btExc";
             this.btExc.Size = new System.Drawing.Size(36, 23);
-            this.btExc.TabIndex = 26;
+            this.btExc.TabIndex = 4;
             this.btExc.Text = "exc";
             this.btExc.UseVisualStyleBackColor = true;
             this.btExc.Click += new System.EventHandler(this.btExc_Click);
@@ -76,7 +76,7 @@
             this.btEdt.Location = new System.Drawing.Point(652, 11);
             this.btEdt.Name = "btEdt";
             this.btEdt.Size = new System.Drawing.Size(36, 23);
-            this.btEdt.TabIndex = 25;
+            this.btEdt.TabIndex = 3;
             this.btEdt.Text = "edt";
             this.btEdt.UseVisualStyleBackColor = true;
             this.btEdt.Click += new System.EventHandler(this.btEdt_Click);
@@ -86,7 +86,7 @@
             this.btAdd.Location = new System.Drawing.Point(610, 11);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(36, 23);
-            this.btAdd.TabIndex = 24;
+            this.btAdd.TabIndex = 2;
             this.btAdd.Text = "add";
             this.btAdd.UseVisualStyleBackColor = true;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
@@ -97,7 +97,7 @@
             this.txtPesquisa.Location = new System.Drawing.Point(12, 13);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(519, 20);
-            this.txtPesquisa.TabIndex = 23;
+            this.txtPesquisa.TabIndex = 0;
             this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // dgvDados
@@ -111,7 +111,7 @@
             this.dgvDados.RowHeadersWidth = 62;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDados.Size = new System.Drawing.Size(760, 411);
-            this.dgvDados.TabIndex = 22;
+            this.dgvDados.TabIndex = 6;
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // frmConsultaFornecedor
@@ -126,11 +126,16 @@
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.dgvDados);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmConsultaFornecedor";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmConsultaFornecedor";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmConsultaFornecedor_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmConsultaFornecedor_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,0 +1,2 @@
+C:\_Projetos\DESKTOP\LojaPadrao\BLL\obj\Release\BLL.csprojAssemblyReference.cache
+C:\_Projetos\DESKTOP\LojaPadrao\BLL\obj\Release\BLL.csproj.CoreCompileInputs.cache

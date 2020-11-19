@@ -62,7 +62,7 @@
             this.btSair.Location = new System.Drawing.Point(209, 26);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(36, 23);
-            this.btSair.TabIndex = 20;
+            this.btSair.TabIndex = 4;
             this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
@@ -72,7 +72,7 @@
             this.btSalvar.Location = new System.Drawing.Point(167, 26);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(36, 23);
-            this.btSalvar.TabIndex = 19;
+            this.btSalvar.TabIndex = 3;
             this.btSalvar.Text = "sal";
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
@@ -85,7 +85,7 @@
             this.chkAtivo.Location = new System.Drawing.Point(99, 28);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(50, 17);
-            this.chkAtivo.TabIndex = 18;
+            this.chkAtivo.TabIndex = 0;
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
             // 
@@ -95,7 +95,7 @@
             this.txtNome.Location = new System.Drawing.Point(15, 66);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(163, 20);
-            this.txtNome.TabIndex = 17;
+            this.txtNome.TabIndex = 1;
             // 
             // label1
             // 
@@ -112,7 +112,7 @@
             this.txtSigla.Location = new System.Drawing.Point(184, 66);
             this.txtSigla.Name = "txtSigla";
             this.txtSigla.Size = new System.Drawing.Size(61, 20);
-            this.txtSigla.TabIndex = 24;
+            this.txtSigla.TabIndex = 2;
             // 
             // label3
             // 
@@ -137,9 +137,14 @@
             this.Controls.Add(this.chkAtivo);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCadastroUnidadeMedida";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadastroUnidadeMedida";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroUnidadeMedida_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

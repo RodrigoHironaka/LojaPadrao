@@ -62,7 +62,7 @@
             this.btSair.Location = new System.Drawing.Point(237, 24);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(36, 23);
-            this.btSair.TabIndex = 12;
+            this.btSair.TabIndex = 4;
             this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
@@ -72,7 +72,7 @@
             this.btSalvar.Location = new System.Drawing.Point(195, 24);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(36, 23);
-            this.btSalvar.TabIndex = 11;
+            this.btSalvar.TabIndex = 3;
             this.btSalvar.Text = "sal";
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
@@ -85,7 +85,7 @@
             this.chkAtivo.Location = new System.Drawing.Point(99, 28);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(50, 17);
-            this.chkAtivo.TabIndex = 10;
+            this.chkAtivo.TabIndex = 0;
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
             // 
@@ -95,7 +95,7 @@
             this.txtNome.Location = new System.Drawing.Point(15, 66);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(187, 20);
-            this.txtNome.TabIndex = 9;
+            this.txtNome.TabIndex = 1;
             // 
             // label1
             // 
@@ -148,7 +148,7 @@
             this.cbQtdParcelas.Location = new System.Drawing.Point(208, 65);
             this.cbQtdParcelas.Name = "cbQtdParcelas";
             this.cbQtdParcelas.Size = new System.Drawing.Size(65, 21);
-            this.cbQtdParcelas.TabIndex = 16;
+            this.cbQtdParcelas.TabIndex = 2;
             // 
             // frmCadastroFormaPagamento
             // 
@@ -164,9 +164,14 @@
             this.Controls.Add(this.chkAtivo);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmCadastroFormaPagamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadastroFormaPagamento";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroFormaPagamento_KeyDown);
             this.ResumeLayout(false);
             this.PerformLayout();
 

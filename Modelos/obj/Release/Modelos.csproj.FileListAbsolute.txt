@@ -1,0 +1,6 @@
+C:\_Projetos\DESKTOP\LojaPadrao\Modelos\bin\Release\Modelos.dll
+C:\_Projetos\DESKTOP\LojaPadrao\Modelos\bin\Release\Modelos.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Release\Modelos.csprojAssemblyReference.cache
+C:\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Release\Modelos.csproj.CoreCompileInputs.cache
+C:\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Release\Modelos.dll
+C:\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Release\Modelos.pdb

@@ -49,7 +49,7 @@
             this.cbStatus.Location = new System.Drawing.Point(535, 11);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(69, 21);
-            this.cbStatus.TabIndex = 20;
+            this.cbStatus.TabIndex = 2;
             this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
             // btSair
@@ -57,7 +57,7 @@
             this.btSair.Location = new System.Drawing.Point(736, 10);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(36, 23);
-            this.btSair.TabIndex = 19;
+            this.btSair.TabIndex = 6;
             this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
@@ -67,7 +67,7 @@
             this.btExc.Location = new System.Drawing.Point(694, 10);
             this.btExc.Name = "btExc";
             this.btExc.Size = new System.Drawing.Size(36, 23);
-            this.btExc.TabIndex = 18;
+            this.btExc.TabIndex = 5;
             this.btExc.Text = "exc";
             this.btExc.UseVisualStyleBackColor = true;
             this.btExc.Click += new System.EventHandler(this.btExc_Click);
@@ -77,7 +77,7 @@
             this.btEdt.Location = new System.Drawing.Point(652, 10);
             this.btEdt.Name = "btEdt";
             this.btEdt.Size = new System.Drawing.Size(36, 23);
-            this.btEdt.TabIndex = 17;
+            this.btEdt.TabIndex = 4;
             this.btEdt.Text = "edt";
             this.btEdt.UseVisualStyleBackColor = true;
             this.btEdt.Click += new System.EventHandler(this.btEdt_Click);
@@ -87,7 +87,7 @@
             this.btAdd.Location = new System.Drawing.Point(610, 10);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(36, 23);
-            this.btAdd.TabIndex = 16;
+            this.btAdd.TabIndex = 3;
             this.btAdd.Text = "add";
             this.btAdd.UseVisualStyleBackColor = true;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
@@ -98,7 +98,7 @@
             this.txtPesquisa.Location = new System.Drawing.Point(12, 12);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(442, 20);
-            this.txtPesquisa.TabIndex = 15;
+            this.txtPesquisa.TabIndex = 0;
             this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // dgvDados
@@ -112,7 +112,7 @@
             this.dgvDados.RowHeadersWidth = 62;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDados.Size = new System.Drawing.Size(760, 411);
-            this.dgvDados.TabIndex = 14;
+            this.dgvDados.TabIndex = 7;
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // cbFiltroTipo
@@ -125,7 +125,7 @@
             this.cbFiltroTipo.Location = new System.Drawing.Point(460, 12);
             this.cbFiltroTipo.Name = "cbFiltroTipo";
             this.cbFiltroTipo.Size = new System.Drawing.Size(69, 21);
-            this.cbFiltroTipo.TabIndex = 21;
+            this.cbFiltroTipo.TabIndex = 1;
             this.cbFiltroTipo.SelectedIndexChanged += new System.EventHandler(this.cbFiltroTipo_SelectedIndexChanged);
             // 
             // frmConsultaCliente
@@ -141,11 +141,16 @@
             this.Controls.Add(this.btAdd);
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.dgvDados);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmConsultaCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmConsultaCliente";
             this.Load += new System.EventHandler(this.frmConsultaCliente_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmConsultaCliente_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmConsultaCliente_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

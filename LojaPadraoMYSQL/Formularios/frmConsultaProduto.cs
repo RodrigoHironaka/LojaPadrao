@@ -15,13 +15,17 @@ namespace LojaPadraoMYSQL.Formularios
 {
     public partial class frmConsultaProduto : Form
     {
+        //---------------------------VARIAVEL--------------------------------------------------------------
         public int id = 0;
+
+        //---------------------------CONSTRUTOR INICIAL----------------------------------------------------
         public frmConsultaProduto()
         {
             InitializeComponent();
             cbStatus.SelectedIndex = 1;
         }
 
+        //---------------------------CONSTRUTOR CARREGA DADOS QNDO FOR ALTERAR-----------------------------
         public frmConsultaProduto(bool selecao)
         {
             InitializeComponent();
@@ -32,6 +36,7 @@ namespace LojaPadraoMYSQL.Formularios
             dgvDados.Select();
         }
 
+        //---------------------------BOTAO ADICIONAR-------------------------------------------------------
         private void btAdd_Click(object sender, EventArgs e)
         {
             frmCadastroProduto f = new frmCadastroProduto();
@@ -42,6 +47,7 @@ namespace LojaPadraoMYSQL.Formularios
             cbStatus.SelectedIndex = 1;
         }
 
+        //---------------------------BOTAO ALTERAR----------------------------------------------------------
         private void btEdt_Click(object sender, EventArgs e)
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
@@ -64,6 +70,7 @@ namespace LojaPadraoMYSQL.Formularios
             }
         }
 
+        //---------------------------BOTAO EXCLUIR----------------------------------------------------------
         private void btExc_Click(object sender, EventArgs e)
         {
             try
@@ -93,11 +100,13 @@ namespace LojaPadraoMYSQL.Formularios
             }
         }
 
+        //---------------------------BOTAO SAIR-------------------------------------------------------------
         private void btSair_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //---------------------------CAMPO PESQUISA---------------------------------------------------------
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
             if (cbStatus.SelectedIndex == 1)
@@ -120,6 +129,7 @@ namespace LojaPadraoMYSQL.Formularios
             }
         }
 
+        //---------------------------CARREGA GRID AO CADASTRAR----------------------------------------------
         private void frmConsultaProduto_Load(object sender, EventArgs e)
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
@@ -127,6 +137,7 @@ namespace LojaPadraoMYSQL.Formularios
             dgvDados.DataSource = bll.CarregaGridAtivo();
         }
 
+        //---------------------------FILTAR STATUS E CARREGA GRID-------------------------------------------
         private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (cbStatus.SelectedIndex == 1)
@@ -152,6 +163,8 @@ namespace LojaPadraoMYSQL.Formularios
             }
         }
 
+        //---------------------------DOUBLE CLICK FUNCIONA QNDO CHAMAMOS DE OUTRO FORMULARIO---------------- 
+        //---------------------------PARA PESQUISAR E SELECIONAR--------------------------------------------
         private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvDados.SelectedRows.Count == 0)
@@ -163,6 +176,39 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 this.id = Convert.ToInt32(dgvDados.Rows[e.RowIndex].Cells[0].Value);
                 this.Close();
+            }
+        }
+
+        //---------------------------USA ENTER COMO TAB-----------------------------------------------------
+        //---------------------------USA ESC PARA SAIR------------------------------------------------------
+        private void frmConsultaProduto_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(this.ActiveControl, !e.Shift, true, true, true);
+            }
+            if (e.KeyValue.Equals(27)) //ESC
+            {
+                btSair_Click(sender, e);
+            }
+        }
+
+        //---------------------------USA F1 PARA ADICIONAR---------------------------------------------------
+        //---------------------------USA F2 PARA EDITAR------------------------------------------------------
+        //---------------------------USA F3 PARA EXCLUIR-----------------------------------------------------
+        private void frmConsultaProduto_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F1)
+            {
+                btAdd_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F2)
+            {
+                btEdt_Click(sender, e);
+            }
+            if (e.KeyCode == Keys.F3)
+            {
+                btExc_Click(sender, e);
             }
         }
     }
