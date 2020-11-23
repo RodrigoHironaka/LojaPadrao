@@ -158,3 +158,16 @@ constraint fk_produto_Fornecedor FOREIGN KEY (idFornecedor)
 constraint fk_produto_Marca FOREIGN KEY (idMarca)
   REFERENCES marca (id)
 );
+
+create table produtoImposto(
+id int not null AUTO_INCREMENT,
+idProduto int not null,
+icms int,
+cfop int,
+ncm int,
+cest int,
+eanGtin int,
+PRIMARY KEY(id),
+CONSTRAINT fk_produto_imposto FOREIGN KEY (idProduto)
+  REFERENCES produto (id)
+);

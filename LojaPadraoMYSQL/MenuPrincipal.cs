@@ -90,5 +90,11 @@ namespace LojaPadraoMYSQL
             frmConsultaProduto f = new frmConsultaProduto();
             f.ShowDialog();
         }
+
+        private void compraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaCompra f = new frmConsultaCompra();
+            f.ShowDialog();
+        }
     }
 }

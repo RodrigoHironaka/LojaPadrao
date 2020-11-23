@@ -58,6 +58,12 @@
     <Compile Include="Formularios\frmCadastroCliente.Designer.cs">
       <DependentUpon>frmCadastroCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\frmCadastroCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmCadastroCompra.Designer.cs">
+      <DependentUpon>frmCadastroCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\frmCadastroDepartamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -129,6 +135,12 @@
     </Compile>
     <Compile Include="Formularios\frmConsultaCliente.Designer.cs">
       <DependentUpon>frmConsultaCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\frmConsultaCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\frmConsultaCompra.Designer.cs">
+      <DependentUpon>frmConsultaCompra.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\frmConsultaDepartamento.cs">
       <SubType>Form</SubType>
@@ -210,6 +222,9 @@
     <EmbeddedResource Include="Formularios\frmCadastroCliente.resx">
       <DependentUpon>frmCadastroCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmCadastroCompra.resx">
+      <DependentUpon>frmCadastroCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmCadastroDepartamento.resx">
       <DependentUpon>frmCadastroDepartamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -245,6 +260,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsultaCliente.resx">
       <DependentUpon>frmConsultaCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\frmConsultaCompra.resx">
+      <DependentUpon>frmConsultaCompra.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\frmConsultaDepartamento.resx">
       <DependentUpon>frmConsultaDepartamento.cs</DependentUpon>
