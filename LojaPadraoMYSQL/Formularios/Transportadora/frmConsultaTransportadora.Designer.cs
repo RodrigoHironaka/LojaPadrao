@@ -1,6 +1,6 @@
-﻿namespace LojaPadraoMYSQL.Formularios
+﻿namespace LojaPadraoMYSQL.Formularios.Transportadora
 {
-    partial class frmConsultaCompra
+    partial class frmConsultaTransportadora
     {
         /// <summary>
         /// Required designer variable.
@@ -45,44 +45,44 @@
             "Todos",
             "Ativos",
             "Inativos"});
-            this.cbStatus.Location = new System.Drawing.Point(534, 11);
+            this.cbStatus.Location = new System.Drawing.Point(584, 12);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(69, 21);
-            this.cbStatus.TabIndex = 8;
+            this.cbStatus.TabIndex = 15;
             // 
             // btSair
             // 
-            this.btSair.Location = new System.Drawing.Point(736, 10);
+            this.btSair.Location = new System.Drawing.Point(786, 11);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(36, 23);
-            this.btSair.TabIndex = 12;
+            this.btSair.TabIndex = 19;
             this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
             // 
             // btExc
             // 
-            this.btExc.Location = new System.Drawing.Point(694, 10);
+            this.btExc.Location = new System.Drawing.Point(744, 11);
             this.btExc.Name = "btExc";
             this.btExc.Size = new System.Drawing.Size(36, 23);
-            this.btExc.TabIndex = 11;
+            this.btExc.TabIndex = 18;
             this.btExc.Text = "exc";
             this.btExc.UseVisualStyleBackColor = true;
             // 
             // btEdt
             // 
-            this.btEdt.Location = new System.Drawing.Point(652, 10);
+            this.btEdt.Location = new System.Drawing.Point(702, 11);
             this.btEdt.Name = "btEdt";
             this.btEdt.Size = new System.Drawing.Size(36, 23);
-            this.btEdt.TabIndex = 10;
+            this.btEdt.TabIndex = 17;
             this.btEdt.Text = "edt";
             this.btEdt.UseVisualStyleBackColor = true;
             // 
             // btAdd
             // 
-            this.btAdd.Location = new System.Drawing.Point(610, 10);
+            this.btAdd.Location = new System.Drawing.Point(660, 11);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(36, 23);
-            this.btAdd.TabIndex = 9;
+            this.btAdd.TabIndex = 16;
             this.btAdd.Text = "add";
             this.btAdd.UseVisualStyleBackColor = true;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
@@ -90,29 +90,29 @@
             // txtPesquisa
             // 
             this.txtPesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPesquisa.Location = new System.Drawing.Point(12, 12);
+            this.txtPesquisa.Location = new System.Drawing.Point(12, 13);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(516, 20);
-            this.txtPesquisa.TabIndex = 7;
+            this.txtPesquisa.Size = new System.Drawing.Size(566, 20);
+            this.txtPesquisa.TabIndex = 14;
             // 
             // dgvDados
             // 
             this.dgvDados.AllowUserToAddRows = false;
             this.dgvDados.AllowUserToDeleteRows = false;
             this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDados.Location = new System.Drawing.Point(12, 38);
+            this.dgvDados.Location = new System.Drawing.Point(12, 39);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.ReadOnly = true;
             this.dgvDados.RowHeadersWidth = 62;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDados.Size = new System.Drawing.Size(760, 412);
-            this.dgvDados.TabIndex = 13;
+            this.dgvDados.Size = new System.Drawing.Size(810, 412);
+            this.dgvDados.TabIndex = 20;
             // 
-            // frmConsultaCompra
+            // frmConsultaTransportadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 461);
+            this.ClientSize = new System.Drawing.Size(834, 462);
             this.Controls.Add(this.cbStatus);
             this.Controls.Add(this.btSair);
             this.Controls.Add(this.btExc);
@@ -123,9 +123,9 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "frmConsultaCompra";
+            this.Name = "frmConsultaTransportadora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmConsultaCompra";
+            this.Text = "frmConsultaTransportadora";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

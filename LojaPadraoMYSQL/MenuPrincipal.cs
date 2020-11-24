@@ -1,4 +1,5 @@
 ﻿using LojaPadraoMYSQL.Formularios;
+using LojaPadraoMYSQL.Formularios.Transportadora;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -94,6 +95,12 @@ namespace LojaPadraoMYSQL
         private void compraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmConsultaCompra f = new frmConsultaCompra();
+            f.ShowDialog();
+        }
+
+        private void transportadoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmConsultaTransportadora f = new frmConsultaTransportadora();
             f.ShowDialog();
         }
     }
