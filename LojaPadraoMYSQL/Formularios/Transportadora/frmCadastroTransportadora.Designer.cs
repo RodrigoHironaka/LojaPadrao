@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroTransportadora));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpageDadosPrincipais = new System.Windows.Forms.TabPage();
-            this.txtNomeVendedor = new System.Windows.Forms.TextBox();
+            this.txtNomeResponsavel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pbFoto = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -82,18 +82,18 @@
             this.lbIe = new System.Windows.Forms.Label();
             this.lbCelular = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.group = new System.Windows.Forms.GroupBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.group = new System.Windows.Forms.GroupBox();
             this.tabControl1.SuspendLayout();
             this.tpageDadosPrincipais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCnpjInvalido)).BeginInit();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.group.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -108,7 +108,7 @@
             // 
             // tpageDadosPrincipais
             // 
-            this.tpageDadosPrincipais.Controls.Add(this.txtNomeVendedor);
+            this.tpageDadosPrincipais.Controls.Add(this.txtNomeResponsavel);
             this.tpageDadosPrincipais.Controls.Add(this.label3);
             this.tpageDadosPrincipais.Controls.Add(this.pbFoto);
             this.tpageDadosPrincipais.Controls.Add(this.label2);
@@ -166,16 +166,16 @@
             this.tpageDadosPrincipais.Text = "Dados Principais";
             this.tpageDadosPrincipais.UseVisualStyleBackColor = true;
             // 
-            // txtNomeVendedor
+            // txtNomeResponsavel
             // 
-            this.txtNomeVendedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNomeVendedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeVendedor.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtNomeVendedor.Location = new System.Drawing.Point(265, 58);
-            this.txtNomeVendedor.MaxLength = 20;
-            this.txtNomeVendedor.Name = "txtNomeVendedor";
-            this.txtNomeVendedor.Size = new System.Drawing.Size(121, 20);
-            this.txtNomeVendedor.TabIndex = 313;
+            this.txtNomeResponsavel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNomeResponsavel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeResponsavel.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtNomeResponsavel.Location = new System.Drawing.Point(265, 58);
+            this.txtNomeResponsavel.MaxLength = 20;
+            this.txtNomeResponsavel.Name = "txtNomeResponsavel";
+            this.txtNomeResponsavel.Size = new System.Drawing.Size(121, 20);
+            this.txtNomeResponsavel.TabIndex = 313;
             // 
             // label3
             // 
@@ -217,6 +217,7 @@
             this.btAddFoto.TabIndex = 310;
             this.btAddFoto.Text = "+";
             this.btAddFoto.UseVisualStyleBackColor = true;
+            this.btAddFoto.Click += new System.EventHandler(this.btAddFoto_Click);
             // 
             // btRemFoto
             // 
@@ -226,6 +227,7 @@
             this.btRemFoto.TabIndex = 309;
             this.btRemFoto.Text = "-";
             this.btRemFoto.UseVisualStyleBackColor = true;
+            this.btRemFoto.Click += new System.EventHandler(this.btRemFoto_Click);
             // 
             // btProcurarCidade
             // 
@@ -235,6 +237,7 @@
             this.btProcurarCidade.TabIndex = 16;
             this.btProcurarCidade.Text = "...";
             this.btProcurarCidade.UseVisualStyleBackColor = true;
+            this.btProcurarCidade.Click += new System.EventHandler(this.btProcurarCidade_Click);
             // 
             // label1
             // 
@@ -269,6 +272,7 @@
             this.txtNomeCidade.Name = "txtNomeCidade";
             this.txtNomeCidade.Size = new System.Drawing.Size(249, 20);
             this.txtNomeCidade.TabIndex = 299;
+            this.txtNomeCidade.TextChanged += new System.EventHandler(this.txtNomeCidade_TextChanged);
             // 
             // txtIdCidade
             // 
@@ -280,6 +284,8 @@
             this.txtIdCidade.Name = "txtIdCidade";
             this.txtIdCidade.Size = new System.Drawing.Size(49, 20);
             this.txtIdCidade.TabIndex = 15;
+            this.txtIdCidade.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIdCidade_KeyPress);
+            this.txtIdCidade.Leave += new System.EventHandler(this.txtIdCidade_Leave);
             // 
             // txtObservacao
             // 
@@ -410,6 +416,7 @@
             this.btSair.TabIndex = 19;
             this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // btSalvar
             // 
@@ -419,6 +426,7 @@
             this.btSalvar.TabIndex = 18;
             this.btSalvar.Text = "sal";
             this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // pctCepInvalido
             // 
@@ -578,6 +586,7 @@
             this.mskCnpj.Name = "mskCnpj";
             this.mskCnpj.Size = new System.Drawing.Size(121, 20);
             this.mskCnpj.TabIndex = 2;
+            this.mskCnpj.Leave += new System.EventHandler(this.mskCnpj_Leave);
             // 
             // lbBairro
             // 
@@ -608,6 +617,7 @@
             this.mskCep.Size = new System.Drawing.Size(59, 20);
             this.mskCep.TabIndex = 10;
             this.mskCep.Text = "17800000";
+            this.mskCep.Leave += new System.EventHandler(this.mskCep_Leave);
             // 
             // lbCidade
             // 
@@ -709,6 +719,17 @@
             this.tabPage2.Text = "Frota";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // group
+            // 
+            this.group.Controls.Add(this.textBox1);
+            this.group.Controls.Add(this.label4);
+            this.group.Location = new System.Drawing.Point(9, 6);
+            this.group.Name = "group";
+            this.group.Size = new System.Drawing.Size(521, 107);
+            this.group.TabIndex = 3;
+            this.group.TabStop = false;
+            this.group.Text = "Dados dos Veículos";
+            // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(6, 37);
@@ -733,17 +754,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(521, 243);
             this.dataGridView1.TabIndex = 2;
             // 
-            // group
-            // 
-            this.group.Controls.Add(this.textBox1);
-            this.group.Controls.Add(this.label4);
-            this.group.Location = new System.Drawing.Point(9, 6);
-            this.group.Name = "group";
-            this.group.Size = new System.Drawing.Size(521, 107);
-            this.group.TabIndex = 3;
-            this.group.TabStop = false;
-            this.group.Text = "Dados dos Veículos";
-            // 
             // frmCadastroTransportadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -755,6 +765,7 @@
             this.MinimizeBox = false;
             this.Name = "frmCadastroTransportadora";
             this.Text = "frmCadastroTransportadora";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroTransportadora_KeyDown);
             this.tabControl1.ResumeLayout(false);
             this.tpageDadosPrincipais.ResumeLayout(false);
             this.tpageDadosPrincipais.PerformLayout();
@@ -762,9 +773,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCnpjInvalido)).EndInit();
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.group.ResumeLayout(false);
             this.group.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -773,7 +784,7 @@
 
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tpageDadosPrincipais;
-        public System.Windows.Forms.TextBox txtNomeVendedor;
+        public System.Windows.Forms.TextBox txtNomeResponsavel;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.PictureBox pbFoto;
         private System.Windows.Forms.Label label2;

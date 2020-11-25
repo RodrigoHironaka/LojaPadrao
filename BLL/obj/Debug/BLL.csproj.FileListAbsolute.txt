@@ -69,3 +69,15 @@ C:\_Projetos\LojaPadrao\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\_Projetos\LojaPadrao\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\_Projetos\LojaPadrao\BLL\obj\Debug\BLL.dll
 C:\_Projetos\LojaPadrao\BLL\obj\Debug\BLL.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\BLL\bin\Debug\BLL.dll
+C:\_Projetos\DESKTOP\LojaPadrao\BLL\bin\Debug\BLL.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\BLL\bin\Debug\DAL.dll
+C:\_Projetos\DESKTOP\LojaPadrao\BLL\bin\Debug\Modelos.dll
+C:\_Projetos\DESKTOP\LojaPadrao\BLL\bin\Debug\MySql.Data.dll
+C:\_Projetos\DESKTOP\LojaPadrao\BLL\bin\Debug\DAL.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\BLL\bin\Debug\Modelos.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\BLL\obj\Debug\BLL.csprojAssemblyReference.cache
+C:\_Projetos\DESKTOP\LojaPadrao\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\_Projetos\DESKTOP\LojaPadrao\BLL\obj\Debug\BLL.csproj.CopyComplete
+C:\_Projetos\DESKTOP\LojaPadrao\BLL\obj\Debug\BLL.dll
+C:\_Projetos\DESKTOP\LojaPadrao\BLL\obj\Debug\BLL.pdb

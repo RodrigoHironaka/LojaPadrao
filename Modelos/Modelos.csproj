@@ -51,6 +51,7 @@
     <Compile Include="ModeloMarca.cs" />
     <Compile Include="ModeloProduto.cs" />
     <Compile Include="ModeloSubGrupo.cs" />
+    <Compile Include="ModeloTransportadora.cs" />
     <Compile Include="ModeloUnidadeMedida.cs" />
     <Compile Include="ModeloUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -49,6 +49,7 @@
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(69, 21);
             this.cbStatus.TabIndex = 15;
+            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
             // btSair
             // 
@@ -58,6 +59,7 @@
             this.btSair.TabIndex = 19;
             this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // btExc
             // 
@@ -67,6 +69,7 @@
             this.btExc.TabIndex = 18;
             this.btExc.Text = "exc";
             this.btExc.UseVisualStyleBackColor = true;
+            this.btExc.Click += new System.EventHandler(this.btExc_Click);
             // 
             // btEdt
             // 
@@ -76,6 +79,7 @@
             this.btEdt.TabIndex = 17;
             this.btEdt.Text = "edt";
             this.btEdt.UseVisualStyleBackColor = true;
+            this.btEdt.Click += new System.EventHandler(this.btEdt_Click);
             // 
             // btAdd
             // 
@@ -94,6 +98,7 @@
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(566, 20);
             this.txtPesquisa.TabIndex = 14;
+            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             // 
             // dgvDados
             // 
@@ -107,6 +112,7 @@
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDados.Size = new System.Drawing.Size(810, 412);
             this.dgvDados.TabIndex = 20;
+            this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // frmConsultaTransportadora
             // 
@@ -126,6 +132,8 @@
             this.Name = "frmConsultaTransportadora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmConsultaTransportadora";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmConsultaTransportadora_KeyDown);
+            this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmConsultaTransportadora_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

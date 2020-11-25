@@ -62,3 +62,12 @@ C:\_Projetos\LojaPadrao\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\_Projetos\LojaPadrao\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\_Projetos\LojaPadrao\DAL\obj\Debug\DAL.dll
 C:\_Projetos\LojaPadrao\DAL\obj\Debug\DAL.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\DAL\bin\Debug\DAL.dll
+C:\_Projetos\DESKTOP\LojaPadrao\DAL\bin\Debug\DAL.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\DAL\bin\Debug\Modelos.dll
+C:\_Projetos\DESKTOP\LojaPadrao\DAL\bin\Debug\Modelos.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\DAL\obj\Debug\DAL.csprojAssemblyReference.cache
+C:\_Projetos\DESKTOP\LojaPadrao\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\_Projetos\DESKTOP\LojaPadrao\DAL\obj\Debug\DAL.csproj.CopyComplete
+C:\_Projetos\DESKTOP\LojaPadrao\DAL\obj\Debug\DAL.dll
+C:\_Projetos\DESKTOP\LojaPadrao\DAL\obj\Debug\DAL.pdb
