@@ -58,6 +58,18 @@
     <Compile Include="Formularios\Cliente\frmCadastroCliente.Designer.cs">
       <DependentUpon>frmCadastroCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\Colaborador\frmCadastroColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Colaborador\frmCadastroColaborador.Designer.cs">
+      <DependentUpon>frmCadastroColaborador.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\Colaborador\frmConsultaColaborador.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Colaborador\frmConsultaColaborador.Designer.cs">
+      <DependentUpon>frmConsultaColaborador.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Compra\frmCadastroCompra.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -233,6 +245,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Cliente\frmCadastroCliente.resx">
       <DependentUpon>frmCadastroCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Colaborador\frmCadastroColaborador.resx">
+      <DependentUpon>frmCadastroColaborador.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\Colaborador\frmConsultaColaborador.resx">
+      <DependentUpon>frmConsultaColaborador.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Compra\frmCadastroCompra.resx">
       <DependentUpon>frmCadastroCompra.cs</DependentUpon>

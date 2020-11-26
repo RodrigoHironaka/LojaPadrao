@@ -43,6 +43,7 @@
   <ItemGroup>
     <Compile Include="ModeloCidade.cs" />
     <Compile Include="ModeloCliente.cs" />
+    <Compile Include="ModeloColaborador.cs" />
     <Compile Include="ModeloDepartamento.cs" />
     <Compile Include="ModeloFormaPagamento.cs" />
     <Compile Include="ModeloFornecedor.cs" />
