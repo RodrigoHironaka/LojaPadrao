@@ -197,3 +197,30 @@ PRIMARY KEY(id),
 constraint fk_transportadora_cidade FOREIGN KEY (idCidade)
   REFERENCES cidade (id)
 );
+
+CREATE TABLE colaborador(
+id int NOT NULL AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL,
+rg VARCHAR(20),
+cpf VARCHAR(20),
+endereco VARCHAR(100),
+numero VARCHAR(10),
+complemento VARCHAR(20),
+bairro VARCHAR(20),
+cep VARCHAR(10),
+idCidade int,
+idFuncao int,
+email VARCHAR(50),
+telefone VARCHAR(13),
+celular VARCHAR(14),
+celular2 VARCHAR(14),
+observacao VARCHAR(300),
+dataCadastro varchar(50),
+`status` char(1),
+foto LONGBLOB,
+PRIMARY KEY(id),
+constraint fk_colaborador_cidade FOREIGN KEY (idCidade)
+  REFERENCES cidade (id),
+constraint fk_colaborador_funcao FOREIGN KEY (idFuncao)
+	REFERENCES funcao (id)
+);

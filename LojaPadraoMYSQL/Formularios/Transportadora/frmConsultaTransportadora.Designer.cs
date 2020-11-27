@@ -127,6 +127,7 @@
             this.Controls.Add(this.txtPesquisa);
             this.Controls.Add(this.dgvDados);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmConsultaTransportadora";

@@ -56,6 +56,17 @@ namespace LojaPadraoMYSQL.Formularios.Colaborador
             txtObservacao.Clear();
         }
         //---------------------------------------------------------------------
+
+        private void carregaFuncao()
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLColaborador bll = new BLLColaborador(cx);
+            cbFuncao.DataSource = bll.CarregaComboFuncao();
+            cbFuncao.ValueMember = "id";
+            cbFuncao.DisplayMember = "nome";
+        }
+
+        //----------------------------------------------------------------------
         public string foto = "";
 
         public string nome = "";
@@ -64,11 +75,14 @@ namespace LojaPadraoMYSQL.Formularios.Colaborador
         {
             InitializeComponent();
             txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
+            this.carregaFuncao();
         }
 
         public frmCadastroColaborador(ModeloColaborador modelo)
         {
             InitializeComponent();
+            this.carregaFuncao();
+
             txtID.Text = Convert.ToString(modelo.ColaboradorId);
             txtNome.Text = modelo.Nome;
             mskRg.Text = modelo.RG;
@@ -218,9 +232,121 @@ namespace LojaPadraoMYSQL.Formularios.Colaborador
             }
         }
 
-        //FALTA BOTAO SALVAR
-        //FALTA ADD FOTO
-        //FALTA REMOVER FOTO
-        // FALTA KEYDOWN
+        private void btSalvar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLColaborador bll = new BLLColaborador(cx);
+                ModeloColaborador modelo = new ModeloColaborador();
+                modelo.Nome = txtNome.Text;
+                if (pctCnpjInvalido.Visible == true)
+                {
+                    MessageBox.Show("Digite um valor válido no campo CPF/CNPJ!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    modelo.CPF = mskCpf.Text;
+                }
+                modelo.RG = mskRg.Text;
+                modelo.Endereco = txtEndereco.Text;
+                modelo.Numero = txtNumero.Text;
+                modelo.Complemento = txtComplemento.Text;
+                modelo.Bairro = txtBairro.Text;
+                if (pctCepInvalido.Visible == true)
+                {
+                    MessageBox.Show("Digite um valor válido no campo CEP!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else if ((txtIdCidade.Text == "") && (txtNomeCidade.Text == "") && (txtUf.Text == ""))
+                {
+                    MessageBox.Show("CEP Inválido!!! Digite novamente.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+                else
+                {
+                    modelo.CEP = mskCep.Text;
+                }
+                modelo.CidadeId = Convert.ToInt32(txtIdCidade.Text);
+                modelo.FuncaoId = Convert.ToInt32(cbFuncao.SelectedValue);
+                modelo.Email = txtEmail.Text;
+                modelo.Telefone = mskTelefone.Text;
+                modelo.Celular = mskTelefone.Text;
+                modelo.Celular2 = mskCelular2.Text;
+                modelo.Observacao = txtObservacao.Text;
+                modelo.DataCadastro = txtDataCadastro.Text;
+                if (pbFoto.Image != null)
+                {
+                    modelo.Foto = ConverterEmByte(pbFoto.Image);
+                }
+                else
+                {
+                    modelo.Foto = null;
+                }
+
+                if (chbAtivo.Checked == true)
+                    modelo.Status = Convert.ToChar("A");
+                else if (chbAtivo.Checked == false)
+                    modelo.Status = Convert.ToChar("I");
+
+                if (txtID.Text == "")
+                {
+                    modelo.CarregaImagem(this.foto);
+                    bll.Incluir(modelo);
+                    this.Close();
+                }
+                else
+                {
+                    modelo.ColaboradorId = Int32.Parse(txtID.Text);
+                    if (this.foto == "Foto Original")
+                    {
+                        ModeloColaborador mt = bll.CarregaModeloColaborador(modelo.ColaboradorId);
+                        modelo.Foto = mt.Foto;
+                    }
+                    else
+                    {
+                        modelo.CarregaImagem(this.foto);
+                    }
+                    bll.Alterar(modelo);
+                    MessageBox.Show("Cadastro alterado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
+                }
+                this.LimpaTela();
+            }
+            catch (Exception erro)
+            {
+                MessageBox.Show(erro.Message);
+            }
+        }
+
+        private void btAddFoto_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog od = new OpenFileDialog();
+            od.ShowDialog();
+            if (!string.IsNullOrEmpty(od.FileName))
+            {
+                this.foto = od.FileName;
+                pbFoto.Load(this.foto);
+            }
+        }
+
+        private void btRemFoto_Click(object sender, EventArgs e)
+        {
+            this.foto = "";
+            pbFoto.Image = null;
+        }
+
+        private void frmCadastroColaborador_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                this.SelectNextControl(this.ActiveControl, !e.Shift, true, true, true);
+            }
+            if (e.KeyValue.Equals(27)) //ESC
+            {
+                btSair_Click(sender, e);
+            }
+        }
     }
 }

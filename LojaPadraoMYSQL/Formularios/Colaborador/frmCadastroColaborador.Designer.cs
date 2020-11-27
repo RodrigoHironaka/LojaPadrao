@@ -94,7 +94,7 @@
             this.tabControl1.Location = new System.Drawing.Point(12, 12);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(544, 349);
+            this.tabControl1.Size = new System.Drawing.Size(509, 349);
             this.tabControl1.TabIndex = 3;
             // 
             // tpageDadosPrincipais
@@ -150,7 +150,7 @@
             this.tpageDadosPrincipais.Location = new System.Drawing.Point(4, 22);
             this.tpageDadosPrincipais.Name = "tpageDadosPrincipais";
             this.tpageDadosPrincipais.Padding = new System.Windows.Forms.Padding(3);
-            this.tpageDadosPrincipais.Size = new System.Drawing.Size(536, 323);
+            this.tpageDadosPrincipais.Size = new System.Drawing.Size(501, 323);
             this.tpageDadosPrincipais.TabIndex = 0;
             this.tpageDadosPrincipais.Text = "Dados Principais";
             this.tpageDadosPrincipais.UseVisualStyleBackColor = true;
@@ -180,7 +180,7 @@
             this.pbFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pbFoto.Location = new System.Drawing.Point(391, 19);
             this.pbFoto.Name = "pbFoto";
-            this.pbFoto.Size = new System.Drawing.Size(130, 76);
+            this.pbFoto.Size = new System.Drawing.Size(96, 113);
             this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFoto.TabIndex = 312;
             this.pbFoto.TabStop = false;
@@ -198,21 +198,23 @@
             // 
             // btAddFoto
             // 
-            this.btAddFoto.Location = new System.Drawing.Point(475, 96);
+            this.btAddFoto.Location = new System.Drawing.Point(441, 138);
             this.btAddFoto.Name = "btAddFoto";
             this.btAddFoto.Size = new System.Drawing.Size(20, 19);
             this.btAddFoto.TabIndex = 310;
             this.btAddFoto.Text = "+";
             this.btAddFoto.UseVisualStyleBackColor = true;
+            this.btAddFoto.Click += new System.EventHandler(this.btAddFoto_Click);
             // 
             // btRemFoto
             // 
-            this.btRemFoto.Location = new System.Drawing.Point(500, 96);
+            this.btRemFoto.Location = new System.Drawing.Point(467, 138);
             this.btRemFoto.Name = "btRemFoto";
             this.btRemFoto.Size = new System.Drawing.Size(20, 19);
             this.btRemFoto.TabIndex = 309;
             this.btRemFoto.Text = "-";
             this.btRemFoto.UseVisualStyleBackColor = true;
+            this.btRemFoto.Click += new System.EventHandler(this.btRemFoto_Click);
             // 
             // btProcurarCidade
             // 
@@ -277,11 +279,11 @@
             this.txtObservacao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObservacao.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtObservacao.Location = new System.Drawing.Point(391, 136);
+            this.txtObservacao.Location = new System.Drawing.Point(391, 177);
             this.txtObservacao.MaxLength = 300;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.Size = new System.Drawing.Size(131, 179);
+            this.txtObservacao.Size = new System.Drawing.Size(96, 138);
             this.txtObservacao.TabIndex = 17;
             // 
             // txtID
@@ -376,7 +378,7 @@
             this.lbObservacao.AutoSize = true;
             this.lbObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbObservacao.ForeColor = System.Drawing.Color.Black;
-            this.lbObservacao.Location = new System.Drawing.Point(388, 120);
+            this.lbObservacao.Location = new System.Drawing.Point(388, 161);
             this.lbObservacao.Name = "lbObservacao";
             this.lbObservacao.Size = new System.Drawing.Size(68, 13);
             this.lbObservacao.TabIndex = 297;
@@ -400,6 +402,7 @@
             this.btSalvar.TabIndex = 18;
             this.btSalvar.Text = "sal";
             this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // pctCepInvalido
             // 
@@ -674,7 +677,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(536, 368);
+            this.tabPage2.Size = new System.Drawing.Size(536, 323);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Outros";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -683,14 +686,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(567, 371);
+            this.ClientSize = new System.Drawing.Size(532, 371);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCadastroColaborador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadastroColaborador";
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroColaborador_KeyDown);
             this.tabControl1.ResumeLayout(false);
             this.tpageDadosPrincipais.ResumeLayout(false);
             this.tpageDadosPrincipais.PerformLayout();
