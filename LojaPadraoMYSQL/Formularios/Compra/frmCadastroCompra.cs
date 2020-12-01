@@ -16,5 +16,10 @@ namespace LojaPadraoMYSQL.Formularios
         {
             InitializeComponent();
         }
+
+        private void tpageDadosPrincipais_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

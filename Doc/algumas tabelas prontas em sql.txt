@@ -224,3 +224,52 @@ constraint fk_colaborador_cidade FOREIGN KEY (idCidade)
 constraint fk_colaborador_funcao FOREIGN KEY (idFuncao)
 	REFERENCES funcao (id)
 );
+
+create table compra(
+id int not null AUTO_INCREMENT,
+dataCadastro VARCHAR(30) not null,
+numNota int,
+dataNota date,
+precoNota DECIMAL,
+`status` char(1),
+idFornecedor int,
+observacao VARCHAR(500),
+PRIMARY KEY(id),
+CONSTRAINT fk_compra_fornecedor FOREIGN KEY (idFornecedor)
+  REFERENCES fornecedor (id)
+);
+
+create table compraitens(
+id int not null AUTO_INCREMENT,
+idCompra int not null,
+idProduto int not null,
+qtdNova DECIMAL(10,2),
+fracaoQtd DECIMAL(10,2),
+precoCusto DECIMAL(10,2),
+porcentagemCusto DECIMAL(10,2),
+precoAvista DECIMAL(10,2),
+porcentagemAvista DECIMAL(10,2),
+precoPrazo DECIMAL(10,2)
+totalItens int,
+totalCusto DECIMAL(10,2),
+totalAvista DECIMAL(10,2),
+totalPrazo DECIMAL(10,2),
+PRIMARY KEY(id),
+CONSTRAINT fk_compraItens_compra FOREIGN KEY (idCompra)
+  REFERENCES compra (id),
+CONSTRAINT fk_compraItens_produto FOREIGN KEY (idProduto)
+  REFERENCES produto (id)
+);
+
+create table comprapagamento(
+id int not null AUTO_INCREMENT,
+idCompra int not null,
+idFormaPagamento int not null,
+dataInicioPagamento date,
+precoParcela DECIMAL(10,2),
+PRIMARY KEY(id),
+CONSTRAINT fk_compraPagamento_compra FOREIGN KEY (idCompra)
+  REFERENCES compra (id),
+CONSTRAINT fk_compraPagamento_formaPagamento FOREIGN KEY (idFormaPagamento)
+  REFERENCES formapagamento (id)
+);
