@@ -231,9 +231,9 @@ dataCadastro VARCHAR(30) not null,
 numNota int,
 dataNota date,
 precoNota DECIMAL,
-`status` char(1),
 idFornecedor int,
 observacao VARCHAR(500),
+`status` char(1),
 PRIMARY KEY(id),
 CONSTRAINT fk_compra_fornecedor FOREIGN KEY (idFornecedor)
   REFERENCES fornecedor (id)

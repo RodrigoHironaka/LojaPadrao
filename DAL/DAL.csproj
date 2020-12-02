@@ -47,6 +47,7 @@
     <Compile Include="DALCidade.cs" />
     <Compile Include="DALCliente.cs" />
     <Compile Include="DALColaborador.cs" />
+    <Compile Include="DALCompra.cs" />
     <Compile Include="DALConexao.cs" />
     <Compile Include="DALDepartamento.cs" />
     <Compile Include="DALFormaPagamento.cs" />

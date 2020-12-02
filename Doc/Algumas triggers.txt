@@ -1,0 +1,16 @@
+CREATE TRIGGER tIncrementaEstoqueVenda  AFTER INSERT 
+ON compraitens
+FOR EACH ROW 
+BEGIN 
+	DECLARE @qtde	DECIMAL,
+	DECLARE @precoCusto DECIMAL,
+	DECLARE @porcentagemCusto DECIMAL,
+	DECLARE @precoAvista DECIMAL,
+	DECLARE @porcentagemAvista DECIMAL,
+	DECLARE @precoPrazo DECIMAL,
+	@codigo	INTEGER
+	
+	SELECT @codigo = id, @qtde = qtdNova, @precoCusto = precoCusto, @porcentagemCusto = porcentagemCusto, @precoAvista = precoAvista, @porcentagemAvista = porcentagemAvista, @precoPrazo = precoPrazo FROM INSERTED 
+	
+	UPDATE produto SET estoqueAtual = estoqueAtual + @qtde WHERE produto.id = @codigo 
+end
