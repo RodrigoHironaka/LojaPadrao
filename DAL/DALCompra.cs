@@ -21,6 +21,7 @@ namespace DAL
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
+            cmd.Transaction = this.conexao.ObjetoTransacao;
             cmd.CommandText = "insert into compra(dataCadastro, numNota, dataNota, precoNota, idFornecedor, observacao, status) values (@dataCadastro, @numNota, @dataNota, @precoNota, @idFornecedor, @observacao, @status);";
             cmd.Parameters.AddWithValue("@dataCadastro", modelo.DataCadastro);
             cmd.Parameters.AddWithValue("@numNota", modelo.NumNota);
@@ -29,15 +30,14 @@ namespace DAL
             cmd.Parameters.AddWithValue("@idFornecedor", modelo.FornecedorId);
             cmd.Parameters.AddWithValue("@observacao", modelo.Observacao);
             cmd.Parameters.AddWithValue("@status", modelo.Status);
-            conexao.Conectar();
             modelo.CompraId = Convert.ToInt32(cmd.ExecuteScalar());
-            conexao.Desconectar();
         }
 
         public void Alterar(ModeloCompra modelo)
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
+            cmd.Transaction = this.conexao.ObjetoTransacao;
             cmd.CommandText = "update compra set dataCadastro=@dataCadastro, numNota=@numNota, dataNota=@dataNota, precoNota=@precoNota, idFornecedor=@idFornecedor, observacao=@observacao, status=@status where id=@codigo;";
             cmd.Parameters.AddWithValue("@dataCadastro", modelo.DataCadastro);
             cmd.Parameters.AddWithValue("@numNota", modelo.NumNota);
@@ -47,101 +47,27 @@ namespace DAL
             cmd.Parameters.AddWithValue("@observacao", modelo.Observacao);
             cmd.Parameters.AddWithValue("@status", modelo.Status);
             cmd.Parameters.AddWithValue("@codigo", modelo.CompraId);
-            conexao.Conectar();
             cmd.ExecuteNonQuery();
-            conexao.Desconectar();
+
         }
 
         public void Excluir(int codigo)
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
+            cmd.Transaction = this.conexao.ObjetoTransacao;
             cmd.CommandText = "delete from compra where id = @codigo;";
             cmd.Parameters.AddWithValue("@codigo", codigo);
-            conexao.Conectar();
             cmd.ExecuteNonQuery();
-            conexao.Desconectar();
         }
 
+        //MELHORA PESQUISA DA COMPRA
         public DataTable Localizar(String valor)
         {
             DataTable tabela = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter("select * from compra where idFornecedor like '%" + valor + "%' or id like '%" + valor + "%'", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
-        }
-
-        public DataTable LocalizarAtivo(String valor)
-        {
-            DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from compra where (idFornecedor like '%" + valor + "%' or (id like '%" + valor + "%')) and status='A'", conexao.StringConexao);
-            da.Fill(tabela);
-            return tabela;
-        }
-
-        public DataTable LocalizarInativo(String valor)
-        {
-            DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from compra where (idFornecedor like '%" + valor + "%' or (id like '%" + valor + "%')) and status='I'", conexao.StringConexao);
-            da.Fill(tabela);
-            return tabela;
-        }
-
-        public DataTable CarregarGrid()
-        {
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = conexao.ObjetoConexao;
-                conexao.Conectar();
-                MySqlDataAdapter mysqlDataAdapter = new MySqlDataAdapter("select id, dataCadastro, numNota, dataNota, precoNota, idFornecedor, observacao, status from compra order by id", conexao.StringConexao);
-                DataTable dataTable = new DataTable();
-                mysqlDataAdapter.Fill(dataTable);
-                return dataTable;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                throw;
-            }
-        }
-
-        public DataTable CarregarGridAtivo()
-        {
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = conexao.ObjetoConexao;
-                conexao.Conectar();
-                MySqlDataAdapter mysqlDataAdapter = new MySqlDataAdapter("select dataCadastro, numNota, dataNota, precoNota, idFornecedor, observacao, status from compra where status='A' order by id", conexao.StringConexao);
-                DataTable dataTable = new DataTable();
-                mysqlDataAdapter.Fill(dataTable);
-                return dataTable;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                throw;
-            }
-        }
-
-        public DataTable CarregarGridInativo()
-        {
-            try
-            {
-                MySqlCommand cmd = new MySqlCommand();
-                cmd.Connection = conexao.ObjetoConexao;
-                conexao.Conectar();
-                MySqlDataAdapter mysqlDataAdapter = new MySqlDataAdapter("select dataCadastro, numNota, dataNota, precoNota, idFornecedor, observacao, status from compra where status='I' order by id", conexao.StringConexao);
-                DataTable dataTable = new DataTable();
-                mysqlDataAdapter.Fill(dataTable);
-                return dataTable;
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                throw;
-            }
         }
 
         public ModeloCompra CarregaModeloCompra(int codigo)
