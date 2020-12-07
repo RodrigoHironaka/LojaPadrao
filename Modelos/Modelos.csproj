@@ -58,6 +58,7 @@
     <Compile Include="ModeloTransportadora.cs" />
     <Compile Include="ModeloUnidadeMedida.cs" />
     <Compile Include="ModeloUsuario.cs" />
+    <Compile Include="ObejtoValor\SituacaoCompra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

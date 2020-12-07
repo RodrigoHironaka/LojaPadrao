@@ -166,6 +166,8 @@ C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\Modelos.pdb
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csprojAssemblyReference.cache
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroCidade.resources
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroCliente.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.Colaborador.frmCadastroColaborador.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.Colaborador.frmConsultaColaborador.resources
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroCompra.resources
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroDepartamento.resources
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.frmCadastroFormaPagamento.resources
@@ -200,5 +202,3 @@ C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csproj
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csproj.CopyComplete
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.exe
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.pdb
-C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.Colaborador.frmCadastroColaborador.resources
-C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.Colaborador.frmConsultaColaborador.resources
