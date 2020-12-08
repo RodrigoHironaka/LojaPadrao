@@ -44,6 +44,8 @@
             this.txtDataNota = new System.Windows.Forms.TextBox();
             this.txtNumNota = new System.Windows.Forms.TextBox();
             this.gbDadosCompra = new System.Windows.Forms.GroupBox();
+            this.lbStatus = new System.Windows.Forms.Label();
+            this.btCalendario = new System.Windows.Forms.Button();
             this.txtPrecoNota = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabProdutos = new System.Windows.Forms.TabPage();
@@ -84,6 +86,7 @@
             this.tabPag = new System.Windows.Forms.TabPage();
             this.dgvParcelas = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btDataInicio = new System.Windows.Forms.Button();
             this.btRemoverParcela = new System.Windows.Forms.Button();
             this.btConfirmarParcela = new System.Windows.Forms.Button();
             this.cbQtdParcelas = new System.Windows.Forms.ComboBox();
@@ -98,9 +101,6 @@
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.btGravar = new System.Windows.Forms.Button();
-            this.btCalendario = new System.Windows.Forms.Button();
-            this.btDataInicio = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.monthCal = new System.Windows.Forms.MonthCalendar();
             this.gbDadosCompra.SuspendLayout();
             this.tabProdutos.SuspendLayout();
@@ -131,7 +131,7 @@
             this.btPesqFornecedor.Location = new System.Drawing.Point(722, 38);
             this.btPesqFornecedor.Name = "btPesqFornecedor";
             this.btPesqFornecedor.Size = new System.Drawing.Size(33, 27);
-            this.btPesqFornecedor.TabIndex = 14;
+            this.btPesqFornecedor.TabIndex = 5;
             this.btPesqFornecedor.Text = "...";
             this.btPesqFornecedor.UseVisualStyleBackColor = true;
             this.btPesqFornecedor.Click += new System.EventHandler(this.btPesqFornecedor_Click);
@@ -145,7 +145,9 @@
             this.txtCodFornecedor.MaxLength = 100;
             this.txtCodFornecedor.Name = "txtCodFornecedor";
             this.txtCodFornecedor.Size = new System.Drawing.Size(86, 26);
-            this.txtCodFornecedor.TabIndex = 13;
+            this.txtCodFornecedor.TabIndex = 4;
+            this.txtCodFornecedor.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtCodFornecedor_MouseClick);
+            this.txtCodFornecedor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodFornecedor_KeyPress);
             this.txtCodFornecedor.Leave += new System.EventHandler(this.txtCodFornecedor_Leave);
             // 
             // label26
@@ -198,7 +200,7 @@
             this.btSair.Location = new System.Drawing.Point(1072, 15);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(72, 72);
-            this.btSair.TabIndex = 35;
+            this.btSair.TabIndex = 2;
             this.btSair.Text = "Sair";
             this.btSair.UseVisualStyleBackColor = true;
             // 
@@ -219,7 +221,7 @@
             this.btSalvar.Location = new System.Drawing.Point(994, 15);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(72, 72);
-            this.btSalvar.TabIndex = 34;
+            this.btSalvar.TabIndex = 1;
             this.btSalvar.Text = "Salvar";
             this.btSalvar.UseVisualStyleBackColor = true;
             // 
@@ -264,7 +266,7 @@
             this.txtDataNota.MaxLength = 10;
             this.txtDataNota.Name = "txtDataNota";
             this.txtDataNota.Size = new System.Drawing.Size(92, 26);
-            this.txtDataNota.TabIndex = 361;
+            this.txtDataNota.TabIndex = 1;
             // 
             // txtNumNota
             // 
@@ -274,14 +276,15 @@
             this.txtNumNota.MaxLength = 6;
             this.txtNumNota.Name = "txtNumNota";
             this.txtNumNota.Size = new System.Drawing.Size(86, 26);
-            this.txtNumNota.TabIndex = 360;
+            this.txtNumNota.TabIndex = 0;
+            this.txtNumNota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumNota_KeyPress);
             // 
             // gbDadosCompra
             // 
             this.gbDadosCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbDadosCompra.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbDadosCompra.Controls.Add(this.label5);
+            this.gbDadosCompra.Controls.Add(this.lbStatus);
             this.gbDadosCompra.Controls.Add(this.btCalendario);
             this.gbDadosCompra.Controls.Add(this.txtNomeFornecedor);
             this.gbDadosCompra.Controls.Add(this.btPesqFornecedor);
@@ -304,6 +307,28 @@
             this.gbDadosCompra.TabIndex = 364;
             this.gbDadosCompra.TabStop = false;
             // 
+            // lbStatus
+            // 
+            this.lbStatus.AutoSize = true;
+            this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbStatus.ForeColor = System.Drawing.Color.Black;
+            this.lbStatus.Location = new System.Drawing.Point(1079, 16);
+            this.lbStatus.Name = "lbStatus";
+            this.lbStatus.Size = new System.Drawing.Size(91, 20);
+            this.lbStatus.TabIndex = 367;
+            this.lbStatus.Text = "SITUAÇÃO";
+            // 
+            // btCalendario
+            // 
+            this.btCalendario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btCalendario.Location = new System.Drawing.Point(450, 38);
+            this.btCalendario.Name = "btCalendario";
+            this.btCalendario.Size = new System.Drawing.Size(33, 27);
+            this.btCalendario.TabIndex = 2;
+            this.btCalendario.Text = "...";
+            this.btCalendario.UseVisualStyleBackColor = true;
+            this.btCalendario.Click += new System.EventHandler(this.btCalendario_Click);
+            // 
             // txtPrecoNota
             // 
             this.txtPrecoNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -312,7 +337,9 @@
             this.txtPrecoNota.MaxLength = 10;
             this.txtPrecoNota.Name = "txtPrecoNota";
             this.txtPrecoNota.Size = new System.Drawing.Size(135, 26);
-            this.txtPrecoNota.TabIndex = 364;
+            this.txtPrecoNota.TabIndex = 3;
+            this.txtPrecoNota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoNota_KeyPress);
+            this.txtPrecoNota.Leave += new System.EventHandler(this.txtPrecoNota_Leave);
             // 
             // label2
             // 
@@ -378,6 +405,7 @@
             this.brZerarEstoque.TabIndex = 382;
             this.brZerarEstoque.Text = "Zerar";
             this.brZerarEstoque.UseVisualStyleBackColor = true;
+            this.brZerarEstoque.Click += new System.EventHandler(this.brZerarEstoque_Click);
             // 
             // txtTotalCusto
             // 
@@ -429,9 +457,10 @@
             this.btPesqProduto.Location = new System.Drawing.Point(99, 25);
             this.btPesqProduto.Name = "btPesqProduto";
             this.btPesqProduto.Size = new System.Drawing.Size(33, 27);
-            this.btPesqProduto.TabIndex = 371;
+            this.btPesqProduto.TabIndex = 1;
             this.btPesqProduto.Text = "...";
             this.btPesqProduto.UseVisualStyleBackColor = true;
+            this.btPesqProduto.Click += new System.EventHandler(this.btPesqProduto_Click);
             // 
             // txtTotalPrazo
             // 
@@ -503,7 +532,7 @@
             this.dgvItens.Location = new System.Drawing.Point(7, 111);
             this.dgvItens.Name = "dgvItens";
             this.dgvItens.Size = new System.Drawing.Size(1139, 278);
-            this.dgvItens.TabIndex = 365;
+            this.dgvItens.TabIndex = 1;
             // 
             // txtQtdNova
             // 
@@ -514,8 +543,10 @@
             this.txtQtdNova.MaxLength = 100;
             this.txtQtdNova.Name = "txtQtdNova";
             this.txtQtdNova.Size = new System.Drawing.Size(86, 26);
-            this.txtQtdNova.TabIndex = 362;
+            this.txtQtdNova.TabIndex = 2;
             this.txtQtdNova.Text = "0";
+            this.txtQtdNova.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtQtdNova_MouseClick);
+            this.txtQtdNova.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdNova_KeyPress);
             // 
             // label6
             // 
@@ -536,7 +567,9 @@
             this.txtCodProduto.MaxLength = 6;
             this.txtCodProduto.Name = "txtCodProduto";
             this.txtCodProduto.Size = new System.Drawing.Size(86, 26);
-            this.txtCodProduto.TabIndex = 360;
+            this.txtCodProduto.TabIndex = 0;
+            this.txtCodProduto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtCodProduto_MouseClick);
+            this.txtCodProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodProduto_KeyPress);
             this.txtCodProduto.Leave += new System.EventHandler(this.txtCodProduto_Leave);
             // 
             // txtQtdFracao
@@ -544,12 +577,14 @@
             this.txtQtdFracao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtQtdFracao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtQtdFracao.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtQtdFracao.Location = new System.Drawing.Point(163, 77);
+            this.txtQtdFracao.Location = new System.Drawing.Point(164, 77);
             this.txtQtdFracao.MaxLength = 100;
             this.txtQtdFracao.Name = "txtQtdFracao";
             this.txtQtdFracao.Size = new System.Drawing.Size(86, 26);
-            this.txtQtdFracao.TabIndex = 28;
+            this.txtQtdFracao.TabIndex = 9;
             this.txtQtdFracao.Text = "0";
+            this.txtQtdFracao.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtQtdFracao_MouseClick);
+            this.txtQtdFracao.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdFracao_KeyPress);
             // 
             // txtPrecoPrazo
             // 
@@ -560,8 +595,11 @@
             this.txtPrecoPrazo.MaxLength = 100;
             this.txtPrecoPrazo.Name = "txtPrecoPrazo";
             this.txtPrecoPrazo.Size = new System.Drawing.Size(86, 26);
-            this.txtPrecoPrazo.TabIndex = 24;
+            this.txtPrecoPrazo.TabIndex = 7;
             this.txtPrecoPrazo.Text = "0,00";
+            this.txtPrecoPrazo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoPrazo_MouseClick);
+            this.txtPrecoPrazo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoPrazo_KeyPress);
+            this.txtPrecoPrazo.Leave += new System.EventHandler(this.txtPrecoPrazo_Leave);
             // 
             // txtPorcAvista
             // 
@@ -572,8 +610,11 @@
             this.txtPorcAvista.MaxLength = 100;
             this.txtPorcAvista.Name = "txtPorcAvista";
             this.txtPorcAvista.Size = new System.Drawing.Size(56, 26);
-            this.txtPorcAvista.TabIndex = 22;
+            this.txtPorcAvista.TabIndex = 6;
             this.txtPorcAvista.Text = "0";
+            this.txtPorcAvista.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPorcAvista_MouseClick);
+            this.txtPorcAvista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcAvista_KeyPress);
+            this.txtPorcAvista.Leave += new System.EventHandler(this.txtPorcAvista_Leave);
             // 
             // txtPorcCusto
             // 
@@ -584,8 +625,11 @@
             this.txtPorcCusto.MaxLength = 100;
             this.txtPorcCusto.Name = "txtPorcCusto";
             this.txtPorcCusto.Size = new System.Drawing.Size(56, 26);
-            this.txtPorcCusto.TabIndex = 20;
+            this.txtPorcCusto.TabIndex = 4;
             this.txtPorcCusto.Text = "0";
+            this.txtPorcCusto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPorcCusto_MouseClick);
+            this.txtPorcCusto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcCusto_KeyPress);
+            this.txtPorcCusto.Leave += new System.EventHandler(this.txtPorcCusto_Leave);
             // 
             // txtEstqAtual
             // 
@@ -595,9 +639,12 @@
             this.txtEstqAtual.Location = new System.Drawing.Point(7, 77);
             this.txtEstqAtual.MaxLength = 100;
             this.txtEstqAtual.Name = "txtEstqAtual";
+            this.txtEstqAtual.ReadOnly = true;
             this.txtEstqAtual.Size = new System.Drawing.Size(86, 26);
-            this.txtEstqAtual.TabIndex = 27;
+            this.txtEstqAtual.TabIndex = 8;
             this.txtEstqAtual.Text = "0";
+            this.txtEstqAtual.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtEstqAtual_MouseClick);
+            this.txtEstqAtual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstqAtual_KeyPress);
             // 
             // txtPrecoAvista
             // 
@@ -608,8 +655,11 @@
             this.txtPrecoAvista.MaxLength = 100;
             this.txtPrecoAvista.Name = "txtPrecoAvista";
             this.txtPrecoAvista.Size = new System.Drawing.Size(86, 26);
-            this.txtPrecoAvista.TabIndex = 21;
+            this.txtPrecoAvista.TabIndex = 5;
             this.txtPrecoAvista.Text = "0,00";
+            this.txtPrecoAvista.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoAvista_MouseClick);
+            this.txtPrecoAvista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoAvista_KeyPress);
+            this.txtPrecoAvista.Leave += new System.EventHandler(this.txtPrecoAvista_Leave);
             // 
             // txtPrecoCusto
             // 
@@ -620,8 +670,11 @@
             this.txtPrecoCusto.MaxLength = 100;
             this.txtPrecoCusto.Name = "txtPrecoCusto";
             this.txtPrecoCusto.Size = new System.Drawing.Size(86, 26);
-            this.txtPrecoCusto.TabIndex = 19;
+            this.txtPrecoCusto.TabIndex = 3;
             this.txtPrecoCusto.Text = "0,00";
+            this.txtPrecoCusto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoCusto_MouseClick);
+            this.txtPrecoCusto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoCusto_KeyPress);
+            this.txtPrecoCusto.Leave += new System.EventHandler(this.txtPrecoCusto_Leave);
             // 
             // txtNomeProduto
             // 
@@ -632,7 +685,7 @@
             this.txtNomeProduto.MaxLength = 100;
             this.txtNomeProduto.Name = "txtNomeProduto";
             this.txtNomeProduto.Size = new System.Drawing.Size(602, 26);
-            this.txtNomeProduto.TabIndex = 5;
+            this.txtNomeProduto.TabIndex = 2;
             // 
             // label23
             // 
@@ -738,9 +791,9 @@
             this.tabCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.tabCompra.Controls.Add(this.tabProdutos);
             this.tabCompra.Controls.Add(this.tabPag);
             this.tabCompra.Controls.Add(this.tabObs);
-            this.tabCompra.Controls.Add(this.tabProdutos);
             this.tabCompra.Location = new System.Drawing.Point(12, 97);
             this.tabCompra.Name = "tabCompra";
             this.tabCompra.SelectedIndex = 0;
@@ -765,7 +818,7 @@
             this.dgvParcelas.Location = new System.Drawing.Point(6, 91);
             this.dgvParcelas.Name = "dgvParcelas";
             this.dgvParcelas.Size = new System.Drawing.Size(1140, 336);
-            this.dgvParcelas.TabIndex = 367;
+            this.dgvParcelas.TabIndex = 0;
             // 
             // groupBox3
             // 
@@ -787,13 +840,23 @@
             this.groupBox3.TabIndex = 366;
             this.groupBox3.TabStop = false;
             // 
+            // btDataInicio
+            // 
+            this.btDataInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btDataInicio.Location = new System.Drawing.Point(471, 39);
+            this.btDataInicio.Name = "btDataInicio";
+            this.btDataInicio.Size = new System.Drawing.Size(33, 27);
+            this.btDataInicio.TabIndex = 0;
+            this.btDataInicio.Text = "...";
+            this.btDataInicio.UseVisualStyleBackColor = true;
+            // 
             // btRemoverParcela
             // 
             this.btRemoverParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btRemoverParcela.Location = new System.Drawing.Point(745, 38);
             this.btRemoverParcela.Name = "btRemoverParcela";
             this.btRemoverParcela.Size = new System.Drawing.Size(86, 28);
-            this.btRemoverParcela.TabIndex = 369;
+            this.btRemoverParcela.TabIndex = 3;
             this.btRemoverParcela.Text = "Remover";
             this.btRemoverParcela.UseVisualStyleBackColor = true;
             // 
@@ -803,7 +866,7 @@
             this.btConfirmarParcela.Location = new System.Drawing.Point(653, 38);
             this.btConfirmarParcela.Name = "btConfirmarParcela";
             this.btConfirmarParcela.Size = new System.Drawing.Size(89, 28);
-            this.btConfirmarParcela.TabIndex = 368;
+            this.btConfirmarParcela.TabIndex = 2;
             this.btConfirmarParcela.Text = "Confirma";
             this.btConfirmarParcela.UseVisualStyleBackColor = true;
             // 
@@ -816,7 +879,7 @@
             this.cbQtdParcelas.Location = new System.Drawing.Point(238, 39);
             this.cbQtdParcelas.Name = "cbQtdParcelas";
             this.cbQtdParcelas.Size = new System.Drawing.Size(86, 28);
-            this.cbQtdParcelas.TabIndex = 366;
+            this.cbQtdParcelas.TabIndex = 1;
             // 
             // label18
             // 
@@ -837,7 +900,7 @@
             this.txtPrecoParcela.MaxLength = 10;
             this.txtPrecoParcela.Name = "txtPrecoParcela";
             this.txtPrecoParcela.Size = new System.Drawing.Size(135, 26);
-            this.txtPrecoParcela.TabIndex = 364;
+            this.txtPrecoParcela.TabIndex = 1;
             // 
             // label12
             // 
@@ -858,7 +921,7 @@
             this.txtDataInicioPagamento.MaxLength = 10;
             this.txtDataInicioPagamento.Name = "txtDataInicioPagamento";
             this.txtDataInicioPagamento.Size = new System.Drawing.Size(135, 26);
-            this.txtDataInicioPagamento.TabIndex = 361;
+            this.txtDataInicioPagamento.TabIndex = 2;
             // 
             // label13
             // 
@@ -880,7 +943,7 @@
             this.cbPagamento.Location = new System.Drawing.Point(5, 39);
             this.cbPagamento.Name = "cbPagamento";
             this.cbPagamento.Size = new System.Drawing.Size(227, 28);
-            this.cbPagamento.TabIndex = 3;
+            this.cbPagamento.TabIndex = 0;
             // 
             // label16
             // 
@@ -933,48 +996,17 @@
             this.btGravar.Location = new System.Drawing.Point(916, 15);
             this.btGravar.Name = "btGravar";
             this.btGravar.Size = new System.Drawing.Size(72, 72);
-            this.btGravar.TabIndex = 36;
+            this.btGravar.TabIndex = 0;
             this.btGravar.Text = "Gravar";
             this.btGravar.UseVisualStyleBackColor = true;
             // 
-            // btCalendario
-            // 
-            this.btCalendario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCalendario.Location = new System.Drawing.Point(450, 38);
-            this.btCalendario.Name = "btCalendario";
-            this.btCalendario.Size = new System.Drawing.Size(33, 27);
-            this.btCalendario.TabIndex = 366;
-            this.btCalendario.Text = "...";
-            this.btCalendario.UseVisualStyleBackColor = true;
-            this.btCalendario.Click += new System.EventHandler(this.btCalendario_Click);
-            // 
-            // btDataInicio
-            // 
-            this.btDataInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDataInicio.Location = new System.Drawing.Point(471, 39);
-            this.btDataInicio.Name = "btDataInicio";
-            this.btDataInicio.Size = new System.Drawing.Size(33, 27);
-            this.btDataInicio.TabIndex = 367;
-            this.btDataInicio.Text = "...";
-            this.btDataInicio.UseVisualStyleBackColor = true;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(1079, 16);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(75, 20);
-            this.label5.TabIndex = 367;
-            this.label5.Text = "ABERTO";
-            // 
             // monthCal
             // 
-            this.monthCal.Location = new System.Drawing.Point(268, 79);
+            this.monthCal.Location = new System.Drawing.Point(268, 77);
             this.monthCal.Name = "monthCal";
-            this.monthCal.TabIndex = 368;
+            this.monthCal.TabIndex = 0;
             this.monthCal.Visible = false;
+            this.monthCal.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCal_DateChanged);
             this.monthCal.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCal_DateSelected);
             // 
             // frmCadastroCompra
@@ -987,6 +1019,7 @@
             this.Controls.Add(this.gbDadosCompra);
             this.Controls.Add(this.tabCompra);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmCadastroCompra";
@@ -1082,7 +1115,7 @@
         private System.Windows.Forms.Button brZerarEstoque;
         private System.Windows.Forms.Button btCalendario;
         private System.Windows.Forms.Button btDataInicio;
-        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.MonthCalendar monthCal;
     }
 }
