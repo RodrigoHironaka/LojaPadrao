@@ -16,11 +16,23 @@ namespace LojaPadraoMYSQL.Formularios
 {
     public partial class frmCadastroCompra : Form
     {
+        //--------------------CARREGACOMBO---------------------------------------------------------
+        private void carregaFormaPagamento()
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLCompraPagamento bll = new BLLCompraPagamento(cx);
+            cbPagamento.DataSource = bll.CarregaComboFormaPagamento();
+            cbPagamento.ValueMember = "id";
+            cbPagamento.DisplayMember = "nome";
+        }
+
+        //--------------------ABRIR NA JANELA QNDO FOR INCLUIR-------------------------------------
         public frmCadastroCompra()
         {
             InitializeComponent();
             txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
             lbStatus.Text = Convert.ToString(SituacaoCompra.Aberto).ToUpper();
+            this.carregaFormaPagamento();
         }
 
         private void tpageDadosPrincipais_Click(object sender, EventArgs e)
@@ -28,6 +40,8 @@ namespace LojaPadraoMYSQL.Formularios
 
         }
 
+        //--------------------BOTAOCALENDARIO---------------------------------------------------------
+        //--------------------MONTHCALENDAR SELECIONA DATA E VALIDA-----------------------------------
         private void btCalendario_Click(object sender, EventArgs e)
         {
             monthCal.Visible = true;
@@ -45,6 +59,8 @@ namespace LojaPadraoMYSQL.Formularios
             monthCal.Visible = false;
         }
 
+        //--------------------BUSCAPORCODIGO---------------------------------------------------------
+        //--------------------BOTAOPESQUISAR---------------------------------------------------------
         private void txtCodFornecedor_Leave(object sender, EventArgs e)
         {
             try
@@ -135,6 +151,7 @@ namespace LojaPadraoMYSQL.Formularios
             }
         }
 
+        //--------------------CAMPO CODIDO SOMENTE NUMEROS--------------------------------------------
         private void txtCodFornecedor_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -148,6 +165,7 @@ namespace LojaPadraoMYSQL.Formularios
             txtCodFornecedor_KeyPress(sender, e);
         }
 
+        //--------------------CAMPO VALORES NUMEROS E VIRGULAS----------------------------------------
         private void txtPrecoCusto_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
@@ -195,6 +213,7 @@ namespace LojaPadraoMYSQL.Formularios
             txtPrecoCusto_KeyPress(sender, e);
         }
 
+        //--------------------SELECIONA TODO O CAMPO QNDO CLICADO-------------------------------------
         private void txtQtdNova_MouseClick(object sender, MouseEventArgs e)
         {
             ((TextBox)sender).SelectionStart = 0;
@@ -246,6 +265,7 @@ namespace LojaPadraoMYSQL.Formularios
             txtQtdNova_MouseClick(sender, e);
         }
 
+        //--------------------VALIDAÇÃO E CALCULO DE PRECOS E PORCENTAGENS---------------------------
         private void txtPrecoCusto_Leave(object sender, EventArgs e)
         {
             try
@@ -382,16 +402,19 @@ namespace LojaPadraoMYSQL.Formularios
             }
         }
 
+        //--------------------BOTAO ZERAR ESTOQUE----------------------------------------------------
         private void brZerarEstoque_Click(object sender, EventArgs e)
         {
             txtEstqAtual.Text = "0";
         }
 
+        //--------------------CAMPO CODIDO SOMENTE NUMEROS-------------------------------------------
         private void txtNumNota_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtCodFornecedor_KeyPress(sender, e);
         }
 
+        //--------------------CAMPO VALORES NUMEROS E VIRGULAS----------------------------------------
         private void txtPrecoNota_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtPrecoCusto_KeyPress(sender, e);
@@ -417,9 +440,32 @@ namespace LojaPadraoMYSQL.Formularios
             }
         }
 
-        private void monthCal_DateChanged(object sender, DateRangeEventArgs e)
+        //--------------------CAMPO SELECIONA PAGAMENTO E MOSTRA QTD DE PARCELAS----------------------
+        private void cbPagamento_SelectedValueChanged(object sender, EventArgs e)
         {
 
+            //try
+            //{
+            //    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            //    BLLFormaPagamento bll = new BLLFormaPagamento(cx);
+            //    ModeloFormaPagamento modelo = bll.CarregaModeloFormaPagamento(Convert.ToInt32(cbPagamento.SelectedItem));
+            //    if (modelo.FormaPagamentoId <= 0)
+            //    {
+            //        this.carregaFormaPagamento();
+            //        cbQtdParcelas.Text = "0";
+            //    }
+            //    else
+            //    {
+            //        cbQtdParcelas.Text = modelo.QtdParcelas.ToString();
+            //    }
+
+            //}
+            //catch
+            //{
+            //    this.carregaFormaPagamento();
+            //    cbQtdParcelas.Text = "0";
+            //}
         }
+            
     }
 }

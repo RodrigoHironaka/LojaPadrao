@@ -9,15 +9,15 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class BLLCompra
+    public class BLLCompraItens
     {
         private DALConexao conexao;
-        public BLLCompra(DALConexao cx)
+        public BLLCompraItens(DALConexao cx)
         {
             this.conexao = cx;
         }
 
-        public void Incluir(ModeloCompra modelo)
+        public void Incluir(ModeloCompraItens modelo)
         {
             //if (modelo.Nome.Trim().Length == 0)
             //{
@@ -30,16 +30,16 @@ namespace BLL
             //    throw new Exception("O limite máximo de caracteres é 100!");
             //}
 
-            DALCompra DALObj = new DALCompra(conexao);
+            DALCompraItens DALObj = new DALCompraItens(conexao);
             DALObj.Incluir(modelo);
         }
 
-        public void Alterar(ModeloCompra modelo)
+        public void Alterar(ModeloCompraItens modelo)
         {
-            if (modelo.CompraId <= 0)
-            {
-                throw new Exception("Digite o codigo");
-            }
+            //if (modelo.CompraId <= 0)
+            //{
+            //    throw new Exception("Digite o codigo");
+            //}
             //if (modelo.Nome.Trim().Length == 0)
             //{
             //    throw new Exception("O nome é obrigatório");
@@ -51,26 +51,32 @@ namespace BLL
             //    throw new Exception("O limite máximo de caracteres é 100!");
             //}
 
-            DALCompra DALObj = new DALCompra(conexao);
+            DALCompraItens DALObj = new DALCompraItens(conexao);
             DALObj.Alterar(modelo);
         }
 
-        public void Excluir(int codigo)
+        public void Excluir(ModeloCompraItens modelo)
         {
-            DALCompra DALObj = new DALCompra(conexao);
-            DALObj.Excluir(codigo);
+            DALCompraItens DALObj = new DALCompraItens(conexao);
+            DALObj.Excluir(modelo);
         }
 
-        public DataTable Localizar(String valor)
+        public void ExcluirTodosItens(int codigo)
         {
-            DALCompra DALObj = new DALCompra(conexao);
+            DALCompraItens DALObj = new DALCompraItens(conexao);
+            DALObj.ExcluirTodosItens(codigo);
+        }
+
+        public DataTable Localizar(int valor)
+        {
+            DALCompraItens DALObj = new DALCompraItens(conexao);
             return DALObj.Localizar(valor);
         }
 
-        public ModeloCompra CarregaModeloCompra(int codigo)
+        public ModeloCompraItens CarregaModeloCompraItens(int codigo, int idCompra, int idProduto)
         {
-            DALCompra DALObj = new DALCompra(conexao);
-            return DALObj.CarregaModeloCompra(codigo);
+            DALCompraItens DALObj = new DALCompraItens(conexao);
+            return DALObj.CarregaModeloCompraItens(codigo, idCompra, idProduto);
         }
     }
 }

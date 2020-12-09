@@ -944,6 +944,7 @@
             this.cbPagamento.Name = "cbPagamento";
             this.cbPagamento.Size = new System.Drawing.Size(227, 28);
             this.cbPagamento.TabIndex = 0;
+            this.cbPagamento.SelectedValueChanged += new System.EventHandler(this.cbPagamento_SelectedValueChanged);
             // 
             // label16
             // 
@@ -1006,7 +1007,6 @@
             this.monthCal.Name = "monthCal";
             this.monthCal.TabIndex = 0;
             this.monthCal.Visible = false;
-            this.monthCal.DateChanged += new System.Windows.Forms.DateRangeEventHandler(this.monthCal_DateChanged);
             this.monthCal.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCal_DateSelected);
             // 
             // frmCadastroCompra

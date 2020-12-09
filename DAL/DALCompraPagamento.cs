@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace DAL
 {
@@ -98,6 +99,25 @@ namespace DAL
             registro.Close();
             conexao.Desconectar();
             return modelo;
+        }
+
+        public DataTable CarregaComboFormaPagamento()
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conexao.ObjetoConexao;
+                conexao.Conectar();
+                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter("SELECT id, nome FROM formapagamento where status = 'A' ORDER BY nome", conexao.StringConexao);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                throw;
+            }
         }
     }
 }

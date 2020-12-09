@@ -61,7 +61,7 @@ namespace DAL
             cmd.ExecuteNonQuery();
         }
 
-        //MELHORA PESQUISA DA COMPRA
+        //MELHORAR PESQUISA DA COMPRA
         public DataTable Localizar(String valor)
         {
             DataTable tabela = new DataTable();
