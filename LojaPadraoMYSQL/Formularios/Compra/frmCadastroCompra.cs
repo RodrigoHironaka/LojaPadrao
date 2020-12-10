@@ -32,31 +32,11 @@ namespace LojaPadraoMYSQL.Formularios
             InitializeComponent();
             txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
             lbStatus.Text = Convert.ToString(SituacaoCompra.Aberto).ToUpper();
+            dtpDataNota.Format = DateTimePickerFormat.Custom;
+            dtpDataNota.CustomFormat = " ";
+            dtpDataInicioPagamento.Format = DateTimePickerFormat.Custom;
+            dtpDataInicioPagamento.CustomFormat = " ";
             this.carregaFormaPagamento();
-        }
-
-        private void tpageDadosPrincipais_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        //--------------------BOTAOCALENDARIO---------------------------------------------------------
-        //--------------------MONTHCALENDAR SELECIONA DATA E VALIDA-----------------------------------
-        private void btCalendario_Click(object sender, EventArgs e)
-        {
-            monthCal.Visible = true;
-        }
-
-        private void monthCal_DateSelected(object sender, DateRangeEventArgs e)
-        {
-            txtDataNota.Text = Convert.ToString(monthCal.SelectionStart.Date.ToShortDateString());
-            DateTime datanasc = Convert.ToDateTime(txtDataNota.Text);
-            if (datanasc > System.DateTime.Now)
-            {
-                MessageBox.Show("Data inválida para compra", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtDataNota.Text = "";
-            }
-            monthCal.Visible = false;
         }
 
         //--------------------BUSCAPORCODIGO---------------------------------------------------------
@@ -466,6 +446,108 @@ namespace LojaPadraoMYSQL.Formularios
             //    cbQtdParcelas.Text = "0";
             //}
         }
-            
+
+        //--------------------DATAS-------------------------------------------------------------------
+        private void dtpDataNota_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dtpDataNota.Format = DateTimePickerFormat.Custom;
+                dtpDataNota.CustomFormat = "dd/MM/yyyy";
+                if (dtpDataNota.CustomFormat == " ")
+                {
+                    dtpDataNota.Text = System.DateTime.Now.ToShortDateString();
+                }
+                else
+                {
+                    DateTime data = Convert.ToDateTime(dtpDataNota.Text);
+                    if (data > System.DateTime.Now)
+                    {
+                        MessageBox.Show("Data inválida para compra", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        dtpDataNota.Format = DateTimePickerFormat.Custom;
+                        dtpDataNota.CustomFormat = " ";
+                    }
+                }                
+            }
+            catch (Exception)
+            {
+                dtpDataNota.Text = System.DateTime.Now.ToShortDateString();
+            }
+           
+        }
+
+        private void dtpDataInicioPagamento_ValueChanged(object sender, EventArgs e)
+        {
+            try
+            {
+                dtpDataInicioPagamento.Format = DateTimePickerFormat.Custom;
+                dtpDataInicioPagamento.CustomFormat = "dd/MM/yyyy";
+                if (dtpDataInicioPagamento.CustomFormat == " ")
+                {
+                    dtpDataInicioPagamento.Text = System.DateTime.Now.ToShortDateString();
+                }
+                else
+                {
+                    DateTime data = Convert.ToDateTime(dtpDataInicioPagamento.Text);
+                    if (data < System.DateTime.Now)
+                    {
+                        MessageBox.Show("Data inválida para pagamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        dtpDataInicioPagamento.Format = DateTimePickerFormat.Custom;
+                        dtpDataInicioPagamento.CustomFormat = " ";
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                dtpDataInicioPagamento.Text = System.DateTime.Now.ToShortDateString();
+            }
+        }
+
+        //--------------------SELECIONA TODO O CAMPO QNDO CLICADO-------------------------------------
+        //--------------------CAMPO VALORES NUMEROS E VIRGULAS----------------------------------------
+        private void txtPrecoParcela_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtPrecoParcela.Text == "")
+                {
+                    txtPrecoParcela.Text = "0,00";
+                }
+                else
+                {
+                    double custo = Convert.ToDouble(txtPrecoParcela.Text);
+                    txtPrecoParcela.Text = custo.ToString("N2");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void txtPrecoParcela_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtQtdNova_MouseClick(sender, e);
+        }
+
+        private void txtPrecoParcela_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtPrecoCusto_KeyPress(sender, e);
+        }
+
+        private void txtPrecoNota_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtQtdNova_MouseClick(sender, e);
+        }
+
+        private void dtpDataNota_Leave(object sender, EventArgs e)
+        {
+            dtpDataNota_ValueChanged(sender, e);
+        }
+
+        private void dtpDataInicioPagamento_Leave(object sender, EventArgs e)
+        {
+            dtpDataInicioPagamento_ValueChanged(sender, e);
+        }
     }
 }

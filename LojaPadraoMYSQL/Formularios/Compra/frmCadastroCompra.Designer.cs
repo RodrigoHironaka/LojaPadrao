@@ -41,11 +41,10 @@
             this.lbCodigo = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.txtDataCadastro = new System.Windows.Forms.TextBox();
-            this.txtDataNota = new System.Windows.Forms.TextBox();
             this.txtNumNota = new System.Windows.Forms.TextBox();
             this.gbDadosCompra = new System.Windows.Forms.GroupBox();
+            this.dtpDataNota = new System.Windows.Forms.DateTimePicker();
             this.lbStatus = new System.Windows.Forms.Label();
-            this.btCalendario = new System.Windows.Forms.Button();
             this.txtPrecoNota = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tabProdutos = new System.Windows.Forms.TabPage();
@@ -86,14 +85,13 @@
             this.tabPag = new System.Windows.Forms.TabPage();
             this.dgvParcelas = new System.Windows.Forms.DataGridView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.btDataInicio = new System.Windows.Forms.Button();
+            this.dtpDataInicioPagamento = new System.Windows.Forms.DateTimePicker();
             this.btRemoverParcela = new System.Windows.Forms.Button();
             this.btConfirmarParcela = new System.Windows.Forms.Button();
             this.cbQtdParcelas = new System.Windows.Forms.ComboBox();
             this.label18 = new System.Windows.Forms.Label();
             this.txtPrecoParcela = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtDataInicioPagamento = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.cbPagamento = new System.Windows.Forms.ComboBox();
             this.label16 = new System.Windows.Forms.Label();
@@ -101,7 +99,6 @@
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.btGravar = new System.Windows.Forms.Button();
-            this.monthCal = new System.Windows.Forms.MonthCalendar();
             this.gbDadosCompra.SuspendLayout();
             this.tabProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
@@ -118,17 +115,17 @@
             this.txtNomeFornecedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNomeFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeFornecedor.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtNomeFornecedor.Location = new System.Drawing.Point(761, 39);
+            this.txtNomeFornecedor.Location = new System.Drawing.Point(750, 39);
             this.txtNomeFornecedor.MaxLength = 50;
             this.txtNomeFornecedor.Name = "txtNomeFornecedor";
             this.txtNomeFornecedor.ReadOnly = true;
-            this.txtNomeFornecedor.Size = new System.Drawing.Size(387, 26);
+            this.txtNomeFornecedor.Size = new System.Drawing.Size(398, 26);
             this.txtNomeFornecedor.TabIndex = 15;
             // 
             // btPesqFornecedor
             // 
             this.btPesqFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPesqFornecedor.Location = new System.Drawing.Point(722, 38);
+            this.btPesqFornecedor.Location = new System.Drawing.Point(711, 38);
             this.btPesqFornecedor.Name = "btPesqFornecedor";
             this.btPesqFornecedor.Size = new System.Drawing.Size(33, 27);
             this.btPesqFornecedor.TabIndex = 5;
@@ -141,7 +138,7 @@
             this.txtCodFornecedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCodFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodFornecedor.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCodFornecedor.Location = new System.Drawing.Point(630, 39);
+            this.txtCodFornecedor.Location = new System.Drawing.Point(619, 39);
             this.txtCodFornecedor.MaxLength = 100;
             this.txtCodFornecedor.Name = "txtCodFornecedor";
             this.txtCodFornecedor.Size = new System.Drawing.Size(86, 26);
@@ -155,7 +152,7 @@
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label26.ForeColor = System.Drawing.Color.Black;
-            this.label26.Location = new System.Drawing.Point(624, 16);
+            this.label26.Location = new System.Drawing.Point(613, 16);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(46, 20);
             this.label26.TabIndex = 318;
@@ -258,16 +255,6 @@
             this.txtDataCadastro.Size = new System.Drawing.Size(146, 26);
             this.txtDataCadastro.TabIndex = 262;
             // 
-            // txtDataNota
-            // 
-            this.txtDataNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataNota.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtDataNota.Location = new System.Drawing.Point(352, 39);
-            this.txtDataNota.MaxLength = 10;
-            this.txtDataNota.Name = "txtDataNota";
-            this.txtDataNota.Size = new System.Drawing.Size(92, 26);
-            this.txtDataNota.TabIndex = 1;
-            // 
             // txtNumNota
             // 
             this.txtNumNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -284,8 +271,8 @@
             this.gbDadosCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbDadosCompra.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbDadosCompra.Controls.Add(this.dtpDataNota);
             this.gbDadosCompra.Controls.Add(this.lbStatus);
-            this.gbDadosCompra.Controls.Add(this.btCalendario);
             this.gbDadosCompra.Controls.Add(this.txtNomeFornecedor);
             this.gbDadosCompra.Controls.Add(this.btPesqFornecedor);
             this.gbDadosCompra.Controls.Add(this.txtPrecoNota);
@@ -294,7 +281,6 @@
             this.gbDadosCompra.Controls.Add(this.label26);
             this.gbDadosCompra.Controls.Add(this.txtNumNota);
             this.gbDadosCompra.Controls.Add(this.label28);
-            this.gbDadosCompra.Controls.Add(this.txtDataNota);
             this.gbDadosCompra.Controls.Add(this.txtDataCadastro);
             this.gbDadosCompra.Controls.Add(this.label21);
             this.gbDadosCompra.Controls.Add(this.lbCodigo);
@@ -307,6 +293,17 @@
             this.gbDadosCompra.TabIndex = 364;
             this.gbDadosCompra.TabStop = false;
             // 
+            // dtpDataNota
+            // 
+            this.dtpDataNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataNota.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataNota.Location = new System.Drawing.Point(352, 39);
+            this.dtpDataNota.Name = "dtpDataNota";
+            this.dtpDataNota.Size = new System.Drawing.Size(120, 26);
+            this.dtpDataNota.TabIndex = 368;
+            this.dtpDataNota.ValueChanged += new System.EventHandler(this.dtpDataNota_ValueChanged);
+            this.dtpDataNota.Leave += new System.EventHandler(this.dtpDataNota_Leave);
+            // 
             // lbStatus
             // 
             this.lbStatus.AutoSize = true;
@@ -318,26 +315,17 @@
             this.lbStatus.TabIndex = 367;
             this.lbStatus.Text = "SITUAÇÃO";
             // 
-            // btCalendario
-            // 
-            this.btCalendario.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btCalendario.Location = new System.Drawing.Point(450, 38);
-            this.btCalendario.Name = "btCalendario";
-            this.btCalendario.Size = new System.Drawing.Size(33, 27);
-            this.btCalendario.TabIndex = 2;
-            this.btCalendario.Text = "...";
-            this.btCalendario.UseVisualStyleBackColor = true;
-            this.btCalendario.Click += new System.EventHandler(this.btCalendario_Click);
-            // 
             // txtPrecoNota
             // 
             this.txtPrecoNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecoNota.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPrecoNota.Location = new System.Drawing.Point(489, 39);
+            this.txtPrecoNota.Location = new System.Drawing.Point(478, 39);
             this.txtPrecoNota.MaxLength = 10;
             this.txtPrecoNota.Name = "txtPrecoNota";
             this.txtPrecoNota.Size = new System.Drawing.Size(135, 26);
             this.txtPrecoNota.TabIndex = 3;
+            this.txtPrecoNota.Text = "0,00";
+            this.txtPrecoNota.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoNota_MouseClick);
             this.txtPrecoNota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoNota_KeyPress);
             this.txtPrecoNota.Leave += new System.EventHandler(this.txtPrecoNota_Leave);
             // 
@@ -346,7 +334,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(485, 16);
+            this.label2.Location = new System.Drawing.Point(474, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(114, 20);
             this.label2.TabIndex = 365;
@@ -394,7 +382,6 @@
             this.tabProdutos.TabIndex = 0;
             this.tabProdutos.Text = "Produtos";
             this.tabProdutos.UseVisualStyleBackColor = true;
-            this.tabProdutos.Click += new System.EventHandler(this.tpageDadosPrincipais_Click);
             // 
             // brZerarEstoque
             // 
@@ -823,14 +810,13 @@
             // groupBox3
             // 
             this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.groupBox3.Controls.Add(this.btDataInicio);
+            this.groupBox3.Controls.Add(this.dtpDataInicioPagamento);
             this.groupBox3.Controls.Add(this.btRemoverParcela);
             this.groupBox3.Controls.Add(this.btConfirmarParcela);
             this.groupBox3.Controls.Add(this.cbQtdParcelas);
             this.groupBox3.Controls.Add(this.label18);
             this.groupBox3.Controls.Add(this.txtPrecoParcela);
             this.groupBox3.Controls.Add(this.label12);
-            this.groupBox3.Controls.Add(this.txtDataInicioPagamento);
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.cbPagamento);
             this.groupBox3.Controls.Add(this.label16);
@@ -840,20 +826,21 @@
             this.groupBox3.TabIndex = 366;
             this.groupBox3.TabStop = false;
             // 
-            // btDataInicio
+            // dtpDataInicioPagamento
             // 
-            this.btDataInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btDataInicio.Location = new System.Drawing.Point(471, 39);
-            this.btDataInicio.Name = "btDataInicio";
-            this.btDataInicio.Size = new System.Drawing.Size(33, 27);
-            this.btDataInicio.TabIndex = 0;
-            this.btDataInicio.Text = "...";
-            this.btDataInicio.UseVisualStyleBackColor = true;
+            this.dtpDataInicioPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpDataInicioPagamento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpDataInicioPagamento.Location = new System.Drawing.Point(330, 41);
+            this.dtpDataInicioPagamento.Name = "dtpDataInicioPagamento";
+            this.dtpDataInicioPagamento.Size = new System.Drawing.Size(120, 26);
+            this.dtpDataInicioPagamento.TabIndex = 369;
+            this.dtpDataInicioPagamento.ValueChanged += new System.EventHandler(this.dtpDataInicioPagamento_ValueChanged);
+            this.dtpDataInicioPagamento.Leave += new System.EventHandler(this.dtpDataInicioPagamento_Leave);
             // 
             // btRemoverParcela
             // 
             this.btRemoverParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRemoverParcela.Location = new System.Drawing.Point(745, 38);
+            this.btRemoverParcela.Location = new System.Drawing.Point(689, 39);
             this.btRemoverParcela.Name = "btRemoverParcela";
             this.btRemoverParcela.Size = new System.Drawing.Size(86, 28);
             this.btRemoverParcela.TabIndex = 3;
@@ -863,7 +850,7 @@
             // btConfirmarParcela
             // 
             this.btConfirmarParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btConfirmarParcela.Location = new System.Drawing.Point(653, 38);
+            this.btConfirmarParcela.Location = new System.Drawing.Point(597, 39);
             this.btConfirmarParcela.Name = "btConfirmarParcela";
             this.btConfirmarParcela.Size = new System.Drawing.Size(89, 28);
             this.btConfirmarParcela.TabIndex = 2;
@@ -896,32 +883,26 @@
             // 
             this.txtPrecoParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecoParcela.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPrecoParcela.Location = new System.Drawing.Point(512, 40);
+            this.txtPrecoParcela.Location = new System.Drawing.Point(456, 41);
             this.txtPrecoParcela.MaxLength = 10;
             this.txtPrecoParcela.Name = "txtPrecoParcela";
             this.txtPrecoParcela.Size = new System.Drawing.Size(135, 26);
             this.txtPrecoParcela.TabIndex = 1;
+            this.txtPrecoParcela.Text = "0,00";
+            this.txtPrecoParcela.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoParcela_MouseClick);
+            this.txtPrecoParcela.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoParcela_KeyPress);
+            this.txtPrecoParcela.Leave += new System.EventHandler(this.txtPrecoParcela_Leave);
             // 
             // label12
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(508, 15);
+            this.label12.Location = new System.Drawing.Point(452, 16);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(111, 20);
             this.label12.TabIndex = 365;
             this.label12.Text = "Preço Parcela:";
-            // 
-            // txtDataInicioPagamento
-            // 
-            this.txtDataInicioPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDataInicioPagamento.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtDataInicioPagamento.Location = new System.Drawing.Point(330, 41);
-            this.txtDataInicioPagamento.MaxLength = 10;
-            this.txtDataInicioPagamento.Name = "txtDataInicioPagamento";
-            this.txtDataInicioPagamento.Size = new System.Drawing.Size(135, 26);
-            this.txtDataInicioPagamento.TabIndex = 2;
             // 
             // label13
             // 
@@ -1001,20 +982,11 @@
             this.btGravar.Text = "Gravar";
             this.btGravar.UseVisualStyleBackColor = true;
             // 
-            // monthCal
-            // 
-            this.monthCal.Location = new System.Drawing.Point(268, 77);
-            this.monthCal.Name = "monthCal";
-            this.monthCal.TabIndex = 0;
-            this.monthCal.Visible = false;
-            this.monthCal.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCal_DateSelected);
-            // 
             // frmCadastroCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1184, 661);
-            this.Controls.Add(this.monthCal);
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.gbDadosCompra);
             this.Controls.Add(this.tabCompra);
@@ -1056,7 +1028,6 @@
         private System.Windows.Forms.Label lbCodigo;
         private System.Windows.Forms.Label label21;
         public System.Windows.Forms.TextBox txtDataCadastro;
-        public System.Windows.Forms.TextBox txtDataNota;
         public System.Windows.Forms.TextBox txtNumNota;
         private System.Windows.Forms.GroupBox gbDadosCompra;
         public System.Windows.Forms.TextBox txtPrecoNota;
@@ -1095,7 +1066,6 @@
         private System.Windows.Forms.Label label18;
         public System.Windows.Forms.TextBox txtPrecoParcela;
         private System.Windows.Forms.Label label12;
-        public System.Windows.Forms.TextBox txtDataInicioPagamento;
         private System.Windows.Forms.Label label13;
         public System.Windows.Forms.ComboBox cbPagamento;
         private System.Windows.Forms.Label label16;
@@ -1113,9 +1083,8 @@
         private System.Windows.Forms.GroupBox gbBotoes;
         private System.Windows.Forms.Button btGravar;
         private System.Windows.Forms.Button brZerarEstoque;
-        private System.Windows.Forms.Button btCalendario;
-        private System.Windows.Forms.Button btDataInicio;
         private System.Windows.Forms.Label lbStatus;
-        private System.Windows.Forms.MonthCalendar monthCal;
+        private System.Windows.Forms.DateTimePicker dtpDataNota;
+        private System.Windows.Forms.DateTimePicker dtpDataInicioPagamento;
     }
 }
