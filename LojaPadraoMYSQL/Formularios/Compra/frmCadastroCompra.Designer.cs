@@ -835,6 +835,8 @@
             this.dtpDataInicioPagamento.Size = new System.Drawing.Size(120, 26);
             this.dtpDataInicioPagamento.TabIndex = 369;
             this.dtpDataInicioPagamento.ValueChanged += new System.EventHandler(this.dtpDataInicioPagamento_ValueChanged);
+            this.dtpDataInicioPagamento.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dtpDataInicioPagamento_KeyDown);
+            this.dtpDataInicioPagamento.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dtpDataInicioPagamento_KeyPress);
             this.dtpDataInicioPagamento.Leave += new System.EventHandler(this.dtpDataInicioPagamento_Leave);
             // 
             // btRemoverParcela

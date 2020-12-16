@@ -3,6 +3,7 @@ using DAL;
 using Modelos;
 using Modelos.ObejtoValor;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -34,8 +35,6 @@ namespace LojaPadraoMYSQL.Formularios
             lbStatus.Text = Convert.ToString(SituacaoCompra.Aberto).ToUpper();
             dtpDataNota.Format = DateTimePickerFormat.Custom;
             dtpDataNota.CustomFormat = " ";
-            dtpDataInicioPagamento.Format = DateTimePickerFormat.Custom;
-            dtpDataInicioPagamento.CustomFormat = " ";
             this.carregaFormaPagamento();
         }
 
@@ -424,27 +423,36 @@ namespace LojaPadraoMYSQL.Formularios
         private void cbPagamento_SelectedValueChanged(object sender, EventArgs e)
         {
 
-            //try
-            //{
-            //    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            //    BLLFormaPagamento bll = new BLLFormaPagamento(cx);
-            //    ModeloFormaPagamento modelo = bll.CarregaModeloFormaPagamento(Convert.ToInt32(cbPagamento.SelectedItem));
-            //    if (modelo.FormaPagamentoId <= 0)
-            //    {
-            //        this.carregaFormaPagamento();
-            //        cbQtdParcelas.Text = "0";
-            //    }
-            //    else
-            //    {
-            //        cbQtdParcelas.Text = modelo.QtdParcelas.ToString();
-            //    }
+            try
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLFormaPagamento bll = new BLLFormaPagamento(cx);
+                int idPagamentoSelecionado = Convert.ToInt32(cbPagamento.SelectedValue);
+                if (idPagamentoSelecionado <= 0)
+                {
+                    this.carregaFormaPagamento();
+                    cbQtdParcelas.Text = "0";
+                }
+                else
+                {
+                    ModeloFormaPagamento modelo = bll.CarregaModeloFormaPagamento(idPagamentoSelecionado);
+                    int qtdmaxparcelas = modelo.QtdParcelas;
 
-            //}
-            //catch
-            //{
-            //    this.carregaFormaPagamento();
-            //    cbQtdParcelas.Text = "0";
-            //}
+                    ArrayList cont = new ArrayList();
+                    for (int i = 0; i <= qtdmaxparcelas; i++)
+                    {
+                        
+                    }
+                    //cbPagamento.Items.Add(cont);
+                }
+
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+                //this.carregaFormaPagamento();
+                //cbQtdParcelas.Text = "0";
+            }
         }
 
         //--------------------DATAS-------------------------------------------------------------------
@@ -467,40 +475,39 @@ namespace LojaPadraoMYSQL.Formularios
                         dtpDataNota.Format = DateTimePickerFormat.Custom;
                         dtpDataNota.CustomFormat = " ";
                     }
-                }                
+                }
             }
             catch (Exception)
             {
                 dtpDataNota.Text = System.DateTime.Now.ToShortDateString();
             }
-           
+
         }
 
         private void dtpDataInicioPagamento_ValueChanged(object sender, EventArgs e)
         {
+            //this.dtpDataInicioPagamento.MaxDate = DateTime.Today.AddDays(-1);
+            //this.dtpDataInicioPagamento.MinDate = DateTimePicker.MinimumDateTime;
             try
             {
-                dtpDataInicioPagamento.Format = DateTimePickerFormat.Custom;
-                dtpDataInicioPagamento.CustomFormat = "dd/MM/yyyy";
-                if (dtpDataInicioPagamento.CustomFormat == " ")
+                //dtpDataInicioPagamento.Format = DateTimePickerFormat.Custom;
+                //dtpDataInicioPagamento.CustomFormat = "dd/MM/yyyy";
+                DateTime data = Convert.ToDateTime(dtpDataInicioPagamento.Text);
+                DateTime dataatual = Convert.ToDateTime(System.DateTime.Now.ToShortDateString());
+                if (data < dataatual)
                 {
+                    MessageBox.Show("Data inválida para pagamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    //dtpDataInicioPagamento.Format = DateTimePickerFormat.Custom;
+                    //dtpDataInicioPagamento.CustomFormat = " ";
                     dtpDataInicioPagamento.Text = System.DateTime.Now.ToShortDateString();
-                }
-                else
-                {
-                    DateTime data = Convert.ToDateTime(dtpDataInicioPagamento.Text);
-                    if (data < System.DateTime.Now)
-                    {
-                        MessageBox.Show("Data inválida para pagamento", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                        dtpDataInicioPagamento.Format = DateTimePickerFormat.Custom;
-                        dtpDataInicioPagamento.CustomFormat = " ";
-                    }
                 }
             }
             catch (Exception)
             {
-                dtpDataInicioPagamento.Text = System.DateTime.Now.ToShortDateString();
+
+                throw;
             }
+            
         }
 
         //--------------------SELECIONA TODO O CAMPO QNDO CLICADO-------------------------------------
@@ -546,6 +553,16 @@ namespace LojaPadraoMYSQL.Formularios
         }
 
         private void dtpDataInicioPagamento_Leave(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void dtpDataInicioPagamento_KeyDown(object sender, KeyEventArgs e)
+        {
+           
+        }
+
+        private void dtpDataInicioPagamento_KeyPress(object sender, KeyPressEventArgs e)
         {
             dtpDataInicioPagamento_ValueChanged(sender, e);
         }
