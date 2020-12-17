@@ -423,36 +423,36 @@ namespace LojaPadraoMYSQL.Formularios
         private void cbPagamento_SelectedValueChanged(object sender, EventArgs e)
         {
 
-            try
-            {
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLFormaPagamento bll = new BLLFormaPagamento(cx);
-                int idPagamentoSelecionado = Convert.ToInt32(cbPagamento.SelectedValue);
-                if (idPagamentoSelecionado <= 0)
-                {
-                    this.carregaFormaPagamento();
-                    cbQtdParcelas.Text = "0";
-                }
-                else
-                {
-                    ModeloFormaPagamento modelo = bll.CarregaModeloFormaPagamento(idPagamentoSelecionado);
-                    int qtdmaxparcelas = modelo.QtdParcelas;
+            //try
+            //{
+            //    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            //    BLLFormaPagamento bll = new BLLFormaPagamento(cx);
+            //    int idPagamentoSelecionado = Convert.ToInt32(cbPagamento.SelectedValue);
+            //    if (idPagamentoSelecionado <= 0)
+            //    {
+            //        this.carregaFormaPagamento();
+            //        cbQtdParcelas.Text = "0";
+            //    }
+            //    else
+            //    {
+            //        ModeloFormaPagamento modelo = bll.CarregaModeloFormaPagamento(idPagamentoSelecionado);
+            //        int qtdmaxparcelas = modelo.QtdParcelas;
 
-                    ArrayList cont = new ArrayList();
-                    for (int i = 0; i <= qtdmaxparcelas; i++)
-                    {
+            //        ArrayList cont = new ArrayList();
+            //        for (int i = 0; i <= qtdmaxparcelas; i++)
+            //        {
                         
-                    }
-                    //cbPagamento.Items.Add(cont);
-                }
+            //        }
+            //        //cbPagamento.Items.Add(cont);
+            //    }
 
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-                //this.carregaFormaPagamento();
-                //cbQtdParcelas.Text = "0";
-            }
+            //}
+            //catch(Exception ex)
+            //{
+            //    MessageBox.Show(ex.ToString());
+            //    //this.carregaFormaPagamento();
+            //    //cbQtdParcelas.Text = "0";
+            //}
         }
 
         //--------------------DATAS-------------------------------------------------------------------
@@ -565,6 +565,56 @@ namespace LojaPadraoMYSQL.Formularios
         private void dtpDataInicioPagamento_KeyPress(object sender, KeyPressEventArgs e)
         {
             dtpDataInicioPagamento_ValueChanged(sender, e);
+        }
+
+        public double totalCusto = 0;
+        public double totalAvista = 0;
+        public double totalPrazo = 0;
+        public double totalItens = 0;
+        public double totalQtd = 0;
+        private void btAdd_Click(object sender, EventArgs e)
+        {
+            
+            try
+            {
+                if ((txtCodProduto.Text != "") && (txtQtdNova.Text != "") && (txtPrecoCusto.Text != "") && (txtPrecoAvista.Text != "") && (txtPrecoPrazo.Text != ""))
+                {
+                    Double totalLocalCusto = Convert.ToDouble(txtQtdNova.Text) * Convert.ToDouble(txtPrecoCusto.Text);
+                    Double totalLocalAvista = Convert.ToDouble(txtQtdNova.Text) * Convert.ToDouble(txtPrecoAvista.Text);
+                    Double totalLocalPrazo = Convert.ToDouble(txtQtdNova.Text) * Convert.ToDouble(txtPrecoPrazo.Text);
+                    this.totalCusto = this.totalCusto + totalLocalCusto;
+                    this.totalAvista = this.totalAvista + totalLocalAvista;
+                    this.totalPrazo = this.totalPrazo + totalLocalPrazo;
+                    this.totalQtd = Convert.ToDouble(txtEstqAtual.Text) + Convert.ToDouble(txtQtdNova.Text);
+                    String[] i = new String[] {
+                       txtCodProduto.Text, txtNomeProduto.Text, txtPrecoCusto.Text, txtPorcCusto.Text, 
+                       txtPrecoAvista.Text, txtPorcAvista.Text, 
+                       txtPrecoPrazo.Text, 
+                       totalLocalCusto.ToString("N2"),
+                       totalLocalAvista.ToString("N2"),
+                       totalLocalPrazo.ToString("N2"),
+                       txtQtdNova.Text, totalQtd.ToString()
+                    };
+                    this.dgvItens.Rows.Add(i);
+
+                    txtCodProduto.Clear();
+                    txtNomeProduto.Clear();
+                    txtPrecoCusto.Text = "0,00";
+                    txtPorcCusto.Text = "0";
+                    txtPrecoAvista.Text = "0,00";
+                    txtPorcAvista.Text = "0";
+                    txtPrecoPrazo.Text = "0,00";
+                    txtEstqAtual.Text = "0";
+                    txtQtdFracao.Text = "0";
+                    txtQtdNova.Text = "0";
+
+                    //txtTotal.Text = this.totalCompra.ToString();
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
     }
 }
