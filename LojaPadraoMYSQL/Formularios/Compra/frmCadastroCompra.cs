@@ -421,38 +421,33 @@ namespace LojaPadraoMYSQL.Formularios
 
         //--------------------CAMPO SELECIONA PAGAMENTO E MOSTRA QTD DE PARCELAS----------------------
         private void cbPagamento_SelectedValueChanged(object sender, EventArgs e)
-        {
-
-            //try
-            //{
-            //    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            //    BLLFormaPagamento bll = new BLLFormaPagamento(cx);
-            //    int idPagamentoSelecionado = Convert.ToInt32(cbPagamento.SelectedValue);
-            //    if (idPagamentoSelecionado <= 0)
-            //    {
-            //        this.carregaFormaPagamento();
-            //        cbQtdParcelas.Text = "0";
-            //    }
-            //    else
-            //    {
-            //        ModeloFormaPagamento modelo = bll.CarregaModeloFormaPagamento(idPagamentoSelecionado);
-            //        int qtdmaxparcelas = modelo.QtdParcelas;
-
-            //        ArrayList cont = new ArrayList();
-            //        for (int i = 0; i <= qtdmaxparcelas; i++)
-            //        {
-                        
-            //        }
-            //        //cbPagamento.Items.Add(cont);
-            //    }
-
-            //}
-            //catch(Exception ex)
-            //{
-            //    MessageBox.Show(ex.ToString());
-            //    //this.carregaFormaPagamento();
-            //    //cbQtdParcelas.Text = "0";
-            //}
+        {    
+            try
+            {
+                
+                ModeloFormaPagamento modelo = new ModeloFormaPagamento();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLFormaPagamento bll = new BLLFormaPagamento(cx);
+                //int idpagamento = Convert.ToInt32(((DataRowView)cbPagamento.SelectedValue)["id"]);
+                var qtdparcelas = bll.CarregaModeloFormaPagamento(Convert.ToInt32(idpagamento)).QtdParcelas;
+                if(qtdparcelas == 0)
+                {
+                    cbQtdParcelas.DataSource = null;
+                    cbQtdParcelas.Items.Add("0");
+                    cbQtdParcelas.SelectedIndex = 0;
+                    cbQtdParcelas.Enabled = false;
+                }
+                else
+                {
+                    cbQtdParcelas.DataSource = null;
+                    cbQtdParcelas.Enabled = true;
+                    cbQtdParcelas.DataSource = Enumerable.Range(1, qtdparcelas).ToList();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString());
+            }
         }
 
         //--------------------DATAS-------------------------------------------------------------------
@@ -615,6 +610,11 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        private void frmCadastroCompra_Load(object sender, EventArgs e)
+        {
+            
         }
     }
 }
