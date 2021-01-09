@@ -23,8 +23,9 @@ namespace LojaPadraoMYSQL.Formularios
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLCompraPagamento bll = new BLLCompraPagamento(cx);
             cbPagamento.DataSource = bll.CarregaComboFormaPagamento();
-            cbPagamento.ValueMember = "id";
             cbPagamento.DisplayMember = "nome";
+            cbPagamento.ValueMember = "id";
+
         }
 
         //--------------------ABRIR NA JANELA QNDO FOR INCLUIR-------------------------------------
@@ -411,6 +412,7 @@ namespace LojaPadraoMYSQL.Formularios
                 {
                     double preconota = Convert.ToDouble(txtPrecoNota.Text);
                     txtPrecoNota.Text = preconota.ToString("N2");
+                    txtPrecoParcela.Text = preconota.ToString("N2");
                 }
             }
             catch (Exception ex)
@@ -421,32 +423,35 @@ namespace LojaPadraoMYSQL.Formularios
 
         //--------------------CAMPO SELECIONA PAGAMENTO E MOSTRA QTD DE PARCELAS----------------------
         private void cbPagamento_SelectedValueChanged(object sender, EventArgs e)
-        {    
+        {
             try
             {
-                
                 ModeloFormaPagamento modelo = new ModeloFormaPagamento();
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLFormaPagamento bll = new BLLFormaPagamento(cx);
-                //int idpagamento = Convert.ToInt32(((DataRowView)cbPagamento.SelectedValue)["id"]);
-                var qtdparcelas = bll.CarregaModeloFormaPagamento(Convert.ToInt32(idpagamento)).QtdParcelas;
-                if(qtdparcelas == 0)
-                {
-                    cbQtdParcelas.DataSource = null;
-                    cbQtdParcelas.Items.Add("0");
-                    cbQtdParcelas.SelectedIndex = 0;
-                    cbQtdParcelas.Enabled = false;
-                }
-                else
-                {
-                    cbQtdParcelas.DataSource = null;
-                    cbQtdParcelas.Enabled = true;
-                    cbQtdParcelas.DataSource = Enumerable.Range(1, qtdparcelas).ToList();
-                }
+               
+                        int idpagamento = Convert.ToInt32(cbPagamento.SelectedValue);
+                        var recebe = bll.CarregaModeloFormaPagamento(idpagamento);
+
+                        if (recebe.QtdParcelas == 0)
+                        {
+                            cbQtdParcelas.DataSource = null;
+                            cbQtdParcelas.Items.Add("0");
+                            cbQtdParcelas.SelectedIndex = 0;
+                            cbQtdParcelas.Enabled = false;
+                            dtpDataInicioPagamento.Enabled = false;
+                        }
+                        else
+                        {
+                            cbQtdParcelas.DataSource = null;
+                            cbQtdParcelas.Enabled = true;
+                            dtpDataInicioPagamento.Enabled = true;
+                            cbQtdParcelas.DataSource = Enumerable.Range(1, recebe.QtdParcelas).ToList();
+                        }
             }
-            catch (Exception ex)
+            catch
             {
-                MessageBox.Show(ex.ToString());
+                
             }
         }
 
@@ -502,7 +507,7 @@ namespace LojaPadraoMYSQL.Formularios
 
                 throw;
             }
-            
+
         }
 
         //--------------------SELECIONA TODO O CAMPO QNDO CLICADO-------------------------------------
@@ -547,29 +552,41 @@ namespace LojaPadraoMYSQL.Formularios
             dtpDataNota_ValueChanged(sender, e);
         }
 
-        private void dtpDataInicioPagamento_Leave(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void dtpDataInicioPagamento_KeyDown(object sender, KeyEventArgs e)
-        {
-           
-        }
-
         private void dtpDataInicioPagamento_KeyPress(object sender, KeyPressEventArgs e)
         {
             dtpDataInicioPagamento_ValueChanged(sender, e);
         }
 
-        public double totalCusto = 0;
-        public double totalAvista = 0;
-        public double totalPrazo = 0;
+        //--------------------VARIAVEIS GRIDITENS-----------------------------------------------------
+
+        //public double totalCusto = 0;
+        //public double totalAvista = 0;
+        //public double totalPrazo = 0;
         public double totalItens = 0;
         public double totalQtd = 0;
+
+        //--------------------SOMA VALORES COLUNAS---------------------------------
+        private void SomaColunas()
+        {
+            decimal tcusto = 0;
+            decimal tavista = 0;
+            decimal tprazo = 0;
+            foreach (DataGridViewRow col in dgvItens.Rows)
+            {
+                tcusto += Convert.ToDecimal(col.Cells[2].Value);
+                tavista += Convert.ToDecimal(col.Cells[4].Value);
+                tprazo += Convert.ToDecimal(col.Cells[6].Value);
+            }
+            txtTotalCusto.Text = tcusto.ToString("N2");
+            txtTotalAvista.Text = tavista.ToString("N2");
+            txtTotalPrazo.Text = tprazo.ToString("N2");
+            txtTotalItens.Text = dgvItens.Rows.Count.ToString();
+        }
+
+        //--------------------SOMA VALORES E ITENS E ADICIONA NO GRID---------------------------------
         private void btAdd_Click(object sender, EventArgs e)
         {
-            
+
             try
             {
                 if ((txtCodProduto.Text != "") && (txtQtdNova.Text != "") && (txtPrecoCusto.Text != "") && (txtPrecoAvista.Text != "") && (txtPrecoPrazo.Text != ""))
@@ -577,17 +594,17 @@ namespace LojaPadraoMYSQL.Formularios
                     Double totalLocalCusto = Convert.ToDouble(txtQtdNova.Text) * Convert.ToDouble(txtPrecoCusto.Text);
                     Double totalLocalAvista = Convert.ToDouble(txtQtdNova.Text) * Convert.ToDouble(txtPrecoAvista.Text);
                     Double totalLocalPrazo = Convert.ToDouble(txtQtdNova.Text) * Convert.ToDouble(txtPrecoPrazo.Text);
-                    this.totalCusto = this.totalCusto + totalLocalCusto;
-                    this.totalAvista = this.totalAvista + totalLocalAvista;
-                    this.totalPrazo = this.totalPrazo + totalLocalPrazo;
+                    //this.totalCusto = this.totalCusto + totalLocalCusto;
+                    //this.totalAvista = this.totalAvista + totalLocalAvista;
+                    //this.totalPrazo = this.totalPrazo + totalLocalPrazo;
                     this.totalQtd = Convert.ToDouble(txtEstqAtual.Text) + Convert.ToDouble(txtQtdNova.Text);
                     String[] i = new String[] {
-                       txtCodProduto.Text, txtNomeProduto.Text, txtPrecoCusto.Text, txtPorcCusto.Text, 
-                       txtPrecoAvista.Text, txtPorcAvista.Text, 
-                       txtPrecoPrazo.Text, 
-                       totalLocalCusto.ToString("N2"),
-                       totalLocalAvista.ToString("N2"),
-                       totalLocalPrazo.ToString("N2"),
+                       txtCodProduto.Text, txtNomeProduto.Text, txtPrecoCusto.Text, txtPorcCusto.Text,
+                       txtPrecoAvista.Text, txtPorcAvista.Text,
+                       txtPrecoPrazo.Text,
+                       //totalLocalCusto.ToString("N2"),
+                       //totalLocalAvista.ToString("N2"),
+                       //totalLocalPrazo.ToString("N2"),
                        txtQtdNova.Text, totalQtd.ToString()
                     };
                     this.dgvItens.Rows.Add(i);
@@ -603,18 +620,60 @@ namespace LojaPadraoMYSQL.Formularios
                     txtQtdFracao.Text = "0";
                     txtQtdNova.Text = "0";
 
-                    //txtTotal.Text = this.totalCompra.ToString();
+                    this.SomaColunas();
+
+                    
                 }
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.ToString());
             }
         }
 
-        private void frmCadastroCompra_Load(object sender, EventArgs e)
+        private void btConfirmarParcela_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
+        //--------------------SUBTRAI VALORES E ITENS E REMOVE NO GRID--------------------------------
+        private void btRemover_Click(object sender, EventArgs e)
+        {
+            if (dgvItens.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Nenhum registro selecionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                return;
+            }
+            else
+            {
+                dgvItens.Rows.Remove(dgvItens.CurrentRow);
+                txtTotalCusto.Clear();
+                txtTotalAvista.Clear();
+                txtTotalPrazo.Clear();
+                this.SomaColunas();
+               
+            }
+        }
+
+        //--------------------DIVIDE TOTAL DA COMPRA PELA QTD DEFINIDA NO COMBO-----------------------
+        private void cbQtdParcelas_SelectedIndexChanged(object sender, EventArgs e)
         {
             
+            int qtdp = Convert.ToInt32(cbQtdParcelas.SelectedItem);
+            decimal totalnota = Convert.ToDecimal(txtPrecoNota.Text);
+            
+            if (qtdp != 0)
+            {
+                decimal precoparcela = totalnota / qtdp;
+                txtPrecoParcela.Text = precoparcela.ToString();
+            }
+            else
+            {
+                txtPrecoParcela.Text = totalnota.ToString();
+            }
+                
         }
+
     }
 }
