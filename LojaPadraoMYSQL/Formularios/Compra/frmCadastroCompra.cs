@@ -631,10 +631,7 @@ namespace LojaPadraoMYSQL.Formularios
             }
         }
 
-        private void btConfirmarParcela_Click(object sender, EventArgs e)
-        {
-
-        }
+ 
 
 
         //--------------------SUBTRAI VALORES E ITENS E REMOVE NO GRID--------------------------------
@@ -666,14 +663,87 @@ namespace LojaPadraoMYSQL.Formularios
             if (qtdp != 0)
             {
                 decimal precoparcela = totalnota / qtdp;
-                txtPrecoParcela.Text = precoparcela.ToString();
+                txtPrecoParcela.Text = precoparcela.ToString("N2");
             }
             else
             {
-                txtPrecoParcela.Text = totalnota.ToString();
+                txtPrecoParcela.Text = totalnota.ToString("N2");
             }
                 
         }
 
+        //--------------------GERAR PARCELAS----------------------------------------------------------
+        private void btGerarParcela_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (txtCodFornecedor.Text == "")
+                {
+                    MessageBox.Show("Informe um código válido para o Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lbCodFornecedor.ForeColor = Color.Red;
+                    //lbCodFornecedor.Font = new Font(lbCodFornecedor.Font, FontStyle.Bold);
+                    return;
+                }
+                else
+                {
+                    lbCodFornecedor.ForeColor = Color.Black;
+                }
+                if (Convert.ToDecimal(txtPrecoNota.Text) <= 0)
+                {
+                    MessageBox.Show("Informe um valor válido para o preço da nota", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    lbPrecoNota.ForeColor = Color.Red;
+                    return;
+                }
+                else
+                {
+                    lbPrecoNota.ForeColor = Color.Black;
+                }
+                dgvParcelas.Rows.Clear();
+                int parcelas = Convert.ToInt32(cbQtdParcelas.Text);
+                //Decimal preconota = Convert.ToDecimal(txtPrecoNota.Text);
+                decimal precoparcela = Convert.ToDecimal(txtPrecoParcela.Text);
+                DateTime dt = new DateTime();
+                dt = dtpDataInicioPagamento.Value;
+                string nomepagamento = cbPagamento.Text;
+                var dia = dt.Day;
+                for (int i = 1; i <= parcelas; i++)
+                {
+                    
+                    String[] k = new String[] { i.ToString(), txtPrecoParcela.Text, dt.ToShortDateString(), nomepagamento };
+                    this.dgvParcelas.Rows.Add(k);
+                    if (dt.Month != 12)
+                    {
+                        var ano = dt.Year;
+                        var mes =  dt.Month+1;
+                        
+                        var ultimodiames = DateTime.DaysInMonth(ano, mes);
+                        if (ultimodiames < dia)
+                        {
+                            dt = new DateTime(ano, mes, ultimodiames);
+                        }
+                        else
+                        {
+                            dt = new DateTime(ano, mes, dia);
+                        }
+                    }
+                    else
+                    {
+                        dt = new DateTime(dt.Year + 1, 1, dia);
+                    }
+
+                }
+            }
+            catch (Exception ex)
+            {
+                //MessageBox.Show("Verifique os campos da tela de venda");
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void btRemoverParcela_Click(object sender, EventArgs e)
+        {
+            dgvParcelas.Rows.Clear();
+            dgvParcelas.Refresh();
+        }
     }
 }
