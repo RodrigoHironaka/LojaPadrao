@@ -410,9 +410,19 @@ namespace LojaPadraoMYSQL.Formularios
                 }
                 else
                 {
-                    double preconota = Convert.ToDouble(txtPrecoNota.Text);
+                    decimal preconota = Convert.ToDecimal(txtPrecoNota.Text);
                     txtPrecoNota.Text = preconota.ToString("N2");
-                    txtPrecoParcela.Text = preconota.ToString("N2");
+                    if(cbQtdParcelas.Text == "0")
+                    {
+                        txtPrecoParcela.Text = preconota.ToString("N2");
+                    }
+                    else
+                    {
+                        int qtdparc = Convert.ToInt32(cbQtdParcelas.Text);
+                        decimal resultado = preconota / qtdparc;
+                        txtPrecoParcela.Text = resultado.ToString("N2");
+                    }
+                   
                 }
             }
             catch (Exception ex)
@@ -429,29 +439,29 @@ namespace LojaPadraoMYSQL.Formularios
                 ModeloFormaPagamento modelo = new ModeloFormaPagamento();
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLFormaPagamento bll = new BLLFormaPagamento(cx);
-               
-                        int idpagamento = Convert.ToInt32(cbPagamento.SelectedValue);
-                        var recebe = bll.CarregaModeloFormaPagamento(idpagamento);
 
-                        if (recebe.QtdParcelas == 0)
-                        {
-                            cbQtdParcelas.DataSource = null;
-                            cbQtdParcelas.Items.Add("0");
-                            cbQtdParcelas.SelectedIndex = 0;
-                            cbQtdParcelas.Enabled = false;
-                            dtpDataInicioPagamento.Enabled = false;
-                        }
-                        else
-                        {
-                            cbQtdParcelas.DataSource = null;
-                            cbQtdParcelas.Enabled = true;
-                            dtpDataInicioPagamento.Enabled = true;
-                            cbQtdParcelas.DataSource = Enumerable.Range(1, recebe.QtdParcelas).ToList();
-                        }
+                int idpagamento = Convert.ToInt32(cbPagamento.SelectedValue);
+                var recebe = bll.CarregaModeloFormaPagamento(idpagamento);
+
+                if (recebe.QtdParcelas == 0)
+                {
+                    cbQtdParcelas.DataSource = null;
+                    cbQtdParcelas.Items.Add("0");
+                    cbQtdParcelas.SelectedIndex = 0;
+                    cbQtdParcelas.Enabled = false;
+                    dtpDataInicioPagamento.Enabled = false;
+                }
+                else
+                {
+                    cbQtdParcelas.DataSource = null;
+                    cbQtdParcelas.Enabled = true;
+                    dtpDataInicioPagamento.Enabled = true;
+                    cbQtdParcelas.DataSource = Enumerable.Range(1, recebe.QtdParcelas).ToList();
+                }
             }
             catch
             {
-                
+
             }
         }
 
@@ -622,7 +632,7 @@ namespace LojaPadraoMYSQL.Formularios
 
                     this.SomaColunas();
 
-                    
+
                 }
             }
             catch (Exception ex)
@@ -631,7 +641,7 @@ namespace LojaPadraoMYSQL.Formularios
             }
         }
 
- 
+
 
 
         //--------------------SUBTRAI VALORES E ITENS E REMOVE NO GRID--------------------------------
@@ -649,17 +659,17 @@ namespace LojaPadraoMYSQL.Formularios
                 txtTotalAvista.Clear();
                 txtTotalPrazo.Clear();
                 this.SomaColunas();
-               
+
             }
         }
 
         //--------------------DIVIDE TOTAL DA COMPRA PELA QTD DEFINIDA NO COMBO-----------------------
         private void cbQtdParcelas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
             int qtdp = Convert.ToInt32(cbQtdParcelas.SelectedItem);
             decimal totalnota = Convert.ToDecimal(txtPrecoNota.Text);
-            
+
             if (qtdp != 0)
             {
                 decimal precoparcela = totalnota / qtdp;
@@ -669,7 +679,7 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 txtPrecoParcela.Text = totalnota.ToString("N2");
             }
-                
+
         }
 
         //--------------------GERAR PARCELAS----------------------------------------------------------
@@ -699,27 +709,46 @@ namespace LojaPadraoMYSQL.Formularios
                     lbPrecoNota.ForeColor = Color.Black;
                 }
                 dgvParcelas.Rows.Clear();
+
                 int parcelas = Convert.ToInt32(cbQtdParcelas.Text);
-                //Decimal preconota = Convert.ToDecimal(txtPrecoNota.Text);
-                decimal precoparcela = Convert.ToDecimal(txtPrecoParcela.Text);
+                Decimal preconota = Convert.ToDecimal(txtPrecoNota.Text);
+                Decimal precoparcela = Convert.ToDecimal(txtPrecoParcela.Text);
+                Decimal dif = preconota - (precoparcela*parcelas);
+                
                 DateTime dt = new DateTime();
                 dt = dtpDataInicioPagamento.Value;
                 string nomepagamento = cbPagamento.Text;
                 var dia = dt.Day;
                 for (int i = 1; i <= parcelas; i++)
                 {
-                    
-                    String[] k = new String[] { i.ToString(), txtPrecoParcela.Text, dt.ToShortDateString(), nomepagamento };
+                    if (dif < 0)
+                    {
+                        precoparcela = precoparcela + dif;
+                        dif = 0;
+                    }
+                    else if (dif > 0)
+                    {
+                        precoparcela = precoparcela + dif;
+                        dif = 0;
+                    }
+                    else
+                    {
+                        precoparcela = Convert.ToDecimal(txtPrecoParcela.Text);
+                        dif = 0;
+                    }
+
+                    String[] k = new String[] { i.ToString(), precoparcela.ToString(), dt.ToShortDateString(), nomepagamento };
                     this.dgvParcelas.Rows.Add(k);
                     if (dt.Month != 12)
                     {
                         var ano = dt.Year;
-                        var mes =  dt.Month+1;
-                        
+                        var mes = dt.Month + 1;
+
                         var ultimodiames = DateTime.DaysInMonth(ano, mes);
                         if (ultimodiames < dia)
                         {
                             dt = new DateTime(ano, mes, ultimodiames);
+                           
                         }
                         else
                         {
@@ -738,12 +767,28 @@ namespace LojaPadraoMYSQL.Formularios
                 //MessageBox.Show("Verifique os campos da tela de venda");
                 MessageBox.Show(ex.ToString());
             }
+
         }
 
         private void btRemoverParcela_Click(object sender, EventArgs e)
         {
             dgvParcelas.Rows.Clear();
             dgvParcelas.Refresh();
+        }
+
+        private void dgvParcelas_DoubleClick(object sender, EventArgs e)
+        {
+            foreach (DataGridViewColumn dc in dgvParcelas.Columns)
+            {
+                if (dc.Index.Equals(0))
+                {
+                    dc.ReadOnly = true;
+                }
+                else
+                {
+                    dc.ReadOnly = false;
+                }
+            }
         }
     }
 }
