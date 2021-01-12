@@ -17,8 +17,9 @@ namespace BLL
             this.conexao = cx;
         }
 
-        public void Incluir(ModeloCompra modelo)
+        public int Incluir(ModeloCompra modelo)
         {
+            
             //if (modelo.Nome.Trim().Length == 0)
             //{
             //    throw new Exception("O nome é obrigatório");
@@ -31,7 +32,7 @@ namespace BLL
             //}
 
             DALCompra DALObj = new DALCompra(conexao);
-            DALObj.Incluir(modelo);
+            return DALObj.Incluir(modelo);
         }
 
         public void Alterar(ModeloCompra modelo)

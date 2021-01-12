@@ -17,8 +17,9 @@ namespace DAL
         {
             this.conexao = cx;
         }
-        public void Incluir(ModeloCompra modelo)
+        public int Incluir(ModeloCompra modelo)
         {
+            int idcompra = 0;
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
             cmd.Transaction = this.conexao.ObjetoTransacao;
@@ -30,7 +31,10 @@ namespace DAL
             cmd.Parameters.AddWithValue("@idFornecedor", modelo.FornecedorId);
             cmd.Parameters.AddWithValue("@observacao", modelo.Observacao);
             cmd.Parameters.AddWithValue("@status", modelo.Status);
-            modelo.CompraId = Convert.ToInt32(cmd.ExecuteScalar());
+            cmd.ExecuteNonQuery();
+            cmd.CommandText = "select max(id) from compra";
+            idcompra = Convert.ToInt32(cmd.ExecuteScalar());
+            return idcompra;
         }
 
         public void Alterar(ModeloCompra modelo)

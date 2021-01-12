@@ -17,12 +17,11 @@ namespace DAL
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
             cmd.Transaction = this.conexao.ObjetoTransacao;
-            cmd.CommandText = "insert into compraitens(idCompra, idProduto, qtdNova, fracaQtd, precoCusto, porcentagemCusto, precoAvista, porcentagemAvista, precoPrazo, totalItens, totalCusto, totalAvista, totalPrazo)"+
-                " values (@idCompra, @idProduto, @qtdNova, @fracaQtd, @precoCusto, @porcentagemCusto, @precoAvista, @porcentagemAvista, @precoPrazo, @totalItens, @totalCusto, @totalAvista, @totalPrazo);";
+            cmd.CommandText = "insert into compraitens(idCompra, idProduto, qtdNova, precoCusto, porcentagemCusto, precoAvista, porcentagemAvista, precoPrazo, totalItens, totalCusto, totalAvista, totalPrazo)"+
+                " values (@idCompra, @idProduto, @qtdNova, @precoCusto, @porcentagemCusto, @precoAvista, @porcentagemAvista, @precoPrazo, @totalItens, @totalCusto, @totalAvista, @totalPrazo);";
             cmd.Parameters.AddWithValue("@idCompra", modelo.CompraId);
             cmd.Parameters.AddWithValue("@idProduto", modelo.ProdutoId);
             cmd.Parameters.AddWithValue("@qtdNova", modelo.QtdNova);
-            cmd.Parameters.AddWithValue("@fracaQtd", modelo.QtdFracao);
             cmd.Parameters.AddWithValue("@precoCusto", modelo.PrecoCusto);
             cmd.Parameters.AddWithValue("@porcentagemCusto", modelo.PorcentagemCusto);
             cmd.Parameters.AddWithValue("@precoAvista", modelo.PrecoAvista);
@@ -40,12 +39,11 @@ namespace DAL
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
             cmd.Transaction = this.conexao.ObjetoTransacao;
-            cmd.CommandText = "update compraitens set qtdNova=@qtdNova, fracaQtd=@fracaQtd, precoCusto=@precoCusto, porcentagemCusto=@porcentagemCusto, precoAvista=@precoAvista, porcentagemAvista=@porcentagemAvista, precoPrazo=@precoPrazo"+
+            cmd.CommandText = "update compraitens set qtdNova=@qtdNova, precoCusto=@precoCusto, porcentagemCusto=@porcentagemCusto, precoAvista=@precoAvista, porcentagemAvista=@porcentagemAvista, precoPrazo=@precoPrazo"+
                 " where id=@codigo and idCompra=@idCompra and idProduto=@idProduto;";
             cmd.Parameters.AddWithValue("@idCompra", modelo.CompraId);
             cmd.Parameters.AddWithValue("@idProduto", modelo.ProdutoId);
             cmd.Parameters.AddWithValue("@qtdNova", modelo.QtdNova);
-            cmd.Parameters.AddWithValue("@fracaQtd", modelo.QtdFracao);
             cmd.Parameters.AddWithValue("@precoCusto", modelo.PrecoCusto);
             cmd.Parameters.AddWithValue("@porcentagemCusto", modelo.PorcentagemCusto);
             cmd.Parameters.AddWithValue("@precoAvista", modelo.PrecoAvista);
@@ -108,7 +106,6 @@ namespace DAL
                 modelo.CompraId = idCompra;
                 modelo.ProdutoId = idProduto;
                 modelo.QtdNova = Convert.ToDecimal(registro["qtdNova"]);
-                modelo.QtdFracao = Convert.ToDecimal(registro["fracaoQtd"]);
                 modelo.PrecoCusto = Convert.ToDecimal(registro["precoCusto"]);
                 modelo.PorcentagemCusto = Convert.ToDecimal(registro["porcentagemCusto"]);
                 modelo.PrecoAvista = Convert.ToDecimal(registro["precoAvista"]);

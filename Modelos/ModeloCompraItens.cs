@@ -12,7 +12,7 @@ namespace Modelos
         public int CompraId { get; set; }
         public int ProdutoId { get; set; }
         public decimal QtdNova { get; set; }
-        public decimal QtdFracao { get; set; }
+        //public decimal QtdFracao { get; set; }
         public decimal PrecoCusto { get; set; }
         public decimal PorcentagemCusto { get; set; }
         public decimal PrecoAvista { get; set; }

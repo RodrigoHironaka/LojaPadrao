@@ -412,7 +412,7 @@ namespace LojaPadraoMYSQL.Formularios
                 {
                     decimal preconota = Convert.ToDecimal(txtPrecoNota.Text);
                     txtPrecoNota.Text = preconota.ToString("N2");
-                    if(cbQtdParcelas.Text == "0")
+                    if (cbQtdParcelas.Text == "0")
                     {
                         txtPrecoParcela.Text = preconota.ToString("N2");
                     }
@@ -422,7 +422,7 @@ namespace LojaPadraoMYSQL.Formularios
                         decimal resultado = preconota / qtdparc;
                         txtPrecoParcela.Text = resultado.ToString("N2");
                     }
-                   
+
                 }
             }
             catch (Exception ex)
@@ -446,7 +446,7 @@ namespace LojaPadraoMYSQL.Formularios
                 if (recebe.QtdParcelas == 0)
                 {
                     cbQtdParcelas.DataSource = null;
-                    cbQtdParcelas.Items.Add("0");
+                    cbQtdParcelas.Items.Add("1");
                     cbQtdParcelas.SelectedIndex = 0;
                     cbQtdParcelas.Enabled = false;
                     dtpDataInicioPagamento.Enabled = false;
@@ -627,7 +627,6 @@ namespace LojaPadraoMYSQL.Formularios
                     txtPorcAvista.Text = "0";
                     txtPrecoPrazo.Text = "0,00";
                     txtEstqAtual.Text = "0";
-                    txtQtdFracao.Text = "0";
                     txtQtdNova.Text = "0";
 
                     this.SomaColunas();
@@ -640,8 +639,6 @@ namespace LojaPadraoMYSQL.Formularios
                 MessageBox.Show(ex.ToString());
             }
         }
-
-
 
 
         //--------------------SUBTRAI VALORES E ITENS E REMOVE NO GRID--------------------------------
@@ -713,8 +710,8 @@ namespace LojaPadraoMYSQL.Formularios
                 int parcelas = Convert.ToInt32(cbQtdParcelas.Text);
                 Decimal preconota = Convert.ToDecimal(txtPrecoNota.Text);
                 Decimal precoparcela = Convert.ToDecimal(txtPrecoParcela.Text);
-                Decimal dif = preconota - (precoparcela*parcelas);
-                
+                Decimal dif = preconota - (precoparcela * parcelas);
+
                 DateTime dt = new DateTime();
                 dt = dtpDataInicioPagamento.Value;
                 string nomepagamento = cbPagamento.Text;
@@ -748,7 +745,7 @@ namespace LojaPadraoMYSQL.Formularios
                         if (ultimodiames < dia)
                         {
                             dt = new DateTime(ano, mes, ultimodiames);
-                           
+
                         }
                         else
                         {
@@ -770,12 +767,14 @@ namespace LojaPadraoMYSQL.Formularios
 
         }
 
+        //--------------------BOTAO PARA REMOVER TODAS AS PARCELAS DO GRID----------------------------
         private void btRemoverParcela_Click(object sender, EventArgs e)
         {
             dgvParcelas.Rows.Clear();
             dgvParcelas.Refresh();
         }
 
+        //--------------------BLOQUEIA EDIÇÃO DAS CELULAS DO DATAGRIDVIEW-----------------------------
         private void dgvParcelas_DoubleClick(object sender, EventArgs e)
         {
             foreach (DataGridViewColumn dc in dgvParcelas.Columns)
@@ -789,6 +788,132 @@ namespace LojaPadraoMYSQL.Formularios
                     dc.ReadOnly = false;
                 }
             }
+        }
+
+        //--------------------SALVA DADOS DA COMPRAS, ITENS, PARCELAS EM SUAS TABELAS-----------------
+        private void btSalvar_Click(object sender, EventArgs e)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            cx.Conectar();
+            cx.IniciarTransacao();
+
+            try
+            {
+                ModeloCompra modelocompra = new ModeloCompra();
+                modelocompra.DataCadastro = txtDataCadastro.Text;
+                modelocompra.NumNota = Convert.ToInt32(txtNumNota.Text);
+                modelocompra.DataNota = dtpDataNota.Value;
+                modelocompra.PrecoNota = Convert.ToDecimal(txtPrecoNota.Text);
+                if (lbStatus.Text == "ABERTO")
+                {
+                    modelocompra.Status = Convert.ToChar("A");
+                }
+                else if (lbStatus.Text == "FATURADO")
+                {
+                    modelocompra.Status = Convert.ToChar("F");
+                }
+                else if (lbStatus.Text == "CANCELADO")
+                {
+                    modelocompra.Status = Convert.ToChar("C");
+                }
+                modelocompra.FornecedorId = Convert.ToInt32(txtCodFornecedor.Text);
+                modelocompra.Observacao = txtObservacao.Text;
+                BLLCompra bllcompra = new BLLCompra(cx);
+
+                ModeloCompraItens modelocompraitens = new ModeloCompraItens();
+                BLLCompraItens bllcompraitens = new BLLCompraItens(cx);
+
+                ModeloCompraPagamento modelocomprapagamento = new ModeloCompraPagamento();
+                BLLCompraPagamento bllcomprapagamento = new BLLCompraPagamento(cx);
+
+                if (txtID.Text == "")
+                {
+                    //incluir
+
+                    //cadastra dados da tabela compra
+                    int idcompra = bllcompra.Incluir(modelocompra);
+
+                    //cadastra od itens(produtos, valores, estoque) na tabela de compra itens
+                    for (int i = 0; i < dgvItens.RowCount; i++)
+                    {
+                        modelocompraitens.CompraItensId = i + 1;
+                        modelocompraitens.CompraId = idcompra;
+                        modelocompraitens.ProdutoId = Convert.ToInt32(dgvItens.Rows[i].Cells[0].Value);
+                        modelocompraitens.PrecoCusto = Convert.ToDecimal(dgvItens.Rows[i].Cells[2].Value);
+                        modelocompraitens.PorcentagemCusto = Convert.ToDecimal(dgvItens.Rows[i].Cells[3].Value);
+                        modelocompraitens.PrecoAvista = Convert.ToDecimal(dgvItens.Rows[i].Cells[4].Value);
+                        modelocompraitens.PorcentagemAvista = Convert.ToDecimal(dgvItens.Rows[i].Cells[5].Value);
+                        modelocompraitens.PrecoPrazo = Convert.ToDecimal(dgvItens.Rows[i].Cells[6].Value);
+                        modelocompraitens.QtdNova = Convert.ToDecimal(dgvItens.Rows[i].Cells[7].Value);
+                        modelocompraitens.TotalItens = Convert.ToInt32(txtTotalItens.Text);
+                        modelocompraitens.TotalCusto = Convert.ToDecimal(txtTotalCusto.Text);
+                        modelocompraitens.TotalAvista = Convert.ToDecimal(txtTotalAvista.Text);
+                        modelocompraitens.TotalPrazo = Convert.ToDecimal(txtTotalPrazo.Text);
+                        bllcompraitens.Incluir(modelocompraitens);
+                        //tenho que criar uma trigger para alterar o estoque e valores modificados aqui na tabela produtos
+
+                    }
+
+                    //cadastra as parcelas(divididas ou não) na tabela de compra pagamento
+                    for (int i = 0; i < dgvParcelas.RowCount; i++)
+                    {
+                        modelocomprapagamento.CompraPagamentoId = i + 1;
+                        modelocomprapagamento.CompraId = idcompra;
+                        modelocomprapagamento.PrecoParcela = Convert.ToDecimal(dgvParcelas.Rows[i].Cells[1].Value);
+                        modelocomprapagamento.DataInicioPagamento = Convert.ToDateTime(dgvParcelas.Rows[i].Cells[2].Value);
+                        modelocomprapagamento.FormaPagamentoId = Convert.ToInt32(cbPagamento.SelectedValue);
+                        bllcomprapagamento.Incluir(modelocomprapagamento);
+                    }
+
+                }
+                else
+                {
+                    //alterar
+                }
+
+                this.LimpaTela();
+                cx.TerminarTransacao();
+                cx.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                cx.CancelaTransacao();
+                cx.Desconectar();
+            }
+        }
+
+        //--------------------FUNCAO PARA LIMPAR OS CAMPOS--------------------------------------------
+        public void LimpaTela()
+        {
+            txtID.Clear();   
+            txtNumNota.Clear();
+            dtpDataNota.Text = System.DateTime.Now.ToShortDateString();
+            txtPrecoNota.Text = "0,00";
+            txtCodFornecedor.Clear();
+            txtNomeFornecedor.Clear();
+            txtCodProduto.Clear();
+            txtNomeProduto.Clear();
+            txtPrecoCusto.Text = "0,00";
+            txtPorcCusto.Text = "0";
+            txtPrecoAvista.Text = "0,00";
+            txtPorcAvista.Text = "0";
+            txtPrecoPrazo.Text = "0,00";
+            txtEstqAtual.Text = "0";
+            txtQtdNova.Text = "0";
+            dgvItens.Rows.Clear();
+            dgvItens.Refresh();
+            txtTotalItens.Text = "0";
+            txtTotalCusto.Text = "0,00";
+            txtTotalAvista.Text = "0,00";
+            txtTotalPrazo.Text = "0,00";
+            cbPagamento.SelectedIndex = 0;
+            cbQtdParcelas.Text = "1";
+            dtpDataInicioPagamento.Text = System.DateTime.Now.ToShortDateString();
+            txtPrecoParcela.Text = "0,00";
+            dgvParcelas.Rows.Clear();
+            dgvParcelas.Refresh();
+            txtObservacao.Clear();
         }
     }
 }
