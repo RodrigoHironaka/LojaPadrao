@@ -64,6 +64,7 @@ namespace LojaPadraoMYSQL.Formularios
                 txtCodFornecedor.Clear();
                 txtNomeFornecedor.Clear();
             }
+            lbCodFornecedor.ForeColor = Color.Black;
         }
 
         private void btPesqFornecedor_Click(object sender, EventArgs e)
@@ -429,6 +430,7 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 MessageBox.Show(ex.ToString());
             }
+            lbPrecoNota.ForeColor = Color.Black;
         }
 
         //--------------------CAMPO SELECIONA PAGAMENTO E MOSTRA QTD DE PARCELAS----------------------
@@ -793,6 +795,20 @@ namespace LojaPadraoMYSQL.Formularios
         //--------------------SALVA DADOS DA COMPRAS, ITENS, PARCELAS EM SUAS TABELAS-----------------
         private void btSalvar_Click(object sender, EventArgs e)
         {
+            //var contItens = dgvItens.Rows.Count;
+            //var contparcelas = dgvParcelas.Rows.Count;
+            //if ((contItens == 0) && (contparcelas == 0))
+            //{
+            //    DialogResult resposta = MessageBox.Show("AVISO: Nenhum 'Item' ou 'Parcela' foi lançado, deseja salvar assim mesmo?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            //    if (resposta.ToString() == "Yes")
+            //    {
+
+            //    }
+            //    else
+            //    {
+            //        return;
+            //    }
+            //}
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             cx.Conectar();
             cx.IniciarTransacao();
@@ -801,7 +817,14 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 ModeloCompra modelocompra = new ModeloCompra();
                 modelocompra.DataCadastro = txtDataCadastro.Text;
-                modelocompra.NumNota = Convert.ToInt32(txtNumNota.Text);
+                if (txtNumNota.Text != "")
+                {
+                    modelocompra.NumNota = Convert.ToInt32(txtNumNota.Text);
+                }
+                else
+                {
+                    modelocompra.NumNota = 0;
+                }
                 modelocompra.DataNota = dtpDataNota.Value;
                 modelocompra.PrecoNota = Convert.ToDecimal(txtPrecoNota.Text);
                 if (lbStatus.Text == "ABERTO")
@@ -816,7 +839,14 @@ namespace LojaPadraoMYSQL.Formularios
                 {
                     modelocompra.Status = Convert.ToChar("C");
                 }
-                modelocompra.FornecedorId = Convert.ToInt32(txtCodFornecedor.Text);
+                if (txtCodFornecedor.Text != "")
+                {
+                    modelocompra.FornecedorId = Convert.ToInt32(txtCodFornecedor.Text);
+                }
+                else
+                {
+                    modelocompra.FornecedorId = 1;
+                }
                 modelocompra.Observacao = txtObservacao.Text;
                 BLLCompra bllcompra = new BLLCompra(cx);
 
@@ -864,7 +894,6 @@ namespace LojaPadraoMYSQL.Formularios
                         modelocomprapagamento.FormaPagamentoId = Convert.ToInt32(cbPagamento.SelectedValue);
                         bllcomprapagamento.Incluir(modelocomprapagamento);
                     }
-
                 }
                 else
                 {
@@ -874,6 +903,7 @@ namespace LojaPadraoMYSQL.Formularios
                 this.LimpaTela();
                 cx.TerminarTransacao();
                 cx.Desconectar();
+                this.Close();
             }
             catch (Exception ex)
             {
@@ -881,12 +911,13 @@ namespace LojaPadraoMYSQL.Formularios
                 cx.CancelaTransacao();
                 cx.Desconectar();
             }
+
         }
 
         //--------------------FUNCAO PARA LIMPAR OS CAMPOS--------------------------------------------
         public void LimpaTela()
         {
-            txtID.Clear();   
+            txtID.Clear();
             txtNumNota.Clear();
             dtpDataNota.Text = System.DateTime.Now.ToShortDateString();
             txtPrecoNota.Text = "0,00";

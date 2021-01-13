@@ -65,6 +65,13 @@ namespace DAL
             cmd.ExecuteNonQuery();
         }
 
+        public DataTable LocalizarTodos()
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select c.id as Cod,c.dataCadastro as Cadastro, c.NumNota as Nota, c.dataNota as Emissão, c.precoNota as ValorNota, c.idFornecedor as CodF, f.nomeFantasia as Fornecedor, f.nomeVendedor as Vendedor, c.`status` as Sit from compra c inner join fornecedor f on(c.idFornecedor = f.id) order by c.id ", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
         //MELHORAR PESQUISA DA COMPRA
         public DataTable Localizar(String valor)
         {
@@ -73,6 +80,7 @@ namespace DAL
             da.Fill(tabela);
             return tabela;
         }
+
 
         public ModeloCompra CarregaModeloCompra(int codigo)
         {

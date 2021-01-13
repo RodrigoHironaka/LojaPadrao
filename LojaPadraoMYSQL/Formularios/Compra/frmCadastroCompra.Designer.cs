@@ -142,17 +142,17 @@
             this.txtNomeFornecedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNomeFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeFornecedor.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtNomeFornecedor.Location = new System.Drawing.Point(750, 39);
+            this.txtNomeFornecedor.Location = new System.Drawing.Point(842, 39);
             this.txtNomeFornecedor.MaxLength = 50;
             this.txtNomeFornecedor.Name = "txtNomeFornecedor";
             this.txtNomeFornecedor.ReadOnly = true;
-            this.txtNomeFornecedor.Size = new System.Drawing.Size(398, 26);
+            this.txtNomeFornecedor.Size = new System.Drawing.Size(306, 26);
             this.txtNomeFornecedor.TabIndex = 15;
             // 
             // btPesqFornecedor
             // 
             this.btPesqFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPesqFornecedor.Location = new System.Drawing.Point(711, 38);
+            this.btPesqFornecedor.Location = new System.Drawing.Point(803, 38);
             this.btPesqFornecedor.Name = "btPesqFornecedor";
             this.btPesqFornecedor.Size = new System.Drawing.Size(33, 27);
             this.btPesqFornecedor.TabIndex = 5;
@@ -165,7 +165,7 @@
             this.txtCodFornecedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtCodFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCodFornecedor.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCodFornecedor.Location = new System.Drawing.Point(619, 39);
+            this.txtCodFornecedor.Location = new System.Drawing.Point(711, 39);
             this.txtCodFornecedor.MaxLength = 100;
             this.txtCodFornecedor.Name = "txtCodFornecedor";
             this.txtCodFornecedor.Size = new System.Drawing.Size(86, 26);
@@ -179,7 +179,7 @@
             this.lbCodFornecedor.AutoSize = true;
             this.lbCodFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCodFornecedor.ForeColor = System.Drawing.Color.Black;
-            this.lbCodFornecedor.Location = new System.Drawing.Point(613, 16);
+            this.lbCodFornecedor.Location = new System.Drawing.Point(705, 16);
             this.lbCodFornecedor.Name = "lbCodFornecedor";
             this.lbCodFornecedor.Size = new System.Drawing.Size(46, 20);
             this.lbCodFornecedor.TabIndex = 318;
@@ -190,7 +190,7 @@
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label28.ForeColor = System.Drawing.Color.Black;
-            this.label28.Location = new System.Drawing.Point(746, 16);
+            this.label28.Location = new System.Drawing.Point(838, 16);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(95, 20);
             this.label28.TabIndex = 276;
@@ -266,7 +266,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label21.ForeColor = System.Drawing.Color.Black;
-            this.label21.Location = new System.Drawing.Point(348, 16);
+            this.label21.Location = new System.Drawing.Point(440, 16);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(86, 20);
             this.label21.TabIndex = 363;
@@ -288,9 +288,9 @@
             this.txtNumNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumNota.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtNumNota.Location = new System.Drawing.Point(260, 39);
-            this.txtNumNota.MaxLength = 6;
+            this.txtNumNota.MaxLength = 50;
             this.txtNumNota.Name = "txtNumNota";
-            this.txtNumNota.Size = new System.Drawing.Size(86, 26);
+            this.txtNumNota.Size = new System.Drawing.Size(178, 26);
             this.txtNumNota.TabIndex = 0;
             this.txtNumNota.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumNota_KeyPress);
             // 
@@ -325,7 +325,7 @@
             // 
             this.dtpDataNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataNota.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataNota.Location = new System.Drawing.Point(352, 39);
+            this.dtpDataNota.Location = new System.Drawing.Point(444, 39);
             this.dtpDataNota.Name = "dtpDataNota";
             this.dtpDataNota.Size = new System.Drawing.Size(120, 26);
             this.dtpDataNota.TabIndex = 368;
@@ -347,7 +347,7 @@
             // 
             this.txtPrecoNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecoNota.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPrecoNota.Location = new System.Drawing.Point(478, 39);
+            this.txtPrecoNota.Location = new System.Drawing.Point(570, 39);
             this.txtPrecoNota.MaxLength = 10;
             this.txtPrecoNota.Name = "txtPrecoNota";
             this.txtPrecoNota.Size = new System.Drawing.Size(135, 26);
@@ -362,7 +362,7 @@
             this.lbPrecoNota.AutoSize = true;
             this.lbPrecoNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPrecoNota.ForeColor = System.Drawing.Color.Black;
-            this.lbPrecoNota.Location = new System.Drawing.Point(474, 16);
+            this.lbPrecoNota.Location = new System.Drawing.Point(566, 16);
             this.lbPrecoNota.Name = "lbPrecoNota";
             this.lbPrecoNota.Size = new System.Drawing.Size(114, 20);
             this.lbPrecoNota.TabIndex = 365;

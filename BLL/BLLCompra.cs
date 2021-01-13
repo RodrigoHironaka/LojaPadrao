@@ -20,17 +20,18 @@ namespace BLL
         public int Incluir(ModeloCompra modelo)
         {
             
-            //if (modelo.Nome.Trim().Length == 0)
+            if ((modelo.NumNota == 0)||(modelo.NumNota.ToString() == ""))
+            {
+                throw new Exception("Número da nota precisa ser preenchido!");
+            }
+            if ((modelo.PrecoNota == 0) || (modelo.PrecoNota.ToString() == "0,00"))
+            {
+                throw new Exception("Preço da nota precisa ser diferente de zero!");
+            }
+            //if ((modelo.FornecedorId == 0) || (modelo.FornecedorId.ToString() == ""))
             //{
-            //    throw new Exception("O nome é obrigatório");
+            //    modelo.FornecedorId = 1;
             //}
-            //modelo.Nome = modelo.Nome.ToUpper();
-
-            //if (modelo.Nome.Trim().Length > 100)
-            //{
-            //    throw new Exception("O limite máximo de caracteres é 100!");
-            //}
-
             DALCompra DALObj = new DALCompra(conexao);
             return DALObj.Incluir(modelo);
         }
@@ -39,18 +40,16 @@ namespace BLL
         {
             if (modelo.CompraId <= 0)
             {
-                throw new Exception("Digite o codigo");
+                throw new Exception("Codigo da compra inválido!");
             }
-            //if (modelo.Nome.Trim().Length == 0)
-            //{
-            //    throw new Exception("O nome é obrigatório");
-            //}
-            //modelo.Nome = modelo.Nome.ToUpper();
-
-            //if (modelo.Nome.Trim().Length > 100)
-            //{
-            //    throw new Exception("O limite máximo de caracteres é 100!");
-            //}
+            if ((modelo.NumNota == 0) || (modelo.NumNota.ToString() == ""))
+            {
+                throw new Exception("Número da nota precisa ser preenchido!");
+            }
+            if ((modelo.PrecoNota == 0) || (modelo.PrecoNota.ToString() == "0,00"))
+            {
+                throw new Exception("Preço da nota precisa ser diferente de zero!");
+            }
 
             DALCompra DALObj = new DALCompra(conexao);
             DALObj.Alterar(modelo);
@@ -62,6 +61,11 @@ namespace BLL
             DALObj.Excluir(codigo);
         }
 
+        public DataTable LocalizarTodos()
+        {
+            DALCompra DALObj = new DALCompra(conexao);
+            return DALObj.LocalizarTodos();
+        }
         public DataTable Localizar(String valor)
         {
             DALCompra DALObj = new DALCompra(conexao);
