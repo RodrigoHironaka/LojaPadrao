@@ -39,6 +39,47 @@ namespace LojaPadraoMYSQL.Formularios
             this.carregaFormaPagamento();
         }
 
+        //--------------------ABRIR NA JANELA QNDO FOR ALTERAR-------------------------------------
+        public frmCadastroCompra(ModeloCompra modelocompra)
+        {
+            InitializeComponent();
+            txtID.Text = modelocompra.CompraId.ToString();
+            txtDataCadastro.Text = modelocompra.DataCadastro;
+            txtNumNota.Text = modelocompra.NumNota.ToString();
+            dtpDataNota.Text = modelocompra.DataNota.ToString();
+            txtPrecoNota.Text = modelocompra.PrecoNota.ToString();
+            txtCodFornecedor.Text = modelocompra.FornecedorId.ToString();
+            if (txtCodFornecedor.Text != "")
+            {
+
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLFornecedor bll = new BLLFornecedor(cx);
+                ModeloFornecedor modelofornecedor = bll.CarregaModeloFornecedor(Convert.ToInt32(modelocompra.FornecedorId));
+                txtNomeFornecedor.Text = modelofornecedor.NomeFantasia;
+                
+            }
+            else
+            {
+                MessageBox.Show("Houve algum problema na hora de buscar os dados do fornecedor. Contate o suporte técnico", "Informativo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            txtObservacao.Text = modelocompra.Observacao;
+            if(modelocompra.Status == 'A')
+            {
+                lbStatus.Text = SituacaoCompra.Aberto.ToString().ToUpper();
+                lbStatus.ForeColor = Color.Blue;
+            }
+            else if (modelocompra.Status == 'F')
+            {
+                lbStatus.Text = SituacaoCompra.Faturado.ToString().ToUpper();
+                lbStatus.ForeColor = Color.Green;
+            }
+            else
+            {
+                lbStatus.Text = SituacaoCompra.Cancelado.ToString().ToUpper();
+                lbStatus.ForeColor = Color.Red;
+            }
+        }
+
         //--------------------BUSCAPORCODIGO---------------------------------------------------------
         //--------------------BOTAOPESQUISAR---------------------------------------------------------
         private void txtCodFornecedor_Leave(object sender, EventArgs e)

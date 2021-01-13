@@ -72,6 +72,7 @@ namespace DAL
             da.Fill(tabela);
             return tabela;
         }
+
         //MELHORAR PESQUISA DA COMPRA
         public DataTable Localizar(String valor)
         {
