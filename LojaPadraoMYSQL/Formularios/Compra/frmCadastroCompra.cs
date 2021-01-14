@@ -17,6 +17,22 @@ namespace LojaPadraoMYSQL.Formularios
 {
     public partial class frmCadastroCompra : Form
     {
+        //public void AtualizaCabecalhoGridItens()
+        //{
+        //    dgvItens.Columns[0].Visible = false;
+        //    dgvItens.Columns[1].HeaderText = "Cod";
+        //    dgvItens.Columns[2].HeaderText = "Cod";
+        //    dgvItens.Columns[3].HeaderText = "Cod";
+        //    dgvItens.Columns[4].HeaderText = "Cod";
+        //    dgvItens.Columns[5].HeaderText = "Cod";
+        //    dgvItens.Columns[6].HeaderText = "Cod";
+        //    dgvItens.Columns[7].HeaderText = "Cod";
+        //    dgvItens.Columns[8].HeaderText = "Cod";
+        //    dgvItens.Columns[9].HeaderText = "Cod";
+        //    dgvItens.Columns[10].HeaderText = "Cod";
+        //    dgvItens.Columns[11].HeaderText = "Cod";
+        //    dgvItens.Columns[12].HeaderText = "Cod";
+        //}
         //--------------------CARREGACOMBO---------------------------------------------------------
         private void carregaFormaPagamento()
         {
@@ -43,20 +59,20 @@ namespace LojaPadraoMYSQL.Formularios
         public frmCadastroCompra(ModeloCompra modelocompra)
         {
             InitializeComponent();
+           //carrega campos da tabela compra------------------------------------------------
             txtID.Text = modelocompra.CompraId.ToString();
             txtDataCadastro.Text = modelocompra.DataCadastro;
             txtNumNota.Text = modelocompra.NumNota.ToString();
-            dtpDataNota.Text = modelocompra.DataNota.ToString();
+            dtpDataNota.Format = DateTimePickerFormat.Custom;//deixo o datatimepicker livre para customizar
+            dtpDataNota.CustomFormat = modelocompra.DataNota.ToString(); ;//aqui coloco a data da tabela no datatimepicker
             txtPrecoNota.Text = modelocompra.PrecoNota.ToString();
             txtCodFornecedor.Text = modelocompra.FornecedorId.ToString();
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             if (txtCodFornecedor.Text != "")
             {
-
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLFornecedor bll = new BLLFornecedor(cx);
                 ModeloFornecedor modelofornecedor = bll.CarregaModeloFornecedor(Convert.ToInt32(modelocompra.FornecedorId));
                 txtNomeFornecedor.Text = modelofornecedor.NomeFantasia;
-                
             }
             else
             {
@@ -78,6 +94,12 @@ namespace LojaPadraoMYSQL.Formularios
                 lbStatus.Text = SituacaoCompra.Cancelado.ToString().ToUpper();
                 lbStatus.ForeColor = Color.Red;
             }
+            //-------------------fim tabela compra--------------------------------------
+
+            //carrega campos da tabela compraitens
+        //    dgvItens.DataSource = null;
+        //    BLLCompraItens bllitens = new BLLCompraItens(cx);
+        //    dgvItens.DataSource = bllitens.Localizar(Convert.ToInt32(txtID.Text));
         }
 
         //--------------------BUSCAPORCODIGO---------------------------------------------------------

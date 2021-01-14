@@ -67,10 +67,10 @@ namespace BLL
             DALObj.ExcluirTodosItens(codigo);
         }
 
-        public DataTable Localizar(int valor)
+        public DataTable Localizar(int codigo)
         {
             DALCompraItens DALObj = new DALCompraItens(conexao);
-            return DALObj.Localizar(valor);
+            return DALObj.Localizar(codigo);
         }
 
         public ModeloCompraItens CarregaModeloCompraItens(int codigo, int idCompra, int idProduto)

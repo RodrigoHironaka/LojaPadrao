@@ -18,6 +18,7 @@ namespace LojaPadraoMYSQL.Formularios
         public int idcompraitens = 0;
         public int idcompra = 0;
         public int idproduto = 0;
+        public int idformapagamento = 0;
         public frmConsultaCompra()
         {
             InitializeComponent();
@@ -54,8 +55,6 @@ namespace LojaPadraoMYSQL.Formularios
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLCompra bllcompra = new BLLCompra(cx);
-            BLLCompraItens bllcompraitens = new BLLCompraItens(cx);
-            BLLCompraPagamento bllcomprapagamento = new BLLCompraPagamento(cx);
 
             if (dgvDados.SelectedRows.Count == 0) //verifica se uma linha esta selecionada no grid ou nao
             {
@@ -64,10 +63,10 @@ namespace LojaPadraoMYSQL.Formularios
             }
             else
             {
+                
+                
                 this.idcompra = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid 
                 ModeloCompra modelocompra = bllcompra.CarregaModeloCompra(idcompra);
-                //ModeloCompraItens modelocompraitens = bllcompraitens.CarregaModeloCompraItens();
-                //ModeloCompraPagamento modelocomprapagamento = bllcomprapagamento.CarregaModeloCompraPagamento(id);
                 frmCadastroCompra f = new frmCadastroCompra(modelocompra);
                 f.ShowDialog();
                 f.Dispose();
