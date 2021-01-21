@@ -17,22 +17,21 @@ namespace LojaPadraoMYSQL.Formularios
 {
     public partial class frmCadastroCompra : Form
     {
-        //public void AtualizaCabecalhoGridItens()
-        //{
-        //    dgvItens.Columns[0].Visible = false;
-        //    dgvItens.Columns[1].HeaderText = "Cod";
-        //    dgvItens.Columns[2].HeaderText = "Cod";
-        //    dgvItens.Columns[3].HeaderText = "Cod";
-        //    dgvItens.Columns[4].HeaderText = "Cod";
-        //    dgvItens.Columns[5].HeaderText = "Cod";
-        //    dgvItens.Columns[6].HeaderText = "Cod";
-        //    dgvItens.Columns[7].HeaderText = "Cod";
-        //    dgvItens.Columns[8].HeaderText = "Cod";
-        //    dgvItens.Columns[9].HeaderText = "Cod";
-        //    dgvItens.Columns[10].HeaderText = "Cod";
-        //    dgvItens.Columns[11].HeaderText = "Cod";
-        //    dgvItens.Columns[12].HeaderText = "Cod";
-        //}
+        public void AtualizaCabecalhoGridItens()
+        {
+            dgvItens.Columns[0].Visible = false;
+            dgvItens.Columns[1].Visible = false;
+            dgvItens.Columns[2].HeaderText = "Cod";
+            dgvItens.Columns[3].HeaderText = "Produto";
+            dgvItens.Columns[4].HeaderText = "Custo";
+            dgvItens.Columns[5].HeaderText = "%";
+            dgvItens.Columns[6].HeaderText = "Avista";
+            dgvItens.Columns[7].HeaderText = "%";
+            dgvItens.Columns[8].HeaderText = "Prazo";
+            dgvItens.Columns[9].HeaderText = "EstAtual";
+            dgvItens.Columns[10].HeaderText = "EstNovo";
+            dgvItens.Columns[11].HeaderText = "EstTotal";
+        }
         //--------------------CARREGACOMBO---------------------------------------------------------
         private void carregaFormaPagamento()
         {
@@ -48,6 +47,7 @@ namespace LojaPadraoMYSQL.Formularios
         public frmCadastroCompra()
         {
             InitializeComponent();
+            Text = "Cadastro de Compra - NOVO";
             txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
             lbStatus.Text = Convert.ToString(SituacaoCompra.Aberto).ToUpper();
             dtpDataNota.Format = DateTimePickerFormat.Custom;
@@ -59,7 +59,8 @@ namespace LojaPadraoMYSQL.Formularios
         public frmCadastroCompra(ModeloCompra modelocompra)
         {
             InitializeComponent();
-           //carrega campos da tabela compra------------------------------------------------
+            Text = "Cadastro de Compra - EDITAR";
+            //carrega campos da tabela compra------------------------------------------------
             txtID.Text = modelocompra.CompraId.ToString();
             txtDataCadastro.Text = modelocompra.DataCadastro;
             txtNumNota.Text = modelocompra.NumNota.ToString();
@@ -79,7 +80,7 @@ namespace LojaPadraoMYSQL.Formularios
                 MessageBox.Show("Houve algum problema na hora de buscar os dados do fornecedor. Contate o suporte técnico", "Informativo", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             txtObservacao.Text = modelocompra.Observacao;
-            if(modelocompra.Status == 'A')
+            if (modelocompra.Status == 'A')
             {
                 lbStatus.Text = SituacaoCompra.Aberto.ToString().ToUpper();
                 lbStatus.ForeColor = Color.Blue;
@@ -97,9 +98,11 @@ namespace LojaPadraoMYSQL.Formularios
             //-------------------fim tabela compra--------------------------------------
 
             //carrega campos da tabela compraitens
-        //    dgvItens.DataSource = null;
-        //    BLLCompraItens bllitens = new BLLCompraItens(cx);
-        //    dgvItens.DataSource = bllitens.Localizar(Convert.ToInt32(txtID.Text));
+            dgvItens.Columns.Clear();
+            BLLCompraItens bllitens = new BLLCompraItens(cx);
+            DataTable itens = bllitens.Localizar(Convert.ToInt32(txtID.Text));
+            dgvItens.DataSource = itens;
+            this.AtualizaCabecalhoGridItens();
         }
 
         //--------------------BUSCAPORCODIGO---------------------------------------------------------
@@ -634,9 +637,7 @@ namespace LojaPadraoMYSQL.Formularios
 
         //--------------------VARIAVEIS GRIDITENS-----------------------------------------------------
 
-        //public double totalCusto = 0;
-        //public double totalAvista = 0;
-        //public double totalPrazo = 0;
+
         public double totalItens = 0;
         public double totalQtd = 0;
 
@@ -661,7 +662,6 @@ namespace LojaPadraoMYSQL.Formularios
         //--------------------SOMA VALORES E ITENS E ADICIONA NO GRID---------------------------------
         private void btAdd_Click(object sender, EventArgs e)
         {
-
             try
             {
                 if ((txtCodProduto.Text != "") && (txtQtdNova.Text != "") && (txtPrecoCusto.Text != "") && (txtPrecoAvista.Text != "") && (txtPrecoPrazo.Text != ""))
@@ -669,18 +669,19 @@ namespace LojaPadraoMYSQL.Formularios
                     Double totalLocalCusto = Convert.ToDouble(txtQtdNova.Text) * Convert.ToDouble(txtPrecoCusto.Text);
                     Double totalLocalAvista = Convert.ToDouble(txtQtdNova.Text) * Convert.ToDouble(txtPrecoAvista.Text);
                     Double totalLocalPrazo = Convert.ToDouble(txtQtdNova.Text) * Convert.ToDouble(txtPrecoPrazo.Text);
-                    //this.totalCusto = this.totalCusto + totalLocalCusto;
-                    //this.totalAvista = this.totalAvista + totalLocalAvista;
-                    //this.totalPrazo = this.totalPrazo + totalLocalPrazo;
+
                     this.totalQtd = Convert.ToDouble(txtEstqAtual.Text) + Convert.ToDouble(txtQtdNova.Text);
                     String[] i = new String[] {
-                       txtCodProduto.Text, txtNomeProduto.Text, txtPrecoCusto.Text, txtPorcCusto.Text,
-                       txtPrecoAvista.Text, txtPorcAvista.Text,
+                       txtCodProduto.Text,
+                       txtNomeProduto.Text,
+                       txtPrecoCusto.Text,
+                       txtPorcCusto.Text,
+                       txtPrecoAvista.Text,
+                       txtPorcAvista.Text,
                        txtPrecoPrazo.Text,
-                       //totalLocalCusto.ToString("N2"),
-                       //totalLocalAvista.ToString("N2"),
-                       //totalLocalPrazo.ToString("N2"),
-                       txtQtdNova.Text, totalQtd.ToString()
+                       txtEstqAtual.Text,
+                       txtQtdNova.Text,
+                       totalQtd.ToString()
                     };
                     this.dgvItens.Rows.Add(i);
 
@@ -695,8 +696,6 @@ namespace LojaPadraoMYSQL.Formularios
                     txtQtdNova.Text = "0";
 
                     this.SomaColunas();
-
-
                 }
             }
             catch (Exception ex)
@@ -858,20 +857,6 @@ namespace LojaPadraoMYSQL.Formularios
         //--------------------SALVA DADOS DA COMPRAS, ITENS, PARCELAS EM SUAS TABELAS-----------------
         private void btSalvar_Click(object sender, EventArgs e)
         {
-            //var contItens = dgvItens.Rows.Count;
-            //var contparcelas = dgvParcelas.Rows.Count;
-            //if ((contItens == 0) && (contparcelas == 0))
-            //{
-            //    DialogResult resposta = MessageBox.Show("AVISO: Nenhum 'Item' ou 'Parcela' foi lançado, deseja salvar assim mesmo?", "", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            //    if (resposta.ToString() == "Yes")
-            //    {
-
-            //    }
-            //    else
-            //    {
-            //        return;
-            //    }
-            //}
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             cx.Conectar();
             cx.IniciarTransacao();
@@ -937,7 +922,9 @@ namespace LojaPadraoMYSQL.Formularios
                         modelocompraitens.PrecoAvista = Convert.ToDecimal(dgvItens.Rows[i].Cells[4].Value);
                         modelocompraitens.PorcentagemAvista = Convert.ToDecimal(dgvItens.Rows[i].Cells[5].Value);
                         modelocompraitens.PrecoPrazo = Convert.ToDecimal(dgvItens.Rows[i].Cells[6].Value);
-                        modelocompraitens.QtdNova = Convert.ToDecimal(dgvItens.Rows[i].Cells[7].Value);
+                        modelocompraitens.EstAtual = Convert.ToDecimal(dgvItens.Rows[i].Cells[7].Value);
+                        modelocompraitens.EstNovo = Convert.ToDecimal(dgvItens.Rows[i].Cells[8].Value);
+                        modelocompraitens.EstTotal = Convert.ToDecimal(dgvItens.Rows[i].Cells[9].Value);
                         modelocompraitens.TotalItens = Convert.ToInt32(txtTotalItens.Text);
                         modelocompraitens.TotalCusto = Convert.ToDecimal(txtTotalCusto.Text);
                         modelocompraitens.TotalAvista = Convert.ToDecimal(txtTotalAvista.Text);

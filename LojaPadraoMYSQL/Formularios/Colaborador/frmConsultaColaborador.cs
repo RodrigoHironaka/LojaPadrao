@@ -15,12 +15,37 @@ namespace LojaPadraoMYSQL.Formularios.Colaborador
 {
     public partial class frmConsultaColaborador : Form
     {
+        public void AtualizaCabecalhoGridDados()
+        {
+            dgvDados.Columns[0].HeaderText = "Cod";
+            dgvDados.Columns[1].HeaderText = "Nome";
+            dgvDados.Columns[2].HeaderText = "RG";
+            dgvDados.Columns[3].HeaderText = "CPF";
+            dgvDados.Columns[4].HeaderText = "Endereço";
+            dgvDados.Columns[5].HeaderText = "Nº";
+            dgvDados.Columns[6].HeaderText = "Complemento";
+            dgvDados.Columns[7].HeaderText = "Bairro";
+            dgvDados.Columns[8].HeaderText = "CEP";
+            dgvDados.Columns[9].Visible = false;
+            dgvDados.Columns[10].Visible = false;
+            dgvDados.Columns[11].HeaderText = "Email";
+            dgvDados.Columns[12].HeaderText = "Telefone";
+            dgvDados.Columns[13].HeaderText = "Celular";
+            dgvDados.Columns[14].HeaderText = "Celular2";
+            dgvDados.Columns[15].Visible = false;
+            dgvDados.Columns[16].HeaderText = "Data Cadastro";
+            dgvDados.Columns[17].HeaderText = "Sit";
+            dgvDados.Columns[18].Visible = false;
+     
+           
+        }
         public int id = 0;
 
         public frmConsultaColaborador()
         {
             InitializeComponent();
             cbStatus.SelectedIndex = 1;
+            this.AtualizaCabecalhoGridDados();
         }
 
         public frmConsultaColaborador(bool selecao)

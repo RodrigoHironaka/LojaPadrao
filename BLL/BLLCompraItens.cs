@@ -1,5 +1,6 @@
 ﻿using DAL;
 using Modelos;
+using MySql.Data.MySqlClient;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -78,5 +79,11 @@ namespace BLL
             DALCompraItens DALObj = new DALCompraItens(conexao);
             return DALObj.CarregaModeloCompraItens(codigo, idCompra, idProduto);
         }
+
+        //public ModeloCompraItens CarregaGridItensCompra(int idCompra)
+        //{
+        //    DALCompraItens DALObj = new DALCompraItens(conexao);
+        //    return DALObj.CarregaGridItensCompra(idCompra);
+        //}
     }
 }

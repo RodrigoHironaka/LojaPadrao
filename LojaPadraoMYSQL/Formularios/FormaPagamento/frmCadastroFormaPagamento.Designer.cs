@@ -37,31 +37,40 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.cbQtdParcelas = new System.Windows.Forms.ComboBox();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.gbBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(15, 26);
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(12, 32);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(78, 20);
+            this.txtID.Size = new System.Drawing.Size(108, 26);
             this.txtID.TabIndex = 14;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(8, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 13;
             this.label2.Text = "Código";
             // 
             // btSair
             // 
-            this.btSair.Location = new System.Drawing.Point(237, 24);
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSair.Location = new System.Drawing.Point(71, 9);
             this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(36, 23);
+            this.btSair.Size = new System.Drawing.Size(50, 50);
             this.btSair.TabIndex = 4;
             this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
@@ -69,9 +78,14 @@
             // 
             // btSalvar
             // 
-            this.btSalvar.Location = new System.Drawing.Point(195, 24);
+            this.btSalvar.FlatAppearance.BorderSize = 0;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalvar.Location = new System.Drawing.Point(6, 9);
             this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(36, 23);
+            this.btSalvar.Size = new System.Drawing.Size(50, 50);
             this.btSalvar.TabIndex = 3;
             this.btSalvar.Text = "sal";
             this.btSalvar.UseVisualStyleBackColor = true;
@@ -82,9 +96,10 @@
             this.chkAtivo.AutoSize = true;
             this.chkAtivo.Checked = true;
             this.chkAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkAtivo.Location = new System.Drawing.Point(99, 28);
+            this.chkAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAtivo.Location = new System.Drawing.Point(126, 34);
             this.chkAtivo.Name = "chkAtivo";
-            this.chkAtivo.Size = new System.Drawing.Size(50, 17);
+            this.chkAtivo.Size = new System.Drawing.Size(63, 24);
             this.chkAtivo.TabIndex = 0;
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
@@ -92,32 +107,36 @@
             // txtNome
             // 
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNome.Location = new System.Drawing.Point(15, 66);
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(12, 95);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(187, 20);
+            this.txtNome.Size = new System.Drawing.Size(240, 26);
             this.txtNome.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 49);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 72);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 8;
             this.label1.Text = "Nome";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(205, 50);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(252, 72);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
+            this.label3.Size = new System.Drawing.Size(71, 20);
             this.label3.TabIndex = 15;
-            this.label3.Text = "Qtd Parcelas";
+            this.label3.Text = "Qtd Parc";
             // 
             // cbQtdParcelas
             // 
             this.cbQtdParcelas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbQtdParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbQtdParcelas.FormattingEnabled = true;
             this.cbQtdParcelas.Items.AddRange(new object[] {
             "0",
@@ -145,22 +164,33 @@
             "22",
             "23",
             "24"});
-            this.cbQtdParcelas.Location = new System.Drawing.Point(208, 65);
+            this.cbQtdParcelas.Location = new System.Drawing.Point(258, 95);
             this.cbQtdParcelas.Name = "cbQtdParcelas";
-            this.cbQtdParcelas.Size = new System.Drawing.Size(65, 21);
+            this.cbQtdParcelas.Size = new System.Drawing.Size(65, 26);
             this.cbQtdParcelas.TabIndex = 2;
+            // 
+            // gbBotoes
+            // 
+            this.gbBotoes.BackColor = System.Drawing.Color.GhostWhite;
+            this.gbBotoes.Controls.Add(this.btSalvar);
+            this.gbBotoes.Controls.Add(this.btSair);
+            this.gbBotoes.Location = new System.Drawing.Point(198, 9);
+            this.gbBotoes.Name = "gbBotoes";
+            this.gbBotoes.Size = new System.Drawing.Size(127, 66);
+            this.gbBotoes.TabIndex = 17;
+            this.gbBotoes.TabStop = false;
             // 
             // frmCadastroFormaPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(281, 102);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(335, 129);
+            this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.cbQtdParcelas);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btSair);
-            this.Controls.Add(this.btSalvar);
             this.Controls.Add(this.chkAtivo);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
@@ -170,8 +200,9 @@
             this.MinimizeBox = false;
             this.Name = "frmCadastroFormaPagamento";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCadastroFormaPagamento";
+            this.Text = "Cadastro Forma de Pagamento";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroFormaPagamento_KeyDown);
+            this.gbBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,5 +219,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox cbQtdParcelas;
+        private System.Windows.Forms.GroupBox gbBotoes;
     }
 }

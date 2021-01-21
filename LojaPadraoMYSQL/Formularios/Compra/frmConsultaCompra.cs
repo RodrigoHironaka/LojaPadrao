@@ -27,7 +27,6 @@ namespace LojaPadraoMYSQL.Formularios
             BLLCompra bll = new BLLCompra(cx);
             dgvDados.DataSource = bll.LocalizarTodos();
             dgvDados.Select();
-
         }
 
         private void btAdd_Click(object sender, EventArgs e)
@@ -63,8 +62,6 @@ namespace LojaPadraoMYSQL.Formularios
             }
             else
             {
-                
-                
                 this.idcompra = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid 
                 ModeloCompra modelocompra = bllcompra.CarregaModeloCompra(idcompra);
                 frmCadastroCompra f = new frmCadastroCompra(modelocompra);

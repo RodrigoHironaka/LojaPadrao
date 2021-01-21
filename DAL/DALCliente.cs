@@ -12,6 +12,7 @@ namespace DAL
 {
     public class DALCliente
     {
+
         private DALConexao conexao;
 
         public DALCliente(DALConexao cx)

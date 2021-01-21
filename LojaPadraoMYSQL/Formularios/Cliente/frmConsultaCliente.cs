@@ -15,12 +15,38 @@ namespace LojaPadraoMYSQL.Formularios
 {
     public partial class frmConsultaCliente : Form
     {
+        public void AtualizaCabecalhoGridDados()
+        {
+            dgvDados.Columns[0].HeaderText = "Cod";
+            dgvDados.Columns[1].HeaderText = "Nome Fantasia";
+            dgvDados.Columns[2].HeaderText = "Razão Social";
+            dgvDados.Columns[3].HeaderText = "RG/IE";
+            dgvDados.Columns[4].HeaderText = "CPF/CNPJ";
+            dgvDados.Columns[5].HeaderText = "Pessoa";
+            dgvDados.Columns[6].HeaderText = "Endereço";
+            dgvDados.Columns[7].HeaderText = "Nº";
+            dgvDados.Columns[8].HeaderText = "Complemento";
+            dgvDados.Columns[9].HeaderText = "Bairro";
+            dgvDados.Columns[10].HeaderText = "CEP";
+            dgvDados.Columns[11].HeaderText = "Nascimento";
+            dgvDados.Columns[12].Visible = false;
+            dgvDados.Columns[13].HeaderText = "Email";
+            dgvDados.Columns[14].HeaderText = "Telefone";
+            dgvDados.Columns[15].HeaderText = "Celular";
+            dgvDados.Columns[16].HeaderText = "Celular2";
+            dgvDados.Columns[17].Visible = false;
+            dgvDados.Columns[18].HeaderText = "Data Cadastro";
+            dgvDados.Columns[19].HeaderText = "Sit";
+            dgvDados.Columns[20].Visible = false;
+        }
         public int id = 0;
         public frmConsultaCliente()
         {
             InitializeComponent();
             cbStatus.SelectedIndex = 1;
             cbFiltroTipo.SelectedIndex = 1;
+            pFiltro.Visible = false;
+            this.AtualizaCabecalhoGridDados();
         }
 
         private void btAdd_Click(object sender, EventArgs e)
@@ -94,6 +120,7 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
+            pFiltro.Visible = true;
             if (txtPesquisa.Text == "")
             {
                 this.cbStatus_SelectedIndexChanged(sender, e);
@@ -106,48 +133,52 @@ namespace LojaPadraoMYSQL.Formularios
                     DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                     BLLCliente bll = new BLLCliente(cx);
                     dgvDados.DataSource = bll.LocalizarAtivo(txtPesquisa.Text);
+                    this.AtualizaCabecalhoGridDados();
+
                 }
                 else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 0))
                 {
                     DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                     BLLCliente bll = new BLLCliente(cx);
                     dgvDados.DataSource = bll.LocalizarInativo(txtPesquisa.Text);
+                    this.AtualizaCabecalhoGridDados();
                 }
                 else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 1))
                 {
                     DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                     BLLCliente bll = new BLLCliente(cx);
                     dgvDados.DataSource = bll.LocalizarAtivoFisica(txtPesquisa.Text);
+                    this.AtualizaCabecalhoGridDados();
                 }
                 else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 2))
                 {
                     DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                     BLLCliente bll = new BLLCliente(cx);
                     dgvDados.DataSource = bll.LocalizarAtivoJuridica(txtPesquisa.Text);
+                    this.AtualizaCabecalhoGridDados();
                 }
                 else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 1))
                 {
                     DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                     BLLCliente bll = new BLLCliente(cx);
                     dgvDados.DataSource = bll.LocalizarInativoFisica(txtPesquisa.Text);
+                    this.AtualizaCabecalhoGridDados();
                 }
                 else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 2))
                 {
                     DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                     BLLCliente bll = new BLLCliente(cx);
                     dgvDados.DataSource = bll.LocalizarInativoJuridica(txtPesquisa.Text);
+                    this.AtualizaCabecalhoGridDados();
                 }
                 else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 0))
                 {
                     DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                     BLLCliente bll = new BLLCliente(cx);
                     dgvDados.DataSource = bll.Localizar(txtPesquisa.Text);
+                    this.AtualizaCabecalhoGridDados();
                 }
-            }
-
-           
-            
-           
+            } 
            
         }
 
@@ -166,6 +197,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridAtivo();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 0))
             {
@@ -173,6 +205,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridInativo();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 1))
             {
@@ -180,6 +213,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridAtivoFisica();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 1))
             {
@@ -187,6 +221,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridInativoFisica();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 2))
             {
@@ -194,6 +229,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridAtivoJuridica();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 2))
             {
@@ -201,6 +237,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridInativoJuridica();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 1))
             {
@@ -208,6 +245,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridFisica();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 2))
             {
@@ -215,6 +253,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridJuridica();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 0))
             {
@@ -222,6 +261,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGrid();
+                this.AtualizaCabecalhoGridDados();
             }
         }
 
@@ -233,13 +273,15 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridAtivo();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 0))
             {
                 txtPesquisa.Clear();
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridInativo();
+                dgvDados.DataSource = bll.CarregaGridInativo(); 
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 1))
             {
@@ -247,6 +289,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridAtivoFisica();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 1))
             {
@@ -254,6 +297,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridInativoFisica();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 2))
             {
@@ -261,6 +305,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridAtivoJuridica();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 2))
             {
@@ -268,6 +313,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridInativoJuridica();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 1))
             {
@@ -275,6 +321,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridFisica();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 2))
             {
@@ -282,6 +329,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGridJuridica();
+                this.AtualizaCabecalhoGridDados();
             }
             else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 0))
             {
@@ -289,6 +337,7 @@ namespace LojaPadraoMYSQL.Formularios
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLCliente bll = new BLLCliente(cx);
                 dgvDados.DataSource = bll.CarregaGrid();
+                this.AtualizaCabecalhoGridDados();
             }
         }
 
@@ -332,6 +381,11 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 btExc_Click(sender, e);
             }
+        }
+
+        private void txtPesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+            pFiltro.Visible = false;
         }
     }
 }
