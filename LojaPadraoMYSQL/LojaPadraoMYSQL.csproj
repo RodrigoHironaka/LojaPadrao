@@ -344,6 +344,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -379,6 +380,21 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
+    <Folder Include="Formularios\TipoGasto\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resource\Delete48x48.ico" />
+    <Content Include="Resource\Editar48x48.ico" />
+    <None Include="Resource\RemoverLinha32x32.ico" />
+    <None Include="Resource\InserirLinha32x32.ico" />
+    <None Include="Resource\zerar32x32.ico" />
+    <None Include="Resource\lupa32x32.ico" />
+    <None Include="Resource\SalvarTemp48x48.ico" />
+    <None Include="Resource\imprimir48x48.ico" />
+    <Content Include="Resource\Novo48x48.ico" />
+    <Content Include="Resource\Retornar48x48.ico" />
+    <Content Include="Resource\Sair48x48.ico" />
+    <Content Include="Resource\Salvar48x48.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

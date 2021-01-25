@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btSair = new System.Windows.Forms.Button();
             this.btExc = new System.Windows.Forms.Button();
             this.btEdt = new System.Windows.Forms.Button();
@@ -61,43 +61,59 @@
             // 
             // btSair
             // 
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
             this.btSair.Location = new System.Drawing.Point(749, 11);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(55, 55);
             this.btSair.TabIndex = 12;
-            this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
             // 
             // btExc
             // 
+            this.btExc.FlatAppearance.BorderSize = 0;
+            this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btExc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btExc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btExc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExc.Image = global::LojaPadraoMYSQL.Properties.Resources.Delete48x48;
             this.btExc.Location = new System.Drawing.Point(627, 11);
             this.btExc.Name = "btExc";
             this.btExc.Size = new System.Drawing.Size(55, 55);
             this.btExc.TabIndex = 11;
-            this.btExc.Text = "exc";
             this.btExc.UseVisualStyleBackColor = true;
             // 
             // btEdt
             // 
+            this.btEdt.FlatAppearance.BorderSize = 0;
+            this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btEdt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btEdt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEdt.Image = global::LojaPadraoMYSQL.Properties.Resources.Editar48x48;
             this.btEdt.Location = new System.Drawing.Point(566, 11);
             this.btEdt.Name = "btEdt";
             this.btEdt.Size = new System.Drawing.Size(55, 55);
             this.btEdt.TabIndex = 10;
-            this.btEdt.Text = "edt";
             this.btEdt.UseVisualStyleBackColor = true;
             this.btEdt.Click += new System.EventHandler(this.btEdt_Click);
             // 
             // btAdd
             // 
+            this.btAdd.FlatAppearance.BorderSize = 0;
+            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Image = global::LojaPadraoMYSQL.Properties.Resources.Novo48x48;
             this.btAdd.Location = new System.Drawing.Point(505, 11);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(55, 55);
             this.btAdd.TabIndex = 9;
-            this.btAdd.Text = "add";
             this.btAdd.UseVisualStyleBackColor = true;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
@@ -117,23 +133,24 @@
             this.dgvDados.AllowUserToAddRows = false;
             this.dgvDados.AllowUserToDeleteRows = false;
             this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDados.BackgroundColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDados.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDados.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDados.Location = new System.Drawing.Point(12, 12);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.ReadOnly = true;
@@ -331,18 +348,23 @@
             // 
             // btImprimir
             // 
+            this.btImprimir.FlatAppearance.BorderSize = 0;
+            this.btImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btImprimir.Image = global::LojaPadraoMYSQL.Properties.Resources.imprimir48x48;
             this.btImprimir.Location = new System.Drawing.Point(688, 11);
             this.btImprimir.Name = "btImprimir";
             this.btImprimir.Size = new System.Drawing.Size(55, 55);
             this.btImprimir.TabIndex = 13;
-            this.btImprimir.Text = "Imp";
             this.btImprimir.UseVisualStyleBackColor = true;
             // 
             // frmConsultaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(834, 462);
             this.Controls.Add(this.pFiltro);
             this.Controls.Add(this.gbBotoes);
@@ -352,7 +374,7 @@
             this.MinimizeBox = false;
             this.Name = "frmConsultaCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmConsultaCompra";
+            this.Text = "Consulta de Compras";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.pFiltro.ResumeLayout(false);
             this.pFiltro.PerformLayout();

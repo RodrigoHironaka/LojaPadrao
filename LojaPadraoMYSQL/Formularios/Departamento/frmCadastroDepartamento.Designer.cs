@@ -62,30 +62,30 @@
             // btSair
             // 
             this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
             this.btSair.Location = new System.Drawing.Point(71, 10);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(50, 50);
             this.btSair.TabIndex = 3;
-            this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // btSalvar
             // 
             this.btSalvar.FlatAppearance.BorderSize = 0;
-            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
-            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalvar.Image = global::LojaPadraoMYSQL.Properties.Resources.Salvar48x48;
             this.btSalvar.Location = new System.Drawing.Point(6, 10);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(50, 50);
             this.btSalvar.TabIndex = 2;
-            this.btSalvar.Text = "sal";
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
@@ -123,7 +123,7 @@
             // 
             // gbBotoes
             // 
-            this.gbBotoes.BackColor = System.Drawing.Color.GhostWhite;
+            this.gbBotoes.BackColor = System.Drawing.Color.Lavender;
             this.gbBotoes.Controls.Add(this.btSalvar);
             this.gbBotoes.Controls.Add(this.btSair);
             this.gbBotoes.Location = new System.Drawing.Point(196, 9);

@@ -45,15 +45,12 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txtNomeFornecedor = new System.Windows.Forms.TextBox();
-            this.btPesqFornecedor = new System.Windows.Forms.Button();
             this.txtCodFornecedor = new System.Windows.Forms.TextBox();
             this.lbCodFornecedor = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.lbDataCadastro = new System.Windows.Forms.Label();
-            this.btSair = new System.Windows.Forms.Button();
             this.label22 = new System.Windows.Forms.Label();
-            this.btSalvar = new System.Windows.Forms.Button();
             this.lbCodigo = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
             this.txtDataCadastro = new System.Windows.Forms.TextBox();
@@ -64,18 +61,15 @@
             this.lbPrecoNota = new System.Windows.Forms.Label();
             this.lbStatus = new System.Windows.Forms.Label();
             this.tabProdutos = new System.Windows.Forms.TabPage();
-            this.brZerarEstoque = new System.Windows.Forms.Button();
             this.txtTotalCusto = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtTotalAvista = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.btPesqProduto = new System.Windows.Forms.Button();
             this.txtTotalPrazo = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtTotalItens = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btRemover = new System.Windows.Forms.Button();
-            this.btAdd = new System.Windows.Forms.Button();
             this.dgvItens = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -126,9 +120,15 @@
             this.tabObs = new System.Windows.Forms.TabPage();
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.btFaturar = new System.Windows.Forms.Button();
             this.gbInfo = new System.Windows.Forms.GroupBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btFaturar = new System.Windows.Forms.Button();
+            this.btSair = new System.Windows.Forms.Button();
+            this.btSalvar = new System.Windows.Forms.Button();
+            this.btPesqFornecedor = new System.Windows.Forms.Button();
+            this.brZerarEstoque = new System.Windows.Forms.Button();
+            this.btPesqProduto = new System.Windows.Forms.Button();
+            this.btAdd = new System.Windows.Forms.Button();
             this.gbDadosCompra.SuspendLayout();
             this.tabProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
@@ -153,17 +153,6 @@
             this.txtNomeFornecedor.ReadOnly = true;
             this.txtNomeFornecedor.Size = new System.Drawing.Size(306, 26);
             this.txtNomeFornecedor.TabIndex = 15;
-            // 
-            // btPesqFornecedor
-            // 
-            this.btPesqFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPesqFornecedor.Location = new System.Drawing.Point(803, 38);
-            this.btPesqFornecedor.Name = "btPesqFornecedor";
-            this.btPesqFornecedor.Size = new System.Drawing.Size(33, 27);
-            this.btPesqFornecedor.TabIndex = 5;
-            this.btPesqFornecedor.Text = "...";
-            this.btPesqFornecedor.UseVisualStyleBackColor = true;
-            this.btPesqFornecedor.Click += new System.EventHandler(this.btPesqFornecedor_Click);
             // 
             // txtCodFornecedor
             // 
@@ -223,16 +212,6 @@
             this.lbDataCadastro.TabIndex = 283;
             this.lbDataCadastro.Text = "Data Cadastro:";
             // 
-            // btSair
-            // 
-            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSair.Location = new System.Drawing.Point(190, 15);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(72, 72);
-            this.btSair.TabIndex = 2;
-            this.btSair.Text = "Sair";
-            this.btSair.UseVisualStyleBackColor = true;
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -243,17 +222,6 @@
             this.label22.Size = new System.Drawing.Size(68, 20);
             this.label22.TabIndex = 362;
             this.label22.Text = "Nº Nota:";
-            // 
-            // btSalvar
-            // 
-            this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSalvar.Location = new System.Drawing.Point(98, 15);
-            this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(72, 72);
-            this.btSalvar.TabIndex = 1;
-            this.btSalvar.Text = "Salvar";
-            this.btSalvar.UseVisualStyleBackColor = true;
-            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // lbCodigo
             // 
@@ -366,7 +334,7 @@
             this.lbStatus.AutoSize = true;
             this.lbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbStatus.ForeColor = System.Drawing.Color.Black;
-            this.lbStatus.Location = new System.Drawing.Point(3, 20);
+            this.lbStatus.Location = new System.Drawing.Point(9, 6);
             this.lbStatus.Name = "lbStatus";
             this.lbStatus.Size = new System.Drawing.Size(154, 31);
             this.lbStatus.TabIndex = 367;
@@ -408,28 +376,17 @@
             this.tabProdutos.Location = new System.Drawing.Point(4, 22);
             this.tabProdutos.Name = "tabProdutos";
             this.tabProdutos.Padding = new System.Windows.Forms.Padding(3);
-            this.tabProdutos.Size = new System.Drawing.Size(1152, 427);
+            this.tabProdutos.Size = new System.Drawing.Size(1152, 454);
             this.tabProdutos.TabIndex = 0;
             this.tabProdutos.Text = "Produtos";
             this.tabProdutos.UseVisualStyleBackColor = true;
-            // 
-            // brZerarEstoque
-            // 
-            this.brZerarEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brZerarEstoque.Location = new System.Drawing.Point(115, 77);
-            this.brZerarEstoque.Name = "brZerarEstoque";
-            this.brZerarEstoque.Size = new System.Drawing.Size(58, 27);
-            this.brZerarEstoque.TabIndex = 382;
-            this.brZerarEstoque.Text = "Zerar";
-            this.brZerarEstoque.UseVisualStyleBackColor = true;
-            this.brZerarEstoque.Click += new System.EventHandler(this.brZerarEstoque_Click);
             // 
             // txtTotalCusto
             // 
             this.txtTotalCusto.Enabled = false;
             this.txtTotalCusto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalCusto.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtTotalCusto.Location = new System.Drawing.Point(408, 395);
+            this.txtTotalCusto.Location = new System.Drawing.Point(410, 425);
             this.txtTotalCusto.MaxLength = 6;
             this.txtTotalCusto.Name = "txtTotalCusto";
             this.txtTotalCusto.Size = new System.Drawing.Size(86, 23);
@@ -441,7 +398,7 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label15.ForeColor = System.Drawing.Color.Black;
-            this.label15.Location = new System.Drawing.Point(322, 398);
+            this.label15.Location = new System.Drawing.Point(324, 428);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(80, 17);
             this.label15.TabIndex = 381;
@@ -452,7 +409,7 @@
             this.txtTotalAvista.Enabled = false;
             this.txtTotalAvista.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalAvista.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtTotalAvista.Location = new System.Drawing.Point(734, 395);
+            this.txtTotalAvista.Location = new System.Drawing.Point(736, 425);
             this.txtTotalAvista.MaxLength = 6;
             this.txtTotalAvista.Name = "txtTotalAvista";
             this.txtTotalAvista.Size = new System.Drawing.Size(86, 23);
@@ -464,29 +421,18 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label14.ForeColor = System.Drawing.Color.Black;
-            this.label14.Location = new System.Drawing.Point(646, 398);
+            this.label14.Location = new System.Drawing.Point(648, 428);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(82, 17);
             this.label14.TabIndex = 379;
             this.label14.Text = "Total Avista";
-            // 
-            // btPesqProduto
-            // 
-            this.btPesqProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPesqProduto.Location = new System.Drawing.Point(140, 25);
-            this.btPesqProduto.Name = "btPesqProduto";
-            this.btPesqProduto.Size = new System.Drawing.Size(33, 27);
-            this.btPesqProduto.TabIndex = 1;
-            this.btPesqProduto.Text = "...";
-            this.btPesqProduto.UseVisualStyleBackColor = true;
-            this.btPesqProduto.Click += new System.EventHandler(this.btPesqProduto_Click);
             // 
             // txtTotalPrazo
             // 
             this.txtTotalPrazo.Enabled = false;
             this.txtTotalPrazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalPrazo.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtTotalPrazo.Location = new System.Drawing.Point(1058, 395);
+            this.txtTotalPrazo.Location = new System.Drawing.Point(1060, 425);
             this.txtTotalPrazo.MaxLength = 6;
             this.txtTotalPrazo.Name = "txtTotalPrazo";
             this.txtTotalPrazo.Size = new System.Drawing.Size(86, 23);
@@ -498,7 +444,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.Black;
-            this.label11.Location = new System.Drawing.Point(972, 398);
+            this.label11.Location = new System.Drawing.Point(974, 428);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(81, 17);
             this.label11.TabIndex = 376;
@@ -509,7 +455,7 @@
             this.txtTotalItens.Enabled = false;
             this.txtTotalItens.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTotalItens.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtTotalItens.Location = new System.Drawing.Point(84, 395);
+            this.txtTotalItens.Location = new System.Drawing.Point(86, 425);
             this.txtTotalItens.MaxLength = 6;
             this.txtTotalItens.Name = "txtTotalItens";
             this.txtTotalItens.Size = new System.Drawing.Size(86, 23);
@@ -521,7 +467,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(4, 398);
+            this.label7.Location = new System.Drawing.Point(6, 428);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(74, 17);
             this.label7.TabIndex = 374;
@@ -529,25 +475,18 @@
             // 
             // btRemover
             // 
+            this.btRemover.FlatAppearance.BorderSize = 0;
+            this.btRemover.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.btRemover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRemover.Location = new System.Drawing.Point(1107, 78);
+            this.btRemover.Image = global::LojaPadraoMYSQL.Properties.Resources.RemoverLinha32x32;
+            this.btRemover.Location = new System.Drawing.Point(1105, 73);
             this.btRemover.Name = "btRemover";
-            this.btRemover.Size = new System.Drawing.Size(33, 27);
+            this.btRemover.Size = new System.Drawing.Size(35, 35);
             this.btRemover.TabIndex = 372;
-            this.btRemover.Text = "-";
             this.btRemover.UseVisualStyleBackColor = true;
             this.btRemover.Click += new System.EventHandler(this.btRemover_Click);
-            // 
-            // btAdd
-            // 
-            this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Location = new System.Drawing.Point(1068, 78);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(33, 27);
-            this.btAdd.TabIndex = 371;
-            this.btAdd.Text = "+";
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // dgvItens
             // 
@@ -556,6 +495,7 @@
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvItens.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvItens.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -579,7 +519,7 @@
             this.dgvItens.Name = "dgvItens";
             this.dgvItens.ReadOnly = true;
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvItens.Size = new System.Drawing.Size(1139, 278);
+            this.dgvItens.Size = new System.Drawing.Size(1139, 308);
             this.dgvItens.TabIndex = 1;
             // 
             // Column1
@@ -779,7 +719,7 @@
             this.txtEstqAtual.MaxLength = 100;
             this.txtEstqAtual.Name = "txtEstqAtual";
             this.txtEstqAtual.ReadOnly = true;
-            this.txtEstqAtual.Size = new System.Drawing.Size(102, 26);
+            this.txtEstqAtual.Size = new System.Drawing.Size(127, 26);
             this.txtEstqAtual.TabIndex = 8;
             this.txtEstqAtual.Text = "0";
             this.txtEstqAtual.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtEstqAtual_MouseClick);
@@ -925,7 +865,7 @@
             this.tabCompra.Location = new System.Drawing.Point(12, 97);
             this.tabCompra.Name = "tabCompra";
             this.tabCompra.SelectedIndex = 0;
-            this.tabCompra.Size = new System.Drawing.Size(1160, 453);
+            this.tabCompra.Size = new System.Drawing.Size(1160, 480);
             this.tabCompra.TabIndex = 1;
             // 
             // tabPag
@@ -935,7 +875,7 @@
             this.tabPag.Location = new System.Drawing.Point(4, 22);
             this.tabPag.Name = "tabPag";
             this.tabPag.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPag.Size = new System.Drawing.Size(1152, 427);
+            this.tabPag.Size = new System.Drawing.Size(1152, 454);
             this.tabPag.TabIndex = 2;
             this.tabPag.Text = "Pagamento";
             this.tabPag.UseVisualStyleBackColor = true;
@@ -944,6 +884,7 @@
             // 
             this.dgvParcelas.AllowUserToAddRows = false;
             this.dgvParcelas.AllowUserToDeleteRows = false;
+            this.dgvParcelas.BackgroundColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -1030,23 +971,31 @@
             // 
             // btRemoverParcela
             // 
+            this.btRemoverParcela.FlatAppearance.BorderSize = 0;
+            this.btRemoverParcela.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.btRemoverParcela.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btRemoverParcela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btRemoverParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRemoverParcela.Location = new System.Drawing.Point(644, 39);
+            this.btRemoverParcela.Image = global::LojaPadraoMYSQL.Properties.Resources.RemoverLinha32x32;
+            this.btRemoverParcela.Location = new System.Drawing.Point(593, 39);
             this.btRemoverParcela.Name = "btRemoverParcela";
-            this.btRemoverParcela.Size = new System.Drawing.Size(86, 28);
+            this.btRemoverParcela.Size = new System.Drawing.Size(35, 35);
             this.btRemoverParcela.TabIndex = 3;
-            this.btRemoverParcela.Text = "Remover";
             this.btRemoverParcela.UseVisualStyleBackColor = true;
             this.btRemoverParcela.Click += new System.EventHandler(this.btRemoverParcela_Click);
             // 
             // btGerarParcela
             // 
+            this.btGerarParcela.FlatAppearance.BorderSize = 0;
+            this.btGerarParcela.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.btGerarParcela.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btGerarParcela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btGerarParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btGerarParcela.Image = global::LojaPadraoMYSQL.Properties.Resources.InserirLinha32x32;
             this.btGerarParcela.Location = new System.Drawing.Point(552, 39);
             this.btGerarParcela.Name = "btGerarParcela";
-            this.btGerarParcela.Size = new System.Drawing.Size(89, 28);
+            this.btGerarParcela.Size = new System.Drawing.Size(35, 35);
             this.btGerarParcela.TabIndex = 2;
-            this.btGerarParcela.Text = "Gerar";
             this.btGerarParcela.UseVisualStyleBackColor = true;
             this.btGerarParcela.Click += new System.EventHandler(this.btGerarParcela_Click);
             // 
@@ -1139,7 +1088,7 @@
             this.tabObs.Location = new System.Drawing.Point(4, 22);
             this.tabObs.Name = "tabObs";
             this.tabObs.Padding = new System.Windows.Forms.Padding(3);
-            this.tabObs.Size = new System.Drawing.Size(1152, 427);
+            this.tabObs.Size = new System.Drawing.Size(1152, 454);
             this.tabObs.TabIndex = 3;
             this.tabObs.Text = "Obs.";
             this.tabObs.UseVisualStyleBackColor = true;
@@ -1161,29 +1110,19 @@
             this.gbBotoes.Controls.Add(this.btFaturar);
             this.gbBotoes.Controls.Add(this.btSair);
             this.gbBotoes.Controls.Add(this.btSalvar);
-            this.gbBotoes.Location = new System.Drawing.Point(899, 556);
+            this.gbBotoes.Location = new System.Drawing.Point(990, 583);
             this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(269, 93);
+            this.gbBotoes.Size = new System.Drawing.Size(178, 70);
             this.gbBotoes.TabIndex = 371;
             this.gbBotoes.TabStop = false;
-            // 
-            // btFaturar
-            // 
-            this.btFaturar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btFaturar.Location = new System.Drawing.Point(6, 15);
-            this.btFaturar.Name = "btFaturar";
-            this.btFaturar.Size = new System.Drawing.Size(72, 72);
-            this.btFaturar.TabIndex = 0;
-            this.btFaturar.Text = "Faturar";
-            this.btFaturar.UseVisualStyleBackColor = true;
             // 
             // gbInfo
             // 
             this.gbInfo.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.gbInfo.Controls.Add(this.panel1);
-            this.gbInfo.Location = new System.Drawing.Point(16, 553);
+            this.gbInfo.Location = new System.Drawing.Point(16, 583);
             this.gbInfo.Name = "gbInfo";
-            this.gbInfo.Size = new System.Drawing.Size(877, 100);
+            this.gbInfo.Size = new System.Drawing.Size(968, 70);
             this.gbInfo.TabIndex = 372;
             this.gbInfo.TabStop = false;
             // 
@@ -1193,8 +1132,112 @@
             this.panel1.Controls.Add(this.lbStatus);
             this.panel1.Location = new System.Drawing.Point(7, 14);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(178, 76);
+            this.panel1.Size = new System.Drawing.Size(178, 43);
             this.panel1.TabIndex = 368;
+            // 
+            // btFaturar
+            // 
+            this.btFaturar.FlatAppearance.BorderSize = 0;
+            this.btFaturar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btFaturar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btFaturar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btFaturar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btFaturar.Image = global::LojaPadraoMYSQL.Properties.Resources.Salvar48x48;
+            this.btFaturar.Location = new System.Drawing.Point(6, 14);
+            this.btFaturar.Name = "btFaturar";
+            this.btFaturar.Size = new System.Drawing.Size(50, 50);
+            this.btFaturar.TabIndex = 0;
+            this.btFaturar.UseVisualStyleBackColor = true;
+            // 
+            // btSair
+            // 
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
+            this.btSair.Location = new System.Drawing.Point(118, 14);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(50, 50);
+            this.btSair.TabIndex = 2;
+            this.btSair.UseVisualStyleBackColor = true;
+            // 
+            // btSalvar
+            // 
+            this.btSalvar.FlatAppearance.BorderSize = 0;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalvar.Image = global::LojaPadraoMYSQL.Properties.Resources.SalvarTemp48x48;
+            this.btSalvar.Location = new System.Drawing.Point(62, 14);
+            this.btSalvar.Name = "btSalvar";
+            this.btSalvar.Size = new System.Drawing.Size(50, 50);
+            this.btSalvar.TabIndex = 1;
+            this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
+            // 
+            // btPesqFornecedor
+            // 
+            this.btPesqFornecedor.FlatAppearance.BorderSize = 0;
+            this.btPesqFornecedor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.btPesqFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btPesqFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPesqFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPesqFornecedor.Image = global::LojaPadraoMYSQL.Properties.Resources.lupa32x32;
+            this.btPesqFornecedor.Location = new System.Drawing.Point(803, 35);
+            this.btPesqFornecedor.Name = "btPesqFornecedor";
+            this.btPesqFornecedor.Size = new System.Drawing.Size(35, 35);
+            this.btPesqFornecedor.TabIndex = 5;
+            this.btPesqFornecedor.UseVisualStyleBackColor = true;
+            this.btPesqFornecedor.Click += new System.EventHandler(this.btPesqFornecedor_Click);
+            // 
+            // brZerarEstoque
+            // 
+            this.brZerarEstoque.FlatAppearance.BorderSize = 0;
+            this.brZerarEstoque.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.brZerarEstoque.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.brZerarEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.brZerarEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brZerarEstoque.Image = global::LojaPadraoMYSQL.Properties.Resources.zerar32x32;
+            this.brZerarEstoque.Location = new System.Drawing.Point(135, 65);
+            this.brZerarEstoque.Name = "brZerarEstoque";
+            this.brZerarEstoque.Size = new System.Drawing.Size(40, 40);
+            this.brZerarEstoque.TabIndex = 382;
+            this.brZerarEstoque.UseVisualStyleBackColor = true;
+            this.brZerarEstoque.Click += new System.EventHandler(this.brZerarEstoque_Click);
+            // 
+            // btPesqProduto
+            // 
+            this.btPesqProduto.FlatAppearance.BorderSize = 0;
+            this.btPesqProduto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.btPesqProduto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btPesqProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPesqProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPesqProduto.Image = global::LojaPadraoMYSQL.Properties.Resources.lupa32x32;
+            this.btPesqProduto.Location = new System.Drawing.Point(140, 22);
+            this.btPesqProduto.Name = "btPesqProduto";
+            this.btPesqProduto.Size = new System.Drawing.Size(35, 35);
+            this.btPesqProduto.TabIndex = 1;
+            this.btPesqProduto.Text = "...";
+            this.btPesqProduto.UseVisualStyleBackColor = true;
+            this.btPesqProduto.Click += new System.EventHandler(this.btPesqProduto_Click);
+            // 
+            // btAdd
+            // 
+            this.btAdd.FlatAppearance.BorderSize = 0;
+            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Image = global::LojaPadraoMYSQL.Properties.Resources.InserirLinha32x32;
+            this.btAdd.Location = new System.Drawing.Point(1066, 73);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(35, 35);
+            this.btAdd.TabIndex = 371;
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // frmCadastroCompra
             // 

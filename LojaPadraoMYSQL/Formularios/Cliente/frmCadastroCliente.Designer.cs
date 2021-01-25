@@ -31,11 +31,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroCliente));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tpageDadosPrincipais = new System.Windows.Forms.TabPage();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.btSair = new System.Windows.Forms.Button();
+            this.btSalvar = new System.Windows.Forms.Button();
+            this.monthCalNasc = new System.Windows.Forms.MonthCalendar();
             this.pbFoto = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btAddFoto = new System.Windows.Forms.Button();
             this.btRemFoto = new System.Windows.Forms.Button();
-            this.monthCalNasc = new System.Windows.Forms.MonthCalendar();
             this.btProcurarCidade = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUf = new System.Windows.Forms.TextBox();
@@ -52,8 +55,6 @@
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.txtDataCadastro = new System.Windows.Forms.TextBox();
             this.lbObservacao = new System.Windows.Forms.Label();
-            this.btSair = new System.Windows.Forms.Button();
-            this.btSalvar = new System.Windows.Forms.Button();
             this.pctCepInvalido = new System.Windows.Forms.PictureBox();
             this.pctCpfcnpjInvalido = new System.Windows.Forms.PictureBox();
             this.lbCpfCnpj = new System.Windows.Forms.Label();
@@ -86,14 +87,13 @@
             this.lbCelular = new System.Windows.Forms.Label();
             this.lbDataNasc = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
-            this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.tpageDadosPrincipais.SuspendLayout();
+            this.gbBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCpfcnpjInvalido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCalendario)).BeginInit();
             this.tabControl1.SuspendLayout();
-            this.gbBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -101,7 +101,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(585, 365);
+            this.tabPage2.Size = new System.Drawing.Size(714, 480);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Outros";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -170,6 +170,55 @@
             this.tpageDadosPrincipais.Text = "Dados Principais";
             this.tpageDadosPrincipais.Click += new System.EventHandler(this.tpageDadosPrincipais_Click);
             // 
+            // gbBotoes
+            // 
+            this.gbBotoes.BackColor = System.Drawing.Color.Lavender;
+            this.gbBotoes.Controls.Add(this.btSair);
+            this.gbBotoes.Controls.Add(this.btSalvar);
+            this.gbBotoes.Location = new System.Drawing.Point(475, 384);
+            this.gbBotoes.Name = "gbBotoes";
+            this.gbBotoes.Size = new System.Drawing.Size(227, 80);
+            this.gbBotoes.TabIndex = 1;
+            this.gbBotoes.TabStop = false;
+            // 
+            // btSair
+            // 
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
+            this.btSair.Location = new System.Drawing.Point(171, 19);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(50, 50);
+            this.btSair.TabIndex = 19;
+            this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
+            // 
+            // btSalvar
+            // 
+            this.btSalvar.FlatAppearance.BorderSize = 0;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalvar.Image = global::LojaPadraoMYSQL.Properties.Resources.Salvar48x48;
+            this.btSalvar.Location = new System.Drawing.Point(113, 19);
+            this.btSalvar.Name = "btSalvar";
+            this.btSalvar.Size = new System.Drawing.Size(50, 50);
+            this.btSalvar.TabIndex = 18;
+            this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
+            // 
+            // monthCalNasc
+            // 
+            this.monthCalNasc.Location = new System.Drawing.Point(475, 55);
+            this.monthCalNasc.Name = "monthCalNasc";
+            this.monthCalNasc.TabIndex = 287;
+            this.monthCalNasc.Visible = false;
+            this.monthCalNasc.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalNasc_DateSelected);
+            // 
             // pbFoto
             // 
             this.pbFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
@@ -210,14 +259,6 @@
             this.btRemFoto.Text = "-";
             this.btRemFoto.UseVisualStyleBackColor = true;
             this.btRemFoto.Click += new System.EventHandler(this.btRemFoto_Click);
-            // 
-            // monthCalNasc
-            // 
-            this.monthCalNasc.Location = new System.Drawing.Point(475, 55);
-            this.monthCalNasc.Name = "monthCalNasc";
-            this.monthCalNasc.TabIndex = 287;
-            this.monthCalNasc.Visible = false;
-            this.monthCalNasc.DateSelected += new System.Windows.Forms.DateRangeEventHandler(this.monthCalNasc_DateSelected);
             // 
             // btProcurarCidade
             // 
@@ -398,36 +439,6 @@
             this.lbObservacao.Size = new System.Drawing.Size(98, 20);
             this.lbObservacao.TabIndex = 297;
             this.lbObservacao.Text = "Observação:";
-            // 
-            // btSair
-            // 
-            this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
-            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSair.Location = new System.Drawing.Point(171, 19);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(50, 50);
-            this.btSair.TabIndex = 19;
-            this.btSair.Text = "sair";
-            this.btSair.UseVisualStyleBackColor = true;
-            this.btSair.Click += new System.EventHandler(this.btSair_Click);
-            // 
-            // btSalvar
-            // 
-            this.btSalvar.FlatAppearance.BorderSize = 0;
-            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
-            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
-            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSalvar.Location = new System.Drawing.Point(113, 19);
-            this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(50, 50);
-            this.btSalvar.TabIndex = 18;
-            this.btSalvar.Text = "sal";
-            this.btSalvar.UseVisualStyleBackColor = true;
-            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // pctCepInvalido
             // 
@@ -775,17 +786,6 @@
             this.tabControl1.Size = new System.Drawing.Size(722, 506);
             this.tabControl1.TabIndex = 0;
             // 
-            // gbBotoes
-            // 
-            this.gbBotoes.BackColor = System.Drawing.Color.GhostWhite;
-            this.gbBotoes.Controls.Add(this.btSair);
-            this.gbBotoes.Controls.Add(this.btSalvar);
-            this.gbBotoes.Location = new System.Drawing.Point(475, 384);
-            this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(227, 80);
-            this.gbBotoes.TabIndex = 1;
-            this.gbBotoes.TabStop = false;
-            // 
             // frmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -803,12 +803,12 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroCliente_KeyDown);
             this.tpageDadosPrincipais.ResumeLayout(false);
             this.tpageDadosPrincipais.PerformLayout();
+            this.gbBotoes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCpfcnpjInvalido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCalendario)).EndInit();
             this.tabControl1.ResumeLayout(false);
-            this.gbBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
