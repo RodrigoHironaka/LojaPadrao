@@ -9,11 +9,18 @@ namespace LojaPadraoMYSQL.Formularios
 
     public partial class frmConsultaGrupo : Form
     {
+        public void AtualizaCabecalhoGridDados()
+        {
+            dgvDados.Columns[0].HeaderText = "Cod";
+            dgvDados.Columns[1].HeaderText = "Grupo";
+            dgvDados.Columns[2].HeaderText = "Sit";
+        }
         public int id = 0;
         public frmConsultaGrupo()
         {
             InitializeComponent();
             cbStatus.SelectedIndex = 1;
+            this.AtualizaCabecalhoGridDados();
         }
 
         public frmConsultaGrupo(bool selecao)

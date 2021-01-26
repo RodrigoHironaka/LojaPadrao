@@ -15,6 +15,34 @@ namespace LojaPadraoMYSQL.Formularios
 {
     public partial class frmConsultaProduto : Form
     {
+        public void AtualizaCabecalhoGridItens()
+        {
+            dgvDados.Columns[0].HeaderText = "Cod";
+            dgvDados.Columns[1].HeaderText = "N/S";
+            dgvDados.Columns[2].HeaderText = "Tipo";
+            dgvDados.Columns[3].HeaderText = "Cadastro";
+            dgvDados.Columns[4].HeaderText = "Produto";
+            dgvDados.Columns[5].HeaderText = "Apelido";
+            dgvDados.Columns[6].Visible = false;
+            dgvDados.Columns[7].Visible = false;
+            dgvDados.Columns[8].Visible = false;
+            dgvDados.Columns[9].Visible = false;
+            dgvDados.Columns[10].Visible = false;
+            dgvDados.Columns[11].HeaderText = "Custo";
+            dgvDados.Columns[12].HeaderText = "%";
+            dgvDados.Columns[13].HeaderText = "Avista";
+            dgvDados.Columns[14].HeaderText = "%";
+            dgvDados.Columns[15].HeaderText = "Prazo";
+            dgvDados.Columns[16].HeaderText = "%";
+            dgvDados.Columns[17].HeaderText = "Desconto";
+            dgvDados.Columns[18].Visible = false;
+            dgvDados.Columns[19].Visible = false;
+            dgvDados.Columns[20].Visible = false;
+            dgvDados.Columns[21].Visible = false;
+            dgvDados.Columns[22].Visible = false;
+            dgvDados.Columns[23].Visible = false;
+            dgvDados.Columns[24].HeaderText = "Sit";
+        }
         //---------------------------VARIAVEL--------------------------------------------------------------
         public int id = 0;
 
@@ -23,6 +51,7 @@ namespace LojaPadraoMYSQL.Formularios
         {
             InitializeComponent();
             cbStatus.SelectedIndex = 1;
+            this.AtualizaCabecalhoGridItens();
         }
 
         //---------------------------CONSTRUTOR CARREGA DADOS QNDO FOR ALTERAR-----------------------------

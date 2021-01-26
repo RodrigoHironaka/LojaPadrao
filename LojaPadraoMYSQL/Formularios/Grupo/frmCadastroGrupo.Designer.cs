@@ -35,23 +35,27 @@
             this.btSalvar = new System.Windows.Forms.Button();
             this.txtID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.gbBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 41);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(8, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Nome";
             // 
             // txtNome
             // 
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNome.Location = new System.Drawing.Point(28, 58);
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(12, 84);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(230, 20);
+            this.txtNome.Size = new System.Drawing.Size(311, 26);
             this.txtNome.TabIndex = 1;
             // 
             // chkAtivo
@@ -59,60 +63,84 @@
             this.chkAtivo.AutoSize = true;
             this.chkAtivo.Checked = true;
             this.chkAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkAtivo.Location = new System.Drawing.Point(112, 20);
+            this.chkAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAtivo.Location = new System.Drawing.Point(96, 34);
             this.chkAtivo.Name = "chkAtivo";
-            this.chkAtivo.Size = new System.Drawing.Size(50, 17);
+            this.chkAtivo.Size = new System.Drawing.Size(63, 24);
             this.chkAtivo.TabIndex = 0;
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
             // 
             // btSair
             // 
-            this.btSair.Location = new System.Drawing.Point(221, 16);
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
+            this.btSair.Location = new System.Drawing.Point(71, 10);
             this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(36, 23);
+            this.btSair.Size = new System.Drawing.Size(50, 50);
             this.btSair.TabIndex = 3;
-            this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // btSalvar
             // 
-            this.btSalvar.Location = new System.Drawing.Point(179, 16);
+            this.btSalvar.FlatAppearance.BorderSize = 0;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalvar.Image = global::LojaPadraoMYSQL.Properties.Resources.Salvar48x48;
+            this.btSalvar.Location = new System.Drawing.Point(6, 10);
             this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(36, 23);
+            this.btSalvar.Size = new System.Drawing.Size(50, 50);
             this.btSalvar.TabIndex = 2;
-            this.btSalvar.Text = "sal";
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(28, 18);
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(12, 32);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(78, 20);
+            this.txtID.Size = new System.Drawing.Size(78, 26);
             this.txtID.TabIndex = 7;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 1);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(8, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 6;
             this.label2.Text = "Código";
+            // 
+            // gbBotoes
+            // 
+            this.gbBotoes.BackColor = System.Drawing.Color.Lavender;
+            this.gbBotoes.Controls.Add(this.btSair);
+            this.gbBotoes.Controls.Add(this.btSalvar);
+            this.gbBotoes.Location = new System.Drawing.Point(196, 9);
+            this.gbBotoes.Name = "gbBotoes";
+            this.gbBotoes.Size = new System.Drawing.Size(127, 66);
+            this.gbBotoes.TabIndex = 17;
+            this.gbBotoes.TabStop = false;
             // 
             // frmCadastroGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(279, 90);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(335, 128);
+            this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btSair);
-            this.Controls.Add(this.btSalvar);
             this.Controls.Add(this.chkAtivo);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
@@ -122,8 +150,9 @@
             this.MinimizeBox = false;
             this.Name = "frmCadastroGrupo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCadastroGrupo";
+            this.Text = "Cadastro de Grupo";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroGrupo_KeyDown);
+            this.gbBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,5 +167,6 @@
         private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.TextBox txtID;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.GroupBox gbBotoes;
     }
 }

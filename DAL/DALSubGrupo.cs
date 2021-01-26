@@ -87,7 +87,7 @@ namespace DAL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
                 conexao.Conectar();
-                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select sb.id, sb.nome, g.nome as Grupo, sb.`status` from subgrupo sb" +
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select sb.id, sb.nome, g.nome, sb.`status` from subgrupo sb" +
                     " inner join grupo g on sb.idgrupo = g.id" +
                     " order by sb.id", conexao.StringConexao);
                 DataTable dataTable = new DataTable();

@@ -383,6 +383,9 @@
     <Folder Include="Formularios\TipoGasto\" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resource\CodBarras16x16.png" />
+    <None Include="Resource\CodBarras24x24.png" />
+    <None Include="Resource\CodBarras32x32.png" />
     <Content Include="Resource\Delete48x48.ico" />
     <Content Include="Resource\Editar48x48.ico" />
     <None Include="Resource\RemoverLinha32x32.ico" />
@@ -391,7 +394,9 @@
     <None Include="Resource\lupa32x32.ico" />
     <None Include="Resource\SalvarTemp48x48.ico" />
     <None Include="Resource\imprimir48x48.ico" />
+    <None Include="Resource\InserirFoto16x16.png" />
     <Content Include="Resource\Novo48x48.ico" />
+    <None Include="Resource\RemoverFoto16x16.png" />
     <Content Include="Resource\Retornar48x48.ico" />
     <Content Include="Resource\Sair48x48.ico" />
     <Content Include="Resource\Salvar48x48.ico" />

@@ -222,9 +222,9 @@
             // pbFoto
             // 
             this.pbFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbFoto.Location = new System.Drawing.Point(365, 32);
+            this.pbFoto.Location = new System.Drawing.Point(365, 26);
             this.pbFoto.Name = "pbFoto";
-            this.pbFoto.Size = new System.Drawing.Size(101, 121);
+            this.pbFoto.Size = new System.Drawing.Size(101, 127);
             this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pbFoto.TabIndex = 312;
             this.pbFoto.TabStop = false;
@@ -242,9 +242,14 @@
             // 
             // btAddFoto
             // 
-            this.btAddFoto.Location = new System.Drawing.Point(410, 2);
+            this.btAddFoto.FlatAppearance.BorderSize = 0;
+            this.btAddFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btAddFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btAddFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAddFoto.Image = global::LojaPadraoMYSQL.Properties.Resources.InserirFoto16x16;
+            this.btAddFoto.Location = new System.Drawing.Point(419, 3);
             this.btAddFoto.Name = "btAddFoto";
-            this.btAddFoto.Size = new System.Drawing.Size(25, 25);
+            this.btAddFoto.Size = new System.Drawing.Size(20, 20);
             this.btAddFoto.TabIndex = 310;
             this.btAddFoto.Text = "+";
             this.btAddFoto.UseVisualStyleBackColor = true;
@@ -252,9 +257,14 @@
             // 
             // btRemFoto
             // 
-            this.btRemFoto.Location = new System.Drawing.Point(441, 2);
+            this.btRemFoto.FlatAppearance.BorderSize = 0;
+            this.btRemFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btRemFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btRemFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRemFoto.Image = global::LojaPadraoMYSQL.Properties.Resources.RemoverFoto16x16;
+            this.btRemFoto.Location = new System.Drawing.Point(446, 4);
             this.btRemFoto.Name = "btRemFoto";
-            this.btRemFoto.Size = new System.Drawing.Size(25, 25);
+            this.btRemFoto.Size = new System.Drawing.Size(20, 20);
             this.btRemFoto.TabIndex = 309;
             this.btRemFoto.Text = "-";
             this.btRemFoto.UseVisualStyleBackColor = true;
@@ -262,10 +272,15 @@
             // 
             // btProcurarCidade
             // 
+            this.btProcurarCidade.FlatAppearance.BorderSize = 0;
+            this.btProcurarCidade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btProcurarCidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btProcurarCidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btProcurarCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btProcurarCidade.Location = new System.Drawing.Point(77, 433);
+            this.btProcurarCidade.Image = global::LojaPadraoMYSQL.Properties.Resources.lupa32x32;
+            this.btProcurarCidade.Location = new System.Drawing.Point(75, 429);
             this.btProcurarCidade.Name = "btProcurarCidade";
-            this.btProcurarCidade.Size = new System.Drawing.Size(28, 26);
+            this.btProcurarCidade.Size = new System.Drawing.Size(35, 35);
             this.btProcurarCidade.TabIndex = 16;
             this.btProcurarCidade.Text = "...";
             this.btProcurarCidade.UseVisualStyleBackColor = true;
@@ -299,10 +314,10 @@
             this.txtNomeCidade.Enabled = false;
             this.txtNomeCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeCidade.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtNomeCidade.Location = new System.Drawing.Point(111, 433);
+            this.txtNomeCidade.Location = new System.Drawing.Point(115, 433);
             this.txtNomeCidade.MaxLength = 30;
             this.txtNomeCidade.Name = "txtNomeCidade";
-            this.txtNomeCidade.Size = new System.Drawing.Size(302, 26);
+            this.txtNomeCidade.Size = new System.Drawing.Size(298, 26);
             this.txtNomeCidade.TabIndex = 299;
             this.txtNomeCidade.TextChanged += new System.EventHandler(this.txtNomeCidade_TextChanged);
             // 

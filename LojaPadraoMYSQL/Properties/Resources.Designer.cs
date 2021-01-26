@@ -63,6 +63,36 @@ namespace LojaPadraoMYSQL.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap CodBarras16x16 {
+            get {
+                object obj = ResourceManager.GetObject("CodBarras16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CodBarras24x24 {
+            get {
+                object obj = ResourceManager.GetObject("CodBarras24x24", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap CodBarras32x32 {
+            get {
+                object obj = ResourceManager.GetObject("CodBarras32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Delete48x48 {
             get {
                 object obj = ResourceManager.GetObject("Delete48x48", resourceCulture);
@@ -93,6 +123,16 @@ namespace LojaPadraoMYSQL.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap InserirFoto16x16 {
+            get {
+                object obj = ResourceManager.GetObject("InserirFoto16x16", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap InserirLinha32x32 {
             get {
                 object obj = ResourceManager.GetObject("InserirLinha32x32", resourceCulture);
@@ -116,6 +156,16 @@ namespace LojaPadraoMYSQL.Properties {
         internal static System.Drawing.Bitmap Novo48x48 {
             get {
                 object obj = ResourceManager.GetObject("Novo48x48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap RemoverFoto16x16 {
+            get {
+                object obj = ResourceManager.GetObject("RemoverFoto16x16", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

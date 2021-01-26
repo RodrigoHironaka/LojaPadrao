@@ -140,7 +140,8 @@
             this.dgvDados.AllowUserToAddRows = false;
             this.dgvDados.AllowUserToDeleteRows = false;
             this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvDados.BackgroundColor = System.Drawing.SystemColors.Menu;
+            this.dgvDados.BackgroundColor = System.Drawing.Color.Lavender;
+            this.dgvDados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));

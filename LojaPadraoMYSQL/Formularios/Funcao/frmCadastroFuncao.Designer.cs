@@ -37,43 +37,55 @@
             this.label1 = new System.Windows.Forms.Label();
             this.txtDescricao = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.gbBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtID
             // 
             this.txtID.Enabled = false;
-            this.txtID.Location = new System.Drawing.Point(15, 26);
+            this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtID.Location = new System.Drawing.Point(12, 32);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
-            this.txtID.Size = new System.Drawing.Size(78, 20);
+            this.txtID.Size = new System.Drawing.Size(78, 26);
             this.txtID.TabIndex = 21;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 9);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(40, 13);
+            this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 20;
             this.label2.Text = "Código";
             // 
             // btSair
             // 
-            this.btSair.Location = new System.Drawing.Point(209, 24);
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
+            this.btSair.Location = new System.Drawing.Point(71, 10);
             this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(36, 23);
+            this.btSair.Size = new System.Drawing.Size(50, 50);
             this.btSair.TabIndex = 4;
-            this.btSair.Text = "sair";
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // btSalvar
             // 
-            this.btSalvar.Location = new System.Drawing.Point(167, 24);
+            this.btSalvar.FlatAppearance.BorderSize = 0;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSalvar.Image = global::LojaPadraoMYSQL.Properties.Resources.Salvar48x48;
+            this.btSalvar.Location = new System.Drawing.Point(6, 10);
             this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(36, 23);
+            this.btSalvar.Size = new System.Drawing.Size(50, 50);
             this.btSalvar.TabIndex = 3;
-            this.btSalvar.Text = "sal";
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
@@ -82,9 +94,10 @@
             this.chkAtivo.AutoSize = true;
             this.chkAtivo.Checked = true;
             this.chkAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkAtivo.Location = new System.Drawing.Point(99, 28);
+            this.chkAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkAtivo.Location = new System.Drawing.Point(96, 34);
             this.chkAtivo.Name = "chkAtivo";
-            this.chkAtivo.Size = new System.Drawing.Size(50, 17);
+            this.chkAtivo.Size = new System.Drawing.Size(63, 24);
             this.chkAtivo.TabIndex = 0;
             this.chkAtivo.Text = "Ativo";
             this.chkAtivo.UseVisualStyleBackColor = true;
@@ -92,49 +105,64 @@
             // txtNome
             // 
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNome.Location = new System.Drawing.Point(15, 66);
+            this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNome.Location = new System.Drawing.Point(12, 84);
             this.txtNome.Name = "txtNome";
-            this.txtNome.Size = new System.Drawing.Size(230, 20);
+            this.txtNome.Size = new System.Drawing.Size(327, 26);
             this.txtNome.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 49);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(9, 61);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
+            this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 15;
             this.label1.Text = "Nome";
             // 
             // txtDescricao
             // 
             this.txtDescricao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtDescricao.Location = new System.Drawing.Point(15, 110);
+            this.txtDescricao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescricao.Location = new System.Drawing.Point(12, 136);
             this.txtDescricao.Multiline = true;
             this.txtDescricao.Name = "txtDescricao";
-            this.txtDescricao.Size = new System.Drawing.Size(230, 135);
+            this.txtDescricao.Size = new System.Drawing.Size(327, 184);
             this.txtDescricao.TabIndex = 2;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 93);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(8, 113);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(55, 13);
+            this.label3.Size = new System.Drawing.Size(80, 20);
             this.label3.TabIndex = 22;
             this.label3.Text = "Descrição";
+            // 
+            // gbBotoes
+            // 
+            this.gbBotoes.BackColor = System.Drawing.Color.Lavender;
+            this.gbBotoes.Controls.Add(this.btSair);
+            this.gbBotoes.Controls.Add(this.btSalvar);
+            this.gbBotoes.Location = new System.Drawing.Point(212, 12);
+            this.gbBotoes.Name = "gbBotoes";
+            this.gbBotoes.Size = new System.Drawing.Size(127, 66);
+            this.gbBotoes.TabIndex = 23;
+            this.gbBotoes.TabStop = false;
             // 
             // frmCadastroFuncao
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(263, 262);
+            this.BackColor = System.Drawing.Color.Lavender;
+            this.ClientSize = new System.Drawing.Size(351, 331);
+            this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.txtDescricao);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtID);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.btSair);
-            this.Controls.Add(this.btSalvar);
             this.Controls.Add(this.chkAtivo);
             this.Controls.Add(this.txtNome);
             this.Controls.Add(this.label1);
@@ -144,8 +172,9 @@
             this.MinimizeBox = false;
             this.Name = "frmCadastroFuncao";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frmCadastroFuncao";
+            this.Text = "Cadastro de Função";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroFuncao_KeyDown);
+            this.gbBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -162,5 +191,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtDescricao;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.GroupBox gbBotoes;
     }
 }

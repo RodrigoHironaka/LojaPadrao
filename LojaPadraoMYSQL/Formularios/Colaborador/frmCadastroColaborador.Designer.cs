@@ -32,11 +32,8 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpageDadosPrincipais = new System.Windows.Forms.TabPage();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.btSalvar = new System.Windows.Forms.Button();
-            this.btSair = new System.Windows.Forms.Button();
             this.cbFuncao = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.pbFoto = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btAddFoto = new System.Windows.Forms.Button();
             this.btRemFoto = new System.Windows.Forms.Button();
@@ -55,8 +52,6 @@
             this.txtBairro = new System.Windows.Forms.TextBox();
             this.txtDataCadastro = new System.Windows.Forms.TextBox();
             this.lbObservacao = new System.Windows.Forms.Label();
-            this.pctCepInvalido = new System.Windows.Forms.PictureBox();
-            this.pctCnpjInvalido = new System.Windows.Forms.PictureBox();
             this.lbCnpj = new System.Windows.Forms.Label();
             this.lbTelefone = new System.Windows.Forms.Label();
             this.chbAtivo = new System.Windows.Forms.CheckBox();
@@ -81,6 +76,11 @@
             this.lbIe = new System.Windows.Forms.Label();
             this.lbCelular = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.btSalvar = new System.Windows.Forms.Button();
+            this.btSair = new System.Windows.Forms.Button();
+            this.pbFoto = new System.Windows.Forms.PictureBox();
+            this.pctCepInvalido = new System.Windows.Forms.PictureBox();
+            this.pctCnpjInvalido = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tpageDadosPrincipais.SuspendLayout();
             this.gbBotoes.SuspendLayout();
@@ -167,36 +167,6 @@
             this.gbBotoes.TabIndex = 316;
             this.gbBotoes.TabStop = false;
             // 
-            // btSalvar
-            // 
-            this.btSalvar.FlatAppearance.BorderSize = 0;
-            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
-            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSalvar.Image = global::LojaPadraoMYSQL.Properties.Resources.Salvar48x48;
-            this.btSalvar.Location = new System.Drawing.Point(115, 19);
-            this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(50, 50);
-            this.btSalvar.TabIndex = 18;
-            this.btSalvar.UseVisualStyleBackColor = true;
-            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
-            // 
-            // btSair
-            // 
-            this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
-            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
-            this.btSair.Location = new System.Drawing.Point(171, 19);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(50, 50);
-            this.btSair.TabIndex = 19;
-            this.btSair.UseVisualStyleBackColor = true;
-            this.btSair.Click += new System.EventHandler(this.btSair_Click);
-            // 
             // cbFuncao
             // 
             this.cbFuncao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -218,16 +188,6 @@
             this.label3.TabIndex = 314;
             this.label3.Text = "Função:";
             // 
-            // pbFoto
-            // 
-            this.pbFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbFoto.Location = new System.Drawing.Point(369, 29);
-            this.pbFoto.Name = "pbFoto";
-            this.pbFoto.Size = new System.Drawing.Size(101, 127);
-            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFoto.TabIndex = 312;
-            this.pbFoto.TabStop = false;
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -241,21 +201,29 @@
             // 
             // btAddFoto
             // 
+            this.btAddFoto.FlatAppearance.BorderSize = 0;
+            this.btAddFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btAddFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btAddFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAddFoto.Image = global::LojaPadraoMYSQL.Properties.Resources.InserirFoto16x16;
             this.btAddFoto.Location = new System.Drawing.Point(424, 4);
             this.btAddFoto.Name = "btAddFoto";
             this.btAddFoto.Size = new System.Drawing.Size(20, 19);
             this.btAddFoto.TabIndex = 310;
-            this.btAddFoto.Text = "+";
             this.btAddFoto.UseVisualStyleBackColor = true;
             this.btAddFoto.Click += new System.EventHandler(this.btAddFoto_Click);
             // 
             // btRemFoto
             // 
-            this.btRemFoto.Location = new System.Drawing.Point(450, 4);
+            this.btRemFoto.FlatAppearance.BorderSize = 0;
+            this.btRemFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btRemFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btRemFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRemFoto.Image = global::LojaPadraoMYSQL.Properties.Resources.RemoverFoto16x16;
+            this.btRemFoto.Location = new System.Drawing.Point(450, 5);
             this.btRemFoto.Name = "btRemFoto";
             this.btRemFoto.Size = new System.Drawing.Size(20, 19);
             this.btRemFoto.TabIndex = 309;
-            this.btRemFoto.Text = "-";
             this.btRemFoto.UseVisualStyleBackColor = true;
             this.btRemFoto.Click += new System.EventHandler(this.btRemFoto_Click);
             // 
@@ -427,28 +395,6 @@
             this.lbObservacao.Size = new System.Drawing.Size(98, 20);
             this.lbObservacao.TabIndex = 297;
             this.lbObservacao.Text = "Observação:";
-            // 
-            // pctCepInvalido
-            // 
-            this.pctCepInvalido.Image = ((System.Drawing.Image)(resources.GetObject("pctCepInvalido.Image")));
-            this.pctCepInvalido.Location = new System.Drawing.Point(74, 271);
-            this.pctCepInvalido.Name = "pctCepInvalido";
-            this.pctCepInvalido.Size = new System.Drawing.Size(16, 16);
-            this.pctCepInvalido.TabIndex = 290;
-            this.pctCepInvalido.TabStop = false;
-            this.pctCepInvalido.Visible = false;
-            this.pctCepInvalido.WaitOnLoad = true;
-            // 
-            // pctCnpjInvalido
-            // 
-            this.pctCnpjInvalido.Image = ((System.Drawing.Image)(resources.GetObject("pctCnpjInvalido.Image")));
-            this.pctCnpjInvalido.Location = new System.Drawing.Point(111, 59);
-            this.pctCnpjInvalido.Name = "pctCnpjInvalido";
-            this.pctCnpjInvalido.Size = new System.Drawing.Size(16, 16);
-            this.pctCnpjInvalido.TabIndex = 289;
-            this.pctCnpjInvalido.TabStop = false;
-            this.pctCnpjInvalido.Visible = false;
-            this.pctCnpjInvalido.WaitOnLoad = true;
             // 
             // lbCnpj
             // 
@@ -706,10 +652,73 @@
             this.tabPage2.Text = "Outros";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // btSalvar
+            // 
+            this.btSalvar.FlatAppearance.BorderSize = 0;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalvar.Image = global::LojaPadraoMYSQL.Properties.Resources.Salvar48x48;
+            this.btSalvar.Location = new System.Drawing.Point(115, 19);
+            this.btSalvar.Name = "btSalvar";
+            this.btSalvar.Size = new System.Drawing.Size(50, 50);
+            this.btSalvar.TabIndex = 18;
+            this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
+            // 
+            // btSair
+            // 
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
+            this.btSair.Location = new System.Drawing.Point(171, 19);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(50, 50);
+            this.btSair.TabIndex = 19;
+            this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
+            // 
+            // pbFoto
+            // 
+            this.pbFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbFoto.Location = new System.Drawing.Point(369, 29);
+            this.pbFoto.Name = "pbFoto";
+            this.pbFoto.Size = new System.Drawing.Size(101, 127);
+            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFoto.TabIndex = 312;
+            this.pbFoto.TabStop = false;
+            // 
+            // pctCepInvalido
+            // 
+            this.pctCepInvalido.Image = ((System.Drawing.Image)(resources.GetObject("pctCepInvalido.Image")));
+            this.pctCepInvalido.Location = new System.Drawing.Point(74, 271);
+            this.pctCepInvalido.Name = "pctCepInvalido";
+            this.pctCepInvalido.Size = new System.Drawing.Size(16, 16);
+            this.pctCepInvalido.TabIndex = 290;
+            this.pctCepInvalido.TabStop = false;
+            this.pctCepInvalido.Visible = false;
+            this.pctCepInvalido.WaitOnLoad = true;
+            // 
+            // pctCnpjInvalido
+            // 
+            this.pctCnpjInvalido.Image = ((System.Drawing.Image)(resources.GetObject("pctCnpjInvalido.Image")));
+            this.pctCnpjInvalido.Location = new System.Drawing.Point(111, 59);
+            this.pctCnpjInvalido.Name = "pctCnpjInvalido";
+            this.pctCnpjInvalido.Size = new System.Drawing.Size(16, 16);
+            this.pctCnpjInvalido.TabIndex = 289;
+            this.pctCnpjInvalido.TabStop = false;
+            this.pctCnpjInvalido.Visible = false;
+            this.pctCnpjInvalido.WaitOnLoad = true;
+            // 
             // frmCadastroColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(741, 493);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
