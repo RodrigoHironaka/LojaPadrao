@@ -48,8 +48,16 @@
             this.lbObservacao = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpageDadosPrincipais = new System.Windows.Forms.TabPage();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.btSair = new System.Windows.Forms.Button();
+            this.btSalvar = new System.Windows.Forms.Button();
             this.txtNomeVendedor = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.pbFoto = new System.Windows.Forms.PictureBox();
+            this.btAddFoto = new System.Windows.Forms.Button();
+            this.btProcurarCidade = new System.Windows.Forms.Button();
+            this.pctCepInvalido = new System.Windows.Forms.PictureBox();
+            this.pctCnpjInvalido = new System.Windows.Forms.PictureBox();
             this.lbCnpj = new System.Windows.Forms.Label();
             this.lbTelefone = new System.Windows.Forms.Label();
             this.chbAtivo = new System.Windows.Forms.CheckBox();
@@ -75,14 +83,6 @@
             this.lbIe = new System.Windows.Forms.Label();
             this.lbCelular = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.btSair = new System.Windows.Forms.Button();
-            this.btSalvar = new System.Windows.Forms.Button();
-            this.pbFoto = new System.Windows.Forms.PictureBox();
-            this.btAddFoto = new System.Windows.Forms.Button();
-            this.btProcurarCidade = new System.Windows.Forms.Button();
-            this.pctCepInvalido = new System.Windows.Forms.PictureBox();
-            this.pctCnpjInvalido = new System.Windows.Forms.PictureBox();
             this.tabControl1.SuspendLayout();
             this.tpageDadosPrincipais.SuspendLayout();
             this.gbBotoes.SuspendLayout();
@@ -355,6 +355,45 @@
             this.tpageDadosPrincipais.TabIndex = 0;
             this.tpageDadosPrincipais.Text = "Dados Principais";
             // 
+            // gbBotoes
+            // 
+            this.gbBotoes.BackColor = System.Drawing.Color.Lavender;
+            this.gbBotoes.Controls.Add(this.btSair);
+            this.gbBotoes.Controls.Add(this.btSalvar);
+            this.gbBotoes.Location = new System.Drawing.Point(481, 393);
+            this.gbBotoes.Name = "gbBotoes";
+            this.gbBotoes.Size = new System.Drawing.Size(227, 80);
+            this.gbBotoes.TabIndex = 317;
+            this.gbBotoes.TabStop = false;
+            // 
+            // btSair
+            // 
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
+            this.btSair.Location = new System.Drawing.Point(171, 24);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(50, 50);
+            this.btSair.TabIndex = 19;
+            this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
+            // 
+            // btSalvar
+            // 
+            this.btSalvar.FlatAppearance.BorderSize = 0;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSalvar.Image = global::LojaPadraoMYSQL.Properties.Resources.Salvar48x48;
+            this.btSalvar.Location = new System.Drawing.Point(115, 24);
+            this.btSalvar.Name = "btSalvar";
+            this.btSalvar.Size = new System.Drawing.Size(50, 50);
+            this.btSalvar.TabIndex = 18;
+            this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
+            // 
             // txtNomeVendedor
             // 
             this.txtNomeVendedor.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
@@ -376,6 +415,67 @@
             this.label3.Size = new System.Drawing.Size(83, 20);
             this.label3.TabIndex = 314;
             this.label3.Text = "Vendedor:";
+            // 
+            // pbFoto
+            // 
+            this.pbFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pbFoto.Location = new System.Drawing.Point(314, 28);
+            this.pbFoto.Name = "pbFoto";
+            this.pbFoto.Size = new System.Drawing.Size(161, 97);
+            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbFoto.TabIndex = 312;
+            this.pbFoto.TabStop = false;
+            // 
+            // btAddFoto
+            // 
+            this.btAddFoto.FlatAppearance.BorderSize = 0;
+            this.btAddFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btAddFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btAddFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAddFoto.Image = global::LojaPadraoMYSQL.Properties.Resources.InserirFoto16x16;
+            this.btAddFoto.Location = new System.Drawing.Point(427, 3);
+            this.btAddFoto.Name = "btAddFoto";
+            this.btAddFoto.Size = new System.Drawing.Size(20, 20);
+            this.btAddFoto.TabIndex = 310;
+            this.btAddFoto.UseVisualStyleBackColor = true;
+            this.btAddFoto.Click += new System.EventHandler(this.btAddFoto_Click_1);
+            // 
+            // btProcurarCidade
+            // 
+            this.btProcurarCidade.FlatAppearance.BorderSize = 0;
+            this.btProcurarCidade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btProcurarCidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btProcurarCidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btProcurarCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btProcurarCidade.Image = global::LojaPadraoMYSQL.Properties.Resources.lupa32x32;
+            this.btProcurarCidade.Location = new System.Drawing.Point(70, 437);
+            this.btProcurarCidade.Name = "btProcurarCidade";
+            this.btProcurarCidade.Size = new System.Drawing.Size(35, 35);
+            this.btProcurarCidade.TabIndex = 16;
+            this.btProcurarCidade.UseVisualStyleBackColor = true;
+            this.btProcurarCidade.Click += new System.EventHandler(this.btProcurarCidade_Click);
+            // 
+            // pctCepInvalido
+            // 
+            this.pctCepInvalido.Image = ((System.Drawing.Image)(resources.GetObject("pctCepInvalido.Image")));
+            this.pctCepInvalido.Location = new System.Drawing.Point(76, 322);
+            this.pctCepInvalido.Name = "pctCepInvalido";
+            this.pctCepInvalido.Size = new System.Drawing.Size(16, 16);
+            this.pctCepInvalido.TabIndex = 290;
+            this.pctCepInvalido.TabStop = false;
+            this.pctCepInvalido.Visible = false;
+            this.pctCepInvalido.WaitOnLoad = true;
+            // 
+            // pctCnpjInvalido
+            // 
+            this.pctCnpjInvalido.Image = ((System.Drawing.Image)(resources.GetObject("pctCnpjInvalido.Image")));
+            this.pctCnpjInvalido.Location = new System.Drawing.Point(151, 63);
+            this.pctCnpjInvalido.Name = "pctCnpjInvalido";
+            this.pctCnpjInvalido.Size = new System.Drawing.Size(16, 16);
+            this.pctCnpjInvalido.TabIndex = 289;
+            this.pctCnpjInvalido.TabStop = false;
+            this.pctCnpjInvalido.Visible = false;
+            this.pctCnpjInvalido.WaitOnLoad = true;
             // 
             // lbCnpj
             // 
@@ -639,110 +739,10 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(714, 454);
+            this.tabPage2.Size = new System.Drawing.Size(714, 482);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Outros";
             this.tabPage2.UseVisualStyleBackColor = true;
-            // 
-            // gbBotoes
-            // 
-            this.gbBotoes.BackColor = System.Drawing.Color.Lavender;
-            this.gbBotoes.Controls.Add(this.btSair);
-            this.gbBotoes.Controls.Add(this.btSalvar);
-            this.gbBotoes.Location = new System.Drawing.Point(481, 393);
-            this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(227, 80);
-            this.gbBotoes.TabIndex = 317;
-            this.gbBotoes.TabStop = false;
-            // 
-            // btSair
-            // 
-            this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
-            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
-            this.btSair.Location = new System.Drawing.Point(171, 24);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(50, 50);
-            this.btSair.TabIndex = 19;
-            this.btSair.UseVisualStyleBackColor = true;
-            this.btSair.Click += new System.EventHandler(this.btSair_Click);
-            // 
-            // btSalvar
-            // 
-            this.btSalvar.FlatAppearance.BorderSize = 0;
-            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
-            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSalvar.Image = global::LojaPadraoMYSQL.Properties.Resources.Salvar48x48;
-            this.btSalvar.Location = new System.Drawing.Point(115, 24);
-            this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(50, 50);
-            this.btSalvar.TabIndex = 18;
-            this.btSalvar.UseVisualStyleBackColor = true;
-            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
-            // 
-            // pbFoto
-            // 
-            this.pbFoto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pbFoto.Location = new System.Drawing.Point(314, 28);
-            this.pbFoto.Name = "pbFoto";
-            this.pbFoto.Size = new System.Drawing.Size(161, 97);
-            this.pbFoto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbFoto.TabIndex = 312;
-            this.pbFoto.TabStop = false;
-            // 
-            // btAddFoto
-            // 
-            this.btAddFoto.FlatAppearance.BorderSize = 0;
-            this.btAddFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btAddFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
-            this.btAddFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAddFoto.Image = global::LojaPadraoMYSQL.Properties.Resources.InserirFoto16x16;
-            this.btAddFoto.Location = new System.Drawing.Point(427, 3);
-            this.btAddFoto.Name = "btAddFoto";
-            this.btAddFoto.Size = new System.Drawing.Size(20, 20);
-            this.btAddFoto.TabIndex = 310;
-            this.btAddFoto.UseVisualStyleBackColor = true;
-            this.btAddFoto.Click += new System.EventHandler(this.btAddFoto_Click_1);
-            // 
-            // btProcurarCidade
-            // 
-            this.btProcurarCidade.FlatAppearance.BorderSize = 0;
-            this.btProcurarCidade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btProcurarCidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
-            this.btProcurarCidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btProcurarCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btProcurarCidade.Image = global::LojaPadraoMYSQL.Properties.Resources.lupa32x32;
-            this.btProcurarCidade.Location = new System.Drawing.Point(70, 437);
-            this.btProcurarCidade.Name = "btProcurarCidade";
-            this.btProcurarCidade.Size = new System.Drawing.Size(35, 35);
-            this.btProcurarCidade.TabIndex = 16;
-            this.btProcurarCidade.UseVisualStyleBackColor = true;
-            this.btProcurarCidade.Click += new System.EventHandler(this.btProcurarCidade_Click);
-            // 
-            // pctCepInvalido
-            // 
-            this.pctCepInvalido.Image = ((System.Drawing.Image)(resources.GetObject("pctCepInvalido.Image")));
-            this.pctCepInvalido.Location = new System.Drawing.Point(76, 322);
-            this.pctCepInvalido.Name = "pctCepInvalido";
-            this.pctCepInvalido.Size = new System.Drawing.Size(16, 16);
-            this.pctCepInvalido.TabIndex = 290;
-            this.pctCepInvalido.TabStop = false;
-            this.pctCepInvalido.Visible = false;
-            this.pctCepInvalido.WaitOnLoad = true;
-            // 
-            // pctCnpjInvalido
-            // 
-            this.pctCnpjInvalido.Image = ((System.Drawing.Image)(resources.GetObject("pctCnpjInvalido.Image")));
-            this.pctCnpjInvalido.Location = new System.Drawing.Point(151, 63);
-            this.pctCnpjInvalido.Name = "pctCnpjInvalido";
-            this.pctCnpjInvalido.Size = new System.Drawing.Size(16, 16);
-            this.pctCnpjInvalido.TabIndex = 289;
-            this.pctCnpjInvalido.TabStop = false;
-            this.pctCnpjInvalido.Visible = false;
-            this.pctCnpjInvalido.WaitOnLoad = true;
             // 
             // frmCadastroFornecedor
             // 

@@ -15,12 +15,36 @@ namespace LojaPadraoMYSQL.Formularios.Transportadora
 {
     public partial class frmConsultaTransportadora : Form
     {
+        public void AtualizaCabecalhoGridItens()
+        {
+            dgvDados.Columns[0].HeaderText = "Cod";
+            dgvDados.Columns[1].HeaderText = "Responsável";
+            dgvDados.Columns[2].HeaderText = "Nome Fantasia";
+            dgvDados.Columns[3].HeaderText = "Razão Social";
+            dgvDados.Columns[4].HeaderText = "IE";
+            dgvDados.Columns[5].HeaderText = "CNPJ";
+            dgvDados.Columns[6].HeaderText = "Endereço";
+            dgvDados.Columns[7].HeaderText = "Nº";
+            dgvDados.Columns[8].HeaderText = "Complemento";
+            dgvDados.Columns[9].HeaderText = "Bairro";
+            dgvDados.Columns[10].HeaderText = "CEP";
+            dgvDados.Columns[11].Visible = false;
+            dgvDados.Columns[12].HeaderText = "E-mail";
+            dgvDados.Columns[13].HeaderText = "Telefone";
+            dgvDados.Columns[14].HeaderText = "Celular";
+            dgvDados.Columns[15].HeaderText = "Celular2";
+            dgvDados.Columns[16].Visible = false;
+            dgvDados.Columns[17].HeaderText = "Cadastro";
+            dgvDados.Columns[18].HeaderText = "Sit";
+            dgvDados.Columns[19].Visible = false;
+        }
         public int id = 0;
 
         public frmConsultaTransportadora()
         {
             InitializeComponent();
             cbStatus.SelectedIndex = 1;
+            this.AtualizaCabecalhoGridItens();
         }
 
         public frmConsultaTransportadora(bool selecao)

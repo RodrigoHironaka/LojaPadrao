@@ -202,3 +202,4 @@ C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csproj
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.csproj.CopyComplete
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.exe
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.Base.Consultas.frmConsultaBase.resources

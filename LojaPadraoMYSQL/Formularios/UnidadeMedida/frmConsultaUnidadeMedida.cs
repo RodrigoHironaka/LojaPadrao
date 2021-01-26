@@ -15,11 +15,20 @@ namespace LojaPadraoMYSQL.Formularios
 {
     public partial class frmConsultaUnidadeMedida : Form
     {
+        public void AtualizaCabecalhoGridItens()
+        {
+            dgvDados.Columns[0].HeaderText = "Cod";
+            dgvDados.Columns[1].HeaderText = "UN";
+            dgvDados.Columns[2].HeaderText = "Silgla";
+            dgvDados.Columns[3].HeaderText = "Sit";
+
+        }
         public int id = 0;
         public frmConsultaUnidadeMedida()
         {
             InitializeComponent();
             cbStatus.SelectedIndex = 1;
+            this.AtualizaCabecalhoGridItens();
         }
 
         public frmConsultaUnidadeMedida(bool selecao)

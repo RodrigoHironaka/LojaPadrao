@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\Base\Consultas\frmConsultaBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Base\Consultas\frmConsultaBase.Designer.cs">
+      <DependentUpon>frmConsultaBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Cidade\frmCadastroCidade.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,6 +246,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Base\Consultas\frmConsultaBase.resx">
+      <DependentUpon>frmConsultaBase.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Cidade\frmCadastroCidade.resx">
       <DependentUpon>frmCadastroCidade.cs</DependentUpon>
     </EmbeddedResource>
