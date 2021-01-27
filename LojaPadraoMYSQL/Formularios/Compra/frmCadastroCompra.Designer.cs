@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -38,8 +39,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -57,19 +58,23 @@
             this.txtNumNota = new System.Windows.Forms.TextBox();
             this.gbDadosCompra = new System.Windows.Forms.GroupBox();
             this.dtpDataNota = new System.Windows.Forms.DateTimePicker();
+            this.btPesqFornecedor = new System.Windows.Forms.Button();
             this.txtPrecoNota = new System.Windows.Forms.TextBox();
             this.lbPrecoNota = new System.Windows.Forms.Label();
             this.lbStatus = new System.Windows.Forms.Label();
             this.tabProdutos = new System.Windows.Forms.TabPage();
+            this.brZerarEstoque = new System.Windows.Forms.Button();
             this.txtTotalCusto = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtTotalAvista = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.btPesqProduto = new System.Windows.Forms.Button();
             this.txtTotalPrazo = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtTotalItens = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.btRemover = new System.Windows.Forms.Button();
+            this.btAdd = new System.Windows.Forms.Button();
             this.dgvItens = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -102,10 +107,6 @@
             this.tabCompra = new System.Windows.Forms.TabControl();
             this.tabPag = new System.Windows.Forms.TabPage();
             this.dgvParcelas = new System.Windows.Forms.DataGridView();
-            this.Parcelas = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dtpDataInicioPagamento = new System.Windows.Forms.DateTimePicker();
             this.btRemoverParcela = new System.Windows.Forms.Button();
@@ -120,15 +121,15 @@
             this.tabObs = new System.Windows.Forms.TabPage();
             this.txtObservacao = new System.Windows.Forms.TextBox();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.gbInfo = new System.Windows.Forms.GroupBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.btFaturar = new System.Windows.Forms.Button();
             this.btSair = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
-            this.btPesqFornecedor = new System.Windows.Forms.Button();
-            this.brZerarEstoque = new System.Windows.Forms.Button();
-            this.btPesqProduto = new System.Windows.Forms.Button();
-            this.btAdd = new System.Windows.Forms.Button();
+            this.gbInfo = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.Parcelas = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Valor = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Vencimento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FormaPagamento = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.gbDadosCompra.SuspendLayout();
             this.tabProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
@@ -271,7 +272,7 @@
             // 
             this.gbDadosCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbDadosCompra.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbDadosCompra.BackColor = System.Drawing.Color.Lavender;
             this.gbDadosCompra.Controls.Add(this.dtpDataNota);
             this.gbDadosCompra.Controls.Add(this.txtNomeFornecedor);
             this.gbDadosCompra.Controls.Add(this.btPesqFornecedor);
@@ -303,6 +304,21 @@
             this.dtpDataNota.TabIndex = 368;
             this.dtpDataNota.ValueChanged += new System.EventHandler(this.dtpDataNota_ValueChanged);
             this.dtpDataNota.Leave += new System.EventHandler(this.dtpDataNota_Leave);
+            // 
+            // btPesqFornecedor
+            // 
+            this.btPesqFornecedor.FlatAppearance.BorderSize = 0;
+            this.btPesqFornecedor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.btPesqFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btPesqFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPesqFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPesqFornecedor.Image = global::LojaPadraoMYSQL.Properties.Resources.lupa32x32;
+            this.btPesqFornecedor.Location = new System.Drawing.Point(803, 35);
+            this.btPesqFornecedor.Name = "btPesqFornecedor";
+            this.btPesqFornecedor.Size = new System.Drawing.Size(35, 35);
+            this.btPesqFornecedor.TabIndex = 5;
+            this.btPesqFornecedor.UseVisualStyleBackColor = true;
+            this.btPesqFornecedor.Click += new System.EventHandler(this.btPesqFornecedor_Click);
             // 
             // txtPrecoNota
             // 
@@ -342,6 +358,7 @@
             // 
             // tabProdutos
             // 
+            this.tabProdutos.BackColor = System.Drawing.Color.Lavender;
             this.tabProdutos.Controls.Add(this.brZerarEstoque);
             this.tabProdutos.Controls.Add(this.txtTotalCusto);
             this.tabProdutos.Controls.Add(this.label15);
@@ -379,7 +396,21 @@
             this.tabProdutos.Size = new System.Drawing.Size(1152, 454);
             this.tabProdutos.TabIndex = 0;
             this.tabProdutos.Text = "Produtos";
-            this.tabProdutos.UseVisualStyleBackColor = true;
+            // 
+            // brZerarEstoque
+            // 
+            this.brZerarEstoque.FlatAppearance.BorderSize = 0;
+            this.brZerarEstoque.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.brZerarEstoque.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.brZerarEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.brZerarEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.brZerarEstoque.Image = global::LojaPadraoMYSQL.Properties.Resources.zerar32x32;
+            this.brZerarEstoque.Location = new System.Drawing.Point(135, 65);
+            this.brZerarEstoque.Name = "brZerarEstoque";
+            this.brZerarEstoque.Size = new System.Drawing.Size(40, 40);
+            this.brZerarEstoque.TabIndex = 382;
+            this.brZerarEstoque.UseVisualStyleBackColor = true;
+            this.brZerarEstoque.Click += new System.EventHandler(this.brZerarEstoque_Click);
             // 
             // txtTotalCusto
             // 
@@ -426,6 +457,22 @@
             this.label14.Size = new System.Drawing.Size(82, 17);
             this.label14.TabIndex = 379;
             this.label14.Text = "Total Avista";
+            // 
+            // btPesqProduto
+            // 
+            this.btPesqProduto.FlatAppearance.BorderSize = 0;
+            this.btPesqProduto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.btPesqProduto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btPesqProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPesqProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPesqProduto.Image = global::LojaPadraoMYSQL.Properties.Resources.lupa32x32;
+            this.btPesqProduto.Location = new System.Drawing.Point(140, 22);
+            this.btPesqProduto.Name = "btPesqProduto";
+            this.btPesqProduto.Size = new System.Drawing.Size(35, 35);
+            this.btPesqProduto.TabIndex = 1;
+            this.btPesqProduto.Text = "...";
+            this.btPesqProduto.UseVisualStyleBackColor = true;
+            this.btPesqProduto.Click += new System.EventHandler(this.btPesqProduto_Click);
             // 
             // txtTotalPrazo
             // 
@@ -488,21 +535,35 @@
             this.btRemover.UseVisualStyleBackColor = true;
             this.btRemover.Click += new System.EventHandler(this.btRemover_Click);
             // 
+            // btAdd
+            // 
+            this.btAdd.FlatAppearance.BorderSize = 0;
+            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Image = global::LojaPadraoMYSQL.Properties.Resources.InserirLinha32x32;
+            this.btAdd.Location = new System.Drawing.Point(1066, 73);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(35, 35);
+            this.btAdd.TabIndex = 371;
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
             // dgvItens
             // 
             this.dgvItens.AllowUserToAddRows = false;
             this.dgvItens.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvItens.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvItens.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvItens.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvItens.BackgroundColor = System.Drawing.Color.Lavender;
+            this.dgvItens.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgvItens.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvItens.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvItens.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
@@ -518,15 +579,19 @@
             this.dgvItens.Location = new System.Drawing.Point(7, 111);
             this.dgvItens.Name = "dgvItens";
             this.dgvItens.ReadOnly = true;
+            this.dgvItens.RowHeadersVisible = false;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvItens.RowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dgvItens.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvItens.Size = new System.Drawing.Size(1139, 308);
             this.dgvItens.TabIndex = 1;
             // 
             // Column1
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle2;
             this.Column1.FillWeight = 55.83941F;
             this.Column1.HeaderText = "Cod";
             this.Column1.Name = "Column1";
@@ -535,8 +600,8 @@
             // 
             // Column2
             // 
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.Column2.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.Column2.DefaultCellStyle = dataGridViewCellStyle3;
             this.Column2.FillWeight = 76.41914F;
             this.Column2.HeaderText = "Produto";
             this.Column2.Name = "Column2";
@@ -545,9 +610,9 @@
             // 
             // Column3
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.Column3.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.Column3.DefaultCellStyle = dataGridViewCellStyle4;
             this.Column3.FillWeight = 103.771F;
             this.Column3.HeaderText = "Custo";
             this.Column3.Name = "Column3";
@@ -556,9 +621,9 @@
             // 
             // Column4
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.Column4.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.Column4.DefaultCellStyle = dataGridViewCellStyle5;
             this.Column4.FillWeight = 69.10925F;
             this.Column4.HeaderText = "%";
             this.Column4.Name = "Column4";
@@ -567,9 +632,9 @@
             // 
             // Column5
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.Column5.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.Column5.DefaultCellStyle = dataGridViewCellStyle6;
             this.Column5.FillWeight = 105.4237F;
             this.Column5.HeaderText = "Avista";
             this.Column5.Name = "Column5";
@@ -578,9 +643,9 @@
             // 
             // Column6
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.Column6.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.Column6.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column6.FillWeight = 67.82596F;
             this.Column6.HeaderText = "%";
             this.Column6.Name = "Column6";
@@ -589,9 +654,9 @@
             // 
             // Column7
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.Column7.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.Column7.DefaultCellStyle = dataGridViewCellStyle8;
             this.Column7.FillWeight = 100.1434F;
             this.Column7.HeaderText = "Prazo";
             this.Column7.Name = "Column7";
@@ -607,9 +672,9 @@
             // 
             // Column8
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.Column8.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.Column8.DefaultCellStyle = dataGridViewCellStyle9;
             this.Column8.FillWeight = 111.9154F;
             this.Column8.HeaderText = "Est Novo";
             this.Column8.Name = "Column8";
@@ -618,9 +683,9 @@
             // 
             // Column12
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
-            this.Column12.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.Column12.DefaultCellStyle = dataGridViewCellStyle10;
             this.Column12.FillWeight = 106.1183F;
             this.Column12.HeaderText = "EstTotal";
             this.Column12.Name = "Column12";
@@ -870,6 +935,7 @@
             // 
             // tabPag
             // 
+            this.tabPag.BackColor = System.Drawing.Color.Lavender;
             this.tabPag.Controls.Add(this.dgvParcelas);
             this.tabPag.Controls.Add(this.groupBox3);
             this.tabPag.Location = new System.Drawing.Point(4, 22);
@@ -878,14 +944,15 @@
             this.tabPag.Size = new System.Drawing.Size(1152, 454);
             this.tabPag.TabIndex = 2;
             this.tabPag.Text = "Pagamento";
-            this.tabPag.UseVisualStyleBackColor = true;
             // 
             // dgvParcelas
             // 
             this.dgvParcelas.AllowUserToAddRows = false;
             this.dgvParcelas.AllowUserToDeleteRows = false;
-            this.dgvParcelas.BackgroundColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.dgvParcelas.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvParcelas.BackgroundColor = System.Drawing.Color.Lavender;
+            this.dgvParcelas.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
@@ -901,47 +968,19 @@
             this.FormaPagamento});
             this.dgvParcelas.Location = new System.Drawing.Point(6, 91);
             this.dgvParcelas.Name = "dgvParcelas";
+            this.dgvParcelas.ReadOnly = true;
+            this.dgvParcelas.RowHeadersVisible = false;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvParcelas.RowsDefaultCellStyle = dataGridViewCellStyle17;
             this.dgvParcelas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvParcelas.Size = new System.Drawing.Size(1140, 336);
+            this.dgvParcelas.Size = new System.Drawing.Size(570, 336);
             this.dgvParcelas.TabIndex = 0;
             this.dgvParcelas.DoubleClick += new System.EventHandler(this.dgvParcelas_DoubleClick);
             // 
-            // Parcelas
-            // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Parcelas.DefaultCellStyle = dataGridViewCellStyle13;
-            this.Parcelas.HeaderText = "Parcelas";
-            this.Parcelas.Name = "Parcelas";
-            // 
-            // Valor
-            // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Valor.DefaultCellStyle = dataGridViewCellStyle14;
-            this.Valor.HeaderText = "Valor";
-            this.Valor.Name = "Valor";
-            // 
-            // Vencimento
-            // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Vencimento.DefaultCellStyle = dataGridViewCellStyle15;
-            this.Vencimento.HeaderText = "Vencimento";
-            this.Vencimento.Name = "Vencimento";
-            // 
-            // FormaPagamento
-            // 
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.FormaPagamento.DefaultCellStyle = dataGridViewCellStyle16;
-            this.FormaPagamento.HeaderText = "Forma Pagamento";
-            this.FormaPagamento.Name = "FormaPagamento";
-            this.FormaPagamento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.FormaPagamento.Width = 180;
-            // 
             // groupBox3
             // 
-            this.groupBox3.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.groupBox3.BackColor = System.Drawing.Color.Lavender;
             this.groupBox3.Controls.Add(this.dtpDataInicioPagamento);
             this.groupBox3.Controls.Add(this.btRemoverParcela);
             this.groupBox3.Controls.Add(this.btGerarParcela);
@@ -962,7 +1001,7 @@
             // 
             this.dtpDataInicioPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dtpDataInicioPagamento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpDataInicioPagamento.Location = new System.Drawing.Point(285, 41);
+            this.dtpDataInicioPagamento.Location = new System.Drawing.Point(255, 41);
             this.dtpDataInicioPagamento.Name = "dtpDataInicioPagamento";
             this.dtpDataInicioPagamento.Size = new System.Drawing.Size(120, 26);
             this.dtpDataInicioPagamento.TabIndex = 369;
@@ -977,7 +1016,7 @@
             this.btRemoverParcela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btRemoverParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btRemoverParcela.Image = global::LojaPadraoMYSQL.Properties.Resources.RemoverLinha32x32;
-            this.btRemoverParcela.Location = new System.Drawing.Point(593, 39);
+            this.btRemoverParcela.Location = new System.Drawing.Point(535, 35);
             this.btRemoverParcela.Name = "btRemoverParcela";
             this.btRemoverParcela.Size = new System.Drawing.Size(35, 35);
             this.btRemoverParcela.TabIndex = 3;
@@ -992,7 +1031,7 @@
             this.btGerarParcela.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btGerarParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btGerarParcela.Image = global::LojaPadraoMYSQL.Properties.Resources.InserirLinha32x32;
-            this.btGerarParcela.Location = new System.Drawing.Point(552, 39);
+            this.btGerarParcela.Location = new System.Drawing.Point(494, 35);
             this.btGerarParcela.Name = "btGerarParcela";
             this.btGerarParcela.Size = new System.Drawing.Size(35, 35);
             this.btGerarParcela.TabIndex = 2;
@@ -1005,7 +1044,7 @@
             this.cbQtdParcelas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbQtdParcelas.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbQtdParcelas.FormattingEnabled = true;
-            this.cbQtdParcelas.Location = new System.Drawing.Point(238, 39);
+            this.cbQtdParcelas.Location = new System.Drawing.Point(208, 39);
             this.cbQtdParcelas.Name = "cbQtdParcelas";
             this.cbQtdParcelas.Size = new System.Drawing.Size(41, 28);
             this.cbQtdParcelas.TabIndex = 1;
@@ -1016,7 +1055,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label18.ForeColor = System.Drawing.Color.Black;
-            this.label18.Location = new System.Drawing.Point(234, 16);
+            this.label18.Location = new System.Drawing.Point(204, 16);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(45, 20);
             this.label18.TabIndex = 367;
@@ -1026,11 +1065,11 @@
             // 
             this.txtPrecoParcela.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPrecoParcela.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPrecoParcela.Location = new System.Drawing.Point(411, 41);
+            this.txtPrecoParcela.Location = new System.Drawing.Point(381, 41);
             this.txtPrecoParcela.MaxLength = 10;
             this.txtPrecoParcela.Name = "txtPrecoParcela";
             this.txtPrecoParcela.ReadOnly = true;
-            this.txtPrecoParcela.Size = new System.Drawing.Size(135, 26);
+            this.txtPrecoParcela.Size = new System.Drawing.Size(107, 26);
             this.txtPrecoParcela.TabIndex = 1;
             this.txtPrecoParcela.Text = "0,00";
             this.txtPrecoParcela.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoParcela_MouseClick);
@@ -1042,7 +1081,7 @@
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label12.ForeColor = System.Drawing.Color.Black;
-            this.label12.Location = new System.Drawing.Point(407, 16);
+            this.label12.Location = new System.Drawing.Point(377, 16);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(111, 20);
             this.label12.TabIndex = 365;
@@ -1053,7 +1092,7 @@
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.Color.Black;
-            this.label13.Location = new System.Drawing.Point(281, 16);
+            this.label13.Location = new System.Drawing.Point(255, 16);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(89, 20);
             this.label13.TabIndex = 363;
@@ -1067,7 +1106,7 @@
             this.cbPagamento.FormattingEnabled = true;
             this.cbPagamento.Location = new System.Drawing.Point(5, 39);
             this.cbPagamento.Name = "cbPagamento";
-            this.cbPagamento.Size = new System.Drawing.Size(227, 28);
+            this.cbPagamento.Size = new System.Drawing.Size(197, 28);
             this.cbPagamento.TabIndex = 0;
             this.cbPagamento.SelectedValueChanged += new System.EventHandler(this.cbPagamento_SelectedValueChanged);
             // 
@@ -1106,7 +1145,7 @@
             // 
             this.gbBotoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbBotoes.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.gbBotoes.BackColor = System.Drawing.Color.Lavender;
             this.gbBotoes.Controls.Add(this.btFaturar);
             this.gbBotoes.Controls.Add(this.btSair);
             this.gbBotoes.Controls.Add(this.btSalvar);
@@ -1115,25 +1154,6 @@
             this.gbBotoes.Size = new System.Drawing.Size(178, 70);
             this.gbBotoes.TabIndex = 371;
             this.gbBotoes.TabStop = false;
-            // 
-            // gbInfo
-            // 
-            this.gbInfo.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.gbInfo.Controls.Add(this.panel1);
-            this.gbInfo.Location = new System.Drawing.Point(16, 583);
-            this.gbInfo.Name = "gbInfo";
-            this.gbInfo.Size = new System.Drawing.Size(968, 70);
-            this.gbInfo.TabIndex = 372;
-            this.gbInfo.TabStop = false;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.panel1.Controls.Add(this.lbStatus);
-            this.panel1.Location = new System.Drawing.Point(7, 14);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(178, 43);
-            this.panel1.TabIndex = 368;
             // 
             // btFaturar
             // 
@@ -1178,71 +1198,70 @@
             this.btSalvar.UseVisualStyleBackColor = true;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
-            // btPesqFornecedor
+            // gbInfo
             // 
-            this.btPesqFornecedor.FlatAppearance.BorderSize = 0;
-            this.btPesqFornecedor.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
-            this.btPesqFornecedor.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
-            this.btPesqFornecedor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPesqFornecedor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPesqFornecedor.Image = global::LojaPadraoMYSQL.Properties.Resources.lupa32x32;
-            this.btPesqFornecedor.Location = new System.Drawing.Point(803, 35);
-            this.btPesqFornecedor.Name = "btPesqFornecedor";
-            this.btPesqFornecedor.Size = new System.Drawing.Size(35, 35);
-            this.btPesqFornecedor.TabIndex = 5;
-            this.btPesqFornecedor.UseVisualStyleBackColor = true;
-            this.btPesqFornecedor.Click += new System.EventHandler(this.btPesqFornecedor_Click);
+            this.gbInfo.BackColor = System.Drawing.Color.Lavender;
+            this.gbInfo.Controls.Add(this.panel1);
+            this.gbInfo.Location = new System.Drawing.Point(16, 583);
+            this.gbInfo.Name = "gbInfo";
+            this.gbInfo.Size = new System.Drawing.Size(968, 70);
+            this.gbInfo.TabIndex = 372;
+            this.gbInfo.TabStop = false;
             // 
-            // brZerarEstoque
+            // panel1
             // 
-            this.brZerarEstoque.FlatAppearance.BorderSize = 0;
-            this.brZerarEstoque.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
-            this.brZerarEstoque.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
-            this.brZerarEstoque.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.brZerarEstoque.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.brZerarEstoque.Image = global::LojaPadraoMYSQL.Properties.Resources.zerar32x32;
-            this.brZerarEstoque.Location = new System.Drawing.Point(135, 65);
-            this.brZerarEstoque.Name = "brZerarEstoque";
-            this.brZerarEstoque.Size = new System.Drawing.Size(40, 40);
-            this.brZerarEstoque.TabIndex = 382;
-            this.brZerarEstoque.UseVisualStyleBackColor = true;
-            this.brZerarEstoque.Click += new System.EventHandler(this.brZerarEstoque_Click);
+            this.panel1.BackColor = System.Drawing.Color.Lavender;
+            this.panel1.Controls.Add(this.lbStatus);
+            this.panel1.Location = new System.Drawing.Point(7, 14);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(178, 43);
+            this.panel1.TabIndex = 368;
             // 
-            // btPesqProduto
+            // Parcelas
             // 
-            this.btPesqProduto.FlatAppearance.BorderSize = 0;
-            this.btPesqProduto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
-            this.btPesqProduto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
-            this.btPesqProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPesqProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPesqProduto.Image = global::LojaPadraoMYSQL.Properties.Resources.lupa32x32;
-            this.btPesqProduto.Location = new System.Drawing.Point(140, 22);
-            this.btPesqProduto.Name = "btPesqProduto";
-            this.btPesqProduto.Size = new System.Drawing.Size(35, 35);
-            this.btPesqProduto.TabIndex = 1;
-            this.btPesqProduto.Text = "...";
-            this.btPesqProduto.UseVisualStyleBackColor = true;
-            this.btPesqProduto.Click += new System.EventHandler(this.btPesqProduto_Click);
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Parcelas.DefaultCellStyle = dataGridViewCellStyle13;
+            this.Parcelas.HeaderText = "Parcelas";
+            this.Parcelas.Name = "Parcelas";
+            this.Parcelas.ReadOnly = true;
+            this.Parcelas.Width = 95;
             // 
-            // btAdd
+            // Valor
             // 
-            this.btAdd.FlatAppearance.BorderSize = 0;
-            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
-            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
-            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Image = global::LojaPadraoMYSQL.Properties.Resources.InserirLinha32x32;
-            this.btAdd.Location = new System.Drawing.Point(1066, 73);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(35, 35);
-            this.btAdd.TabIndex = 371;
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Valor.DefaultCellStyle = dataGridViewCellStyle14;
+            this.Valor.HeaderText = "Valor";
+            this.Valor.Name = "Valor";
+            this.Valor.ReadOnly = true;
+            this.Valor.Width = 71;
+            // 
+            // Vencimento
+            // 
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.Vencimento.DefaultCellStyle = dataGridViewCellStyle15;
+            this.Vencimento.HeaderText = "Vencimento";
+            this.Vencimento.Name = "Vencimento";
+            this.Vencimento.ReadOnly = true;
+            this.Vencimento.Width = 119;
+            // 
+            // FormaPagamento
+            // 
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormaPagamento.DefaultCellStyle = dataGridViewCellStyle16;
+            this.FormaPagamento.HeaderText = "Forma Pagamento";
+            this.FormaPagamento.Name = "FormaPagamento";
+            this.FormaPagamento.ReadOnly = true;
+            this.FormaPagamento.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.FormaPagamento.Width = 151;
             // 
             // frmCadastroCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.Lavender;
             this.ClientSize = new System.Drawing.Size(1184, 661);
             this.Controls.Add(this.gbInfo);
             this.Controls.Add(this.gbBotoes);
@@ -1345,10 +1364,6 @@
         private System.Windows.Forms.Label lbStatus;
         private System.Windows.Forms.DateTimePicker dtpDataNota;
         private System.Windows.Forms.DateTimePicker dtpDataInicioPagamento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Parcelas;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Vencimento;
-        private System.Windows.Forms.DataGridViewTextBoxColumn FormaPagamento;
         private System.Windows.Forms.GroupBox gbInfo;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -1361,5 +1376,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Parcelas;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Valor;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Vencimento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FormaPagamento;
     }
 }

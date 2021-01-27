@@ -15,11 +15,22 @@ namespace LojaPadraoMYSQL.Formularios
 {
     public partial class frmConsultaUsuario : Form
     {
+        public void AtualizaCabecalhoGridItens()
+        {
+            dgvDados.Columns[0].HeaderText = "Cod";
+            dgvDados.Columns[1].HeaderText = "Nome";
+            dgvDados.Columns[2].Visible = false;
+            dgvDados.Columns[3].Visible = false;
+            dgvDados.Columns[4].HeaderText = "Tipo";
+            dgvDados.Columns[5].HeaderText = "Sit";
+
+        }
         public int id = 0;
         public frmConsultaUsuario()
         {
             InitializeComponent();
             cbStatus.SelectedIndex = 1;
+            this.AtualizaCabecalhoGridItens();
         }
 
         private void btAdd_Click(object sender, EventArgs e)

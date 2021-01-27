@@ -38,6 +38,7 @@ namespace LojaPadraoMYSQL.Formularios
             BLLSubGrupo bll = new BLLSubGrupo(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
             dgvDados.Select();
+            this.AtualizaCabecalhoGridDados();
         }
 
         private void btAdd_Click(object sender, EventArgs e)

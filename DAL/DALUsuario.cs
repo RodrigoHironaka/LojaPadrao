@@ -91,7 +91,7 @@ namespace DAL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
                 conexao.Conectar();
-                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select id, nome, tipo, status from usuario order by id", conexao.StringConexao);
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from usuario order by id", conexao.StringConexao);
                 DataTable dataTable = new DataTable();
                 fbDataAdapter.Fill(dataTable);
                 return dataTable;
@@ -110,7 +110,7 @@ namespace DAL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
                 conexao.Conectar();
-                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select id, nome, tipo, status from usuario where status='A' order by id", conexao.StringConexao);
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from usuario where status='A' order by id", conexao.StringConexao);
                 DataTable dataTable = new DataTable();
                 fbDataAdapter.Fill(dataTable);
                 return dataTable;

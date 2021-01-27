@@ -63,6 +63,7 @@ namespace LojaPadraoMYSQL.Formularios
             BLLProduto bll = new BLLProduto(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
             dgvDados.Select();
+            this.AtualizaCabecalhoGridItens();
         }
 
         //---------------------------BOTAO ADICIONAR-------------------------------------------------------

@@ -58,6 +58,7 @@ namespace LojaPadraoMYSQL.Formularios
             dgvDados.DataSource = bll.CarregaGridAtivo();
             cbStatus.SelectedIndex = 1;
             cbFiltroTipo.SelectedIndex = 1;
+            
         }
 
         private void btEdt_Click(object sender, EventArgs e)

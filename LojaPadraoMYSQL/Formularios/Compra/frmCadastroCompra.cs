@@ -32,6 +32,15 @@ namespace LojaPadraoMYSQL.Formularios
             dgvItens.Columns[10].HeaderText = "EstNovo";
             dgvItens.Columns[11].HeaderText = "EstTotal";
         }
+
+        public void AtualizaCabecalhoGridParcelas()
+        {
+            dgvParcelas.Columns[0].HeaderText = "Parcela";
+            dgvParcelas.Columns[1].HeaderText = "Valor";
+            dgvParcelas.Columns[2].HeaderText = "Data";
+            dgvParcelas.Columns[3].HeaderText = "F. Pagamento";
+            
+        }
         //--------------------CARREGACOMBO---------------------------------------------------------
         private void carregaFormaPagamento()
         {
@@ -53,6 +62,7 @@ namespace LojaPadraoMYSQL.Formularios
             dtpDataNota.Format = DateTimePickerFormat.Custom;
             dtpDataNota.CustomFormat = " ";
             this.carregaFormaPagamento();
+            this.AtualizaCabecalhoGridParcelas();
         }
 
         //--------------------ABRIR NA JANELA QNDO FOR ALTERAR-------------------------------------
