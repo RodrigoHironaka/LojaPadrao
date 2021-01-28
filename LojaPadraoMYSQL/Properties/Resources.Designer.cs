@@ -103,6 +103,16 @@ namespace LojaPadraoMYSQL.Properties {
         /// <summary>
         ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Desligar32x32 {
+            get {
+                object obj = ResourceManager.GetObject("Desligar32x32", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Editar48x48 {
             get {
                 object obj = ResourceManager.GetObject("Editar48x48", resourceCulture);

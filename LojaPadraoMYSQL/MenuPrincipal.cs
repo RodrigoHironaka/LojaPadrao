@@ -1,5 +1,6 @@
 ﻿using LojaPadraoMYSQL.Formularios;
 using LojaPadraoMYSQL.Formularios.Colaborador;
+using LojaPadraoMYSQL.Formularios.FormBotoes;
 using LojaPadraoMYSQL.Formularios.Transportadora;
 using System;
 using System.Collections.Generic;
@@ -108,6 +109,12 @@ namespace LojaPadraoMYSQL
         private void colaboradorToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmConsultaColaborador f = new frmConsultaColaborador();
+            f.ShowDialog();
+        }
+
+        private void testeToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmPrincipal f = new frmPrincipal();
             f.ShowDialog();
         }
     }

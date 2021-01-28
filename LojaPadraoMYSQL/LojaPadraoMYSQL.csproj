@@ -94,6 +94,18 @@
     <Compile Include="Formularios\FormaPagamento\frmCadastroFormaPagamento.Designer.cs">
       <DependentUpon>frmCadastroFormaPagamento.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormBotoes\frmBotoesCadastros.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\frmBotoesCadastros.Designer.cs">
+      <DependentUpon>frmBotoesCadastros.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\frmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\frmPrincipal.Designer.cs">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Fornecedor\frmCadastroFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -270,6 +282,12 @@
     <EmbeddedResource Include="Formularios\FormaPagamento\frmCadastroFormaPagamento.resx">
       <DependentUpon>frmCadastroFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormBotoes\frmBotoesCadastros.resx">
+      <DependentUpon>frmBotoesCadastros.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormBotoes\frmPrincipal.resx">
+      <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Fornecedor\frmCadastroFornecedor.resx">
       <DependentUpon>frmCadastroFornecedor.cs</DependentUpon>
     </EmbeddedResource>
@@ -347,18 +365,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Resources.resx</DependentUpon>
-      <DesignTime>True</DesignTime>
-    </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Settings.settings</DependentUpon>
@@ -389,26 +407,33 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
+    <Folder Include="Formularios\FormBotoes\NewFolder1\" />
     <Folder Include="Formularios\TipoGasto\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resource\CodBarras16x16.png" />
-    <None Include="Resource\CodBarras24x24.png" />
-    <None Include="Resource\CodBarras32x32.png" />
     <Content Include="Resource\Delete48x48.ico" />
+    <Content Include="Resource\Desligar32x32.ico" />
     <Content Include="Resource\Editar48x48.ico" />
-    <None Include="Resource\RemoverLinha32x32.ico" />
-    <None Include="Resource\InserirLinha32x32.ico" />
-    <None Include="Resource\zerar32x32.ico" />
-    <None Include="Resource\lupa32x32.ico" />
-    <None Include="Resource\SalvarTemp48x48.ico" />
-    <None Include="Resource\imprimir48x48.ico" />
-    <None Include="Resource\InserirFoto16x16.png" />
+    <Content Include="Resource\imprimir48x48.ico" />
+    <Content Include="Resource\InserirFoto16x16.png" />
+    <Content Include="Resource\InserirLinha32x32.ico" />
+    <Content Include="Resource\lupa32x32.ico" />
     <Content Include="Resource\Novo48x48.ico" />
-    <None Include="Resource\RemoverFoto16x16.png" />
+    <Content Include="Resource\Produtos48x48.ico" />
+    <Content Include="Resource\RemoverFoto16x16.png" />
+    <Content Include="Resource\RemoverLinha32x32.ico" />
     <Content Include="Resource\Retornar48x48.ico" />
     <Content Include="Resource\Sair48x48.ico" />
     <Content Include="Resource\Salvar48x48.ico" />
+    <Content Include="Resource\SalvarTemp48x48.ico" />
+    <Content Include="Resource\zerar32x32.ico" />
+    <Content Include="Resource\cadastro48x48.ico" />
+    <Content Include="Resource\carrinho48x48.ico" />
+    <Content Include="Resource\CodBarras16x16.png" />
+    <Content Include="Resource\CodBarras24x24.png" />
+    <Content Include="Resource\CodBarras32x32.png" />
+    <Content Include="Resource\compra48x48.ico" />
+    <Content Include="Resource\configuração48x48.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
