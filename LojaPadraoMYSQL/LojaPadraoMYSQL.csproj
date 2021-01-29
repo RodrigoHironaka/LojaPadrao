@@ -94,10 +94,10 @@
     <Compile Include="Formularios\FormaPagamento\frmCadastroFormaPagamento.Designer.cs">
       <DependentUpon>frmCadastroFormaPagamento.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\FormBotoes\frmBotoesCadastros.cs">
+    <Compile Include="Formularios\FormBotoes\Cadastros\frmBotoesCadastros.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Formularios\FormBotoes\frmBotoesCadastros.Designer.cs">
+    <Compile Include="Formularios\FormBotoes\Cadastros\frmBotoesCadastros.Designer.cs">
       <DependentUpon>frmBotoesCadastros.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FormBotoes\frmPrincipal.cs">
@@ -106,6 +106,13 @@
     <Compile Include="Formularios\FormBotoes\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormBotoes\Movimentos\frmBotoesMovimentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\Movimentos\frmBotoesMovimentos.Designer.cs">
+      <DependentUpon>frmBotoesMovimentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\ObjetoValorForms\TituloForms.cs" />
     <Compile Include="Formularios\Fornecedor\frmCadastroFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -282,11 +289,14 @@
     <EmbeddedResource Include="Formularios\FormaPagamento\frmCadastroFormaPagamento.resx">
       <DependentUpon>frmCadastroFormaPagamento.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Formularios\FormBotoes\frmBotoesCadastros.resx">
+    <EmbeddedResource Include="Formularios\FormBotoes\Cadastros\frmBotoesCadastros.resx">
       <DependentUpon>frmBotoesCadastros.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormBotoes\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormBotoes\Movimentos\frmBotoesMovimentos.resx">
+      <DependentUpon>frmBotoesMovimentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Fornecedor\frmCadastroFornecedor.resx">
       <DependentUpon>frmCadastroFornecedor.cs</DependentUpon>
@@ -407,7 +417,6 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
-    <Folder Include="Formularios\FormBotoes\NewFolder1\" />
     <Folder Include="Formularios\TipoGasto\" />
   </ItemGroup>
   <ItemGroup>

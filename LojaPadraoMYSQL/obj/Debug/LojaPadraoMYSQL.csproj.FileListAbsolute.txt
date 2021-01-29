@@ -205,3 +205,4 @@ C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.pdb
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.Base.Consultas.frmConsultaBase.resources
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.FormBotoes.frmPrincipal.resources
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.FormBotoes.frmBotoesCadastros.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.FormBotoes.Movimentos.frmBotoesMovimentos.resources
