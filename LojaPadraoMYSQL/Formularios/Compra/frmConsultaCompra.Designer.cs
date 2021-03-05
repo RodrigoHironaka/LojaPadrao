@@ -34,15 +34,15 @@
             this.btExc = new System.Windows.Forms.Button();
             this.btEdt = new System.Windows.Forms.Button();
             this.btAdd = new System.Windows.Forms.Button();
-            this.txtPesquisa = new System.Windows.Forms.TextBox();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.dgvDados = new System.Windows.Forms.DataGridView();
             this.pFiltro = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.radioButton4 = new System.Windows.Forms.RadioButton();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
+            this.rbTodos = new System.Windows.Forms.RadioButton();
+            this.rbCancelado = new System.Windows.Forms.RadioButton();
+            this.rbFaturado = new System.Windows.Forms.RadioButton();
             this.rbAberto = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -86,6 +86,7 @@
             this.btExc.Size = new System.Drawing.Size(55, 55);
             this.btExc.TabIndex = 11;
             this.btExc.UseVisualStyleBackColor = true;
+            this.btExc.Click += new System.EventHandler(this.btExc_Click);
             // 
             // btEdt
             // 
@@ -117,16 +118,16 @@
             this.btAdd.UseVisualStyleBackColor = true;
             this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
-            // txtPesquisa
+            // txtPesquisar
             // 
-            this.txtPesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisa.Location = new System.Drawing.Point(6, 19);
-            this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(493, 24);
-            this.txtPesquisa.TabIndex = 7;
-            this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
-            this.txtPesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisa_KeyDown);
+            this.txtPesquisar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisar.Location = new System.Drawing.Point(6, 19);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(493, 24);
+            this.txtPesquisar.TabIndex = 7;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
+            this.txtPesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisa_KeyDown);
             // 
             // dgvDados
             // 
@@ -167,9 +168,9 @@
             this.pFiltro.Controls.Add(this.panel1);
             this.pFiltro.Controls.Add(this.dateTimePicker2);
             this.pFiltro.Controls.Add(this.dateTimePicker1);
-            this.pFiltro.Controls.Add(this.radioButton4);
-            this.pFiltro.Controls.Add(this.radioButton3);
-            this.pFiltro.Controls.Add(this.radioButton2);
+            this.pFiltro.Controls.Add(this.rbTodos);
+            this.pFiltro.Controls.Add(this.rbCancelado);
+            this.pFiltro.Controls.Add(this.rbFaturado);
             this.pFiltro.Controls.Add(this.rbAberto);
             this.pFiltro.Controls.Add(this.label1);
             this.pFiltro.Controls.Add(this.label2);
@@ -204,38 +205,38 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(118, 26);
             this.dateTimePicker1.TabIndex = 4;
             // 
-            // radioButton4
+            // rbTodos
             // 
-            this.radioButton4.AutoSize = true;
-            this.radioButton4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton4.Location = new System.Drawing.Point(13, 16);
-            this.radioButton4.Name = "radioButton4";
-            this.radioButton4.Size = new System.Drawing.Size(71, 24);
-            this.radioButton4.TabIndex = 3;
-            this.radioButton4.Text = "Todos";
-            this.radioButton4.UseVisualStyleBackColor = true;
+            this.rbTodos.AutoSize = true;
+            this.rbTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTodos.Location = new System.Drawing.Point(13, 16);
+            this.rbTodos.Name = "rbTodos";
+            this.rbTodos.Size = new System.Drawing.Size(71, 24);
+            this.rbTodos.TabIndex = 3;
+            this.rbTodos.Text = "Todos";
+            this.rbTodos.UseVisualStyleBackColor = true;
             // 
-            // radioButton3
+            // rbCancelado
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton3.Location = new System.Drawing.Point(111, 54);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(103, 24);
-            this.radioButton3.TabIndex = 2;
-            this.radioButton3.Text = "Cancelado";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.rbCancelado.AutoSize = true;
+            this.rbCancelado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCancelado.Location = new System.Drawing.Point(111, 54);
+            this.rbCancelado.Name = "rbCancelado";
+            this.rbCancelado.Size = new System.Drawing.Size(103, 24);
+            this.rbCancelado.TabIndex = 2;
+            this.rbCancelado.Text = "Cancelado";
+            this.rbCancelado.UseVisualStyleBackColor = true;
             // 
-            // radioButton2
+            // rbFaturado
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.radioButton2.Location = new System.Drawing.Point(13, 54);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(92, 24);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.Text = "Faturado";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.rbFaturado.AutoSize = true;
+            this.rbFaturado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbFaturado.Location = new System.Drawing.Point(13, 54);
+            this.rbFaturado.Name = "rbFaturado";
+            this.rbFaturado.Size = new System.Drawing.Size(92, 24);
+            this.rbFaturado.TabIndex = 1;
+            this.rbFaturado.Text = "Faturado";
+            this.rbFaturado.UseVisualStyleBackColor = true;
             // 
             // rbAberto
             // 
@@ -281,7 +282,7 @@
             this.gbBotoes.Controls.Add(this.btImprimir);
             this.gbBotoes.Controls.Add(this.btAdd);
             this.gbBotoes.Controls.Add(this.btEdt);
-            this.gbBotoes.Controls.Add(this.txtPesquisa);
+            this.gbBotoes.Controls.Add(this.txtPesquisar);
             this.gbBotoes.Controls.Add(this.btSair);
             this.gbBotoes.Controls.Add(this.btExc);
             this.gbBotoes.Location = new System.Drawing.Point(12, 381);
@@ -390,7 +391,7 @@
         private System.Windows.Forms.Button btExc;
         private System.Windows.Forms.Button btEdt;
         private System.Windows.Forms.Button btAdd;
-        private System.Windows.Forms.TextBox txtPesquisa;
+        private System.Windows.Forms.TextBox txtPesquisar;
         private System.Windows.Forms.DataGridView dgvDados;
         private System.Windows.Forms.Panel pFiltro;
         private System.Windows.Forms.GroupBox gbBotoes;
@@ -398,9 +399,9 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RadioButton radioButton4;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbTodos;
+        private System.Windows.Forms.RadioButton rbCancelado;
+        private System.Windows.Forms.RadioButton rbFaturado;
         private System.Windows.Forms.RadioButton rbAberto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

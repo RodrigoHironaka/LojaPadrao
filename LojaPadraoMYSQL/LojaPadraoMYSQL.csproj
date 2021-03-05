@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Formularios\Base\CadastrosSimples\frmCadastrosSimples.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\Base\CadastrosSimples\frmCadastrosSimples.Designer.cs">
+      <DependentUpon>frmCadastrosSimples.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Base\Consultas\frmConsultaBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -148,6 +154,18 @@
     </Compile>
     <Compile Include="Formularios\SubGrupo\frmCadastroSubGrupo.Designer.cs">
       <DependentUpon>frmCadastroSubGrupo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\TipoGasto\frmCadastro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\TipoGasto\frmCadastro.Designer.cs">
+      <DependentUpon>frmCadastro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\TipoGasto\frmConsulta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\TipoGasto\frmConsulta.Designer.cs">
+      <DependentUpon>frmConsulta.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\Transportadora\frmCadastroTransportadora.cs">
       <SubType>Form</SubType>
@@ -265,6 +283,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Formularios\Base\CadastrosSimples\frmCadastrosSimples.resx">
+      <DependentUpon>frmCadastrosSimples.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Base\Consultas\frmConsultaBase.resx">
       <DependentUpon>frmConsultaBase.cs</DependentUpon>
     </EmbeddedResource>
@@ -315,6 +336,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\SubGrupo\frmCadastroSubGrupo.resx">
       <DependentUpon>frmCadastroSubGrupo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\TipoGasto\frmCadastro.resx">
+      <DependentUpon>frmCadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\TipoGasto\frmConsulta.resx">
+      <DependentUpon>frmConsulta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Transportadora\frmCadastroTransportadora.resx">
       <DependentUpon>frmCadastroTransportadora.cs</DependentUpon>
@@ -417,7 +444,6 @@
   <ItemGroup>
     <Folder Include="bin\Debug\" />
     <Folder Include="bin\Release\" />
-    <Folder Include="Formularios\TipoGasto\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Resource\Delete48x48.ico" />

@@ -43,14 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DadosDaConexao.cs" />
+    <Compile Include="DALConn\DadosDaConexao.cs" />
     <Compile Include="DALCidade.cs" />
     <Compile Include="DALCliente.cs" />
     <Compile Include="DALColaborador.cs" />
     <Compile Include="DALCompra.cs" />
     <Compile Include="DALCompraItens.cs" />
     <Compile Include="DALCompraPagamento.cs" />
-    <Compile Include="DALConexao.cs" />
+    <Compile Include="DALConn\DALConexao.cs" />
     <Compile Include="DALDepartamento.cs" />
     <Compile Include="DALFormaPagamento.cs" />
     <Compile Include="DALFornecedor.cs" />
@@ -59,6 +59,7 @@
     <Compile Include="DALMarca.cs" />
     <Compile Include="DALProduto.cs" />
     <Compile Include="DALSubGrupo.cs" />
+    <Compile Include="DALTipoGasto\CDAL.cs" />
     <Compile Include="DALTransportadora.cs" />
     <Compile Include="DALUnidadeMedida.cs" />
     <Compile Include="DALUsuario.cs" />
@@ -70,5 +71,6 @@
       <Name>Modelos</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

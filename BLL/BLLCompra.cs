@@ -61,15 +61,33 @@ namespace BLL
             DALObj.Excluir(codigo);
         }
 
-        public DataTable LocalizarTodos()
+        public DataTable Localizar()
         {
             DALCompra DALObj = new DALCompra(conexao);
-            return DALObj.LocalizarTodos();
+            return DALObj.Localizar();
         }
-        public DataTable Localizar(String valor)
+        public DataTable LocalizarTodos(String valor)
         {
             DALCompra DALObj = new DALCompra(conexao);
-            return DALObj.Localizar(valor);
+            return DALObj.LocalizarTodos(valor);
+        }
+
+        public DataTable LocalizarAbertos(String valor)
+        {
+            DALCompra DALObj = new DALCompra(conexao);
+            return DALObj.LocalizarAbertos(valor);
+        }
+
+        public DataTable LocalizarFaturados(String valor)
+        {
+            DALCompra DALObj = new DALCompra(conexao);
+            return DALObj.LocalizarFaturados(valor);
+        }
+
+        public DataTable LocalizarCancelados(String valor)
+        {
+            DALCompra DALObj = new DALCompra(conexao);
+            return DALObj.LocalizarCancelados(valor);
         }
 
         public ModeloCompra CarregaModeloCompra(int codigo)

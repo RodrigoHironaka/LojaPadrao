@@ -49,7 +49,9 @@
             // 
             // cbStatus
             // 
+            this.cbStatus.BackColor = System.Drawing.Color.Teal;
             this.cbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStatus.ForeColor = System.Drawing.Color.White;
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.Items.AddRange(new object[] {
             "Todos",
@@ -63,10 +65,8 @@
             // 
             // btSair
             // 
-            this.btSair.BackColor = System.Drawing.Color.Lavender;
+            this.btSair.BackColor = System.Drawing.Color.Teal;
             this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
@@ -79,10 +79,8 @@
             // 
             // btExc
             // 
-            this.btExc.BackColor = System.Drawing.Color.Lavender;
+            this.btExc.BackColor = System.Drawing.Color.Teal;
             this.btExc.FlatAppearance.BorderSize = 0;
-            this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btExc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
             this.btExc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btExc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExc.Image = global::LojaPadraoMYSQL.Properties.Resources.Delete48x48;
@@ -95,10 +93,8 @@
             // 
             // btEdt
             // 
-            this.btEdt.BackColor = System.Drawing.Color.Lavender;
+            this.btEdt.BackColor = System.Drawing.Color.Teal;
             this.btEdt.FlatAppearance.BorderSize = 0;
-            this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btEdt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
             this.btEdt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEdt.Image = global::LojaPadraoMYSQL.Properties.Resources.Editar48x48;
@@ -111,10 +107,8 @@
             // 
             // btAdd
             // 
-            this.btAdd.BackColor = System.Drawing.Color.Lavender;
+            this.btAdd.BackColor = System.Drawing.Color.Teal;
             this.btAdd.FlatAppearance.BorderSize = 0;
-            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
             this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAdd.Image = global::LojaPadraoMYSQL.Properties.Resources.Novo48x48;
@@ -127,8 +121,10 @@
             // 
             // txtPesquisa
             // 
+            this.txtPesquisa.BackColor = System.Drawing.Color.Teal;
             this.txtPesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisa.ForeColor = System.Drawing.Color.White;
             this.txtPesquisa.Location = new System.Drawing.Point(6, 18);
             this.txtPesquisa.Name = "txtPesquisa";
             this.txtPesquisa.Size = new System.Drawing.Size(293, 26);
@@ -140,7 +136,7 @@
             this.dgvDados.AllowUserToAddRows = false;
             this.dgvDados.AllowUserToDeleteRows = false;
             this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvDados.BackgroundColor = System.Drawing.Color.Lavender;
+            this.dgvDados.BackgroundColor = System.Drawing.Color.Teal;
             this.dgvDados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
@@ -174,7 +170,7 @@
             // 
             // gbBotoes
             // 
-            this.gbBotoes.BackColor = System.Drawing.Color.Lavender;
+            this.gbBotoes.BackColor = System.Drawing.Color.Teal;
             this.gbBotoes.Controls.Add(this.cbStatus);
             this.gbBotoes.Controls.Add(this.label5);
             this.gbBotoes.Controls.Add(this.label3);
@@ -233,11 +229,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Lavender;
+            this.BackColor = System.Drawing.Color.DarkCyan;
             this.ClientSize = new System.Drawing.Size(553, 446);
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.dgvDados);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;

@@ -56,68 +56,68 @@ namespace LojaPadraoMYSQL.Formularios
         public frmCadastroCompra()
         {
             InitializeComponent();
-            Text = "Cadastro de Compra - NOVO";
             txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
             lbStatus.Text = Convert.ToString(SituacaoCompra.Aberto).ToUpper();
             dtpDataNota.Format = DateTimePickerFormat.Custom;
             dtpDataNota.CustomFormat = " ";
             this.carregaFormaPagamento();
             this.AtualizaCabecalhoGridParcelas();
+            
         }
 
         //--------------------ABRIR NA JANELA QNDO FOR ALTERAR-------------------------------------
         public frmCadastroCompra(ModeloCompra modelocompra)
         {
             InitializeComponent();
-            Text = "Cadastro de Compra - EDITAR";
-            //carrega campos da tabela compra------------------------------------------------
-            txtID.Text = modelocompra.CompraId.ToString();
-            txtDataCadastro.Text = modelocompra.DataCadastro;
-            txtNumNota.Text = modelocompra.NumNota.ToString();
-            dtpDataNota.Format = DateTimePickerFormat.Custom;//deixo o datatimepicker livre para customizar
-            dtpDataNota.CustomFormat = modelocompra.DataNota.ToString(); ;//aqui coloco a data da tabela no datatimepicker
-            txtPrecoNota.Text = modelocompra.PrecoNota.ToString();
-            txtCodFornecedor.Text = modelocompra.FornecedorId.ToString();
-            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            if (txtCodFornecedor.Text != "")
-            {
-                BLLFornecedor bll = new BLLFornecedor(cx);
-                ModeloFornecedor modelofornecedor = bll.CarregaModeloFornecedor(Convert.ToInt32(modelocompra.FornecedorId));
-                txtNomeFornecedor.Text = modelofornecedor.NomeFantasia;
-            }
-            else
-            {
-                MessageBox.Show("Houve algum problema na hora de buscar os dados do fornecedor. Contate o suporte técnico", "Informativo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            txtObservacao.Text = modelocompra.Observacao;
-            if (modelocompra.Status == 'A')
-            {
-                lbStatus.Text = SituacaoCompra.Aberto.ToString().ToUpper();
-                lbStatus.ForeColor = Color.Blue;
-            }
-            else if (modelocompra.Status == 'F')
-            {
-                lbStatus.Text = SituacaoCompra.Faturado.ToString().ToUpper();
-                lbStatus.ForeColor = Color.Green;
-            }
-            else
-            {
-                lbStatus.Text = SituacaoCompra.Cancelado.ToString().ToUpper();
-                lbStatus.ForeColor = Color.Red;
-            }
-            //-------------------fim tabela compra--------------------------------------
+            
+            ////carrega campos da tabela compra------------------------------------------------
+            //txtID.Text = modelocompra.CompraId.ToString();
+            //txtDataCadastro.Text = modelocompra.DataCadastro;
+            //txtNumNota.Text = modelocompra.NumNota.ToString();
+            //dtpDataNota.Format = DateTimePickerFormat.Custom;//deixo o datatimepicker livre para customizar
+            //dtpDataNota.CustomFormat = modelocompra.DataNota.ToString(); ;//aqui coloco a data da tabela no datatimepicker
+            //txtPrecoNota.Text = modelocompra.PrecoNota.ToString();
+            //txtCodFornecedor.Text = modelocompra.FornecedorId.ToString();
+            //DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            //if (txtCodFornecedor.Text != "")
+            //{
+            //    BLLFornecedor bll = new BLLFornecedor(cx);
+            //    ModeloFornecedor modelofornecedor = bll.CarregaModeloFornecedor(Convert.ToInt32(modelocompra.FornecedorId));
+            //    txtNomeFornecedor.Text = modelofornecedor.NomeFantasia;
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Houve algum problema na hora de buscar os dados do fornecedor. Contate o suporte técnico", "Informativo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            //}
+            //txtObservacao.Text = modelocompra.Observacao;
+            //if (modelocompra.Status == 'A')
+            //{
+            //    lbStatus.Text = SituacaoCompra.Aberto.ToString().ToUpper();
+            //    lbStatus.ForeColor = Color.Blue;
+            //}
+            //else if (modelocompra.Status == 'F')
+            //{
+            //    lbStatus.Text = SituacaoCompra.Faturado.ToString().ToUpper();
+            //    lbStatus.ForeColor = Color.Green;
+            //}
+            //else
+            //{
+            //    lbStatus.Text = SituacaoCompra.Cancelado.ToString().ToUpper();
+            //    lbStatus.ForeColor = Color.Red;
+            //}
+            ////-------------------fim tabela compra--------------------------------------
 
-            //carrega campos da tabela compraitens
-            dgvItens.Columns.Clear();
-            BLLCompraItens bllitens = new BLLCompraItens(cx);
-            DataTable itens = bllitens.Localizar(Convert.ToInt32(txtID.Text));
-            dgvItens.DataSource = itens;
-            this.AtualizaCabecalhoGridItens();
+            ////carrega campos da tabela compraitens
+            //dgvItens.Columns.Clear();
+            //BLLCompraItens bllitens = new BLLCompraItens(cx);
+            //DataTable itens = bllitens.Localizar(Convert.ToInt32(txtID.Text));
+            //dgvItens.DataSource = itens;
+            //this.AtualizaCabecalhoGridItens();
         }
 
         //--------------------BUSCAPORCODIGO---------------------------------------------------------
         //--------------------BOTAOPESQUISAR---------------------------------------------------------
-        private void txtCodFornecedor_Leave(object sender, EventArgs e)
+        public void txtCodFornecedor_Leave(object sender, EventArgs e)
         {
             try
             {
@@ -940,7 +940,7 @@ namespace LojaPadraoMYSQL.Formularios
                         modelocompraitens.TotalAvista = Convert.ToDecimal(txtTotalAvista.Text);
                         modelocompraitens.TotalPrazo = Convert.ToDecimal(txtTotalPrazo.Text);
                         bllcompraitens.Incluir(modelocompraitens);
-                        //tenho que criar uma trigger para alterar o estoque e valores modificados aqui na tabela produtos
+                        //tenho que criar uma trigger ou classe com função para alterar o estoque e valores modificados aqui na tabela produtos
 
                     }
 
@@ -957,13 +957,45 @@ namespace LojaPadraoMYSQL.Formularios
                 }
                 else
                 {
-                    //alterar
-                }
+                    //Alterar
 
+                    //Itens
+                    modelocompra.CompraId = Int32.Parse(txtID.Text);
+                    bllcompra.Alterar(modelocompra);
+                    bllcompraitens.ExcluirTodosItens(Convert.ToInt32(modelocompra.CompraId));
+
+                    //cadastrar itens da OS
+                    for (int i = 0; i < dgvItens.RowCount; i++)
+                    {
+                        //modelocompraitens.CompraItensId = i + 1;
+                        //modelocompraitens.IdOS = modeloOS.IdOS;
+                        //modelocompraitens.IdServico = Convert.ToInt32(dgvItens.Rows[i].Cells[0].Value);
+                        //modelocompraitens.Detalhes = dgvItens.Rows[i].Cells[2].Value.ToString();
+                        bllcompraitens.Incluir(modelocompraitens);
+                    }
+
+                    //Pagamentos
+                    modelocompra.CompraId = Int32.Parse(txtID.Text);
+                    bllcompra.Alterar(modelocompra);
+                    bllcomprapagamento.ExcluirTodosItens(Convert.ToInt32(modelocompra.CompraId));
+
+                    //cadastrar pagamentos da OS
+                    for (int i = 0; i < dgvParcelas.RowCount; i++)
+                    {
+                        //modelocomprapagamento.CompraItensId = i + 1;
+                        //modelocomprapagamento.IdOS = modeloOS.IdOS;
+                        //modelocomprapagamento.IdServico = Convert.ToInt32(dgvItens.Rows[i].Cells[0].Value);
+                        //modelocomprapagamento.Detalhes = dgvItens.Rows[i].Cells[2].Value.ToString();
+                        bllcomprapagamento.Incluir(modelocomprapagamento);
+                    }
+
+                    MessageBox.Show("Cadastro Alterado com sucesso!!!");
+                    this.Close();
+
+                }
                 this.LimpaTela();
                 cx.TerminarTransacao();
                 cx.Desconectar();
-                this.Close();
             }
             catch (Exception ex)
             {
@@ -1005,6 +1037,28 @@ namespace LojaPadraoMYSQL.Formularios
             dgvParcelas.Rows.Clear();
             dgvParcelas.Refresh();
             txtObservacao.Clear();
+        }
+
+        private void btSair_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (lbStatus.Text == "ABERTO")
+                {
+                    DialogResult resultado = MessageBox.Show("Deseja sair sem salvar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (resultado == DialogResult.Yes)
+                        this.Close();
+                }
+                else if ((lbStatus.Text == "FATURADO")|| (lbStatus.Text == "CANCELADO"))
+                {
+                    this.Close();
+                }
+                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possivel sair! Erro: " + ex.Message);
+            }
         }
     }
 }

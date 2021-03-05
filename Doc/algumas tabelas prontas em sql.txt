@@ -273,3 +273,10 @@ CONSTRAINT fk_compraPagamento_compra FOREIGN KEY (idCompra)
 CONSTRAINT fk_compraPagamento_formaPagamento FOREIGN KEY (idFormaPagamento)
   REFERENCES formapagamento (id)
 );
+
+CREATE TABLE tipogasto(
+id int NOT NULL AUTO_INCREMENT,
+nome VARCHAR(100) NOT NULL,
+`status` CHAR(1),
+PRIMARY KEY(id)
+);

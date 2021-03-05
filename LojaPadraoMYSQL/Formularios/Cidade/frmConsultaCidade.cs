@@ -15,6 +15,7 @@ namespace LojaPadraoMYSQL.Formularios
 {
     public partial class frmConsultaCidade : Form
     {
+        
         public int id = 0;
         public frmConsultaCidade()
         {

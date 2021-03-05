@@ -65,7 +65,7 @@ namespace DAL
             cmd.ExecuteNonQuery();
         }
 
-        public DataTable LocalizarTodos()
+        public DataTable Localizar()
         {
             DataTable tabela = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter("select c.id as Cod,c.dataCadastro as Cadastro, c.NumNota as Nota, c.dataNota as Emissão, c.precoNota as ValorNota, c.idFornecedor as CodF, f.nomeFantasia as Fornecedor, f.nomeVendedor as Vendedor, c.`status` as Sit from compra c inner join fornecedor f on(c.idFornecedor = f.id) order by c.id ", conexao.StringConexao);
@@ -74,7 +74,28 @@ namespace DAL
         }
 
         //MELHORAR PESQUISA DA COMPRA
-        public DataTable Localizar(String valor)
+        public DataTable LocalizarTodos(String valor)
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from compra where idFornecedor like '%" + valor + "%' or id like '%" + valor + "%'", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+        public DataTable LocalizarAbertos(String valor) //corrigir select
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from compra where idFornecedor like '%" + valor + "%' or id like '%" + valor + "%'", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+        public DataTable LocalizarFaturados(String valor) //corrigir select
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from compra where idFornecedor like '%" + valor + "%' or id like '%" + valor + "%'", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+        public DataTable LocalizarCancelados(String valor) //corrigir select
         {
             DataTable tabela = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter("select * from compra where idFornecedor like '%" + valor + "%' or id like '%" + valor + "%'", conexao.StringConexao);

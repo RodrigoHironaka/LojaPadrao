@@ -70,8 +70,7 @@ namespace DAL
         public DataTable Localizar(int codcompra)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, fp.id, fp.nome, cp.dataInicioPagamento, cp.precoParcela from comprapagamento cp inner join formapagamento fp on(cp.idFormaPagamento = fp.id) where cp.idCompra = "
-                + codcompra.ToString(), conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.precoParcela, cp.dataInicioPagamento, fp.nome from comprapagamento cp inner join formapagamento fp on(cp.idFormaPagamento = fp.id) where cp.idCompra = " + codcompra.ToString(), conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
