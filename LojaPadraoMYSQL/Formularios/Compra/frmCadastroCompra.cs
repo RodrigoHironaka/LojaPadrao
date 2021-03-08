@@ -58,6 +58,7 @@ namespace LojaPadraoMYSQL.Formularios
             InitializeComponent();
             txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
             lbStatus.Text = Convert.ToString(SituacaoCompra.Aberto).ToUpper();
+            lbStatus.ForeColor = Color.Blue;
             dtpDataNota.Format = DateTimePickerFormat.Custom;
             dtpDataNota.CustomFormat = " ";
             this.carregaFormaPagamento();
@@ -647,7 +648,6 @@ namespace LojaPadraoMYSQL.Formularios
 
         //--------------------VARIAVEIS GRIDITENS-----------------------------------------------------
 
-
         public double totalItens = 0;
         public double totalQtd = 0;
 
@@ -906,6 +906,10 @@ namespace LojaPadraoMYSQL.Formularios
                     modelocompra.FornecedorId = 1;
                 }
                 modelocompra.Observacao = txtObservacao.Text;
+                modelocompra.TotalItens = Convert.ToInt32(txtTotalItens.Text);
+                modelocompra.TotalCusto = Convert.ToDecimal(txtTotalCusto.Text);
+                modelocompra.TotalAvista = Convert.ToDecimal(txtTotalAvista.Text);
+                modelocompra.TotalPrazo = Convert.ToDecimal(txtTotalPrazo.Text);
                 BLLCompra bllcompra = new BLLCompra(cx);
 
                 ModeloCompraItens modelocompraitens = new ModeloCompraItens();
@@ -921,7 +925,7 @@ namespace LojaPadraoMYSQL.Formularios
                     //cadastra dados da tabela compra
                     int idcompra = bllcompra.Incluir(modelocompra);
 
-                    //cadastra od itens(produtos, valores, estoque) na tabela de compra itens
+                    //cadastra os itens(produtos, valores, estoque) na tabela de compra itens
                     for (int i = 0; i < dgvItens.RowCount; i++)
                     {
                         modelocompraitens.CompraItensId = i + 1;
@@ -935,10 +939,6 @@ namespace LojaPadraoMYSQL.Formularios
                         modelocompraitens.EstAtual = Convert.ToDecimal(dgvItens.Rows[i].Cells[7].Value);
                         modelocompraitens.EstNovo = Convert.ToDecimal(dgvItens.Rows[i].Cells[8].Value);
                         modelocompraitens.EstTotal = Convert.ToDecimal(dgvItens.Rows[i].Cells[9].Value);
-                        modelocompraitens.TotalItens = Convert.ToInt32(txtTotalItens.Text);
-                        modelocompraitens.TotalCusto = Convert.ToDecimal(txtTotalCusto.Text);
-                        modelocompraitens.TotalAvista = Convert.ToDecimal(txtTotalAvista.Text);
-                        modelocompraitens.TotalPrazo = Convert.ToDecimal(txtTotalPrazo.Text);
                         bllcompraitens.Incluir(modelocompraitens);
                         //tenho que criar uma trigger ou classe com função para alterar o estoque e valores modificados aqui na tabela produtos
 
@@ -949,6 +949,7 @@ namespace LojaPadraoMYSQL.Formularios
                     {
                         modelocomprapagamento.CompraPagamentoId = i + 1;
                         modelocomprapagamento.CompraId = idcompra;
+                        modelocomprapagamento.NParcela = Convert.ToInt32(dgvParcelas.Rows[i].Cells[0].Value);
                         modelocomprapagamento.PrecoParcela = Convert.ToDecimal(dgvParcelas.Rows[i].Cells[1].Value);
                         modelocomprapagamento.DataInicioPagamento = Convert.ToDateTime(dgvParcelas.Rows[i].Cells[2].Value);
                         modelocomprapagamento.FormaPagamentoId = Convert.ToInt32(cbPagamento.SelectedValue);
@@ -962,17 +963,25 @@ namespace LojaPadraoMYSQL.Formularios
                     //Itens
                     modelocompra.CompraId = Int32.Parse(txtID.Text);
                     bllcompra.Alterar(modelocompra);
-                    bllcompraitens.ExcluirTodosItens(Convert.ToInt32(modelocompra.CompraId));
+                    bllcompraitens.ExcluirTodosItens((int)modelocompra.CompraId);
 
                     //cadastrar itens da OS
                     for (int i = 0; i < dgvItens.RowCount; i++)
                     {
-                        //modelocompraitens.CompraItensId = i + 1;
-                        //modelocompraitens.IdOS = modeloOS.IdOS;
-                        //modelocompraitens.IdServico = Convert.ToInt32(dgvItens.Rows[i].Cells[0].Value);
-                        //modelocompraitens.Detalhes = dgvItens.Rows[i].Cells[2].Value.ToString();
+                        modelocompraitens.CompraItensId =     i + 1;
+                        modelocompraitens.CompraId =          (int)modelocompra.CompraId;
+                        modelocompraitens.ProdutoId =         Convert.ToInt32(dgvItens.Rows[i].Cells[0].Value);
+                        modelocompraitens.PrecoCusto =        Convert.ToDecimal(dgvItens.Rows[i].Cells[2].Value);
+                        modelocompraitens.PorcentagemCusto =  Convert.ToDecimal(dgvItens.Rows[i].Cells[3].Value);
+                        modelocompraitens.PrecoAvista =       Convert.ToDecimal(dgvItens.Rows[i].Cells[4].Value);
+                        modelocompraitens.PorcentagemAvista = Convert.ToDecimal(dgvItens.Rows[i].Cells[5].Value);
+                        modelocompraitens.PrecoPrazo =        Convert.ToDecimal(dgvItens.Rows[i].Cells[6].Value);
+                        modelocompraitens.EstAtual =          Convert.ToDecimal(dgvItens.Rows[i].Cells[7].Value);
+                        modelocompraitens.EstNovo =           Convert.ToDecimal(dgvItens.Rows[i].Cells[8].Value);
+                        modelocompraitens.EstTotal =          Convert.ToDecimal(dgvItens.Rows[i].Cells[9].Value);
                         bllcompraitens.Incluir(modelocompraitens);
                     }
+                    
 
                     //Pagamentos
                     modelocompra.CompraId = Int32.Parse(txtID.Text);
@@ -982,10 +991,12 @@ namespace LojaPadraoMYSQL.Formularios
                     //cadastrar pagamentos da OS
                     for (int i = 0; i < dgvParcelas.RowCount; i++)
                     {
-                        //modelocomprapagamento.CompraItensId = i + 1;
-                        //modelocomprapagamento.IdOS = modeloOS.IdOS;
-                        //modelocomprapagamento.IdServico = Convert.ToInt32(dgvItens.Rows[i].Cells[0].Value);
-                        //modelocomprapagamento.Detalhes = dgvItens.Rows[i].Cells[2].Value.ToString();
+                        modelocomprapagamento.CompraPagamentoId = i + 1;
+                        modelocomprapagamento.CompraId = (int)modelocompra.CompraId;
+                        modelocomprapagamento.NParcela = Convert.ToInt32(dgvParcelas.Rows[i].Cells[0].Value);
+                        modelocomprapagamento.PrecoParcela = Convert.ToDecimal(dgvParcelas.Rows[i].Cells[1].Value);
+                        modelocomprapagamento.DataInicioPagamento = Convert.ToDateTime(dgvParcelas.Rows[i].Cells[2].Value);
+                        modelocomprapagamento.FormaPagamentoId = Convert.ToInt32(cbPagamento.SelectedValue);
                         bllcomprapagamento.Incluir(modelocomprapagamento);
                     }
 

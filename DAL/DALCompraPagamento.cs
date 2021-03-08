@@ -22,10 +22,11 @@ namespace DAL
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
             cmd.Transaction = this.conexao.ObjetoTransacao;
-            cmd.CommandText = "insert into comprapagamento(idCompra, idFormaPagamento, dataInicioPagamento, precoParcela)" +
-                " values (@idCompra, @idFormaPagamento, @dataInicioPagamento, @precoParcela);";
+            cmd.CommandText = "insert into comprapagamento(idCompra, idFormaPagamento, NParcela, dataInicioPagamento, precoParcela)" +
+                " values (@idCompra, @idFormaPagamento, @NParcela, @dataInicioPagamento, @precoParcela);";
             cmd.Parameters.AddWithValue("@idCompra", modelo.CompraId);
             cmd.Parameters.AddWithValue("@idFormaPagamento", modelo.FormaPagamentoId);
+            cmd.Parameters.AddWithValue("@NParcela", modelo.NParcela);
             cmd.Parameters.AddWithValue("@dataInicioPagamento", modelo.DataInicioPagamento);
             cmd.Parameters.AddWithValue("@precoParcela", modelo.PrecoParcela);
             cmd.ExecuteNonQuery();
@@ -36,9 +37,10 @@ namespace DAL
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
             cmd.Transaction = this.conexao.ObjetoTransacao;
-            cmd.CommandText = "update comprapagamento set idCompra=@idCompra, idFormaPagamento=@idFormaPagamento, dataInicioPagamento=@dataInicioPagamento, precoParcela=@precoParcela;";
+            cmd.CommandText = "update comprapagamento set idCompra=@idCompra, idFormaPagamento=@idFormaPagamento, NParcela=@NParcela, dataInicioPagamento=@dataInicioPagamento, precoParcela=@precoParcela;";
             cmd.Parameters.AddWithValue("@idCompra", modelo.CompraId);
             cmd.Parameters.AddWithValue("@idFormaPagamento", modelo.FormaPagamentoId);
+            cmd.Parameters.AddWithValue("@NParcela", modelo.NParcela);
             cmd.Parameters.AddWithValue("@dataInicioPagamento", modelo.DataInicioPagamento);
             cmd.Parameters.AddWithValue("@precoParcela", modelo.PrecoParcela);
             cmd.Parameters.AddWithValue("@codigo", modelo.CompraPagamentoId);
@@ -62,15 +64,15 @@ namespace DAL
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
             cmd.Transaction = this.conexao.ObjetoTransacao;
-            cmd.CommandText = "delete from comprapagamento where id = @codigo";
-            cmd.Parameters.AddWithValue("@id", codigo);
+            cmd.CommandText = "delete from comprapagamento where idCompra = @idCompra";
+            cmd.Parameters.AddWithValue("@idCompra", codigo);
             cmd.ExecuteNonQuery();
         }
 
         public DataTable Localizar(int codcompra)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.precoParcela, cp.dataInicioPagamento, fp.nome from comprapagamento cp inner join formapagamento fp on(cp.idFormaPagamento = fp.id) where cp.idCompra = " + codcompra.ToString(), conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.NParcela, cp.precoParcela, cp.dataInicioPagamento, fp.nome from comprapagamento cp inner join formapagamento fp on(cp.idFormaPagamento = fp.id) where cp.idCompra = " + codcompra.ToString(), conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -92,6 +94,7 @@ namespace DAL
                 modelo.CompraPagamentoId = codigo;
                 modelo.CompraId = idCompra;
                 modelo.FormaPagamentoId = idFormaPagamento;
+                modelo.NParcela = Convert.ToInt32(registro["NParcela"]);
                 modelo.DataInicioPagamento = Convert.ToDateTime(registro["dataInicioParcela"]);
                 modelo.PrecoParcela = Convert.ToDecimal(registro["precoParcela"]);
             }

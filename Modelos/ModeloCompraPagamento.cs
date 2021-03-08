@@ -11,6 +11,7 @@ namespace Modelos
         public int CompraPagamentoId { get; set; }
         public int CompraId { get; set; }
         public int FormaPagamentoId { get; set; }
+        public int NParcela { get; set; }
         public DateTime DataInicioPagamento { get; set; }
         public decimal PrecoParcela { get; set; }
     }

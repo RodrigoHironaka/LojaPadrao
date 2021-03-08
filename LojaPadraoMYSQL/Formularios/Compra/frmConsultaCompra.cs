@@ -1,5 +1,6 @@
 ﻿using BLL;
 using DAL;
+using LojaPadraoMYSQL.Relatorios.Compra;
 using Modelos;
 using Modelos.ObejtoValor;
 using System;
@@ -17,10 +18,28 @@ namespace LojaPadraoMYSQL.Formularios
 {
     public partial class frmConsultaCompra : Form
     {
+  
+
         public int idcompraitens = 0;
         public int idcompra = 0;
         public int idproduto = 0;
         public int idformapagamento = 0;
+        public void AtualizaCabecalhoGridConsulta()
+        {
+            dgvDados.Columns[0].HeaderText = "Cod";
+            dgvDados.Columns[1].HeaderText = "Cadastro";
+            dgvDados.Columns[2].HeaderText = "Nº Nota";
+            dgvDados.Columns[3].HeaderText = "Emissão";
+            dgvDados.Columns[4].HeaderText = "Valor Nota";
+            dgvDados.Columns[5].HeaderText = "Nº Forn";
+            dgvDados.Columns[6].HeaderText = "Fornecedor";
+            dgvDados.Columns[7].HeaderText = "Sit";
+            //dgvDados.Columns[8].Visible = false;
+            //dgvDados.Columns[9].Visible = false;
+            //dgvDados.Columns[10].Visible = false;
+            //dgvDados.Columns[11].Visible = false;
+            //dgvDados.Columns[13].Visible = false;
+        }
 
         public frmConsultaCompra()
         {
@@ -30,6 +49,7 @@ namespace LojaPadraoMYSQL.Formularios
             BLLCompra bll = new BLLCompra(cx);
             dgvDados.DataSource = bll.Localizar();
             dgvDados.Select();
+            this.AtualizaCabecalhoGridConsulta();
         }
 
         private void btAdd_Click(object sender, EventArgs e)
@@ -40,6 +60,7 @@ namespace LojaPadraoMYSQL.Formularios
             BLLCompra bll = new BLLCompra(cx);
             dgvDados.DataSource = bll.Localizar();
             dgvDados.Select();
+            this.AtualizaCabecalhoGridConsulta();
         }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
@@ -81,6 +102,10 @@ namespace LojaPadraoMYSQL.Formularios
                     f.txtObservacao.Text = modelocompra.Observacao;
                     f.txtCodFornecedor.Text = modelocompra.FornecedorId.ToString();
                     f.txtCodFornecedor_Leave(sender, e);
+                    f.txtTotalItens.Text = modelocompra.TotalItens.ToString();
+                    f.txtTotalCusto.Text = modelocompra.TotalCusto.ToString();
+                    f.txtTotalAvista.Text = modelocompra.TotalAvista.ToString();
+                    f.txtTotalPrazo.Text = modelocompra.TotalPrazo.ToString();
                     if (modelocompra.Status == 'A')
                     {
                         f.lbStatus.Text = SituacaoCompra.Aberto.ToString().ToUpper();
@@ -101,7 +126,7 @@ namespace LojaPadraoMYSQL.Formularios
                     DataTable tabelaitens = bllitens.Localizar(Convert.ToInt32(modelocompra.CompraId));
                     for (int i = 0; i < tabelaitens.Rows.Count; i++)
                     {
-                        string idproduto = tabelaitens.Rows[i]["id"].ToString();
+                        string idproduto = tabelaitens.Rows[i]["idProduto"].ToString();
                         string nomeproduto = tabelaitens.Rows[i]["nome"].ToString();
                         string custo = tabelaitens.Rows[i]["precoCusto"].ToString();
                         string pcusto = tabelaitens.Rows[i]["porcentagemCusto"].ToString();
@@ -114,16 +139,18 @@ namespace LojaPadraoMYSQL.Formularios
                         String[] it = new String[] { idproduto, nomeproduto, custo, pcusto, avista, pavista, prazo, estatual, estnovo, esttotal };
                         f.dgvItens.Rows.Add(it);
                     }
+                    
 
                     //DADOS DA TABELA COMPRAPAGAMENTO
                     DataTable tabelapagamento = bllpagamento.Localizar(Convert.ToInt32(modelocompra.CompraId));
                     for (int i = 0; i < tabelapagamento.Rows.Count; i++)
                     {
-                        string parcela = tabelapagamento.Rows[i]["id"].ToString();
+                        string parcela = tabelapagamento.Rows[i]["NParcela"].ToString();
                         string valor = tabelapagamento.Rows[i]["precoParcela"].ToString();
-                        string dataparcela = tabelapagamento.Rows[i]["dataInicioPagamento"].ToString();
+                        DateTime dataparcela = Convert.ToDateTime(tabelapagamento.Rows[i]["dataInicioPagamento"].ToString());
+                        string data = dataparcela.ToString("dd/MM/yyyy");
                         string formapag = tabelapagamento.Rows[i]["nome"].ToString();
-                        String[] ip = new String[] { parcela, valor, dataparcela, formapag };
+                        String[] ip = new String[] { parcela, valor, data, formapag };
                         f.dgvParcelas.Rows.Add(ip);
                     }
 
@@ -140,6 +167,8 @@ namespace LojaPadraoMYSQL.Formularios
                         f.dgvParcelas.DefaultCellStyle.SelectionBackColor = Color.White;
                         f.dgvParcelas.DefaultCellStyle.SelectionForeColor = Color.Black;
                         f.txtObservacao.Enabled = false;
+                        f.btFaturar.Enabled = false;
+                        f.btSalvar.Enabled = false;
                     }
 
                     //ABRE FORM DE CADASTRO COM DADOS EM SEUS CAMPOS
@@ -149,12 +178,12 @@ namespace LojaPadraoMYSQL.Formularios
                     //QNDO VOLTAR PARA CONSULTA E VOLTA A CARREGAR OS GRIDS COM AS FUNÇÕES ABAIXOS DEPENDENDO DO FILTRO SELECIONADO
                     if (rbAberto.Checked)
                     {
-                        dgvDados.DataSource = bllcompra.LocalizarAbertos(txtPesquisar.Text);
+                        dgvDados.DataSource = bllcompra.Localizar();
                         dgvDados.ClearSelection();
                     }
                     else if (rbTodos.Checked)
                     {
-                        dgvDados.DataSource = bllcompra.LocalizarTodos(txtPesquisar.Text);
+                        dgvDados.DataSource = bllcompra.Localizar();
                         dgvDados.ClearSelection();
                     }
                     else if (rbFaturado.Checked)
@@ -168,6 +197,7 @@ namespace LojaPadraoMYSQL.Formularios
                         dgvDados.ClearSelection();
                     }
                     dgvDados.ClearSelection();
+                    this.AtualizaCabecalhoGridConsulta();
                 }
             }
             catch (Exception ex)
@@ -179,7 +209,62 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void btExc_Click(object sender, EventArgs e)
         {
+            try
+            {
+                //Cancelando
+                var sit = " ";
+                if (dgvDados.SelectedRows.Count == 0)
+                {
+                    MessageBox.Show("Nenhum registro selecionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
+                   sit = Convert.ToString(dgvDados.CurrentRow.Cells[3].Value);
+                    if (sit == "CANCELADO")
+                    {
+                        MessageBox.Show("Esse registro já foi cancelado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+                    DialogResult d = MessageBox.Show("Deseja realmente cancelar este registro? ", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (d.ToString() == "Yes")
+                    {
+                        DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                        BLLCompra bll = new BLLCompra(cx);
+                        if (bll.Cancelar(Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value)) == true)
+                        {
+                            MessageBox.Show("Cancelada com sucesso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            dgvDados.DataSource = bll.Localizar();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Não foi possivel cancelar. \nConsulte o suporte tecnico.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        }
+                        dgvDados.ClearSelection();
+                        this.AtualizaCabecalhoGridConsulta();
+                    }
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
 
+        private void frmConsultaCompra_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btSair_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void btImprimir_Click(object sender, EventArgs e)
+        {
+            frmFiltroRelCompra f = new frmFiltroRelCompra();
+            f.ShowDialog();
         }
     }
 }

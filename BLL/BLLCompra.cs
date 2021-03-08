@@ -95,5 +95,14 @@ namespace BLL
             DALCompra DALObj = new DALCompra(conexao);
             return DALObj.CarregaModeloCompra(codigo);
         }
+        public Boolean Cancelar(int codigo)
+        {
+            if (codigo <= 0)
+            {
+                throw new Exception("O código da OS deve ser maior que zero!");
+            }
+            DALCompra DALObj = new DALCompra(conexao);
+            return DALObj.Cancelar(codigo);
+        }
     }
 }

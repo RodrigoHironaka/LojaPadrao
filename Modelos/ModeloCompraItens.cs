@@ -19,10 +19,7 @@ namespace Modelos
         public decimal PrecoAvista { get; set; }
         public decimal PorcentagemAvista { get; set; }
         public decimal PrecoPrazo { get; set; }
-        public int TotalItens { get; set; }
-        public decimal TotalCusto { get; set; }
-        public decimal TotalAvista { get; set; }
-        public decimal TotalPrazo { get; set; }
+        
       
     }
 }

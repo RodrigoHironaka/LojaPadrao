@@ -15,6 +15,10 @@ namespace Modelos
         public decimal PrecoNota { get; set; }
         public Int64 FornecedorId { get; set; }
         public string Observacao { get; set; }
+        public int TotalItens { get; set; }
+        public decimal TotalCusto { get; set; }
+        public decimal TotalAvista { get; set; }
+        public decimal TotalPrazo { get; set; }
         public char Status { get; set; }
     }
 }

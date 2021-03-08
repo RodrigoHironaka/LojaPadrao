@@ -23,13 +23,17 @@ namespace DAL
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
             cmd.Transaction = this.conexao.ObjetoTransacao;
-            cmd.CommandText = "insert into compra(dataCadastro, numNota, dataNota, precoNota, idFornecedor, observacao, status) values (@dataCadastro, @numNota, @dataNota, @precoNota, @idFornecedor, @observacao, @status);";
+            cmd.CommandText = "insert into compra(dataCadastro, numNota, dataNota, precoNota, idFornecedor, observacao, totalItens, totalCusto, totalAvista, totalPrazo, status) values (@dataCadastro, @numNota, @dataNota, @precoNota, @idFornecedor, @observacao, @totalItens, @totalCusto, @totalAvista, @totalPrazo, @status);";
             cmd.Parameters.AddWithValue("@dataCadastro", modelo.DataCadastro);
             cmd.Parameters.AddWithValue("@numNota", modelo.NumNota);
             cmd.Parameters.AddWithValue("@dataNota", modelo.DataNota);
             cmd.Parameters.AddWithValue("@precoNota", modelo.PrecoNota);
             cmd.Parameters.AddWithValue("@idFornecedor", modelo.FornecedorId);
             cmd.Parameters.AddWithValue("@observacao", modelo.Observacao);
+            cmd.Parameters.AddWithValue("@totalItens", modelo.TotalItens);
+            cmd.Parameters.AddWithValue("@totalCusto", modelo.TotalCusto);
+            cmd.Parameters.AddWithValue("@totalAvista", modelo.TotalAvista);
+            cmd.Parameters.AddWithValue("@totalPrazo", modelo.TotalPrazo);
             cmd.Parameters.AddWithValue("@status", modelo.Status);
             cmd.ExecuteNonQuery();
             cmd.CommandText = "select max(id) from compra";
@@ -42,13 +46,17 @@ namespace DAL
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
             cmd.Transaction = this.conexao.ObjetoTransacao;
-            cmd.CommandText = "update compra set dataCadastro=@dataCadastro, numNota=@numNota, dataNota=@dataNota, precoNota=@precoNota, idFornecedor=@idFornecedor, observacao=@observacao, status=@status where id=@codigo;";
+            cmd.CommandText = "update compra set dataCadastro=@dataCadastro, numNota=@numNota, dataNota=@dataNota, precoNota=@precoNota, idFornecedor=@idFornecedor, observacao=@observacao, totalItens=@totalItens, totalCusto=@totalCusto, totalAvista=@totalAvista, totalPrazo=@totalPrazo, status=@status where id=@codigo;";
             cmd.Parameters.AddWithValue("@dataCadastro", modelo.DataCadastro);
             cmd.Parameters.AddWithValue("@numNota", modelo.NumNota);
             cmd.Parameters.AddWithValue("@dataNota", modelo.DataNota);
             cmd.Parameters.AddWithValue("@precoNota", modelo.PrecoNota);
             cmd.Parameters.AddWithValue("@idFornecedor", modelo.FornecedorId);
             cmd.Parameters.AddWithValue("@observacao", modelo.Observacao);
+            cmd.Parameters.AddWithValue("@totalItens", modelo.TotalItens);
+            cmd.Parameters.AddWithValue("@totalCusto", modelo.TotalCusto);
+            cmd.Parameters.AddWithValue("@totalAvista", modelo.TotalAvista);
+            cmd.Parameters.AddWithValue("@totalPrazo", modelo.TotalPrazo);
             cmd.Parameters.AddWithValue("@status", modelo.Status);
             cmd.Parameters.AddWithValue("@codigo", modelo.CompraId);
             cmd.ExecuteNonQuery();
@@ -68,7 +76,7 @@ namespace DAL
         public DataTable Localizar()
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select c.id as Cod,c.dataCadastro as Cadastro, c.NumNota as Nota, c.dataNota as Emissão, c.precoNota as ValorNota, c.idFornecedor as CodF, f.nomeFantasia as Fornecedor, f.nomeVendedor as Vendedor, c.`status` as Sit from compra c inner join fornecedor f on(c.idFornecedor = f.id) order by c.id ", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select c.id,c.dataCadastro, c.NumNota, c.dataNota, c.precoNota, c.idFornecedor, f.nomeFantasia, c.`status` from compra c inner join fornecedor f on(c.idFornecedor = f.id) order by c.id ", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -102,8 +110,6 @@ namespace DAL
             da.Fill(tabela);
             return tabela;
         }
-
-
         public ModeloCompra CarregaModeloCompra(int codigo)
         {
             ModeloCompra modelo = new ModeloCompra();
@@ -123,11 +129,42 @@ namespace DAL
                 modelo.PrecoNota = Convert.ToDecimal(registro["precoNota"]);
                 modelo.FornecedorId = Convert.ToInt32(registro["idFornecedor"]);
                 modelo.Observacao = Convert.ToString(registro["observacao"]);
+                modelo.TotalItens = Convert.ToInt32(registro["totalItens"]);
+                modelo.TotalCusto = Convert.ToDecimal(registro["totalCusto"]);
+                modelo.TotalAvista = Convert.ToDecimal(registro["totalAvista"]);
+                modelo.TotalPrazo = Convert.ToDecimal(registro["totalPrazo"]);
                 modelo.Status = Convert.ToChar(registro["status"]);
             }
             registro.Close();
             conexao.Desconectar();
             return modelo;
+        }
+        public Boolean Cancelar(int codigo)
+        {
+            Boolean retorno = true;
+            //Atualizar a tabela de OS
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conexao.ObjetoConexao;
+            conexao.Conectar();
+            conexao.IniciarTransacao();
+            try
+            {
+                cmd.Transaction = this.conexao.ObjetoTransacao;
+                cmd.CommandText = "update compra set status= 'C'" +
+                    "where id=@id;";
+                cmd.Parameters.AddWithValue("@id", codigo);
+                cmd.ExecuteNonQuery();
+
+                conexao.TerminarTransacao();
+                conexao.Desconectar();
+            }
+            catch
+            {
+                conexao.CancelaTransacao();
+                conexao.Desconectar();
+                retorno = false;
+            }
+            return retorno;
         }
     }
 }

@@ -74,11 +74,11 @@ namespace BLL
             return DALObj.Localizar(codigo);
         }
 
-        public ModeloCompraItens CarregaModeloCompraItens(int codigo, int idCompra, int idProduto)
-        {
-            DALCompraItens DALObj = new DALCompraItens(conexao);
-            return DALObj.CarregaModeloCompraItens(codigo, idCompra, idProduto);
-        }
+        //public ModeloCompraItens CarregaModeloCompraItens(int codigo)
+        //{
+        //    DALCompraItens DALObj = new DALCompraItens(conexao);
+        //    return DALObj.CarregaModeloCompraItens(codigo);
+        //}
 
         //public ModeloCompraItens CarregaGridItensCompra(int idCompra)
         //{

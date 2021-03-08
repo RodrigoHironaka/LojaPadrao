@@ -17,26 +17,26 @@ namespace LojaPadraoMYSQL.Formularios
     {
         public void AtualizaCabecalhoGridDados()
         {
-            dgvDados.Columns[0].HeaderText = "Cod";
-            dgvDados.Columns[1].HeaderText = "Nome Fantasia";
-            dgvDados.Columns[2].HeaderText = "Razão Social";
+            dgvDados.Columns[0].HeaderText = "COD";
+            dgvDados.Columns[1].HeaderText = "NOME";
+            dgvDados.Columns[2].HeaderText = "RAZÃO";
             dgvDados.Columns[3].HeaderText = "RG/IE";
             dgvDados.Columns[4].HeaderText = "CPF/CNPJ";
-            dgvDados.Columns[5].HeaderText = "Pessoa";
-            dgvDados.Columns[6].HeaderText = "Endereço";
+            dgvDados.Columns[5].HeaderText = "PESSOA";
+            dgvDados.Columns[6].HeaderText = "ENDEREÇO";
             dgvDados.Columns[7].HeaderText = "Nº";
-            dgvDados.Columns[8].HeaderText = "Complemento";
-            dgvDados.Columns[9].HeaderText = "Bairro";
+            dgvDados.Columns[8].HeaderText = "COMPLEMENTO";
+            dgvDados.Columns[9].HeaderText = "BAIRRO";
             dgvDados.Columns[10].HeaderText = "CEP";
-            dgvDados.Columns[11].HeaderText = "Nascimento";
+            dgvDados.Columns[11].HeaderText = "NASCIMENTO";
             dgvDados.Columns[12].Visible = false;
-            dgvDados.Columns[13].HeaderText = "Email";
-            dgvDados.Columns[14].HeaderText = "Telefone";
-            dgvDados.Columns[15].HeaderText = "Celular";
-            dgvDados.Columns[16].HeaderText = "Celular2";
+            dgvDados.Columns[13].HeaderText = "EMAIL";
+            dgvDados.Columns[14].HeaderText = "TELEFONE";
+            dgvDados.Columns[15].HeaderText = "CELULAR";
+            dgvDados.Columns[16].HeaderText = "CELULAR2";
             dgvDados.Columns[17].Visible = false;
-            dgvDados.Columns[18].HeaderText = "Data Cadastro";
-            dgvDados.Columns[19].HeaderText = "Sit";
+            dgvDados.Columns[18].HeaderText = "CADASTRO";
+            dgvDados.Columns[19].HeaderText = "SITUAÇÃO";
             dgvDados.Columns[20].Visible = false;
         }
         public int id = 0;

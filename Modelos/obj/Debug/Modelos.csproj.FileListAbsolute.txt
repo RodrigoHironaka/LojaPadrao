@@ -20,3 +20,4 @@ C:\_Projetos\DESKTOP\LojaPadrao\Modelos\bin\Debug\Modelos.pdb
 C:\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Debug\Modelos.csproj.CoreCompileInputs.cache
 C:\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Debug\Modelos.dll
 C:\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Debug\Modelos.pdb
+C:\_Projetos\DESKTOP\LojaPadrao\Modelos\obj\Debug\Modelos.csprojAssemblyReference.cache

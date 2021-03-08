@@ -63,18 +63,37 @@
             this.lbPrecoNota = new System.Windows.Forms.Label();
             this.lbStatus = new System.Windows.Forms.Label();
             this.tabProdutos = new System.Windows.Forms.TabPage();
+            this.pItensProdutos = new System.Windows.Forms.Panel();
+            this.txtCodProduto = new System.Windows.Forms.TextBox();
             this.brZerarEstoque = new System.Windows.Forms.Button();
+            this.lbNomeFantasia = new System.Windows.Forms.Label();
+            this.lbRazaoSocial = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btPesqProduto = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btRemover = new System.Windows.Forms.Button();
+            this.label10 = new System.Windows.Forms.Label();
+            this.btAdd = new System.Windows.Forms.Button();
+            this.label23 = new System.Windows.Forms.Label();
+            this.txtNomeProduto = new System.Windows.Forms.TextBox();
+            this.txtPrecoCusto = new System.Windows.Forms.TextBox();
+            this.txtPrecoAvista = new System.Windows.Forms.TextBox();
+            this.txtEstqAtual = new System.Windows.Forms.TextBox();
+            this.txtPorcCusto = new System.Windows.Forms.TextBox();
+            this.txtQtdNova = new System.Windows.Forms.TextBox();
+            this.txtPorcAvista = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtPrecoPrazo = new System.Windows.Forms.TextBox();
             this.txtTotalCusto = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.txtTotalAvista = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.btPesqProduto = new System.Windows.Forms.Button();
             this.txtTotalPrazo = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.txtTotalItens = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.btRemover = new System.Windows.Forms.Button();
-            this.btAdd = new System.Windows.Forms.Button();
             this.dgvItens = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -86,24 +105,6 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtQtdNova = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.txtCodProduto = new System.Windows.Forms.TextBox();
-            this.txtPrecoPrazo = new System.Windows.Forms.TextBox();
-            this.txtPorcAvista = new System.Windows.Forms.TextBox();
-            this.txtPorcCusto = new System.Windows.Forms.TextBox();
-            this.txtEstqAtual = new System.Windows.Forms.TextBox();
-            this.txtPrecoAvista = new System.Windows.Forms.TextBox();
-            this.txtPrecoCusto = new System.Windows.Forms.TextBox();
-            this.txtNomeProduto = new System.Windows.Forms.TextBox();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label10 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbRazaoSocial = new System.Windows.Forms.Label();
-            this.lbNomeFantasia = new System.Windows.Forms.Label();
             this.tabCompra = new System.Windows.Forms.TabControl();
             this.tabPag = new System.Windows.Forms.TabPage();
             this.dgvParcelas = new System.Windows.Forms.DataGridView();
@@ -129,9 +130,9 @@
             this.btSair = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
             this.gbInfo = new System.Windows.Forms.GroupBox();
-            this.pItensProdutos = new System.Windows.Forms.Panel();
             this.gbDadosCompra.SuspendLayout();
             this.tabProdutos.SuspendLayout();
+            this.pItensProdutos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).BeginInit();
             this.tabCompra.SuspendLayout();
             this.tabPag.SuspendLayout();
@@ -140,7 +141,6 @@
             this.tabObs.SuspendLayout();
             this.gbBotoes.SuspendLayout();
             this.gbInfo.SuspendLayout();
-            this.pItensProdutos.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtNomeFornecedor
@@ -376,6 +376,48 @@
             this.tabProdutos.TabIndex = 0;
             this.tabProdutos.Text = "Produtos";
             // 
+            // pItensProdutos
+            // 
+            this.pItensProdutos.Controls.Add(this.txtCodProduto);
+            this.pItensProdutos.Controls.Add(this.brZerarEstoque);
+            this.pItensProdutos.Controls.Add(this.lbNomeFantasia);
+            this.pItensProdutos.Controls.Add(this.lbRazaoSocial);
+            this.pItensProdutos.Controls.Add(this.label3);
+            this.pItensProdutos.Controls.Add(this.label4);
+            this.pItensProdutos.Controls.Add(this.label1);
+            this.pItensProdutos.Controls.Add(this.btPesqProduto);
+            this.pItensProdutos.Controls.Add(this.label9);
+            this.pItensProdutos.Controls.Add(this.btRemover);
+            this.pItensProdutos.Controls.Add(this.label10);
+            this.pItensProdutos.Controls.Add(this.btAdd);
+            this.pItensProdutos.Controls.Add(this.label23);
+            this.pItensProdutos.Controls.Add(this.txtNomeProduto);
+            this.pItensProdutos.Controls.Add(this.txtPrecoCusto);
+            this.pItensProdutos.Controls.Add(this.txtPrecoAvista);
+            this.pItensProdutos.Controls.Add(this.txtEstqAtual);
+            this.pItensProdutos.Controls.Add(this.txtPorcCusto);
+            this.pItensProdutos.Controls.Add(this.txtQtdNova);
+            this.pItensProdutos.Controls.Add(this.txtPorcAvista);
+            this.pItensProdutos.Controls.Add(this.label6);
+            this.pItensProdutos.Controls.Add(this.txtPrecoPrazo);
+            this.pItensProdutos.Location = new System.Drawing.Point(0, 0);
+            this.pItensProdutos.Name = "pItensProdutos";
+            this.pItensProdutos.Size = new System.Drawing.Size(1152, 87);
+            this.pItensProdutos.TabIndex = 383;
+            // 
+            // txtCodProduto
+            // 
+            this.txtCodProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodProduto.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtCodProduto.Location = new System.Drawing.Point(7, 32);
+            this.txtCodProduto.MaxLength = 6;
+            this.txtCodProduto.Name = "txtCodProduto";
+            this.txtCodProduto.Size = new System.Drawing.Size(86, 26);
+            this.txtCodProduto.TabIndex = 0;
+            this.txtCodProduto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtCodProduto_MouseClick);
+            this.txtCodProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodProduto_KeyPress);
+            this.txtCodProduto.Leave += new System.EventHandler(this.txtCodProduto_Leave);
+            // 
             // brZerarEstoque
             // 
             this.brZerarEstoque.FlatAppearance.BorderSize = 0;
@@ -390,6 +432,266 @@
             this.brZerarEstoque.TabIndex = 382;
             this.brZerarEstoque.UseVisualStyleBackColor = true;
             this.brZerarEstoque.Click += new System.EventHandler(this.brZerarEstoque_Click);
+            // 
+            // lbNomeFantasia
+            // 
+            this.lbNomeFantasia.AutoSize = true;
+            this.lbNomeFantasia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeFantasia.ForeColor = System.Drawing.Color.Black;
+            this.lbNomeFantasia.Location = new System.Drawing.Point(136, 10);
+            this.lbNomeFantasia.Name = "lbNomeFantasia";
+            this.lbNomeFantasia.Size = new System.Drawing.Size(69, 20);
+            this.lbNomeFantasia.TabIndex = 264;
+            this.lbNomeFantasia.Text = "Produto:";
+            // 
+            // lbRazaoSocial
+            // 
+            this.lbRazaoSocial.AutoSize = true;
+            this.lbRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRazaoSocial.ForeColor = System.Drawing.Color.Black;
+            this.lbRazaoSocial.Location = new System.Drawing.Point(506, 8);
+            this.lbRazaoSocial.Name = "lbRazaoSocial";
+            this.lbRazaoSocial.Size = new System.Drawing.Size(73, 20);
+            this.lbRazaoSocial.TabIndex = 263;
+            this.lbRazaoSocial.Text = "P. Custo:";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Black;
+            this.label3.Location = new System.Drawing.Point(660, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 20);
+            this.label3.TabIndex = 314;
+            this.label3.Text = "P. Avista:";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.Black;
+            this.label4.Location = new System.Drawing.Point(906, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(78, 20);
+            this.label4.TabIndex = 316;
+            this.label4.Text = "Est Atual:";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
+            this.label1.Location = new System.Drawing.Point(598, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(23, 20);
+            this.label1.TabIndex = 329;
+            this.label1.Text = "%";
+            // 
+            // btPesqProduto
+            // 
+            this.btPesqProduto.FlatAppearance.BorderSize = 0;
+            this.btPesqProduto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.btPesqProduto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btPesqProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPesqProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPesqProduto.Image = global::LojaPadraoMYSQL.Properties.Resources.lupa32x32;
+            this.btPesqProduto.Location = new System.Drawing.Point(99, 28);
+            this.btPesqProduto.Name = "btPesqProduto";
+            this.btPesqProduto.Size = new System.Drawing.Size(35, 35);
+            this.btPesqProduto.TabIndex = 1;
+            this.btPesqProduto.Text = "...";
+            this.btPesqProduto.UseVisualStyleBackColor = true;
+            this.btPesqProduto.Click += new System.EventHandler(this.btPesqProduto_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.Color.Black;
+            this.label9.Location = new System.Drawing.Point(756, 9);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(23, 20);
+            this.label9.TabIndex = 331;
+            this.label9.Text = "%";
+            // 
+            // btRemover
+            // 
+            this.btRemover.FlatAppearance.BorderSize = 0;
+            this.btRemover.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.btRemover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRemover.Image = global::LojaPadraoMYSQL.Properties.Resources.RemoverLinha32x32;
+            this.btRemover.Location = new System.Drawing.Point(1111, 47);
+            this.btRemover.Name = "btRemover";
+            this.btRemover.Size = new System.Drawing.Size(35, 35);
+            this.btRemover.TabIndex = 372;
+            this.btRemover.UseVisualStyleBackColor = true;
+            this.btRemover.Click += new System.EventHandler(this.btRemover_Click);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.ForeColor = System.Drawing.Color.Black;
+            this.label10.Location = new System.Drawing.Point(814, 8);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(72, 20);
+            this.label10.TabIndex = 333;
+            this.label10.Text = "P. Prazo:";
+            // 
+            // btAdd
+            // 
+            this.btAdd.FlatAppearance.BorderSize = 0;
+            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
+            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
+            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Image = global::LojaPadraoMYSQL.Properties.Resources.InserirLinha32x32;
+            this.btAdd.Location = new System.Drawing.Point(1113, 6);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(35, 35);
+            this.btAdd.TabIndex = 371;
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label23.ForeColor = System.Drawing.Color.Black;
+            this.label23.Location = new System.Drawing.Point(3, 9);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(46, 20);
+            this.label23.TabIndex = 361;
+            this.label23.Text = "Cod.:";
+            // 
+            // txtNomeProduto
+            // 
+            this.txtNomeProduto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtNomeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNomeProduto.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtNomeProduto.Location = new System.Drawing.Point(140, 32);
+            this.txtNomeProduto.MaxLength = 100;
+            this.txtNomeProduto.Name = "txtNomeProduto";
+            this.txtNomeProduto.Size = new System.Drawing.Size(364, 26);
+            this.txtNomeProduto.TabIndex = 2;
+            // 
+            // txtPrecoCusto
+            // 
+            this.txtPrecoCusto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPrecoCusto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecoCusto.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtPrecoCusto.Location = new System.Drawing.Point(510, 32);
+            this.txtPrecoCusto.MaxLength = 100;
+            this.txtPrecoCusto.Name = "txtPrecoCusto";
+            this.txtPrecoCusto.Size = new System.Drawing.Size(86, 26);
+            this.txtPrecoCusto.TabIndex = 3;
+            this.txtPrecoCusto.Text = "0,00";
+            this.txtPrecoCusto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoCusto_MouseClick);
+            this.txtPrecoCusto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoCusto_KeyPress);
+            this.txtPrecoCusto.Leave += new System.EventHandler(this.txtPrecoCusto_Leave);
+            // 
+            // txtPrecoAvista
+            // 
+            this.txtPrecoAvista.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPrecoAvista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecoAvista.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtPrecoAvista.Location = new System.Drawing.Point(664, 31);
+            this.txtPrecoAvista.MaxLength = 100;
+            this.txtPrecoAvista.Name = "txtPrecoAvista";
+            this.txtPrecoAvista.Size = new System.Drawing.Size(86, 26);
+            this.txtPrecoAvista.TabIndex = 5;
+            this.txtPrecoAvista.Text = "0,00";
+            this.txtPrecoAvista.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoAvista_MouseClick);
+            this.txtPrecoAvista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoAvista_KeyPress);
+            this.txtPrecoAvista.Leave += new System.EventHandler(this.txtPrecoAvista_Leave);
+            // 
+            // txtEstqAtual
+            // 
+            this.txtEstqAtual.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtEstqAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtEstqAtual.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtEstqAtual.Location = new System.Drawing.Point(910, 31);
+            this.txtEstqAtual.MaxLength = 100;
+            this.txtEstqAtual.Name = "txtEstqAtual";
+            this.txtEstqAtual.ReadOnly = true;
+            this.txtEstqAtual.Size = new System.Drawing.Size(70, 26);
+            this.txtEstqAtual.TabIndex = 8;
+            this.txtEstqAtual.Text = "0";
+            this.txtEstqAtual.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtEstqAtual_MouseClick);
+            this.txtEstqAtual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstqAtual_KeyPress);
+            // 
+            // txtPorcCusto
+            // 
+            this.txtPorcCusto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPorcCusto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPorcCusto.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtPorcCusto.Location = new System.Drawing.Point(602, 32);
+            this.txtPorcCusto.MaxLength = 100;
+            this.txtPorcCusto.Name = "txtPorcCusto";
+            this.txtPorcCusto.Size = new System.Drawing.Size(56, 26);
+            this.txtPorcCusto.TabIndex = 4;
+            this.txtPorcCusto.Text = "0";
+            this.txtPorcCusto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPorcCusto_MouseClick);
+            this.txtPorcCusto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcCusto_KeyPress);
+            this.txtPorcCusto.Leave += new System.EventHandler(this.txtPorcCusto_Leave);
+            // 
+            // txtQtdNova
+            // 
+            this.txtQtdNova.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtQtdNova.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtQtdNova.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtQtdNova.Location = new System.Drawing.Point(1032, 31);
+            this.txtQtdNova.MaxLength = 100;
+            this.txtQtdNova.Name = "txtQtdNova";
+            this.txtQtdNova.Size = new System.Drawing.Size(70, 26);
+            this.txtQtdNova.TabIndex = 2;
+            this.txtQtdNova.Text = "0";
+            this.txtQtdNova.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtQtdNova_MouseClick);
+            this.txtQtdNova.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdNova_KeyPress);
+            // 
+            // txtPorcAvista
+            // 
+            this.txtPorcAvista.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPorcAvista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPorcAvista.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtPorcAvista.Location = new System.Drawing.Point(756, 31);
+            this.txtPorcAvista.MaxLength = 100;
+            this.txtPorcAvista.Name = "txtPorcAvista";
+            this.txtPorcAvista.Size = new System.Drawing.Size(56, 26);
+            this.txtPorcAvista.TabIndex = 6;
+            this.txtPorcAvista.Text = "0";
+            this.txtPorcAvista.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPorcAvista_MouseClick);
+            this.txtPorcAvista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcAvista_KeyPress);
+            this.txtPorcAvista.Leave += new System.EventHandler(this.txtPorcAvista_Leave);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.Black;
+            this.label6.Location = new System.Drawing.Point(1028, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(79, 20);
+            this.label6.TabIndex = 363;
+            this.label6.Text = "Qtd Nova:";
+            // 
+            // txtPrecoPrazo
+            // 
+            this.txtPrecoPrazo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPrecoPrazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecoPrazo.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtPrecoPrazo.Location = new System.Drawing.Point(818, 31);
+            this.txtPrecoPrazo.MaxLength = 100;
+            this.txtPrecoPrazo.Name = "txtPrecoPrazo";
+            this.txtPrecoPrazo.Size = new System.Drawing.Size(86, 26);
+            this.txtPrecoPrazo.TabIndex = 7;
+            this.txtPrecoPrazo.Text = "0,00";
+            this.txtPrecoPrazo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoPrazo_MouseClick);
+            this.txtPrecoPrazo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoPrazo_KeyPress);
+            this.txtPrecoPrazo.Leave += new System.EventHandler(this.txtPrecoPrazo_Leave);
             // 
             // txtTotalCusto
             // 
@@ -437,22 +739,6 @@
             this.label14.TabIndex = 379;
             this.label14.Text = "Total Avista";
             // 
-            // btPesqProduto
-            // 
-            this.btPesqProduto.FlatAppearance.BorderSize = 0;
-            this.btPesqProduto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
-            this.btPesqProduto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
-            this.btPesqProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPesqProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPesqProduto.Image = global::LojaPadraoMYSQL.Properties.Resources.lupa32x32;
-            this.btPesqProduto.Location = new System.Drawing.Point(99, 28);
-            this.btPesqProduto.Name = "btPesqProduto";
-            this.btPesqProduto.Size = new System.Drawing.Size(35, 35);
-            this.btPesqProduto.TabIndex = 1;
-            this.btPesqProduto.Text = "...";
-            this.btPesqProduto.UseVisualStyleBackColor = true;
-            this.btPesqProduto.Click += new System.EventHandler(this.btPesqProduto_Click);
-            // 
             // txtTotalPrazo
             // 
             this.txtTotalPrazo.Enabled = false;
@@ -498,36 +784,6 @@
             this.label7.Size = new System.Drawing.Size(74, 17);
             this.label7.TabIndex = 374;
             this.label7.Text = "Total Itens";
-            // 
-            // btRemover
-            // 
-            this.btRemover.FlatAppearance.BorderSize = 0;
-            this.btRemover.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
-            this.btRemover.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
-            this.btRemover.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btRemover.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRemover.Image = global::LojaPadraoMYSQL.Properties.Resources.RemoverLinha32x32;
-            this.btRemover.Location = new System.Drawing.Point(1111, 47);
-            this.btRemover.Name = "btRemover";
-            this.btRemover.Size = new System.Drawing.Size(35, 35);
-            this.btRemover.TabIndex = 372;
-            this.btRemover.UseVisualStyleBackColor = true;
-            this.btRemover.Click += new System.EventHandler(this.btRemover_Click);
-            // 
-            // btAdd
-            // 
-            this.btAdd.FlatAppearance.BorderSize = 0;
-            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Lavender;
-            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Lavender;
-            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Image = global::LojaPadraoMYSQL.Properties.Resources.InserirLinha32x32;
-            this.btAdd.Location = new System.Drawing.Point(1113, 6);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(35, 35);
-            this.btAdd.TabIndex = 371;
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // dgvItens
             // 
@@ -670,233 +926,6 @@
             this.Column12.Name = "Column12";
             this.Column12.ReadOnly = true;
             this.Column12.Width = 93;
-            // 
-            // txtQtdNova
-            // 
-            this.txtQtdNova.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtQtdNova.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtQtdNova.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtQtdNova.Location = new System.Drawing.Point(1032, 31);
-            this.txtQtdNova.MaxLength = 100;
-            this.txtQtdNova.Name = "txtQtdNova";
-            this.txtQtdNova.Size = new System.Drawing.Size(70, 26);
-            this.txtQtdNova.TabIndex = 2;
-            this.txtQtdNova.Text = "0";
-            this.txtQtdNova.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtQtdNova_MouseClick);
-            this.txtQtdNova.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtQtdNova_KeyPress);
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(1028, 9);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(79, 20);
-            this.label6.TabIndex = 363;
-            this.label6.Text = "Qtd Nova:";
-            // 
-            // txtCodProduto
-            // 
-            this.txtCodProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCodProduto.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtCodProduto.Location = new System.Drawing.Point(7, 32);
-            this.txtCodProduto.MaxLength = 6;
-            this.txtCodProduto.Name = "txtCodProduto";
-            this.txtCodProduto.Size = new System.Drawing.Size(86, 26);
-            this.txtCodProduto.TabIndex = 0;
-            this.txtCodProduto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtCodProduto_MouseClick);
-            this.txtCodProduto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCodProduto_KeyPress);
-            this.txtCodProduto.Leave += new System.EventHandler(this.txtCodProduto_Leave);
-            // 
-            // txtPrecoPrazo
-            // 
-            this.txtPrecoPrazo.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPrecoPrazo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoPrazo.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPrecoPrazo.Location = new System.Drawing.Point(818, 31);
-            this.txtPrecoPrazo.MaxLength = 100;
-            this.txtPrecoPrazo.Name = "txtPrecoPrazo";
-            this.txtPrecoPrazo.Size = new System.Drawing.Size(86, 26);
-            this.txtPrecoPrazo.TabIndex = 7;
-            this.txtPrecoPrazo.Text = "0,00";
-            this.txtPrecoPrazo.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoPrazo_MouseClick);
-            this.txtPrecoPrazo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoPrazo_KeyPress);
-            this.txtPrecoPrazo.Leave += new System.EventHandler(this.txtPrecoPrazo_Leave);
-            // 
-            // txtPorcAvista
-            // 
-            this.txtPorcAvista.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPorcAvista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPorcAvista.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPorcAvista.Location = new System.Drawing.Point(756, 31);
-            this.txtPorcAvista.MaxLength = 100;
-            this.txtPorcAvista.Name = "txtPorcAvista";
-            this.txtPorcAvista.Size = new System.Drawing.Size(56, 26);
-            this.txtPorcAvista.TabIndex = 6;
-            this.txtPorcAvista.Text = "0";
-            this.txtPorcAvista.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPorcAvista_MouseClick);
-            this.txtPorcAvista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcAvista_KeyPress);
-            this.txtPorcAvista.Leave += new System.EventHandler(this.txtPorcAvista_Leave);
-            // 
-            // txtPorcCusto
-            // 
-            this.txtPorcCusto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPorcCusto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPorcCusto.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPorcCusto.Location = new System.Drawing.Point(602, 32);
-            this.txtPorcCusto.MaxLength = 100;
-            this.txtPorcCusto.Name = "txtPorcCusto";
-            this.txtPorcCusto.Size = new System.Drawing.Size(56, 26);
-            this.txtPorcCusto.TabIndex = 4;
-            this.txtPorcCusto.Text = "0";
-            this.txtPorcCusto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPorcCusto_MouseClick);
-            this.txtPorcCusto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPorcCusto_KeyPress);
-            this.txtPorcCusto.Leave += new System.EventHandler(this.txtPorcCusto_Leave);
-            // 
-            // txtEstqAtual
-            // 
-            this.txtEstqAtual.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtEstqAtual.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtEstqAtual.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtEstqAtual.Location = new System.Drawing.Point(910, 31);
-            this.txtEstqAtual.MaxLength = 100;
-            this.txtEstqAtual.Name = "txtEstqAtual";
-            this.txtEstqAtual.ReadOnly = true;
-            this.txtEstqAtual.Size = new System.Drawing.Size(70, 26);
-            this.txtEstqAtual.TabIndex = 8;
-            this.txtEstqAtual.Text = "0";
-            this.txtEstqAtual.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtEstqAtual_MouseClick);
-            this.txtEstqAtual.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtEstqAtual_KeyPress);
-            // 
-            // txtPrecoAvista
-            // 
-            this.txtPrecoAvista.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPrecoAvista.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoAvista.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPrecoAvista.Location = new System.Drawing.Point(664, 31);
-            this.txtPrecoAvista.MaxLength = 100;
-            this.txtPrecoAvista.Name = "txtPrecoAvista";
-            this.txtPrecoAvista.Size = new System.Drawing.Size(86, 26);
-            this.txtPrecoAvista.TabIndex = 5;
-            this.txtPrecoAvista.Text = "0,00";
-            this.txtPrecoAvista.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoAvista_MouseClick);
-            this.txtPrecoAvista.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoAvista_KeyPress);
-            this.txtPrecoAvista.Leave += new System.EventHandler(this.txtPrecoAvista_Leave);
-            // 
-            // txtPrecoCusto
-            // 
-            this.txtPrecoCusto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPrecoCusto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrecoCusto.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtPrecoCusto.Location = new System.Drawing.Point(510, 32);
-            this.txtPrecoCusto.MaxLength = 100;
-            this.txtPrecoCusto.Name = "txtPrecoCusto";
-            this.txtPrecoCusto.Size = new System.Drawing.Size(86, 26);
-            this.txtPrecoCusto.TabIndex = 3;
-            this.txtPrecoCusto.Text = "0,00";
-            this.txtPrecoCusto.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txtPrecoCusto_MouseClick);
-            this.txtPrecoCusto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecoCusto_KeyPress);
-            this.txtPrecoCusto.Leave += new System.EventHandler(this.txtPrecoCusto_Leave);
-            // 
-            // txtNomeProduto
-            // 
-            this.txtNomeProduto.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtNomeProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNomeProduto.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtNomeProduto.Location = new System.Drawing.Point(140, 32);
-            this.txtNomeProduto.MaxLength = 100;
-            this.txtNomeProduto.Name = "txtNomeProduto";
-            this.txtNomeProduto.Size = new System.Drawing.Size(364, 26);
-            this.txtNomeProduto.TabIndex = 2;
-            // 
-            // label23
-            // 
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.ForeColor = System.Drawing.Color.Black;
-            this.label23.Location = new System.Drawing.Point(3, 9);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(46, 20);
-            this.label23.TabIndex = 361;
-            this.label23.Text = "Cod.:";
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(814, 8);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(72, 20);
-            this.label10.TabIndex = 333;
-            this.label10.Text = "P. Prazo:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(756, 9);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(23, 20);
-            this.label9.TabIndex = 331;
-            this.label9.Text = "%";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(598, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 20);
-            this.label1.TabIndex = 329;
-            this.label1.Text = "%";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(906, 9);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 20);
-            this.label4.TabIndex = 316;
-            this.label4.Text = "Est Atual:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(660, 8);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 20);
-            this.label3.TabIndex = 314;
-            this.label3.Text = "P. Avista:";
-            // 
-            // lbRazaoSocial
-            // 
-            this.lbRazaoSocial.AutoSize = true;
-            this.lbRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbRazaoSocial.ForeColor = System.Drawing.Color.Black;
-            this.lbRazaoSocial.Location = new System.Drawing.Point(506, 8);
-            this.lbRazaoSocial.Name = "lbRazaoSocial";
-            this.lbRazaoSocial.Size = new System.Drawing.Size(73, 20);
-            this.lbRazaoSocial.TabIndex = 263;
-            this.lbRazaoSocial.Text = "P. Custo:";
-            // 
-            // lbNomeFantasia
-            // 
-            this.lbNomeFantasia.AutoSize = true;
-            this.lbNomeFantasia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNomeFantasia.ForeColor = System.Drawing.Color.Black;
-            this.lbNomeFantasia.Location = new System.Drawing.Point(136, 10);
-            this.lbNomeFantasia.Name = "lbNomeFantasia";
-            this.lbNomeFantasia.Size = new System.Drawing.Size(69, 20);
-            this.lbNomeFantasia.TabIndex = 264;
-            this.lbNomeFantasia.Text = "Produto:";
             // 
             // tabCompra
             // 
@@ -1228,35 +1257,6 @@
             this.gbInfo.TabIndex = 372;
             this.gbInfo.TabStop = false;
             // 
-            // pItensProdutos
-            // 
-            this.pItensProdutos.Controls.Add(this.txtCodProduto);
-            this.pItensProdutos.Controls.Add(this.brZerarEstoque);
-            this.pItensProdutos.Controls.Add(this.lbNomeFantasia);
-            this.pItensProdutos.Controls.Add(this.lbRazaoSocial);
-            this.pItensProdutos.Controls.Add(this.label3);
-            this.pItensProdutos.Controls.Add(this.label4);
-            this.pItensProdutos.Controls.Add(this.label1);
-            this.pItensProdutos.Controls.Add(this.btPesqProduto);
-            this.pItensProdutos.Controls.Add(this.label9);
-            this.pItensProdutos.Controls.Add(this.btRemover);
-            this.pItensProdutos.Controls.Add(this.label10);
-            this.pItensProdutos.Controls.Add(this.btAdd);
-            this.pItensProdutos.Controls.Add(this.label23);
-            this.pItensProdutos.Controls.Add(this.txtNomeProduto);
-            this.pItensProdutos.Controls.Add(this.txtPrecoCusto);
-            this.pItensProdutos.Controls.Add(this.txtPrecoAvista);
-            this.pItensProdutos.Controls.Add(this.txtEstqAtual);
-            this.pItensProdutos.Controls.Add(this.txtPorcCusto);
-            this.pItensProdutos.Controls.Add(this.txtQtdNova);
-            this.pItensProdutos.Controls.Add(this.txtPorcAvista);
-            this.pItensProdutos.Controls.Add(this.label6);
-            this.pItensProdutos.Controls.Add(this.txtPrecoPrazo);
-            this.pItensProdutos.Location = new System.Drawing.Point(0, 0);
-            this.pItensProdutos.Name = "pItensProdutos";
-            this.pItensProdutos.Size = new System.Drawing.Size(1152, 87);
-            this.pItensProdutos.TabIndex = 383;
-            // 
             // frmCadastroCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1278,6 +1278,8 @@
             this.gbDadosCompra.PerformLayout();
             this.tabProdutos.ResumeLayout(false);
             this.tabProdutos.PerformLayout();
+            this.pItensProdutos.ResumeLayout(false);
+            this.pItensProdutos.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvItens)).EndInit();
             this.tabCompra.ResumeLayout(false);
             this.tabPag.ResumeLayout(false);
@@ -1289,8 +1291,6 @@
             this.gbBotoes.ResumeLayout(false);
             this.gbInfo.ResumeLayout(false);
             this.gbInfo.PerformLayout();
-            this.pItensProdutos.ResumeLayout(false);
-            this.pItensProdutos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -1305,7 +1305,6 @@
         private System.Windows.Forms.Label lbDataCadastro;
         private System.Windows.Forms.Button btSair;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.Label lbCodigo;
         private System.Windows.Forms.Label label21;
         public System.Windows.Forms.TextBox txtDataCadastro;
@@ -1352,7 +1351,6 @@
         private System.Windows.Forms.TabPage tabPag;
         private System.Windows.Forms.TabPage tabObs;
         private System.Windows.Forms.GroupBox gbBotoes;
-        private System.Windows.Forms.Button btFaturar;
         private System.Windows.Forms.Button brZerarEstoque;
         private System.Windows.Forms.DateTimePicker dtpDataInicioPagamento;
         private System.Windows.Forms.GroupBox gbInfo;
@@ -1381,5 +1379,7 @@
         public System.Windows.Forms.Button btGerarParcela;
         public System.Windows.Forms.Button btRemoverParcela;
         public System.Windows.Forms.Panel pItensProdutos;
+        public System.Windows.Forms.Button btSalvar;
+        public System.Windows.Forms.Button btFaturar;
     }
 }

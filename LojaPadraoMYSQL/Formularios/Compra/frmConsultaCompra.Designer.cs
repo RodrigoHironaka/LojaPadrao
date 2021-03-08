@@ -30,10 +30,6 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.btSair = new System.Windows.Forms.Button();
-            this.btExc = new System.Windows.Forms.Button();
-            this.btEdt = new System.Windows.Forms.Button();
-            this.btAdd = new System.Windows.Forms.Button();
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.dgvDados = new System.Windows.Forms.DataGridView();
             this.pFiltro = new System.Windows.Forms.Panel();
@@ -54,69 +50,14 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btImprimir = new System.Windows.Forms.Button();
+            this.btAdd = new System.Windows.Forms.Button();
+            this.btEdt = new System.Windows.Forms.Button();
+            this.btSair = new System.Windows.Forms.Button();
+            this.btExc = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.pFiltro.SuspendLayout();
             this.gbBotoes.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btSair
-            // 
-            this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
-            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
-            this.btSair.Location = new System.Drawing.Point(749, 11);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(55, 55);
-            this.btSair.TabIndex = 12;
-            this.btSair.UseVisualStyleBackColor = true;
-            // 
-            // btExc
-            // 
-            this.btExc.FlatAppearance.BorderSize = 0;
-            this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btExc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
-            this.btExc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btExc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExc.Image = global::LojaPadraoMYSQL.Properties.Resources.Delete48x48;
-            this.btExc.Location = new System.Drawing.Point(627, 11);
-            this.btExc.Name = "btExc";
-            this.btExc.Size = new System.Drawing.Size(55, 55);
-            this.btExc.TabIndex = 11;
-            this.btExc.UseVisualStyleBackColor = true;
-            this.btExc.Click += new System.EventHandler(this.btExc_Click);
-            // 
-            // btEdt
-            // 
-            this.btEdt.FlatAppearance.BorderSize = 0;
-            this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btEdt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
-            this.btEdt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEdt.Image = global::LojaPadraoMYSQL.Properties.Resources.Editar48x48;
-            this.btEdt.Location = new System.Drawing.Point(566, 11);
-            this.btEdt.Name = "btEdt";
-            this.btEdt.Size = new System.Drawing.Size(55, 55);
-            this.btEdt.TabIndex = 10;
-            this.btEdt.UseVisualStyleBackColor = true;
-            this.btEdt.Click += new System.EventHandler(this.btEdt_Click);
-            // 
-            // btAdd
-            // 
-            this.btAdd.FlatAppearance.BorderSize = 0;
-            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
-            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Image = global::LojaPadraoMYSQL.Properties.Resources.Novo48x48;
-            this.btAdd.Location = new System.Drawing.Point(505, 11);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(55, 55);
-            this.btAdd.TabIndex = 9;
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
             // 
             // txtPesquisar
             // 
@@ -361,6 +302,67 @@
             this.btImprimir.Size = new System.Drawing.Size(55, 55);
             this.btImprimir.TabIndex = 13;
             this.btImprimir.UseVisualStyleBackColor = true;
+            this.btImprimir.Click += new System.EventHandler(this.btImprimir_Click);
+            // 
+            // btAdd
+            // 
+            this.btAdd.FlatAppearance.BorderSize = 0;
+            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Image = global::LojaPadraoMYSQL.Properties.Resources.Novo48x48;
+            this.btAdd.Location = new System.Drawing.Point(505, 11);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(55, 55);
+            this.btAdd.TabIndex = 9;
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
+            // btEdt
+            // 
+            this.btEdt.FlatAppearance.BorderSize = 0;
+            this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btEdt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btEdt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEdt.Image = global::LojaPadraoMYSQL.Properties.Resources.Editar48x48;
+            this.btEdt.Location = new System.Drawing.Point(566, 11);
+            this.btEdt.Name = "btEdt";
+            this.btEdt.Size = new System.Drawing.Size(55, 55);
+            this.btEdt.TabIndex = 10;
+            this.btEdt.UseVisualStyleBackColor = true;
+            this.btEdt.Click += new System.EventHandler(this.btEdt_Click);
+            // 
+            // btSair
+            // 
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
+            this.btSair.Location = new System.Drawing.Point(749, 11);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(55, 55);
+            this.btSair.TabIndex = 12;
+            this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
+            // 
+            // btExc
+            // 
+            this.btExc.FlatAppearance.BorderSize = 0;
+            this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
+            this.btExc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btExc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btExc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExc.Image = global::LojaPadraoMYSQL.Properties.Resources.Delete48x48;
+            this.btExc.Location = new System.Drawing.Point(627, 11);
+            this.btExc.Name = "btExc";
+            this.btExc.Size = new System.Drawing.Size(55, 55);
+            this.btExc.TabIndex = 11;
+            this.btExc.UseVisualStyleBackColor = true;
+            this.btExc.Click += new System.EventHandler(this.btExc_Click);
             // 
             // frmConsultaCompra
             // 
@@ -377,6 +379,7 @@
             this.Name = "frmConsultaCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Compras";
+            this.Load += new System.EventHandler(this.frmConsultaCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.pFiltro.ResumeLayout(false);
             this.pFiltro.PerformLayout();

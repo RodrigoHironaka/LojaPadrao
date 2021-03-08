@@ -31,6 +31,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.btSair = new System.Windows.Forms.Button();
             this.btExc = new System.Windows.Forms.Button();
@@ -45,10 +46,9 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pFiltro = new System.Windows.Forms.Panel();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dtpInicio = new System.Windows.Forms.DateTimePicker();
+            this.dtpFinal = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.gbBotoes.SuspendLayout();
             this.pFiltro.SuspendLayout();
@@ -56,13 +56,15 @@
             // 
             // cbStatus
             // 
+            this.cbStatus.BackColor = System.Drawing.Color.Teal;
             this.cbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbStatus.ForeColor = System.Drawing.Color.White;
             this.cbStatus.FormattingEnabled = true;
             this.cbStatus.Items.AddRange(new object[] {
             "Todos",
             "Ativos",
             "Inativos"});
-            this.cbStatus.Location = new System.Drawing.Point(14, 48);
+            this.cbStatus.Location = new System.Drawing.Point(152, 62);
             this.cbStatus.Name = "cbStatus";
             this.cbStatus.Size = new System.Drawing.Size(97, 28);
             this.cbStatus.TabIndex = 2;
@@ -70,14 +72,12 @@
             // 
             // btSair
             // 
-            this.btSair.BackColor = System.Drawing.Color.Lavender;
+            this.btSair.BackColor = System.Drawing.Color.Teal;
             this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
-            this.btSair.Location = new System.Drawing.Point(753, 19);
+            this.btSair.Location = new System.Drawing.Point(788, 19);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(50, 50);
             this.btSair.TabIndex = 6;
@@ -86,14 +86,12 @@
             // 
             // btExc
             // 
-            this.btExc.BackColor = System.Drawing.Color.Lavender;
+            this.btExc.BackColor = System.Drawing.Color.Teal;
             this.btExc.FlatAppearance.BorderSize = 0;
-            this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btExc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
             this.btExc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btExc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExc.Image = global::LojaPadraoMYSQL.Properties.Resources.Delete48x48;
-            this.btExc.Location = new System.Drawing.Point(697, 19);
+            this.btExc.Location = new System.Drawing.Point(732, 19);
             this.btExc.Name = "btExc";
             this.btExc.Size = new System.Drawing.Size(50, 50);
             this.btExc.TabIndex = 5;
@@ -102,14 +100,12 @@
             // 
             // btEdt
             // 
-            this.btEdt.BackColor = System.Drawing.Color.Lavender;
+            this.btEdt.BackColor = System.Drawing.Color.Teal;
             this.btEdt.FlatAppearance.BorderSize = 0;
-            this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btEdt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
             this.btEdt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEdt.Image = global::LojaPadraoMYSQL.Properties.Resources.Editar48x48;
-            this.btEdt.Location = new System.Drawing.Point(641, 19);
+            this.btEdt.Location = new System.Drawing.Point(676, 19);
             this.btEdt.Name = "btEdt";
             this.btEdt.Size = new System.Drawing.Size(50, 50);
             this.btEdt.TabIndex = 4;
@@ -118,14 +114,12 @@
             // 
             // btAdd
             // 
-            this.btAdd.BackColor = System.Drawing.Color.Lavender;
+            this.btAdd.BackColor = System.Drawing.Color.Teal;
             this.btAdd.FlatAppearance.BorderSize = 0;
-            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
             this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAdd.Image = global::LojaPadraoMYSQL.Properties.Resources.Novo48x48;
-            this.btAdd.Location = new System.Drawing.Point(585, 19);
+            this.btAdd.Location = new System.Drawing.Point(620, 19);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(50, 50);
             this.btAdd.TabIndex = 3;
@@ -134,11 +128,13 @@
             // 
             // txtPesquisa
             // 
+            this.txtPesquisa.BackColor = System.Drawing.Color.Teal;
             this.txtPesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisa.ForeColor = System.Drawing.Color.White;
             this.txtPesquisa.Location = new System.Drawing.Point(6, 19);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(573, 26);
+            this.txtPesquisa.Size = new System.Drawing.Size(608, 26);
             this.txtPesquisa.TabIndex = 0;
             this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             this.txtPesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisa_KeyDown);
@@ -148,47 +144,59 @@
             this.dgvDados.AllowUserToAddRows = false;
             this.dgvDados.AllowUserToDeleteRows = false;
             this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvDados.BackgroundColor = System.Drawing.Color.Lavender;
+            this.dgvDados.BackgroundColor = System.Drawing.Color.Teal;
             this.dgvDados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.LightSeaGreen;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black;
             dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.dgvDados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvDados.Location = new System.Drawing.Point(12, 12);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.Teal;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.DarkTurquoise;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDados.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDados.EnableHeadersVisualStyles = false;
+            this.dgvDados.Location = new System.Drawing.Point(0, 0);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.ReadOnly = true;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDados.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.MediumAquamarine;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDados.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDados.RowHeadersVisible = false;
             this.dgvDados.RowHeadersWidth = 62;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDados.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDados.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDados.Size = new System.Drawing.Size(810, 352);
+            this.dgvDados.Size = new System.Drawing.Size(850, 415);
             this.dgvDados.TabIndex = 7;
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // cbFiltroTipo
             // 
+            this.cbFiltroTipo.BackColor = System.Drawing.Color.Teal;
             this.cbFiltroTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFiltroTipo.ForeColor = System.Drawing.Color.White;
             this.cbFiltroTipo.FormattingEnabled = true;
             this.cbFiltroTipo.Items.AddRange(new object[] {
             "Todos",
             "Física",
             "Jurídica"});
-            this.cbFiltroTipo.Location = new System.Drawing.Point(14, 14);
+            this.cbFiltroTipo.Location = new System.Drawing.Point(152, 30);
             this.cbFiltroTipo.Name = "cbFiltroTipo";
             this.cbFiltroTipo.Size = new System.Drawing.Size(97, 28);
             this.cbFiltroTipo.TabIndex = 1;
@@ -196,7 +204,7 @@
             // 
             // gbBotoes
             // 
-            this.gbBotoes.BackColor = System.Drawing.Color.Lavender;
+            this.gbBotoes.BackColor = System.Drawing.Color.Teal;
             this.gbBotoes.Controls.Add(this.label5);
             this.gbBotoes.Controls.Add(this.label3);
             this.gbBotoes.Controls.Add(this.panel4);
@@ -206,9 +214,9 @@
             this.gbBotoes.Controls.Add(this.btExc);
             this.gbBotoes.Controls.Add(this.txtPesquisa);
             this.gbBotoes.Controls.Add(this.btSair);
-            this.gbBotoes.Location = new System.Drawing.Point(13, 370);
+            this.gbBotoes.Location = new System.Drawing.Point(0, 413);
             this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(809, 80);
+            this.gbBotoes.Size = new System.Drawing.Size(851, 87);
             this.gbBotoes.TabIndex = 8;
             this.gbBotoes.TabStop = false;
             // 
@@ -252,67 +260,67 @@
             // 
             // pFiltro
             // 
-            this.pFiltro.BackColor = System.Drawing.SystemColors.Control;
+            this.pFiltro.BackColor = System.Drawing.Color.Teal;
             this.pFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pFiltro.Controls.Add(this.dateTimePicker2);
-            this.pFiltro.Controls.Add(this.dateTimePicker1);
+            this.pFiltro.Controls.Add(this.dtpInicio);
+            this.pFiltro.Controls.Add(this.dtpFinal);
             this.pFiltro.Controls.Add(this.label1);
-            this.pFiltro.Controls.Add(this.label2);
             this.pFiltro.Controls.Add(this.cbFiltroTipo);
             this.pFiltro.Controls.Add(this.cbStatus);
-            this.pFiltro.Location = new System.Drawing.Point(19, 298);
+            this.pFiltro.Location = new System.Drawing.Point(6, 316);
             this.pFiltro.Name = "pFiltro";
-            this.pFiltro.Size = new System.Drawing.Size(573, 85);
+            this.pFiltro.Size = new System.Drawing.Size(265, 110);
             this.pFiltro.TabIndex = 9;
             // 
-            // dateTimePicker2
+            // dtpInicio
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(148, 48);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(118, 26);
-            this.dateTimePicker2.TabIndex = 10;
+            this.dtpInicio.CalendarForeColor = System.Drawing.Color.White;
+            this.dtpInicio.CalendarMonthBackground = System.Drawing.Color.Teal;
+            this.dtpInicio.CalendarTitleBackColor = System.Drawing.Color.Teal;
+            this.dtpInicio.CalendarTitleForeColor = System.Drawing.Color.Teal;
+            this.dtpInicio.CalendarTrailingForeColor = System.Drawing.Color.Teal;
+            this.dtpInicio.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpInicio.Location = new System.Drawing.Point(9, 32);
+            this.dtpInicio.Name = "dtpInicio";
+            this.dtpInicio.Size = new System.Drawing.Size(118, 26);
+            this.dtpInicio.TabIndex = 10;
             // 
-            // dateTimePicker1
+            // dtpFinal
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(296, 48);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(118, 26);
-            this.dateTimePicker1.TabIndex = 9;
+            this.dtpFinal.CalendarForeColor = System.Drawing.Color.White;
+            this.dtpFinal.CalendarMonthBackground = System.Drawing.Color.Teal;
+            this.dtpFinal.CalendarTitleBackColor = System.Drawing.Color.Teal;
+            this.dtpFinal.CalendarTitleForeColor = System.Drawing.Color.Teal;
+            this.dtpFinal.CalendarTrailingForeColor = System.Drawing.Color.Teal;
+            this.dtpFinal.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpFinal.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFinal.Location = new System.Drawing.Point(9, 64);
+            this.dtpFinal.Name = "dtpFinal";
+            this.dtpFinal.Size = new System.Drawing.Size(118, 26);
+            this.dtpFinal.TabIndex = 9;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(144, 22);
+            this.label1.Location = new System.Drawing.Point(5, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(135, 20);
+            this.label1.Size = new System.Drawing.Size(74, 20);
             this.label1.TabIndex = 11;
-            this.label1.Text = "Data de Cadastro";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(272, 51);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(18, 20);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "a";
+            this.label1.Text = "Cadastro";
             // 
             // frmConsultaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(834, 462);
+            this.BackColor = System.Drawing.Color.DarkCyan;
+            this.ClientSize = new System.Drawing.Size(850, 501);
             this.Controls.Add(this.pFiltro);
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.dgvDados);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
@@ -347,9 +355,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dtpInicio;
+        private System.Windows.Forms.DateTimePicker dtpFinal;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
     }
 }
