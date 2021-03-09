@@ -22,5 +22,11 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes
             this.Close();
           
         }
+
+        private void btCidades_Click(object sender, EventArgs e)
+        {
+            frmConsultaCidade f = new frmConsultaCidade();
+            f.ShowDialog();
+        }
     }
 }

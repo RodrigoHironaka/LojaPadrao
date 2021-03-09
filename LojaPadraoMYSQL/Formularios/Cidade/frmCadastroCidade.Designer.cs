@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroCidade));
             this.txtID = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btSair = new System.Windows.Forms.Button();
@@ -42,7 +43,7 @@
             // 
             // txtID
             // 
-            this.txtID.BackColor = System.Drawing.Color.Teal;
+            this.txtID.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.White;
             this.txtID.Location = new System.Drawing.Point(12, 32);
@@ -64,11 +65,14 @@
             // 
             // btSair
             // 
-            this.btSair.BackColor = System.Drawing.Color.Teal;
+            this.btSair.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
+            this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
             this.btSair.Location = new System.Drawing.Point(71, 10);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(50, 50);
@@ -78,11 +82,14 @@
             // 
             // btSalvar
             // 
-            this.btSalvar.BackColor = System.Drawing.Color.Teal;
+            this.btSalvar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btSalvar.FlatAppearance.BorderSize = 0;
+            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSalvar.Image = global::LojaPadraoMYSQL.Properties.Resources.Salvar48x48;
+            this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
             this.btSalvar.Location = new System.Drawing.Point(10, 10);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(50, 50);
@@ -106,7 +113,7 @@
             // 
             // txtNome
             // 
-            this.txtNome.BackColor = System.Drawing.Color.Teal;
+            this.txtNome.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.ForeColor = System.Drawing.Color.White;
@@ -128,7 +135,9 @@
             // 
             // cbUf
             // 
-            this.cbUf.BackColor = System.Drawing.Color.Teal;
+            this.cbUf.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cbUf.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUf.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbUf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbUf.ForeColor = System.Drawing.Color.White;
             this.cbUf.FormattingEnabled = true;
@@ -167,7 +176,7 @@
             // 
             // gbBotoes
             // 
-            this.gbBotoes.BackColor = System.Drawing.Color.Teal;
+            this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
             this.gbBotoes.Controls.Add(this.btSalvar);
             this.gbBotoes.Controls.Add(this.btSair);
             this.gbBotoes.Location = new System.Drawing.Point(195, 9);
@@ -180,7 +189,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkCyan;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(335, 128);
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.cbUf);

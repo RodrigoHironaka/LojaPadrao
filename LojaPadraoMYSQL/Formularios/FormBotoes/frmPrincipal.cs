@@ -56,7 +56,7 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes
         private void tDataHora_Tick(object sender, EventArgs e)
         {
             lbHora.Text = (DateTime.Now.ToLongTimeString());
-            lbData.Text = (DateTime.Now.ToLongDateString());
+            lbData.Text = (DateTime.Now.ToShortDateString());
         }
     }
 }

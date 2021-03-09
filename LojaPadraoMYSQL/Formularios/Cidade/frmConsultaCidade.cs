@@ -21,6 +21,7 @@ namespace LojaPadraoMYSQL.Formularios
         {
             InitializeComponent();
             cbStatus.SelectedIndex = 1;
+            
         }
 
         public frmConsultaCidade(bool selecao)
@@ -123,9 +124,9 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void frmConsultaCidade_Load(object sender, EventArgs e)
         {
-            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLCidade bll = new BLLCidade(cx);
-            dgvDados.DataSource = bll.CarregaGridAtivo();
+            //DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            //BLLCidade bll = new BLLCidade(cx);
+            //dgvDados.DataSource = bll.CarregaGridAtivo();
         }
 
         private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
