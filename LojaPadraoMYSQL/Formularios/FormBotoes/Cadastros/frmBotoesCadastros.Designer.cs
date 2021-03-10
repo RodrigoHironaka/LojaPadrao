@@ -29,263 +29,287 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBotoesCadastros));
-            this.button15 = new System.Windows.Forms.Button();
-            this.button14 = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btFormasPagamento = new System.Windows.Forms.Button();
+            this.btUnidades = new System.Windows.Forms.Button();
+            this.btUsuarios = new System.Windows.Forms.Button();
+            this.btTransportadoras = new System.Windows.Forms.Button();
+            this.btMarcas = new System.Windows.Forms.Button();
+            this.btSubGrupo = new System.Windows.Forms.Button();
+            this.btGrupos = new System.Windows.Forms.Button();
+            this.btProdutos = new System.Windows.Forms.Button();
+            this.btFornecedores = new System.Windows.Forms.Button();
+            this.btDepartamento = new System.Windows.Forms.Button();
+            this.btFuncoes = new System.Windows.Forms.Button();
+            this.btColaboradores = new System.Windows.Forms.Button();
             this.btCidades = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
+            this.btCliente = new System.Windows.Forms.Button();
+            this.btTiposGasto = new System.Windows.Forms.Button();
             this.btVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button15
+            // btFormasPagamento
             // 
-            this.button15.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button15.AutoSize = true;
-            this.button15.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button15.FlatAppearance.BorderSize = 0;
-            this.button15.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button15.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button15.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button15.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button15.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.button15.ForeColor = System.Drawing.Color.White;
-            this.button15.Location = new System.Drawing.Point(138, 264);
-            this.button15.Name = "button15";
-            this.button15.Size = new System.Drawing.Size(120, 120);
-            this.button15.TabIndex = 74;
-            this.button15.Text = "F. DE PAGAMENTO";
-            this.button15.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button15.UseVisualStyleBackColor = false;
+            this.btFormasPagamento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btFormasPagamento.AutoSize = true;
+            this.btFormasPagamento.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btFormasPagamento.FlatAppearance.BorderSize = 0;
+            this.btFormasPagamento.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btFormasPagamento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btFormasPagamento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btFormasPagamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btFormasPagamento.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btFormasPagamento.ForeColor = System.Drawing.Color.White;
+            this.btFormasPagamento.Image = ((System.Drawing.Image)(resources.GetObject("btFormasPagamento.Image")));
+            this.btFormasPagamento.Location = new System.Drawing.Point(138, 264);
+            this.btFormasPagamento.Name = "btFormasPagamento";
+            this.btFormasPagamento.Size = new System.Drawing.Size(120, 120);
+            this.btFormasPagamento.TabIndex = 74;
+            this.btFormasPagamento.Text = "F. DE PAGAMENTO";
+            this.btFormasPagamento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btFormasPagamento.UseVisualStyleBackColor = false;
+            this.btFormasPagamento.Click += new System.EventHandler(this.btFormasPagamento_Click);
             // 
-            // button14
+            // btUnidades
             // 
-            this.button14.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button14.AutoSize = true;
-            this.button14.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button14.FlatAppearance.BorderSize = 0;
-            this.button14.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button14.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button14.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button14.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button14.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.button14.ForeColor = System.Drawing.Color.White;
-            this.button14.Location = new System.Drawing.Point(390, 264);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(120, 120);
-            this.button14.TabIndex = 73;
-            this.button14.Text = "UNIDADES";
-            this.button14.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button14.UseVisualStyleBackColor = false;
+            this.btUnidades.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btUnidades.AutoSize = true;
+            this.btUnidades.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btUnidades.FlatAppearance.BorderSize = 0;
+            this.btUnidades.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btUnidades.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btUnidades.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btUnidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btUnidades.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btUnidades.ForeColor = System.Drawing.Color.White;
+            this.btUnidades.Image = ((System.Drawing.Image)(resources.GetObject("btUnidades.Image")));
+            this.btUnidades.Location = new System.Drawing.Point(390, 264);
+            this.btUnidades.Name = "btUnidades";
+            this.btUnidades.Size = new System.Drawing.Size(120, 120);
+            this.btUnidades.TabIndex = 73;
+            this.btUnidades.Text = "UNIDADES";
+            this.btUnidades.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btUnidades.UseVisualStyleBackColor = false;
+            this.btUnidades.Click += new System.EventHandler(this.btUnidades_Click);
             // 
-            // button13
+            // btUsuarios
             // 
-            this.button13.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button13.AutoSize = true;
-            this.button13.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button13.FlatAppearance.BorderSize = 0;
-            this.button13.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button13.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button13.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button13.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button13.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(517, 264);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(120, 120);
-            this.button13.TabIndex = 72;
-            this.button13.Text = "USUÁRIOS";
-            this.button13.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button13.UseVisualStyleBackColor = false;
+            this.btUsuarios.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btUsuarios.AutoSize = true;
+            this.btUsuarios.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btUsuarios.FlatAppearance.BorderSize = 0;
+            this.btUsuarios.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btUsuarios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btUsuarios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btUsuarios.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btUsuarios.ForeColor = System.Drawing.Color.White;
+            this.btUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btUsuarios.Image")));
+            this.btUsuarios.Location = new System.Drawing.Point(517, 264);
+            this.btUsuarios.Name = "btUsuarios";
+            this.btUsuarios.Size = new System.Drawing.Size(120, 120);
+            this.btUsuarios.TabIndex = 72;
+            this.btUsuarios.Text = "USUÁRIOS";
+            this.btUsuarios.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btUsuarios.UseVisualStyleBackColor = false;
+            this.btUsuarios.Click += new System.EventHandler(this.btUsuarios_Click);
             // 
-            // button12
+            // btTransportadoras
             // 
-            this.button12.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button12.AutoSize = true;
-            this.button12.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button12.FlatAppearance.BorderSize = 0;
-            this.button12.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button12.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button12.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(12, 264);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(120, 120);
-            this.button12.TabIndex = 71;
-            this.button12.Text = "TRANSPORTADORA";
-            this.button12.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button12.UseVisualStyleBackColor = false;
+            this.btTransportadoras.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btTransportadoras.AutoSize = true;
+            this.btTransportadoras.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btTransportadoras.FlatAppearance.BorderSize = 0;
+            this.btTransportadoras.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btTransportadoras.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btTransportadoras.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btTransportadoras.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btTransportadoras.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btTransportadoras.ForeColor = System.Drawing.Color.White;
+            this.btTransportadoras.Image = ((System.Drawing.Image)(resources.GetObject("btTransportadoras.Image")));
+            this.btTransportadoras.Location = new System.Drawing.Point(12, 264);
+            this.btTransportadoras.Name = "btTransportadoras";
+            this.btTransportadoras.Size = new System.Drawing.Size(120, 120);
+            this.btTransportadoras.TabIndex = 71;
+            this.btTransportadoras.Text = "TRANSPORTADORA";
+            this.btTransportadoras.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btTransportadoras.UseVisualStyleBackColor = false;
+            this.btTransportadoras.Click += new System.EventHandler(this.btTransportadoras_Click);
             // 
-            // button10
+            // btMarcas
             // 
-            this.button10.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button10.AutoSize = true;
-            this.button10.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button10.FlatAppearance.BorderSize = 0;
-            this.button10.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button10.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button10.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button10.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button10.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(516, 138);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(120, 120);
-            this.button10.TabIndex = 69;
-            this.button10.Text = "MARCAS";
-            this.button10.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button10.UseVisualStyleBackColor = false;
+            this.btMarcas.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btMarcas.AutoSize = true;
+            this.btMarcas.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btMarcas.FlatAppearance.BorderSize = 0;
+            this.btMarcas.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btMarcas.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btMarcas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btMarcas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btMarcas.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btMarcas.ForeColor = System.Drawing.Color.White;
+            this.btMarcas.Image = ((System.Drawing.Image)(resources.GetObject("btMarcas.Image")));
+            this.btMarcas.Location = new System.Drawing.Point(516, 138);
+            this.btMarcas.Name = "btMarcas";
+            this.btMarcas.Size = new System.Drawing.Size(120, 120);
+            this.btMarcas.TabIndex = 69;
+            this.btMarcas.Text = "MARCAS";
+            this.btMarcas.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btMarcas.UseVisualStyleBackColor = false;
+            this.btMarcas.Click += new System.EventHandler(this.btMarcas_Click);
             // 
-            // button9
+            // btSubGrupo
             // 
-            this.button9.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button9.AutoSize = true;
-            this.button9.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button9.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button9.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(390, 138);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(120, 120);
-            this.button9.TabIndex = 68;
-            this.button9.Text = "SUB-GRUPOS";
-            this.button9.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button9.UseVisualStyleBackColor = false;
+            this.btSubGrupo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btSubGrupo.AutoSize = true;
+            this.btSubGrupo.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btSubGrupo.FlatAppearance.BorderSize = 0;
+            this.btSubGrupo.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btSubGrupo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btSubGrupo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSubGrupo.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btSubGrupo.ForeColor = System.Drawing.Color.White;
+            this.btSubGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btSubGrupo.Image")));
+            this.btSubGrupo.Location = new System.Drawing.Point(390, 138);
+            this.btSubGrupo.Name = "btSubGrupo";
+            this.btSubGrupo.Size = new System.Drawing.Size(120, 120);
+            this.btSubGrupo.TabIndex = 68;
+            this.btSubGrupo.Text = "SUB-GRUPOS";
+            this.btSubGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btSubGrupo.UseVisualStyleBackColor = false;
+            this.btSubGrupo.Click += new System.EventHandler(this.btSubGrupo_Click);
             // 
-            // button8
+            // btGrupos
             // 
-            this.button8.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button8.AutoSize = true;
-            this.button8.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button8.FlatAppearance.BorderSize = 0;
-            this.button8.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button8.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button8.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button8.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(264, 138);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(120, 120);
-            this.button8.TabIndex = 67;
-            this.button8.Text = "GRUPOS";
-            this.button8.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button8.UseVisualStyleBackColor = false;
+            this.btGrupos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btGrupos.AutoSize = true;
+            this.btGrupos.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btGrupos.FlatAppearance.BorderSize = 0;
+            this.btGrupos.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btGrupos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btGrupos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btGrupos.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btGrupos.ForeColor = System.Drawing.Color.White;
+            this.btGrupos.Image = ((System.Drawing.Image)(resources.GetObject("btGrupos.Image")));
+            this.btGrupos.Location = new System.Drawing.Point(264, 138);
+            this.btGrupos.Name = "btGrupos";
+            this.btGrupos.Size = new System.Drawing.Size(120, 120);
+            this.btGrupos.TabIndex = 67;
+            this.btGrupos.Text = "GRUPOS";
+            this.btGrupos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btGrupos.UseVisualStyleBackColor = false;
+            this.btGrupos.Click += new System.EventHandler(this.btGrupos_Click);
             // 
-            // button7
+            // btProdutos
             // 
-            this.button7.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button7.AutoSize = true;
-            this.button7.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button7.FlatAppearance.BorderSize = 0;
-            this.button7.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button7.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button7.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button7.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(12, 138);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(120, 120);
-            this.button7.TabIndex = 66;
-            this.button7.Text = "PRODUTOS";
-            this.button7.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button7.UseVisualStyleBackColor = false;
+            this.btProdutos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btProdutos.AutoSize = true;
+            this.btProdutos.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btProdutos.FlatAppearance.BorderSize = 0;
+            this.btProdutos.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btProdutos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btProdutos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btProdutos.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btProdutos.ForeColor = System.Drawing.Color.White;
+            this.btProdutos.Image = ((System.Drawing.Image)(resources.GetObject("btProdutos.Image")));
+            this.btProdutos.Location = new System.Drawing.Point(12, 138);
+            this.btProdutos.Name = "btProdutos";
+            this.btProdutos.Size = new System.Drawing.Size(120, 120);
+            this.btProdutos.TabIndex = 66;
+            this.btProdutos.Text = "PRODUTOS";
+            this.btProdutos.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btProdutos.UseVisualStyleBackColor = false;
+            this.btProdutos.Click += new System.EventHandler(this.btProdutos_Click);
             // 
-            // button6
+            // btFornecedores
             // 
-            this.button6.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button6.AutoSize = true;
-            this.button6.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button6.FlatAppearance.BorderSize = 0;
-            this.button6.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button6.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(138, 138);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(120, 120);
-            this.button6.TabIndex = 65;
-            this.button6.Text = "FORNECEDORES";
-            this.button6.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button6.UseVisualStyleBackColor = false;
+            this.btFornecedores.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btFornecedores.AutoSize = true;
+            this.btFornecedores.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btFornecedores.FlatAppearance.BorderSize = 0;
+            this.btFornecedores.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btFornecedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btFornecedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btFornecedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btFornecedores.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btFornecedores.ForeColor = System.Drawing.Color.White;
+            this.btFornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btFornecedores.Image")));
+            this.btFornecedores.Location = new System.Drawing.Point(138, 138);
+            this.btFornecedores.Name = "btFornecedores";
+            this.btFornecedores.Size = new System.Drawing.Size(120, 120);
+            this.btFornecedores.TabIndex = 65;
+            this.btFornecedores.Text = "FORNECEDORES";
+            this.btFornecedores.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btFornecedores.UseVisualStyleBackColor = false;
+            this.btFornecedores.Click += new System.EventHandler(this.btFornecedores_Click);
             // 
-            // button5
+            // btDepartamento
             // 
-            this.button5.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button5.AutoSize = true;
-            this.button5.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button5.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button5.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(516, 12);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 120);
-            this.button5.TabIndex = 64;
-            this.button5.Text = "DEPARTAMENTOS";
-            this.button5.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button5.UseVisualStyleBackColor = false;
+            this.btDepartamento.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btDepartamento.AutoSize = true;
+            this.btDepartamento.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btDepartamento.FlatAppearance.BorderSize = 0;
+            this.btDepartamento.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btDepartamento.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btDepartamento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btDepartamento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btDepartamento.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btDepartamento.ForeColor = System.Drawing.Color.White;
+            this.btDepartamento.Image = ((System.Drawing.Image)(resources.GetObject("btDepartamento.Image")));
+            this.btDepartamento.Location = new System.Drawing.Point(516, 12);
+            this.btDepartamento.Name = "btDepartamento";
+            this.btDepartamento.Size = new System.Drawing.Size(120, 120);
+            this.btDepartamento.TabIndex = 64;
+            this.btDepartamento.Text = "DEPARTAMENTOS";
+            this.btDepartamento.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btDepartamento.UseVisualStyleBackColor = false;
+            this.btDepartamento.Click += new System.EventHandler(this.btDepartamento_Click);
             // 
-            // button4
+            // btFuncoes
             // 
-            this.button4.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button4.AutoSize = true;
-            this.button4.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(390, 12);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(120, 120);
-            this.button4.TabIndex = 63;
-            this.button4.Text = "FUNÇÕES";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btFuncoes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btFuncoes.AutoSize = true;
+            this.btFuncoes.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btFuncoes.FlatAppearance.BorderSize = 0;
+            this.btFuncoes.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btFuncoes.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btFuncoes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btFuncoes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btFuncoes.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btFuncoes.ForeColor = System.Drawing.Color.White;
+            this.btFuncoes.Image = ((System.Drawing.Image)(resources.GetObject("btFuncoes.Image")));
+            this.btFuncoes.Location = new System.Drawing.Point(390, 12);
+            this.btFuncoes.Name = "btFuncoes";
+            this.btFuncoes.Size = new System.Drawing.Size(120, 120);
+            this.btFuncoes.TabIndex = 63;
+            this.btFuncoes.Text = "FUNÇÕES";
+            this.btFuncoes.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btFuncoes.UseVisualStyleBackColor = false;
+            this.btFuncoes.Click += new System.EventHandler(this.btFuncoes_Click);
             // 
-            // button3
+            // btColaboradores
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.AutoSize = true;
-            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(264, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 120);
-            this.button3.TabIndex = 62;
-            this.button3.Text = "COLABORADORES";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btColaboradores.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btColaboradores.AutoSize = true;
+            this.btColaboradores.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btColaboradores.FlatAppearance.BorderSize = 0;
+            this.btColaboradores.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btColaboradores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btColaboradores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btColaboradores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btColaboradores.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btColaboradores.ForeColor = System.Drawing.Color.White;
+            this.btColaboradores.Image = ((System.Drawing.Image)(resources.GetObject("btColaboradores.Image")));
+            this.btColaboradores.Location = new System.Drawing.Point(264, 12);
+            this.btColaboradores.Name = "btColaboradores";
+            this.btColaboradores.Size = new System.Drawing.Size(120, 120);
+            this.btColaboradores.TabIndex = 62;
+            this.btColaboradores.Text = "COLABORADORES";
+            this.btColaboradores.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btColaboradores.UseVisualStyleBackColor = false;
+            this.btColaboradores.Click += new System.EventHandler(this.btColaboradores_Click);
             // 
             // btCidades
             // 
@@ -299,6 +323,7 @@
             this.btCidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btCidades.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btCidades.ForeColor = System.Drawing.Color.White;
+            this.btCidades.Image = ((System.Drawing.Image)(resources.GetObject("btCidades.Image")));
             this.btCidades.Location = new System.Drawing.Point(138, 12);
             this.btCidades.Name = "btCidades";
             this.btCidades.Size = new System.Drawing.Size(120, 120);
@@ -308,45 +333,49 @@
             this.btCidades.UseVisualStyleBackColor = false;
             this.btCidades.Click += new System.EventHandler(this.btCidades_Click);
             // 
-            // button1
+            // btCliente
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(12, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 120);
-            this.button1.TabIndex = 60;
-            this.button1.Text = "CLIENTES";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
+            this.btCliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btCliente.AutoSize = true;
+            this.btCliente.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btCliente.FlatAppearance.BorderSize = 0;
+            this.btCliente.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btCliente.ForeColor = System.Drawing.Color.White;
+            this.btCliente.Image = ((System.Drawing.Image)(resources.GetObject("btCliente.Image")));
+            this.btCliente.Location = new System.Drawing.Point(12, 12);
+            this.btCliente.Name = "btCliente";
+            this.btCliente.Size = new System.Drawing.Size(120, 120);
+            this.btCliente.TabIndex = 60;
+            this.btCliente.Text = "CLIENTES";
+            this.btCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btCliente.UseVisualStyleBackColor = false;
+            this.btCliente.Click += new System.EventHandler(this.btCliente_Click);
             // 
-            // button16
+            // btTiposGasto
             // 
-            this.button16.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button16.AutoSize = true;
-            this.button16.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button16.FlatAppearance.BorderSize = 0;
-            this.button16.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button16.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button16.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button16.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button16.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.button16.ForeColor = System.Drawing.Color.White;
-            this.button16.Location = new System.Drawing.Point(264, 264);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(120, 120);
-            this.button16.TabIndex = 75;
-            this.button16.Text = "TIPO GASTOS";
-            this.button16.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button16.UseVisualStyleBackColor = false;
+            this.btTiposGasto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btTiposGasto.AutoSize = true;
+            this.btTiposGasto.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btTiposGasto.FlatAppearance.BorderSize = 0;
+            this.btTiposGasto.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btTiposGasto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btTiposGasto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btTiposGasto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btTiposGasto.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btTiposGasto.ForeColor = System.Drawing.Color.White;
+            this.btTiposGasto.Image = ((System.Drawing.Image)(resources.GetObject("btTiposGasto.Image")));
+            this.btTiposGasto.Location = new System.Drawing.Point(264, 264);
+            this.btTiposGasto.Name = "btTiposGasto";
+            this.btTiposGasto.Size = new System.Drawing.Size(120, 120);
+            this.btTiposGasto.TabIndex = 75;
+            this.btTiposGasto.Text = "TIPO GASTOS";
+            this.btTiposGasto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btTiposGasto.UseVisualStyleBackColor = false;
+            this.btTiposGasto.Click += new System.EventHandler(this.btTiposGasto_Click);
             // 
             // btVoltar
             // 
@@ -363,7 +392,7 @@
             this.btVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btVoltar.Image")));
             this.btVoltar.Location = new System.Drawing.Point(12, 390);
             this.btVoltar.Name = "btVoltar";
-            this.btVoltar.Size = new System.Drawing.Size(45, 45);
+            this.btVoltar.Size = new System.Drawing.Size(54, 54);
             this.btVoltar.TabIndex = 76;
             this.btVoltar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btVoltar.UseVisualStyleBackColor = false;
@@ -376,21 +405,21 @@
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(644, 462);
             this.Controls.Add(this.btVoltar);
-            this.Controls.Add(this.button16);
-            this.Controls.Add(this.button15);
-            this.Controls.Add(this.button14);
-            this.Controls.Add(this.button13);
-            this.Controls.Add(this.button12);
-            this.Controls.Add(this.button10);
-            this.Controls.Add(this.button9);
-            this.Controls.Add(this.button8);
-            this.Controls.Add(this.button7);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btTiposGasto);
+            this.Controls.Add(this.btFormasPagamento);
+            this.Controls.Add(this.btUnidades);
+            this.Controls.Add(this.btUsuarios);
+            this.Controls.Add(this.btTransportadoras);
+            this.Controls.Add(this.btMarcas);
+            this.Controls.Add(this.btSubGrupo);
+            this.Controls.Add(this.btGrupos);
+            this.Controls.Add(this.btProdutos);
+            this.Controls.Add(this.btFornecedores);
+            this.Controls.Add(this.btDepartamento);
+            this.Controls.Add(this.btFuncoes);
+            this.Controls.Add(this.btColaboradores);
             this.Controls.Add(this.btCidades);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBotoesCadastros";
             this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
@@ -403,21 +432,21 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button15;
-        private System.Windows.Forms.Button button14;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btFormasPagamento;
+        private System.Windows.Forms.Button btUnidades;
+        private System.Windows.Forms.Button btUsuarios;
+        private System.Windows.Forms.Button btTransportadoras;
+        private System.Windows.Forms.Button btMarcas;
+        private System.Windows.Forms.Button btSubGrupo;
+        private System.Windows.Forms.Button btGrupos;
+        private System.Windows.Forms.Button btProdutos;
+        private System.Windows.Forms.Button btFornecedores;
+        private System.Windows.Forms.Button btDepartamento;
+        private System.Windows.Forms.Button btFuncoes;
+        private System.Windows.Forms.Button btColaboradores;
         private System.Windows.Forms.Button btCidades;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button16;
+        private System.Windows.Forms.Button btCliente;
+        private System.Windows.Forms.Button btTiposGasto;
         private System.Windows.Forms.Button btVoltar;
     }
 }

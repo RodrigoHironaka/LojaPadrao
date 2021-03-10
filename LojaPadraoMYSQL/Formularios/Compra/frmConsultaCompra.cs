@@ -26,14 +26,14 @@ namespace LojaPadraoMYSQL.Formularios
         public int idformapagamento = 0;
         public void AtualizaCabecalhoGridConsulta()
         {
-            dgvDados.Columns[0].HeaderText = "Cod";
-            dgvDados.Columns[1].HeaderText = "Cadastro";
-            dgvDados.Columns[2].HeaderText = "Nº Nota";
-            dgvDados.Columns[3].HeaderText = "Emissão";
-            dgvDados.Columns[4].HeaderText = "Valor Nota";
-            dgvDados.Columns[5].HeaderText = "Nº Forn";
-            dgvDados.Columns[6].HeaderText = "Fornecedor";
-            dgvDados.Columns[7].HeaderText = "Sit";
+            dgvDados.Columns[0].HeaderText = "COD";
+            dgvDados.Columns[1].HeaderText = "CADASTRO";
+            dgvDados.Columns[2].HeaderText = "Nº NOTA";
+            dgvDados.Columns[3].HeaderText = "EMISSÃO";
+            dgvDados.Columns[4].HeaderText = "VALOR NOTA";
+            dgvDados.Columns[5].HeaderText = "Nº FORN";
+            dgvDados.Columns[6].HeaderText = "FORNECEDOR";
+            dgvDados.Columns[7].HeaderText = "SIT";
             //dgvDados.Columns[8].Visible = false;
             //dgvDados.Columns[9].Visible = false;
             //dgvDados.Columns[10].Visible = false;
@@ -109,17 +109,17 @@ namespace LojaPadraoMYSQL.Formularios
                     if (modelocompra.Status == 'A')
                     {
                         f.lbStatus.Text = SituacaoCompra.Aberto.ToString().ToUpper();
-                        f.lbStatus.ForeColor = Color.Blue;
+                        f.lbStatus.ForeColor = Color.White;
                     }
                     else if (modelocompra.Status == 'F')
                     {
                         f.lbStatus.Text = SituacaoCompra.Faturado.ToString().ToUpper();
-                        f.lbStatus.ForeColor = Color.Green;
+                        f.lbStatus.ForeColor = Color.Lime;
                     }
                     else
                     {
                         f.lbStatus.Text = SituacaoCompra.Cancelado.ToString().ToUpper();
-                        f.lbStatus.ForeColor = Color.Red;
+                        f.lbStatus.ForeColor = Color.LightCoral;
                     }
 
                     //DADOS DA TABELA COMPRAITENS
@@ -161,11 +161,11 @@ namespace LojaPadraoMYSQL.Formularios
                         f.gbParcelas.Enabled = false;
                         f.pItensProdutos.Enabled = false;
                         f.dgvItens.Enabled = false;
-                        f.dgvItens.DefaultCellStyle.SelectionBackColor = Color.White;
-                        f.dgvItens.DefaultCellStyle.SelectionForeColor = Color.Black;
+                        f.dgvItens.DefaultCellStyle.SelectionBackColor = Color.DarkCyan;
+                        f.dgvItens.DefaultCellStyle.SelectionForeColor = Color.White;
                         f.dgvParcelas.Enabled = false;
-                        f.dgvParcelas.DefaultCellStyle.SelectionBackColor = Color.White;
-                        f.dgvParcelas.DefaultCellStyle.SelectionForeColor = Color.Black;
+                        f.dgvParcelas.DefaultCellStyle.SelectionBackColor = Color.DarkCyan;
+                        f.dgvParcelas.DefaultCellStyle.SelectionForeColor = Color.White;
                         f.txtObservacao.Enabled = false;
                         f.btFaturar.Enabled = false;
                         f.btSalvar.Enabled = false;

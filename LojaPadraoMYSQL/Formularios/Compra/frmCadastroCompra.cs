@@ -58,9 +58,10 @@ namespace LojaPadraoMYSQL.Formularios
             InitializeComponent();
             txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
             lbStatus.Text = Convert.ToString(SituacaoCompra.Aberto).ToUpper();
-            lbStatus.ForeColor = Color.Blue;
+            lbStatus.ForeColor = Color.White;
             dtpDataNota.Format = DateTimePickerFormat.Custom;
-            dtpDataNota.CustomFormat = " ";
+            //dtpDataNota.CustomFormat = " ";
+            dtpDataNota.CalendarMonthBackground = Color.Red;
             this.carregaFormaPagamento();
             this.AtualizaCabecalhoGridParcelas();
             
@@ -141,7 +142,7 @@ namespace LojaPadraoMYSQL.Formularios
                 txtCodFornecedor.Clear();
                 txtNomeFornecedor.Clear();
             }
-            lbCodFornecedor.ForeColor = Color.Black;
+            lbCodFornecedor.ForeColor = Color.White;
         }
 
         private void btPesqFornecedor_Click(object sender, EventArgs e)
@@ -507,7 +508,7 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 MessageBox.Show(ex.ToString());
             }
-            lbPrecoNota.ForeColor = Color.Black;
+            lbPrecoNota.ForeColor = Color.White;
         }
 
         //--------------------CAMPO SELECIONA PAGAMENTO E MOSTRA QTD DE PARCELAS----------------------
@@ -761,23 +762,23 @@ namespace LojaPadraoMYSQL.Formularios
                 if (txtCodFornecedor.Text == "")
                 {
                     MessageBox.Show("Informe um código válido para o Fornecedor", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    lbCodFornecedor.ForeColor = Color.Red;
+                    lbCodFornecedor.ForeColor = Color.LightCoral;
                     //lbCodFornecedor.Font = new Font(lbCodFornecedor.Font, FontStyle.Bold);
                     return;
                 }
                 else
                 {
-                    lbCodFornecedor.ForeColor = Color.Black;
+                    lbCodFornecedor.ForeColor = Color.White;
                 }
                 if (Convert.ToDecimal(txtPrecoNota.Text) <= 0)
                 {
                     MessageBox.Show("Informe um valor válido para o preço da nota", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    lbPrecoNota.ForeColor = Color.Red;
+                    lbPrecoNota.ForeColor = Color.LightCoral;
                     return;
                 }
                 else
                 {
-                    lbPrecoNota.ForeColor = Color.Black;
+                    lbPrecoNota.ForeColor = Color.White;
                 }
                 dgvParcelas.Rows.Clear();
 
@@ -1070,6 +1071,11 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 MessageBox.Show("Não foi possivel sair! Erro: " + ex.Message);
             }
+        }
+
+        private void txtObservacao_MouseClick(object sender, MouseEventArgs e)
+        {
+            txtQtdNova_MouseClick(sender, e);
         }
     }
 }

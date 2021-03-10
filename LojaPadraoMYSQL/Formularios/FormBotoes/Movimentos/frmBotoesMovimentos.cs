@@ -21,5 +21,11 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes.Movimentos
         {
             this.Close();
         }
+
+        private void btCompra_Click(object sender, EventArgs e)
+        {
+            frmConsultaCompra f = new frmConsultaCompra();
+            f.ShowDialog();
+        }
     }
 }

@@ -32,7 +32,7 @@
             this.button11 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btCompra = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.btVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -49,6 +49,7 @@
             this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.button11.ForeColor = System.Drawing.Color.White;
+            this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
             this.button11.Location = new System.Drawing.Point(138, 12);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(120, 120);
@@ -69,6 +70,7 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.Location = new System.Drawing.Point(264, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 120);
@@ -89,6 +91,7 @@
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.Location = new System.Drawing.Point(390, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 120);
@@ -97,25 +100,27 @@
             this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // button3
+            // btCompra
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.AutoSize = true;
-            this.button3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(12, 12);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(120, 120);
-            this.button3.TabIndex = 74;
-            this.button3.Text = "COMPRAS";
-            this.button3.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button3.UseVisualStyleBackColor = false;
+            this.btCompra.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btCompra.AutoSize = true;
+            this.btCompra.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btCompra.FlatAppearance.BorderSize = 0;
+            this.btCompra.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btCompra.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btCompra.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btCompra.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btCompra.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btCompra.ForeColor = System.Drawing.Color.White;
+            this.btCompra.Image = ((System.Drawing.Image)(resources.GetObject("btCompra.Image")));
+            this.btCompra.Location = new System.Drawing.Point(12, 12);
+            this.btCompra.Name = "btCompra";
+            this.btCompra.Size = new System.Drawing.Size(120, 120);
+            this.btCompra.TabIndex = 74;
+            this.btCompra.Text = "COMPRAS";
+            this.btCompra.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btCompra.UseVisualStyleBackColor = false;
+            this.btCompra.Click += new System.EventHandler(this.btCompra_Click);
             // 
             // button4
             // 
@@ -129,6 +134,7 @@
             this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.button4.ForeColor = System.Drawing.Color.White;
+            this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
             this.button4.Location = new System.Drawing.Point(516, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(120, 120);
@@ -165,7 +171,7 @@
             this.ClientSize = new System.Drawing.Size(800, 500);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.button4);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btCompra);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.button11);
@@ -187,7 +193,7 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btCompra;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btVoltar;
     }
