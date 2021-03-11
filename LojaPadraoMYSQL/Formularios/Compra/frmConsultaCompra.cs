@@ -157,18 +157,33 @@ namespace LojaPadraoMYSQL.Formularios
                     //VERIFICA SE COMPRA ESTA FATURADA E/OU CANCELA PROIBINDO DE EDITAR
                     if ((f.lbStatus.Text == "FATURADO") || (f.lbStatus.Text == "CANCELADO"))
                     {
-                        f.gbDadosCompra.Enabled = false;
-                        f.gbParcelas.Enabled = false;
-                        f.pItensProdutos.Enabled = false;
                         f.dgvItens.Enabled = false;
                         f.dgvItens.DefaultCellStyle.SelectionBackColor = Color.DarkCyan;
                         f.dgvItens.DefaultCellStyle.SelectionForeColor = Color.White;
                         f.dgvParcelas.Enabled = false;
                         f.dgvParcelas.DefaultCellStyle.SelectionBackColor = Color.DarkCyan;
                         f.dgvParcelas.DefaultCellStyle.SelectionForeColor = Color.White;
-                        f.txtObservacao.Enabled = false;
+                        f.txtObservacao.ReadOnly = true;
                         f.btFaturar.Enabled = false;
                         f.btSalvar.Enabled = false;
+                        f.txtID.ReadOnly = true;
+                        f.txtDataCadastro.ReadOnly = true;
+                        f.txtNumNota.ReadOnly = true;
+                        f.dtpDataNota.Enabled = false;
+                        f.txtPrecoNota.ReadOnly = true;
+                        f.txtCodFornecedor.ReadOnly = true;
+                        f.txtNomeFornecedor.ReadOnly = true;
+                        f.btPesqFornecedor.Enabled = false;
+                        f.btAdd.Enabled = false;
+                        f.btRemover.Enabled = false;
+                        f.btZerarEstoque.Enabled = false;
+                        f.btGerarParcela.Enabled = false;
+                        f.btPesqProduto.Enabled = false;
+                        f.btRemoverParcela.Enabled = false;
+                        f.cbPagamento.Enabled = false;
+                        f.cbQtdParcelas.Enabled = false;
+                        f.btReabrir.Visible = true;
+
                     }
 
                     //ABRE FORM DE CADASTRO COM DADOS EM SEUS CAMPOS
@@ -265,6 +280,109 @@ namespace LojaPadraoMYSQL.Formularios
         {
             frmFiltroRelCompra f = new frmFiltroRelCompra();
             f.ShowDialog();
+        }
+
+        private void btClonar_Click(object sender, EventArgs e)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLCompra bllcompra = new BLLCompra(cx);
+            BLLCompraItens bllitens = new BLLCompraItens(cx);
+            BLLCompraPagamento bllpagamento = new BLLCompraPagamento(cx);
+            frmCadastroCompra f = new frmCadastroCompra();
+            try
+            {
+                if (dgvDados.SelectedRows.Count == 0) //verifica se uma linha esta selecionada no grid ou nao
+                {
+                    MessageBox.Show("Nenhum registro selecionado!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
+                    //DADOS PRINCIPAIS DA COMPRA
+                    this.idcompra = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid 
+                    ModeloCompra modelocompra = bllcompra.CarregaModeloCompra(idcompra);
+                    f.txtID.Text = "";
+                    f.txtDataCadastro.Text = modelocompra.DataCadastro.ToString();
+                    f.txtNumNota.Text = modelocompra.NumNota.ToString();
+                    f.dtpDataNota.Format = DateTimePickerFormat.Custom;//deixo o datatimepicker livre para customizar
+                    f.dtpDataNota.CustomFormat = modelocompra.DataNota.ToString(); ;//aqui coloco a data da tabela no datatimepicker
+                    f.txtPrecoNota.Text = modelocompra.PrecoNota.ToString();
+                    f.txtObservacao.Text = modelocompra.Observacao;
+                    f.txtCodFornecedor.Text = modelocompra.FornecedorId.ToString();
+                    f.txtCodFornecedor_Leave(sender, e);
+                    f.txtTotalItens.Text = modelocompra.TotalItens.ToString();
+                    f.txtTotalCusto.Text = modelocompra.TotalCusto.ToString();
+                    f.txtTotalAvista.Text = modelocompra.TotalAvista.ToString();
+                    f.txtTotalPrazo.Text = modelocompra.TotalPrazo.ToString();
+                    f.lbStatus.Text = SituacaoCompra.Aberto.ToString().ToUpper();
+                    //f.lbStatus.ForeColor = Color.White;
+                   
+
+                    //DADOS DA TABELA COMPRAITENS
+                    DataTable tabelaitens = bllitens.Localizar(Convert.ToInt32(modelocompra.CompraId));
+                    for (int i = 0; i < tabelaitens.Rows.Count; i++)
+                    {
+                        string idproduto = tabelaitens.Rows[i]["idProduto"].ToString();
+                        string nomeproduto = tabelaitens.Rows[i]["nome"].ToString();
+                        string custo = tabelaitens.Rows[i]["precoCusto"].ToString();
+                        string pcusto = tabelaitens.Rows[i]["porcentagemCusto"].ToString();
+                        string avista = tabelaitens.Rows[i]["precoAvista"].ToString();
+                        string pavista = tabelaitens.Rows[i]["porcentagemAvista"].ToString();
+                        string prazo = tabelaitens.Rows[i]["precoPrazo"].ToString();
+                        string estatual = tabelaitens.Rows[i]["estAtual"].ToString();
+                        string estnovo = tabelaitens.Rows[i]["estNovo"].ToString();
+                        string esttotal = tabelaitens.Rows[i]["estTotal"].ToString();
+                        String[] it = new String[] { idproduto, nomeproduto, custo, pcusto, avista, pavista, prazo, estatual, estnovo, esttotal };
+                        f.dgvItens.Rows.Add(it);
+                    }
+
+
+                    //DADOS DA TABELA COMPRAPAGAMENTO
+                    DataTable tabelapagamento = bllpagamento.Localizar(Convert.ToInt32(modelocompra.CompraId));
+                    for (int i = 0; i < tabelapagamento.Rows.Count; i++)
+                    {
+                        string parcela = tabelapagamento.Rows[i]["NParcela"].ToString();
+                        string valor = tabelapagamento.Rows[i]["precoParcela"].ToString();
+                        DateTime dataparcela = Convert.ToDateTime(tabelapagamento.Rows[i]["dataInicioPagamento"].ToString());
+                        string data = dataparcela.ToString("dd/MM/yyyy");
+                        string formapag = tabelapagamento.Rows[i]["nome"].ToString();
+                        String[] ip = new String[] { parcela, valor, data, formapag };
+                        f.dgvParcelas.Rows.Add(ip);
+                    }
+
+                    //ABRE FORM DE CADASTRO COM DADOS EM SEUS CAMPOS
+                    f.ShowDialog();
+                    f.Dispose();
+
+                    //QNDO VOLTAR PARA CONSULTA E VOLTA A CARREGAR OS GRIDS COM AS FUNÇÕES ABAIXOS DEPENDENDO DO FILTRO SELECIONADO
+                    if (rbAberto.Checked)
+                    {
+                        dgvDados.DataSource = bllcompra.Localizar();
+                        dgvDados.ClearSelection();
+                    }
+                    else if (rbTodos.Checked)
+                    {
+                        dgvDados.DataSource = bllcompra.Localizar();
+                        dgvDados.ClearSelection();
+                    }
+                    else if (rbFaturado.Checked)
+                    {
+                        dgvDados.DataSource = bllcompra.LocalizarFaturados(txtPesquisar.Text);
+                        dgvDados.ClearSelection();
+                    }
+                    else if (rbCancelado.Checked)
+                    {
+                        dgvDados.DataSource = bllcompra.LocalizarCancelados(txtPesquisar.Text);
+                        dgvDados.ClearSelection();
+                    }
+                    dgvDados.ClearSelection();
+                    this.AtualizaCabecalhoGridConsulta();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("ERRO: " + ex.ToString());
+            }
         }
     }
 }

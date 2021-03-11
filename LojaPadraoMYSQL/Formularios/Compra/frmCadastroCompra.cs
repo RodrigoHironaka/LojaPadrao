@@ -39,7 +39,7 @@ namespace LojaPadraoMYSQL.Formularios
             dgvParcelas.Columns[1].HeaderText = "Valor";
             dgvParcelas.Columns[2].HeaderText = "Data";
             dgvParcelas.Columns[3].HeaderText = "F. Pagamento";
-            
+
         }
         //--------------------CARREGACOMBO---------------------------------------------------------
         private void carregaFormaPagamento()
@@ -59,19 +59,18 @@ namespace LojaPadraoMYSQL.Formularios
             txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
             lbStatus.Text = Convert.ToString(SituacaoCompra.Aberto).ToUpper();
             lbStatus.ForeColor = Color.White;
-            dtpDataNota.Format = DateTimePickerFormat.Custom;
-            //dtpDataNota.CustomFormat = " ";
+            btReabrir.Visible = false;
             dtpDataNota.CalendarMonthBackground = Color.Red;
             this.carregaFormaPagamento();
             this.AtualizaCabecalhoGridParcelas();
-            
+
         }
 
         //--------------------ABRIR NA JANELA QNDO FOR ALTERAR-------------------------------------
         public frmCadastroCompra(ModeloCompra modelocompra)
         {
             InitializeComponent();
-            
+
             ////carrega campos da tabela compra------------------------------------------------
             //txtID.Text = modelocompra.CompraId.ToString();
             //txtDataCadastro.Text = modelocompra.DataCadastro;
@@ -969,20 +968,20 @@ namespace LojaPadraoMYSQL.Formularios
                     //cadastrar itens da OS
                     for (int i = 0; i < dgvItens.RowCount; i++)
                     {
-                        modelocompraitens.CompraItensId =     i + 1;
-                        modelocompraitens.CompraId =          (int)modelocompra.CompraId;
-                        modelocompraitens.ProdutoId =         Convert.ToInt32(dgvItens.Rows[i].Cells[0].Value);
-                        modelocompraitens.PrecoCusto =        Convert.ToDecimal(dgvItens.Rows[i].Cells[2].Value);
-                        modelocompraitens.PorcentagemCusto =  Convert.ToDecimal(dgvItens.Rows[i].Cells[3].Value);
-                        modelocompraitens.PrecoAvista =       Convert.ToDecimal(dgvItens.Rows[i].Cells[4].Value);
+                        modelocompraitens.CompraItensId = i + 1;
+                        modelocompraitens.CompraId = (int)modelocompra.CompraId;
+                        modelocompraitens.ProdutoId = Convert.ToInt32(dgvItens.Rows[i].Cells[0].Value);
+                        modelocompraitens.PrecoCusto = Convert.ToDecimal(dgvItens.Rows[i].Cells[2].Value);
+                        modelocompraitens.PorcentagemCusto = Convert.ToDecimal(dgvItens.Rows[i].Cells[3].Value);
+                        modelocompraitens.PrecoAvista = Convert.ToDecimal(dgvItens.Rows[i].Cells[4].Value);
                         modelocompraitens.PorcentagemAvista = Convert.ToDecimal(dgvItens.Rows[i].Cells[5].Value);
-                        modelocompraitens.PrecoPrazo =        Convert.ToDecimal(dgvItens.Rows[i].Cells[6].Value);
-                        modelocompraitens.EstAtual =          Convert.ToDecimal(dgvItens.Rows[i].Cells[7].Value);
-                        modelocompraitens.EstNovo =           Convert.ToDecimal(dgvItens.Rows[i].Cells[8].Value);
-                        modelocompraitens.EstTotal =          Convert.ToDecimal(dgvItens.Rows[i].Cells[9].Value);
+                        modelocompraitens.PrecoPrazo = Convert.ToDecimal(dgvItens.Rows[i].Cells[6].Value);
+                        modelocompraitens.EstAtual = Convert.ToDecimal(dgvItens.Rows[i].Cells[7].Value);
+                        modelocompraitens.EstNovo = Convert.ToDecimal(dgvItens.Rows[i].Cells[8].Value);
+                        modelocompraitens.EstTotal = Convert.ToDecimal(dgvItens.Rows[i].Cells[9].Value);
                         bllcompraitens.Incluir(modelocompraitens);
                     }
-                    
+
 
                     //Pagamentos
                     modelocompra.CompraId = Int32.Parse(txtID.Text);
@@ -1061,11 +1060,11 @@ namespace LojaPadraoMYSQL.Formularios
                     if (resultado == DialogResult.Yes)
                         this.Close();
                 }
-                else if ((lbStatus.Text == "FATURADO")|| (lbStatus.Text == "CANCELADO"))
+                else if ((lbStatus.Text == "FATURADO") || (lbStatus.Text == "CANCELADO"))
                 {
                     this.Close();
                 }
-                
+
             }
             catch (Exception ex)
             {
@@ -1077,5 +1076,49 @@ namespace LojaPadraoMYSQL.Formularios
         {
             txtQtdNova_MouseClick(sender, e);
         }
+
+        //---------------------------------------------------------------------------------------------------------------
+        //DateTimePicker dtp = new DateTimePicker();
+        //Rectangle _rectangle;
+        //public void CalendarioGrid()
+        //{
+        //    dtp.Visible = false;
+        //    dtp.Format = DateTimePickerFormat.Custom;
+        //    dtp.TextChanged += new EventHandler(dtp_TextChange);
+        //}
+        private void dgvParcelas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtPrecoCusto_KeyPress(sender, e);
+        }
+
+        private void dgvParcelas_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            e.Control.KeyPress -= new KeyPressEventHandler(dgvParcelas_KeyPress);
+            if (dgvParcelas.CurrentCell.ColumnIndex == 1)
+            {
+                TextBox tb = e.Control as TextBox;
+                if (tb != null)
+                {
+                    tb.KeyPress += new KeyPressEventHandler(dgvParcelas_KeyPress);
+                }
+
+            }
+            //else if (dgvParcelas.CurrentCell.ColumnIndex == 2)
+            //{
+            //    dgvParcelas.Columns["Valor"].DefaultCellStyle.Format = "dd/MM/yyyy";
+            //}
+
+        }
+
+        private void dgvParcelas_CellLeave(object sender, DataGridViewCellEventArgs e)
+        {
+            //dgvParcelas.Columns["Valor"].DefaultCellStyle.Format = "N2";
+        }
+
+        private void dgvParcelas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            //dgvParcelas.Columns[1].DefaultCellStyle.Format = "N2";
+        }
     }
 }
+

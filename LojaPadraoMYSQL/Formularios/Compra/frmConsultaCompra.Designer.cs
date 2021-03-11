@@ -34,6 +34,7 @@
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.dgvDados = new System.Windows.Forms.DataGridView();
             this.pFiltro = new System.Windows.Forms.Panel();
+            this.pDivisao = new System.Windows.Forms.Panel();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.rbTodos = new System.Windows.Forms.RadioButton();
@@ -42,7 +43,6 @@
             this.rbAberto = new System.Windows.Forms.RadioButton();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.pDivisao = new System.Windows.Forms.Panel();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.btClonar = new System.Windows.Forms.Button();
             this.btImprimir = new System.Windows.Forms.Button();
@@ -96,6 +96,7 @@
             this.dgvDados.Location = new System.Drawing.Point(12, 12);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.ReadOnly = true;
+            this.dgvDados.RowHeadersVisible = false;
             this.dgvDados.RowHeadersWidth = 28;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDados.Size = new System.Drawing.Size(810, 399);
@@ -119,6 +120,14 @@
             this.pFiltro.Name = "pFiltro";
             this.pFiltro.Size = new System.Drawing.Size(432, 71);
             this.pFiltro.TabIndex = 14;
+            // 
+            // pDivisao
+            // 
+            this.pDivisao.BackColor = System.Drawing.Color.DarkCyan;
+            this.pDivisao.Location = new System.Drawing.Point(198, 5);
+            this.pDivisao.Name = "pDivisao";
+            this.pDivisao.Size = new System.Drawing.Size(1, 61);
+            this.pDivisao.TabIndex = 8;
             // 
             // dateTimePicker2
             // 
@@ -212,14 +221,6 @@
             this.label2.TabIndex = 7;
             this.label2.Text = "Data Final";
             // 
-            // pDivisao
-            // 
-            this.pDivisao.BackColor = System.Drawing.Color.DarkCyan;
-            this.pDivisao.Location = new System.Drawing.Point(198, 5);
-            this.pDivisao.Name = "pDivisao";
-            this.pDivisao.Size = new System.Drawing.Size(1, 61);
-            this.pDivisao.TabIndex = 8;
-            // 
             // gbBotoes
             // 
             this.gbBotoes.Controls.Add(this.btClonar);
@@ -249,6 +250,7 @@
             this.btClonar.Size = new System.Drawing.Size(55, 55);
             this.btClonar.TabIndex = 379;
             this.btClonar.UseVisualStyleBackColor = true;
+            this.btClonar.Click += new System.EventHandler(this.btClonar_Click);
             // 
             // btImprimir
             // 
