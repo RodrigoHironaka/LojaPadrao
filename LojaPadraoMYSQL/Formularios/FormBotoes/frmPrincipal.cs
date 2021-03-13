@@ -26,6 +26,7 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes
 
         private void btnCadastros_Click(object sender, EventArgs e)
         {
+            pFormInfo.Controls.Clear();
             frmBotoesCadastros f = new frmBotoesCadastros();
             f.TopLevel = false;
             pFormInfo.Controls.Add(f);
@@ -46,6 +47,7 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes
 
         private void button3_Click(object sender, EventArgs e)
         {
+            pFormInfo.Controls.Clear();
             frmBotoesMovimentos f = new frmBotoesMovimentos();
             f.TopLevel = false;
             pFormInfo.Controls.Add(f);
@@ -58,5 +60,22 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes
             lbHora.Text = (DateTime.Now.ToLongTimeString());
             lbData.Text = (DateTime.Now.ToShortDateString());
         }
+
+        //private void btTamanho_Click(object sender, EventArgs e)
+        //{
+     
+        //        if (WindowState != FormWindowState.Maximized) // se não está maximizado
+        //        {
+        //            WindowState = FormWindowState.Maximized; // maximiza
+        //            MaximumSize = this.Size;
+        //        }
+        //        else
+        //        {
+        //            this.WindowState = FormWindowState.Normal;
+
+        //        }
+       
+            
+        //}
     }
 }

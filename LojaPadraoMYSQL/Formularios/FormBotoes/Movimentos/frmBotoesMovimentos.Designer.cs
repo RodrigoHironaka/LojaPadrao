@@ -50,7 +50,7 @@
             this.button11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.Location = new System.Drawing.Point(138, 12);
+            this.button11.Location = new System.Drawing.Point(139, 12);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(120, 120);
             this.button11.TabIndex = 71;
@@ -71,7 +71,7 @@
             this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.button1.ForeColor = System.Drawing.Color.White;
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(264, 12);
+            this.button1.Location = new System.Drawing.Point(265, 12);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(120, 120);
             this.button1.TabIndex = 72;
@@ -92,7 +92,7 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(390, 12);
+            this.button2.Location = new System.Drawing.Point(391, 12);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 120);
             this.button2.TabIndex = 73;
@@ -113,7 +113,7 @@
             this.btCompra.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btCompra.ForeColor = System.Drawing.Color.White;
             this.btCompra.Image = ((System.Drawing.Image)(resources.GetObject("btCompra.Image")));
-            this.btCompra.Location = new System.Drawing.Point(12, 12);
+            this.btCompra.Location = new System.Drawing.Point(13, 12);
             this.btCompra.Name = "btCompra";
             this.btCompra.Size = new System.Drawing.Size(120, 120);
             this.btCompra.TabIndex = 74;
@@ -135,7 +135,7 @@
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(516, 12);
+            this.button4.Location = new System.Drawing.Point(517, 12);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(120, 120);
             this.button4.TabIndex = 75;
@@ -155,9 +155,9 @@
             this.btVoltar.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btVoltar.ForeColor = System.Drawing.Color.White;
             this.btVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btVoltar.Image")));
-            this.btVoltar.Location = new System.Drawing.Point(3, 452);
+            this.btVoltar.Location = new System.Drawing.Point(13, 138);
             this.btVoltar.Name = "btVoltar";
-            this.btVoltar.Size = new System.Drawing.Size(45, 45);
+            this.btVoltar.Size = new System.Drawing.Size(54, 54);
             this.btVoltar.TabIndex = 77;
             this.btVoltar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btVoltar.UseVisualStyleBackColor = false;
@@ -168,7 +168,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(800, 500);
+            this.ClientSize = new System.Drawing.Size(649, 462);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btCompra);

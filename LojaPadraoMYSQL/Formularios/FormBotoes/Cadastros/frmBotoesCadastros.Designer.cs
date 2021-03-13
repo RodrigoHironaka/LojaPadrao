@@ -60,7 +60,7 @@
             this.btFormasPagamento.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btFormasPagamento.ForeColor = System.Drawing.Color.White;
             this.btFormasPagamento.Image = ((System.Drawing.Image)(resources.GetObject("btFormasPagamento.Image")));
-            this.btFormasPagamento.Location = new System.Drawing.Point(138, 264);
+            this.btFormasPagamento.Location = new System.Drawing.Point(140, 264);
             this.btFormasPagamento.Name = "btFormasPagamento";
             this.btFormasPagamento.Size = new System.Drawing.Size(120, 120);
             this.btFormasPagamento.TabIndex = 74;
@@ -82,7 +82,7 @@
             this.btUnidades.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btUnidades.ForeColor = System.Drawing.Color.White;
             this.btUnidades.Image = ((System.Drawing.Image)(resources.GetObject("btUnidades.Image")));
-            this.btUnidades.Location = new System.Drawing.Point(390, 264);
+            this.btUnidades.Location = new System.Drawing.Point(392, 264);
             this.btUnidades.Name = "btUnidades";
             this.btUnidades.Size = new System.Drawing.Size(120, 120);
             this.btUnidades.TabIndex = 73;
@@ -104,7 +104,7 @@
             this.btUsuarios.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btUsuarios.ForeColor = System.Drawing.Color.White;
             this.btUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btUsuarios.Image")));
-            this.btUsuarios.Location = new System.Drawing.Point(517, 264);
+            this.btUsuarios.Location = new System.Drawing.Point(519, 264);
             this.btUsuarios.Name = "btUsuarios";
             this.btUsuarios.Size = new System.Drawing.Size(120, 120);
             this.btUsuarios.TabIndex = 72;
@@ -126,7 +126,7 @@
             this.btTransportadoras.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btTransportadoras.ForeColor = System.Drawing.Color.White;
             this.btTransportadoras.Image = ((System.Drawing.Image)(resources.GetObject("btTransportadoras.Image")));
-            this.btTransportadoras.Location = new System.Drawing.Point(12, 264);
+            this.btTransportadoras.Location = new System.Drawing.Point(14, 264);
             this.btTransportadoras.Name = "btTransportadoras";
             this.btTransportadoras.Size = new System.Drawing.Size(120, 120);
             this.btTransportadoras.TabIndex = 71;
@@ -148,7 +148,7 @@
             this.btMarcas.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btMarcas.ForeColor = System.Drawing.Color.White;
             this.btMarcas.Image = ((System.Drawing.Image)(resources.GetObject("btMarcas.Image")));
-            this.btMarcas.Location = new System.Drawing.Point(516, 138);
+            this.btMarcas.Location = new System.Drawing.Point(518, 138);
             this.btMarcas.Name = "btMarcas";
             this.btMarcas.Size = new System.Drawing.Size(120, 120);
             this.btMarcas.TabIndex = 69;
@@ -170,7 +170,7 @@
             this.btSubGrupo.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btSubGrupo.ForeColor = System.Drawing.Color.White;
             this.btSubGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btSubGrupo.Image")));
-            this.btSubGrupo.Location = new System.Drawing.Point(390, 138);
+            this.btSubGrupo.Location = new System.Drawing.Point(392, 138);
             this.btSubGrupo.Name = "btSubGrupo";
             this.btSubGrupo.Size = new System.Drawing.Size(120, 120);
             this.btSubGrupo.TabIndex = 68;
@@ -192,7 +192,7 @@
             this.btGrupos.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btGrupos.ForeColor = System.Drawing.Color.White;
             this.btGrupos.Image = ((System.Drawing.Image)(resources.GetObject("btGrupos.Image")));
-            this.btGrupos.Location = new System.Drawing.Point(264, 138);
+            this.btGrupos.Location = new System.Drawing.Point(266, 138);
             this.btGrupos.Name = "btGrupos";
             this.btGrupos.Size = new System.Drawing.Size(120, 120);
             this.btGrupos.TabIndex = 67;
@@ -214,7 +214,7 @@
             this.btProdutos.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btProdutos.ForeColor = System.Drawing.Color.White;
             this.btProdutos.Image = ((System.Drawing.Image)(resources.GetObject("btProdutos.Image")));
-            this.btProdutos.Location = new System.Drawing.Point(12, 138);
+            this.btProdutos.Location = new System.Drawing.Point(14, 138);
             this.btProdutos.Name = "btProdutos";
             this.btProdutos.Size = new System.Drawing.Size(120, 120);
             this.btProdutos.TabIndex = 66;
@@ -236,7 +236,7 @@
             this.btFornecedores.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btFornecedores.ForeColor = System.Drawing.Color.White;
             this.btFornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btFornecedores.Image")));
-            this.btFornecedores.Location = new System.Drawing.Point(138, 138);
+            this.btFornecedores.Location = new System.Drawing.Point(140, 138);
             this.btFornecedores.Name = "btFornecedores";
             this.btFornecedores.Size = new System.Drawing.Size(120, 120);
             this.btFornecedores.TabIndex = 65;
@@ -258,7 +258,7 @@
             this.btDepartamento.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btDepartamento.ForeColor = System.Drawing.Color.White;
             this.btDepartamento.Image = ((System.Drawing.Image)(resources.GetObject("btDepartamento.Image")));
-            this.btDepartamento.Location = new System.Drawing.Point(516, 12);
+            this.btDepartamento.Location = new System.Drawing.Point(518, 12);
             this.btDepartamento.Name = "btDepartamento";
             this.btDepartamento.Size = new System.Drawing.Size(120, 120);
             this.btDepartamento.TabIndex = 64;
@@ -280,7 +280,7 @@
             this.btFuncoes.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btFuncoes.ForeColor = System.Drawing.Color.White;
             this.btFuncoes.Image = ((System.Drawing.Image)(resources.GetObject("btFuncoes.Image")));
-            this.btFuncoes.Location = new System.Drawing.Point(390, 12);
+            this.btFuncoes.Location = new System.Drawing.Point(392, 12);
             this.btFuncoes.Name = "btFuncoes";
             this.btFuncoes.Size = new System.Drawing.Size(120, 120);
             this.btFuncoes.TabIndex = 63;
@@ -302,7 +302,7 @@
             this.btColaboradores.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btColaboradores.ForeColor = System.Drawing.Color.White;
             this.btColaboradores.Image = ((System.Drawing.Image)(resources.GetObject("btColaboradores.Image")));
-            this.btColaboradores.Location = new System.Drawing.Point(264, 12);
+            this.btColaboradores.Location = new System.Drawing.Point(266, 12);
             this.btColaboradores.Name = "btColaboradores";
             this.btColaboradores.Size = new System.Drawing.Size(120, 120);
             this.btColaboradores.TabIndex = 62;
@@ -324,7 +324,7 @@
             this.btCidades.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btCidades.ForeColor = System.Drawing.Color.White;
             this.btCidades.Image = ((System.Drawing.Image)(resources.GetObject("btCidades.Image")));
-            this.btCidades.Location = new System.Drawing.Point(138, 12);
+            this.btCidades.Location = new System.Drawing.Point(140, 12);
             this.btCidades.Name = "btCidades";
             this.btCidades.Size = new System.Drawing.Size(120, 120);
             this.btCidades.TabIndex = 61;
@@ -346,7 +346,7 @@
             this.btCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btCliente.ForeColor = System.Drawing.Color.White;
             this.btCliente.Image = ((System.Drawing.Image)(resources.GetObject("btCliente.Image")));
-            this.btCliente.Location = new System.Drawing.Point(12, 12);
+            this.btCliente.Location = new System.Drawing.Point(14, 12);
             this.btCliente.Name = "btCliente";
             this.btCliente.Size = new System.Drawing.Size(120, 120);
             this.btCliente.TabIndex = 60;
@@ -368,7 +368,7 @@
             this.btTiposGasto.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btTiposGasto.ForeColor = System.Drawing.Color.White;
             this.btTiposGasto.Image = ((System.Drawing.Image)(resources.GetObject("btTiposGasto.Image")));
-            this.btTiposGasto.Location = new System.Drawing.Point(264, 264);
+            this.btTiposGasto.Location = new System.Drawing.Point(266, 264);
             this.btTiposGasto.Name = "btTiposGasto";
             this.btTiposGasto.Size = new System.Drawing.Size(120, 120);
             this.btTiposGasto.TabIndex = 75;
@@ -402,8 +402,9 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(644, 462);
+            this.ClientSize = new System.Drawing.Size(649, 462);
             this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.btTiposGasto);
             this.Controls.Add(this.btFormasPagamento);
@@ -422,7 +423,7 @@
             this.Controls.Add(this.btCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmBotoesCadastros";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.Manual;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBotoesCadastros";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.ResumeLayout(false);

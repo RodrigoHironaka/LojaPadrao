@@ -61,7 +61,7 @@
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(827, 478);
+            this.panel1.Size = new System.Drawing.Size(877, 577);
             this.panel1.TabIndex = 0;
             // 
             // pFormInfo
@@ -74,7 +74,7 @@
             this.pFormInfo.BackColor = System.Drawing.Color.CadetBlue;
             this.pFormInfo.Location = new System.Drawing.Point(243, 46);
             this.pFormInfo.Name = "pFormInfo";
-            this.pFormInfo.Size = new System.Drawing.Size(581, 432);
+            this.pFormInfo.Size = new System.Drawing.Size(631, 531);
             this.pFormInfo.TabIndex = 3;
             // 
             // pBotoesMenu
@@ -87,7 +87,7 @@
             this.pBotoesMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pBotoesMenu.Location = new System.Drawing.Point(0, 45);
             this.pBotoesMenu.Name = "pBotoesMenu";
-            this.pBotoesMenu.Size = new System.Drawing.Size(240, 433);
+            this.pBotoesMenu.Size = new System.Drawing.Size(240, 532);
             this.pBotoesMenu.TabIndex = 3;
             // 
             // button6
@@ -169,7 +169,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(827, 45);
+            this.panel3.Size = new System.Drawing.Size(877, 45);
             this.panel3.TabIndex = 2;
             // 
             // label1
@@ -191,7 +191,7 @@
             this.lbData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbData.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbData.ForeColor = System.Drawing.Color.White;
-            this.lbData.Location = new System.Drawing.Point(475, 10);
+            this.lbData.Location = new System.Drawing.Point(541, 9);
             this.lbData.Name = "lbData";
             this.lbData.Size = new System.Drawing.Size(131, 29);
             this.lbData.TabIndex = 1;
@@ -204,7 +204,7 @@
             this.lbHora.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.lbHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbHora.ForeColor = System.Drawing.Color.White;
-            this.lbHora.Location = new System.Drawing.Point(612, 11);
+            this.lbHora.Location = new System.Drawing.Point(678, 10);
             this.lbHora.Name = "lbHora";
             this.lbHora.Size = new System.Drawing.Size(103, 29);
             this.lbHora.TabIndex = 0;
@@ -216,7 +216,7 @@
             this.btMinimizar.FlatAppearance.BorderSize = 0;
             this.btMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btMinimizar.Image")));
-            this.btMinimizar.Location = new System.Drawing.Point(737, 0);
+            this.btMinimizar.Location = new System.Drawing.Point(787, 0);
             this.btMinimizar.Name = "btMinimizar";
             this.btMinimizar.Size = new System.Drawing.Size(45, 45);
             this.btMinimizar.TabIndex = 2;
@@ -229,7 +229,7 @@
             this.lbTitulo.AutoSize = true;
             this.lbTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 20F);
             this.lbTitulo.ForeColor = System.Drawing.Color.White;
-            this.lbTitulo.Location = new System.Drawing.Point(372, 4);
+            this.lbTitulo.Location = new System.Drawing.Point(413, 3);
             this.lbTitulo.Name = "lbTitulo";
             this.lbTitulo.Size = new System.Drawing.Size(96, 37);
             this.lbTitulo.TabIndex = 1;
@@ -242,7 +242,7 @@
             this.btnDesligar.FlatAppearance.BorderSize = 0;
             this.btnDesligar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDesligar.Image = ((System.Drawing.Image)(resources.GetObject("btnDesligar.Image")));
-            this.btnDesligar.Location = new System.Drawing.Point(782, 0);
+            this.btnDesligar.Location = new System.Drawing.Point(832, 0);
             this.btnDesligar.Name = "btnDesligar";
             this.btnDesligar.Size = new System.Drawing.Size(45, 45);
             this.btnDesligar.TabIndex = 0;
@@ -260,7 +260,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(850, 501);
+            this.ClientSize = new System.Drawing.Size(900, 600);
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPrincipal";
