@@ -15,13 +15,19 @@ namespace LojaPadraoMYSQL.Formularios
 {
     public partial class frmConsultaCidade : Form
     {
-        
         public int id = 0;
+        public void AtualizaCabecalhoGridDados()
+        {
+            dgvDados.Columns[0].HeaderText = "COD";
+            dgvDados.Columns[1].HeaderText = "NOME";
+            dgvDados.Columns[2].HeaderText = "UF";
+            dgvDados.Columns[3].HeaderText = "SIT";
+        }
         public frmConsultaCidade()
         {
             InitializeComponent();
             cbStatus.SelectedIndex = 1;
-            
+            this.AtualizaCabecalhoGridDados();
         }
 
         public frmConsultaCidade(bool selecao)
@@ -102,6 +108,7 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
+            pFiltro.Visible = true;
             if (cbStatus.SelectedIndex == 1)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
@@ -194,6 +201,11 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 btExc_Click(sender, e);
             }
+        }
+
+        private void txtPesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+            pFiltro.Visible = false;
         }
     }
 }

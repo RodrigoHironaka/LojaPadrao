@@ -21,12 +21,7 @@ namespace LojaPadraoMYSQL.Formularios.Base.Consultas
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            //frmCadastro f = new frmCadastro();
-            //f.ShowDialog();
-            //DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            //BLL bll = new BLLC(cx);
-            //dgvDados.DataSource = bll.CarregaGridAtivo();
-            //cbStatus.SelectedIndex = 1;
+           
         }
 
         private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
@@ -51,7 +46,7 @@ namespace LojaPadraoMYSQL.Formularios.Base.Consultas
 
         private void btSair_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
     }
 }
