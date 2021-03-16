@@ -102,6 +102,7 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
+            pFiltro.Visible = true;
             if(cbStatus.SelectedIndex == 1)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
@@ -195,6 +196,11 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 btExc_Click(sender, e);
             }
+        }
+
+        private void txtPesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+            pFiltro.Visible = false;
         }
     }
 }

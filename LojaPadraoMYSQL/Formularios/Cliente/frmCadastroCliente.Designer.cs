@@ -31,9 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroCliente));
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tpageDadosPrincipais = new System.Windows.Forms.TabPage();
-            this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.btSair = new System.Windows.Forms.Button();
-            this.btSalvar = new System.Windows.Forms.Button();
             this.monthCalNasc = new System.Windows.Forms.MonthCalendar();
             this.pbFoto = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -86,29 +83,32 @@
             this.lbTipoPessoa = new System.Windows.Forms.Label();
             this.lbCelular = new System.Windows.Forms.Label();
             this.lbDataNasc = new System.Windows.Forms.Label();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.btSair = new System.Windows.Forms.Button();
+            this.btSalvar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpageDadosPrincipais.SuspendLayout();
-            this.gbBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCpfcnpjInvalido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCalendario)).BeginInit();
+            this.gbBotoes.SuspendLayout();
             this.tabControl1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(818, 451);
+            this.tabPage2.Size = new System.Drawing.Size(841, 431);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Outros";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tpageDadosPrincipais
             // 
-            this.tpageDadosPrincipais.BackColor = System.Drawing.Color.Teal;
+            this.tpageDadosPrincipais.BackColor = System.Drawing.Color.DarkSlateGray;
             this.tpageDadosPrincipais.Controls.Add(this.monthCalNasc);
             this.tpageDadosPrincipais.Controls.Add(this.pbFoto);
             this.tpageDadosPrincipais.Controls.Add(this.label2);
@@ -164,53 +164,14 @@
             this.tpageDadosPrincipais.Location = new System.Drawing.Point(4, 22);
             this.tpageDadosPrincipais.Name = "tpageDadosPrincipais";
             this.tpageDadosPrincipais.Padding = new System.Windows.Forms.Padding(3);
-            this.tpageDadosPrincipais.Size = new System.Drawing.Size(841, 446);
+            this.tpageDadosPrincipais.Size = new System.Drawing.Size(841, 431);
             this.tpageDadosPrincipais.TabIndex = 0;
             this.tpageDadosPrincipais.Text = "Dados Principais";
             this.tpageDadosPrincipais.Click += new System.EventHandler(this.tpageDadosPrincipais_Click);
             // 
-            // gbBotoes
-            // 
-            this.gbBotoes.BackColor = System.Drawing.Color.Teal;
-            this.gbBotoes.Controls.Add(this.btSair);
-            this.gbBotoes.Controls.Add(this.btSalvar);
-            this.gbBotoes.Location = new System.Drawing.Point(0, 475);
-            this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(849, 80);
-            this.gbBotoes.TabIndex = 1;
-            this.gbBotoes.TabStop = false;
-            // 
-            // btSair
-            // 
-            this.btSair.BackColor = System.Drawing.Color.Teal;
-            this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSair.Image = global::LojaPadraoMYSQL.Properties.Resources.Retornar48x48;
-            this.btSair.Location = new System.Drawing.Point(788, 18);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(50, 50);
-            this.btSair.TabIndex = 19;
-            this.btSair.UseVisualStyleBackColor = false;
-            this.btSair.Click += new System.EventHandler(this.btSair_Click);
-            // 
-            // btSalvar
-            // 
-            this.btSalvar.BackColor = System.Drawing.Color.Teal;
-            this.btSalvar.FlatAppearance.BorderSize = 0;
-            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSalvar.Image = global::LojaPadraoMYSQL.Properties.Resources.Salvar48x48;
-            this.btSalvar.Location = new System.Drawing.Point(732, 19);
-            this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(50, 50);
-            this.btSalvar.TabIndex = 18;
-            this.btSalvar.UseVisualStyleBackColor = false;
-            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
-            // 
             // monthCalNasc
             // 
-            this.monthCalNasc.Location = new System.Drawing.Point(534, 117);
+            this.monthCalNasc.Location = new System.Drawing.Point(534, 112);
             this.monthCalNasc.Name = "monthCalNasc";
             this.monthCalNasc.TabIndex = 287;
             this.monthCalNasc.Visible = false;
@@ -243,12 +204,11 @@
             this.btAddFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
             this.btAddFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
             this.btAddFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAddFoto.Image = global::LojaPadraoMYSQL.Properties.Resources.InserirFoto16x16;
+            this.btAddFoto.Image = ((System.Drawing.Image)(resources.GetObject("btAddFoto.Image")));
             this.btAddFoto.Location = new System.Drawing.Point(787, 7);
             this.btAddFoto.Name = "btAddFoto";
             this.btAddFoto.Size = new System.Drawing.Size(20, 20);
             this.btAddFoto.TabIndex = 310;
-            this.btAddFoto.Text = "+";
             this.btAddFoto.UseVisualStyleBackColor = true;
             this.btAddFoto.Click += new System.EventHandler(this.btAddFoto_Click);
             // 
@@ -258,12 +218,11 @@
             this.btRemFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
             this.btRemFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
             this.btRemFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btRemFoto.Image = global::LojaPadraoMYSQL.Properties.Resources.RemoverFoto16x16;
+            this.btRemFoto.Image = ((System.Drawing.Image)(resources.GetObject("btRemFoto.Image")));
             this.btRemFoto.Location = new System.Drawing.Point(814, 8);
             this.btRemFoto.Name = "btRemFoto";
             this.btRemFoto.Size = new System.Drawing.Size(20, 20);
             this.btRemFoto.TabIndex = 309;
-            this.btRemFoto.Text = "-";
             this.btRemFoto.UseVisualStyleBackColor = true;
             this.btRemFoto.Click += new System.EventHandler(this.btRemFoto_Click);
             // 
@@ -274,7 +233,7 @@
             this.btProcurarCidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
             this.btProcurarCidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btProcurarCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btProcurarCidade.Image = global::LojaPadraoMYSQL.Properties.Resources.lupa32x32;
+            this.btProcurarCidade.Image = ((System.Drawing.Image)(resources.GetObject("btProcurarCidade.Image")));
             this.btProcurarCidade.Location = new System.Drawing.Point(100, 282);
             this.btProcurarCidade.Name = "btProcurarCidade";
             this.btProcurarCidade.Size = new System.Drawing.Size(35, 35);
@@ -296,7 +255,7 @@
             // 
             // txtUf
             // 
-            this.txtUf.BackColor = System.Drawing.Color.Teal;
+            this.txtUf.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtUf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtUf.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtUf.ForeColor = System.Drawing.Color.White;
@@ -309,7 +268,7 @@
             // 
             // txtNomeCidade
             // 
-            this.txtNomeCidade.BackColor = System.Drawing.Color.Teal;
+            this.txtNomeCidade.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtNomeCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeCidade.ForeColor = System.Drawing.Color.White;
             this.txtNomeCidade.Location = new System.Drawing.Point(141, 286);
@@ -322,7 +281,7 @@
             // 
             // txtIdCidade
             // 
-            this.txtIdCidade.BackColor = System.Drawing.Color.Teal;
+            this.txtIdCidade.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtIdCidade.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtIdCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtIdCidade.ForeColor = System.Drawing.Color.White;
@@ -336,7 +295,7 @@
             // 
             // txtObservacao
             // 
-            this.txtObservacao.BackColor = System.Drawing.Color.Teal;
+            this.txtObservacao.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtObservacao.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtObservacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObservacao.ForeColor = System.Drawing.Color.White;
@@ -344,12 +303,12 @@
             this.txtObservacao.MaxLength = 300;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.Size = new System.Drawing.Size(818, 100);
+            this.txtObservacao.Size = new System.Drawing.Size(818, 78);
             this.txtObservacao.TabIndex = 17;
             // 
             // txtID
             // 
-            this.txtID.BackColor = System.Drawing.Color.Teal;
+            this.txtID.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.White;
             this.txtID.Location = new System.Drawing.Point(12, 30);
@@ -361,7 +320,7 @@
             // 
             // txtRazaoSocial
             // 
-            this.txtRazaoSocial.BackColor = System.Drawing.Color.Teal;
+            this.txtRazaoSocial.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtRazaoSocial.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtRazaoSocial.ForeColor = System.Drawing.Color.White;
@@ -373,7 +332,7 @@
             // 
             // txtNomeFantasia
             // 
-            this.txtNomeFantasia.BackColor = System.Drawing.Color.Teal;
+            this.txtNomeFantasia.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtNomeFantasia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNomeFantasia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNomeFantasia.ForeColor = System.Drawing.Color.White;
@@ -385,7 +344,7 @@
             // 
             // txtEndereco
             // 
-            this.txtEndereco.BackColor = System.Drawing.Color.Teal;
+            this.txtEndereco.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtEndereco.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEndereco.ForeColor = System.Drawing.Color.White;
@@ -397,7 +356,7 @@
             // 
             // txtEmail
             // 
-            this.txtEmail.BackColor = System.Drawing.Color.Teal;
+            this.txtEmail.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtEmail.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtEmail.ForeColor = System.Drawing.Color.White;
@@ -409,7 +368,7 @@
             // 
             // txtNumero
             // 
-            this.txtNumero.BackColor = System.Drawing.Color.Teal;
+            this.txtNumero.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNumero.ForeColor = System.Drawing.Color.White;
             this.txtNumero.Location = new System.Drawing.Point(413, 233);
@@ -420,7 +379,7 @@
             // 
             // txtComplemento
             // 
-            this.txtComplemento.BackColor = System.Drawing.Color.Teal;
+            this.txtComplemento.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtComplemento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtComplemento.ForeColor = System.Drawing.Color.White;
@@ -432,7 +391,7 @@
             // 
             // txtBairro
             // 
-            this.txtBairro.BackColor = System.Drawing.Color.Teal;
+            this.txtBairro.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtBairro.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBairro.ForeColor = System.Drawing.Color.White;
@@ -444,7 +403,7 @@
             // 
             // txtDataCadastro
             // 
-            this.txtDataCadastro.BackColor = System.Drawing.Color.Teal;
+            this.txtDataCadastro.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtDataCadastro.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDataCadastro.ForeColor = System.Drawing.Color.White;
             this.txtDataCadastro.Location = new System.Drawing.Point(224, 30);
@@ -522,7 +481,7 @@
             // 
             // mskDataNasc
             // 
-            this.mskDataNasc.BackColor = System.Drawing.Color.Teal;
+            this.mskDataNasc.BackColor = System.Drawing.Color.DarkSlateGray;
             this.mskDataNasc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskDataNasc.ForeColor = System.Drawing.Color.White;
             this.mskDataNasc.Location = new System.Drawing.Point(629, 285);
@@ -570,7 +529,7 @@
             // 
             // cbTipoPessoa
             // 
-            this.cbTipoPessoa.BackColor = System.Drawing.Color.Teal;
+            this.cbTipoPessoa.BackColor = System.Drawing.Color.DarkSlateGray;
             this.cbTipoPessoa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbTipoPessoa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.cbTipoPessoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -579,7 +538,7 @@
             this.cbTipoPessoa.Items.AddRange(new object[] {
             "FISICA",
             "JURIDICA"});
-            this.cbTipoPessoa.Location = new System.Drawing.Point(100, 32);
+            this.cbTipoPessoa.Location = new System.Drawing.Point(100, 30);
             this.cbTipoPessoa.Name = "cbTipoPessoa";
             this.cbTipoPessoa.Size = new System.Drawing.Size(118, 24);
             this.cbTipoPessoa.TabIndex = 0;
@@ -598,7 +557,7 @@
             // 
             // mskCelular2
             // 
-            this.mskCelular2.BackColor = System.Drawing.Color.Teal;
+            this.mskCelular2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.mskCelular2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskCelular2.ForeColor = System.Drawing.Color.White;
             this.mskCelular2.Location = new System.Drawing.Point(274, 183);
@@ -631,7 +590,7 @@
             // 
             // mskCelular
             // 
-            this.mskCelular.BackColor = System.Drawing.Color.Teal;
+            this.mskCelular.BackColor = System.Drawing.Color.DarkSlateGray;
             this.mskCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskCelular.ForeColor = System.Drawing.Color.White;
             this.mskCelular.Location = new System.Drawing.Point(135, 183);
@@ -653,7 +612,7 @@
             // 
             // mskTelefone
             // 
-            this.mskTelefone.BackColor = System.Drawing.Color.Teal;
+            this.mskTelefone.BackColor = System.Drawing.Color.DarkSlateGray;
             this.mskTelefone.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskTelefone.ForeColor = System.Drawing.Color.White;
             this.mskTelefone.Location = new System.Drawing.Point(12, 183);
@@ -664,7 +623,7 @@
             // 
             // mskCpfCnpj
             // 
-            this.mskCpfCnpj.BackColor = System.Drawing.Color.Teal;
+            this.mskCpfCnpj.BackColor = System.Drawing.Color.DarkSlateGray;
             this.mskCpfCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskCpfCnpj.ForeColor = System.Drawing.Color.White;
             this.mskCpfCnpj.Location = new System.Drawing.Point(390, 30);
@@ -686,7 +645,7 @@
             // 
             // mskRgIe
             // 
-            this.mskRgIe.BackColor = System.Drawing.Color.Teal;
+            this.mskRgIe.BackColor = System.Drawing.Color.DarkSlateGray;
             this.mskRgIe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskRgIe.ForeColor = System.Drawing.Color.White;
             this.mskRgIe.Location = new System.Drawing.Point(551, 30);
@@ -697,7 +656,7 @@
             // 
             // mskCep
             // 
-            this.mskCep.BackColor = System.Drawing.Color.Teal;
+            this.mskCep.BackColor = System.Drawing.Color.DarkSlateGray;
             this.mskCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mskCep.ForeColor = System.Drawing.Color.White;
             this.mskCep.Location = new System.Drawing.Point(12, 233);
@@ -818,6 +777,51 @@
             this.lbDataNasc.TabIndex = 277;
             this.lbDataNasc.Text = "Data Nasc:";
             // 
+            // gbBotoes
+            // 
+            this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.gbBotoes.Controls.Add(this.btSair);
+            this.gbBotoes.Controls.Add(this.btSalvar);
+            this.gbBotoes.Location = new System.Drawing.Point(12, 463);
+            this.gbBotoes.Name = "gbBotoes";
+            this.gbBotoes.Size = new System.Drawing.Size(826, 80);
+            this.gbBotoes.TabIndex = 1;
+            this.gbBotoes.TabStop = false;
+            // 
+            // btSair
+            // 
+            this.btSair.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
+            this.btSair.Location = new System.Drawing.Point(770, 19);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(50, 50);
+            this.btSair.TabIndex = 19;
+            this.btSair.UseVisualStyleBackColor = false;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
+            // 
+            // btSalvar
+            // 
+            this.btSalvar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btSalvar.FlatAppearance.BorderSize = 0;
+            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
+            this.btSalvar.Location = new System.Drawing.Point(714, 20);
+            this.btSalvar.Name = "btSalvar";
+            this.btSalvar.Size = new System.Drawing.Size(50, 50);
+            this.btSalvar.TabIndex = 18;
+            this.btSalvar.UseVisualStyleBackColor = false;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
+            // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tpageDadosPrincipais);
@@ -825,14 +829,14 @@
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(849, 472);
+            this.tabControl1.Size = new System.Drawing.Size(849, 457);
             this.tabControl1.TabIndex = 0;
             // 
             // frmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkCyan;
+            this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(850, 555);
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.tabControl1);
@@ -846,11 +850,11 @@
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroCliente_KeyDown);
             this.tpageDadosPrincipais.ResumeLayout(false);
             this.tpageDadosPrincipais.PerformLayout();
-            this.gbBotoes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCpfcnpjInvalido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCalendario)).EndInit();
+            this.gbBotoes.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
             this.ResumeLayout(false);
 

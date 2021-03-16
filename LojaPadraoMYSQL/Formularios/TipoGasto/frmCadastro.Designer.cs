@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.gbBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
             // btSalvar
             // 
             this.btSalvar.FlatAppearance.BorderSize = 0;
-            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
             this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // btSair
             // 
             this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // txtID
@@ -56,10 +59,11 @@
             // frmCadastro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.ClientSize = new System.Drawing.Size(351, 167);
+            this.ClientSize = new System.Drawing.Size(326, 131);
             this.Location = new System.Drawing.Point(0, 0);
             this.Name = "frmCadastro";
             this.WindowState = System.Windows.Forms.FormWindowState.Normal;
+            this.gbBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 

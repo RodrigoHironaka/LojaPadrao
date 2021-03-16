@@ -17,25 +17,25 @@ namespace LojaPadraoMYSQL.Formularios.Transportadora
     {
         public void AtualizaCabecalhoGridItens()
         {
-            dgvDados.Columns[0].HeaderText = "Cod";
-            dgvDados.Columns[1].HeaderText = "Responsável";
-            dgvDados.Columns[2].HeaderText = "Nome Fantasia";
-            dgvDados.Columns[3].HeaderText = "Razão Social";
+            dgvDados.Columns[0].HeaderText = "COD";
+            dgvDados.Columns[1].HeaderText = "RESPONSAVEL";
+            dgvDados.Columns[2].HeaderText = "NOME FANTASIA";
+            dgvDados.Columns[3].HeaderText = "RAZÃO SOCIAL";
             dgvDados.Columns[4].HeaderText = "IE";
             dgvDados.Columns[5].HeaderText = "CNPJ";
-            dgvDados.Columns[6].HeaderText = "Endereço";
+            dgvDados.Columns[6].HeaderText = "ENDEREÇO";
             dgvDados.Columns[7].HeaderText = "Nº";
-            dgvDados.Columns[8].HeaderText = "Complemento";
-            dgvDados.Columns[9].HeaderText = "Bairro";
+            dgvDados.Columns[8].HeaderText = "COMPLEMENTO";
+            dgvDados.Columns[9].HeaderText = "BAIRRO";
             dgvDados.Columns[10].HeaderText = "CEP";
             dgvDados.Columns[11].Visible = false;
-            dgvDados.Columns[12].HeaderText = "E-mail";
-            dgvDados.Columns[13].HeaderText = "Telefone";
-            dgvDados.Columns[14].HeaderText = "Celular";
-            dgvDados.Columns[15].HeaderText = "Celular2";
+            dgvDados.Columns[12].HeaderText = "E-MAIL";
+            dgvDados.Columns[13].HeaderText = "TELEFONE";
+            dgvDados.Columns[14].HeaderText = "CELULAR";
+            dgvDados.Columns[15].HeaderText = "CELULAR2";
             dgvDados.Columns[16].Visible = false;
-            dgvDados.Columns[17].HeaderText = "Cadastro";
-            dgvDados.Columns[18].HeaderText = "Sit";
+            dgvDados.Columns[17].HeaderText = "CADASTRO";
+            dgvDados.Columns[18].HeaderText = "SIT";
             dgvDados.Columns[19].Visible = false;
         }
         public int id = 0;
@@ -128,6 +128,7 @@ namespace LojaPadraoMYSQL.Formularios.Transportadora
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
+            pFiltro.Visible = true;
             if (cbStatus.SelectedIndex == 1)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
@@ -213,6 +214,11 @@ namespace LojaPadraoMYSQL.Formularios.Transportadora
             {
                 btExc_Click(sender, e);
             }
+        }
+
+        private void txtPesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+            pFiltro.Visible = false;
         }
     }
 }

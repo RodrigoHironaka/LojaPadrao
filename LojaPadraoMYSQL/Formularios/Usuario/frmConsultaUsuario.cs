@@ -17,12 +17,12 @@ namespace LojaPadraoMYSQL.Formularios
     {
         public void AtualizaCabecalhoGridItens()
         {
-            dgvDados.Columns[0].HeaderText = "Cod";
-            dgvDados.Columns[1].HeaderText = "Nome";
+            dgvDados.Columns[0].HeaderText = "COD";
+            dgvDados.Columns[1].HeaderText = "NOME";
             dgvDados.Columns[2].Visible = false;
             dgvDados.Columns[3].Visible = false;
-            dgvDados.Columns[4].HeaderText = "Tipo";
-            dgvDados.Columns[5].HeaderText = "Sit";
+            dgvDados.Columns[4].HeaderText = "TIPO";
+            dgvDados.Columns[5].HeaderText = "SIT";
 
         }
         public int id = 0;
@@ -105,6 +105,7 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
+            pFiltro.Visible = true;
             if (cbStatus.SelectedIndex == 1)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
@@ -197,6 +198,11 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 btExc_Click(sender, e);
             }
+        }
+
+        private void txtPesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+            pFiltro.Visible = false;
         }
     }
 }
