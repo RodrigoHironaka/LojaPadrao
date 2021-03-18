@@ -11,6 +11,7 @@ namespace Modelos
         public int FormaPagamentoId { get; set; }
         public string Nome { get; set; }
         public int QtdParcelas { get; set; }
+        public int DiasVencimento { get; set; }
         public char Status { get; set; }
     }
 }

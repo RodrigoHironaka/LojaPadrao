@@ -20,6 +20,7 @@ namespace LojaPadraoMYSQL.Formularios
             txtID.Clear();
             txtNome.Clear();
             cbQtdParcelas.SelectedIndex = 0;
+            txtDiasVencimento.Clear();
             chkAtivo.Checked = true;
         }
 
@@ -36,6 +37,7 @@ namespace LojaPadraoMYSQL.Formularios
             txtID.Text = Convert.ToString(modelo.FormaPagamentoId);
             txtNome.Text = modelo.Nome;
             cbQtdParcelas.Text = modelo.QtdParcelas.ToString();
+            txtDiasVencimento.Text = modelo.DiasVencimento.ToString();
             if (modelo.Status.Equals('A'))
                 chkAtivo.Checked = true;
             else if (modelo.Status.Equals('I'))
@@ -51,6 +53,14 @@ namespace LojaPadraoMYSQL.Formularios
                 ModeloFormaPagamento modelo = new ModeloFormaPagamento();
                 modelo.Nome = txtNome.Text;
                 modelo.QtdParcelas = Convert.ToInt32(cbQtdParcelas.Text);
+                if (txtDiasVencimento.Text == "")
+                {
+                    modelo.DiasVencimento = 0;
+                }
+                else
+                {
+                    modelo.DiasVencimento = Convert.ToInt32(txtDiasVencimento.Text);
+                }
                 if (chkAtivo.Checked)
                 {
                     modelo.Status = Convert.ToChar("A");

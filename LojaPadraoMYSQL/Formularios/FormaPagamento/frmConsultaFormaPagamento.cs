@@ -21,8 +21,9 @@ namespace LojaPadraoMYSQL.Formularios
         {
             dgvDados.Columns[0].HeaderText = "COD";
             dgvDados.Columns[1].HeaderText = "NOME";
-            dgvDados.Columns[2].HeaderText = "Nº PARCELAS";
-            dgvDados.Columns[3].HeaderText = "SIT";
+            dgvDados.Columns[2].HeaderText = "Nº PARC";
+            dgvDados.Columns[3].HeaderText = " DIAS VENC";
+            dgvDados.Columns[4].HeaderText = "SIT";
         }
 
         public frmConsultaFormaPagamento()

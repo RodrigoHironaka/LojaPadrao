@@ -521,7 +521,6 @@ namespace LojaPadraoMYSQL.Formularios
 
                 int idpagamento = Convert.ToInt32(cbPagamento.SelectedValue);
                 var recebe = bll.CarregaModeloFormaPagamento(idpagamento);
-
                 if (recebe.QtdParcelas == 0)
                 {
                     cbQtdParcelas.DataSource = null;
@@ -538,6 +537,15 @@ namespace LojaPadraoMYSQL.Formularios
                     dtpDataInicioPagamento.Enabled = true;
                     chbEntrada.Enabled = true;
                     cbQtdParcelas.DataSource = Enumerable.Range(1, recebe.QtdParcelas).ToList();
+                }
+                if (recebe.DiasVencimento != 0)
+                {
+                    dtpDataInicioPagamento.Value = System.DateTime.Now;
+                    dtpDataInicioPagamento.Value = dtpDataInicioPagamento.Value.AddDays(recebe.DiasVencimento);
+                }
+                else
+                {
+                    dtpDataInicioPagamento.Value = System.DateTime.Now;
                 }
             }
             catch
@@ -786,112 +794,122 @@ namespace LojaPadraoMYSQL.Formularios
                 int parcelas = Convert.ToInt32(cbQtdParcelas.Text);
                 Decimal preconota = Convert.ToDecimal(txtPrecoNota.Text);
                 Decimal precoparcela = Convert.ToDecimal(txtPrecoParcela.Text);
-               
-                if (chbEntrada.Checked == false)
+                if (precoparcela != preconota)
                 {
-                    Decimal dif = preconota - (precoparcela * parcelas);
-                    DateTime dt = new DateTime();
-                    dt = dtpDataInicioPagamento.Value;
-                    string nomepagamento = cbPagamento.Text;
-                    var dia = dt.Day;
-                    for (int i = 1; i <= parcelas; i++)
+
+                    if (chbEntrada.Checked == false)
                     {
-                        if (dif < 0)
+                        Decimal dif = preconota - (precoparcela * parcelas);
+                        DateTime dt = new DateTime();
+                        dt = dtpDataInicioPagamento.Value;
+                        string nomepagamento = cbPagamento.Text;
+                        var dia = dt.Day;
+                        for (int i = 1; i <= parcelas; i++)
                         {
-                            precoparcela = precoparcela + dif;
-                            dif = 0;
-                        }
-                        else if (dif > 0)
-                        {
-                            precoparcela = precoparcela + dif;
-                            dif = 0;
-                        }
-                        else
-                        {
-                            precoparcela = Convert.ToDecimal(txtPrecoParcela.Text);
-                            dif = 0;
-                        }
-
-                        String[] k = new String[] { i.ToString(), precoparcela.ToString(), dt.ToShortDateString(), nomepagamento };
-                        this.dgvParcelas.Rows.Add(k);
-                        if (dt.Month != 12)
-                        {
-                            var ano = dt.Year;
-                            var mes = dt.Month + 1;
-
-                            var ultimodiames = DateTime.DaysInMonth(ano, mes);
-                            if (ultimodiames < dia)
+                            if (dif < 0)
                             {
-                                dt = new DateTime(ano, mes, ultimodiames);
-
+                                precoparcela = precoparcela + dif;
+                                dif = 0;
+                            }
+                            else if (dif > 0)
+                            {
+                                precoparcela = precoparcela + dif;
+                                dif = 0;
                             }
                             else
                             {
-                                dt = new DateTime(ano, mes, dia);
+                                precoparcela = Convert.ToDecimal(txtPrecoParcela.Text);
+                                dif = 0;
+                            }
+
+                            String[] k = new String[] { i.ToString(), precoparcela.ToString(), dt.ToShortDateString(), nomepagamento };
+                            this.dgvParcelas.Rows.Add(k);
+                            if (dt.Month != 12)
+                            {
+                                var ano = dt.Year;
+                                var mes = dt.Month + 1;
+
+                                var ultimodiames = DateTime.DaysInMonth(ano, mes);
+                                if (ultimodiames < dia)
+                                {
+                                    dt = new DateTime(ano, mes, ultimodiames);
+
+                                }
+                                else
+                                {
+                                    dt = new DateTime(ano, mes, dia);
+                                }
+                            }
+                            else
+                            {
+                                dt = new DateTime(dt.Year + 1, 1, dia);
                             }
                         }
-                        else
+                    }
+                    else
+                    {
+                        Decimal precoentrada = Convert.ToDecimal(txtPrecoParcela.Text);//valor entrada digitado
+                        Decimal restante = preconota - precoentrada;
+                        Decimal resultado = restante / parcelas;
+                        string valorcorrigido = resultado.ToString("N2");
+                        Decimal precoparcelarestante = Convert.ToDecimal(valorcorrigido);
+
+                        Decimal dif2 = restante - (Convert.ToDecimal(valorcorrigido) * parcelas);
+
+                        DateTime dt = new DateTime();
+                        dt = dtpDataInicioPagamento.Value;
+                        string nomepagamento = cbPagamento.Text;
+                        var dia = dt.Day;
+                        this.dgvParcelas.Rows.Add(1, precoentrada.ToString(), System.DateTime.Now, "AVISTA");
+                        for (int i = 2; i <= parcelas + 1; i++)
                         {
-                            dt = new DateTime(dt.Year + 1, 1, dia);
+                            if (dif2 < 0)
+                            {
+                                precoparcelarestante = precoparcelarestante + dif2;
+                                dif2 = 0;
+                            }
+                            else if (dif2 > 0)
+                            {
+                                precoparcelarestante = precoparcelarestante + dif2;
+                                dif2 = 0;
+                            }
+                            else
+                            {
+                                precoparcelarestante = Convert.ToDecimal(valorcorrigido);
+                                dif2 = 0;
+                            }
+                            String[] k = new String[] { i.ToString(), precoparcelarestante.ToString(), dt.ToShortDateString(), nomepagamento };
+                            this.dgvParcelas.Rows.Add(k);
+                            if (dt.Month != 12)
+                            {
+                                var ano = dt.Year;
+                                var mes = dt.Month + 1;
+
+                                var ultimodiames = DateTime.DaysInMonth(ano, mes);
+                                if (ultimodiames < dia)
+                                {
+                                    dt = new DateTime(ano, mes, ultimodiames);
+
+                                }
+                                else
+                                {
+                                    dt = new DateTime(ano, mes, dia);
+                                }
+                            }
+                            else
+                            {
+                                dt = new DateTime(dt.Year + 1, 1, dia);
+                            }
                         }
                     }
+
                 }
                 else
                 {
-                    Decimal precoentrada = Convert.ToDecimal(txtPrecoParcela.Text);//valor entrada digitado
-                    Decimal restante = preconota - precoentrada;
-                    Decimal resultado = restante / parcelas;
-                    string valorcorrigido = resultado.ToString("N2");
-                    Decimal precoparcelarestante = Convert.ToDecimal(valorcorrigido);
-
-                    Decimal dif2 = restante - (Convert.ToDecimal(valorcorrigido) * parcelas);
-
-                    DateTime dt = new DateTime();
-                    dt = dtpDataInicioPagamento.Value;
-                    string nomepagamento = cbPagamento.Text;
-                    var dia = dt.Day;
-                    this.dgvParcelas.Rows.Add(1, precoentrada.ToString(), System.DateTime.Now, "AVISTA");
-                    for (int i = 2; i <= parcelas+1; i++)
-                    {
-                        if (dif2 < 0)
-                        {
-                            precoparcelarestante = precoparcelarestante + dif2;
-                            dif2 = 0;
-                        }
-                        else if (dif2 > 0)
-                        {
-                            precoparcelarestante = precoparcelarestante + dif2;
-                            dif2 = 0;
-                        }
-                        else
-                        {
-                            precoparcelarestante = Convert.ToDecimal(valorcorrigido);
-                            dif2 = 0;
-                        }
-                        String[] k = new String[] { i.ToString(), precoparcelarestante.ToString(), dt.ToShortDateString(), nomepagamento };
-                        this.dgvParcelas.Rows.Add(k);
-                        if (dt.Month != 12)
-                        {
-                            var ano = dt.Year;
-                            var mes = dt.Month + 1;
-
-                            var ultimodiames = DateTime.DaysInMonth(ano, mes);
-                            if (ultimodiames < dia)
-                            {
-                                dt = new DateTime(ano, mes, ultimodiames);
-
-                            }
-                            else
-                            {
-                                dt = new DateTime(ano, mes, dia);
-                            }
-                        }
-                        else
-                        {
-                            dt = new DateTime(dt.Year + 1, 1, dia);
-                        }
-                    }
+                    MessageBox.Show("Preco da PARCELA é o mesmo da NOTA! Verifique os dados e tente novamente. ", "Informativo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
                 }
+
             }
             catch (Exception ex)
             {
@@ -1020,7 +1038,7 @@ namespace LojaPadraoMYSQL.Formularios
                         {
                             modelocomprapagamento.FormaPagamentoId = Convert.ToInt32(cbPagamento.SelectedValue);
                         }
-                        
+
                         bllcomprapagamento.Incluir(modelocomprapagamento);
                     }
                     this.Close();
@@ -1149,7 +1167,7 @@ namespace LojaPadraoMYSQL.Formularios
         }
 
         //---------------------------------------------------------------------------------------------------------------
-       
+
         private void dgvParcelas_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtPrecoCusto_KeyPress(sender, e);
@@ -1167,7 +1185,7 @@ namespace LojaPadraoMYSQL.Formularios
                 }
 
             }
-           
+
 
         }
 
@@ -1200,7 +1218,7 @@ namespace LojaPadraoMYSQL.Formularios
                 txtPrecoParcela.ReadOnly = true;
                 int parcelas = Convert.ToInt32(cbQtdParcelas.Text);
                 Decimal preconota = Convert.ToDecimal(txtPrecoNota.Text);
-                var resultado = preconota/parcelas;
+                var resultado = preconota / parcelas;
                 txtPrecoParcela.Text = resultado.ToString("N2");
             }
         }

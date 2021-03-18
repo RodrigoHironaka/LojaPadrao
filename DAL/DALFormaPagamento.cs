@@ -22,9 +22,10 @@ namespace DAL
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
-            cmd.CommandText = "insert into formapagamento(nome, qtdparcelas, status) values (@nome, @qtdparcelas, @status);";
+            cmd.CommandText = "insert into formapagamento(nome, qtdparcelas, diasvenc, status) values (@nome, @qtdparcelas, @diasvenc, @status);";
             cmd.Parameters.AddWithValue("@nome", modelo.Nome);
             cmd.Parameters.AddWithValue("@qtdparcelas", modelo.QtdParcelas);
+            cmd.Parameters.AddWithValue("@diasvenc", modelo.DiasVencimento);
             cmd.Parameters.AddWithValue("@status", modelo.Status);
             conexao.Conectar();
             modelo.FormaPagamentoId = Convert.ToInt32(cmd.ExecuteScalar());
@@ -35,9 +36,10 @@ namespace DAL
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
-            cmd.CommandText = "update formapagamento set nome=@nome, qtdparcelas=@qtdparcelas, status=@status where id=@codigo;";
+            cmd.CommandText = "update formapagamento set nome=@nome, qtdparcelas=@qtdparcelas, diasvenc=@diasvenc, status=@status where id=@codigo;";
             cmd.Parameters.AddWithValue("@nome", modelo.Nome);
             cmd.Parameters.AddWithValue("@qtdparcelas", modelo.QtdParcelas);
+            cmd.Parameters.AddWithValue("@diasvenc", modelo.DiasVencimento);
             cmd.Parameters.AddWithValue("@status", modelo.Status);
             cmd.Parameters.AddWithValue("@codigo", modelo.FormaPagamentoId);
             conexao.Conectar();
@@ -87,7 +89,7 @@ namespace DAL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
                 conexao.Conectar();
-                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select id, nome, qtdparcelas, status from formapagamento order by id", conexao.StringConexao);
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select id, nome, qtdparcelas, diasvenc, status from formapagamento order by id", conexao.StringConexao);
                 DataTable dataTable = new DataTable();
                 fbDataAdapter.Fill(dataTable);
                 return dataTable;
@@ -106,7 +108,7 @@ namespace DAL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
                 conexao.Conectar();
-                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select id, nome, qtdparcelas, status from formapagamento where status='A' order by id", conexao.StringConexao);
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select id, nome, qtdparcelas, diasvenc, status from formapagamento where status='A' order by id", conexao.StringConexao);
                 DataTable dataTable = new DataTable();
                 fbDataAdapter.Fill(dataTable);
                 return dataTable;
@@ -125,7 +127,7 @@ namespace DAL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
                 conexao.Conectar();
-                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select id, nome, qtdparcelas, status from formapagamento where status='I' order by id", conexao.StringConexao);
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select id, nome, qtdparcelas, diasvenc, status from formapagamento where status='I' order by id", conexao.StringConexao);
                 DataTable dataTable = new DataTable();
                 fbDataAdapter.Fill(dataTable);
                 return dataTable;
@@ -152,6 +154,7 @@ namespace DAL
                 modelo.FormaPagamentoId = Convert.ToInt32(registro["id"]);
                 modelo.Nome = Convert.ToString(registro["nome"]);
                 modelo.QtdParcelas = Convert.ToInt32(registro["qtdparcelas"]);
+                modelo.DiasVencimento = Convert.ToInt32(registro["diasvenc"]);
                 modelo.Status = Convert.ToChar(registro["status"]);
             }
             registro.Close();
