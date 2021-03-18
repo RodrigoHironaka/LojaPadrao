@@ -529,12 +529,14 @@ namespace LojaPadraoMYSQL.Formularios
                     cbQtdParcelas.SelectedIndex = 0;
                     cbQtdParcelas.Enabled = false;
                     dtpDataInicioPagamento.Enabled = false;
+                    chbEntrada.Enabled = false;
                 }
                 else
                 {
                     cbQtdParcelas.DataSource = null;
                     cbQtdParcelas.Enabled = true;
                     dtpDataInicioPagamento.Enabled = true;
+                    chbEntrada.Enabled = true;
                     cbQtdParcelas.DataSource = Enumerable.Range(1, recebe.QtdParcelas).ToList();
                 }
             }
@@ -784,53 +786,111 @@ namespace LojaPadraoMYSQL.Formularios
                 int parcelas = Convert.ToInt32(cbQtdParcelas.Text);
                 Decimal preconota = Convert.ToDecimal(txtPrecoNota.Text);
                 Decimal precoparcela = Convert.ToDecimal(txtPrecoParcela.Text);
-                Decimal dif = preconota - (precoparcela * parcelas);
-
-                DateTime dt = new DateTime();
-                dt = dtpDataInicioPagamento.Value;
-                string nomepagamento = cbPagamento.Text;
-                var dia = dt.Day;
-                for (int i = 1; i <= parcelas; i++)
+               
+                if (chbEntrada.Checked == false)
                 {
-                    if (dif < 0)
+                    Decimal dif = preconota - (precoparcela * parcelas);
+                    DateTime dt = new DateTime();
+                    dt = dtpDataInicioPagamento.Value;
+                    string nomepagamento = cbPagamento.Text;
+                    var dia = dt.Day;
+                    for (int i = 1; i <= parcelas; i++)
                     {
-                        precoparcela = precoparcela + dif;
-                        dif = 0;
-                    }
-                    else if (dif > 0)
-                    {
-                        precoparcela = precoparcela + dif;
-                        dif = 0;
-                    }
-                    else
-                    {
-                        precoparcela = Convert.ToDecimal(txtPrecoParcela.Text);
-                        dif = 0;
-                    }
-
-                    String[] k = new String[] { i.ToString(), precoparcela.ToString(), dt.ToShortDateString(), nomepagamento };
-                    this.dgvParcelas.Rows.Add(k);
-                    if (dt.Month != 12)
-                    {
-                        var ano = dt.Year;
-                        var mes = dt.Month + 1;
-
-                        var ultimodiames = DateTime.DaysInMonth(ano, mes);
-                        if (ultimodiames < dia)
+                        if (dif < 0)
                         {
-                            dt = new DateTime(ano, mes, ultimodiames);
-
+                            precoparcela = precoparcela + dif;
+                            dif = 0;
+                        }
+                        else if (dif > 0)
+                        {
+                            precoparcela = precoparcela + dif;
+                            dif = 0;
                         }
                         else
                         {
-                            dt = new DateTime(ano, mes, dia);
+                            precoparcela = Convert.ToDecimal(txtPrecoParcela.Text);
+                            dif = 0;
+                        }
+
+                        String[] k = new String[] { i.ToString(), precoparcela.ToString(), dt.ToShortDateString(), nomepagamento };
+                        this.dgvParcelas.Rows.Add(k);
+                        if (dt.Month != 12)
+                        {
+                            var ano = dt.Year;
+                            var mes = dt.Month + 1;
+
+                            var ultimodiames = DateTime.DaysInMonth(ano, mes);
+                            if (ultimodiames < dia)
+                            {
+                                dt = new DateTime(ano, mes, ultimodiames);
+
+                            }
+                            else
+                            {
+                                dt = new DateTime(ano, mes, dia);
+                            }
+                        }
+                        else
+                        {
+                            dt = new DateTime(dt.Year + 1, 1, dia);
                         }
                     }
-                    else
-                    {
-                        dt = new DateTime(dt.Year + 1, 1, dia);
-                    }
+                }
+                else
+                {
+                    Decimal precoentrada = Convert.ToDecimal(txtPrecoParcela.Text);//valor entrada digitado
+                    Decimal restante = preconota - precoentrada;
+                    Decimal resultado = restante / parcelas;
+                    string valorcorrigido = resultado.ToString("N2");
+                    Decimal precoparcelarestante = Convert.ToDecimal(valorcorrigido);
 
+                    Decimal dif2 = restante - (Convert.ToDecimal(valorcorrigido) * parcelas);
+
+                    DateTime dt = new DateTime();
+                    dt = dtpDataInicioPagamento.Value;
+                    string nomepagamento = cbPagamento.Text;
+                    var dia = dt.Day;
+                    this.dgvParcelas.Rows.Add(1, precoentrada.ToString(), System.DateTime.Now, "AVISTA");
+                    for (int i = 2; i <= parcelas+1; i++)
+                    {
+                        if (dif2 < 0)
+                        {
+                            precoparcelarestante = precoparcelarestante + dif2;
+                            dif2 = 0;
+                        }
+                        else if (dif2 > 0)
+                        {
+                            precoparcelarestante = precoparcelarestante + dif2;
+                            dif2 = 0;
+                        }
+                        else
+                        {
+                            precoparcelarestante = Convert.ToDecimal(valorcorrigido);
+                            dif2 = 0;
+                        }
+                        String[] k = new String[] { i.ToString(), precoparcelarestante.ToString(), dt.ToShortDateString(), nomepagamento };
+                        this.dgvParcelas.Rows.Add(k);
+                        if (dt.Month != 12)
+                        {
+                            var ano = dt.Year;
+                            var mes = dt.Month + 1;
+
+                            var ultimodiames = DateTime.DaysInMonth(ano, mes);
+                            if (ultimodiames < dia)
+                            {
+                                dt = new DateTime(ano, mes, ultimodiames);
+
+                            }
+                            else
+                            {
+                                dt = new DateTime(ano, mes, dia);
+                            }
+                        }
+                        else
+                        {
+                            dt = new DateTime(dt.Year + 1, 1, dia);
+                        }
+                    }
                 }
             }
             catch (Exception ex)
@@ -952,9 +1012,18 @@ namespace LojaPadraoMYSQL.Formularios
                         modelocomprapagamento.NParcela = Convert.ToInt32(dgvParcelas.Rows[i].Cells[0].Value);
                         modelocomprapagamento.PrecoParcela = Convert.ToDecimal(dgvParcelas.Rows[i].Cells[1].Value);
                         modelocomprapagamento.DataInicioPagamento = Convert.ToDateTime(dgvParcelas.Rows[i].Cells[2].Value);
-                        modelocomprapagamento.FormaPagamentoId = Convert.ToInt32(cbPagamento.SelectedValue);
+                        if (Convert.ToString(dgvParcelas.Rows[i].Cells[3].Value) == "AVISTA")
+                        {
+                            modelocomprapagamento.FormaPagamentoId = 1;
+                        }
+                        else
+                        {
+                            modelocomprapagamento.FormaPagamentoId = Convert.ToInt32(cbPagamento.SelectedValue);
+                        }
+                        
                         bllcomprapagamento.Incluir(modelocomprapagamento);
                     }
+                    this.Close();
                 }
                 else
                 {
@@ -996,7 +1065,14 @@ namespace LojaPadraoMYSQL.Formularios
                         modelocomprapagamento.NParcela = Convert.ToInt32(dgvParcelas.Rows[i].Cells[0].Value);
                         modelocomprapagamento.PrecoParcela = Convert.ToDecimal(dgvParcelas.Rows[i].Cells[1].Value);
                         modelocomprapagamento.DataInicioPagamento = Convert.ToDateTime(dgvParcelas.Rows[i].Cells[2].Value);
-                        modelocomprapagamento.FormaPagamentoId = Convert.ToInt32(cbPagamento.SelectedValue);
+                        if (Convert.ToString(dgvParcelas.Rows[i].Cells[3].Value) == "AVISTA")
+                        {
+                            modelocomprapagamento.FormaPagamentoId = 1;
+                        }
+                        else
+                        {
+                            modelocomprapagamento.FormaPagamentoId = Convert.ToInt32(cbPagamento.SelectedValue);
+                        }
                         bllcomprapagamento.Incluir(modelocomprapagamento);
                     }
 
@@ -1072,20 +1148,8 @@ namespace LojaPadraoMYSQL.Formularios
             }
         }
 
-        private void txtObservacao_MouseClick(object sender, MouseEventArgs e)
-        {
-            txtQtdNova_MouseClick(sender, e);
-        }
-
         //---------------------------------------------------------------------------------------------------------------
-        //DateTimePicker dtp = new DateTimePicker();
-        //Rectangle _rectangle;
-        //public void CalendarioGrid()
-        //{
-        //    dtp.Visible = false;
-        //    dtp.Format = DateTimePickerFormat.Custom;
-        //    dtp.TextChanged += new EventHandler(dtp_TextChange);
-        //}
+       
         private void dgvParcelas_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtPrecoCusto_KeyPress(sender, e);
@@ -1103,10 +1167,7 @@ namespace LojaPadraoMYSQL.Formularios
                 }
 
             }
-            //else if (dgvParcelas.CurrentCell.ColumnIndex == 2)
-            //{
-            //    dgvParcelas.Columns["Valor"].DefaultCellStyle.Format = "dd/MM/yyyy";
-            //}
+           
 
         }
 
@@ -1118,6 +1179,30 @@ namespace LojaPadraoMYSQL.Formularios
         private void dgvParcelas_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
             //dgvParcelas.Columns[1].DefaultCellStyle.Format = "N2";
+        }
+
+        private void txtObservacao_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            txtQtdNova_MouseClick(sender, e);
+        }
+
+        private void chbEntrada_CheckedChanged(object sender, EventArgs e)
+        {
+            if (chbEntrada.Checked)
+            {
+                lbPrecoParcela.Text = "Preco Entrada";
+                txtPrecoParcela.ReadOnly = false;
+                txtPrecoParcela.Text = "";
+            }
+            else
+            {
+                lbPrecoParcela.Text = "Preco Parcela";
+                txtPrecoParcela.ReadOnly = true;
+                int parcelas = Convert.ToInt32(cbQtdParcelas.Text);
+                Decimal preconota = Convert.ToDecimal(txtPrecoNota.Text);
+                var resultado = preconota/parcelas;
+                txtPrecoParcela.Text = resultado.ToString("N2");
+            }
         }
     }
 }
