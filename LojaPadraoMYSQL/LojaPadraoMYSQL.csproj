@@ -52,9 +52,7 @@
     <Compile Include="Formularios\Base\CadastrosSimples\frmCadastrosSimples.Designer.cs">
       <DependentUpon>frmCadastrosSimples.cs</DependentUpon>
     </Compile>
-    <Compile Include="Formularios\Base\Consultas\frmConsultaBase.cs">
-      <SubType>Form</SubType>
-    </Compile>
+    <Compile Include="Formularios\Base\Consultas\frmConsultaBase.cs" />
     <Compile Include="Formularios\Base\Consultas\frmConsultaBase.Designer.cs">
       <DependentUpon>frmConsultaBase.cs</DependentUpon>
     </Compile>
@@ -88,6 +86,18 @@
     <Compile Include="Formularios\Compra\frmCadastroCompra.Designer.cs">
       <DependentUpon>frmCadastroCompra.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\ContasPagar\frmCadastroContaPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ContasPagar\frmCadastroContaPagar.Designer.cs">
+      <DependentUpon>frmCadastroContaPagar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\ContasPagar\frmConsultaContaPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\ContasPagar\frmConsultaContaPagar.Designer.cs">
+      <DependentUpon>frmConsultaContaPagar.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Departamento\frmCadastroDepartamento.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -111,6 +121,12 @@
     </Compile>
     <Compile Include="Formularios\FormBotoes\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\Inicio\frmInicioPadrao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\Inicio\frmInicioPadrao.Designer.cs">
+      <DependentUpon>frmInicioPadrao.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FormBotoes\Movimentos\frmBotoesMovimentos.cs">
       <SubType>Form</SubType>
@@ -310,6 +326,12 @@
     <EmbeddedResource Include="Formularios\Compra\frmCadastroCompra.resx">
       <DependentUpon>frmCadastroCompra.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ContasPagar\frmCadastroContaPagar.resx">
+      <DependentUpon>frmCadastroContaPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\ContasPagar\frmConsultaContaPagar.resx">
+      <DependentUpon>frmConsultaContaPagar.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Departamento\frmCadastroDepartamento.resx">
       <DependentUpon>frmCadastroDepartamento.cs</DependentUpon>
     </EmbeddedResource>
@@ -321,6 +343,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormBotoes\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormBotoes\Inicio\frmInicioPadrao.resx">
+      <DependentUpon>frmInicioPadrao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormBotoes\Movimentos\frmBotoesMovimentos.resx">
       <DependentUpon>frmBotoesMovimentos.cs</DependentUpon>

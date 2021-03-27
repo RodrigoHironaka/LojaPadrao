@@ -1,5 +1,0 @@
-cadastro de usuario: fazer verificação de senha de admin para alterar usuario;
-
-Consulta de cliente: ao digitar alguma coisa no textbox de pesquisa e apagar ele filtra tudo, não respeitando a seleção dos combobox atuais;
-
-Consulta fornecedor: pesquisa não esta obedecendo filtro(ativo, inativo e todos);

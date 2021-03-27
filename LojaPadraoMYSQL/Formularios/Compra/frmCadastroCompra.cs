@@ -1108,7 +1108,6 @@ namespace LojaPadraoMYSQL.Formularios
                 cx.CancelaTransacao();
                 cx.Desconectar();
             }
-
         }
 
         //--------------------FUNCAO PARA LIMPAR OS CAMPOS--------------------------------------------
@@ -1183,14 +1182,12 @@ namespace LojaPadraoMYSQL.Formularios
                 {
                     tb.KeyPress += new KeyPressEventHandler(dgvParcelas_KeyPress);
                 }
-
             }
-
-
         }
 
         private void dgvParcelas_CellLeave(object sender, DataGridViewCellEventArgs e)
         {
+
             //dgvParcelas.Columns["Valor"].DefaultCellStyle.Format = "N2";
         }
 

@@ -261,6 +261,7 @@ CONSTRAINT fk_compraItens_produto FOREIGN KEY (idProduto)
   REFERENCES produto (id)
 );
 
+*******************************************************************************************************************
 create table comprapagamento(
 id int not null AUTO_INCREMENT,
 idCompra int not null,
@@ -274,9 +275,54 @@ CONSTRAINT fk_compraPagamento_formaPagamento FOREIGN KEY (idFormaPagamento)
   REFERENCES formapagamento (id)
 );
 
+*******************************************************************************************************************
 CREATE TABLE tipogasto(
 id int NOT NULL AUTO_INCREMENT,
 nome VARCHAR(100) NOT NULL,
 `status` CHAR(1),
 PRIMARY KEY(id)
+);
+
+*******************************************************************************************************************
+CREATE TABLE contaPagar(
+id int NOT NULL AUTO_INCREMENT,
+dataCadastro VARCHAR(20) NOT NULL,
+tipoConta varchar(20),
+qtdParcelas int,
+valor decimal(10,2),
+idFormaPagamento int,
+nome varchar(100),
+emissao DATA,
+vencimento DATA,
+numDoc long,
+tipoPessoa VARCHAR(20),
+idpessoa int,
+observacao VARCHAR(300),
+`status` CHAR(1),
+PRIMARY KEY(id)
+);
+
+CREATE TABLE contaPagarRenegociacao(
+id int NOT NULL AUTO_INCREMENT,
+idContaPagar int,
+dataRenegociacao VARCHAR(20),
+valorRenegociado decimal(10,2),
+qtdParcelas int,
+nomePessoa VARCHAR(100),
+PRIMARY KEY(id),
+constraint fk_contapagar FOREIGN KEY (idContaPagar)
+  REFERENCES contaPagar (id)
+);
+
+CREATE TABLE contaPagarPagamento(
+id int NOT NULL AUTO_INCREMENT,
+idContaPagar int,
+valorPagamento decimal(10,2),
+jurosPorcentual decimal(10,2),
+juros decimal(10,2),
+descontoPorcentual decimal(10,2),
+desconto decimal(10,2),
+PRIMARY KEY(id),
+constraint fk_contapagar FOREIGN KEY (idContaPagar)
+  REFERENCES contaPagar (id)
 );

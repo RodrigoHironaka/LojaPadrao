@@ -1,4 +1,5 @@
-﻿using LojaPadraoMYSQL.Formularios.FormBotoes.Movimentos;
+﻿using LojaPadraoMYSQL.Formularios.FormBotoes.Inicio;
+using LojaPadraoMYSQL.Formularios.FormBotoes.Movimentos;
 using LojaPadraoMYSQL.Formularios.FormBotoes.ObjetoValorForms;
 using System;
 using System.Collections.Generic;
@@ -16,7 +17,10 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes
     {
         public frmPrincipal()
         {
+            
             InitializeComponent();
+
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -42,6 +46,10 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes
         private void btInicio_Click(object sender, EventArgs e)
         {
             pFormInfo.Controls.Clear();
+            //frmInicioPadrao f = new frmInicioPadrao();
+            //f.TopLevel = false;
+            //pFormInfo.Controls.Add(f);
+            //f.Show();
             lbTitulo.Text = TituloForms.MENU.ToString();
         }
 

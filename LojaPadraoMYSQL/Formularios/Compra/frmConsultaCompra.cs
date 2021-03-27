@@ -26,12 +26,12 @@ namespace LojaPadraoMYSQL.Formularios
         public int idformapagamento = 0;
         public void AtualizaCabecalhoGridConsulta()
         {
-            dgvDados.Columns[0].HeaderText = "COD";
+            dgvDados.Columns[0].HeaderText = "COMPRA";
             dgvDados.Columns[1].HeaderText = "CADASTRO";
             dgvDados.Columns[2].HeaderText = "Nº NOTA";
             dgvDados.Columns[3].HeaderText = "EMISSÃO";
             dgvDados.Columns[4].HeaderText = "VALOR NOTA";
-            dgvDados.Columns[5].HeaderText = "Nº FORN";
+            dgvDados.Columns[5].HeaderText = "COD";
             dgvDados.Columns[6].HeaderText = "FORNECEDOR";
             dgvDados.Columns[7].HeaderText = "SIT";
             //dgvDados.Columns[8].Visible = false;

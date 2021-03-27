@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LojaPadraoMYSQL.Formularios.ContasPagar;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,6 +26,12 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes.Movimentos
         private void btCompra_Click(object sender, EventArgs e)
         {
             frmConsultaCompra f = new frmConsultaCompra();
+            f.ShowDialog();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmConsultaContaPagar f = new frmConsultaContaPagar();
             f.ShowDialog();
         }
     }
