@@ -766,6 +766,10 @@ namespace LojaPadraoMYSQL.Formularios
         //--------------------GERAR PARCELAS----------------------------------------------------------
         private void btGerarParcela_Click(object sender, EventArgs e)
         {
+            if (txtPrecoParcela.Text == "")
+            {
+                txtPrecoParcela.Text = "0,00";
+            }
             try
             {
                 if (txtCodFornecedor.Text == "")
@@ -794,9 +798,14 @@ namespace LojaPadraoMYSQL.Formularios
                 int parcelas = Convert.ToInt32(cbQtdParcelas.Text);
                 Decimal preconota = Convert.ToDecimal(txtPrecoNota.Text);
                 Decimal precoparcela = Convert.ToDecimal(txtPrecoParcela.Text);
-                if (precoparcela != preconota)
+                
+                if ((precoparcela >= preconota) && (chbEntrada.Checked))
                 {
-
+                    MessageBox.Show("Preco da PARCELA é o mesmo da NOTA! Verifique os dados e tente novamente. ", "Informativo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return;
+                }
+                else
+                {
                     if (chbEntrada.Checked == false)
                     {
                         Decimal dif = preconota - (precoparcela * parcelas);
@@ -848,6 +857,12 @@ namespace LojaPadraoMYSQL.Formularios
                     }
                     else
                     {
+                        if ((txtPrecoParcela.Text == "") || (txtPrecoParcela.Text=="0,00"))
+                        {
+                            MessageBox.Show("Preco da entrada inválido!!!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                            return;
+                        }
+                     
                         Decimal precoentrada = Convert.ToDecimal(txtPrecoParcela.Text);//valor entrada digitado
                         Decimal restante = preconota - precoentrada;
                         Decimal resultado = restante / parcelas;
@@ -903,11 +918,6 @@ namespace LojaPadraoMYSQL.Formularios
                         }
                     }
 
-                }
-                else
-                {
-                    MessageBox.Show("Preco da PARCELA é o mesmo da NOTA! Verifique os dados e tente novamente. ", "Informativo", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    return;
                 }
 
             }
