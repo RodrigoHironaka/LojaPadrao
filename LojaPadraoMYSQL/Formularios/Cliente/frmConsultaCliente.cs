@@ -49,6 +49,17 @@ namespace LojaPadraoMYSQL.Formularios
             this.AtualizaCabecalhoGridDados();
         }
 
+        public frmConsultaCliente(bool selecao)
+        {
+            InitializeComponent();
+            cbStatus.SelectedIndex = 1;
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLFornecedor bll = new BLLFornecedor(cx);
+            dgvDados.DataSource = bll.CarregaGridAtivo();
+            dgvDados.Select();
+            this.AtualizaCabecalhoGridDados();
+        }
+
         private void btAdd_Click(object sender, EventArgs e)
         {
             frmCadastroCliente f = new frmCadastroCliente();

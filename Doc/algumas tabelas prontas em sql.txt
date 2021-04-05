@@ -287,19 +287,24 @@ PRIMARY KEY(id)
 CREATE TABLE contaPagar(
 id int NOT NULL AUTO_INCREMENT,
 dataCadastro VARCHAR(20) NOT NULL,
-tipoConta varchar(20),
+idTipoGasto int,
+unica char(1),
 qtdParcelas int,
 valor decimal(10,2),
 idFormaPagamento int,
 nome varchar(100),
-emissao DATA,
-vencimento DATA,
+emissao DATE,
+vencimento DATE,
 numDoc long,
 tipoPessoa VARCHAR(20),
 idpessoa int,
 observacao VARCHAR(300),
 `status` CHAR(1),
-PRIMARY KEY(id)
+PRIMARY KEY(id),
+CONSTRAINT fk_contaPagar_tipoGasto FOREIGN KEY (idTipoGasto)
+  REFERENCES tipogasto (id),
+CONSTRAINT fk_contaPagar_formapagemento FOREIGN KEY (idFormaPagamento)
+  REFERENCES formapagamento (id)
 );
 
 CREATE TABLE contaPagarRenegociacao(

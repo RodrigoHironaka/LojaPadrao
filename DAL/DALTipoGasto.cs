@@ -10,11 +10,11 @@ using System.Windows.Forms;
 
 namespace DAL.DALTipoGasto
 {
-    public class CDAL
+    public class DALTipoGasto
     {
         private DALConexao conexao;
 
-        public CDAL(DALConexao cx)
+        public DALTipoGasto(DALConexao cx)
         {
             this.conexao = cx;
         }

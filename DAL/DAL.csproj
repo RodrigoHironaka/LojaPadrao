@@ -59,7 +59,7 @@
     <Compile Include="DALMarca.cs" />
     <Compile Include="DALProduto.cs" />
     <Compile Include="DALSubGrupo.cs" />
-    <Compile Include="DALTipoGasto\CDAL.cs" />
+    <Compile Include="DALTipoGasto.cs" />
     <Compile Include="DALTransportadora.cs" />
     <Compile Include="DALUnidadeMedida.cs" />
     <Compile Include="DALUsuario.cs" />

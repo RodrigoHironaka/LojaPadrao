@@ -10,10 +10,10 @@ using System.Threading.Tasks;
 
 namespace BLL.BLLTipoGasto
 {
-    public class CBLL
+    public class BLLTipoGasto
     {
         private DALConexao conexao;
-        public CBLL(DALConexao cx)
+        public BLLTipoGasto(DALConexao cx)
         {
             this.conexao = cx;
         }
@@ -31,7 +31,7 @@ namespace BLL.BLLTipoGasto
                 throw new Exception("O limite máximo de caracteres é 30!");
             }
 
-            CDAL DALObj = new CDAL(conexao);
+            DALTipoGasto DALObj = new DALTipoGasto(conexao);
             DALObj.Incluir(modelo);
         }
 
@@ -52,55 +52,55 @@ namespace BLL.BLLTipoGasto
                 throw new Exception("O limite máximo de caracteres é 30!");
             }
 
-            CDAL DALObj = new CDAL(conexao);
+            DALTipoGasto DALObj = new DALTipoGasto(conexao);
             DALObj.Alterar(modelo);
         }
 
         public void Excluir(int codigo)
         {
-            CDAL DALObj = new CDAL(conexao);
+            DALTipoGasto DALObj = new DALTipoGasto(conexao);
             DALObj.Excluir(codigo);
         }
 
         public DataTable Localizar(String valor)
         {
-           CDAL DALObj = new CDAL(conexao);
+           DALTipoGasto DALObj = new DALTipoGasto(conexao);
            return DALObj.Localizar(valor);
         }
 
         public DataTable LocalizarAtivo(String valor)
         {
-            CDAL DALObj = new CDAL(conexao);
+            DALTipoGasto DALObj = new DALTipoGasto(conexao);
             return DALObj.LocalizarAtivo(valor);
         }
 
         public DataTable LocalizarInativo(String valor)
         {
-            CDAL DALObj = new CDAL(conexao);
+            DALTipoGasto DALObj = new DALTipoGasto(conexao);
             return DALObj.LocalizarInativo(valor);
         }
 
         public DataTable CarregaGrid()
         {
-            CDAL DALObj = new CDAL(conexao);
+            DALTipoGasto DALObj = new DALTipoGasto(conexao);
             return DALObj.CarregarGrid();
         }
 
         public DataTable CarregaGridAtivo()
         {
-            CDAL DALObj = new CDAL(conexao);
+            DALTipoGasto DALObj = new DALTipoGasto(conexao);
             return DALObj.CarregarGridAtivo();
         }
 
         public DataTable CarregaGridInativo()
         {
-            CDAL DALObj = new CDAL(conexao);
+            DALTipoGasto DALObj = new DALTipoGasto(conexao);
             return DALObj.CarregarGridInativo();
         }
 
         public Modelo CarregaModelo (int codigo)
         {
-            CDAL DALObj = new CDAL(conexao);
+            DALTipoGasto DALObj = new DALTipoGasto(conexao);
             return DALObj.CarregaModelo(codigo);
         }
     }

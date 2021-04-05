@@ -41,7 +41,7 @@ namespace LojaPadraoMYSQL.Formularios.TipoGasto
             try
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                CBLL dal = new CBLL(cx);
+                BLLTipoGasto dal = new BLLTipoGasto(cx);
                 Modelo modelo = new Modelo();
                 modelo.Nome = txtNome.Text;
                 if (chkAtivo.Checked)

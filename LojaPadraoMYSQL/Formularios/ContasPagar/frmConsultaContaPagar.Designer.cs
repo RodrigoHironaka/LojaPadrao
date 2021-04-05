@@ -28,29 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaContaPagar));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.txtPesquisar = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.pFiltro = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dgvDados = new System.Windows.Forms.DataGridView();
-            this.cbTipoBuscaData = new System.Windows.Forms.ComboBox();
-            this.rbTodos = new System.Windows.Forms.RadioButton();
-            this.rbCancelado = new System.Windows.Forms.RadioButton();
-            this.rbFaturado = new System.Windows.Forms.RadioButton();
-            this.rbAberto = new System.Windows.Forms.RadioButton();
-            this.chbTipoBuscaData = new System.Windows.Forms.CheckBox();
             this.btClonar = new System.Windows.Forms.Button();
             this.btImprimir = new System.Windows.Forms.Button();
             this.btAdd = new System.Windows.Forms.Button();
             this.btEdt = new System.Windows.Forms.Button();
+            this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.btSair = new System.Windows.Forms.Button();
             this.btExc = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.pFiltro = new System.Windows.Forms.Panel();
+            this.rbTodos = new System.Windows.Forms.RadioButton();
+            this.rbCancelado = new System.Windows.Forms.RadioButton();
+            this.rbFaturado = new System.Windows.Forms.RadioButton();
+            this.rbAberto = new System.Windows.Forms.RadioButton();
+            this.cbTipoBuscaData = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.chbTipoBuscaData = new System.Windows.Forms.CheckBox();
+            this.dgvDados = new System.Windows.Forms.DataGridView();
             this.gbBotoes.SuspendLayout();
             this.pFiltro.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
@@ -91,175 +91,6 @@
             this.gbBotoes.Size = new System.Drawing.Size(810, 72);
             this.gbBotoes.TabIndex = 18;
             this.gbBotoes.TabStop = false;
-            // 
-            // txtPesquisar
-            // 
-            this.txtPesquisar.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.txtPesquisar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPesquisar.ForeColor = System.Drawing.Color.White;
-            this.txtPesquisar.Location = new System.Drawing.Point(6, 26);
-            this.txtPesquisar.Name = "txtPesquisar";
-            this.txtPesquisar.Size = new System.Drawing.Size(432, 24);
-            this.txtPesquisar.TabIndex = 7;
-            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
-            this.txtPesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisar_KeyDown);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(134, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(30, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = "De";
-            // 
-            // pFiltro
-            // 
-            this.pFiltro.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.pFiltro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.pFiltro.Controls.Add(this.rbTodos);
-            this.pFiltro.Controls.Add(this.rbCancelado);
-            this.pFiltro.Controls.Add(this.rbFaturado);
-            this.pFiltro.Controls.Add(this.rbAberto);
-            this.pFiltro.Controls.Add(this.cbTipoBuscaData);
-            this.pFiltro.Controls.Add(this.dateTimePicker2);
-            this.pFiltro.Controls.Add(this.dateTimePicker1);
-            this.pFiltro.Controls.Add(this.label1);
-            this.pFiltro.Controls.Add(this.label2);
-            this.pFiltro.Controls.Add(this.chbTipoBuscaData);
-            this.pFiltro.ForeColor = System.Drawing.Color.White;
-            this.pFiltro.Location = new System.Drawing.Point(18, 289);
-            this.pFiltro.Name = "pFiltro";
-            this.pFiltro.Size = new System.Drawing.Size(312, 148);
-            this.pFiltro.TabIndex = 17;
-            this.pFiltro.Visible = false;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(134, 105);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(34, 20);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "Até";
-            // 
-            // dgvDados
-            // 
-            this.dgvDados.AllowUserToAddRows = false;
-            this.dgvDados.AllowUserToDeleteRows = false;
-            this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dgvDados.BackgroundColor = System.Drawing.Color.DarkSlateGray;
-            this.dgvDados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDados.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgvDados.EnableHeadersVisualStyles = false;
-            this.dgvDados.Location = new System.Drawing.Point(12, 12);
-            this.dgvDados.Name = "dgvDados";
-            this.dgvDados.ReadOnly = true;
-            this.dgvDados.RowHeadersVisible = false;
-            this.dgvDados.RowHeadersWidth = 28;
-            this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDados.Size = new System.Drawing.Size(810, 399);
-            this.dgvDados.TabIndex = 16;
-            // 
-            // cbTipoBuscaData
-            // 
-            this.cbTipoBuscaData.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.cbTipoBuscaData.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipoBuscaData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTipoBuscaData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTipoBuscaData.ForeColor = System.Drawing.Color.White;
-            this.cbTipoBuscaData.FormattingEnabled = true;
-            this.cbTipoBuscaData.Items.AddRange(new object[] {
-            "CADASTRO",
-            "VENCIMENTO",
-            "PAGAMENTO"});
-            this.cbTipoBuscaData.Location = new System.Drawing.Point(138, 34);
-            this.cbTipoBuscaData.Name = "cbTipoBuscaData";
-            this.cbTipoBuscaData.Size = new System.Drawing.Size(150, 28);
-            this.cbTipoBuscaData.TabIndex = 24;
-            // 
-            // rbTodos
-            // 
-            this.rbTodos.AutoSize = true;
-            this.rbTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbTodos.ForeColor = System.Drawing.Color.White;
-            this.rbTodos.Location = new System.Drawing.Point(16, 12);
-            this.rbTodos.Name = "rbTodos";
-            this.rbTodos.Size = new System.Drawing.Size(71, 24);
-            this.rbTodos.TabIndex = 28;
-            this.rbTodos.Text = "Todos";
-            this.rbTodos.UseVisualStyleBackColor = true;
-            // 
-            // rbCancelado
-            // 
-            this.rbCancelado.AutoSize = true;
-            this.rbCancelado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCancelado.ForeColor = System.Drawing.Color.White;
-            this.rbCancelado.Location = new System.Drawing.Point(16, 102);
-            this.rbCancelado.Name = "rbCancelado";
-            this.rbCancelado.Size = new System.Drawing.Size(103, 24);
-            this.rbCancelado.TabIndex = 27;
-            this.rbCancelado.Text = "Cancelado";
-            this.rbCancelado.UseVisualStyleBackColor = true;
-            // 
-            // rbFaturado
-            // 
-            this.rbFaturado.AutoSize = true;
-            this.rbFaturado.Checked = true;
-            this.rbFaturado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFaturado.ForeColor = System.Drawing.Color.White;
-            this.rbFaturado.Location = new System.Drawing.Point(16, 72);
-            this.rbFaturado.Name = "rbFaturado";
-            this.rbFaturado.Size = new System.Drawing.Size(96, 24);
-            this.rbFaturado.TabIndex = 26;
-            this.rbFaturado.TabStop = true;
-            this.rbFaturado.Text = "Pendente";
-            this.rbFaturado.UseVisualStyleBackColor = true;
-            // 
-            // rbAberto
-            // 
-            this.rbAberto.AutoSize = true;
-            this.rbAberto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbAberto.ForeColor = System.Drawing.Color.White;
-            this.rbAberto.Location = new System.Drawing.Point(16, 42);
-            this.rbAberto.Name = "rbAberto";
-            this.rbAberto.Size = new System.Drawing.Size(64, 24);
-            this.rbAberto.TabIndex = 25;
-            this.rbAberto.Text = "Pago";
-            this.rbAberto.UseVisualStyleBackColor = true;
-            // 
-            // chbTipoBuscaData
-            // 
-            this.chbTipoBuscaData.AutoSize = true;
-            this.chbTipoBuscaData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chbTipoBuscaData.ForeColor = System.Drawing.Color.White;
-            this.chbTipoBuscaData.Location = new System.Drawing.Point(136, 12);
-            this.chbTipoBuscaData.Name = "chbTipoBuscaData";
-            this.chbTipoBuscaData.Size = new System.Drawing.Size(136, 24);
-            this.chbTipoBuscaData.TabIndex = 24;
-            this.chbTipoBuscaData.Text = "Busca por data";
-            this.chbTipoBuscaData.UseVisualStyleBackColor = true;
             // 
             // btClonar
             // 
@@ -322,6 +153,19 @@
             this.btEdt.TabIndex = 10;
             this.btEdt.UseVisualStyleBackColor = true;
             // 
+            // txtPesquisar
+            // 
+            this.txtPesquisar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.txtPesquisar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPesquisar.ForeColor = System.Drawing.Color.White;
+            this.txtPesquisar.Location = new System.Drawing.Point(6, 26);
+            this.txtPesquisar.Name = "txtPesquisar";
+            this.txtPesquisar.Size = new System.Drawing.Size(432, 24);
+            this.txtPesquisar.TabIndex = 7;
+            this.txtPesquisar.TextChanged += new System.EventHandler(this.txtPesquisar_TextChanged);
+            this.txtPesquisar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisar_KeyDown);
+            // 
             // btSair
             // 
             this.btSair.FlatAppearance.BorderSize = 0;
@@ -336,6 +180,7 @@
             this.btSair.Size = new System.Drawing.Size(55, 55);
             this.btSair.TabIndex = 12;
             this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // btExc
             // 
@@ -351,6 +196,162 @@
             this.btExc.Size = new System.Drawing.Size(55, 55);
             this.btExc.TabIndex = 11;
             this.btExc.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(134, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(30, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = "De";
+            // 
+            // pFiltro
+            // 
+            this.pFiltro.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pFiltro.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pFiltro.Controls.Add(this.rbTodos);
+            this.pFiltro.Controls.Add(this.rbCancelado);
+            this.pFiltro.Controls.Add(this.rbFaturado);
+            this.pFiltro.Controls.Add(this.rbAberto);
+            this.pFiltro.Controls.Add(this.cbTipoBuscaData);
+            this.pFiltro.Controls.Add(this.dateTimePicker2);
+            this.pFiltro.Controls.Add(this.dateTimePicker1);
+            this.pFiltro.Controls.Add(this.label1);
+            this.pFiltro.Controls.Add(this.label2);
+            this.pFiltro.Controls.Add(this.chbTipoBuscaData);
+            this.pFiltro.ForeColor = System.Drawing.Color.White;
+            this.pFiltro.Location = new System.Drawing.Point(18, 289);
+            this.pFiltro.Name = "pFiltro";
+            this.pFiltro.Size = new System.Drawing.Size(312, 148);
+            this.pFiltro.TabIndex = 17;
+            this.pFiltro.Visible = false;
+            // 
+            // rbTodos
+            // 
+            this.rbTodos.AutoSize = true;
+            this.rbTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTodos.ForeColor = System.Drawing.Color.White;
+            this.rbTodos.Location = new System.Drawing.Point(16, 12);
+            this.rbTodos.Name = "rbTodos";
+            this.rbTodos.Size = new System.Drawing.Size(71, 24);
+            this.rbTodos.TabIndex = 28;
+            this.rbTodos.Text = "Todos";
+            this.rbTodos.UseVisualStyleBackColor = true;
+            // 
+            // rbCancelado
+            // 
+            this.rbCancelado.AutoSize = true;
+            this.rbCancelado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCancelado.ForeColor = System.Drawing.Color.White;
+            this.rbCancelado.Location = new System.Drawing.Point(16, 102);
+            this.rbCancelado.Name = "rbCancelado";
+            this.rbCancelado.Size = new System.Drawing.Size(103, 24);
+            this.rbCancelado.TabIndex = 27;
+            this.rbCancelado.Text = "Cancelado";
+            this.rbCancelado.UseVisualStyleBackColor = true;
+            // 
+            // rbFaturado
+            // 
+            this.rbFaturado.AutoSize = true;
+            this.rbFaturado.Checked = true;
+            this.rbFaturado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbFaturado.ForeColor = System.Drawing.Color.White;
+            this.rbFaturado.Location = new System.Drawing.Point(16, 72);
+            this.rbFaturado.Name = "rbFaturado";
+            this.rbFaturado.Size = new System.Drawing.Size(96, 24);
+            this.rbFaturado.TabIndex = 26;
+            this.rbFaturado.TabStop = true;
+            this.rbFaturado.Text = "Pendente";
+            this.rbFaturado.UseVisualStyleBackColor = true;
+            // 
+            // rbAberto
+            // 
+            this.rbAberto.AutoSize = true;
+            this.rbAberto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAberto.ForeColor = System.Drawing.Color.White;
+            this.rbAberto.Location = new System.Drawing.Point(16, 42);
+            this.rbAberto.Name = "rbAberto";
+            this.rbAberto.Size = new System.Drawing.Size(64, 24);
+            this.rbAberto.TabIndex = 25;
+            this.rbAberto.Text = "Pago";
+            this.rbAberto.UseVisualStyleBackColor = true;
+            // 
+            // cbTipoBuscaData
+            // 
+            this.cbTipoBuscaData.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cbTipoBuscaData.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipoBuscaData.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTipoBuscaData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipoBuscaData.ForeColor = System.Drawing.Color.White;
+            this.cbTipoBuscaData.FormattingEnabled = true;
+            this.cbTipoBuscaData.Items.AddRange(new object[] {
+            "CADASTRO",
+            "VENCIMENTO",
+            "PAGAMENTO"});
+            this.cbTipoBuscaData.Location = new System.Drawing.Point(138, 34);
+            this.cbTipoBuscaData.Name = "cbTipoBuscaData";
+            this.cbTipoBuscaData.Size = new System.Drawing.Size(150, 28);
+            this.cbTipoBuscaData.TabIndex = 24;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(134, 105);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(34, 20);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "Até";
+            // 
+            // chbTipoBuscaData
+            // 
+            this.chbTipoBuscaData.AutoSize = true;
+            this.chbTipoBuscaData.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbTipoBuscaData.ForeColor = System.Drawing.Color.White;
+            this.chbTipoBuscaData.Location = new System.Drawing.Point(136, 12);
+            this.chbTipoBuscaData.Name = "chbTipoBuscaData";
+            this.chbTipoBuscaData.Size = new System.Drawing.Size(136, 24);
+            this.chbTipoBuscaData.TabIndex = 24;
+            this.chbTipoBuscaData.Text = "Busca por data";
+            this.chbTipoBuscaData.UseVisualStyleBackColor = true;
+            // 
+            // dgvDados
+            // 
+            this.dgvDados.AllowUserToAddRows = false;
+            this.dgvDados.AllowUserToDeleteRows = false;
+            this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dgvDados.BackgroundColor = System.Drawing.Color.DarkSlateGray;
+            this.dgvDados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDados.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvDados.EnableHeadersVisualStyles = false;
+            this.dgvDados.Location = new System.Drawing.Point(12, 12);
+            this.dgvDados.Name = "dgvDados";
+            this.dgvDados.ReadOnly = true;
+            this.dgvDados.RowHeadersVisible = false;
+            this.dgvDados.RowHeadersWidth = 28;
+            this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvDados.Size = new System.Drawing.Size(810, 399);
+            this.dgvDados.TabIndex = 16;
             // 
             // frmConsultaContaPagar
             // 

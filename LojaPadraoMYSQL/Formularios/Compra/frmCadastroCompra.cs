@@ -1229,6 +1229,8 @@ namespace LojaPadraoMYSQL.Formularios
                 txtPrecoParcela.Text = resultado.ToString("N2");
             }
         }
+
+  
     }
 }
 

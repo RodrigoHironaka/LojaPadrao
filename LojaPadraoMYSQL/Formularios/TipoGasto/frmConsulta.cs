@@ -32,7 +32,7 @@ namespace LojaPadraoMYSQL.Formularios.TipoGasto
             frmCadastro f = new frmCadastro();
             f.ShowDialog();
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            CBLL bll = new CBLL(cx);
+            BLLTipoGasto bll = new BLLTipoGasto(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
             cbStatus.SelectedIndex = 1;
         }
@@ -40,7 +40,7 @@ namespace LojaPadraoMYSQL.Formularios.TipoGasto
         private void btEdt_Click(object sender, EventArgs e)
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            CBLL bll = new CBLL(cx);
+            BLLTipoGasto bll = new BLLTipoGasto(cx);
 
             if (dgvDados.SelectedRows.Count == 0) //verifica se uma linha esta selecionada no grid ou nao
             {
@@ -74,7 +74,7 @@ namespace LojaPadraoMYSQL.Formularios.TipoGasto
                     if (d.ToString() == "Yes")
                     {
                         DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                        CBLL bll = new CBLL(cx);
+                        BLLTipoGasto bll = new BLLTipoGasto(cx);
                         bll.Excluir(Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value));
                         MessageBox.Show("Registro excluído com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgvDados.DataSource = bll.CarregaGridAtivo();
@@ -94,19 +94,19 @@ namespace LojaPadraoMYSQL.Formularios.TipoGasto
             if (cbStatus.SelectedIndex == 1)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                CBLL bll = new CBLL(cx);
+                BLLTipoGasto bll = new BLLTipoGasto(cx);
                 dgvDados.DataSource = bll.LocalizarAtivo(txtPesquisa.Text);
             }
             else if (cbStatus.SelectedIndex == 2)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                CBLL bll = new CBLL(cx);
+                BLLTipoGasto bll = new BLLTipoGasto(cx);
                 dgvDados.DataSource = bll.LocalizarInativo(txtPesquisa.Text);
             }
             else if (cbStatus.SelectedIndex == 0)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                CBLL bll = new CBLL(cx);
+                BLLTipoGasto bll = new BLLTipoGasto(cx);
                 dgvDados.DataSource = bll.Localizar(txtPesquisa.Text);
             }
         }
@@ -114,7 +114,7 @@ namespace LojaPadraoMYSQL.Formularios.TipoGasto
         private void frmConsulta_Load(object sender, EventArgs e)
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            CBLL bll = new CBLL(cx);
+            BLLTipoGasto bll = new BLLTipoGasto(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
             this.AtualizaCabecalhoGridDados();
         }
@@ -125,21 +125,21 @@ namespace LojaPadraoMYSQL.Formularios.TipoGasto
             {
                 txtPesquisa.Clear();
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                CBLL bll = new CBLL(cx);
+                BLLTipoGasto bll = new BLLTipoGasto(cx);
                 dgvDados.DataSource = bll.CarregaGridAtivo();
             }
             else if (cbStatus.SelectedIndex == 2)
             {
                 txtPesquisa.Clear();
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                CBLL bll = new CBLL(cx);
+                BLLTipoGasto bll = new BLLTipoGasto(cx);
                 dgvDados.DataSource = bll.CarregaGridInativo();
             }
             else
             {
                 txtPesquisa.Clear();
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                CBLL bll = new CBLL(cx);
+                BLLTipoGasto bll = new BLLTipoGasto(cx);
                 dgvDados.DataSource = bll.CarregaGrid();
             }
         }

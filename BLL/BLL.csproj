@@ -59,7 +59,7 @@
     <Compile Include="BLLMarca.cs" />
     <Compile Include="BLLProduto.cs" />
     <Compile Include="BLLSubGrupo.cs" />
-    <Compile Include="BLLTipoGasto\CBLL.cs" />
+    <Compile Include="BLLTipoGasto.cs" />
     <Compile Include="BLLTransportadora.cs" />
     <Compile Include="BLLUnidadeMedida.cs" />
     <Compile Include="BLLUsuario.cs" />
