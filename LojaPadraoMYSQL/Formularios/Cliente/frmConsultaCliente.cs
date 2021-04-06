@@ -54,7 +54,7 @@ namespace LojaPadraoMYSQL.Formularios
             InitializeComponent();
             cbStatus.SelectedIndex = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLFornecedor bll = new BLLFornecedor(cx);
+            BLLCliente bll = new BLLCliente(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
             dgvDados.Select();
             this.AtualizaCabecalhoGridDados();

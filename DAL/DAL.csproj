@@ -51,6 +51,7 @@
     <Compile Include="DALCompraItens.cs" />
     <Compile Include="DALCompraPagamento.cs" />
     <Compile Include="DALConn\DALConexao.cs" />
+    <Compile Include="DALContaPagar.cs" />
     <Compile Include="DALDepartamento.cs" />
     <Compile Include="DALFormaPagamento.cs" />
     <Compile Include="DALFornecedor.cs" />

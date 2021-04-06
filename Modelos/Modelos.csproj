@@ -47,6 +47,7 @@
     <Compile Include="ModeloCompra.cs" />
     <Compile Include="ModeloCompraItens.cs" />
     <Compile Include="ModeloCompraPagamento.cs" />
+    <Compile Include="ModeloContaPagar.cs" />
     <Compile Include="ModeloDepartamento.cs" />
     <Compile Include="ModeloFormaPagamento.cs" />
     <Compile Include="ModeloFornecedor.cs" />
@@ -59,6 +60,7 @@
     <Compile Include="ModeloTransportadora.cs" />
     <Compile Include="ModeloUnidadeMedida.cs" />
     <Compile Include="ModeloUsuario.cs" />
+    <Compile Include="ObejtoValor\SituacaoAPagar.cs" />
     <Compile Include="ObejtoValor\SituacaoCompra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

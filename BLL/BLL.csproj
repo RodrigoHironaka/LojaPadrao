@@ -51,6 +51,7 @@
     <Compile Include="BLLCompra.cs" />
     <Compile Include="BLLCompraItens.cs" />
     <Compile Include="BLLCompraPagamento.cs" />
+    <Compile Include="BLLContasPagar.cs" />
     <Compile Include="BLLDepartamento.cs" />
     <Compile Include="BLLFormaPagamento.cs" />
     <Compile Include="BLLFornecedor.cs" />

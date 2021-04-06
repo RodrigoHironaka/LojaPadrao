@@ -49,10 +49,14 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             if(cbTipoPessoa.SelectedIndex == 0)
             {
                 lbNome.Text = "Cliente:";
+                txtCod.Clear();
+                txtNomeEmpresa.Clear();
             }
             else if(cbTipoPessoa.SelectedIndex == 1)
             {
                 lbNome.Text = "Fornecedor:";
+                txtCod.Clear();
+                txtNomeEmpresa.Clear();
             }
             else
             {
