@@ -78,16 +78,16 @@ namespace DAL
             cmd.ExecuteNonQuery();
         }
 
-        public DataTable Localizar()
+        public DataTable LocalizarCliente()
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select  c.`status`"+
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, c.nomefantasia, cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status"+
                 " from contapagar cp"+
                 " inner join tipogasto tg on(cp.idTipoGasto = tg.id) "+
-                " inner join formapagamento fp on(cp.idFormaPagamento = fp.id) " +
+                //" inner join formapagamento fp on(cp.idFormaPagamento = fp.id) " +
                 " inner join cliente c on(cp.idPessoa = c.id) " +
-                " inner join fornecedor f on(cp.idPessoa = f.id) " +
-                " order by c.id ", conexao.StringConexao);
+                //" inner join fornecedor f on(cp.idPessoa = f.id) " +
+                " order by cp.id ", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }

@@ -48,10 +48,10 @@ namespace BLL
             DALObj.Excluir(id);
         }
 
-        public DataTable Localizar()
+        public DataTable LocalizarCliente()
         {
             DALContaPagar DALObj = new DALContaPagar(conexao);
-            return DALObj.Localizar();
+            return DALObj.LocalizarCliente();
         }
         public DataTable LocalizarTodos(String valor)
         {

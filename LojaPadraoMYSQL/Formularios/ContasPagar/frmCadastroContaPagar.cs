@@ -16,6 +16,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
 {
     public partial class frmCadastroContaPagar : Form
     {
+       
         public frmCadastroContaPagar()
         {
             InitializeComponent();
@@ -168,6 +169,116 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                 MessageBox.Show(ex.ToString());
                 txtCod.Clear();
                 txtNome.Clear();
+            }
+        }
+
+        public void LimpaTela()
+        {
+            txtID.Clear();
+            txtNumDoc.Clear();
+            txtNome.Clear();
+            txtCod.Text = "0,00";
+            txtNomeEmpresa.Clear();
+            txtValor.Clear();
+            dtpVencimento.Text = System.DateTime.Now.ToShortDateString();
+            dtpEmissão.Text = System.DateTime.Now.ToShortDateString();
+            txtDataCadastro.Clear();
+            cbTipoGasto.SelectedIndex = 0;
+            lbStatus.Text = "Aberto";
+            chbUnica.Checked = true;
+            txtQtdParcelas.Text = "0";
+            cbFormaPagamento.SelectedIndex = 0;
+            cbTipoPessoa.SelectedIndex = 0;
+            txtObs.Clear();
+        }
+        private void btSalvar_Click(object sender, EventArgs e)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            cx.Conectar();
+            cx.IniciarTransacao();
+
+            try
+            {
+                ModeloContaPagar modelo = new ModeloContaPagar();
+                
+                if (txtNumDoc.Text != "")
+                {
+                    modelo.NumDoc = Convert.ToInt32(txtNumDoc.Text);
+                }
+                else
+                {
+                    modelo.NumDoc = 0;
+                }
+                modelo.Descricao = txtNome.Text;
+                if(txtCod.Text != "")
+                {
+                    modelo.PessoaID = Convert.ToInt32(txtCod.Text);
+                }
+                else
+                {
+                    modelo.PessoaID = 1;
+                }
+                modelo.Valor = Convert.ToDecimal(txtValor.Text);
+                modelo.Vencimento = dtpVencimento.Value;
+                modelo.Emissão = dtpEmissão.Value;
+                modelo.DataCadastro = txtDataCadastro.Text;
+                modelo.TipoGastoID = Convert.ToInt32(cbTipoGasto.SelectedValue);
+                if (lbStatus.Text == "ABERTO")
+                {
+                    modelo.Status = Convert.ToChar("A");
+                }
+                else if (lbStatus.Text == "PAGO")
+                {
+                    modelo.Status = Convert.ToChar("P");
+                }
+                else if (lbStatus.Text == "CANCELADO")
+                {
+                    modelo.Status = Convert.ToChar("C");
+                }
+                if (chbUnica.Checked)
+                {
+                    modelo.Unica = Convert.ToChar("S");
+                }
+                else
+                {
+                    modelo.Unica = Convert.ToChar("N");
+                }
+                modelo.QtdParcelas = Convert.ToInt32(txtQtdParcelas.Text);
+                modelo.FormaPagamentoID = Convert.ToInt32(cbFormaPagamento.SelectedValue);
+                modelo.TipoPessoa = cbTipoPessoa.Text;
+                modelo.Observacao = txtObs.Text;
+
+                BLLContasPagar bll = new BLLContasPagar(cx);
+
+                if (txtID.Text == "")
+                {
+                    //incluir
+
+                    //cadastra dados da tabela compra
+                    int id = bll.Incluir(modelo);
+                    this.Close();
+                }
+                else
+                {
+                    //Alterar
+
+                    //Itens
+                    modelo.ContaPagarID = Int32.Parse(txtID.Text);
+                    bll.Alterar(modelo);
+
+                    MessageBox.Show("Cadastro Alterado com sucesso!!!");
+                    this.Close();
+
+                }
+                this.LimpaTela();
+                cx.TerminarTransacao();
+                cx.Desconectar();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+                cx.CancelaTransacao();
+                cx.Desconectar();
             }
         }
     }
