@@ -139,9 +139,11 @@
             this.txtValor.Location = new System.Drawing.Point(479, 39);
             this.txtValor.MaxLength = 10;
             this.txtValor.Name = "txtValor";
-            this.txtValor.Size = new System.Drawing.Size(124, 26);
+            this.txtValor.Size = new System.Drawing.Size(100, 26);
             this.txtValor.TabIndex = 3;
             this.txtValor.Text = "0,00";
+            this.txtValor.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtValor_KeyPress);
+            this.txtValor.Leave += new System.EventHandler(this.txtValor_Leave);
             // 
             // txtCod
             // 
@@ -154,6 +156,7 @@
             this.txtCod.Name = "txtCod";
             this.txtCod.Size = new System.Drawing.Size(87, 26);
             this.txtCod.TabIndex = 4;
+            this.txtCod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_KeyPress);
             this.txtCod.Leave += new System.EventHandler(this.txtCod_Leave);
             // 
             // lbPrecoNota
@@ -312,6 +315,7 @@
             this.txtNumDoc.Name = "txtNumDoc";
             this.txtNumDoc.Size = new System.Drawing.Size(105, 26);
             this.txtNumDoc.TabIndex = 379;
+            this.txtNumDoc.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNumDoc_KeyPress);
             // 
             // label10
             // 
@@ -343,9 +347,9 @@
             this.cbFormaPagamento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFormaPagamento.ForeColor = System.Drawing.Color.White;
             this.cbFormaPagamento.FormattingEnabled = true;
-            this.cbFormaPagamento.Location = new System.Drawing.Point(609, 39);
+            this.cbFormaPagamento.Location = new System.Drawing.Point(585, 39);
             this.cbFormaPagamento.Name = "cbFormaPagamento";
-            this.cbFormaPagamento.Size = new System.Drawing.Size(175, 26);
+            this.cbFormaPagamento.Size = new System.Drawing.Size(199, 26);
             this.cbFormaPagamento.TabIndex = 381;
             // 
             // label11
@@ -353,7 +357,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label11.ForeColor = System.Drawing.Color.White;
-            this.label11.Location = new System.Drawing.Point(605, 16);
+            this.label11.Location = new System.Drawing.Point(581, 16);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(113, 20);
             this.label11.TabIndex = 382;
@@ -368,7 +372,6 @@
             this.txtNome.Location = new System.Drawing.Point(10, 91);
             this.txtNome.MaxLength = 50;
             this.txtNome.Name = "txtNome";
-            this.txtNome.ReadOnly = true;
             this.txtNome.Size = new System.Drawing.Size(552, 26);
             this.txtNome.TabIndex = 376;
             // 

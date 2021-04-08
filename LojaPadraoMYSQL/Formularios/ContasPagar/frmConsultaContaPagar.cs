@@ -33,6 +33,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             //dgvDados.Columns[14].Visible = false;
             
         }
+
         public frmConsultaContaPagar()
         {
             InitializeComponent();

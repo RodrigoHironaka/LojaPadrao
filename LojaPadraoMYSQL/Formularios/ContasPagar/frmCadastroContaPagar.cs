@@ -1,6 +1,7 @@
 ﻿using BLL;
 using DAL;
 using Modelos;
+using Modelos.ObejtoValor;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -16,14 +17,37 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
 {
     public partial class frmCadastroContaPagar : Form
     {
-       
+        //--------------------CARREGACOMBO---------------------------------------------------------
+        private void carregaFormaPagamento()
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLContasPagar bll = new BLLContasPagar(cx);
+            cbFormaPagamento.DataSource = bll.CarregaComboFormaPagamento();
+            cbFormaPagamento.DisplayMember = "nome";
+            cbFormaPagamento.ValueMember = "id";
+
+        }
+
+        private void carregaTipoGasto()
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLContasPagar bll = new BLLContasPagar(cx);
+            cbTipoGasto.DataSource = bll.CarregaComboTipoGasto();
+            cbTipoGasto.DisplayMember = "nome";
+            cbTipoGasto.ValueMember = "id";
+
+        }
+
         public frmCadastroContaPagar()
         {
             InitializeComponent();
             txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
+            lbStatus.Text = Convert.ToString(SituacaoAPagar.Aberto).ToUpper();
+            lbStatus.ForeColor = Color.White;
             chbUnica.Checked = true;
             cbTipoPessoa.SelectedIndex = 0;
-            
+            this.carregaFormaPagamento();
+            this.carregaTipoGasto();
         }
 
         private void btSair_Click(object sender, EventArgs e)
@@ -37,11 +61,13 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             {
                 txtQtdParcelas.Text = "0";
                 txtQtdParcelas.ReadOnly = true;
+                
             }
             else
             {
                 txtQtdParcelas.Clear();
                 txtQtdParcelas.ReadOnly = false;
+                txtQtdParcelas.Select();
             }
         }
 
@@ -75,6 +101,10 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
 
         private void txtQtdParcelas_Leave(object sender, EventArgs e)
         {
+            if(txtQtdParcelas.Text == "")
+            {
+                txtQtdParcelas.Text = "0";
+            }
             int qtd = Convert.ToInt32(txtQtdParcelas.Text);
             if (qtd >= 50)
             {
@@ -84,6 +114,12 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                     txtQtdParcelas.Select();
                     return;
                 }
+            }else if((qtd == 0)||(qtd == 1))
+            {
+                txtQtdParcelas.Text = "0";
+                txtQtdParcelas.ReadOnly = true;
+                chbUnica.Checked = true;
+                txtValor.Select();
             }
         }
 
@@ -280,6 +316,50 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                 cx.CancelaTransacao();
                 cx.Desconectar();
             }
+        }
+
+        private void txtValor_Leave(object sender, EventArgs e)
+        {
+            try
+            {
+                if(txtValor.Text == "") 
+                {
+                    txtValor.Text = "0,00";
+                    cbFormaPagamento.Select();
+                }
+                else
+                {
+                    decimal valor = Convert.ToDecimal(txtValor.Text);
+                    txtValor.Text = valor.ToString("N2");
+                }
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
+            {
+                e.Handled = true;
+            }
+            if ((e.KeyChar == ',') && ((sender as TextBox).Text.IndexOf('.') > -1))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void txtNumDoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtQtdParcelas_KeyPress(sender, e);
+        }
+
+        private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtQtdParcelas_KeyPress(sender, e);
         }
     }
 }

@@ -91,5 +91,17 @@ namespace BLL
             DALContaPagar DALObj = new DALContaPagar(conexao);
             return DALObj.Cancelar(id);
         }
+
+        public DataTable CarregaComboFormaPagamento()
+        {
+            DALContaPagar DALObj = new DALContaPagar(conexao);
+            return DALObj.CarregaComboFormaPagamento();
+        }
+
+        public DataTable CarregaComboTipoGasto()
+        {
+            DALContaPagar DALObj = new DALContaPagar(conexao);
+            return DALObj.CarregaComboTipoGasto();
+        }
     }
 }

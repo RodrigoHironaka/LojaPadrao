@@ -80,16 +80,36 @@ namespace DAL
 
         public DataTable LocalizarCliente()
         {
-            DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, c.nomefantasia, cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status"+
-                " from contapagar cp"+
-                " inner join tipogasto tg on(cp.idTipoGasto = tg.id) "+
-                //" inner join formapagamento fp on(cp.idFormaPagamento = fp.id) " +
-                " inner join cliente c on(cp.idPessoa = c.id) " +
-                //" inner join fornecedor f on(cp.idPessoa = f.id) " +
-                " order by cp.id ", conexao.StringConexao);
-            da.Fill(tabela);
-            return tabela;
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.CommandText = "select tipoPessoa from contapagar";
+            //var tipo = cmd.ExecuteScalar();
+            if (cmd.CommandText == "CLIENTE")
+            {
+                DataTable tabela = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, c.nomefantasia, cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+                    " from contapagar cp" +
+                    " inner join tipogasto tg on(cp.idTipoGasto = tg.id) " +
+                    //" inner join formapagamento fp on(cp.idFormaPagamento = fp.id) " +
+                    " inner join cliente c on(cp.idPessoa = c.id) " +
+                    //" inner join fornecedor f on(cp.idPessoa = f.id) " +
+                    " order by cp.id ", conexao.StringConexao);
+                da.Fill(tabela);
+                return tabela;
+            }
+            else if (cmd.CommandText == "FORNECEDOR")
+            {
+                DataTable tabela = new DataTable();
+                MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, f.nomefantasia, cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+                    " from contapagar cp" +
+                    " inner join tipogasto tg on(cp.idTipoGasto = tg.id) " +
+                    //" inner join formapagamento fp on(cp.idFormaPagamento = fp.id) " +
+                    //" inner join cliente c on(cp.idPessoa = c.id) " +
+                    " inner join fornecedor f on(cp.idPessoa = f.id) " +
+                    " order by cp.id ", conexao.StringConexao);
+                da.Fill(tabela);
+                return tabela;
+            }
+           
         }
 
         //MELHORAR PESQUISA DO CONTASPAGAR
@@ -179,6 +199,42 @@ namespace DAL
                 retorno = false;
             }
             return retorno;
+        }
+
+        public DataTable CarregaComboFormaPagamento()
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conexao.ObjetoConexao;
+                conexao.Conectar();
+                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter("SELECT id, nome FROM formapagamento where status = 'A' and qtdparcelas > 0 ORDER BY nome", conexao.StringConexao);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
+        }
+
+        public DataTable CarregaComboTipoGasto()
+        {
+            try
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                cmd.Connection = conexao.ObjetoConexao;
+                conexao.Conectar();
+                MySqlDataAdapter sqlDataAdapter = new MySqlDataAdapter("SELECT id, nome FROM tipogasto where status = 'A' ORDER BY nome", conexao.StringConexao);
+                DataTable dataTable = new DataTable();
+                sqlDataAdapter.Fill(dataTable);
+                return dataTable;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.ToString());
+            }
         }
     }
 }
