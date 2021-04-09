@@ -16,6 +16,7 @@ namespace DAL
         {
             this.conexao = cx;
         }
+
         public int Incluir(ModeloContaPagar modelo)
         {
             int idcompra = 0;
@@ -38,7 +39,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@observacao", modelo.Observacao);
             cmd.Parameters.AddWithValue("@status", modelo.Status);
             cmd.ExecuteNonQuery();
-            cmd.CommandText = "select max(id) from compra";
+            cmd.CommandText = "select max(id) from contapagar";
             idcompra = Convert.ToInt32(cmd.ExecuteScalar());
             return idcompra;
         }
@@ -78,38 +79,42 @@ namespace DAL
             cmd.ExecuteNonQuery();
         }
 
+        public DataTable Localizar()
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, cp.tipoPessoa, f.nomefantasia, cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+                " from contapagar cp" +
+                " inner join tipogasto tg on(cp.idTipoGasto = tg.id) " +
+                " inner join fornecedor f on(cp.idPessoa = f.id) " +
+                " order by cp.id ", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+
         public DataTable LocalizarCliente()
         {
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.CommandText = "select tipoPessoa from contapagar";
-            //var tipo = cmd.ExecuteScalar();
-            if (cmd.CommandText == "CLIENTE")
-            {
-                DataTable tabela = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, c.nomefantasia, cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
-                    " from contapagar cp" +
-                    " inner join tipogasto tg on(cp.idTipoGasto = tg.id) " +
-                    //" inner join formapagamento fp on(cp.idFormaPagamento = fp.id) " +
-                    " inner join cliente c on(cp.idPessoa = c.id) " +
-                    //" inner join fornecedor f on(cp.idPessoa = f.id) " +
-                    " order by cp.id ", conexao.StringConexao);
-                da.Fill(tabela);
-                return tabela;
-            }
-            else if (cmd.CommandText == "FORNECEDOR")
-            {
-                DataTable tabela = new DataTable();
-                MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, f.nomefantasia, cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
-                    " from contapagar cp" +
-                    " inner join tipogasto tg on(cp.idTipoGasto = tg.id) " +
-                    //" inner join formapagamento fp on(cp.idFormaPagamento = fp.id) " +
-                    //" inner join cliente c on(cp.idPessoa = c.id) " +
-                    " inner join fornecedor f on(cp.idPessoa = f.id) " +
-                    " order by cp.id ", conexao.StringConexao);
-                da.Fill(tabela);
-                return tabela;
-            }
-           
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, cp.tipoPessoa, c.nomefantasia, cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+                " from contapagar cp" +
+                " inner join tipogasto tg on(cp.idTipoGasto = tg.id) " +
+                " inner join cliente c on(cp.idPessoa = c.id) " +
+                " where cp.tipoPessoa = 'CLIENTE' " +
+                " group by cp.id ", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+
+        public DataTable LocalizarFornecedor()
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, cp.tipoPessoa, f.nomefantasia, cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+                " from contapagar cp" +
+                " inner join tipogasto tg on(cp.idTipoGasto = tg.id) " +
+                " inner join fornecedor f on(cp.idPessoa = f.id) " +
+                " where cp.tipoPessoa = 'FORNECEDOR' " +
+                " group by cp.id ", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
         }
 
         //MELHORAR PESQUISA DO CONTASPAGAR
@@ -235,6 +240,18 @@ namespace DAL
             {
                 throw new Exception(ex.ToString());
             }
+        }
+
+        public int VerificaUltimoIdInserido()
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conexao.ObjetoConexao;
+            cmd.CommandText = "Select max(id) from contapagar";
+            conexao.Conectar();
+            int id = Convert.ToInt32(cmd.ExecuteScalar());
+            conexao.Desconectar();
+            return id;
+
         }
     }
 }

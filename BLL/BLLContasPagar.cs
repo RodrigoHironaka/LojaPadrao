@@ -48,11 +48,24 @@ namespace BLL
             DALObj.Excluir(id);
         }
 
+        public DataTable Localizar()
+        {
+            DALContaPagar DALObj = new DALContaPagar(conexao);
+            return DALObj.Localizar();
+        }
+
         public DataTable LocalizarCliente()
         {
             DALContaPagar DALObj = new DALContaPagar(conexao);
             return DALObj.LocalizarCliente();
         }
+
+        public DataTable LocalizarFornecedor()
+        {
+            DALContaPagar DALObj = new DALContaPagar(conexao);
+            return DALObj.LocalizarFornecedor();
+        }
+
         public DataTable LocalizarTodos(String valor)
         {
             DALContaPagar DALObj = new DALContaPagar(conexao);
@@ -102,6 +115,12 @@ namespace BLL
         {
             DALContaPagar DALObj = new DALContaPagar(conexao);
             return DALObj.CarregaComboTipoGasto();
+        }
+
+        public int VerificaUltimoIdInserido()
+        {
+            DALContaPagar DALObj = new DALContaPagar(conexao);
+            return DALObj.VerificaUltimoIdInserido();
         }
     }
 }
