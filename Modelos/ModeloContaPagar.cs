@@ -11,7 +11,6 @@ namespace Modelos
         public Int64 ContaPagarID { get; set; }
         public string DataCadastro { get; set; }
         public int TipoGastoID { get; set; }
-        public char Unica { get; set; }
         public int QtdParcelas { get; set; }
         public decimal Valor { get; set; }
         public int FormaPagamentoID { get; set; }
@@ -22,6 +21,7 @@ namespace Modelos
         public string TipoPessoa { get; set; }
         public int PessoaID { get; set; }
         public string Observacao { get; set; }
+        public int Periodo { get; set; }
         public char Status { get; set; }
         
     }

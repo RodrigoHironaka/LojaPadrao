@@ -44,8 +44,8 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
             lbStatus.Text = Convert.ToString(SituacaoAPagar.Aberto).ToUpper();
             lbStatus.ForeColor = Color.White;
-            chbUnica.Checked = true;
             cbTipoPessoa.SelectedIndex = 0;
+            cbPeriodo.SelectedIndex = 0;
             this.carregaFormaPagamento();
             this.carregaTipoGasto();
         }
@@ -53,22 +53,6 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
         private void btSair_Click(object sender, EventArgs e)
         {
             this.Close();
-        }
-
-        private void chbUnica_CheckedChanged(object sender, EventArgs e)
-        {
-            if (chbUnica.Checked)
-            {
-                txtQtdParcelas.Text = "0";
-                txtQtdParcelas.ReadOnly = true;
-                
-            }
-            else
-            {
-                txtQtdParcelas.Clear();
-                txtQtdParcelas.ReadOnly = false;
-                txtQtdParcelas.Select();
-            }
         }
 
         private void cbTipoPessoa_SelectedIndexChanged(object sender, EventArgs e)
@@ -118,7 +102,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             {
                 txtQtdParcelas.Text = "0";
                 txtQtdParcelas.ReadOnly = true;
-                chbUnica.Checked = true;
+                cbPeriodo.SelectedIndex = 0;
                 txtValor.Select();
             }
         }
@@ -221,7 +205,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             txtDataCadastro.Clear();
             cbTipoGasto.SelectedIndex = 0;
             lbStatus.Text = "Aberto";
-            chbUnica.Checked = true;
+            cbPeriodo.SelectedIndex = 0;
             txtQtdParcelas.Text = "0";
             cbFormaPagamento.SelectedIndex = 0;
             cbTipoPessoa.SelectedIndex = 0;
@@ -271,13 +255,41 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                 {
                     modelo.Status = Convert.ToChar("C");
                 }
-                if (chbUnica.Checked)
+                if (cbPeriodo.SelectedIndex == 0)
                 {
-                    modelo.Unica = Convert.ToChar("S");
+                    modelo.Periodo = Convert.ToInt32(Periodo.Unica);
                 }
-                else
+                else if (cbPeriodo.SelectedIndex == 1)
                 {
-                    modelo.Unica = Convert.ToChar("N");
+                    modelo.Periodo = Convert.ToInt32(Periodo.Diario);
+                }
+                else if (cbPeriodo.SelectedIndex == 2)
+                {
+                    modelo.Periodo = Convert.ToInt32(Periodo.Semanal);
+                }
+                else if (cbPeriodo.SelectedIndex == 3)
+                {
+                    modelo.Periodo = Convert.ToInt32(Periodo.Quinzenal);
+                }
+                else if (cbPeriodo.SelectedIndex == 4)
+                {
+                    modelo.Periodo = Convert.ToInt32(Periodo.Mensal);
+                }
+                else if (cbPeriodo.SelectedIndex == 5)
+                {
+                    modelo.Periodo = Convert.ToInt32(Periodo.Bimestral);
+                }
+                else if (cbPeriodo.SelectedIndex == 6)
+                {
+                    modelo.Periodo = Convert.ToInt32(Periodo.Timestral);
+                }
+                else if (cbPeriodo.SelectedIndex == 7)
+                {
+                    modelo.Periodo = Convert.ToInt32(Periodo.Semestral);
+                }
+                else if (cbPeriodo.SelectedIndex == 8)
+                {
+                    modelo.Periodo = Convert.ToInt32(Periodo.Anual);
                 }
                 modelo.QtdParcelas = Convert.ToInt32(txtQtdParcelas.Text);
                 modelo.FormaPagamentoID = Convert.ToInt32(cbFormaPagamento.SelectedValue);
@@ -288,11 +300,70 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
 
                 if (txtID.Text == "")
                 {
-                    //incluir
 
-                    //cadastra dados da tabela compra
-                    int id = bll.Incluir(modelo);
-                    this.Close();
+                    //incluir
+                    int qtd = Convert.ToInt32(txtQtdParcelas.Text);
+                    if(qtd == 0)
+                    {
+                        //cadastra dados da tabela contapagr apenas 1 vez
+                        bll.Incluir(modelo);
+                        this.Close();
+                    }
+                    else
+                    {
+                        if (txtNome.Text == "")
+                        {
+                            MessageBox.Show("A descrição deve ser prenchida.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            txtNome.Select();
+                            return;
+                        }
+                        else
+                        {
+                            //cadastra a qtd definida
+                            int periodo = cbPeriodo.SelectedIndex;
+                            var descricao = " ";
+                            decimal valor = Convert.ToDecimal(txtValor.Text);
+                            decimal resultado = valor / qtd;
+                            decimal valorparcela = Math.Round(resultado, 2);
+                            decimal resultadodif = valor - (valorparcela * qtd);
+                            decimal dif = Math.Round(resultadodif, 2);
+                            for (int i = 1; i <= qtd; i++)
+                            {
+                                descricao = txtNome.Text + " " + i + "/" + qtd;
+                                modelo.Descricao = descricao;
+                                if (periodo == 1)
+                                {
+                                    int dias = Convert.ToInt32(Periodo.Diario);
+                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
+                                    if (dif < 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else if (dif > 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else
+                                    {
+                                        valorparcela = Math.Round(resultado, 2);
+                                        dif = 0;
+                                    }
+
+                                    modelo.Valor = valorparcela;
+                                    //modelo.Valor = Convert.ToDecimal(txtValor.Text);
+                                    bll.Incluir(modelo);
+                                }
+                                else
+                                {
+                                    MessageBox.Show("testando");
+                                }
+                            }
+                            this.Close();
+                        }
+                       
+                    }
                 }
                 else
                 {
@@ -360,6 +431,22 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
         private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
         {
             txtQtdParcelas_KeyPress(sender, e);
+        }
+
+        private void cbPeriodo_Leave(object sender, EventArgs e)
+        {
+            if (cbPeriodo.SelectedIndex == 0)
+            {
+                txtQtdParcelas.Text = "0";
+                txtQtdParcelas.ReadOnly = true;
+
+            }
+            else
+            {
+                txtQtdParcelas.Clear();
+                txtQtdParcelas.ReadOnly = false;
+                txtQtdParcelas.Select();
+            }
         }
     }
 }

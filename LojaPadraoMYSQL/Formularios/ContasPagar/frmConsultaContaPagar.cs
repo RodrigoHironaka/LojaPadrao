@@ -32,7 +32,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             //dgvDados.Columns[12].Visible = false;
             //dgvDados.Columns[13].Visible = false;
             //dgvDados.Columns[14].Visible = false;
-            
+
         }
 
         public frmConsultaContaPagar()
@@ -57,24 +57,58 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            frmCadastroContaPagar f = new frmCadastroContaPagar();
-            f.ShowDialog();
-            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLContasPagar bll = new BLLContasPagar(cx);
-            var id = bll.VerificaUltimoIdInserido();
-            var tipo = bll.CarregaModeloContaPagar(Convert.ToInt32(id));
-            if(tipo.TipoPessoa == "CLIENTE")
+            if (dgvDados.Rows.Count == 0)
             {
-                dgvDados.DataSource = bll.LocalizarCliente();
-                dgvDados.Select();
-                this.AtualizaCabecalhoGridConsulta();
-            }else if (tipo.TipoPessoa == "FORNECEDOR")
-            {
-                dgvDados.DataSource = bll.LocalizarFornecedor();
-                dgvDados.Select();
-                this.AtualizaCabecalhoGridConsulta();
-            }
+                frmCadastroContaPagar f = new frmCadastroContaPagar();
+                f.ShowDialog();
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLContasPagar bll = new BLLContasPagar(cx);
+                var idNovo = bll.VerificaUltimoIdInserido();
+                var tipo = bll.CarregaModeloContaPagar(Convert.ToInt32(idNovo));
+                if (tipo.TipoPessoa == "CLIENTE")
+                {
+                    dgvDados.DataSource = bll.LocalizarCliente();
+                    dgvDados.Select();
+                    this.AtualizaCabecalhoGridConsulta();
+                }
+                else if (tipo.TipoPessoa == "FORNECEDOR")
+                {
+                    dgvDados.DataSource = bll.LocalizarFornecedor();
+                    dgvDados.Select();
+                    this.AtualizaCabecalhoGridConsulta();
+                }
 
+            }
+            else
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLContasPagar bll = new BLLContasPagar(cx);
+                var idAnterior = bll.VerificaUltimoIdInserido();
+                frmCadastroContaPagar f = new frmCadastroContaPagar();
+                f.ShowDialog();
+                var idNovo = bll.VerificaUltimoIdInserido();
+                if (idAnterior == idNovo)
+                {
+                    dgvDados.DataSource = null;
+                    txtPesquisar.Select();
+                }
+                else
+                {
+                    var tipo = bll.CarregaModeloContaPagar(Convert.ToInt32(idNovo));
+                    if (tipo.TipoPessoa == "CLIENTE")
+                    {
+                        dgvDados.DataSource = bll.LocalizarCliente();
+                        dgvDados.Select();
+                        this.AtualizaCabecalhoGridConsulta();
+                    }
+                    else if (tipo.TipoPessoa == "FORNECEDOR")
+                    {
+                        dgvDados.DataSource = bll.LocalizarFornecedor();
+                        dgvDados.Select();
+                        this.AtualizaCabecalhoGridConsulta();
+                    }
+                }
+            }
         }
 
         private void btSair_Click(object sender, EventArgs e)

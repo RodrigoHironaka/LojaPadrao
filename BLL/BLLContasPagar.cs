@@ -24,6 +24,10 @@ namespace BLL
             {
                 throw new Exception("A descrição deve ser preenchida!");
             }
+            if(modelo.Valor == 0)
+            {
+                throw new Exception("Por favor digite um valor maior que R$ 0,00;");
+            }
             DALContaPagar DALObj = new DALContaPagar(conexao);
             return DALObj.Incluir(modelo);
         }
