@@ -1,5 +1,7 @@
 ﻿using BLL;
 using DAL;
+using LojaPadraoMYSQL.Formularios.FormBotoes;
+using LojaPadraoMYSQL.Formularios.FormBotoes.ObjetoValorForms;
 using Modelos;
 using System;
 using System.Collections.Generic;
@@ -33,7 +35,9 @@ namespace LojaPadraoMYSQL.Formularios
         private void btAdd_Click(object sender, EventArgs e)
         {
             frmCadastroFuncao f = new frmCadastroFuncao();
+            this.Opacity = 0;
             f.ShowDialog();
+            this.Opacity = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLFuncao bll = new BLLFuncao(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
@@ -94,6 +98,7 @@ namespace LojaPadraoMYSQL.Formularios
         private void btSair_Click(object sender, EventArgs e)
         {
             this.Close();
+            
         }
 
         private void txtPesquisa_TextChanged(object sender, EventArgs e)

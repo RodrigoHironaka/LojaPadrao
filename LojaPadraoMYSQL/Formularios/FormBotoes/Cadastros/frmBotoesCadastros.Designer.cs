@@ -44,7 +44,6 @@
             this.btCidades = new System.Windows.Forms.Button();
             this.btCliente = new System.Windows.Forms.Button();
             this.btTiposGasto = new System.Windows.Forms.Button();
-            this.btVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btFormasPagamento
@@ -377,27 +376,6 @@
             this.btTiposGasto.UseVisualStyleBackColor = false;
             this.btTiposGasto.Click += new System.EventHandler(this.btTiposGasto_Click);
             // 
-            // btVoltar
-            // 
-            this.btVoltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btVoltar.AutoSize = true;
-            this.btVoltar.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btVoltar.FlatAppearance.BorderSize = 0;
-            this.btVoltar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btVoltar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btVoltar.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btVoltar.ForeColor = System.Drawing.Color.White;
-            this.btVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btVoltar.Image")));
-            this.btVoltar.Location = new System.Drawing.Point(12, 390);
-            this.btVoltar.Name = "btVoltar";
-            this.btVoltar.Size = new System.Drawing.Size(54, 54);
-            this.btVoltar.TabIndex = 76;
-            this.btVoltar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btVoltar.UseVisualStyleBackColor = false;
-            this.btVoltar.Click += new System.EventHandler(this.btVoltar_Click);
-            // 
             // frmBotoesCadastros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -405,7 +383,6 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(649, 462);
-            this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.btTiposGasto);
             this.Controls.Add(this.btFormasPagamento);
             this.Controls.Add(this.btUnidades);
@@ -448,6 +425,5 @@
         private System.Windows.Forms.Button btCidades;
         private System.Windows.Forms.Button btCliente;
         private System.Windows.Forms.Button btTiposGasto;
-        private System.Windows.Forms.Button btVoltar;
     }
 }

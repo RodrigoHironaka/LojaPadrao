@@ -20,12 +20,6 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes
             InitializeComponent();
         }
 
-        private void btVoltar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-          
-        }
-
         private void btCidades_Click(object sender, EventArgs e)
         {
             frmConsultaCidade f = new frmConsultaCidade();
@@ -47,7 +41,10 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes
         private void btFuncoes_Click(object sender, EventArgs e)
         {
             frmConsultaFuncao f = new frmConsultaFuncao();
+            this.Visible = false;
             f.ShowDialog();
+            this.Visible = true;
+            
         }
 
         private void btDepartamento_Click(object sender, EventArgs e)

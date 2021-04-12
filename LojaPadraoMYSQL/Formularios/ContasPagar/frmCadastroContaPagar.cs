@@ -352,12 +352,168 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                                     }
 
                                     modelo.Valor = valorparcela;
-                                    //modelo.Valor = Convert.ToDecimal(txtValor.Text);
                                     bll.Incluir(modelo);
                                 }
-                                else
+                                else if (periodo == 2)
                                 {
-                                    MessageBox.Show("testando");
+                                    int dias = Convert.ToInt32(Periodo.Semanal);
+                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
+                                    if (dif < 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else if (dif > 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else
+                                    {
+                                        valorparcela = Math.Round(resultado, 2);
+                                        dif = 0;
+                                    }
+
+                                    modelo.Valor = valorparcela;
+                                    bll.Incluir(modelo);
+                                }
+                                else if (periodo == 3)
+                                {
+                                    int dias = Convert.ToInt32(Periodo.Quinzenal);
+                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
+                                    if (dif < 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else if (dif > 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else
+                                    {
+                                        valorparcela = Math.Round(resultado, 2);
+                                        dif = 0;
+                                    }
+
+                                    modelo.Valor = valorparcela;
+                                    bll.Incluir(modelo);
+                                }
+                                else if (periodo == 4)
+                                {
+                                    int dias = Convert.ToInt32(Periodo.Mensal);
+                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
+                                    if (dif < 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else if (dif > 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else
+                                    {
+                                        valorparcela = Math.Round(resultado, 2);
+                                        dif = 0;
+                                    }
+
+                                    modelo.Valor = valorparcela;
+                                    bll.Incluir(modelo);
+                                }
+                                else if (periodo == 5)
+                                {
+                                    int dias = Convert.ToInt32(Periodo.Bimestral);
+                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
+                                    if (dif < 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else if (dif > 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else
+                                    {
+                                        valorparcela = Math.Round(resultado, 2);
+                                        dif = 0;
+                                    }
+
+                                    modelo.Valor = valorparcela;
+                                    bll.Incluir(modelo);
+                                }
+                                else if (periodo == 6)
+                                {
+                                    int dias = Convert.ToInt32(Periodo.Timestral);
+                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
+                                    if (dif < 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else if (dif > 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else
+                                    {
+                                        valorparcela = Math.Round(resultado, 2);
+                                        dif = 0;
+                                    }
+
+                                    modelo.Valor = valorparcela;
+                                    bll.Incluir(modelo);
+                                }
+                                else if (periodo == 7)
+                                {
+                                    int dias = Convert.ToInt32(Periodo.Semestral);
+                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
+                                    if (dif < 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else if (dif > 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else
+                                    {
+                                        valorparcela = Math.Round(resultado, 2);
+                                        dif = 0;
+                                    }
+
+                                    modelo.Valor = valorparcela;
+                                    bll.Incluir(modelo);
+                                }
+                                else if (periodo == 8)
+                                {
+                                    int dias = Convert.ToInt32(Periodo.Anual);
+                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
+                                    if (dif < 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else if (dif > 0)
+                                    {
+                                        valorparcela = valorparcela + dif;
+                                        dif = 0;
+                                    }
+                                    else
+                                    {
+                                        valorparcela = Math.Round(resultado, 2);
+                                        dif = 0;
+                                    }
+
+                                    modelo.Valor = valorparcela;
+                                    bll.Incluir(modelo);
                                 }
                             }
                             this.Close();

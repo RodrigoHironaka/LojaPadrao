@@ -241,7 +241,7 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 DialogResult resultado = MessageBox.Show("Deseja sair sem salvar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resultado == DialogResult.Yes)
-                    Close();
+                    this.Close();
             }
             catch (Exception ex)
             {

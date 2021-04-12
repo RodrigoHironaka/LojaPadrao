@@ -284,8 +284,6 @@
         private System.Windows.Forms.Button btnCadastros;
         private System.Windows.Forms.Button button6;
         private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Panel pFormInfo;
-        private System.Windows.Forms.Label lbTitulo;
         private System.Windows.Forms.Button btInicio;
         private System.Windows.Forms.Button btMinimizar;
         private System.Windows.Forms.Label lbHora;
@@ -293,5 +291,7 @@
         private System.Windows.Forms.Label lbData;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pBotoesMenu;
+        public System.Windows.Forms.Panel pFormInfo;
+        public System.Windows.Forms.Label lbTitulo;
     }
 }
