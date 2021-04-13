@@ -61,7 +61,9 @@ namespace LojaPadraoMYSQL.Formularios.Colaborador
         private void btAdd_Click(object sender, EventArgs e)
         {
             frmCadastroColaborador f = new frmCadastroColaborador();
+            this.Opacity = 0;
             f.ShowDialog();
+            this.Opacity = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLColaborador bll = new BLLColaborador(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
@@ -83,7 +85,9 @@ namespace LojaPadraoMYSQL.Formularios.Colaborador
                 this.id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid
                 ModeloColaborador modelo = bll.CarregaModeloColaborador(id);
                 frmCadastroColaborador f = new frmCadastroColaborador(modelo);
+                this.Opacity = 0;
                 f.ShowDialog();
+                this.Opacity = 1;
                 f.Dispose();
                 dgvDados.DataSource = bll.CarregaGridAtivo();
                 cbStatus.SelectedIndex = 1;

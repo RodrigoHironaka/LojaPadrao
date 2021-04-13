@@ -70,7 +70,9 @@ namespace LojaPadraoMYSQL.Formularios
         private void btAdd_Click(object sender, EventArgs e)
         {
             frmCadastroProduto f = new frmCadastroProduto();
+            this.Opacity = 0;
             f.ShowDialog();
+            this.Opacity = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLProduto bll = new BLLProduto(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
@@ -93,7 +95,9 @@ namespace LojaPadraoMYSQL.Formularios
                 this.id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value);
                 ModeloProduto modelo = bll.CarregaModeloProduto(id);
                 frmCadastroProduto f = new frmCadastroProduto(modelo);
+                this.Opacity = 0;
                 f.ShowDialog();
+                this.Opacity = 1;
                 f.Dispose();
                 dgvDados.DataSource = bll.CarregaGridAtivo();
                 cbStatus.SelectedIndex = 1;

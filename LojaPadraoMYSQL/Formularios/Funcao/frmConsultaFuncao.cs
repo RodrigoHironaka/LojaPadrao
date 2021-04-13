@@ -59,7 +59,9 @@ namespace LojaPadraoMYSQL.Formularios
                 this.id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid
                 ModeloFuncao modelo = bll.CarregaModeloFuncao(id);
                 frmCadastroFuncao f = new frmCadastroFuncao(modelo);
+                this.Opacity = 0;
                 f.ShowDialog();
+                this.Opacity = 1;
                 f.Dispose();
                 dgvDados.DataSource = bll.CarregaGridAtivo();
                 cbStatus.SelectedIndex = 1;

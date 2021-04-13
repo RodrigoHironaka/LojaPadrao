@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Modelos.ObejtoValor
 {
-    public enum Periodo
+    public enum PeriodoDias
     {
         Unica = 0,
         Diario = 1,

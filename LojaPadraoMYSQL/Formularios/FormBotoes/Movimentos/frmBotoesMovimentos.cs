@@ -18,21 +18,20 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes.Movimentos
             InitializeComponent();
         }
 
-        private void btVoltar_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void btCompra_Click(object sender, EventArgs e)
         {
             frmConsultaCompra f = new frmConsultaCompra();
+            this.Visible = false;
             f.ShowDialog();
+            this.Visible = true;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             frmConsultaContaPagar f = new frmConsultaContaPagar();
+            this.Visible = false;
             f.ShowDialog();
+            this.Visible = true;
         }
     }
 }

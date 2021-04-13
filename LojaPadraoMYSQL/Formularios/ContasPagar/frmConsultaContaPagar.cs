@@ -60,7 +60,9 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             if (dgvDados.Rows.Count == 0)
             {
                 frmCadastroContaPagar f = new frmCadastroContaPagar();
+                this.Opacity = 0;
                 f.ShowDialog();
+                this.Opacity = 1;
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLContasPagar bll = new BLLContasPagar(cx);
                 var idNovo = bll.VerificaUltimoIdInserido();
@@ -85,7 +87,9 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                 BLLContasPagar bll = new BLLContasPagar(cx);
                 var idAnterior = bll.VerificaUltimoIdInserido();
                 frmCadastroContaPagar f = new frmCadastroContaPagar();
+                this.Opacity = 0;
                 f.ShowDialog();
+                this.Opacity = 1;
                 var idNovo = bll.VerificaUltimoIdInserido();
                 if (idAnterior == idNovo)
                 {

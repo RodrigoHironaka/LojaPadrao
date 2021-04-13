@@ -41,6 +41,8 @@
             this.lbDataCadastro = new System.Windows.Forms.Label();
             this.txtID = new System.Windows.Forms.TextBox();
             this.gbDadosCompra = new System.Windows.Forms.GroupBox();
+            this.cbPeriodo = new System.Windows.Forms.ComboBox();
+            this.label7 = new System.Windows.Forms.Label();
             this.txtObs = new System.Windows.Forms.TextBox();
             this.txtNumDoc = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -73,6 +75,7 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbStatus = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.btPagar = new System.Windows.Forms.Button();
             this.btRenegociar = new System.Windows.Forms.Button();
             this.btSair = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
@@ -90,9 +93,6 @@
             this.textBox22 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.cbPeriodo = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.btPagar = new System.Windows.Forms.Button();
             this.gbDadosCompra.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -280,17 +280,52 @@
             this.gbDadosCompra.TabIndex = 366;
             this.gbDadosCompra.TabStop = false;
             // 
+            // cbPeriodo
+            // 
+            this.cbPeriodo.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cbPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.cbPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbPeriodo.ForeColor = System.Drawing.Color.White;
+            this.cbPeriodo.FormattingEnabled = true;
+            this.cbPeriodo.Items.AddRange(new object[] {
+            "UNICA",
+            "DIARIO",
+            "SEMANAL",
+            "QUINZENAL",
+            "MENSAL",
+            "BIMESTRAL",
+            "TRIMESTRAL",
+            "SEMESTRAL",
+            "ANUAL"});
+            this.cbPeriodo.Location = new System.Drawing.Point(547, 38);
+            this.cbPeriodo.Name = "cbPeriodo";
+            this.cbPeriodo.Size = new System.Drawing.Size(140, 26);
+            this.cbPeriodo.TabIndex = 386;
+            this.cbPeriodo.Leave += new System.EventHandler(this.cbPeriodo_Leave);
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(543, 16);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(63, 20);
+            this.label7.TabIndex = 387;
+            this.label7.Text = "Período";
+            // 
             // txtObs
             // 
             this.txtObs.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtObs.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtObs.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtObs.ForeColor = System.Drawing.Color.White;
-            this.txtObs.Location = new System.Drawing.Point(10, 278);
+            this.txtObs.Location = new System.Drawing.Point(10, 194);
             this.txtObs.MaxLength = 100;
             this.txtObs.Multiline = true;
             this.txtObs.Name = "txtObs";
-            this.txtObs.Size = new System.Drawing.Size(836, 75);
+            this.txtObs.Size = new System.Drawing.Size(836, 159);
             this.txtObs.TabIndex = 383;
             // 
             // txtNumDoc
@@ -643,9 +678,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBox2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.groupBox2.Controls.Add(this.lbStatus);
-            this.groupBox2.Location = new System.Drawing.Point(16, 420);
+            this.groupBox2.Location = new System.Drawing.Point(12, 420);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(525, 69);
+            this.groupBox2.Size = new System.Drawing.Size(529, 69);
             this.groupBox2.TabIndex = 374;
             this.groupBox2.TabStop = false;
             // 
@@ -673,6 +708,24 @@
             this.gbBotoes.Size = new System.Drawing.Size(341, 70);
             this.gbBotoes.TabIndex = 375;
             this.gbBotoes.TabStop = false;
+            // 
+            // btPagar
+            // 
+            this.btPagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btPagar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btPagar.FlatAppearance.BorderSize = 0;
+            this.btPagar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btPagar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btPagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btPagar.ForeColor = System.Drawing.Color.Black;
+            this.btPagar.Image = ((System.Drawing.Image)(resources.GetObject("btPagar.Image")));
+            this.btPagar.Location = new System.Drawing.Point(6, 14);
+            this.btPagar.Name = "btPagar";
+            this.btPagar.Size = new System.Drawing.Size(50, 50);
+            this.btPagar.TabIndex = 4;
+            this.btPagar.UseVisualStyleBackColor = false;
             // 
             // btRenegociar
             // 
@@ -762,7 +815,7 @@
             this.tabDetalhes.Location = new System.Drawing.Point(4, 22);
             this.tabDetalhes.Name = "tabDetalhes";
             this.tabDetalhes.Padding = new System.Windows.Forms.Padding(3);
-            this.tabDetalhes.Size = new System.Drawing.Size(806, 375);
+            this.tabDetalhes.Size = new System.Drawing.Size(868, 375);
             this.tabDetalhes.TabIndex = 1;
             this.tabDetalhes.Text = "DETALHES";
             // 
@@ -898,59 +951,6 @@
             this.groupBox4.TabIndex = 381;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Dados do Pagamento";
-            // 
-            // cbPeriodo
-            // 
-            this.cbPeriodo.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.cbPeriodo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.cbPeriodo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbPeriodo.ForeColor = System.Drawing.Color.White;
-            this.cbPeriodo.FormattingEnabled = true;
-            this.cbPeriodo.Items.AddRange(new object[] {
-            "UNICA",
-            "DIARIO",
-            "SEMANAL",
-            "QUINZENAL",
-            "MENSAL",
-            "BIMESTRAL",
-            "TRIMESTRAL",
-            "SEMESTRAL",
-            "ANUAL"});
-            this.cbPeriodo.Location = new System.Drawing.Point(547, 38);
-            this.cbPeriodo.Name = "cbPeriodo";
-            this.cbPeriodo.Size = new System.Drawing.Size(140, 26);
-            this.cbPeriodo.TabIndex = 386;
-            this.cbPeriodo.Leave += new System.EventHandler(this.cbPeriodo_Leave);
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(543, 16);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(63, 20);
-            this.label7.TabIndex = 387;
-            this.label7.Text = "Período";
-            // 
-            // btPagar
-            // 
-            this.btPagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btPagar.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btPagar.FlatAppearance.BorderSize = 0;
-            this.btPagar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btPagar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btPagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPagar.ForeColor = System.Drawing.Color.Black;
-            this.btPagar.Image = ((System.Drawing.Image)(resources.GetObject("btPagar.Image")));
-            this.btPagar.Location = new System.Drawing.Point(6, 14);
-            this.btPagar.Name = "btPagar";
-            this.btPagar.Size = new System.Drawing.Size(50, 50);
-            this.btPagar.TabIndex = 4;
-            this.btPagar.UseVisualStyleBackColor = false;
             // 
             // frmCadastroContaPagar
             // 

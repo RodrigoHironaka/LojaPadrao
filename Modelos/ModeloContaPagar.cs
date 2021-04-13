@@ -21,8 +21,8 @@ namespace Modelos
         public string TipoPessoa { get; set; }
         public int PessoaID { get; set; }
         public string Observacao { get; set; }
-        public int Periodo { get; set; }
-        public char Status { get; set; }
+        public string Periodo { get; set; }
+        public string Status { get; set; }
         
     }
 }

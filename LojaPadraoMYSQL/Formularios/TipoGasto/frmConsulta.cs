@@ -30,7 +30,9 @@ namespace LojaPadraoMYSQL.Formularios.TipoGasto
         private void btAdd_Click(object sender, EventArgs e)
         {
             frmCadastro f = new frmCadastro();
+            this.Opacity = 0;
             f.ShowDialog();
+            this.Opacity = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLTipoGasto bll = new BLLTipoGasto(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
@@ -52,7 +54,9 @@ namespace LojaPadraoMYSQL.Formularios.TipoGasto
                 this.idgrid = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid
                 Modelo modelo = bll.CarregaModelo(idgrid);
                 frmCadastro f = new frmCadastro(modelo);
+                this.Opacity = 0;
                 f.ShowDialog();
+                this.Opacity = 1;
                 f.Dispose();
                 dgvDados.DataSource = bll.CarregaGridAtivo();
                 cbStatus.SelectedIndex = 1;

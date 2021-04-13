@@ -38,6 +38,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
 
         }
 
+        //--------------------INICIALIZA FORM------------------------------------------------------
         public frmCadastroContaPagar()
         {
             InitializeComponent();
@@ -50,11 +51,13 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             this.carregaTipoGasto();
         }
 
+        //--------------------SAIR-----------------------------------------------------------------
         private void btSair_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
+        //--------------------CAMPO PARA DEFINIR SE É CLIENTE OU FORNECEDOR------------------------
         private void cbTipoPessoa_SelectedIndexChanged(object sender, EventArgs e)
         {
             if(cbTipoPessoa.SelectedIndex == 0)
@@ -75,6 +78,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             }
         }
 
+        //--------------------SOMENTE NUMERO-------------------------------------------------------
         private void txtQtdParcelas_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -83,6 +87,17 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             }
         }
 
+        private void txtNumDoc_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtQtdParcelas_KeyPress(sender, e);
+        }
+
+        private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            txtQtdParcelas_KeyPress(sender, e);
+        }
+
+        //--------------------VERIFICAR SE QTD É MUITO ALTA OU SE É 0 OU 1-------------------------
         private void txtQtdParcelas_Leave(object sender, EventArgs e)
         {
             if(txtQtdParcelas.Text == "")
@@ -107,6 +122,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             }
         }
 
+        //--------------------IMPEDE DE COLOCAR DATA DE VENCIMENTO MENOR QUE DATA DE EMISSÃO-------
         private void dtpVencimento_ValueChanged(object sender, EventArgs e)
         {
             DateTime dataEmissao = Convert.ToDateTime(dtpEmissão.Text);
@@ -117,6 +133,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             }
         }
 
+        //--------------------BUSCA POR CODIGO DO CLIENTE OU FORNECEDOR----------------------------
         private void txtCod_Leave(object sender, EventArgs e)
         {
             try
@@ -159,6 +176,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             }
         }
 
+        //--------------------ABRE FORM CLIENTE OU FORNCEDOR PARA SELECIONAR-----------------------
         private void btPesqFornecedor_Click(object sender, EventArgs e)
         {
             try
@@ -192,6 +210,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             }
         }
 
+        //--------------------LIMPA TELA-----------------------------------------------------------
         public void LimpaTela()
         {
             txtID.Clear();
@@ -211,6 +230,8 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             cbTipoPessoa.SelectedIndex = 0;
             txtObs.Clear();
         }
+
+        //--------------------SALVAR INCLUIR OU ALTERAR--------------------------------------------
         private void btSalvar_Click(object sender, EventArgs e)
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
@@ -220,7 +241,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             try
             {
                 ModeloContaPagar modelo = new ModeloContaPagar();
-                
+                //veriifca se numero do documento esta em branco e preenche com zero se ele estiver
                 if (txtNumDoc.Text != "")
                 {
                     modelo.NumDoc = Convert.ToInt32(txtNumDoc.Text);
@@ -229,8 +250,8 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                 {
                     modelo.NumDoc = 0;
                 }
-                modelo.Descricao = txtNome.Text;
-                if(txtCod.Text != "")
+                //veriifca se id cliente/fornecedor esta em branco e preenche com 1 se ele estiver
+                if (txtCod.Text != "")
                 {
                     modelo.PessoaID = Convert.ToInt32(txtCod.Text);
                 }
@@ -238,59 +259,14 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                 {
                     modelo.PessoaID = 1;
                 }
+                modelo.Descricao = txtNome.Text;
                 modelo.Valor = Convert.ToDecimal(txtValor.Text);
                 modelo.Vencimento = dtpVencimento.Value;
                 modelo.Emissão = dtpEmissão.Value;
                 modelo.DataCadastro = txtDataCadastro.Text;
                 modelo.TipoGastoID = Convert.ToInt32(cbTipoGasto.SelectedValue);
-                if (lbStatus.Text == "ABERTO")
-                {
-                    modelo.Status = Convert.ToChar("A");
-                }
-                else if (lbStatus.Text == "PAGO")
-                {
-                    modelo.Status = Convert.ToChar("P");
-                }
-                else if (lbStatus.Text == "CANCELADO")
-                {
-                    modelo.Status = Convert.ToChar("C");
-                }
-                if (cbPeriodo.SelectedIndex == 0)
-                {
-                    modelo.Periodo = Convert.ToInt32(Periodo.Unica);
-                }
-                else if (cbPeriodo.SelectedIndex == 1)
-                {
-                    modelo.Periodo = Convert.ToInt32(Periodo.Diario);
-                }
-                else if (cbPeriodo.SelectedIndex == 2)
-                {
-                    modelo.Periodo = Convert.ToInt32(Periodo.Semanal);
-                }
-                else if (cbPeriodo.SelectedIndex == 3)
-                {
-                    modelo.Periodo = Convert.ToInt32(Periodo.Quinzenal);
-                }
-                else if (cbPeriodo.SelectedIndex == 4)
-                {
-                    modelo.Periodo = Convert.ToInt32(Periodo.Mensal);
-                }
-                else if (cbPeriodo.SelectedIndex == 5)
-                {
-                    modelo.Periodo = Convert.ToInt32(Periodo.Bimestral);
-                }
-                else if (cbPeriodo.SelectedIndex == 6)
-                {
-                    modelo.Periodo = Convert.ToInt32(Periodo.Timestral);
-                }
-                else if (cbPeriodo.SelectedIndex == 7)
-                {
-                    modelo.Periodo = Convert.ToInt32(Periodo.Semestral);
-                }
-                else if (cbPeriodo.SelectedIndex == 8)
-                {
-                    modelo.Periodo = Convert.ToInt32(Periodo.Anual);
-                }
+                modelo.Status = lbStatus.Text;
+                modelo.Periodo = cbPeriodo.SelectedItem.ToString();
                 modelo.QtdParcelas = Convert.ToInt32(txtQtdParcelas.Text);
                 modelo.FormaPagamentoID = Convert.ToInt32(cbFormaPagamento.SelectedValue);
                 modelo.TipoPessoa = cbTipoPessoa.Text;
@@ -300,12 +276,11 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
 
                 if (txtID.Text == "")
                 {
-
                     //incluir
                     int qtd = Convert.ToInt32(txtQtdParcelas.Text);
                     if(qtd == 0)
                     {
-                        //cadastra dados da tabela contapagr apenas 1 vez
+                        //cadastra dados da tabela contapagar apenas 1 vez
                         bll.Incluir(modelo);
                         this.Close();
                     }
@@ -323,202 +298,163 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                             int periodo = cbPeriodo.SelectedIndex;
                             var descricao = " ";
                             decimal valor = Convert.ToDecimal(txtValor.Text);
-                            decimal resultado = valor / qtd;
-                            decimal valorparcela = Math.Round(resultado, 2);
-                            decimal resultadodif = valor - (valorparcela * qtd);
-                            decimal dif = Math.Round(resultadodif, 2);
                             for (int i = 1; i <= qtd; i++)
                             {
                                 descricao = txtNome.Text + " " + i + "/" + qtd;
                                 modelo.Descricao = descricao;
                                 if (periodo == 1)
                                 {
-                                    int dias = Convert.ToInt32(Periodo.Diario);
-                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
-                                    if (dif < 0)
+                                    if (i == 1)
                                     {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
-                                    }
-                                    else if (dif > 0)
-                                    {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
+                                        modelo.Vencimento = dtpVencimento.Value;
+                                        var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+                                        modelo.Valor = valorComDiferenca;
+                                        bll.Incluir(modelo);
                                     }
                                     else
                                     {
-                                        valorparcela = Math.Round(resultado, 2);
-                                        dif = 0;
+                                        int dias = Convert.ToInt32(PeriodoDias.Diario);
+                                        modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
+                                        var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+                                        modelo.Valor = valorSemDiferenca;
+                                        bll.Incluir(modelo);
                                     }
-
-                                    modelo.Valor = valorparcela;
-                                    bll.Incluir(modelo);
+                                   
                                 }
                                 else if (periodo == 2)
                                 {
-                                    int dias = Convert.ToInt32(Periodo.Semanal);
-                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
-                                    if (dif < 0)
+                                    if (i == 1)
                                     {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
-                                    }
-                                    else if (dif > 0)
-                                    {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
+                                        modelo.Vencimento = dtpVencimento.Value;
+                                        var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+                                        modelo.Valor = valorComDiferenca;
+                                        bll.Incluir(modelo);
                                     }
                                     else
                                     {
-                                        valorparcela = Math.Round(resultado, 2);
-                                        dif = 0;
+                                        int dias = Convert.ToInt32(PeriodoDias.Semanal);
+                                        modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
+                                        var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+                                        modelo.Valor = valorSemDiferenca;
+                                        bll.Incluir(modelo);
                                     }
-
-                                    modelo.Valor = valorparcela;
-                                    bll.Incluir(modelo);
+                                    
                                 }
                                 else if (periodo == 3)
                                 {
-                                    int dias = Convert.ToInt32(Periodo.Quinzenal);
-                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
-                                    if (dif < 0)
+                                    if (i == 1)
                                     {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
-                                    }
-                                    else if (dif > 0)
-                                    {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
+                                        modelo.Vencimento = dtpVencimento.Value;
+                                        var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+                                        modelo.Valor = valorComDiferenca;
+                                        bll.Incluir(modelo);
                                     }
                                     else
                                     {
-                                        valorparcela = Math.Round(resultado, 2);
-                                        dif = 0;
+                                        int dias = Convert.ToInt32(PeriodoDias.Quinzenal);
+                                        modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
+                                        var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+                                        modelo.Valor = valorSemDiferenca;
+                                        bll.Incluir(modelo);
                                     }
-
-                                    modelo.Valor = valorparcela;
-                                    bll.Incluir(modelo);
+                                    
                                 }
                                 else if (periodo == 4)
                                 {
-                                    int dias = Convert.ToInt32(Periodo.Mensal);
-                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
-                                    if (dif < 0)
+                                    if(i == 1)
                                     {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
-                                    }
-                                    else if (dif > 0)
-                                    {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
+                                        modelo.Vencimento = dtpVencimento.Value;
+                                        var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+                                        modelo.Valor = valorComDiferenca;
+                                        bll.Incluir(modelo);
                                     }
                                     else
                                     {
-                                        valorparcela = Math.Round(resultado, 2);
-                                        dif = 0;
+                                        int meses = Convert.ToInt32(PeriodoMes.Mensal);
+                                        modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddMonths(meses);
+                                        var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+                                        modelo.Valor = valorSemDiferenca;
+                                        bll.Incluir(modelo);
                                     }
-
-                                    modelo.Valor = valorparcela;
-                                    bll.Incluir(modelo);
+                                    
                                 }
                                 else if (periodo == 5)
                                 {
-                                    int dias = Convert.ToInt32(Periodo.Bimestral);
-                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
-                                    if (dif < 0)
+                                    if (i == 1)
                                     {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
-                                    }
-                                    else if (dif > 0)
-                                    {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
+                                        modelo.Vencimento = dtpVencimento.Value;
+                                        var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+                                        modelo.Valor = valorComDiferenca;
+                                        bll.Incluir(modelo);
                                     }
                                     else
                                     {
-                                        valorparcela = Math.Round(resultado, 2);
-                                        dif = 0;
+                                        int meses = Convert.ToInt32(PeriodoMes.Bimestral);
+                                        modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddMonths(meses);
+                                        var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+                                        modelo.Valor = valorSemDiferenca;
+                                        bll.Incluir(modelo);
                                     }
-
-                                    modelo.Valor = valorparcela;
-                                    bll.Incluir(modelo);
+                                   
                                 }
                                 else if (periodo == 6)
                                 {
-                                    int dias = Convert.ToInt32(Periodo.Timestral);
-                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
-                                    if (dif < 0)
+                                    if (i == 1)
                                     {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
-                                    }
-                                    else if (dif > 0)
-                                    {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
+                                        modelo.Vencimento = dtpVencimento.Value;
+                                        var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+                                        modelo.Valor = valorComDiferenca;
+                                        bll.Incluir(modelo);
                                     }
                                     else
                                     {
-                                        valorparcela = Math.Round(resultado, 2);
-                                        dif = 0;
+                                        int meses = Convert.ToInt32(PeriodoMes.Timestral);
+                                        modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddMonths(meses);
+                                        var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+                                        modelo.Valor = valorSemDiferenca;
+                                        bll.Incluir(modelo);
                                     }
-
-                                    modelo.Valor = valorparcela;
-                                    bll.Incluir(modelo);
+                                   
                                 }
                                 else if (periodo == 7)
                                 {
-                                    int dias = Convert.ToInt32(Periodo.Semestral);
-                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
-                                    if (dif < 0)
+                                    if (i == 1)
                                     {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
-                                    }
-                                    else if (dif > 0)
-                                    {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
+                                        modelo.Vencimento = dtpVencimento.Value;
+                                        var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+                                        modelo.Valor = valorComDiferenca;
+                                        bll.Incluir(modelo);
                                     }
                                     else
                                     {
-                                        valorparcela = Math.Round(resultado, 2);
-                                        dif = 0;
+                                        int meses = Convert.ToInt32(PeriodoMes.Semestral);
+                                        modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddMonths(meses);
+                                        var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+                                        modelo.Valor = valorSemDiferenca;
+                                        bll.Incluir(modelo);
                                     }
-
-                                    modelo.Valor = valorparcela;
-                                    bll.Incluir(modelo);
+                                   
                                 }
                                 else if (periodo == 8)
                                 {
-                                    int dias = Convert.ToInt32(Periodo.Anual);
-                                    modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
-                                    if (dif < 0)
+                                    if (i == 1)
                                     {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
-                                    }
-                                    else if (dif > 0)
-                                    {
-                                        valorparcela = valorparcela + dif;
-                                        dif = 0;
+                                        modelo.Vencimento = dtpVencimento.Value;
+                                        var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+                                        modelo.Valor = valorComDiferenca;
+                                        bll.Incluir(modelo);
                                     }
                                     else
                                     {
-                                        valorparcela = Math.Round(resultado, 2);
-                                        dif = 0;
+                                        modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddYears(1);
+                                        var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+                                        modelo.Valor = valorSemDiferenca;
+                                        bll.Incluir(modelo);
                                     }
-
-                                    modelo.Valor = valorparcela;
-                                    bll.Incluir(modelo);
                                 }
                             }
                             this.Close();
                         }
-                       
                     }
                 }
                 else
@@ -545,6 +481,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             }
         }
 
+        //--------------------VERIFICA SE VALOR ESTA EM BRANCO E DEFINI DUAS CASA DEPOIS DA VIRGULA
         private void txtValor_Leave(object sender, EventArgs e)
         {
             try
@@ -567,6 +504,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             }
         }
 
+        //--------------------SOMENTE NUMERO E VIRGULA---------------------------------------------
         private void txtValor_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && (e.KeyChar != ','))
@@ -579,16 +517,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             }
         }
 
-        private void txtNumDoc_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            txtQtdParcelas_KeyPress(sender, e);
-        }
-
-        private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            txtQtdParcelas_KeyPress(sender, e);
-        }
-
+        //--------------------VERIFICA TIPO DE PERIODO SELECIONADO---------------------------------
         private void cbPeriodo_Leave(object sender, EventArgs e)
         {
             if (cbPeriodo.SelectedIndex == 0)

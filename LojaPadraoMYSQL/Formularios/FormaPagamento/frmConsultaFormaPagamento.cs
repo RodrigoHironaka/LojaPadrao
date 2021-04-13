@@ -36,7 +36,9 @@ namespace LojaPadraoMYSQL.Formularios
         private void btAdd_Click(object sender, EventArgs e)
         {
             frmCadastroFormaPagamento f = new frmCadastroFormaPagamento();
+            this.Opacity = 0;
             f.ShowDialog();
+            this.Opacity = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLFormaPagamento bll = new BLLFormaPagamento(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
@@ -58,7 +60,9 @@ namespace LojaPadraoMYSQL.Formularios
                 this.id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid
                 ModeloFormaPagamento modelo = bll.CarregaModeloFormaPagamento(id);
                 frmCadastroFormaPagamento f = new frmCadastroFormaPagamento(modelo);
+                this.Opacity = 0;
                 f.ShowDialog();
+                this.Opacity = 1;
                 f.Dispose();
                 dgvDados.DataSource = bll.CarregaGridAtivo();
                 cbStatus.SelectedIndex = 1;

@@ -34,7 +34,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.btCompra = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
-            this.btVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button11
@@ -144,33 +143,12 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.UseVisualStyleBackColor = false;
             // 
-            // btVoltar
-            // 
-            this.btVoltar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btVoltar.AutoSize = true;
-            this.btVoltar.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btVoltar.FlatAppearance.BorderSize = 0;
-            this.btVoltar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btVoltar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btVoltar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btVoltar.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.btVoltar.ForeColor = System.Drawing.Color.White;
-            this.btVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btVoltar.Image")));
-            this.btVoltar.Location = new System.Drawing.Point(13, 138);
-            this.btVoltar.Name = "btVoltar";
-            this.btVoltar.Size = new System.Drawing.Size(54, 54);
-            this.btVoltar.TabIndex = 77;
-            this.btVoltar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btVoltar.UseVisualStyleBackColor = false;
-            this.btVoltar.Click += new System.EventHandler(this.btVoltar_Click);
-            // 
             // frmBotoesMovimentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(649, 462);
-            this.Controls.Add(this.btVoltar);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btCompra);
             this.Controls.Add(this.button2);
@@ -196,6 +174,5 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btCompra;
         private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button btVoltar;
     }
 }

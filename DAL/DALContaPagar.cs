@@ -198,8 +198,8 @@ namespace DAL
                 modelo.TipoPessoa = Convert.ToString(registro["tipoPessoa"]);
                 modelo.PessoaID = Convert.ToInt32(registro["idPessoa"]);
                 modelo.Observacao = Convert.ToString(registro["observacao"]);
-                modelo.Periodo = Convert.ToInt32(registro["periodo"]);
-                modelo.Status = Convert.ToChar(registro["status"]);
+                modelo.Periodo = Convert.ToString(registro["periodo"]);
+                modelo.Status = Convert.ToString(registro["status"]);
             }
             registro.Close();
             conexao.Desconectar();
@@ -265,7 +265,41 @@ namespace DAL
             conexao.Desconectar();
             return id;
         }
+
+        //CALCULA DIFERENCA NA DIVISAO---------------------------------------------------------
+        public decimal CalculoComDiferenca(decimal valortotal, int qtdparcelas)
+        {
+            decimal resultado = valortotal / qtdparcelas;
+            decimal valorparcela = Math.Round(resultado, 2);
+            decimal resultadodif = valortotal - (valorparcela * qtdparcelas);
+            decimal dif = Math.Round(resultadodif, 2);
+            decimal resComDif = 0;
+            if (dif < 0)
+            {
+                resComDif = valorparcela + dif;
+                return resComDif;
+                
+            }
+            else if (dif > 0)
+            {
+                resComDif = valorparcela + dif;
+                return resComDif;
+            }
+            else
+            {
+                resComDif = Math.Round(resultado, 2);
+                return valorparcela;
+            }
+            //return resComDif;
+        }
+        //CALCULA DIFERENCA NA DIVISAO---------------------------------------------------------
+        public decimal CalculoSemDiferenca(decimal valortotal, int qtdparcelas)
+        {
+            decimal resultado = valortotal / qtdparcelas;
+            decimal valorparcela = Math.Round(resultado, 2);            
+            return valorparcela;
+        }
     }
-   
+
 
 }

@@ -60,7 +60,9 @@ namespace LojaPadraoMYSQL.Formularios.Transportadora
         private void btAdd_Click(object sender, EventArgs e)
         {
             frmCadastroTransportadora f = new frmCadastroTransportadora();
+            this.Opacity = 0;
             f.ShowDialog();
+            this.Opacity = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLTransportadora bll = new BLLTransportadora(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
@@ -83,7 +85,9 @@ namespace LojaPadraoMYSQL.Formularios.Transportadora
                 this.id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid
                 ModeloTransportadora modelo = bll.CarregaModeloTransportadora(id);
                 frmCadastroTransportadora f = new frmCadastroTransportadora(modelo);
+                this.Opacity = 0;
                 f.ShowDialog();
+                this.Opacity = 1;
                 f.Dispose();
                 dgvDados.DataSource = bll.CarregaGridAtivo();
                 cbStatus.SelectedIndex = 1;

@@ -24,7 +24,7 @@ namespace BLL
             {
                 throw new Exception("A descrição deve ser preenchida!");
             }
-            if(modelo.Valor == 0)
+            if (modelo.Valor == 0)
             {
                 throw new Exception("Por favor digite um valor maior que R$ 0,00;");
             }
@@ -125,6 +125,18 @@ namespace BLL
         {
             DALContaPagar DALObj = new DALContaPagar(conexao);
             return DALObj.VerificaUltimoIdInserido();
+        }
+
+        public decimal CalculoComDiferenca(decimal valortotal, int qtdparcelas)
+        {
+            DALContaPagar DALObj = new DALContaPagar(conexao);
+            return DALObj.CalculoComDiferenca(valortotal, qtdparcelas);
+        }
+
+        public decimal CalculoSemDiferenca(decimal valortotal, int qtdparcelas)
+        {
+            DALContaPagar DALObj = new DALContaPagar(conexao);
+            return DALObj.CalculoSemDiferenca(valortotal, qtdparcelas);
         }
     }
 }

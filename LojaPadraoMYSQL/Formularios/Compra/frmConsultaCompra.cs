@@ -55,7 +55,9 @@ namespace LojaPadraoMYSQL.Formularios
         private void btAdd_Click(object sender, EventArgs e)
         {
             frmCadastroCompra f = new frmCadastroCompra();
+            this.Opacity = 0;
             f.ShowDialog();
+            this.Opacity = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLCompra bll = new BLLCompra(cx);
             dgvDados.DataSource = bll.Localizar();
@@ -187,7 +189,9 @@ namespace LojaPadraoMYSQL.Formularios
                     }
 
                     //ABRE FORM DE CADASTRO COM DADOS EM SEUS CAMPOS
+                    this.Opacity = 0;
                     f.ShowDialog();
+                    this.Opacity = 1;
                     f.Dispose();
 
                     //QNDO VOLTAR PARA CONSULTA E VOLTA A CARREGAR OS GRIDS COM AS FUNÇÕES ABAIXOS DEPENDENDO DO FILTRO SELECIONADO

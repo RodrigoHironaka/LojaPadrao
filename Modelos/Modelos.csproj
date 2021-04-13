@@ -60,7 +60,8 @@
     <Compile Include="ModeloTransportadora.cs" />
     <Compile Include="ModeloUnidadeMedida.cs" />
     <Compile Include="ModeloUsuario.cs" />
-    <Compile Include="ObejtoValor\Periodo.cs" />
+    <Compile Include="ObejtoValor\PeriodoDias.cs" />
+    <Compile Include="ObejtoValor\PeriodoMes.cs" />
     <Compile Include="ObejtoValor\SituacaoAPagar.cs" />
     <Compile Include="ObejtoValor\SituacaoCompra.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
