@@ -29,15 +29,14 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroProduto));
-            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabFotos = new System.Windows.Forms.TabControl();
             this.tpageDadosPrincipais = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.label16 = new System.Windows.Forms.Label();
             this.chbAtivo = new System.Windows.Forms.CheckBox();
             this.pbFoto = new System.Windows.Forms.PictureBox();
             this.chbControlarEstq = new System.Windows.Forms.CheckBox();
-            this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.btSair = new System.Windows.Forms.Button();
-            this.btSalvar = new System.Windows.Forms.Button();
             this.btRemFoto = new System.Windows.Forms.Button();
             this.txtEstqMin = new System.Windows.Forms.TextBox();
             this.txtPrecoPrazo = new System.Windows.Forms.TextBox();
@@ -98,23 +97,31 @@
             this.lbCodigo = new System.Windows.Forms.Label();
             this.lbTipoPessoa = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.tabControl1.SuspendLayout();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.btSair = new System.Windows.Forms.Button();
+            this.btSalvar = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
+            this.btBuscarImagens = new System.Windows.Forms.Button();
+            this.ofd1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.txtArquivo = new System.Windows.Forms.TextBox();
+            this.tabFotos.SuspendLayout();
             this.tpageDadosPrincipais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
+            this.tabPage2.SuspendLayout();
             this.gbBotoes.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // tabControl1
+            // tabFotos
             // 
-            this.tabControl1.Controls.Add(this.tpageDadosPrincipais);
-            this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(2, 2);
-            this.tabControl1.Name = "tabControl1";
-            this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(956, 497);
-            this.tabControl1.TabIndex = 0;
+            this.tabFotos.Controls.Add(this.tpageDadosPrincipais);
+            this.tabFotos.Controls.Add(this.tabPage2);
+            this.tabFotos.Location = new System.Drawing.Point(2, 2);
+            this.tabFotos.Name = "tabFotos";
+            this.tabFotos.SelectedIndex = 0;
+            this.tabFotos.Size = new System.Drawing.Size(956, 497);
+            this.tabFotos.TabIndex = 0;
             // 
             // tpageDadosPrincipais
             // 
@@ -191,6 +198,36 @@
             this.tpageDadosPrincipais.TabIndex = 0;
             this.tpageDadosPrincipais.Text = "Dados Principais";
             // 
+            // button1
+            // 
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(922, 5);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(20, 20);
+            this.button1.TabIndex = 361;
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
+            this.button2.Location = new System.Drawing.Point(896, 6);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(20, 20);
+            this.button2.TabIndex = 360;
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // label16
             // 
             this.label16.AutoSize = true;
@@ -240,49 +277,6 @@
             this.chbControlarEstq.Text = "Controlar?";
             this.chbControlarEstq.UseVisualStyleBackColor = true;
             this.chbControlarEstq.CheckedChanged += new System.EventHandler(this.chbControlarEstq_CheckedChanged);
-            // 
-            // gbBotoes
-            // 
-            this.gbBotoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.gbBotoes.Controls.Add(this.btSair);
-            this.gbBotoes.Controls.Add(this.btSalvar);
-            this.gbBotoes.Location = new System.Drawing.Point(12, 501);
-            this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(931, 70);
-            this.gbBotoes.TabIndex = 375;
-            this.gbBotoes.TabStop = false;
-            // 
-            // btSair
-            // 
-            this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
-            this.btSair.Location = new System.Drawing.Point(875, 14);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(50, 50);
-            this.btSair.TabIndex = 35;
-            this.btSair.UseVisualStyleBackColor = true;
-            this.btSair.Click += new System.EventHandler(this.btSair_Click_1);
-            // 
-            // btSalvar
-            // 
-            this.btSalvar.FlatAppearance.BorderSize = 0;
-            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
-            this.btSalvar.Location = new System.Drawing.Point(819, 14);
-            this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(50, 50);
-            this.btSalvar.TabIndex = 34;
-            this.btSalvar.UseVisualStyleBackColor = true;
-            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click_1);
             // 
             // btRemFoto
             // 
@@ -1053,43 +1047,118 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.tabPage2.Controls.Add(this.ofd1);
+            this.tabPage2.Controls.Add(this.groupBox1);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(682, 465);
+            this.tabPage2.Size = new System.Drawing.Size(948, 471);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Outros";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // button1
+            // gbBotoes
             // 
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(922, 5);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(20, 20);
-            this.button1.TabIndex = 361;
-            this.button1.UseVisualStyleBackColor = true;
+            this.gbBotoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.gbBotoes.Controls.Add(this.btSair);
+            this.gbBotoes.Controls.Add(this.btSalvar);
+            this.gbBotoes.Location = new System.Drawing.Point(12, 501);
+            this.gbBotoes.Name = "gbBotoes";
+            this.gbBotoes.Size = new System.Drawing.Size(931, 70);
+            this.gbBotoes.TabIndex = 375;
+            this.gbBotoes.TabStop = false;
             // 
-            // button2
+            // btSair
             // 
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(896, 6);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(20, 20);
-            this.button2.TabIndex = 360;
-            this.button2.UseVisualStyleBackColor = true;
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
+            this.btSair.Location = new System.Drawing.Point(875, 14);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(50, 50);
+            this.btSair.TabIndex = 35;
+            this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click_1);
+            // 
+            // btSalvar
+            // 
+            this.btSalvar.FlatAppearance.BorderSize = 0;
+            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
+            this.btSalvar.Location = new System.Drawing.Point(819, 14);
+            this.btSalvar.Name = "btSalvar";
+            this.btSalvar.Size = new System.Drawing.Size(50, 50);
+            this.btSalvar.TabIndex = 34;
+            this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click_1);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.groupBox1.Controls.Add(this.txtArquivo);
+            this.groupBox1.Controls.Add(this.button3);
+            this.groupBox1.Controls.Add(this.btBuscarImagens);
+            this.groupBox1.Location = new System.Drawing.Point(22, 6);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(909, 70);
+            this.groupBox1.TabIndex = 376;
+            this.groupBox1.TabStop = false;
+            // 
+            // button3
+            // 
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.ForeColor = System.Drawing.Color.White;
+            this.button3.Location = new System.Drawing.Point(853, 14);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(50, 50);
+            this.button3.TabIndex = 35;
+            this.button3.Text = "Tornar Padrão";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // btBuscarImagens
+            // 
+            this.btBuscarImagens.FlatAppearance.BorderSize = 0;
+            this.btBuscarImagens.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btBuscarImagens.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btBuscarImagens.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btBuscarImagens.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btBuscarImagens.ForeColor = System.Drawing.Color.White;
+            this.btBuscarImagens.Location = new System.Drawing.Point(26, 14);
+            this.btBuscarImagens.Name = "btBuscarImagens";
+            this.btBuscarImagens.Size = new System.Drawing.Size(50, 50);
+            this.btBuscarImagens.TabIndex = 34;
+            this.btBuscarImagens.Text = "Buscar Imagens";
+            this.btBuscarImagens.UseVisualStyleBackColor = true;
+            this.btBuscarImagens.Click += new System.EventHandler(this.btBuscarImagens_Click);
+            // 
+            // ofd1
+            // 
+            this.ofd1.Location = new System.Drawing.Point(22, 83);
+            this.ofd1.Name = "ofd1";
+            this.ofd1.Size = new System.Drawing.Size(909, 382);
+            this.ofd1.TabIndex = 377;
+            // 
+            // txtArquivo
+            // 
+            this.txtArquivo.Location = new System.Drawing.Point(83, 14);
+            this.txtArquivo.Multiline = true;
+            this.txtArquivo.Name = "txtArquivo";
+            this.txtArquivo.Size = new System.Drawing.Size(764, 50);
+            this.txtArquivo.TabIndex = 36;
             // 
             // frmCadastroProduto
             // 
@@ -1097,7 +1166,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(955, 579);
-            this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.tabFotos);
             this.Controls.Add(this.gbBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
@@ -1107,18 +1176,21 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Produto";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroProduto_KeyDown);
-            this.tabControl1.ResumeLayout(false);
+            this.tabFotos.ResumeLayout(false);
             this.tpageDadosPrincipais.ResumeLayout(false);
             this.tpageDadosPrincipais.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
+            this.tabPage2.ResumeLayout(false);
             this.gbBotoes.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.TabControl tabFotos;
         private System.Windows.Forms.TabPage tpageDadosPrincipais;
         private System.Windows.Forms.Button btnPesqMarca;
         private System.Windows.Forms.Button btnPesqFornecedor;
@@ -1189,5 +1261,10 @@
         private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btBuscarImagens;
+        private System.Windows.Forms.TextBox txtArquivo;
+        public System.Windows.Forms.FlowLayoutPanel ofd1;
     }
 }

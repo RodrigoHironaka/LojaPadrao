@@ -1,17 +1,12 @@
 ﻿using BLL;
 using DAL;
-using Ferramentas.Mascaras;
 using Modelos;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Security;
+
 
 namespace LojaPadraoMYSQL.Formularios
 {
@@ -860,6 +855,12 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 MessageBox.Show(ex.ToString());
             }
+        }
+
+        public void btBuscarImagens_Click(object sender, EventArgs e)
+        {
+
+           
         }
     }
 }

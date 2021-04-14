@@ -17,6 +17,18 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
 {
     public partial class frmCadastroContaPagar : Form
     {
+        public void IniciaComForm()
+        {
+            txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
+            lbStatus.Text = Convert.ToString(SituacaoAPagar.Pendente).ToUpper();
+            lbStatus.ForeColor = Color.White;
+            cbTipoPessoa.SelectedIndex = 0;
+            cbPeriodo.SelectedIndex = 0;
+            this.carregaFormaPagamento();
+            this.carregaTipoGasto();
+            
+        }
+        
         //--------------------CARREGACOMBO---------------------------------------------------------
         private void carregaFormaPagamento()
         {
@@ -42,15 +54,9 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
         public frmCadastroContaPagar()
         {
             InitializeComponent();
-            txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
-            lbStatus.Text = Convert.ToString(SituacaoAPagar.Aberto).ToUpper();
-            lbStatus.ForeColor = Color.White;
-            cbTipoPessoa.SelectedIndex = 0;
-            cbPeriodo.SelectedIndex = 0;
-            this.carregaFormaPagamento();
-            this.carregaTipoGasto();
+            this.IniciaComForm();
         }
-
+      
         //--------------------SAIR-----------------------------------------------------------------
         private void btSair_Click(object sender, EventArgs e)
         {
@@ -60,13 +66,13 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
         //--------------------CAMPO PARA DEFINIR SE É CLIENTE OU FORNECEDOR------------------------
         private void cbTipoPessoa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(cbTipoPessoa.SelectedIndex == 0)
+            if (cbTipoPessoa.SelectedIndex == 0)
             {
                 lbNome.Text = "Cliente:";
                 txtCod.Clear();
                 txtNomeEmpresa.Clear();
             }
-            else if(cbTipoPessoa.SelectedIndex == 1)
+            else if (cbTipoPessoa.SelectedIndex == 1)
             {
                 lbNome.Text = "Fornecedor:";
                 txtCod.Clear();
@@ -100,7 +106,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
         //--------------------VERIFICAR SE QTD É MUITO ALTA OU SE É 0 OU 1-------------------------
         private void txtQtdParcelas_Leave(object sender, EventArgs e)
         {
-            if(txtQtdParcelas.Text == "")
+            if (txtQtdParcelas.Text == "")
             {
                 txtQtdParcelas.Text = "0";
             }
@@ -113,7 +119,8 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                     txtQtdParcelas.Select();
                     return;
                 }
-            }else if((qtd == 0)||(qtd == 1))
+            }
+            else if ((qtd == 0) || (qtd == 1))
             {
                 txtQtdParcelas.Text = "0";
                 txtQtdParcelas.ReadOnly = true;
@@ -134,11 +141,11 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
         }
 
         //--------------------BUSCA POR CODIGO DO CLIENTE OU FORNECEDOR----------------------------
-        private void txtCod_Leave(object sender, EventArgs e)
+        public void txtCod_Leave(object sender, EventArgs e)
         {
             try
             {
-                if(cbTipoPessoa.SelectedIndex == 0)
+                if (cbTipoPessoa.SelectedIndex == 0)
                 {
                     DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                     BLLCliente bll = new BLLCliente(cx);
@@ -191,7 +198,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                         txtCod_Leave(sender, e);
                     }
                 }
-                else if(cbTipoPessoa.SelectedIndex == 1)
+                else if (cbTipoPessoa.SelectedIndex == 1)
                 {
                     frmConsultaFornecedor f = new frmConsultaFornecedor(true);
                     f.ShowDialog();
@@ -278,7 +285,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                 {
                     //incluir
                     int qtd = Convert.ToInt32(txtQtdParcelas.Text);
-                    if(qtd == 0)
+                    if (qtd == 0)
                     {
                         //cadastra dados da tabela contapagar apenas 1 vez
                         bll.Incluir(modelo);
@@ -319,7 +326,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                                         modelo.Valor = valorSemDiferenca;
                                         bll.Incluir(modelo);
                                     }
-                                   
+
                                 }
                                 else if (periodo == 2)
                                 {
@@ -338,7 +345,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                                         modelo.Valor = valorSemDiferenca;
                                         bll.Incluir(modelo);
                                     }
-                                    
+
                                 }
                                 else if (periodo == 3)
                                 {
@@ -357,11 +364,11 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                                         modelo.Valor = valorSemDiferenca;
                                         bll.Incluir(modelo);
                                     }
-                                    
+
                                 }
                                 else if (periodo == 4)
                                 {
-                                    if(i == 1)
+                                    if (i == 1)
                                     {
                                         modelo.Vencimento = dtpVencimento.Value;
                                         var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
@@ -376,7 +383,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                                         modelo.Valor = valorSemDiferenca;
                                         bll.Incluir(modelo);
                                     }
-                                    
+
                                 }
                                 else if (periodo == 5)
                                 {
@@ -395,7 +402,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                                         modelo.Valor = valorSemDiferenca;
                                         bll.Incluir(modelo);
                                     }
-                                   
+
                                 }
                                 else if (periodo == 6)
                                 {
@@ -414,7 +421,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                                         modelo.Valor = valorSemDiferenca;
                                         bll.Incluir(modelo);
                                     }
-                                   
+
                                 }
                                 else if (periodo == 7)
                                 {
@@ -433,7 +440,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                                         modelo.Valor = valorSemDiferenca;
                                         bll.Incluir(modelo);
                                     }
-                                   
+
                                 }
                                 else if (periodo == 8)
                                 {
@@ -461,12 +468,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                 {
                     //Alterar
 
-                    //Itens
-                    modelo.ContaPagarID = Int32.Parse(txtID.Text);
-                    bll.Alterar(modelo);
 
-                    MessageBox.Show("Cadastro Alterado com sucesso!!!");
-                    this.Close();
 
                 }
                 this.LimpaTela();
@@ -486,7 +488,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
         {
             try
             {
-                if(txtValor.Text == "") 
+                if (txtValor.Text == "")
                 {
                     txtValor.Text = "0,00";
                     cbFormaPagamento.Select();

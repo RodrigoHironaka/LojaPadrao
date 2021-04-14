@@ -45,6 +45,7 @@ namespace DAL
             idcompra = Convert.ToInt32(cmd.ExecuteScalar());
             return idcompra;
         }
+
         public void Alterar(ModeloContaPagar modelo)
         {
             MySqlCommand cmd = new MySqlCommand();
@@ -69,6 +70,7 @@ namespace DAL
             cmd.ExecuteNonQuery();
 
         }
+
         public void Excluir(int id)
         {
             MySqlCommand cmd = new MySqlCommand();
@@ -78,6 +80,7 @@ namespace DAL
             cmd.Parameters.AddWithValue("@id", id);
             cmd.ExecuteNonQuery();
         }
+
         public Boolean Cancelar(int id)
         {
             Boolean retorno = true;
@@ -118,6 +121,7 @@ namespace DAL
             da.Fill(tabela);
             return tabela;
         }
+
         public DataTable LocalizarCliente()
         {
             DataTable tabela = new DataTable();
@@ -130,6 +134,7 @@ namespace DAL
             da.Fill(tabela);
             return tabela;
         }
+
         public DataTable LocalizarFornecedor()
         {
             DataTable tabela = new DataTable();
@@ -142,14 +147,22 @@ namespace DAL
             da.Fill(tabela);
             return tabela;
         }
+
         //MELHORAR PESQUISA DO CONTASPAGAR
         public DataTable LocalizarTodos(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from contapagar where idPessoa like '%" + valor + "%' or id like '%" + valor + "%'", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, cp.tipoPessoa, f.nomefantasia, cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+                " from contapagar cp" +
+                " inner join tipogasto tg on(cp.idTipoGasto = tg.id) " +
+                " inner join fornecedor f on(cp.idPessoa = f.id) " +
+                " where cp.id like '%" + valor + "%' or cp.nome like '%" + valor + "%' or cp.numDoc like '%" + valor + "%' or f.nomefantasia like '%" + valor + "%' or cp.valor like '%" + valor + "%' or tg.nome like '%" + valor + "%' or cp.status like '%" + valor + "%'" +
+                " group by cp.id ", conexao.StringConexao);
+            
             da.Fill(tabela);
             return tabela;
         }
+
         public DataTable LocalizarAbertos(String valor) //corrigir select
         {
             DataTable tabela = new DataTable();
@@ -157,6 +170,7 @@ namespace DAL
             da.Fill(tabela);
             return tabela;
         }
+
         public DataTable LocalizarPagos(String valor) //corrigir select
         {
             DataTable tabela = new DataTable();
@@ -164,6 +178,7 @@ namespace DAL
             da.Fill(tabela);
             return tabela;
         }
+
         public DataTable LocalizarCancelados(String valor) //corrigir select
         {
             DataTable tabela = new DataTable();
@@ -224,6 +239,7 @@ namespace DAL
                 throw new Exception(ex.ToString());
             }
         }
+
         public DataTable CarregaComboTipoGasto()
         {
             try
@@ -292,12 +308,30 @@ namespace DAL
             }
             //return resComDif;
         }
+
         //CALCULA DIFERENCA NA DIVISAO---------------------------------------------------------
         public decimal CalculoSemDiferenca(decimal valortotal, int qtdparcelas)
         {
             decimal resultado = valortotal / qtdparcelas;
             decimal valorparcela = Math.Round(resultado, 2);            
             return valorparcela;
+        }
+
+        public string SequenciaNumDoc()
+        {
+            string numdoc = " ";
+            var id = VerificaUltimoIdInserido().ToString();
+            if (id == null)
+            {
+                numdoc = "1";
+               
+            }
+            else
+            {
+                int novoid = Convert.ToInt32(id);
+                numdoc = (novoid + 1).ToString();
+            }
+            return numdoc;
         }
     }
 

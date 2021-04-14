@@ -8,7 +8,7 @@ namespace Modelos.ObejtoValor
 {
     public enum SituacaoAPagar
     {
-        Aberto,
+        Pendente,
         Pago,
         Cancelado
     }

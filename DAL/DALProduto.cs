@@ -22,13 +22,13 @@ namespace DAL
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
-            cmd.CommandText = "insert into produto("+
-                "numSerie,tipoProduto,dataCadastro,nome,apelido,idUN,idGrupo,idSubGrupo,idFornecedor,idMarca,precoCusto,porcentagemCusto,"+
-                "precoAvista,porcentagemAvista,precoPrazo,porcentagemDesconto,precoDesconto,estoqueAtual,estoqueMax,estoqueMin,"+
+            cmd.CommandText = "insert into produto(" +
+                "numSerie,tipoProduto,dataCadastro,nome,apelido,idUN,idGrupo,idSubGrupo,idFornecedor,idMarca,precoCusto,porcentagemCusto," +
+                "precoAvista,porcentagemAvista,precoPrazo,porcentagemDesconto,precoDesconto,estoqueAtual,estoqueMax,estoqueMin," +
                 "controleEstoque,observacao,foto,status)" +
-                " values ("+
-                "@numSerie,@tipoProduto,@dataCadastro,@nome,@apelido,@idUN,@idGrupo,@idSubGrupo,@idFornecedor,@idMarca,@precoCusto,"+
-                "@porcentagemCusto,@precoAvista,@porcentagemAvista,@precoPrazo,@porcentagemDesconto,@precoDesconto,@estoqueAtual,"+
+                " values (" +
+                "@numSerie,@tipoProduto,@dataCadastro,@nome,@apelido,@idUN,@idGrupo,@idSubGrupo,@idFornecedor,@idMarca,@precoCusto," +
+                "@porcentagemCusto,@precoAvista,@porcentagemAvista,@precoPrazo,@porcentagemDesconto,@precoDesconto,@estoqueAtual," +
                 "@estoqueMax,@estoqueMin,@controleEstoque,@observacao,@foto,@status);";
             cmd.Parameters.AddWithValue("@numSerie", modelo.NumSerie);
             cmd.Parameters.AddWithValue("@tipoProduto", modelo.TipoProduto);
@@ -270,14 +270,14 @@ namespace DAL
 
         public double CalculaPorPorcentagem(double valor, double porcentagem)
         {
-            double resultado = (valor*(porcentagem / 100)+valor);
+            double resultado = (valor * (porcentagem / 100) + valor);
             return resultado;
         }
 
         public double CalculaRegraDeTresPorcentagem(double valor, double valor2)
         {
             double res = valor2 - valor;
-            double porcentagem = (100 * res) /valor;
+            double porcentagem = (100 * res) / valor;
             return porcentagem;
         }
 
@@ -291,7 +291,69 @@ namespace DAL
         {
             double porcentagem = (100 * valor2) / valor;
             return porcentagem;
-            
+
+        }
+
+        public void CarregaVariasImagens()
+        {
+            /*
+             //define as propriedades do controle 
+            //OpenFileDialog
+            this.ofd1.Multiselect = true;
+            this.ofd1.Title = "Selecionar Fotos";
+            ofd1.InitialDirectory = @"C:\macoratti\Pictures";
+            //filtra para exibir somente arquivos de imagens
+            ofd1.Filter = "Images (*.BMP;*.JPG;*.GIF,*.PNG,*.TIFF)|*.BMP;*.JPG;*.GIF;*.PNG;*.TIFF|" + "All files (*.*)|*.*";
+            ofd1.CheckFileExists = true;
+            ofd1.CheckPathExists = true;
+            ofd1.FilterIndex = 2;
+            ofd1.RestoreDirectory = true;
+            ofd1.ReadOnlyChecked = true;
+            ofd1.ShowReadOnly = true;
+
+            DialogResult dr = this.ofd1.ShowDialog();
+
+            if (dr == System.Windows.Forms.DialogResult.OK)
+            {
+                // Le os arquivos selecionados 
+                foreach (String arquivo in ofd1.FileNames)
+                {
+                    txtArquivos.Text += arquivo + "#";
+                    // cria um PictureBox
+                    try
+                    {
+                        PictureBox pb = new PictureBox();
+                        Image Imagem = Image.FromFile(arquivo);
+                        pb.SizeMode = PictureBoxSizeMode.StretchImage;
+                        //para exibir as imagens em tamanho natural 
+                        //descomente as linhas abaixo e comente as duas seguintes
+                        //pb.Height = loadedImage.Height;
+                        //pb.Width = loadedImage.Width;
+                        pb.Height = 100;
+                        pb.Width = 100;
+                        //atribui a imagem ao PictureBox - pb
+                        pb.Image = Imagem;
+                        //inclui a imagem no containter flowLayoutPanel
+                        flowLayoutPanel1.Controls.Add(pb);
+
+                    }
+                    catch (SecurityException ex)
+                    {
+                        // O usuário  não possui permissão para ler arquivos
+                        MessageBox.Show("Erro de segurança Contate o administrador de segurança da rede.\n\n" +
+                                        "Mensagem : " + ex.Message + "\n\n" +
+                                        "Detalhes (enviar ao suporte):\n\n" + ex.StackTrace);
+                    }
+                    catch (Exception ex)
+                    {
+                        // Não pode carregar a imagem (problemas de permissão)
+                        MessageBox.Show("Não é possível exibir a imagem : " + arquivo.Substring(arquivo.LastIndexOf('\\'))
+                                         + ". Você pode não ter permissão para ler o arquivo , ou " +
+                                         " ele pode estar corrompido.\n\nErro reportado : " + ex.Message);
+                    }
+                }
+            */
+           
         }
 
     }

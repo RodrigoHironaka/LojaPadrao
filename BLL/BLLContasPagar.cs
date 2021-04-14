@@ -138,5 +138,11 @@ namespace BLL
             DALContaPagar DALObj = new DALContaPagar(conexao);
             return DALObj.CalculoSemDiferenca(valortotal, qtdparcelas);
         }
+        public string SequenciaNumDoc()
+        {
+            DALContaPagar DALObj = new DALContaPagar(conexao);
+            return DALObj.SequenciaNumDoc();
+        }
+
     }
 }
