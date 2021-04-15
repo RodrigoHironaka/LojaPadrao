@@ -9,10 +9,12 @@ namespace Modelos
     public class ModeloContaPagar
     {
         public Int64 ContaPagarID { get; set; }
+        public Int64 IdInterno { get; set; }
         public string DataCadastro { get; set; }
         public int TipoGastoID { get; set; }
         public int QtdParcelas { get; set; }
         public decimal Valor { get; set; }
+        public decimal Total { get; set; }
         public int FormaPagamentoID { get; set; }
         public string Descricao { get; set; }
         public DateTime Emissão { get; set; }

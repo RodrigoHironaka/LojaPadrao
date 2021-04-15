@@ -99,6 +99,7 @@ namespace BLL
             DALContaPagar DALObj = new DALContaPagar(conexao);
             return DALObj.CarregaModeloContaPagar(id);
         }
+
         public Boolean Cancelar(int id)
         {
             if (id <= 0)
@@ -121,7 +122,7 @@ namespace BLL
             return DALObj.CarregaComboTipoGasto();
         }
 
-        public int VerificaUltimoIdInserido()
+        public string VerificaUltimoIdInserido()
         {
             DALContaPagar DALObj = new DALContaPagar(conexao);
             return DALObj.VerificaUltimoIdInserido();
@@ -138,10 +139,17 @@ namespace BLL
             DALContaPagar DALObj = new DALContaPagar(conexao);
             return DALObj.CalculoSemDiferenca(valortotal, qtdparcelas);
         }
-        public string SequenciaNumDoc()
+        
+        public string VerificaUltimoIdInternoInserido()
         {
             DALContaPagar DALObj = new DALContaPagar(conexao);
-            return DALObj.SequenciaNumDoc();
+            return DALObj.VerificaUltimoIdInternoInserido();
+        }
+
+        public int GeraIdInterno()
+        {
+            DALContaPagar DALObj = new DALContaPagar(conexao);
+            return DALObj.GeraIdInterno();
         }
 
     }

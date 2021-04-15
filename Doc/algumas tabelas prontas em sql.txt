@@ -286,14 +286,16 @@ PRIMARY KEY(id)
 *******************************************************************************************************************
 CREATE TABLE contaPagar(
 id int NOT NULL AUTO_INCREMENT,
+idInterno int,
 dataCadastro VARCHAR(20) NOT NULL,
 idTipoGasto int,
 qtdParcelas int,
 valor decimal(10,2),
+total decimal(10,2),
 idFormaPagamento int,
 nome varchar(100),
-emissao DATE,
-vencimento DATE,
+emissao DATA,
+vencimento DATA,
 numDoc long,
 tipoPessoa VARCHAR(20),
 idpessoa int,

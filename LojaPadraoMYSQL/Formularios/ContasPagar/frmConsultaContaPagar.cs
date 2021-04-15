@@ -39,6 +39,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             f.txtCod_Leave(sender, e);
             f.cbFormaPagamento.SelectedValue = modelo.FormaPagamentoID.ToString();
             f.txtObs.Text = modelo.Observacao;
+            
             this.Opacity = 0;
             f.ShowDialog();
             this.Opacity = 1;
@@ -52,8 +53,8 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             dgvDados.Columns[2].HeaderText = "DESCRIÇÃO";
             dgvDados.Columns[3].HeaderText = "TIPO";
             dgvDados.Columns[4].HeaderText = "PESSOA";
+            //dgvDados.Columns[5].DefaultCellStyle.Format = "C2";
             dgvDados.Columns[5].HeaderText = "VALOR";
-            dgvDados.Columns[5].DefaultCellStyle.Format = "N2";
             dgvDados.Columns[6].HeaderText = "VENCIMENTO";
             dgvDados.Columns[7].HeaderText = "EMISSÃO";
             dgvDados.Columns[8].HeaderText = "CADASTRO";
@@ -61,11 +62,15 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             dgvDados.Columns[10].HeaderText = "SIT";
         }
 
-        public void FiltroLocalizarUltimoIdAdd(int totallinhas, int ultimoid)
+        public void FiltroLocalizarUltimoIdAdd(int totallinhas, Int64 ultimoid)
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLContasPagar bll = new BLLContasPagar(cx);
             var idNovo = bll.VerificaUltimoIdInserido();
+            if (idNovo == "")
+            {
+                idNovo = "0";
+            }
             var tipo = bll.CarregaModeloContaPagar(Convert.ToInt32(idNovo));
             if (totallinhas == 0)
             {
@@ -85,7 +90,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             else
             {
                 var idAnterior = ultimoid;
-                if (idAnterior == idNovo)
+                if (idAnterior == Convert.ToInt32(idNovo))
                 {
                     dgvDados.DataSource = null;
                     txtPesquisar.Select();
@@ -138,7 +143,17 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLContasPagar bll = new BLLContasPagar(cx);
-            var ultimoid= bll.VerificaUltimoIdInserido();
+            var ultimoidinserido = bll.VerificaUltimoIdInserido();
+            Int64 ultimoid;
+            if(ultimoidinserido == "")
+            {
+                ultimoidinserido = "0";
+                ultimoid = Convert.ToInt64(ultimoidinserido);
+            }
+            else
+            {
+                ultimoid = Convert.ToInt64(ultimoidinserido);
+            }
             int totallinhas = dgvDados.Rows.Count;
             frmCadastroContaPagar f = new frmCadastroContaPagar();
             this.Opacity = 0;

@@ -25,11 +25,13 @@ namespace DAL
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
             cmd.Transaction = this.conexao.ObjetoTransacao;
-            cmd.CommandText = "insert into contapagar(dataCadastro, idTipoGasto, qtdParcelas, valor, idFormaPagamento, nome, emissao, vencimento, numDoc, tipoPessoa, idPessoa, observacao, periodo, status) values (@dataCadastro, @idTipoGasto, @qtdParcelas, @valor, @idFormaPagamento, @nome, @emissao, @vencimento, @numDoc, @tipoPessoa, @idPessoa, @observacao, @periodo, @status);";
+            cmd.CommandText = "insert into contapagar(idInterno, dataCadastro, idTipoGasto, qtdParcelas, valor, total, idFormaPagamento, nome, emissao, vencimento, numDoc, tipoPessoa, idPessoa, observacao, periodo, status) values (@idInterno, @dataCadastro, @idTipoGasto, @qtdParcelas, @valor, @total, @idFormaPagamento, @nome, @emissao, @vencimento, @numDoc, @tipoPessoa, @idPessoa, @observacao, @periodo, @status);";
+            cmd.Parameters.AddWithValue("@idInterno", modelo.IdInterno);
             cmd.Parameters.AddWithValue("@dataCadastro", modelo.DataCadastro);
             cmd.Parameters.AddWithValue("@idTipoGasto", modelo.TipoGastoID);
             cmd.Parameters.AddWithValue("@qtdParcelas", modelo.QtdParcelas);
             cmd.Parameters.AddWithValue("@valor", modelo.Valor);
+            cmd.Parameters.AddWithValue("@total", modelo.Total);
             cmd.Parameters.AddWithValue("@idFormaPagamento", modelo.FormaPagamentoID);
             cmd.Parameters.AddWithValue("@nome", modelo.Descricao);
             cmd.Parameters.AddWithValue("@emissao", modelo.Emissão);
@@ -51,11 +53,13 @@ namespace DAL
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
             cmd.Transaction = this.conexao.ObjetoTransacao;
-            cmd.CommandText = "update contapagar set dataCadastro=@dataCadastro, idTipoGasto=@idTipoGasto, qtdParcelas=@qtdParcelas, valor=@valor, idFormaPagamento=@idFormaPagamento, nome=@nome, emissao=@emissao, vencimento=@vencimento, numDoc=@numDoc, tipoPessoa=@tipoPessoa, idPessoa=@idPessoa, observacao=@observacao, periodo=@periodo, status=@status where id=@id;";
+            cmd.CommandText = "update contapagar set idInterno=@idInterno,dataCadastro=@dataCadastro, idTipoGasto=@idTipoGasto, qtdParcelas=@qtdParcelas, valor=@valor, total=@total, idFormaPagamento=@idFormaPagamento, nome=@nome, emissao=@emissao, vencimento=@vencimento, numDoc=@numDoc, tipoPessoa=@tipoPessoa, idPessoa=@idPessoa, observacao=@observacao, periodo=@periodo, status=@status where id=@id;";
+            cmd.Parameters.AddWithValue("@idInterno", modelo.IdInterno);
             cmd.Parameters.AddWithValue("@dataCadastro", modelo.DataCadastro);
             cmd.Parameters.AddWithValue("@idTipoGasto", modelo.TipoGastoID);
             cmd.Parameters.AddWithValue("@qtdParcelas", modelo.QtdParcelas);
             cmd.Parameters.AddWithValue("@valor", modelo.Valor);
+            cmd.Parameters.AddWithValue("@total", modelo.Total);
             cmd.Parameters.AddWithValue("@idFormaPagamento", modelo.FormaPagamentoID);
             cmd.Parameters.AddWithValue("@nome", modelo.Descricao);
             cmd.Parameters.AddWithValue("@emissao", modelo.Emissão);
@@ -68,7 +72,6 @@ namespace DAL
             cmd.Parameters.AddWithValue("@status", modelo.Status);
             cmd.Parameters.AddWithValue("@id", modelo.ContaPagarID);
             cmd.ExecuteNonQuery();
-
         }
 
         public void Excluir(int id)
@@ -200,11 +203,13 @@ namespace DAL
             if (registro.HasRows)
             {
                 registro.Read();
-                modelo.ContaPagarID = Convert.ToInt32(registro["id"]);
+                modelo.ContaPagarID = Convert.ToInt64(registro["id"]);
+                modelo.IdInterno = Convert.ToInt64(registro["idInterno"]);
                 modelo.DataCadastro = Convert.ToString(registro["dataCadastro"]);
                 modelo.TipoGastoID = Convert.ToInt32(registro["idTipoGasto"]);
                 modelo.QtdParcelas = Convert.ToInt32(registro["qtdParcelas"]);
                 modelo.Valor = Convert.ToDecimal(registro["valor"]);
+                modelo.Total = Convert.ToDecimal(registro["total"]);
                 modelo.FormaPagamentoID = Convert.ToInt32(registro["idFormaPagamento"]);
                 modelo.Descricao = Convert.ToString(registro["nome"]);
                 modelo.Emissão = Convert.ToDateTime(registro["emissao"]);
@@ -271,13 +276,13 @@ namespace DAL
         }
 
         //VERIFICAR ULTIMO ID INSERIDO NA TABELA DO BANCO--------------------------------------
-        public int VerificaUltimoIdInserido()
+        public string VerificaUltimoIdInserido()
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
             cmd.CommandText = "Select max(id) from contapagar";
             conexao.Conectar();
-            int id = Convert.ToInt32(cmd.ExecuteScalar());
+            string id = Convert.ToString(cmd.ExecuteScalar());
             conexao.Desconectar();
             return id;
         }
@@ -317,22 +322,37 @@ namespace DAL
             return valorparcela;
         }
 
-        public string SequenciaNumDoc()
+        //VERIFICAR ULTIMO ID INTERNO INSERIDO NA TABELA DO BANCO------------------------------
+        public string VerificaUltimoIdInternoInserido()
         {
-            string numdoc = " ";
-            var id = VerificaUltimoIdInserido().ToString();
-            if (id == null)
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conexao.ObjetoConexao;
+            cmd.CommandText = "Select max(idInterno) from contapagar";
+            conexao.Conectar();
+            string id = Convert.ToString(cmd.ExecuteScalar());
+            conexao.Desconectar();
+            return id;
+        }
+
+        //GERA UMA SEQUENCIA DE NUMERO NA ORDEM PELO ID INTERNO--------------------------------
+        public int GeraIdInterno()
+        {
+            int idinterno;
+           
+            var ultimoId = VerificaUltimoIdInternoInserido();
+            if (ultimoId == "")
             {
-                numdoc = "1";
-               
+                idinterno = 1;
+                return idinterno;
             }
             else
             {
-                int novoid = Convert.ToInt32(id);
-                numdoc = (novoid + 1).ToString();
+                idinterno = (Convert.ToInt32(ultimoId)+1);
+                return idinterno;
             }
-            return numdoc;
         }
+
+        
     }
 
 
