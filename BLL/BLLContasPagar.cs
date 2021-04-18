@@ -17,7 +17,7 @@ namespace BLL
             this.conexao = cx;
         }
 
-        public int Incluir(ModeloContaPagar modelo)
+        public void Incluir(ModeloContaPagar modelo)
         {
 
             if (modelo.Descricao.ToString() == "")
@@ -29,7 +29,7 @@ namespace BLL
                 throw new Exception("Por favor digite um valor maior que R$ 0,00;");
             }
             DALContaPagar DALObj = new DALContaPagar(conexao);
-            return DALObj.Incluir(modelo);
+            DALObj.Incluir(modelo);
         }
 
         public void Alterar(ModeloContaPagar modelo)
@@ -52,10 +52,16 @@ namespace BLL
             DALObj.Excluir(id);
         }
 
-        public DataTable Localizar()
+        public DataTable LocalizarTodos()
         {
             DALContaPagar DALObj = new DALContaPagar(conexao);
-            return DALObj.Localizar();
+            return DALObj.LocalizarTodos();
+        }
+
+        public DataTable LocalizarTodos(string valor)
+        {
+            DALContaPagar DALObj = new DALContaPagar(conexao);
+            return DALObj.LocalizarTodos(valor);
         }
 
         public DataTable LocalizarCliente()
@@ -64,22 +70,34 @@ namespace BLL
             return DALObj.LocalizarCliente();
         }
 
+        public DataTable LocalizarCliente(string valor)
+        {
+            DALContaPagar DALObj = new DALContaPagar(conexao);
+            return DALObj.LocalizarCliente(valor);
+        }
+
         public DataTable LocalizarFornecedor()
         {
             DALContaPagar DALObj = new DALContaPagar(conexao);
             return DALObj.LocalizarFornecedor();
         }
 
-        public DataTable LocalizarTodos(String valor)
+        public DataTable LocalizarFornecedor(string valor)
         {
             DALContaPagar DALObj = new DALContaPagar(conexao);
-            return DALObj.LocalizarTodos(valor);
+            return DALObj.LocalizarFornecedor(valor);
         }
 
-        public DataTable LocalizarAbertos(String valor)
+        //public DataTable LocalizarTodos(String valor)
+        //{
+        //    DALContaPagar DALObj = new DALContaPagar(conexao);
+        //    return DALObj.LocalizarTodos(valor);
+        //}
+
+        public DataTable LocalizarPendentes(String valor)
         {
             DALContaPagar DALObj = new DALContaPagar(conexao);
-            return DALObj.LocalizarAbertos(valor);
+            return DALObj.LocalizarPendentes(valor);
         }
 
         public DataTable LocalizarPagos(String valor)
@@ -122,7 +140,7 @@ namespace BLL
             return DALObj.CarregaComboTipoGasto();
         }
 
-        public string VerificaUltimoIdInserido()
+        public Int64 VerificaUltimoIdInserido()
         {
             DALContaPagar DALObj = new DALContaPagar(conexao);
             return DALObj.VerificaUltimoIdInserido();
@@ -139,8 +157,8 @@ namespace BLL
             DALContaPagar DALObj = new DALContaPagar(conexao);
             return DALObj.CalculoSemDiferenca(valortotal, qtdparcelas);
         }
-        
-        public string VerificaUltimoIdInternoInserido()
+
+        public Int64 VerificaUltimoIdInternoInserido()
         {
             DALContaPagar DALObj = new DALContaPagar(conexao);
             return DALObj.VerificaUltimoIdInternoInserido();
@@ -152,5 +170,16 @@ namespace BLL
             return DALObj.GeraIdInterno();
         }
 
+        public DataTable LocalizarUltimoItemInserido()
+        {
+            DALContaPagar DALObj = new DALContaPagar(conexao);
+            return DALObj.LocalizarUltimoItemInserido();
+        }
+
+        public DataTable LocalizarPorDataAtual()
+        {
+            DALContaPagar DALObj = new DALContaPagar(conexao);
+            return DALObj.LocalizarPorDataAtual();
+        }
     }
 }

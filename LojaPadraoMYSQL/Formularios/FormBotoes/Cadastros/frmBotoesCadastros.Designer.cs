@@ -44,6 +44,9 @@
             this.btCidades = new System.Windows.Forms.Button();
             this.btCliente = new System.Windows.Forms.Button();
             this.btTiposGasto = new System.Windows.Forms.Button();
+            this.pNomeForm = new System.Windows.Forms.Panel();
+            this.lbNomeForm = new System.Windows.Forms.Label();
+            this.pNomeForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // btFormasPagamento
@@ -59,7 +62,7 @@
             this.btFormasPagamento.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btFormasPagamento.ForeColor = System.Drawing.Color.White;
             this.btFormasPagamento.Image = ((System.Drawing.Image)(resources.GetObject("btFormasPagamento.Image")));
-            this.btFormasPagamento.Location = new System.Drawing.Point(140, 264);
+            this.btFormasPagamento.Location = new System.Drawing.Point(139, 303);
             this.btFormasPagamento.Name = "btFormasPagamento";
             this.btFormasPagamento.Size = new System.Drawing.Size(120, 120);
             this.btFormasPagamento.TabIndex = 74;
@@ -81,7 +84,7 @@
             this.btUnidades.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btUnidades.ForeColor = System.Drawing.Color.White;
             this.btUnidades.Image = ((System.Drawing.Image)(resources.GetObject("btUnidades.Image")));
-            this.btUnidades.Location = new System.Drawing.Point(392, 264);
+            this.btUnidades.Location = new System.Drawing.Point(391, 303);
             this.btUnidades.Name = "btUnidades";
             this.btUnidades.Size = new System.Drawing.Size(120, 120);
             this.btUnidades.TabIndex = 73;
@@ -103,7 +106,7 @@
             this.btUsuarios.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btUsuarios.ForeColor = System.Drawing.Color.White;
             this.btUsuarios.Image = ((System.Drawing.Image)(resources.GetObject("btUsuarios.Image")));
-            this.btUsuarios.Location = new System.Drawing.Point(519, 264);
+            this.btUsuarios.Location = new System.Drawing.Point(518, 303);
             this.btUsuarios.Name = "btUsuarios";
             this.btUsuarios.Size = new System.Drawing.Size(120, 120);
             this.btUsuarios.TabIndex = 72;
@@ -125,7 +128,7 @@
             this.btTransportadoras.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btTransportadoras.ForeColor = System.Drawing.Color.White;
             this.btTransportadoras.Image = ((System.Drawing.Image)(resources.GetObject("btTransportadoras.Image")));
-            this.btTransportadoras.Location = new System.Drawing.Point(14, 264);
+            this.btTransportadoras.Location = new System.Drawing.Point(13, 303);
             this.btTransportadoras.Name = "btTransportadoras";
             this.btTransportadoras.Size = new System.Drawing.Size(120, 120);
             this.btTransportadoras.TabIndex = 71;
@@ -147,7 +150,7 @@
             this.btMarcas.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btMarcas.ForeColor = System.Drawing.Color.White;
             this.btMarcas.Image = ((System.Drawing.Image)(resources.GetObject("btMarcas.Image")));
-            this.btMarcas.Location = new System.Drawing.Point(518, 138);
+            this.btMarcas.Location = new System.Drawing.Point(517, 177);
             this.btMarcas.Name = "btMarcas";
             this.btMarcas.Size = new System.Drawing.Size(120, 120);
             this.btMarcas.TabIndex = 69;
@@ -169,7 +172,7 @@
             this.btSubGrupo.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btSubGrupo.ForeColor = System.Drawing.Color.White;
             this.btSubGrupo.Image = ((System.Drawing.Image)(resources.GetObject("btSubGrupo.Image")));
-            this.btSubGrupo.Location = new System.Drawing.Point(392, 138);
+            this.btSubGrupo.Location = new System.Drawing.Point(391, 177);
             this.btSubGrupo.Name = "btSubGrupo";
             this.btSubGrupo.Size = new System.Drawing.Size(120, 120);
             this.btSubGrupo.TabIndex = 68;
@@ -191,7 +194,7 @@
             this.btGrupos.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btGrupos.ForeColor = System.Drawing.Color.White;
             this.btGrupos.Image = ((System.Drawing.Image)(resources.GetObject("btGrupos.Image")));
-            this.btGrupos.Location = new System.Drawing.Point(266, 138);
+            this.btGrupos.Location = new System.Drawing.Point(265, 177);
             this.btGrupos.Name = "btGrupos";
             this.btGrupos.Size = new System.Drawing.Size(120, 120);
             this.btGrupos.TabIndex = 67;
@@ -213,7 +216,7 @@
             this.btProdutos.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btProdutos.ForeColor = System.Drawing.Color.White;
             this.btProdutos.Image = ((System.Drawing.Image)(resources.GetObject("btProdutos.Image")));
-            this.btProdutos.Location = new System.Drawing.Point(14, 138);
+            this.btProdutos.Location = new System.Drawing.Point(13, 177);
             this.btProdutos.Name = "btProdutos";
             this.btProdutos.Size = new System.Drawing.Size(120, 120);
             this.btProdutos.TabIndex = 66;
@@ -235,7 +238,7 @@
             this.btFornecedores.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btFornecedores.ForeColor = System.Drawing.Color.White;
             this.btFornecedores.Image = ((System.Drawing.Image)(resources.GetObject("btFornecedores.Image")));
-            this.btFornecedores.Location = new System.Drawing.Point(140, 138);
+            this.btFornecedores.Location = new System.Drawing.Point(139, 177);
             this.btFornecedores.Name = "btFornecedores";
             this.btFornecedores.Size = new System.Drawing.Size(120, 120);
             this.btFornecedores.TabIndex = 65;
@@ -257,7 +260,7 @@
             this.btDepartamento.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btDepartamento.ForeColor = System.Drawing.Color.White;
             this.btDepartamento.Image = ((System.Drawing.Image)(resources.GetObject("btDepartamento.Image")));
-            this.btDepartamento.Location = new System.Drawing.Point(518, 12);
+            this.btDepartamento.Location = new System.Drawing.Point(517, 51);
             this.btDepartamento.Name = "btDepartamento";
             this.btDepartamento.Size = new System.Drawing.Size(120, 120);
             this.btDepartamento.TabIndex = 64;
@@ -279,7 +282,7 @@
             this.btFuncoes.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btFuncoes.ForeColor = System.Drawing.Color.White;
             this.btFuncoes.Image = ((System.Drawing.Image)(resources.GetObject("btFuncoes.Image")));
-            this.btFuncoes.Location = new System.Drawing.Point(392, 12);
+            this.btFuncoes.Location = new System.Drawing.Point(391, 51);
             this.btFuncoes.Name = "btFuncoes";
             this.btFuncoes.Size = new System.Drawing.Size(120, 120);
             this.btFuncoes.TabIndex = 63;
@@ -301,7 +304,7 @@
             this.btColaboradores.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btColaboradores.ForeColor = System.Drawing.Color.White;
             this.btColaboradores.Image = ((System.Drawing.Image)(resources.GetObject("btColaboradores.Image")));
-            this.btColaboradores.Location = new System.Drawing.Point(266, 12);
+            this.btColaboradores.Location = new System.Drawing.Point(265, 51);
             this.btColaboradores.Name = "btColaboradores";
             this.btColaboradores.Size = new System.Drawing.Size(120, 120);
             this.btColaboradores.TabIndex = 62;
@@ -323,7 +326,7 @@
             this.btCidades.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btCidades.ForeColor = System.Drawing.Color.White;
             this.btCidades.Image = ((System.Drawing.Image)(resources.GetObject("btCidades.Image")));
-            this.btCidades.Location = new System.Drawing.Point(140, 12);
+            this.btCidades.Location = new System.Drawing.Point(139, 51);
             this.btCidades.Name = "btCidades";
             this.btCidades.Size = new System.Drawing.Size(120, 120);
             this.btCidades.TabIndex = 61;
@@ -345,7 +348,7 @@
             this.btCliente.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btCliente.ForeColor = System.Drawing.Color.White;
             this.btCliente.Image = ((System.Drawing.Image)(resources.GetObject("btCliente.Image")));
-            this.btCliente.Location = new System.Drawing.Point(14, 12);
+            this.btCliente.Location = new System.Drawing.Point(13, 51);
             this.btCliente.Name = "btCliente";
             this.btCliente.Size = new System.Drawing.Size(120, 120);
             this.btCliente.TabIndex = 60;
@@ -367,7 +370,7 @@
             this.btTiposGasto.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
             this.btTiposGasto.ForeColor = System.Drawing.Color.White;
             this.btTiposGasto.Image = ((System.Drawing.Image)(resources.GetObject("btTiposGasto.Image")));
-            this.btTiposGasto.Location = new System.Drawing.Point(266, 264);
+            this.btTiposGasto.Location = new System.Drawing.Point(265, 303);
             this.btTiposGasto.Name = "btTiposGasto";
             this.btTiposGasto.Size = new System.Drawing.Size(120, 120);
             this.btTiposGasto.TabIndex = 75;
@@ -376,6 +379,29 @@
             this.btTiposGasto.UseVisualStyleBackColor = false;
             this.btTiposGasto.Click += new System.EventHandler(this.btTiposGasto_Click);
             // 
+            // pNomeForm
+            // 
+            this.pNomeForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pNomeForm.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pNomeForm.Controls.Add(this.lbNomeForm);
+            this.pNomeForm.Location = new System.Drawing.Point(13, 3);
+            this.pNomeForm.Name = "pNomeForm";
+            this.pNomeForm.Size = new System.Drawing.Size(624, 42);
+            this.pNomeForm.TabIndex = 76;
+            // 
+            // lbNomeForm
+            // 
+            this.lbNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbNomeForm.AutoSize = true;
+            this.lbNomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeForm.ForeColor = System.Drawing.Color.White;
+            this.lbNomeForm.Location = new System.Drawing.Point(248, 9);
+            this.lbNomeForm.Name = "lbNomeForm";
+            this.lbNomeForm.Size = new System.Drawing.Size(126, 24);
+            this.lbNomeForm.TabIndex = 0;
+            this.lbNomeForm.Text = "CADASTROS";
+            // 
             // frmBotoesCadastros
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -383,6 +409,7 @@
             this.AutoSize = true;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(649, 462);
+            this.Controls.Add(this.pNomeForm);
             this.Controls.Add(this.btTiposGasto);
             this.Controls.Add(this.btFormasPagamento);
             this.Controls.Add(this.btUnidades);
@@ -403,6 +430,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBotoesCadastros";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.pNomeForm.ResumeLayout(false);
+            this.pNomeForm.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -425,5 +454,7 @@
         private System.Windows.Forms.Button btCidades;
         private System.Windows.Forms.Button btCliente;
         private System.Windows.Forms.Button btTiposGasto;
+        private System.Windows.Forms.Panel pNomeForm;
+        private System.Windows.Forms.Label lbNomeForm;
     }
 }

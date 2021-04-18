@@ -35,7 +35,7 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes
             f.TopLevel = false;
             pFormInfo.Controls.Add(f);
             f.Show();
-            lbTitulo.Text = TituloForms.CADASTROS.ToString();
+            
         }
 
         private void btMinimizar_Click(object sender, EventArgs e)
@@ -50,7 +50,7 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes
             //f.TopLevel = false;
             //pFormInfo.Controls.Add(f);
             //f.Show();
-            lbTitulo.Text = TituloForms.MENU.ToString();
+            
         }
 
         private void button3_Click(object sender, EventArgs e)
@@ -60,7 +60,7 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes
             f.TopLevel = false;
             pFormInfo.Controls.Add(f);
             f.Show();
-            lbTitulo.Text = TituloForms.MOVIMENTOS.ToString();
+            
         }
 
         private void tDataHora_Tick(object sender, EventArgs e)

@@ -36,6 +36,8 @@ namespace LojaPadraoMYSQL.Formularios
             cbTipoPessoa.SelectedIndex = 0;
             cbTipoPessoa.Focus();
             txtDataCadastro.Text = System.DateTime.Now.ToShortDateString() + " - " + System.DateTime.Now.ToShortTimeString();
+            StartPosition = FormStartPosition.Manual;
+            Location = new Point(380, 130);
         }
         public frmCadastroCliente(ModeloCliente modelo)
         {
@@ -86,6 +88,8 @@ namespace LojaPadraoMYSQL.Formularios
                 chbAtivo.Checked = true;
             else if (modelo.Status.Equals('I'))
                 chbAtivo.Checked = false;
+            StartPosition = FormStartPosition.Manual;
+            Location = new Point(600, 300);
         }
 
         private void pctCalendario_Click(object sender, EventArgs e)

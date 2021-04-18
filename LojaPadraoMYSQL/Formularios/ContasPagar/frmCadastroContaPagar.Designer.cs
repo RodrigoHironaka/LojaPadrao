@@ -75,8 +75,6 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.lbStatus = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.btPagar = new System.Windows.Forms.Button();
-            this.btRenegociar = new System.Windows.Forms.Button();
             this.btSair = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
             this.tabAPagar = new System.Windows.Forms.TabControl();
@@ -674,11 +672,10 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.groupBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.groupBox2.BackColor = System.Drawing.Color.DarkSlateGray;
             this.groupBox2.Controls.Add(this.lbStatus);
-            this.groupBox2.Location = new System.Drawing.Point(12, 420);
+            this.groupBox2.Location = new System.Drawing.Point(12, 408);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(529, 69);
             this.groupBox2.TabIndex = 374;
@@ -697,53 +694,15 @@
             // 
             // gbBotoes
             // 
-            this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.Left;
+            this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.gbBotoes.Controls.Add(this.btPagar);
-            this.gbBotoes.Controls.Add(this.btRenegociar);
             this.gbBotoes.Controls.Add(this.btSair);
             this.gbBotoes.Controls.Add(this.btSalvar);
-            this.gbBotoes.Location = new System.Drawing.Point(547, 419);
+            this.gbBotoes.Location = new System.Drawing.Point(547, 408);
             this.gbBotoes.Name = "gbBotoes";
             this.gbBotoes.Size = new System.Drawing.Size(341, 70);
             this.gbBotoes.TabIndex = 375;
             this.gbBotoes.TabStop = false;
-            // 
-            // btPagar
-            // 
-            this.btPagar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btPagar.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btPagar.FlatAppearance.BorderSize = 0;
-            this.btPagar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btPagar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btPagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPagar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btPagar.ForeColor = System.Drawing.Color.Black;
-            this.btPagar.Image = ((System.Drawing.Image)(resources.GetObject("btPagar.Image")));
-            this.btPagar.Location = new System.Drawing.Point(6, 14);
-            this.btPagar.Name = "btPagar";
-            this.btPagar.Size = new System.Drawing.Size(50, 50);
-            this.btPagar.TabIndex = 4;
-            this.btPagar.UseVisualStyleBackColor = false;
-            // 
-            // btRenegociar
-            // 
-            this.btRenegociar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btRenegociar.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btRenegociar.FlatAppearance.BorderSize = 0;
-            this.btRenegociar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btRenegociar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btRenegociar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btRenegociar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btRenegociar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btRenegociar.ForeColor = System.Drawing.Color.Black;
-            this.btRenegociar.Image = ((System.Drawing.Image)(resources.GetObject("btRenegociar.Image")));
-            this.btRenegociar.Location = new System.Drawing.Point(62, 14);
-            this.btRenegociar.Name = "btRenegociar";
-            this.btRenegociar.Size = new System.Drawing.Size(50, 50);
-            this.btRenegociar.TabIndex = 3;
-            this.btRenegociar.UseVisualStyleBackColor = false;
             // 
             // btSair
             // 
@@ -785,6 +744,7 @@
             // 
             // tabAPagar
             // 
+            this.tabAPagar.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tabAPagar.Controls.Add(this.tabPrincipal);
             this.tabAPagar.Controls.Add(this.tabDetalhes);
             this.tabAPagar.Location = new System.Drawing.Point(12, 13);
@@ -965,6 +925,7 @@
             this.Name = "frmCadastroContaPagar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadastroContaPagar";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.gbDadosCompra.ResumeLayout(false);
             this.gbDadosCompra.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1026,7 +987,6 @@
         private System.Windows.Forms.Label label12;
         public System.Windows.Forms.TextBox textBox9;
         private System.Windows.Forms.Label label13;
-        public System.Windows.Forms.Button btRenegociar;
         public System.Windows.Forms.TextBox txtObs;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label20;
@@ -1047,6 +1007,5 @@
         private System.Windows.Forms.GroupBox groupBox4;
         public System.Windows.Forms.ComboBox cbPeriodo;
         private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.Button btPagar;
     }
 }

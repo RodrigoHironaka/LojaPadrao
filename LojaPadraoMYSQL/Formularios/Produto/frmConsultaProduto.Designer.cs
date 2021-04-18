@@ -41,11 +41,11 @@
             this.dgvDados = new System.Windows.Forms.DataGridView();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.pFiltro = new System.Windows.Forms.Panel();
+            this.cbTipo = new System.Windows.Forms.ComboBox();
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpFinal = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
             this.cbGrupo = new System.Windows.Forms.ComboBox();
-            this.cbTipo = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.gbBotoes.SuspendLayout();
             this.pFiltro.SuspendLayout();
@@ -71,6 +71,7 @@
             // 
             // btSair
             // 
+            this.btSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btSair.FlatAppearance.BorderSize = 0;
             this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
             this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
@@ -86,6 +87,7 @@
             // 
             // btExc
             // 
+            this.btExc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btExc.FlatAppearance.BorderSize = 0;
             this.btExc.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
             this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
@@ -101,6 +103,7 @@
             // 
             // btEdt
             // 
+            this.btEdt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btEdt.FlatAppearance.BorderSize = 0;
             this.btEdt.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
             this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
@@ -116,6 +119,7 @@
             // 
             // btAdd
             // 
+            this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btAdd.FlatAppearance.BorderSize = 0;
             this.btAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
             this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
@@ -131,6 +135,8 @@
             // 
             // txtPesquisa
             // 
+            this.txtPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPesquisa.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtPesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -146,6 +152,9 @@
             // 
             this.dgvDados.AllowUserToAddRows = false;
             this.dgvDados.AllowUserToDeleteRows = false;
+            this.dgvDados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDados.BackgroundColor = System.Drawing.Color.DarkSlateGray;
             this.dgvDados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -182,6 +191,8 @@
             // 
             // gbBotoes
             // 
+            this.gbBotoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbBotoes.Controls.Add(this.txtPesquisa);
             this.gbBotoes.Controls.Add(this.btSair);
             this.gbBotoes.Controls.Add(this.btExc);
@@ -195,6 +206,7 @@
             // 
             // pFiltro
             // 
+            this.pFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pFiltro.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pFiltro.Controls.Add(this.cbTipo);
@@ -208,6 +220,22 @@
             this.pFiltro.Size = new System.Drawing.Size(450, 110);
             this.pFiltro.TabIndex = 17;
             this.pFiltro.Visible = false;
+            // 
+            // cbTipo
+            // 
+            this.cbTipo.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.cbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTipo.ForeColor = System.Drawing.Color.White;
+            this.cbTipo.FormattingEnabled = true;
+            this.cbTipo.Items.AddRange(new object[] {
+            "PRODUTO",
+            "SERVIÇO"});
+            this.cbTipo.Location = new System.Drawing.Point(163, 62);
+            this.cbTipo.Name = "cbTipo";
+            this.cbTipo.Size = new System.Drawing.Size(99, 28);
+            this.cbTipo.TabIndex = 12;
             // 
             // dtpInicio
             // 
@@ -237,17 +265,6 @@
             this.dtpFinal.Size = new System.Drawing.Size(118, 26);
             this.dtpFinal.TabIndex = 9;
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(5, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 20);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Cadastro";
-            // 
             // cbGrupo
             // 
             this.cbGrupo.BackColor = System.Drawing.Color.DarkSlateGray;
@@ -261,21 +278,16 @@
             this.cbGrupo.Size = new System.Drawing.Size(163, 28);
             this.cbGrupo.TabIndex = 2;
             // 
-            // cbTipo
+            // label1
             // 
-            this.cbTipo.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.cbTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbTipo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbTipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTipo.ForeColor = System.Drawing.Color.White;
-            this.cbTipo.FormattingEnabled = true;
-            this.cbTipo.Items.AddRange(new object[] {
-            "PRODUTO",
-            "SERVIÇO"});
-            this.cbTipo.Location = new System.Drawing.Point(163, 62);
-            this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(99, 28);
-            this.cbTipo.TabIndex = 12;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(5, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 20);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Cadastro";
             // 
             // frmConsultaProduto
             // 
@@ -293,6 +305,7 @@
             this.Name = "frmConsultaProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Produtos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmConsultaProduto_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmConsultaProduto_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmConsultaProduto_KeyUp);

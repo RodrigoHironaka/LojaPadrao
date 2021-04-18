@@ -141,6 +141,7 @@
             // 
             this.dgvDados.AllowUserToAddRows = false;
             this.dgvDados.AllowUserToDeleteRows = false;
+            this.dgvDados.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDados.BackgroundColor = System.Drawing.Color.DarkSlateGray;
             this.dgvDados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -171,12 +172,13 @@
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDados.Size = new System.Drawing.Size(529, 336);
+            this.dgvDados.Size = new System.Drawing.Size(529, 352);
             this.dgvDados.TabIndex = 6;
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // gbBotoes
             // 
+            this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
             this.gbBotoes.Controls.Add(this.txtPesquisa);
             this.gbBotoes.Controls.Add(this.btSair);
@@ -191,6 +193,7 @@
             // 
             // pFiltro
             // 
+            this.pFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pFiltro.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pFiltro.Controls.Add(this.cbStatus);
@@ -205,11 +208,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(553, 446);
             this.Controls.Add(this.pFiltro);
-            this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.dgvDados);
+            this.Controls.Add(this.gbBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -217,6 +220,7 @@
             this.Name = "frmConsultaSubGrupo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Sub-Grupos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmConsultaSubGrupo_Load);
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmConsultaSubGrupo_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmConsultaSubGrupo_KeyUp);

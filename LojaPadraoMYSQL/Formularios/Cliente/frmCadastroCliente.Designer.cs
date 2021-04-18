@@ -87,6 +87,8 @@
             this.btSair = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.pNomeForm = new System.Windows.Forms.Panel();
+            this.lbNomeForm = new System.Windows.Forms.Label();
             this.tpageDadosPrincipais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).BeginInit();
@@ -94,6 +96,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCalendario)).BeginInit();
             this.gbBotoes.SuspendLayout();
             this.tabControl1.SuspendLayout();
+            this.pNomeForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPage2
@@ -102,7 +105,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(841, 431);
+            this.tabPage2.Size = new System.Drawing.Size(841, 397);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Outros";
             // 
@@ -164,7 +167,7 @@
             this.tpageDadosPrincipais.Location = new System.Drawing.Point(4, 22);
             this.tpageDadosPrincipais.Name = "tpageDadosPrincipais";
             this.tpageDadosPrincipais.Padding = new System.Windows.Forms.Padding(3);
-            this.tpageDadosPrincipais.Size = new System.Drawing.Size(841, 431);
+            this.tpageDadosPrincipais.Size = new System.Drawing.Size(841, 397);
             this.tpageDadosPrincipais.TabIndex = 0;
             this.tpageDadosPrincipais.Text = "Dados Principais";
             this.tpageDadosPrincipais.Click += new System.EventHandler(this.tpageDadosPrincipais_Click);
@@ -303,7 +306,7 @@
             this.txtObservacao.MaxLength = 300;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.Size = new System.Drawing.Size(818, 78);
+            this.txtObservacao.Size = new System.Drawing.Size(822, 49);
             this.txtObservacao.TabIndex = 17;
             // 
             // txtID
@@ -779,12 +782,13 @@
             // 
             // gbBotoes
             // 
+            this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
             this.gbBotoes.Controls.Add(this.btSair);
             this.gbBotoes.Controls.Add(this.btSalvar);
-            this.gbBotoes.Location = new System.Drawing.Point(12, 463);
+            this.gbBotoes.Location = new System.Drawing.Point(12, 471);
             this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(826, 80);
+            this.gbBotoes.Size = new System.Drawing.Size(849, 80);
             this.gbBotoes.TabIndex = 1;
             this.gbBotoes.TabStop = false;
             // 
@@ -824,20 +828,44 @@
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tabControl1.Controls.Add(this.tpageDadosPrincipais);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, 0);
+            this.tabControl1.Location = new System.Drawing.Point(12, 51);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(849, 457);
+            this.tabControl1.Size = new System.Drawing.Size(849, 423);
             this.tabControl1.TabIndex = 0;
+            // 
+            // pNomeForm
+            // 
+            this.pNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pNomeForm.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pNomeForm.Controls.Add(this.lbNomeForm);
+            this.pNomeForm.Location = new System.Drawing.Point(12, 9);
+            this.pNomeForm.Name = "pNomeForm";
+            this.pNomeForm.Size = new System.Drawing.Size(849, 36);
+            this.pNomeForm.TabIndex = 18;
+            // 
+            // lbNomeForm
+            // 
+            this.lbNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbNomeForm.AutoSize = true;
+            this.lbNomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeForm.ForeColor = System.Drawing.Color.White;
+            this.lbNomeForm.Location = new System.Drawing.Point(331, 6);
+            this.lbNomeForm.Name = "lbNomeForm";
+            this.lbNomeForm.Size = new System.Drawing.Size(198, 24);
+            this.lbNomeForm.TabIndex = 0;
+            this.lbNomeForm.Text = "CADASTRO CLIENTE";
             // 
             // frmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(850, 555);
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.ClientSize = new System.Drawing.Size(871, 555);
+            this.Controls.Add(this.pNomeForm);
             this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.tabControl1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -847,6 +875,7 @@
             this.Name = "frmCadastroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cliente";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroCliente_KeyDown);
             this.tpageDadosPrincipais.ResumeLayout(false);
             this.tpageDadosPrincipais.PerformLayout();
@@ -856,6 +885,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCalendario)).EndInit();
             this.gbBotoes.ResumeLayout(false);
             this.tabControl1.ResumeLayout(false);
+            this.pNomeForm.ResumeLayout(false);
+            this.pNomeForm.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -920,5 +951,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pbFoto;
         private System.Windows.Forms.GroupBox gbBotoes;
+        private System.Windows.Forms.Panel pNomeForm;
+        private System.Windows.Forms.Label lbNomeForm;
     }
 }

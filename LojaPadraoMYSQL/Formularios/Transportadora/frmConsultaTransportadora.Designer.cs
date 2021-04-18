@@ -69,6 +69,7 @@
             // 
             // btSair
             // 
+            this.btSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btSair.FlatAppearance.BorderSize = 0;
             this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
             this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
@@ -84,6 +85,7 @@
             // 
             // btExc
             // 
+            this.btExc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btExc.FlatAppearance.BorderSize = 0;
             this.btExc.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
             this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
@@ -99,6 +101,7 @@
             // 
             // btEdt
             // 
+            this.btEdt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btEdt.FlatAppearance.BorderSize = 0;
             this.btEdt.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
             this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
@@ -114,6 +117,7 @@
             // 
             // btAdd
             // 
+            this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btAdd.FlatAppearance.BorderSize = 0;
             this.btAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
             this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
@@ -129,6 +133,8 @@
             // 
             // txtPesquisa
             // 
+            this.txtPesquisa.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPesquisa.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtPesquisa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -144,6 +150,9 @@
             // 
             this.dgvDados.AllowUserToAddRows = false;
             this.dgvDados.AllowUserToDeleteRows = false;
+            this.dgvDados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDados.BackgroundColor = System.Drawing.Color.DarkSlateGray;
             this.dgvDados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -174,12 +183,14 @@
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDados.Size = new System.Drawing.Size(810, 352);
+            this.dgvDados.Size = new System.Drawing.Size(810, 363);
             this.dgvDados.TabIndex = 20;
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // gbBotoes
             // 
+            this.gbBotoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
             this.gbBotoes.Controls.Add(this.txtPesquisa);
             this.gbBotoes.Controls.Add(this.btSair);
@@ -194,6 +205,7 @@
             // 
             // pFiltro
             // 
+            this.pFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pFiltro.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pFiltro.Controls.Add(this.dtpInicio);
@@ -252,8 +264,8 @@
             this.BackColor = System.Drawing.Color.DarkSlateGray;
             this.ClientSize = new System.Drawing.Size(834, 462);
             this.Controls.Add(this.pFiltro);
-            this.Controls.Add(this.gbBotoes);
             this.Controls.Add(this.dgvDados);
+            this.Controls.Add(this.gbBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -261,6 +273,7 @@
             this.Name = "frmConsultaTransportadora";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Transportadoras";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmConsultaTransportadora_KeyDown);
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.frmConsultaTransportadora_KeyUp);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();

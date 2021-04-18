@@ -19,12 +19,11 @@ namespace DAL
         }
 
         //CRUD PADRAO-------------------------------------------------------------------------
-        public int Incluir(ModeloContaPagar modelo)
+        public void Incluir(ModeloContaPagar modelo)
         {
-            int idcompra = 0;
+            //int idcompra = 0;
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
-            cmd.Transaction = this.conexao.ObjetoTransacao;
             cmd.CommandText = "insert into contapagar(idInterno, dataCadastro, idTipoGasto, qtdParcelas, valor, total, idFormaPagamento, nome, emissao, vencimento, numDoc, tipoPessoa, idPessoa, observacao, periodo, status) values (@idInterno, @dataCadastro, @idTipoGasto, @qtdParcelas, @valor, @total, @idFormaPagamento, @nome, @emissao, @vencimento, @numDoc, @tipoPessoa, @idPessoa, @observacao, @periodo, @status);";
             cmd.Parameters.AddWithValue("@idInterno", modelo.IdInterno);
             cmd.Parameters.AddWithValue("@dataCadastro", modelo.DataCadastro);
@@ -42,10 +41,12 @@ namespace DAL
             cmd.Parameters.AddWithValue("@observacao", modelo.Observacao);
             cmd.Parameters.AddWithValue("@periodo", modelo.Periodo);
             cmd.Parameters.AddWithValue("@status", modelo.Status);
-            cmd.ExecuteNonQuery();
-            cmd.CommandText = "select max(id) from contapagar";
-            idcompra = Convert.ToInt32(cmd.ExecuteScalar());
-            return idcompra;
+            conexao.Conectar();
+            modelo.ContaPagarID = Convert.ToInt64(cmd.ExecuteNonQuery());
+            conexao.Desconectar();
+            //cmd.CommandText = "select max(id) from contapagar";
+            //idcompra = Convert.ToInt32(cmd.ExecuteScalar());
+            //return idcompra;
         }
 
         public void Alterar(ModeloContaPagar modelo)
@@ -112,19 +113,53 @@ namespace DAL
             return retorno;
         }
 
-        //OPÇÕES DE LOCALIZAR E CARREGAR GRID--------------------------------------------------
-        public DataTable Localizar()
+        //OPÇÕES DE LOCALIZAR E CARREGAR GRID------------------------------------------------------------------------------------
+        //Localizar geral
+        public DataTable LocalizarTodos()
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, cp.tipoPessoa, f.nomefantasia, cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, if(cp.tipoPessoa ='CLIENTE', c.nomefantasia, f.nomeFantasia ), cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
                 " from contapagar cp" +
-                " inner join tipogasto tg on(cp.idTipoGasto = tg.id) " +
-                " inner join fornecedor f on(cp.idPessoa = f.id) " +
+                " inner join cliente c on(cp.idpessoa = c.id)" +
+                " inner join fornecedor f on(cp.idpessoa = f.id)" +
+                " inner join tipogasto tg on(cp.idTipoGasto = tg.id)" +
                 " order by cp.id ", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
+        public DataTable LocalizarTodos(string valor)
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, if(cp.tipoPessoa ='CLIENTE', c.nomefantasia, f.nomeFantasia ), cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+                " from contapagar cp" +
+                " inner join cliente c on(cp.idpessoa = c.id)" +
+                " inner join fornecedor f on(cp.idpessoa = f.id)" +
+                " inner join tipogasto tg on(cp.idTipoGasto = tg.id)" +
+                " where cp.id like '%" + valor + "%' or (cp.nome like '%" + valor + "%' or (cp.numDoc like '%" + valor + "%') or (c.nomefantasia like '%" + valor + "%') or (f.nomefantasia like '%" + valor + "%'))" +
+            " group by cp.id ", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
 
+        //LOCALIZA ULTIMO(S) PARA MOSTRAR NO GRID APOS INSERIR OU ALTERAR--------------------------------------------------------
+        public DataTable LocalizarUltimoItemInserido()
+        {
+            var ultimoIdInterno = VerificaUltimoIdInternoInserido();
+
+            ModeloContaPagar modelo = CarregaModeloContaPagar(Convert.ToInt32(ultimoIdInterno));
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, if(cp.tipoPessoa ='CLIENTE', c.nomefantasia, f.nomeFantasia ), cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+                    " from contapagar cp" +
+                    " inner join cliente c on(cp.idpessoa = c.id)" +
+                    " inner join fornecedor f on(cp.idpessoa = f.id)" +
+                    " inner join tipogasto tg on(cp.idTipoGasto = tg.id)" +
+                    " where idInterno = " + ultimoIdInterno +
+                    " group by cp.id ", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+
+        //Localizar Cliente COM  e  SEM  parametros -----------------------------------------------------------------------------
         public DataTable LocalizarCliente()
         {
             DataTable tabela = new DataTable();
@@ -137,7 +172,20 @@ namespace DAL
             da.Fill(tabela);
             return tabela;
         }
+        public DataTable LocalizarCliente(string valor)
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, cp.tipoPessoa, c.nomefantasia, cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+                " from contapagar cp" +
+                " inner join tipogasto tg on(cp.idTipoGasto = tg.id) " +
+                " inner join cliente c on(cp.idPessoa = c.id) " +
+                " where cp.id like '%" + valor + "%' or cp.nome like '%" + valor + "%' or cp.numDoc like '%" + valor + "%' or c.nomefantasia like '%" + valor + "%'" +
+                " group by cp.id ", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
 
+        //Localizar Fornecedor COM  e  SEM  parametros --------------------------------------------------------------------------
         public DataTable LocalizarFornecedor()
         {
             DataTable tabela = new DataTable();
@@ -150,42 +198,69 @@ namespace DAL
             da.Fill(tabela);
             return tabela;
         }
-
-        //MELHORAR PESQUISA DO CONTASPAGAR
-        public DataTable LocalizarTodos(String valor)
+        public DataTable LocalizarFornecedor(string valor)
         {
             DataTable tabela = new DataTable();
             MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, cp.tipoPessoa, f.nomefantasia, cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
                 " from contapagar cp" +
                 " inner join tipogasto tg on(cp.idTipoGasto = tg.id) " +
                 " inner join fornecedor f on(cp.idPessoa = f.id) " +
-                " where cp.id like '%" + valor + "%' or cp.nome like '%" + valor + "%' or cp.numDoc like '%" + valor + "%' or f.nomefantasia like '%" + valor + "%' or cp.valor like '%" + valor + "%' or tg.nome like '%" + valor + "%' or cp.status like '%" + valor + "%'" +
+                " where cp.id like '%" + valor + "%' or cp.nome like '%" + valor + "%' or cp.numDoc like '%" + valor + "%' or f.nomefantasia like '%" + valor + "%'" +
                 " group by cp.id ", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+
+        //LOCALIZAR POR STATUS COM PARAMETRO DIGITADO----------------------------------------------------------------------------
+        public DataTable LocalizarPendentes(String valor)
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, if(cp.tipoPessoa ='CLIENTE', c.nomefantasia, f.nomeFantasia ), cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+                " from contapagar cp" +
+                " inner join cliente c on(cp.idpessoa = c.id)" +
+                " inner join fornecedor f on(cp.idpessoa = f.id)" +
+                " inner join tipogasto tg on(cp.idTipoGasto = tg.id)" +
+                " where cp.status = 'PENDENTE' and (cp.id like '%" + valor + "%' or (cp.nome like '%" + valor + "%') or (cp.numDoc like '%" + valor + "%') or (c.nomefantasia like '%" + valor + "%') or (f.nomefantasia like '%" + valor + "%'))", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+        public DataTable LocalizarPagos(String valor) 
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, if(cp.tipoPessoa ='CLIENTE', c.nomefantasia, f.nomeFantasia ), cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+                " from contapagar cp" +
+                " inner join cliente c on(cp.idpessoa = c.id)" +
+                " inner join fornecedor f on(cp.idpessoa = f.id)" +
+                " inner join tipogasto tg on(cp.idTipoGasto = tg.id)" +
+                " where cp.status = 'PAGO' and (cp.id like '%" + valor + "%' or (cp.nome like '%" + valor + "%') or (cp.numDoc like '%" + valor + "%') or (c.nomefantasia like '%" + valor + "%') or (f.nomefantasia like '%" + valor + "%'))", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+        public DataTable LocalizarCancelados(String valor) 
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, if(cp.tipoPessoa ='CLIENTE', c.nomefantasia, f.nomeFantasia ), cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+                " from contapagar cp" +
+                " inner join cliente c on(cp.idpessoa = c.id)" +
+                " inner join fornecedor f on(cp.idpessoa = f.id)" +
+                " inner join tipogasto tg on(cp.idTipoGasto = tg.id)" +
+                " where cp.status = 'CANCELADO' and (cp.id like '%" + valor + "%' or (cp.nome like '%" + valor + "%') or (cp.numDoc like '%" + valor + "%') or (c.nomefantasia like '%" + valor + "%') or (f.nomefantasia like '%" + valor + "%'))", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+
+        //Localizar pela data de vencimento do dia atual--------------------------------------------------------------------------
+        public DataTable LocalizarPorDataAtual()
+        {
+            var dataAtual = System.DateTime.Now.ToString("yyyyMMdd");
             
-            da.Fill(tabela);
-            return tabela;
-        }
-
-        public DataTable LocalizarAbertos(String valor) //corrigir select
-        {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from contapagar where idPessoa like '%" + valor + "%' or id like '%" + valor + "%'", conexao.StringConexao);
-            da.Fill(tabela);
-            return tabela;
-        }
-
-        public DataTable LocalizarPagos(String valor) //corrigir select
-        {
-            DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from contapagar where idPessoa like '%" + valor + "%' or id like '%" + valor + "%'", conexao.StringConexao);
-            da.Fill(tabela);
-            return tabela;
-        }
-
-        public DataTable LocalizarCancelados(String valor) //corrigir select
-        {
-            DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from contapagar where idPessoa like '%" + valor + "%' or id like '%" + valor + "%'", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, if(cp.tipoPessoa ='CLIENTE', c.nomefantasia, f.nomeFantasia ), cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+                " from contapagar cp" +
+                " inner join cliente c on(cp.idpessoa = c.id)" +
+                " inner join fornecedor f on(cp.idpessoa = f.id)" +
+                " inner join tipogasto tg on(cp.idTipoGasto = tg.id)" +
+                " where cp.vencimento = " + dataAtual, conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -225,7 +300,7 @@ namespace DAL
             conexao.Desconectar();
             return modelo;
         }
-        
+
         //CARREGAR COMBOS----------------------------------------------------------------------
         public DataTable CarregaComboFormaPagamento()
         {
@@ -276,15 +351,37 @@ namespace DAL
         }
 
         //VERIFICAR ULTIMO ID INSERIDO NA TABELA DO BANCO--------------------------------------
-        public string VerificaUltimoIdInserido()
+        public Int64 VerificaUltimoIdInserido()
         {
             MySqlCommand cmd = new MySqlCommand();
             cmd.Connection = conexao.ObjetoConexao;
             cmd.CommandText = "Select max(id) from contapagar";
             conexao.Conectar();
-            string id = Convert.ToString(cmd.ExecuteScalar());
+            var resultadobusca = cmd.ExecuteScalar();
+            Int64 id = 0;
+            if (resultadobusca != DBNull.Value)
+            {
+                id = Convert.ToInt64(resultadobusca);
+            }
             conexao.Desconectar();
             return id;
+        }
+
+        //VERIFICAR ULTIMO ID INTERNO INSERIDO NA TABELA DO BANCO------------------------------
+        public Int64 VerificaUltimoIdInternoInserido()
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conexao.ObjetoConexao;
+            cmd.CommandText = "Select max(idInterno) from contapagar";
+            conexao.Conectar();
+            var resultadobusca = cmd.ExecuteScalar();
+            Int64 idinterno = 0;
+            if (resultadobusca != DBNull.Value)
+            {
+                idinterno = Convert.ToInt64(resultadobusca);
+            }
+            conexao.Desconectar();
+            return idinterno;
         }
 
         //CALCULA DIFERENCA NA DIVISAO---------------------------------------------------------
@@ -299,7 +396,7 @@ namespace DAL
             {
                 resComDif = valorparcela + dif;
                 return resComDif;
-                
+
             }
             else if (dif > 0)
             {
@@ -318,41 +415,28 @@ namespace DAL
         public decimal CalculoSemDiferenca(decimal valortotal, int qtdparcelas)
         {
             decimal resultado = valortotal / qtdparcelas;
-            decimal valorparcela = Math.Round(resultado, 2);            
+            decimal valorparcela = Math.Round(resultado, 2);
             return valorparcela;
         }
-
-        //VERIFICAR ULTIMO ID INTERNO INSERIDO NA TABELA DO BANCO------------------------------
-        public string VerificaUltimoIdInternoInserido()
-        {
-            MySqlCommand cmd = new MySqlCommand();
-            cmd.Connection = conexao.ObjetoConexao;
-            cmd.CommandText = "Select max(idInterno) from contapagar";
-            conexao.Conectar();
-            string id = Convert.ToString(cmd.ExecuteScalar());
-            conexao.Desconectar();
-            return id;
-        }
-
+        
         //GERA UMA SEQUENCIA DE NUMERO NA ORDEM PELO ID INTERNO--------------------------------
         public int GeraIdInterno()
         {
             int idinterno;
-           
+
             var ultimoId = VerificaUltimoIdInternoInserido();
-            if (ultimoId == "")
+            if (ultimoId == 0)
             {
                 idinterno = 1;
                 return idinterno;
             }
             else
             {
-                idinterno = (Convert.ToInt32(ultimoId)+1);
+                idinterno = (Convert.ToInt32(ultimoId) + 1);
                 return idinterno;
             }
         }
 
-        
     }
 
 

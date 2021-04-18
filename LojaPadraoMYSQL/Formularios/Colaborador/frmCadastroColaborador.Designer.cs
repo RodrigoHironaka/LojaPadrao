@@ -31,11 +31,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroColaborador));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpageDadosPrincipais = new System.Windows.Forms.TabPage();
-            this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.btSalvar = new System.Windows.Forms.Button();
-            this.btSair = new System.Windows.Forms.Button();
-            this.cbFuncao = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.cbFuncao = new System.Windows.Forms.ComboBox();
             this.pbFoto = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btAddFoto = new System.Windows.Forms.Button();
@@ -78,25 +75,32 @@
             this.lbCelular2 = new System.Windows.Forms.Label();
             this.lbCep = new System.Windows.Forms.Label();
             this.lbCodigo = new System.Windows.Forms.Label();
-            this.lbIe = new System.Windows.Forms.Label();
             this.lbCelular = new System.Windows.Forms.Label();
+            this.lbIe = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.btSalvar = new System.Windows.Forms.Button();
+            this.btSair = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpageDadosPrincipais.SuspendLayout();
-            this.gbBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCnpjInvalido)).BeginInit();
+            this.gbBotoes.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
+            this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tabControl1.Controls.Add(this.tpageDadosPrincipais);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(2, 1);
+            this.tabControl1.Location = new System.Drawing.Point(8, 49);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(670, 459);
+            this.tabControl1.Size = new System.Drawing.Size(670, 430);
             this.tabControl1.TabIndex = 3;
             // 
             // tpageDadosPrincipais
@@ -151,54 +155,20 @@
             this.tpageDadosPrincipais.Location = new System.Drawing.Point(4, 22);
             this.tpageDadosPrincipais.Name = "tpageDadosPrincipais";
             this.tpageDadosPrincipais.Padding = new System.Windows.Forms.Padding(3);
-            this.tpageDadosPrincipais.Size = new System.Drawing.Size(662, 433);
+            this.tpageDadosPrincipais.Size = new System.Drawing.Size(662, 404);
             this.tpageDadosPrincipais.TabIndex = 0;
             this.tpageDadosPrincipais.Text = "Dados Principais";
             // 
-            // gbBotoes
+            // label3
             // 
-            this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.gbBotoes.Controls.Add(this.btSalvar);
-            this.gbBotoes.Controls.Add(this.btSair);
-            this.gbBotoes.Location = new System.Drawing.Point(12, 463);
-            this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(649, 80);
-            this.gbBotoes.TabIndex = 316;
-            this.gbBotoes.TabStop = false;
-            // 
-            // btSalvar
-            // 
-            this.btSalvar.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btSalvar.FlatAppearance.BorderSize = 0;
-            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
-            this.btSalvar.Location = new System.Drawing.Point(537, 19);
-            this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(50, 50);
-            this.btSalvar.TabIndex = 18;
-            this.btSalvar.UseVisualStyleBackColor = false;
-            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
-            // 
-            // btSair
-            // 
-            this.btSair.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
-            this.btSair.Location = new System.Drawing.Point(593, 19);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(50, 50);
-            this.btSair.TabIndex = 19;
-            this.btSair.UseVisualStyleBackColor = false;
-            this.btSair.Click += new System.EventHandler(this.btSair_Click);
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(404, 107);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(67, 20);
+            this.label3.TabIndex = 314;
+            this.label3.Text = "Função:";
             // 
             // cbFuncao
             // 
@@ -212,17 +182,6 @@
             this.cbFuncao.Name = "cbFuncao";
             this.cbFuncao.Size = new System.Drawing.Size(120, 28);
             this.cbFuncao.TabIndex = 315;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(404, 107);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 20);
-            this.label3.TabIndex = 314;
-            this.label3.Text = "Função:";
             // 
             // pbFoto
             // 
@@ -351,7 +310,7 @@
             this.txtObservacao.MaxLength = 300;
             this.txtObservacao.Multiline = true;
             this.txtObservacao.Name = "txtObservacao";
-            this.txtObservacao.Size = new System.Drawing.Size(648, 78);
+            this.txtObservacao.Size = new System.Drawing.Size(648, 50);
             this.txtObservacao.TabIndex = 17;
             // 
             // txtID
@@ -719,17 +678,6 @@
             this.lbCodigo.TabIndex = 280;
             this.lbCodigo.Text = "Código:";
             // 
-            // lbIe
-            // 
-            this.lbIe.AutoSize = true;
-            this.lbIe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIe.ForeColor = System.Drawing.Color.White;
-            this.lbIe.Location = new System.Drawing.Point(360, 3);
-            this.lbIe.Name = "lbIe";
-            this.lbIe.Size = new System.Drawing.Size(38, 20);
-            this.lbIe.TabIndex = 273;
-            this.lbIe.Text = "RG:";
-            // 
             // lbCelular
             // 
             this.lbCelular.AutoSize = true;
@@ -741,6 +689,17 @@
             this.lbCelular.TabIndex = 274;
             this.lbCelular.Text = "Celular:";
             // 
+            // lbIe
+            // 
+            this.lbIe.AutoSize = true;
+            this.lbIe.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIe.ForeColor = System.Drawing.Color.White;
+            this.lbIe.Location = new System.Drawing.Point(360, 3);
+            this.lbIe.Name = "lbIe";
+            this.lbIe.Size = new System.Drawing.Size(38, 20);
+            this.lbIe.TabIndex = 273;
+            this.lbIe.Text = "RG:";
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.DarkSlateGray;
@@ -751,12 +710,81 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Outros";
             // 
+            // gbBotoes
+            // 
+            this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.gbBotoes.Controls.Add(this.btSalvar);
+            this.gbBotoes.Controls.Add(this.btSair);
+            this.gbBotoes.Location = new System.Drawing.Point(8, 481);
+            this.gbBotoes.Name = "gbBotoes";
+            this.gbBotoes.Size = new System.Drawing.Size(670, 80);
+            this.gbBotoes.TabIndex = 316;
+            this.gbBotoes.TabStop = false;
+            // 
+            // btSalvar
+            // 
+            this.btSalvar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btSalvar.FlatAppearance.BorderSize = 0;
+            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
+            this.btSalvar.Location = new System.Drawing.Point(537, 19);
+            this.btSalvar.Name = "btSalvar";
+            this.btSalvar.Size = new System.Drawing.Size(50, 50);
+            this.btSalvar.TabIndex = 18;
+            this.btSalvar.UseVisualStyleBackColor = false;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
+            // 
+            // btSair
+            // 
+            this.btSair.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
+            this.btSair.Location = new System.Drawing.Point(593, 19);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(50, 50);
+            this.btSair.TabIndex = 19;
+            this.btSair.UseVisualStyleBackColor = false;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Location = new System.Drawing.Point(8, 7);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(670, 36);
+            this.panel1.TabIndex = 317;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(211, 6);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(264, 24);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "CADASTRO COLABORADOR";
+            // 
             // frmCadastroColaborador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(673, 553);
+            this.ClientSize = new System.Drawing.Size(690, 573);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.gbBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
@@ -766,14 +794,17 @@
             this.Name = "frmCadastroColaborador";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadastroColaborador";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroColaborador_KeyDown);
             this.tabControl1.ResumeLayout(false);
             this.tpageDadosPrincipais.ResumeLayout(false);
             this.tpageDadosPrincipais.PerformLayout();
-            this.gbBotoes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCnpjInvalido)).EndInit();
+            this.gbBotoes.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -832,5 +863,7 @@
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.ComboBox cbFuncao;
         private System.Windows.Forms.GroupBox gbBotoes;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
     }
 }

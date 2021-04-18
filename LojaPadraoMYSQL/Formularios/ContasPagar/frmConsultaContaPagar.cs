@@ -39,7 +39,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             f.txtCod_Leave(sender, e);
             f.cbFormaPagamento.SelectedValue = modelo.FormaPagamentoID.ToString();
             f.txtObs.Text = modelo.Observacao;
-            
+
             this.Opacity = 0;
             f.ShowDialog();
             this.Opacity = 1;
@@ -51,66 +51,45 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             dgvDados.Columns[0].HeaderText = "COD";
             dgvDados.Columns[1].HeaderText = "DOC";
             dgvDados.Columns[2].HeaderText = "DESCRIÇÃO";
-            dgvDados.Columns[3].HeaderText = "TIPO";
-            dgvDados.Columns[4].HeaderText = "PESSOA";
-            //dgvDados.Columns[5].DefaultCellStyle.Format = "C2";
-            dgvDados.Columns[5].HeaderText = "VALOR";
-            dgvDados.Columns[6].HeaderText = "VENCIMENTO";
-            dgvDados.Columns[7].HeaderText = "EMISSÃO";
-            dgvDados.Columns[8].HeaderText = "CADASTRO";
-            dgvDados.Columns[9].HeaderText = "TIPO GASTO";
-            dgvDados.Columns[10].HeaderText = "SIT";
+            dgvDados.Columns[3].HeaderText = "PESSOA";
+            dgvDados.Columns[4].HeaderText = "VALOR";
+            dgvDados.Columns[5].HeaderText = "VENCIMENTO";
+            dgvDados.Columns[6].HeaderText = "EMISSÃO";
+            dgvDados.Columns[7].HeaderText = "CADASTRO";
+            dgvDados.Columns[8].HeaderText = "TIPO GASTO";
+            dgvDados.Columns[9].HeaderText = "SIT";
+
         }
 
-        public void FiltroLocalizarUltimoIdAdd(int totallinhas, Int64 ultimoid)
+        public void FiltroLocalizarDepoisIncluir(Int64 ultimoidInserido)
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLContasPagar bll = new BLLContasPagar(cx);
-            var idNovo = bll.VerificaUltimoIdInserido();
-            if (idNovo == "")
+            Int64 id = bll.VerificaUltimoIdInserido();
+            //Int64 ultimoId = Convert.ToInt64(ultimoidInserido);
+            if (id != 0)
             {
-                idNovo = "0";
-            }
-            var tipo = bll.CarregaModeloContaPagar(Convert.ToInt32(idNovo));
-            if (totallinhas == 0)
-            {
-                if (tipo.TipoPessoa == "CLIENTE")
-                {
-                    dgvDados.DataSource = bll.LocalizarCliente();
-                    dgvDados.Select();
-                    this.AtualizaCabecalhoGridConsulta();
-                }
-                else if (tipo.TipoPessoa == "FORNECEDOR")
-                {
-                    dgvDados.DataSource = bll.LocalizarFornecedor();
-                    dgvDados.Select();
-                    this.AtualizaCabecalhoGridConsulta();
-                }
-            }
-            else
-            {
-                var idAnterior = ultimoid;
-                if (idAnterior == Convert.ToInt32(idNovo))
+                if (id == ultimoidInserido)
                 {
                     dgvDados.DataSource = null;
                     txtPesquisar.Select();
-
                 }
                 else
                 {
-                    if (tipo.TipoPessoa == "CLIENTE")
-                    {
-                        dgvDados.DataSource = bll.LocalizarCliente();
-                        dgvDados.Select();
-                        this.AtualizaCabecalhoGridConsulta();
-                    }
-                    else if (tipo.TipoPessoa == "FORNECEDOR")
-                    {
-                        dgvDados.DataSource = bll.LocalizarFornecedor();
-                        dgvDados.Select();
-                        this.AtualizaCabecalhoGridConsulta();
-                    }
+                    dgvDados.DataSource = bll.LocalizarUltimoItemInserido();
+                    this.AtualizaCabecalhoGridConsulta();
                 }
+            }
+
+        }
+        public void FiltroLocalizarDepoisAlterar(Int64 idAlterado)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLContasPagar bll = new BLLContasPagar(cx);
+            if (id != 0)
+            {
+                dgvDados.DataSource = bll.LocalizarUltimoItemInserido();
+                this.AtualizaCabecalhoGridConsulta();
             }
 
         }
@@ -120,47 +99,60 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             InitializeComponent();
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLContasPagar bll = new BLLContasPagar(cx);
-            dgvDados.DataSource = bll.Localizar();
+            dgvDados.DataSource = bll.LocalizarPorDataAtual();
             dgvDados.Select();
             this.AtualizaCabecalhoGridConsulta();
+
         }
 
         private void txtPesquisar_TextChanged(object sender, EventArgs e)
         {
             pFiltro.Visible = true;
-            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLContasPagar bll = new BLLContasPagar(cx);
-            dgvDados.DataSource = bll.LocalizarTodos(txtPesquisar.Text);
+
+            if (rbTodos.Checked == true)
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLContasPagar bll = new BLLContasPagar(cx);
+                dgvDados.DataSource = bll.LocalizarTodos(txtPesquisar.Text);
+            }
+            else if (rbPago.Checked == true)
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLContasPagar bll = new BLLContasPagar(cx);
+                dgvDados.DataSource = bll.LocalizarPagos(txtPesquisar.Text);
+            }
+            else if (rbPendente.Checked == true)
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLContasPagar bll = new BLLContasPagar(cx);
+                dgvDados.DataSource = bll.LocalizarPendentes(txtPesquisar.Text);
+            }
+            else if (rbCancelado.Checked == true)
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLContasPagar bll = new BLLContasPagar(cx);
+                dgvDados.DataSource = bll.LocalizarCancelados(txtPesquisar.Text);
+            }
+            //dgvDados.DataSource = bll.Localizar(txtPesquisar.Text);
             this.AtualizaCabecalhoGridConsulta();
         }
 
         private void txtPesquisar_KeyDown(object sender, KeyEventArgs e)
         {
             pFiltro.Visible = false;
+
         }
-       
+
         private void btAdd_Click(object sender, EventArgs e)
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLContasPagar bll = new BLLContasPagar(cx);
             var ultimoidinserido = bll.VerificaUltimoIdInserido();
-            Int64 ultimoid;
-            if(ultimoidinserido == "")
-            {
-                ultimoidinserido = "0";
-                ultimoid = Convert.ToInt64(ultimoidinserido);
-            }
-            else
-            {
-                ultimoid = Convert.ToInt64(ultimoidinserido);
-            }
-            int totallinhas = dgvDados.Rows.Count;
             frmCadastroContaPagar f = new frmCadastroContaPagar();
-            this.Opacity = 0;
+            this.Visible = false;
             f.ShowDialog();
-            this.Opacity = 1;
-            this.FiltroLocalizarUltimoIdAdd(totallinhas, ultimoid);
-            
+            this.Visible = true;
+            this.FiltroLocalizarDepoisIncluir(ultimoidinserido);
 
         }
 
@@ -169,7 +161,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             this.Close();
         }
 
-        // Editar, carrega dados do item selecionado para o formd e cadastro
+        //Editar, carrega dados do item selecionado para o form de cadastro
         public int id = 0;
         private void btEdt_Click(object sender, EventArgs e)
         {
@@ -182,14 +174,68 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             {
                 this.id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //id recebe o valor do codigo da linha selecionada no grid
                 this.CarregaDadosEdicao(sender, e, id);
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLContasPagar bll = new BLLContasPagar(cx);
-                dgvDados.DataSource = bll.Localizar();
+                this.FiltroLocalizarDepoisAlterar(id);
             }
         }
 
+        //FILTRO DE RADIOBUTTON STATUS-----------------------------------------------------------------------
         private void frmConsultaContaPagar_Load(object sender, EventArgs e)
         {
+        }
+
+        private void rbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLContasPagar bll = new BLLContasPagar(cx);
+            dgvDados.DataSource = bll.LocalizarTodos(txtPesquisar.Text);
+        }
+
+        private void rbPago_CheckedChanged(object sender, EventArgs e)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLContasPagar bll = new BLLContasPagar(cx);
+            dgvDados.DataSource = bll.LocalizarPagos(txtPesquisar.Text);
+        }
+
+        private void rbPendente_CheckedChanged(object sender, EventArgs e)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLContasPagar bll = new BLLContasPagar(cx);
+            dgvDados.DataSource = bll.LocalizarPendentes(txtPesquisar.Text);
+        }
+
+        private void rbCancelado_CheckedChanged(object sender, EventArgs e)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLContasPagar bll = new BLLContasPagar(cx);
+            dgvDados.DataSource = bll.LocalizarCancelados(txtPesquisar.Text);
+        }
+
+        //LIMPA FILTRO E RETORNA BUSCA POR DATA ATUAL PENDENTE------------------------------------------------
+        public void LimpaFiltro()
+        {
+            rbPendente.Checked = true;
+            cbTipoBuscaData.SelectedIndex = 0;
+            cbPessoa.SelectedIndex = 0;
+            dtpInicio.Value = System.DateTime.Now;
+            dtpFinal.Value = System.DateTime.Now;
+
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLContasPagar bll = new BLLContasPagar(cx);
+            dgvDados.DataSource = bll.LocalizarPorDataAtual();
+            dgvDados.Select();
+            this.AtualizaCabecalhoGridConsulta();
+        }
+        private void btLimpaFiltro_Click(object sender, EventArgs e)
+        {
+            this.LimpaFiltro();
+        }
+
+        //FECHA PAINEL DE FILTRO E RETORNA BUSCA POR DATA ATUAL PENDENTE--------------------------------------
+        private void btFecharPanelFiltro_Click(object sender, EventArgs e)
+        {
+            pFiltro.Visible = false;
+            this.LimpaFiltro();
         }
     }
 }

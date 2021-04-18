@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaCompra));
             this.txtPesquisar = new System.Windows.Forms.TextBox();
             this.dgvDados = new System.Windows.Forms.DataGridView();
             this.pFiltro = new System.Windows.Forms.Panel();
+            this.cbTipoBuscaData = new System.Windows.Forms.ComboBox();
+            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.chbTipoBuscaData = new System.Windows.Forms.CheckBox();
             this.rbTodos = new System.Windows.Forms.RadioButton();
             this.rbCancelado = new System.Windows.Forms.RadioButton();
             this.rbFaturado = new System.Windows.Forms.RadioButton();
@@ -45,12 +51,6 @@
             this.btEdt = new System.Windows.Forms.Button();
             this.btSair = new System.Windows.Forms.Button();
             this.btExc = new System.Windows.Forms.Button();
-            this.cbTipoBuscaData = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.chbTipoBuscaData = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.pFiltro.SuspendLayout();
             this.gbBotoes.SuspendLayout();
@@ -58,6 +58,8 @@
             // 
             // txtPesquisar
             // 
+            this.txtPesquisar.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.txtPesquisar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtPesquisar.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtPesquisar.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -73,26 +75,29 @@
             // 
             this.dgvDados.AllowUserToAddRows = false;
             this.dgvDados.AllowUserToDeleteRows = false;
+            this.dgvDados.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDados.BackgroundColor = System.Drawing.Color.DarkSlateGray;
             this.dgvDados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDados.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDados.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDados.EnableHeadersVisualStyles = false;
             this.dgvDados.Location = new System.Drawing.Point(12, 12);
             this.dgvDados.Name = "dgvDados";
@@ -105,6 +110,7 @@
             // 
             // pFiltro
             // 
+            this.pFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.pFiltro.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pFiltro.Controls.Add(this.cbTipoBuscaData);
@@ -122,167 +128,6 @@
             this.pFiltro.Name = "pFiltro";
             this.pFiltro.Size = new System.Drawing.Size(309, 152);
             this.pFiltro.TabIndex = 14;
-            // 
-            // rbTodos
-            // 
-            this.rbTodos.AutoSize = true;
-            this.rbTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbTodos.ForeColor = System.Drawing.Color.White;
-            this.rbTodos.Location = new System.Drawing.Point(13, 14);
-            this.rbTodos.Name = "rbTodos";
-            this.rbTodos.Size = new System.Drawing.Size(71, 24);
-            this.rbTodos.TabIndex = 3;
-            this.rbTodos.Text = "Todos";
-            this.rbTodos.UseVisualStyleBackColor = true;
-            // 
-            // rbCancelado
-            // 
-            this.rbCancelado.AutoSize = true;
-            this.rbCancelado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbCancelado.ForeColor = System.Drawing.Color.White;
-            this.rbCancelado.Location = new System.Drawing.Point(13, 104);
-            this.rbCancelado.Name = "rbCancelado";
-            this.rbCancelado.Size = new System.Drawing.Size(103, 24);
-            this.rbCancelado.TabIndex = 2;
-            this.rbCancelado.Text = "Cancelado";
-            this.rbCancelado.UseVisualStyleBackColor = true;
-            // 
-            // rbFaturado
-            // 
-            this.rbFaturado.AutoSize = true;
-            this.rbFaturado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbFaturado.ForeColor = System.Drawing.Color.White;
-            this.rbFaturado.Location = new System.Drawing.Point(13, 74);
-            this.rbFaturado.Name = "rbFaturado";
-            this.rbFaturado.Size = new System.Drawing.Size(92, 24);
-            this.rbFaturado.TabIndex = 1;
-            this.rbFaturado.Text = "Faturado";
-            this.rbFaturado.UseVisualStyleBackColor = true;
-            // 
-            // rbAberto
-            // 
-            this.rbAberto.AutoSize = true;
-            this.rbAberto.Checked = true;
-            this.rbAberto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbAberto.ForeColor = System.Drawing.Color.White;
-            this.rbAberto.Location = new System.Drawing.Point(13, 44);
-            this.rbAberto.Name = "rbAberto";
-            this.rbAberto.Size = new System.Drawing.Size(75, 24);
-            this.rbAberto.TabIndex = 0;
-            this.rbAberto.TabStop = true;
-            this.rbAberto.Text = "Aberto";
-            this.rbAberto.UseVisualStyleBackColor = true;
-            // 
-            // gbBotoes
-            // 
-            this.gbBotoes.Controls.Add(this.btClonar);
-            this.gbBotoes.Controls.Add(this.btImprimir);
-            this.gbBotoes.Controls.Add(this.btAdd);
-            this.gbBotoes.Controls.Add(this.btEdt);
-            this.gbBotoes.Controls.Add(this.txtPesquisar);
-            this.gbBotoes.Controls.Add(this.btSair);
-            this.gbBotoes.Controls.Add(this.btExc);
-            this.gbBotoes.Location = new System.Drawing.Point(12, 417);
-            this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(810, 72);
-            this.gbBotoes.TabIndex = 15;
-            this.gbBotoes.TabStop = false;
-            // 
-            // btClonar
-            // 
-            this.btClonar.FlatAppearance.BorderSize = 0;
-            this.btClonar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btClonar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btClonar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btClonar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btClonar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btClonar.Image = ((System.Drawing.Image)(resources.GetObject("btClonar.Image")));
-            this.btClonar.Location = new System.Drawing.Point(444, 14);
-            this.btClonar.Name = "btClonar";
-            this.btClonar.Size = new System.Drawing.Size(55, 55);
-            this.btClonar.TabIndex = 379;
-            this.btClonar.UseVisualStyleBackColor = true;
-            this.btClonar.Click += new System.EventHandler(this.btClonar_Click);
-            // 
-            // btImprimir
-            // 
-            this.btImprimir.FlatAppearance.BorderSize = 0;
-            this.btImprimir.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btImprimir.Image")));
-            this.btImprimir.Location = new System.Drawing.Point(688, 11);
-            this.btImprimir.Name = "btImprimir";
-            this.btImprimir.Size = new System.Drawing.Size(55, 55);
-            this.btImprimir.TabIndex = 13;
-            this.btImprimir.UseVisualStyleBackColor = true;
-            this.btImprimir.Click += new System.EventHandler(this.btImprimir_Click);
-            // 
-            // btAdd
-            // 
-            this.btAdd.FlatAppearance.BorderSize = 0;
-            this.btAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btAdd.Image = ((System.Drawing.Image)(resources.GetObject("btAdd.Image")));
-            this.btAdd.Location = new System.Drawing.Point(505, 11);
-            this.btAdd.Name = "btAdd";
-            this.btAdd.Size = new System.Drawing.Size(55, 55);
-            this.btAdd.TabIndex = 9;
-            this.btAdd.UseVisualStyleBackColor = true;
-            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
-            // 
-            // btEdt
-            // 
-            this.btEdt.FlatAppearance.BorderSize = 0;
-            this.btEdt.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btEdt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btEdt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btEdt.Image = ((System.Drawing.Image)(resources.GetObject("btEdt.Image")));
-            this.btEdt.Location = new System.Drawing.Point(566, 11);
-            this.btEdt.Name = "btEdt";
-            this.btEdt.Size = new System.Drawing.Size(55, 55);
-            this.btEdt.TabIndex = 10;
-            this.btEdt.UseVisualStyleBackColor = true;
-            this.btEdt.Click += new System.EventHandler(this.btEdt_Click);
-            // 
-            // btSair
-            // 
-            this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
-            this.btSair.Location = new System.Drawing.Point(749, 11);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(55, 55);
-            this.btSair.TabIndex = 12;
-            this.btSair.UseVisualStyleBackColor = true;
-            this.btSair.Click += new System.EventHandler(this.btSair_Click);
-            // 
-            // btExc
-            // 
-            this.btExc.FlatAppearance.BorderSize = 0;
-            this.btExc.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btExc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btExc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btExc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btExc.Image = ((System.Drawing.Image)(resources.GetObject("btExc.Image")));
-            this.btExc.Location = new System.Drawing.Point(627, 11);
-            this.btExc.Name = "btExc";
-            this.btExc.Size = new System.Drawing.Size(55, 55);
-            this.btExc.TabIndex = 11;
-            this.btExc.UseVisualStyleBackColor = true;
-            this.btExc.Click += new System.EventHandler(this.btExc_Click);
             // 
             // cbTipoBuscaData
             // 
@@ -354,6 +199,175 @@
             this.chbTipoBuscaData.Text = "Busca por data";
             this.chbTipoBuscaData.UseVisualStyleBackColor = true;
             // 
+            // rbTodos
+            // 
+            this.rbTodos.AutoSize = true;
+            this.rbTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTodos.ForeColor = System.Drawing.Color.White;
+            this.rbTodos.Location = new System.Drawing.Point(13, 14);
+            this.rbTodos.Name = "rbTodos";
+            this.rbTodos.Size = new System.Drawing.Size(71, 24);
+            this.rbTodos.TabIndex = 3;
+            this.rbTodos.Text = "Todos";
+            this.rbTodos.UseVisualStyleBackColor = true;
+            // 
+            // rbCancelado
+            // 
+            this.rbCancelado.AutoSize = true;
+            this.rbCancelado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbCancelado.ForeColor = System.Drawing.Color.White;
+            this.rbCancelado.Location = new System.Drawing.Point(13, 104);
+            this.rbCancelado.Name = "rbCancelado";
+            this.rbCancelado.Size = new System.Drawing.Size(103, 24);
+            this.rbCancelado.TabIndex = 2;
+            this.rbCancelado.Text = "Cancelado";
+            this.rbCancelado.UseVisualStyleBackColor = true;
+            // 
+            // rbFaturado
+            // 
+            this.rbFaturado.AutoSize = true;
+            this.rbFaturado.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbFaturado.ForeColor = System.Drawing.Color.White;
+            this.rbFaturado.Location = new System.Drawing.Point(13, 74);
+            this.rbFaturado.Name = "rbFaturado";
+            this.rbFaturado.Size = new System.Drawing.Size(92, 24);
+            this.rbFaturado.TabIndex = 1;
+            this.rbFaturado.Text = "Faturado";
+            this.rbFaturado.UseVisualStyleBackColor = true;
+            // 
+            // rbAberto
+            // 
+            this.rbAberto.AutoSize = true;
+            this.rbAberto.Checked = true;
+            this.rbAberto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAberto.ForeColor = System.Drawing.Color.White;
+            this.rbAberto.Location = new System.Drawing.Point(13, 44);
+            this.rbAberto.Name = "rbAberto";
+            this.rbAberto.Size = new System.Drawing.Size(75, 24);
+            this.rbAberto.TabIndex = 0;
+            this.rbAberto.TabStop = true;
+            this.rbAberto.Text = "Aberto";
+            this.rbAberto.UseVisualStyleBackColor = true;
+            // 
+            // gbBotoes
+            // 
+            this.gbBotoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.gbBotoes.Controls.Add(this.btClonar);
+            this.gbBotoes.Controls.Add(this.btImprimir);
+            this.gbBotoes.Controls.Add(this.btAdd);
+            this.gbBotoes.Controls.Add(this.btEdt);
+            this.gbBotoes.Controls.Add(this.txtPesquisar);
+            this.gbBotoes.Controls.Add(this.btSair);
+            this.gbBotoes.Controls.Add(this.btExc);
+            this.gbBotoes.Location = new System.Drawing.Point(12, 417);
+            this.gbBotoes.Name = "gbBotoes";
+            this.gbBotoes.Size = new System.Drawing.Size(810, 72);
+            this.gbBotoes.TabIndex = 15;
+            this.gbBotoes.TabStop = false;
+            // 
+            // btClonar
+            // 
+            this.btClonar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btClonar.FlatAppearance.BorderSize = 0;
+            this.btClonar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btClonar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btClonar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btClonar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btClonar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btClonar.Image = ((System.Drawing.Image)(resources.GetObject("btClonar.Image")));
+            this.btClonar.Location = new System.Drawing.Point(444, 14);
+            this.btClonar.Name = "btClonar";
+            this.btClonar.Size = new System.Drawing.Size(55, 55);
+            this.btClonar.TabIndex = 379;
+            this.btClonar.UseVisualStyleBackColor = true;
+            this.btClonar.Click += new System.EventHandler(this.btClonar_Click);
+            // 
+            // btImprimir
+            // 
+            this.btImprimir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btImprimir.FlatAppearance.BorderSize = 0;
+            this.btImprimir.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btImprimir.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btImprimir.Image = ((System.Drawing.Image)(resources.GetObject("btImprimir.Image")));
+            this.btImprimir.Location = new System.Drawing.Point(688, 11);
+            this.btImprimir.Name = "btImprimir";
+            this.btImprimir.Size = new System.Drawing.Size(55, 55);
+            this.btImprimir.TabIndex = 13;
+            this.btImprimir.UseVisualStyleBackColor = true;
+            this.btImprimir.Click += new System.EventHandler(this.btImprimir_Click);
+            // 
+            // btAdd
+            // 
+            this.btAdd.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btAdd.FlatAppearance.BorderSize = 0;
+            this.btAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btAdd.Image = ((System.Drawing.Image)(resources.GetObject("btAdd.Image")));
+            this.btAdd.Location = new System.Drawing.Point(505, 11);
+            this.btAdd.Name = "btAdd";
+            this.btAdd.Size = new System.Drawing.Size(55, 55);
+            this.btAdd.TabIndex = 9;
+            this.btAdd.UseVisualStyleBackColor = true;
+            this.btAdd.Click += new System.EventHandler(this.btAdd_Click);
+            // 
+            // btEdt
+            // 
+            this.btEdt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btEdt.FlatAppearance.BorderSize = 0;
+            this.btEdt.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btEdt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btEdt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btEdt.Image = ((System.Drawing.Image)(resources.GetObject("btEdt.Image")));
+            this.btEdt.Location = new System.Drawing.Point(566, 11);
+            this.btEdt.Name = "btEdt";
+            this.btEdt.Size = new System.Drawing.Size(55, 55);
+            this.btEdt.TabIndex = 10;
+            this.btEdt.UseVisualStyleBackColor = true;
+            this.btEdt.Click += new System.EventHandler(this.btEdt_Click);
+            // 
+            // btSair
+            // 
+            this.btSair.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
+            this.btSair.Location = new System.Drawing.Point(749, 11);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(55, 55);
+            this.btSair.TabIndex = 12;
+            this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
+            // 
+            // btExc
+            // 
+            this.btExc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btExc.FlatAppearance.BorderSize = 0;
+            this.btExc.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btExc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btExc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btExc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExc.Image = ((System.Drawing.Image)(resources.GetObject("btExc.Image")));
+            this.btExc.Location = new System.Drawing.Point(627, 11);
+            this.btExc.Name = "btExc";
+            this.btExc.Size = new System.Drawing.Size(55, 55);
+            this.btExc.TabIndex = 11;
+            this.btExc.UseVisualStyleBackColor = true;
+            this.btExc.Click += new System.EventHandler(this.btExc_Click);
+            // 
             // frmConsultaCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -369,6 +383,7 @@
             this.Name = "frmConsultaCompra";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Consulta de Compras";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.frmConsultaCompra_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).EndInit();
             this.pFiltro.ResumeLayout(false);

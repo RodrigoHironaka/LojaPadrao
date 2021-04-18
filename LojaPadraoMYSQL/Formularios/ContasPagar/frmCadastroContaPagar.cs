@@ -27,6 +27,8 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             cbPeriodo.SelectedIndex = 0;
             this.carregaFormaPagamento();
             this.carregaTipoGasto();
+            StartPosition = FormStartPosition.Manual;
+            Location = new Point(350, 150);
 
         }
 
@@ -287,8 +289,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLContasPagar bll = new BLLContasPagar(cx);
             ModeloContaPagar modelo = this.CarregaDadosFormParaModelo();
-            cx.Conectar();
-            cx.IniciarTransacao();
+            
             try
             {
                 int qtd = modelo.QtdParcelas;
@@ -297,6 +298,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                 {
                     //cadastra dados da tabela contapagar apenas 1 vez
                     bll.Incluir(modelo);
+                    this.Close();
                 }
                 else
                 {
@@ -473,14 +475,12 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                     }
                 }
                 this.LimpaTela();
-                cx.TerminarTransacao();
-                cx.Desconectar();
+                this.Close();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
-                cx.CancelaTransacao();
-                cx.Desconectar();
+               
             }
 
         }
@@ -492,7 +492,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             {
                 //incluir
                 this.VerificaAntesIncluir();
-                this.Close();
+                
             }
             else
             {

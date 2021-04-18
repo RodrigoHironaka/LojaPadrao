@@ -158,5 +158,51 @@ namespace DAL
             conexao.Desconectar();
             return modelo;
         }
+
+        //VERIFICAR ULTIMO ID INSERIDO NA TABELA DO BANCO--------------------------------------
+        public Int64 VerificaUltimoIdInserido()
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conexao.ObjetoConexao;
+            cmd.CommandText = "Select max(id) from cidade";
+            conexao.Conectar();
+            var resultadobusca = cmd.ExecuteScalar();
+            Int64 id = 0;
+            if (resultadobusca != DBNull.Value)
+            {
+                id = Convert.ToInt64(resultadobusca);
+            }
+            conexao.Desconectar();
+            return id;
+        }
+        //LOCALIZA ULTIMO(S) PARA MOSTRAR NO GRID APOS INSERIR --------------------------------------------------------
+        public DataTable LocalizarUltimoItemInserido()
+        {
+            var ultimoId = VerificaUltimoIdInserido();
+
+            ModeloCidade modelo = CarregaModeloCidade(Convert.ToInt32(ultimoId));
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select id, nome, uf, status" +
+                    " from cidade " +
+                    " where id = " + ultimoId +
+                    " order by id ", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+
+        //LOCALIZA ULTIMO(S) PARA MOSTRAR NO GRID APOS ALTERAR--------------------------------------------------------
+        public DataTable LocalizarUltimoItemAlterar(Int64 idAlterado)
+        {
+            var ultimoId = idAlterado; ;
+
+            ModeloCidade modelo = CarregaModeloCidade(Convert.ToInt32(ultimoId));
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select id, nome, uf, status" +
+                    " from cidade " +
+                    " where id = " + ultimoId +
+                    " order by id ", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
     }
 }

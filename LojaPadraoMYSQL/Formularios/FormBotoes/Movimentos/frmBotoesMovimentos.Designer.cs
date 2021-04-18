@@ -30,10 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBotoesMovimentos));
             this.button11 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btAPagar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.btCompra = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.lbNomeForm = new System.Windows.Forms.Label();
+            this.pNomeForm = new System.Windows.Forms.Panel();
+            this.pNomeForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // button11
@@ -49,7 +52,7 @@
             this.button11.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.button11.ForeColor = System.Drawing.Color.White;
             this.button11.Image = ((System.Drawing.Image)(resources.GetObject("button11.Image")));
-            this.button11.Location = new System.Drawing.Point(139, 12);
+            this.button11.Location = new System.Drawing.Point(139, 51);
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(120, 120);
             this.button11.TabIndex = 71;
@@ -57,27 +60,27 @@
             this.button11.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button11.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btAPagar
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.AutoSize = true;
-            this.button1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.Location = new System.Drawing.Point(265, 12);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 120);
-            this.button1.TabIndex = 72;
-            this.button1.Text = "A PAGAR";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button1.UseVisualStyleBackColor = false;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btAPagar.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btAPagar.AutoSize = true;
+            this.btAPagar.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btAPagar.FlatAppearance.BorderSize = 0;
+            this.btAPagar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
+            this.btAPagar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
+            this.btAPagar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btAPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btAPagar.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
+            this.btAPagar.ForeColor = System.Drawing.Color.White;
+            this.btAPagar.Image = ((System.Drawing.Image)(resources.GetObject("btAPagar.Image")));
+            this.btAPagar.Location = new System.Drawing.Point(265, 51);
+            this.btAPagar.Name = "btAPagar";
+            this.btAPagar.Size = new System.Drawing.Size(120, 120);
+            this.btAPagar.TabIndex = 72;
+            this.btAPagar.Text = "A PAGAR";
+            this.btAPagar.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btAPagar.UseVisualStyleBackColor = false;
+            this.btAPagar.Click += new System.EventHandler(this.btAPagar_Click);
             // 
             // button2
             // 
@@ -92,7 +95,7 @@
             this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.button2.ForeColor = System.Drawing.Color.White;
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
-            this.button2.Location = new System.Drawing.Point(391, 12);
+            this.button2.Location = new System.Drawing.Point(391, 51);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(120, 120);
             this.button2.TabIndex = 73;
@@ -113,7 +116,7 @@
             this.btCompra.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.btCompra.ForeColor = System.Drawing.Color.White;
             this.btCompra.Image = ((System.Drawing.Image)(resources.GetObject("btCompra.Image")));
-            this.btCompra.Location = new System.Drawing.Point(13, 12);
+            this.btCompra.Location = new System.Drawing.Point(13, 51);
             this.btCompra.Name = "btCompra";
             this.btCompra.Size = new System.Drawing.Size(120, 120);
             this.btCompra.TabIndex = 74;
@@ -135,7 +138,7 @@
             this.button4.Font = new System.Drawing.Font("Segoe UI Semibold", 10F);
             this.button4.ForeColor = System.Drawing.Color.White;
             this.button4.Image = ((System.Drawing.Image)(resources.GetObject("button4.Image")));
-            this.button4.Location = new System.Drawing.Point(517, 12);
+            this.button4.Location = new System.Drawing.Point(517, 51);
             this.button4.Name = "button4";
             this.button4.Size = new System.Drawing.Size(120, 120);
             this.button4.TabIndex = 75;
@@ -143,16 +146,40 @@
             this.button4.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.button4.UseVisualStyleBackColor = false;
             // 
+            // lbNomeForm
+            // 
+            this.lbNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbNomeForm.AutoSize = true;
+            this.lbNomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeForm.ForeColor = System.Drawing.Color.White;
+            this.lbNomeForm.Location = new System.Drawing.Point(248, 9);
+            this.lbNomeForm.Name = "lbNomeForm";
+            this.lbNomeForm.Size = new System.Drawing.Size(140, 24);
+            this.lbNomeForm.TabIndex = 0;
+            this.lbNomeForm.Text = "MOVIMENTOS";
+            // 
+            // pNomeForm
+            // 
+            this.pNomeForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pNomeForm.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pNomeForm.Controls.Add(this.lbNomeForm);
+            this.pNomeForm.Location = new System.Drawing.Point(13, 3);
+            this.pNomeForm.Name = "pNomeForm";
+            this.pNomeForm.Size = new System.Drawing.Size(624, 42);
+            this.pNomeForm.TabIndex = 77;
+            // 
             // frmBotoesMovimentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(649, 462);
+            this.Controls.Add(this.pNomeForm);
             this.Controls.Add(this.button4);
             this.Controls.Add(this.btCompra);
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btAPagar);
             this.Controls.Add(this.button11);
             this.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.White;
@@ -162,6 +189,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBotoesMovimentos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.pNomeForm.ResumeLayout(false);
+            this.pNomeForm.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -170,9 +199,11 @@
         #endregion
 
         private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btAPagar;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button btCompra;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Label lbNomeForm;
+        private System.Windows.Forms.Panel pNomeForm;
     }
 }

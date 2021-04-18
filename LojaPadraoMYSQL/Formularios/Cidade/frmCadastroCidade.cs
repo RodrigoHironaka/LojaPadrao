@@ -27,6 +27,8 @@ namespace LojaPadraoMYSQL.Formularios
         {
             InitializeComponent();
             cbUf.SelectedIndex = 24;
+            StartPosition = FormStartPosition.Manual;
+            Location = new Point(600, 300);
         }
 
         public frmCadastroCidade(ModeloCidade modelo)
@@ -39,14 +41,17 @@ namespace LojaPadraoMYSQL.Formularios
                 chkAtivo.Checked = true;
             else if (modelo.Status.Equals('I'))
                 chkAtivo.Checked = false;
+            StartPosition = FormStartPosition.Manual;
+            Location = new Point(600, 300);
         }
 
+       
         private void btSalvar_Click(object sender, EventArgs e)
         {
             try
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCidade dal = new BLLCidade(cx);
+                BLLCidade bll = new BLLCidade(cx);
                 ModeloCidade modelo = new ModeloCidade();
                 modelo.Nome = txtNome.Text;
                 modelo.UF = cbUf.Text;
@@ -61,15 +66,16 @@ namespace LojaPadraoMYSQL.Formularios
 
                 if (txtID.Text == "")
                 {
-                    dal.Incluir(modelo);
+                    bll.Incluir(modelo);
                     this.LimpaTela();
                 }
                 else
                 {
                     modelo.CidadeId = int.Parse(txtID.Text);
-                    dal.Alterar(modelo);
+                    bll.Alterar(modelo);
                 }
                 this.Close();
+                
             }
             catch (Exception erro)
             {
@@ -101,6 +107,11 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 btSair_Click(sender, e);
             }
+        }
+
+        private void frmCadastroCidade_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

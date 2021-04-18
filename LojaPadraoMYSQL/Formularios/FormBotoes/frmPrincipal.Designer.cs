@@ -30,7 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.pPrincipal = new System.Windows.Forms.Panel();
             this.pFormInfo = new System.Windows.Forms.Panel();
             this.pBotoesMenu = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
@@ -42,27 +42,26 @@
             this.lbData = new System.Windows.Forms.Label();
             this.lbHora = new System.Windows.Forms.Label();
             this.btMinimizar = new System.Windows.Forms.Button();
-            this.lbTitulo = new System.Windows.Forms.Label();
             this.btnDesligar = new System.Windows.Forms.Button();
             this.tDataHora = new System.Windows.Forms.Timer(this.components);
-            this.panel1.SuspendLayout();
+            this.pPrincipal.SuspendLayout();
             this.pBotoesMenu.SuspendLayout();
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // panel1
+            // pPrincipal
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.pPrincipal.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.CadetBlue;
-            this.panel1.Controls.Add(this.pFormInfo);
-            this.panel1.Controls.Add(this.pBotoesMenu);
-            this.panel1.Controls.Add(this.panel3);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(877, 577);
-            this.panel1.TabIndex = 0;
+            this.pPrincipal.BackColor = System.Drawing.Color.CadetBlue;
+            this.pPrincipal.Controls.Add(this.pFormInfo);
+            this.pPrincipal.Controls.Add(this.pBotoesMenu);
+            this.pPrincipal.Controls.Add(this.panel3);
+            this.pPrincipal.Location = new System.Drawing.Point(12, 12);
+            this.pPrincipal.Name = "pPrincipal";
+            this.pPrincipal.Size = new System.Drawing.Size(877, 577);
+            this.pPrincipal.TabIndex = 0;
             // 
             // pFormInfo
             // 
@@ -72,19 +71,20 @@
             this.pFormInfo.AutoScroll = true;
             this.pFormInfo.AutoSize = true;
             this.pFormInfo.BackColor = System.Drawing.Color.CadetBlue;
-            this.pFormInfo.Location = new System.Drawing.Point(243, 46);
+            this.pFormInfo.Location = new System.Drawing.Point(246, 51);
             this.pFormInfo.Name = "pFormInfo";
-            this.pFormInfo.Size = new System.Drawing.Size(631, 531);
+            this.pFormInfo.Size = new System.Drawing.Size(622, 515);
             this.pFormInfo.TabIndex = 3;
             // 
             // pBotoesMenu
             // 
+            this.pBotoesMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.pBotoesMenu.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pBotoesMenu.Controls.Add(this.button6);
             this.pBotoesMenu.Controls.Add(this.btInicio);
             this.pBotoesMenu.Controls.Add(this.btnCadastros);
             this.pBotoesMenu.Controls.Add(this.button3);
-            this.pBotoesMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.pBotoesMenu.Location = new System.Drawing.Point(0, 45);
             this.pBotoesMenu.Name = "pBotoesMenu";
             this.pBotoesMenu.Size = new System.Drawing.Size(240, 532);
@@ -159,14 +159,14 @@
             // 
             // panel3
             // 
+            this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel3.BackColor = System.Drawing.Color.DarkCyan;
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.lbData);
             this.panel3.Controls.Add(this.lbHora);
             this.panel3.Controls.Add(this.btMinimizar);
-            this.panel3.Controls.Add(this.lbTitulo);
             this.panel3.Controls.Add(this.btnDesligar);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 0);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(877, 45);
@@ -223,19 +223,6 @@
             this.btMinimizar.UseVisualStyleBackColor = true;
             this.btMinimizar.Click += new System.EventHandler(this.btMinimizar_Click);
             // 
-            // lbTitulo
-            // 
-            this.lbTitulo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbTitulo.AutoSize = true;
-            this.lbTitulo.Font = new System.Drawing.Font("Segoe UI Semibold", 20F);
-            this.lbTitulo.ForeColor = System.Drawing.Color.White;
-            this.lbTitulo.Location = new System.Drawing.Point(413, 3);
-            this.lbTitulo.Name = "lbTitulo";
-            this.lbTitulo.Size = new System.Drawing.Size(96, 37);
-            this.lbTitulo.TabIndex = 1;
-            this.lbTitulo.Text = "MENU";
-            this.lbTitulo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // btnDesligar
             // 
             this.btnDesligar.Dock = System.Windows.Forms.DockStyle.Right;
@@ -261,14 +248,14 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
             this.ClientSize = new System.Drawing.Size(900, 600);
-            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.pPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
+            this.pPrincipal.ResumeLayout(false);
+            this.pPrincipal.PerformLayout();
             this.pBotoesMenu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
@@ -278,7 +265,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel pPrincipal;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnDesligar;
         private System.Windows.Forms.Button btnCadastros;
@@ -292,6 +279,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pBotoesMenu;
         public System.Windows.Forms.Panel pFormInfo;
-        public System.Windows.Forms.Label lbTitulo;
     }
 }
