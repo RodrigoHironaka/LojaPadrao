@@ -47,6 +47,8 @@ namespace LojaPadraoMYSQL.Formularios
                 {
                     dgvDados.DataSource = null;
                     txtPesquisa.Select();
+                    pInfo.Visible = true;
+                    //lbInfo.Visible = true;
                 }
                 else
                 {
@@ -66,7 +68,6 @@ namespace LojaPadraoMYSQL.Formularios
             {
                 dgvDados.DataSource = bll.LocalizarUltimoItemAlterar(idAlterado);
                 this.AtualizaCabecalhoGridDados();
-
             }
 
         }
@@ -77,9 +78,7 @@ namespace LojaPadraoMYSQL.Formularios
             BLLCidade bll = new BLLCidade(cx);
             var ultimoidinserido = bll.VerificaUltimoIdInserido();
             frmCadastroCidade f = new frmCadastroCidade();
-            this.Visible = false;
             f.ShowDialog();
-            this.Visible = true;
             this.FiltroLocalizarDepoisIncluir(ultimoidinserido);
 
         }
@@ -145,6 +144,8 @@ namespace LojaPadraoMYSQL.Formularios
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
             pFiltro.Visible = true;
+            pInfo.Visible = false;
+            //lbInfo.Visible = false;
             if (rbAtivos.Checked)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);

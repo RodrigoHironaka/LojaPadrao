@@ -27,8 +27,7 @@ namespace LojaPadraoMYSQL.Formularios
         {
             InitializeComponent();
             cbUf.SelectedIndex = 24;
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(600, 300);
+            
         }
 
         public frmCadastroCidade(ModeloCidade modelo)
@@ -41,8 +40,7 @@ namespace LojaPadraoMYSQL.Formularios
                 chkAtivo.Checked = true;
             else if (modelo.Status.Equals('I'))
                 chkAtivo.Checked = false;
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(600, 300);
+           
         }
 
        

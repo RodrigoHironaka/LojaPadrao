@@ -287,5 +287,23 @@ namespace BLL
         //    DALCliente DALObj = new DALCliente(conexao);
         //    return DALObj.CarregaComboCidade();
         //}
+
+        public Int64 VerificaUltimoIdInserido()
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.VerificaUltimoIdInserido();
+        }
+
+        public DataTable LocalizarUltimoItemInserido()
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.LocalizarUltimoItemInserido();
+        }
+
+        public DataTable LocalizarUltimoItemAlterar(Int64 idAlterado)
+        {
+            DALCliente DALObj = new DALCliente(conexao);
+            return DALObj.LocalizarUltimoItemAlterar(idAlterado);
+        }
     }
 }

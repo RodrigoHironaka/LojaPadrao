@@ -102,5 +102,23 @@ namespace BLL
             DALDepartamento DALObj = new DALDepartamento(conexao);
             return DALObj.CarregaModeloDepartamento(codigo);
         }
+
+        public Int64 VerificaUltimoIdInserido()
+        {
+            DALDepartamento DALObj = new DALDepartamento(conexao);
+            return DALObj.VerificaUltimoIdInserido();
+        }
+
+        public DataTable LocalizarUltimoItemInserido()
+        {
+            DALDepartamento DALObj = new DALDepartamento(conexao);
+            return DALObj.LocalizarUltimoItemInserido();
+        }
+
+        public DataTable LocalizarUltimoItemAlterar(Int64 idAlterado)
+        {
+            DALDepartamento DALObj = new DALDepartamento(conexao);
+            return DALObj.LocalizarUltimoItemAlterar(idAlterado);
+        }
     }
 }

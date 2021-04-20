@@ -261,5 +261,51 @@ namespace DAL
                 throw;
             }
         }
+
+        public Int64 VerificaUltimoIdInserido()
+        {
+            MySqlCommand cmd = new MySqlCommand();
+            cmd.Connection = conexao.ObjetoConexao;
+            cmd.CommandText = "Select max(id) from colaborador";
+            conexao.Conectar();
+            var resultadobusca = cmd.ExecuteScalar();
+            Int64 id = 0;
+            if (resultadobusca != DBNull.Value)
+            {
+                id = Convert.ToInt64(resultadobusca);
+            }
+            conexao.Desconectar();
+            return id;
+        }
+
+        //LOCALIZA ULTIMO(S) PARA MOSTRAR NO GRID APOS INSERIR --------------------------------------------------------
+        public DataTable LocalizarUltimoItemInserido()
+        {
+            var ultimoId = VerificaUltimoIdInserido();
+
+            ModeloColaborador modelo = CarregaModeloColaborador(Convert.ToInt32(ultimoId));
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select * " +
+                    " from colaborador " +
+                    " where id = " + ultimoId +
+                    " order by id ", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+
+        //LOCALIZA ULTIMO(S) PARA MOSTRAR NO GRID APOS ALTERAR--------------------------------------------------------
+        public DataTable LocalizarUltimoItemAlterar(Int64 idAlterado)
+        {
+            var ultimoId = idAlterado; ;
+
+            ModeloColaborador modelo = CarregaModeloColaborador(Convert.ToInt32(ultimoId));
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select * " +
+                    " from colaborador " +
+                    " where id = " + ultimoId +
+                    " order by id ", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
     }
 }

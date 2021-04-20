@@ -199,5 +199,23 @@ namespace BLL
             DALColaborador DALObj = new DALColaborador(conexao);
             return DALObj.CarregaComboFuncao();
         }
+
+        public Int64 VerificaUltimoIdInserido()
+        {
+            DALColaborador DALObj = new DALColaborador(conexao);
+            return DALObj.VerificaUltimoIdInserido();
+        }
+
+        public DataTable LocalizarUltimoItemInserido()
+        {
+            DALColaborador DALObj = new DALColaborador(conexao);
+            return DALObj.LocalizarUltimoItemInserido();
+        }
+
+        public DataTable LocalizarUltimoItemAlterar(Int64 idAlterado)
+        {
+            DALColaborador DALObj = new DALColaborador(conexao);
+            return DALObj.LocalizarUltimoItemAlterar(idAlterado);
+        }
     }
 }

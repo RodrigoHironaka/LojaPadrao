@@ -383,11 +383,11 @@
             // 
             this.pNomeForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.pNomeForm.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pNomeForm.BackColor = System.Drawing.Color.DarkCyan;
             this.pNomeForm.Controls.Add(this.lbNomeForm);
-            this.pNomeForm.Location = new System.Drawing.Point(13, 3);
+            this.pNomeForm.Location = new System.Drawing.Point(0, -1);
             this.pNomeForm.Name = "pNomeForm";
-            this.pNomeForm.Size = new System.Drawing.Size(624, 42);
+            this.pNomeForm.Size = new System.Drawing.Size(650, 36);
             this.pNomeForm.TabIndex = 76;
             // 
             // lbNomeForm
@@ -396,7 +396,7 @@
             this.lbNomeForm.AutoSize = true;
             this.lbNomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNomeForm.ForeColor = System.Drawing.Color.White;
-            this.lbNomeForm.Location = new System.Drawing.Point(248, 9);
+            this.lbNomeForm.Location = new System.Drawing.Point(261, 6);
             this.lbNomeForm.Name = "lbNomeForm";
             this.lbNomeForm.Size = new System.Drawing.Size(126, 24);
             this.lbNomeForm.TabIndex = 0;

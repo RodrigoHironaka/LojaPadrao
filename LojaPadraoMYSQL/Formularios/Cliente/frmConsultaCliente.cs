@@ -39,7 +39,44 @@ namespace LojaPadraoMYSQL.Formularios
             dgvDados.Columns[19].HeaderText = "SITUAÇÃO";
             dgvDados.Columns[20].Visible = false;
         }
+
+        public void FiltroLocalizarDepoisIncluir(Int64 ultimoidInserido)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLCliente bll = new BLLCliente(cx);
+            Int64 id = bll.VerificaUltimoIdInserido();
+            //Int64 ultimoId = Convert.ToInt64(ultimoidInserido);
+            if (id != 0)
+            {
+                if (id == ultimoidInserido)
+                {
+                    dgvDados.DataSource = null;
+                    txtPesquisa.Select();
+                }
+                else
+                {
+                    dgvDados.DataSource = bll.LocalizarUltimoItemInserido();
+                    this.AtualizaCabecalhoGridDados();
+                }
+            }
+
+        }
+
+        public void FiltroLocalizarDepoisAlterar(Int64 idAlterado)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLCliente bll = new BLLCliente(cx);
+
+            if (idAlterado != 0)
+            {
+                dgvDados.DataSource = bll.LocalizarUltimoItemAlterar(idAlterado);
+                this.AtualizaCabecalhoGridDados();
+            }
+
+        }
+
         public int id = 0;
+
         public frmConsultaCliente()
         {
             InitializeComponent();
@@ -62,16 +99,14 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            frmCadastroCliente f = new frmCadastroCliente();
-            this.Opacity = 0;
-            f.ShowDialog();
-            this.Opacity = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLCliente bll = new BLLCliente(cx);
-            dgvDados.DataSource = bll.CarregaGridAtivo();
-            cbStatus.SelectedIndex = 1;
-            cbFiltroTipo.SelectedIndex = 1;
-            
+            var ultimoidinserido = bll.VerificaUltimoIdInserido();
+            frmCadastroCliente f = new frmCadastroCliente();
+            this.Visible = false;
+            f.ShowDialog();
+            this.Visible = true;
+            this.FiltroLocalizarDepoisIncluir(ultimoidinserido);
         }
 
         private void btEdt_Click(object sender, EventArgs e)
@@ -89,13 +124,11 @@ namespace LojaPadraoMYSQL.Formularios
                 this.id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid
                 ModeloCliente modelo = bll.CarregaModeloCliente(id);
                 frmCadastroCliente f = new frmCadastroCliente(modelo);
-                this.Opacity = 0;
+                this.Visible = false;
                 f.ShowDialog();
-                this.Opacity = 1;
+                this.Visible = true;
                 f.Dispose();
-                dgvDados.DataSource = bll.CarregaGridAtivo();
-                cbStatus.SelectedIndex = 1;
-                cbFiltroTipo.SelectedIndex = 1;
+                this.FiltroLocalizarDepoisAlterar(id);
             }
         }
 
@@ -200,9 +233,7 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void frmConsultaCliente_Load(object sender, EventArgs e)
         {
-            //DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            //BLLCliente bll = new BLLCliente(cx);
-            //dgvDados.DataSource = bll.CarregaGridAtivoFisica();
+            
         }
 
         private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)

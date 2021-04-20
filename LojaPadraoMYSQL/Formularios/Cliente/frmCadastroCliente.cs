@@ -312,7 +312,7 @@ namespace LojaPadraoMYSQL.Formularios
                     modelo.Status = Convert.ToChar("A");
                 else if (chbAtivo.Checked == false)
                     modelo.Status = Convert.ToChar("I");
-
+                //----------------------------------------------------------------------------
                 if (txtID.Text == "")
                 {
                     modelo.CarregaImagem(this.foto);

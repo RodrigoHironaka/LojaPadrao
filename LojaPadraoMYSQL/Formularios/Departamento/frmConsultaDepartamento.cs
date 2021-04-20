@@ -21,24 +21,57 @@ namespace LojaPadraoMYSQL.Formularios
             dgvDados.Columns[1].HeaderText = "NOME";
             dgvDados.Columns[2].HeaderText = "SIT";
         }
+
+        public void FiltroLocalizarDepoisIncluir(Int64 ultimoidInserido)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLDepartamento bll = new BLLDepartamento(cx);
+            Int64 id = bll.VerificaUltimoIdInserido();
+            if (id != 0)
+            {
+                if (id == ultimoidInserido)
+                {
+                    dgvDados.DataSource = null;
+                    txtPesquisa.Select();
+                }
+                else
+                {
+                    dgvDados.DataSource = bll.LocalizarUltimoItemInserido();
+                    this.AtualizaCabecalhoGridDados();
+                }
+            }
+
+        }
+
+        public void FiltroLocalizarDepoisAlterar(Int64 idAlterado)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLDepartamento bll = new BLLDepartamento(cx);
+            if (idAlterado != 0)
+            {
+                dgvDados.DataSource = bll.LocalizarUltimoItemAlterar(idAlterado);
+                this.AtualizaCabecalhoGridDados();
+            }
+        }
+
         public int id = 0;
+        
         public frmConsultaDepartamento()
         {
             InitializeComponent();
-            cbStatus.SelectedIndex = 1;
-            this.AtualizaCabecalhoGridDados();
+            
         }
 
         private void btAdd_Click(object sender, EventArgs e)
         {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLCidade bll = new BLLCidade(cx);
+            var ultimoidinserido = bll.VerificaUltimoIdInserido();
             frmCadastroDepartamento f = new frmCadastroDepartamento();
             this.Opacity = 0;
             f.ShowDialog();
             this.Opacity = 1;
-            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLDepartamento bll = new BLLDepartamento(cx);
-            dgvDados.DataSource = bll.CarregaGridAtivo();
-            cbStatus.SelectedIndex = 1;
+            this.FiltroLocalizarDepoisIncluir(ultimoidinserido);
         }
 
         private void btEdt_Click(object sender, EventArgs e)
@@ -60,8 +93,7 @@ namespace LojaPadraoMYSQL.Formularios
                 f.ShowDialog();
                 this.Opacity = 1;
                 f.Dispose();
-                dgvDados.DataSource = bll.CarregaGridAtivo();
-                cbStatus.SelectedIndex = 1;
+                this.FiltroLocalizarDepoisAlterar(id);
             }
         }
 
@@ -84,7 +116,6 @@ namespace LojaPadraoMYSQL.Formularios
                         bll.Excluir(Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value));
                         MessageBox.Show("Registro excluído com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgvDados.DataSource = bll.CarregaGridAtivo();
-                        cbStatus.SelectedIndex = 1;
                     }
                 }
             }
@@ -102,19 +133,19 @@ namespace LojaPadraoMYSQL.Formularios
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
             pFiltro.Visible = true;
-            if (cbStatus.SelectedIndex == 1)
+            if (rbAtivos.Checked)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLDepartamento bll = new BLLDepartamento(cx);
                 dgvDados.DataSource = bll.LocalizarAtivo(txtPesquisa.Text);
             }
-            else if (cbStatus.SelectedIndex == 2)
+            else if (rbInativos.Checked)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLDepartamento bll = new BLLDepartamento(cx);
                 dgvDados.DataSource = bll.LocalizarInativo(txtPesquisa.Text);
             }
-            else if (cbStatus.SelectedIndex == 0)
+            else if (rbTodos.Checked)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLDepartamento bll = new BLLDepartamento(cx);
@@ -127,31 +158,6 @@ namespace LojaPadraoMYSQL.Formularios
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLDepartamento bll = new BLLDepartamento(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
-        }
-
-        private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbStatus.SelectedIndex == 1)
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLDepartamento bll = new BLLDepartamento(cx);
-                dgvDados.DataSource = bll.CarregaGridAtivo();
-            }
-            else if (cbStatus.SelectedIndex == 2)
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLDepartamento bll = new BLLDepartamento(cx);
-                dgvDados.DataSource = bll.CarregaGridInativo();
-            }
-            else
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLDepartamento bll = new BLLDepartamento(cx);
-                dgvDados.DataSource = bll.CarregaGrid();
-            }
         }
 
         private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -199,6 +205,30 @@ namespace LojaPadraoMYSQL.Formularios
         private void txtPesquisa_KeyDown(object sender, KeyEventArgs e)
         {
             pFiltro.Visible = false;
+        }
+
+        private void rbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisa.Clear();
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLDepartamento bll = new BLLDepartamento(cx);
+            dgvDados.DataSource = bll.CarregaGrid();
+        }
+
+        private void rbAtivos_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisa.Clear();
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLDepartamento bll = new BLLDepartamento(cx);
+            dgvDados.DataSource = bll.CarregaGridAtivo();
+        }
+
+        private void rbInativos_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisa.Clear();
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLDepartamento bll = new BLLDepartamento(cx);
+            dgvDados.DataSource = bll.CarregaGridInativo();
         }
     }
 }

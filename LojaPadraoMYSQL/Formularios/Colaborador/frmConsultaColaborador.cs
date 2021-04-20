@@ -17,28 +17,60 @@ namespace LojaPadraoMYSQL.Formularios.Colaborador
     {
         public void AtualizaCabecalhoGridDados()
         {
-            dgvDados.Columns[0].HeaderText = "Cod";
-            dgvDados.Columns[1].HeaderText = "Nome";
+            dgvDados.Columns[0].HeaderText = "COD";
+            dgvDados.Columns[1].HeaderText = "NOME";
             dgvDados.Columns[2].HeaderText = "RG";
             dgvDados.Columns[3].HeaderText = "CPF";
-            dgvDados.Columns[4].HeaderText = "Endereço";
+            dgvDados.Columns[4].HeaderText = "ENDEREÇO";
             dgvDados.Columns[5].HeaderText = "Nº";
-            dgvDados.Columns[6].HeaderText = "Complemento";
-            dgvDados.Columns[7].HeaderText = "Bairro";
+            dgvDados.Columns[6].HeaderText = "COMPLEMENTO";
+            dgvDados.Columns[7].HeaderText = "BAIRRO";
             dgvDados.Columns[8].HeaderText = "CEP";
             dgvDados.Columns[9].Visible = false;
             dgvDados.Columns[10].Visible = false;
-            dgvDados.Columns[11].HeaderText = "Email";
-            dgvDados.Columns[12].HeaderText = "Telefone";
-            dgvDados.Columns[13].HeaderText = "Celular";
-            dgvDados.Columns[14].HeaderText = "Celular2";
+            dgvDados.Columns[11].HeaderText = "E-MAIL";
+            dgvDados.Columns[12].HeaderText = "TELEFONE";
+            dgvDados.Columns[13].HeaderText = "CELULAR";
+            dgvDados.Columns[14].HeaderText = "CELULAR2";
             dgvDados.Columns[15].Visible = false;
-            dgvDados.Columns[16].HeaderText = "Data Cadastro";
-            dgvDados.Columns[17].HeaderText = "Sit";
+            dgvDados.Columns[16].HeaderText = "CADASTRO";
+            dgvDados.Columns[17].HeaderText = "SIT";
             dgvDados.Columns[18].Visible = false;
-     
-           
         }
+
+        public void FiltroLocalizarDepoisIncluir(Int64 ultimoidInserido)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLColaborador bll = new BLLColaborador(cx);
+            Int64 id = bll.VerificaUltimoIdInserido();
+            if (id != 0)
+            {
+                if (id == ultimoidInserido)
+                {
+                    dgvDados.DataSource = null;
+                    pInfo.Visible = true;
+                    lbInfo.Visible = true;
+                    txtPesquisa.Select();
+                }
+                else
+                {
+                    dgvDados.DataSource = bll.LocalizarUltimoItemInserido();
+                    this.AtualizaCabecalhoGridDados();
+                }
+            }
+        }
+
+        public void FiltroLocalizarDepoisAlterar(Int64 idAlterado)
+        {
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLColaborador bll = new BLLColaborador(cx);
+            if (idAlterado != 0)
+            {
+                dgvDados.DataSource = bll.LocalizarUltimoItemAlterar(idAlterado);
+                this.AtualizaCabecalhoGridDados();
+            }
+        }
+
         public int id = 0;
 
         public frmConsultaColaborador()
@@ -60,14 +92,12 @@ namespace LojaPadraoMYSQL.Formularios.Colaborador
 
         private void btAdd_Click(object sender, EventArgs e)
         {
-            frmCadastroColaborador f = new frmCadastroColaborador();
-            this.Opacity = 0;
-            f.ShowDialog();
-            this.Opacity = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLColaborador bll = new BLLColaborador(cx);
-            dgvDados.DataSource = bll.CarregaGridAtivo();
-            cbStatus.SelectedIndex = 1;
+            var ultimoidinserido = bll.VerificaUltimoIdInserido();
+            frmCadastroColaborador f = new frmCadastroColaborador();
+            f.ShowDialog();
+            this.FiltroLocalizarDepoisIncluir(ultimoidinserido);
         }
 
         private void btEdt_Click(object sender, EventArgs e)
@@ -85,12 +115,11 @@ namespace LojaPadraoMYSQL.Formularios.Colaborador
                 this.id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid
                 ModeloColaborador modelo = bll.CarregaModeloColaborador(id);
                 frmCadastroColaborador f = new frmCadastroColaborador(modelo);
-                this.Opacity = 0;
+                this.Visible = false;
                 f.ShowDialog();
-                this.Opacity = 1;
+                this.Visible = true;
                 f.Dispose();
-                dgvDados.DataSource = bll.CarregaGridAtivo();
-                cbStatus.SelectedIndex = 1;
+                this.FiltroLocalizarDepoisAlterar(id);
 
             }
         }
@@ -133,6 +162,8 @@ namespace LojaPadraoMYSQL.Formularios.Colaborador
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
             pFiltro.Visible = true;
+            lbInfo.Visible = false;
+            pInfo.Visible = false;
             if (cbStatus.SelectedIndex == 1)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);

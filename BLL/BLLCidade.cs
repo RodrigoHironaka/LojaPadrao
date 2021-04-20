@@ -102,16 +102,19 @@ namespace BLL
             DALCidade DALObj = new DALCidade(conexao);
             return DALObj.CarregaModeloCidade(codigo);
         }
+
         public Int64 VerificaUltimoIdInserido()
         {
             DALCidade DALObj = new DALCidade(conexao);
             return DALObj.VerificaUltimoIdInserido();
         }
+
         public DataTable LocalizarUltimoItemInserido()
         {
             DALCidade DALObj = new DALCidade(conexao);
             return DALObj.LocalizarUltimoItemInserido();
         }
+
         public DataTable LocalizarUltimoItemAlterar(Int64 idAlterado)
         {
             DALCidade DALObj = new DALCidade(conexao);
