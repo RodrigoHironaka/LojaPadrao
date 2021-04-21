@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaFormaPagamento));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.btSair = new System.Windows.Forms.Button();
             this.btExc = new System.Windows.Forms.Button();
@@ -41,9 +41,15 @@
             this.dgvDados = new System.Windows.Forms.DataGridView();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.pFiltro = new System.Windows.Forms.Panel();
+            this.pInfo = new System.Windows.Forms.Panel();
+            this.lbInfo = new System.Windows.Forms.Label();
+            this.pNomeForm = new System.Windows.Forms.Panel();
+            this.lbNomeForm = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.gbBotoes.SuspendLayout();
             this.pFiltro.SuspendLayout();
+            this.pInfo.SuspendLayout();
+            this.pNomeForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbStatus
@@ -149,34 +155,34 @@
             this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDados.BackgroundColor = System.Drawing.Color.DarkSlateGray;
             this.dgvDados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDados.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDados.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDados.EnableHeadersVisualStyles = false;
-            this.dgvDados.Location = new System.Drawing.Point(14, 12);
+            this.dgvDados.Location = new System.Drawing.Point(14, 33);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.ReadOnly = true;
             this.dgvDados.RowHeadersVisible = false;
             this.dgvDados.RowHeadersWidth = 62;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDados.RowsDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDados.RowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDados.Size = new System.Drawing.Size(527, 352);
+            this.dgvDados.Size = new System.Drawing.Size(527, 331);
             this.dgvDados.TabIndex = 6;
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
@@ -190,9 +196,9 @@
             this.gbBotoes.Controls.Add(this.btEdt);
             this.gbBotoes.Controls.Add(this.btAdd);
             this.gbBotoes.ForeColor = System.Drawing.Color.White;
-            this.gbBotoes.Location = new System.Drawing.Point(12, 354);
+            this.gbBotoes.Location = new System.Drawing.Point(14, 354);
             this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(529, 80);
+            this.gbBotoes.Size = new System.Drawing.Size(527, 80);
             this.gbBotoes.TabIndex = 9;
             this.gbBotoes.TabStop = false;
             // 
@@ -209,15 +215,63 @@
             this.pFiltro.TabIndex = 17;
             this.pFiltro.Visible = false;
             // 
+            // pInfo
+            // 
+            this.pInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pInfo.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pInfo.Controls.Add(this.lbInfo);
+            this.pInfo.Location = new System.Drawing.Point(22, 139);
+            this.pInfo.Name = "pInfo";
+            this.pInfo.Size = new System.Drawing.Size(512, 100);
+            this.pInfo.TabIndex = 34;
+            this.pInfo.Visible = false;
+            // 
+            // lbInfo
+            // 
+            this.lbInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbInfo.AutoSize = true;
+            this.lbInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInfo.ForeColor = System.Drawing.Color.White;
+            this.lbInfo.Location = new System.Drawing.Point(113, 30);
+            this.lbInfo.Name = "lbInfo";
+            this.lbInfo.Size = new System.Drawing.Size(298, 48);
+            this.lbInfo.TabIndex = 0;
+            this.lbInfo.Text = "OPS!\r\nNENHUM DADO ENCONTRADO.";
+            this.lbInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pNomeForm
+            // 
+            this.pNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pNomeForm.BackColor = System.Drawing.Color.DarkCyan;
+            this.pNomeForm.Controls.Add(this.lbNomeForm);
+            this.pNomeForm.Location = new System.Drawing.Point(14, 0);
+            this.pNomeForm.Name = "pNomeForm";
+            this.pNomeForm.Size = new System.Drawing.Size(527, 36);
+            this.pNomeForm.TabIndex = 35;
+            // 
+            // lbNomeForm
+            // 
+            this.lbNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbNomeForm.AutoSize = true;
+            this.lbNomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeForm.ForeColor = System.Drawing.Color.White;
+            this.lbNomeForm.Location = new System.Drawing.Point(120, 6);
+            this.lbNomeForm.Name = "lbNomeForm";
+            this.lbNomeForm.Size = new System.Drawing.Size(325, 24);
+            this.lbNomeForm.TabIndex = 0;
+            this.lbNomeForm.Text = "CONSULTA FORMAS PAGAMENTO";
+            // 
             // frmConsultaFormaPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(553, 446);
+            this.Controls.Add(this.pInfo);
             this.Controls.Add(this.pFiltro);
             this.Controls.Add(this.dgvDados);
             this.Controls.Add(this.gbBotoes);
+            this.Controls.Add(this.pNomeForm);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -233,6 +287,10 @@
             this.gbBotoes.ResumeLayout(false);
             this.gbBotoes.PerformLayout();
             this.pFiltro.ResumeLayout(false);
+            this.pInfo.ResumeLayout(false);
+            this.pInfo.PerformLayout();
+            this.pNomeForm.ResumeLayout(false);
+            this.pNomeForm.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -248,5 +306,9 @@
         private System.Windows.Forms.DataGridView dgvDados;
         private System.Windows.Forms.GroupBox gbBotoes;
         private System.Windows.Forms.Panel pFiltro;
+        private System.Windows.Forms.Panel pInfo;
+        private System.Windows.Forms.Label lbInfo;
+        private System.Windows.Forms.Panel pNomeForm;
+        private System.Windows.Forms.Label lbNomeForm;
     }
 }

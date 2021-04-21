@@ -32,6 +32,7 @@ namespace LojaPadraoMYSQL.Formularios
                 if (id == ultimoidInserido)
                 {
                     dgvDados.DataSource = null;
+                    pInfo.Visible = true;
                     txtPesquisa.Select();
                 }
                 else
@@ -54,6 +55,27 @@ namespace LojaPadraoMYSQL.Formularios
             }
         }
 
+        public void VerificaBuscaGrid(int linhas)
+        {
+            if (linhas == 0)
+            {
+                dgvDados.DataSource = null;
+                pInfo.Visible = true;
+                lbInfo.Visible = true;
+            }
+            else
+            {
+                this.AtualizaCabecalhoGridDados();
+            }
+        }
+
+        public void LimpaFiltro()
+        {
+            rbAtivos.Checked = true;
+            pFiltro.Visible = false;
+            txtPesquisa.Clear();
+        }
+
         public int id = 0;
         
         public frmConsultaDepartamento()
@@ -64,18 +86,19 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void btAdd_Click(object sender, EventArgs e)
         {
+            pInfo.Visible = false;
+            this.LimpaFiltro();
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLCidade bll = new BLLCidade(cx);
+            BLLDepartamento bll = new BLLDepartamento(cx);
             var ultimoidinserido = bll.VerificaUltimoIdInserido();
             frmCadastroDepartamento f = new frmCadastroDepartamento();
-            this.Opacity = 0;
             f.ShowDialog();
-            this.Opacity = 1;
             this.FiltroLocalizarDepoisIncluir(ultimoidinserido);
         }
 
         private void btEdt_Click(object sender, EventArgs e)
         {
+            pFiltro.Visible = false;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLDepartamento bll = new BLLDepartamento(cx);
 
@@ -89,9 +112,7 @@ namespace LojaPadraoMYSQL.Formularios
                 this.id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid
                 ModeloDepartamento modelo = bll.CarregaModeloDepartamento(id);
                 frmCadastroDepartamento f = new frmCadastroDepartamento(modelo);
-                this.Opacity = 0;
                 f.ShowDialog();
-                this.Opacity = 1;
                 f.Dispose();
                 this.FiltroLocalizarDepoisAlterar(id);
             }
@@ -99,6 +120,7 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void btExc_Click(object sender, EventArgs e)
         {
+            pFiltro.Visible = false;
             try
             {
                 if (dgvDados.SelectedRows.Count == 0)
@@ -115,7 +137,9 @@ namespace LojaPadraoMYSQL.Formularios
                         BLLDepartamento bll = new BLLDepartamento(cx);
                         bll.Excluir(Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value));
                         MessageBox.Show("Registro excluído com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dgvDados.DataSource = bll.CarregaGridAtivo();
+                        dgvDados.DataSource = null;
+                        pInfo.Visible = true;
+                        //this.AtualizaCabecalhoGridDados();
                     }
                 }
             }
@@ -133,31 +157,47 @@ namespace LojaPadraoMYSQL.Formularios
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
             pFiltro.Visible = true;
-            if (rbAtivos.Checked)
+            pInfo.Visible = false;
+            if(txtPesquisa.Text == string.Empty)
             {
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLDepartamento bll = new BLLDepartamento(cx);
-                dgvDados.DataSource = bll.LocalizarAtivo(txtPesquisa.Text);
+                dgvDados.DataSource = null;
+                pInfo.Visible = true;
             }
-            else if (rbInativos.Checked)
+            else
             {
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLDepartamento bll = new BLLDepartamento(cx);
-                dgvDados.DataSource = bll.LocalizarInativo(txtPesquisa.Text);
+                pInfo.Visible = false;
+                if (rbAtivos.Checked)
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLDepartamento bll = new BLLDepartamento(cx);
+                    dgvDados.DataSource = bll.LocalizarAtivo(txtPesquisa.Text);
+                    int linhas = dgvDados.Rows.Count;
+                    this.VerificaBuscaGrid(linhas);
+                    
+                }
+                else if (rbInativos.Checked)
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLDepartamento bll = new BLLDepartamento(cx);
+                    dgvDados.DataSource = bll.LocalizarInativo(txtPesquisa.Text);
+                    int linhas = dgvDados.Rows.Count;
+                    this.VerificaBuscaGrid(linhas);
+                }
+                else if (rbTodos.Checked)
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLDepartamento bll = new BLLDepartamento(cx);
+                    dgvDados.DataSource = bll.Localizar(txtPesquisa.Text);
+                    int linhas = dgvDados.Rows.Count;
+                    this.VerificaBuscaGrid(linhas);
+                }
             }
-            else if (rbTodos.Checked)
-            {
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLDepartamento bll = new BLLDepartamento(cx);
-                dgvDados.DataSource = bll.Localizar(txtPesquisa.Text);
-            }
+            
         }
 
         private void frmConsultaDepartamento_Load(object sender, EventArgs e)
         {
-            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLDepartamento bll = new BLLDepartamento(cx);
-            dgvDados.DataSource = bll.CarregaGridAtivo();
+            
         }
 
         private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -210,25 +250,31 @@ namespace LojaPadraoMYSQL.Formularios
         private void rbTodos_CheckedChanged(object sender, EventArgs e)
         {
             txtPesquisa.Clear();
+            pInfo.Visible = false;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLDepartamento bll = new BLLDepartamento(cx);
             dgvDados.DataSource = bll.CarregaGrid();
+            this.AtualizaCabecalhoGridDados();
         }
 
         private void rbAtivos_CheckedChanged(object sender, EventArgs e)
         {
             txtPesquisa.Clear();
+            pInfo.Visible = false;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLDepartamento bll = new BLLDepartamento(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
+            this.AtualizaCabecalhoGridDados();
         }
 
         private void rbInativos_CheckedChanged(object sender, EventArgs e)
         {
             txtPesquisa.Clear();
+            pInfo.Visible = false;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLDepartamento bll = new BLLDepartamento(cx);
             dgvDados.DataSource = bll.CarregaGridInativo();
+            this.AtualizaCabecalhoGridDados();
         }
     }
 }

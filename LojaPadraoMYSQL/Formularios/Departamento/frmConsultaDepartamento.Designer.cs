@@ -45,10 +45,13 @@
             this.rbTodos = new System.Windows.Forms.RadioButton();
             this.pNomeForm = new System.Windows.Forms.Panel();
             this.lbNomeForm = new System.Windows.Forms.Label();
+            this.pInfo = new System.Windows.Forms.Panel();
+            this.lbInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.gbBotoes.SuspendLayout();
             this.pFiltro.SuspendLayout();
             this.pNomeForm.SuspendLayout();
+            this.pInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // btSair
@@ -239,11 +242,10 @@
             // 
             // pNomeForm
             // 
-            this.pNomeForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pNomeForm.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pNomeForm.BackColor = System.Drawing.Color.DarkCyan;
             this.pNomeForm.Controls.Add(this.lbNomeForm);
-            this.pNomeForm.Location = new System.Drawing.Point(12, 3);
+            this.pNomeForm.Location = new System.Drawing.Point(12, 0);
             this.pNomeForm.Name = "pNomeForm";
             this.pNomeForm.Size = new System.Drawing.Size(529, 36);
             this.pNomeForm.TabIndex = 17;
@@ -260,12 +262,37 @@
             this.lbNomeForm.TabIndex = 0;
             this.lbNomeForm.Text = "CONSULTA DEPARTAMENTO";
             // 
+            // pInfo
+            // 
+            this.pInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pInfo.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pInfo.Controls.Add(this.lbInfo);
+            this.pInfo.Location = new System.Drawing.Point(23, 142);
+            this.pInfo.Name = "pInfo";
+            this.pInfo.Size = new System.Drawing.Size(512, 100);
+            this.pInfo.TabIndex = 33;
+            this.pInfo.Visible = false;
+            // 
+            // lbInfo
+            // 
+            this.lbInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbInfo.AutoSize = true;
+            this.lbInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInfo.ForeColor = System.Drawing.Color.White;
+            this.lbInfo.Location = new System.Drawing.Point(113, 30);
+            this.lbInfo.Name = "lbInfo";
+            this.lbInfo.Size = new System.Drawing.Size(298, 48);
+            this.lbInfo.TabIndex = 0;
+            this.lbInfo.Text = "OPS!\r\nNENHUM DADO ENCONTRADO.";
+            this.lbInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // frmConsultaDepartamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(553, 446);
+            this.Controls.Add(this.pInfo);
             this.Controls.Add(this.pFiltro);
             this.Controls.Add(this.dgvDados);
             this.Controls.Add(this.gbBotoes);
@@ -288,6 +315,8 @@
             this.pFiltro.PerformLayout();
             this.pNomeForm.ResumeLayout(false);
             this.pNomeForm.PerformLayout();
+            this.pInfo.ResumeLayout(false);
+            this.pInfo.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -306,5 +335,7 @@
         private System.Windows.Forms.RadioButton rbTodos;
         private System.Windows.Forms.Panel pNomeForm;
         private System.Windows.Forms.Label lbNomeForm;
+        private System.Windows.Forms.Panel pInfo;
+        private System.Windows.Forms.Label lbInfo;
     }
 }

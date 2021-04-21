@@ -42,8 +42,11 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtDiasVencimento = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbNomeForm = new System.Windows.Forms.Label();
             this.gbBotoes.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtID
@@ -192,7 +195,7 @@
             this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
             this.gbBotoes.Controls.Add(this.btSalvar);
             this.gbBotoes.Controls.Add(this.btSair);
-            this.gbBotoes.Location = new System.Drawing.Point(12, 150);
+            this.gbBotoes.Location = new System.Drawing.Point(12, 167);
             this.gbBotoes.Name = "gbBotoes";
             this.gbBotoes.Size = new System.Drawing.Size(391, 66);
             this.gbBotoes.TabIndex = 17;
@@ -210,7 +213,7 @@
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.txtNome);
             this.groupBox1.Controls.Add(this.txtID);
-            this.groupBox1.Location = new System.Drawing.Point(12, 12);
+            this.groupBox1.Location = new System.Drawing.Point(12, 43);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(391, 132);
             this.groupBox1.TabIndex = 18;
@@ -238,14 +241,37 @@
             this.txtDiasVencimento.Size = new System.Drawing.Size(96, 26);
             this.txtDiasVencimento.TabIndex = 16;
             // 
+            // panel2
+            // 
+            this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel2.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel2.Controls.Add(this.lbNomeForm);
+            this.panel2.Location = new System.Drawing.Point(11, 1);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(391, 36);
+            this.panel2.TabIndex = 19;
+            // 
+            // lbNomeForm
+            // 
+            this.lbNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbNomeForm.AutoSize = true;
+            this.lbNomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeForm.ForeColor = System.Drawing.Color.White;
+            this.lbNomeForm.Location = new System.Drawing.Point(77, 8);
+            this.lbNomeForm.Name = "lbNomeForm";
+            this.lbNomeForm.Size = new System.Drawing.Size(241, 24);
+            this.lbNomeForm.TabIndex = 17;
+            this.lbNomeForm.Text = "CADASTRO PAGAMENTO";
+            // 
             // frmCadastroFormaPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(419, 233);
-            this.Controls.Add(this.gbBotoes);
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.ClientSize = new System.Drawing.Size(416, 246);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.gbBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -257,6 +283,8 @@
             this.gbBotoes.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -276,5 +304,7 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtDiasVencimento;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label lbNomeForm;
     }
 }

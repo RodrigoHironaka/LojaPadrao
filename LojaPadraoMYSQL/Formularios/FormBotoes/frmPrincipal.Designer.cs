@@ -31,20 +31,20 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pPrincipal = new System.Windows.Forms.Panel();
-            this.pFormInfo = new System.Windows.Forms.Panel();
             this.pBotoesMenu = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.btInicio = new System.Windows.Forms.Button();
             this.btnCadastros = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lbData = new System.Windows.Forms.Label();
             this.lbHora = new System.Windows.Forms.Label();
             this.btMinimizar = new System.Windows.Forms.Button();
             this.btnDesligar = new System.Windows.Forms.Button();
+            this.pFormInfo = new System.Windows.Forms.Panel();
             this.tDataHora = new System.Windows.Forms.Timer(this.components);
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.pPrincipal.SuspendLayout();
             this.pBotoesMenu.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -64,19 +64,6 @@
             this.pPrincipal.Size = new System.Drawing.Size(877, 577);
             this.pPrincipal.TabIndex = 0;
             // 
-            // pFormInfo
-            // 
-            this.pFormInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.pFormInfo.AutoScroll = true;
-            this.pFormInfo.AutoSize = true;
-            this.pFormInfo.BackColor = System.Drawing.Color.CadetBlue;
-            this.pFormInfo.Location = new System.Drawing.Point(0, 84);
-            this.pFormInfo.Name = "pFormInfo";
-            this.pFormInfo.Size = new System.Drawing.Size(877, 493);
-            this.pFormInfo.TabIndex = 3;
-            // 
             // pBotoesMenu
             // 
             this.pBotoesMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
@@ -91,6 +78,22 @@
             this.pBotoesMenu.Name = "pBotoesMenu";
             this.pBotoesMenu.Size = new System.Drawing.Size(877, 37);
             this.pBotoesMenu.TabIndex = 3;
+            // 
+            // button2
+            // 
+            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.ForeColor = System.Drawing.Color.White;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button2.Location = new System.Drawing.Point(723, 4);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(149, 30);
+            this.button2.TabIndex = 6;
+            this.button2.Text = "Configurações";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // btInicio
             // 
@@ -118,7 +121,7 @@
             this.btnCadastros.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastros.ForeColor = System.Drawing.Color.White;
             this.btnCadastros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastros.Location = new System.Drawing.Point(152, 3);
+            this.btnCadastros.Location = new System.Drawing.Point(183, 3);
             this.btnCadastros.Name = "btnCadastros";
             this.btnCadastros.Size = new System.Drawing.Size(149, 30);
             this.btnCadastros.TabIndex = 1;
@@ -135,13 +138,29 @@
             this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.ForeColor = System.Drawing.Color.White;
             this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(301, 3);
+            this.button3.Location = new System.Drawing.Point(363, 3);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(149, 30);
             this.button3.TabIndex = 2;
             this.button3.Text = "Movimentos";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.White;
+            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button1.Location = new System.Drawing.Point(543, 3);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(149, 30);
+            this.button1.TabIndex = 6;
+            this.button1.Text = "Relatórios";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // panel3
             // 
@@ -222,43 +241,24 @@
             this.btnDesligar.UseVisualStyleBackColor = true;
             this.btnDesligar.Click += new System.EventHandler(this.button1_Click);
             // 
+            // pFormInfo
+            // 
+            this.pFormInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pFormInfo.AutoScroll = true;
+            this.pFormInfo.AutoSize = true;
+            this.pFormInfo.BackColor = System.Drawing.Color.CadetBlue;
+            this.pFormInfo.Location = new System.Drawing.Point(0, 84);
+            this.pFormInfo.Name = "pFormInfo";
+            this.pFormInfo.Size = new System.Drawing.Size(877, 493);
+            this.pFormInfo.TabIndex = 3;
+            // 
             // tDataHora
             // 
             this.tDataHora.Enabled = true;
             this.tDataHora.Interval = 1000;
             this.tDataHora.Tick += new System.EventHandler(this.tDataHora_Tick);
-            // 
-            // button1
-            // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(450, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 30);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Relatórios";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button2
-            // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(599, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 30);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Configurações";
-            this.button2.UseVisualStyleBackColor = true;
             // 
             // frmPrincipal
             // 

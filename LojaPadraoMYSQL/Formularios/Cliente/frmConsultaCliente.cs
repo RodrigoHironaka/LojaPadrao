@@ -51,6 +51,8 @@ namespace LojaPadraoMYSQL.Formularios
                 if (id == ultimoidInserido)
                 {
                     dgvDados.DataSource = null;
+                    pInfo.Visible = true;
+                    //lbInfo.Visible = true;
                     txtPesquisa.Select();
                 }
                 else
@@ -103,9 +105,7 @@ namespace LojaPadraoMYSQL.Formularios
             BLLCliente bll = new BLLCliente(cx);
             var ultimoidinserido = bll.VerificaUltimoIdInserido();
             frmCadastroCliente f = new frmCadastroCliente();
-            this.Visible = false;
             f.ShowDialog();
-            this.Visible = true;
             this.FiltroLocalizarDepoisIncluir(ultimoidinserido);
         }
 
@@ -124,9 +124,7 @@ namespace LojaPadraoMYSQL.Formularios
                 this.id = Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value); //cod recebe o valor do codigo da linha selecionada no grid
                 ModeloCliente modelo = bll.CarregaModeloCliente(id);
                 frmCadastroCliente f = new frmCadastroCliente(modelo);
-                this.Visible = false;
                 f.ShowDialog();
-                this.Visible = true;
                 f.Dispose();
                 this.FiltroLocalizarDepoisAlterar(id);
             }
@@ -170,6 +168,8 @@ namespace LojaPadraoMYSQL.Formularios
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
             pFiltro.Visible = true;
+            pInfo.Visible = false;
+            //lbInfo.Visible = true;
             if (txtPesquisa.Text == "")
             {
                 this.cbStatus_SelectedIndexChanged(sender, e);

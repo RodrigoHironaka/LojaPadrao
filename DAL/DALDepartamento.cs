@@ -65,7 +65,7 @@ namespace DAL
         public DataTable LocalizarAtivo(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from departamento where (nome like '%" + valor + "%' or (id like '%" + valor + "%')) and status='A'", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select id, nome, status from departamento where (nome like '%" + valor + "%' or (id like '%" + valor + "%')) and status='A'", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -104,7 +104,7 @@ namespace DAL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
                 conexao.Conectar();
-                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select id, nome, status from departamento where status='A' order by id", conexao.StringConexao);
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from departamento where status='A' order by id", conexao.StringConexao);
                 DataTable dataTable = new DataTable();
                 fbDataAdapter.Fill(dataTable);
                 return dataTable;
