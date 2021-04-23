@@ -29,10 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaFormaPagamento));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.cbStatus = new System.Windows.Forms.ComboBox();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btSair = new System.Windows.Forms.Button();
             this.btExc = new System.Windows.Forms.Button();
             this.btEdt = new System.Windows.Forms.Button();
@@ -45,30 +44,15 @@
             this.lbInfo = new System.Windows.Forms.Label();
             this.pNomeForm = new System.Windows.Forms.Panel();
             this.lbNomeForm = new System.Windows.Forms.Label();
+            this.rbInativos = new System.Windows.Forms.RadioButton();
+            this.rbAtivos = new System.Windows.Forms.RadioButton();
+            this.rbTodos = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.gbBotoes.SuspendLayout();
             this.pFiltro.SuspendLayout();
             this.pInfo.SuspendLayout();
             this.pNomeForm.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // cbStatus
-            // 
-            this.cbStatus.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.cbStatus.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbStatus.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cbStatus.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbStatus.ForeColor = System.Drawing.Color.White;
-            this.cbStatus.FormattingEnabled = true;
-            this.cbStatus.Items.AddRange(new object[] {
-            "TODOS",
-            "ATIVOS",
-            "INATIVOS"});
-            this.cbStatus.Location = new System.Drawing.Point(3, 12);
-            this.cbStatus.Name = "cbStatus";
-            this.cbStatus.Size = new System.Drawing.Size(88, 24);
-            this.cbStatus.TabIndex = 1;
-            this.cbStatus.SelectedIndexChanged += new System.EventHandler(this.cbStatus_SelectedIndexChanged);
             // 
             // btSair
             // 
@@ -155,32 +139,32 @@
             this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDados.BackgroundColor = System.Drawing.Color.DarkSlateGray;
             this.dgvDados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle19.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
             this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDados.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle20.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDados.DefaultCellStyle = dataGridViewCellStyle20;
             this.dgvDados.EnableHeadersVisualStyles = false;
             this.dgvDados.Location = new System.Drawing.Point(14, 33);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.ReadOnly = true;
             this.dgvDados.RowHeadersVisible = false;
             this.dgvDados.RowHeadersWidth = 62;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDados.RowsDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDados.RowsDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDados.Size = new System.Drawing.Size(527, 331);
             this.dgvDados.TabIndex = 6;
@@ -207,11 +191,13 @@
             this.pFiltro.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.pFiltro.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pFiltro.Controls.Add(this.cbStatus);
+            this.pFiltro.Controls.Add(this.rbInativos);
+            this.pFiltro.Controls.Add(this.rbAtivos);
+            this.pFiltro.Controls.Add(this.rbTodos);
             this.pFiltro.ForeColor = System.Drawing.Color.White;
-            this.pFiltro.Location = new System.Drawing.Point(18, 327);
+            this.pFiltro.Location = new System.Drawing.Point(18, 344);
             this.pFiltro.Name = "pFiltro";
-            this.pFiltro.Size = new System.Drawing.Size(99, 53);
+            this.pFiltro.Size = new System.Drawing.Size(295, 36);
             this.pFiltro.TabIndex = 17;
             this.pFiltro.Visible = false;
             // 
@@ -261,6 +247,46 @@
             this.lbNomeForm.TabIndex = 0;
             this.lbNomeForm.Text = "CONSULTA FORMAS PAGAMENTO";
             // 
+            // rbInativos
+            // 
+            this.rbInativos.AutoSize = true;
+            this.rbInativos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbInativos.Location = new System.Drawing.Point(195, 3);
+            this.rbInativos.Name = "rbInativos";
+            this.rbInativos.Size = new System.Drawing.Size(74, 21);
+            this.rbInativos.TabIndex = 7;
+            this.rbInativos.TabStop = true;
+            this.rbInativos.Text = "Inativos";
+            this.rbInativos.UseVisualStyleBackColor = true;
+            this.rbInativos.CheckedChanged += new System.EventHandler(this.rbInativos_CheckedChanged);
+            // 
+            // rbAtivos
+            // 
+            this.rbAtivos.AutoSize = true;
+            this.rbAtivos.Checked = true;
+            this.rbAtivos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbAtivos.Location = new System.Drawing.Point(110, 3);
+            this.rbAtivos.Name = "rbAtivos";
+            this.rbAtivos.Size = new System.Drawing.Size(64, 21);
+            this.rbAtivos.TabIndex = 6;
+            this.rbAtivos.TabStop = true;
+            this.rbAtivos.Text = "Ativos";
+            this.rbAtivos.UseVisualStyleBackColor = true;
+            this.rbAtivos.CheckedChanged += new System.EventHandler(this.rbAtivos_CheckedChanged);
+            // 
+            // rbTodos
+            // 
+            this.rbTodos.AutoSize = true;
+            this.rbTodos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbTodos.Location = new System.Drawing.Point(23, 3);
+            this.rbTodos.Name = "rbTodos";
+            this.rbTodos.Size = new System.Drawing.Size(66, 21);
+            this.rbTodos.TabIndex = 5;
+            this.rbTodos.TabStop = true;
+            this.rbTodos.Text = "Todos";
+            this.rbTodos.UseVisualStyleBackColor = true;
+            this.rbTodos.CheckedChanged += new System.EventHandler(this.rbTodos_CheckedChanged);
+            // 
             // frmConsultaFormaPagamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -287,6 +313,7 @@
             this.gbBotoes.ResumeLayout(false);
             this.gbBotoes.PerformLayout();
             this.pFiltro.ResumeLayout(false);
+            this.pFiltro.PerformLayout();
             this.pInfo.ResumeLayout(false);
             this.pInfo.PerformLayout();
             this.pNomeForm.ResumeLayout(false);
@@ -296,8 +323,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.Button btSair;
         private System.Windows.Forms.Button btExc;
         private System.Windows.Forms.Button btEdt;
@@ -310,5 +335,8 @@
         private System.Windows.Forms.Label lbInfo;
         private System.Windows.Forms.Panel pNomeForm;
         private System.Windows.Forms.Label lbNomeForm;
+        private System.Windows.Forms.RadioButton rbInativos;
+        private System.Windows.Forms.RadioButton rbAtivos;
+        private System.Windows.Forms.RadioButton rbTodos;
     }
 }

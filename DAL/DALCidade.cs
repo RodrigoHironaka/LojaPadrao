@@ -56,10 +56,18 @@ namespace DAL
             conexao.Desconectar();
         }
 
+        public DataTable Localizar()
+        {
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cidade order by id", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+
         public DataTable Localizar(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select id as Cod, nome as Nome, uf as UF, status as Sit from cidade where nome like '%" + valor + "%' or id like '%" + valor + "%'", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cidade where (nome like '%" + valor + "%' or (id like '%" + valor + "%'))", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -67,7 +75,7 @@ namespace DAL
         public DataTable LocalizarAtivo(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select id as Cod, nome as Nome, uf as UF, status as Sit from cidade where (nome like '%" + valor + "%' or (id like '%" + valor + "%')) and status='A'", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cidade where status='A' and (nome like '%" + valor + "%' or (id like '%" + valor + "%'))", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -75,7 +83,7 @@ namespace DAL
         public DataTable LocalizarInativo(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select id as Cod, nome as Nome, uf as UF, status as Sit from cidade where (nome like '%" + valor + "%' or (id like '%" + valor + "%')) and status='I'", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cidade where status='I' and (nome like '%" + valor + "%' or (id like '%" + valor + "%'))", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }

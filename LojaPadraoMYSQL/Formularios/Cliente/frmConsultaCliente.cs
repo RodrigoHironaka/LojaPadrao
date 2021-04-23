@@ -77,21 +77,52 @@ namespace LojaPadraoMYSQL.Formularios
 
         }
 
+        public void VerificaBuscaGrid(int linhas)
+        {
+            if (linhas == 0)
+            {
+                dgvDados.DataSource = null;
+                pInfo.Visible = true;
+                lbInfo.Visible = true;
+            }
+            else
+            {
+                this.AtualizaCabecalhoGridDados();
+            }
+        }
+
+        public void LimpaFiltro()
+        {
+            rbAtivos.Checked = true;
+            rbFisica.Checked = true;
+            dtpInicio.Value = System.DateTime.Now;
+            dtpFinal.Value = System.DateTime.Now;
+            pFiltro.Visible = false;
+            txtPesquisa.Clear();
+        }
+
+        public void LimpaFiltroSemFechar()
+        {
+            rbAtivos.Checked = true;
+            rbFisica.Checked = true;
+            dtpInicio.Value = System.DateTime.Now;
+            dtpFinal.Value = System.DateTime.Now;
+           
+        }
+
+       
+
         public int id = 0;
 
         public frmConsultaCliente()
         {
             InitializeComponent();
-            cbStatus.SelectedIndex = 1;
-            cbFiltroTipo.SelectedIndex = 1;
-            pFiltro.Visible = false;
-            this.AtualizaCabecalhoGridDados();
         }
 
         public frmConsultaCliente(bool selecao)
         {
             InitializeComponent();
-            cbStatus.SelectedIndex = 1;
+            
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLCliente bll = new BLLCliente(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
@@ -101,6 +132,8 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void btAdd_Click(object sender, EventArgs e)
         {
+            pInfo.Visible = false;
+            pFiltro.Visible = false;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLCliente bll = new BLLCliente(cx);
             var ultimoidinserido = bll.VerificaUltimoIdInserido();
@@ -111,6 +144,8 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void btEdt_Click(object sender, EventArgs e)
         {
+            pInfo.Visible = false;
+            pFiltro.Visible = false;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLCliente bll = new BLLCliente(cx);
 
@@ -132,6 +167,8 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void btExc_Click(object sender, EventArgs e)
         {
+            pInfo.Visible = false;
+            pFiltro.Visible = false;
             try
             {
                 if (dgvDados.SelectedRows.Count == 0)
@@ -148,9 +185,8 @@ namespace LojaPadraoMYSQL.Formularios
                         BLLCliente bll = new BLLCliente(cx);
                         bll.Excluir(Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value));
                         MessageBox.Show("Registro excluído com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        dgvDados.DataSource = bll.CarregaGridAtivo();
-                        cbStatus.SelectedIndex = 1;
-                        cbFiltroTipo.SelectedIndex = 1;
+                        dgvDados.DataSource = null;
+                        
                     }
                 }
             }
@@ -169,64 +205,72 @@ namespace LojaPadraoMYSQL.Formularios
         {
             pFiltro.Visible = true;
             pInfo.Visible = false;
-            //lbInfo.Visible = true;
-            if (txtPesquisa.Text == "")
+            if (txtPesquisa.Text == string.Empty)
             {
-                this.cbStatus_SelectedIndexChanged(sender, e);
-                this.cbFiltroTipo_SelectedIndexChanged(sender, e);
+                dgvDados.DataSource = null;
+                pInfo.Visible = true;
             }
             else
             {
-                if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 0))
-                {
-                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                    BLLCliente bll = new BLLCliente(cx);
-                    dgvDados.DataSource = bll.LocalizarAtivo(txtPesquisa.Text);
-                    this.AtualizaCabecalhoGridDados();
-
-                }
-                else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 0))
-                {
-                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                    BLLCliente bll = new BLLCliente(cx);
-                    dgvDados.DataSource = bll.LocalizarInativo(txtPesquisa.Text);
-                    this.AtualizaCabecalhoGridDados();
-                }
-                else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 1))
-                {
-                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                    BLLCliente bll = new BLLCliente(cx);
-                    dgvDados.DataSource = bll.LocalizarAtivoFisica(txtPesquisa.Text);
-                    this.AtualizaCabecalhoGridDados();
-                }
-                else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 2))
-                {
-                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                    BLLCliente bll = new BLLCliente(cx);
-                    dgvDados.DataSource = bll.LocalizarAtivoJuridica(txtPesquisa.Text);
-                    this.AtualizaCabecalhoGridDados();
-                }
-                else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 1))
-                {
-                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                    BLLCliente bll = new BLLCliente(cx);
-                    dgvDados.DataSource = bll.LocalizarInativoFisica(txtPesquisa.Text);
-                    this.AtualizaCabecalhoGridDados();
-                }
-                else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 2))
-                {
-                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                    BLLCliente bll = new BLLCliente(cx);
-                    dgvDados.DataSource = bll.LocalizarInativoJuridica(txtPesquisa.Text);
-                    this.AtualizaCabecalhoGridDados();
-                }
-                else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 0))
+                pInfo.Visible = false;
+                if ((rbTodos.Checked) && (rbTodosTipo.Checked))
                 {
                     DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                     BLLCliente bll = new BLLCliente(cx);
                     dgvDados.DataSource = bll.Localizar(txtPesquisa.Text);
-                    this.AtualizaCabecalhoGridDados();
+                    int linhas = dgvDados.Rows.Count;
+                    this.VerificaBuscaGrid(linhas);
                 }
+                else if ((rbAtivos.Checked) && (rbFisica.Checked))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.LocalizarAtivoFisica(txtPesquisa.Text);
+                    int linhas = dgvDados.Rows.Count;
+                    this.VerificaBuscaGrid(linhas);
+
+                }
+                else if ((rbInativos.Checked) && (rbFisica.Checked))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.LocalizarInativoFisica(txtPesquisa.Text);
+                    int linhas = dgvDados.Rows.Count;
+                    this.VerificaBuscaGrid(linhas);
+                }
+                else if ((rbTodos.Checked) && (rbFisica.Checked))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.LocalizarFisica(txtPesquisa.Text);
+                    int linhas = dgvDados.Rows.Count;
+                    this.VerificaBuscaGrid(linhas);
+                }
+                else if ((rbAtivos.Checked) && (rbJuridica.Checked))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.LocalizarAtivoJuridica(txtPesquisa.Text);
+                    int linhas = dgvDados.Rows.Count;
+                    this.VerificaBuscaGrid(linhas);
+                }
+                else if ((rbInativos.Checked) && (rbJuridica.Checked))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.LocalizarInativoJuridica(txtPesquisa.Text);
+                    int linhas = dgvDados.Rows.Count;
+                    this.VerificaBuscaGrid(linhas);
+                }
+                else if ((rbTodos.Checked) && (rbJuridica.Checked))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.LocalizarJuridica(txtPesquisa.Text);
+                    int linhas = dgvDados.Rows.Count;
+                    this.VerificaBuscaGrid(linhas);
+                }
+
             } 
            
         }
@@ -234,158 +278,6 @@ namespace LojaPadraoMYSQL.Formularios
         private void frmConsultaCliente_Load(object sender, EventArgs e)
         {
             
-        }
-
-        private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 0))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridAtivo();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 0))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridInativo();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 1))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridAtivoFisica();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 1))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridInativoFisica();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 2))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridAtivoJuridica();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 2))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridInativoJuridica();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 1))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridFisica();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 2))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridJuridica();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 0))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGrid();
-                this.AtualizaCabecalhoGridDados();
-            }
-        }
-
-        private void cbFiltroTipo_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 0))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridAtivo();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 0))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridInativo(); 
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 1))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridAtivoFisica();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 1))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridInativoFisica();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 1) && (cbFiltroTipo.SelectedIndex == 2))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridAtivoJuridica();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 2) && (cbFiltroTipo.SelectedIndex == 2))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridInativoJuridica();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 1))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridFisica();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 2))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGridJuridica();
-                this.AtualizaCabecalhoGridDados();
-            }
-            else if ((cbStatus.SelectedIndex == 0) && (cbFiltroTipo.SelectedIndex == 0))
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLCliente bll = new BLLCliente(cx);
-                dgvDados.DataSource = bll.CarregaGrid();
-                this.AtualizaCabecalhoGridDados();
-            }
         }
 
         private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -433,6 +325,31 @@ namespace LojaPadraoMYSQL.Formularios
         private void txtPesquisa_KeyDown(object sender, KeyEventArgs e)
         {
             pFiltro.Visible = false;
+        }
+
+        private void rbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btLimpaFiltro_Click(object sender, EventArgs e)
+        {
+            this.LimpaFiltroSemFechar();
+        }
+
+        private void btFecharPanelFiltro_Click(object sender, EventArgs e)
+        {
+            this.LimpaFiltro();
+        }
+
+        private void dgvDados_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            DataGridViewRow row = dgvDados.Rows[e.RowIndex];
+            if(row.Cells["status"].Value.ToString() == "I")
+            {
+                row.DefaultCellStyle.ForeColor = Color.DarkRed;
+                row.DefaultCellStyle.SelectionBackColor = Color.DarkRed;
+            }
         }
     }
 }

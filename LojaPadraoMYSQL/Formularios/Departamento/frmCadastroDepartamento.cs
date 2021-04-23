@@ -64,7 +64,9 @@ namespace LojaPadraoMYSQL.Formularios
                 {
                     modelo.DepartamentoId = int.Parse(txtID.Text);
                     dal.Alterar(modelo);
+                    
                 }
+                MessageBox.Show("Cadastro alterado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
             }
             catch (Exception erro)

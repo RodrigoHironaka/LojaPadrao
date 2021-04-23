@@ -19,6 +19,7 @@ namespace DAL
         {
             this.conexao = cx;
         }
+
         public void Incluir(ModeloCliente modelo)
         {
             MySqlCommand cmd = new MySqlCommand();
@@ -111,7 +112,7 @@ namespace DAL
         public DataTable Localizar(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where nomefantasia like '%" + valor + "%' or id like '%" + valor + "%'", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%')", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -119,7 +120,8 @@ namespace DAL
         public DataTable LocalizarAtivo(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and status='A')", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente " +
+                " where status='A' and (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%'))", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -127,16 +129,18 @@ namespace DAL
         public DataTable LocalizarInativo(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and status='I')", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente " +
+                " where status='I' and (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%'))", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
 
-        //-------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------
         public DataTable LocalizarAtivoFisica(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and status='A' and tipoPessoa='FISICA') ", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente " +
+                " where status='A' and (tipoPessoa='FISICA' and (nomefantasia like '%" + valor + "%') or (id like '%" + valor + "%'))", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -144,7 +148,8 @@ namespace DAL
         public DataTable LocalizarInativoFisica(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and (status='I')) and (tipoPessoa='FISICA') ", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente " +
+                " where status='I' and (tipoPessoa='FISICA' and (nomefantasia like '%" + valor + "%') or (id like '%" + valor + "%'))", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -152,7 +157,8 @@ namespace DAL
         public DataTable LocalizarAtivoJuridica(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and (status='A')) and tipoPessoa='JURIDICA'", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente " +
+                " where status='A' and (tipoPessoa='JURIDICA' and (nomefantasia like '%" + valor + "%') or (id like '%" + valor + "%'))", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -160,7 +166,8 @@ namespace DAL
         public DataTable LocalizarInativoJuridica(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and (status='I')) and tipoPessoa='JURIDICA'", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente "+
+                " where status='I' and (tipoPessoa='JURIDICA' and (nomefantasia like '%" + valor + "%') or (id like '%" + valor + "%'))", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -168,7 +175,8 @@ namespace DAL
         public DataTable LocalizarFisica(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and tipoPessoa='FISICA')", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente " +
+                " where tipoPessoa='FISICA' and (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%'))", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
@@ -176,11 +184,12 @@ namespace DAL
         public DataTable LocalizarJuridica(String valor)
         {
             DataTable tabela = new DataTable();
-            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente where (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%') and tipoPessoa='JURIDICA')", conexao.StringConexao);
+            MySqlDataAdapter da = new MySqlDataAdapter("select * from cliente " +
+                " where tipoPessoa='JURIDICA' and (nomefantasia like '%" + valor + "%' or (id like '%" + valor + "%'))", conexao.StringConexao);
             da.Fill(tabela);
             return tabela;
         }
-        //-------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------
         public ModeloCidade LocalizarPorNomeCidade(String nome)
         {
             ModeloCidade modelo = new ModeloCidade();
@@ -257,7 +266,7 @@ namespace DAL
             }
         }
 
-        //-------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------
         public DataTable CarregarGridAtivoFisica()
         {
             try
@@ -265,7 +274,7 @@ namespace DAL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
                 conexao.Conectar();
-                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from cliente where status='A' and tipoPessoa='FISICA' order by id", conexao.StringConexao);
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from cliente where (status='A' and (tipoPessoa='FISICA')) order by id", conexao.StringConexao);
                 DataTable dataTable = new DataTable();
                 fbDataAdapter.Fill(dataTable);
                 return dataTable;
@@ -284,7 +293,7 @@ namespace DAL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
                 conexao.Conectar();
-                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from cliente where status='I' and tipoPessoa='FISICA' order by id", conexao.StringConexao);
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from cliente where (status='I' and (tipoPessoa='FISICA')) order by id", conexao.StringConexao);
                 DataTable dataTable = new DataTable();
                 fbDataAdapter.Fill(dataTable);
                 return dataTable;
@@ -303,7 +312,7 @@ namespace DAL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
                 conexao.Conectar();
-                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from cliente where status='A' and tipoPessoa='JURIDICA' order by id", conexao.StringConexao);
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from cliente where (status='A' and (tipoPessoa='JURIDICA')) order by id", conexao.StringConexao);
                 DataTable dataTable = new DataTable();
                 fbDataAdapter.Fill(dataTable);
                 return dataTable;
@@ -322,7 +331,7 @@ namespace DAL
                 MySqlCommand cmd = new MySqlCommand();
                 cmd.Connection = conexao.ObjetoConexao;
                 conexao.Conectar();
-                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from cliente where status='I' and tipoPessoa='JURIDICA' order by id", conexao.StringConexao);
+                MySqlDataAdapter fbDataAdapter = new MySqlDataAdapter("select * from cliente where (status='I' and (tipoPessoa='JURIDICA')) order by id", conexao.StringConexao);
                 DataTable dataTable = new DataTable();
                 fbDataAdapter.Fill(dataTable);
                 return dataTable;
@@ -372,7 +381,7 @@ namespace DAL
             }
         }
 
-        //-------------------------------------------------------------
+        //-----------------------------------------------------------------------------------------------------------
 
         public ModeloCliente CarregaModeloCliente(int codigo)
         {
@@ -453,7 +462,7 @@ namespace DAL
             return id;
         }
 
-        //LOCALIZA ULTIMO(S) PARA MOSTRAR NO GRID APOS INSERIR --------------------------------------------------------
+        //LOCALIZA ULTIMO(S) PARA MOSTRAR NO GRID APOS INSERIR ------------------------------------------------------
         public DataTable LocalizarUltimoItemInserido()
         {
             var ultimoId = VerificaUltimoIdInserido();

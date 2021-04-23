@@ -27,7 +27,6 @@ namespace LojaPadraoMYSQL.Formularios
         {
             InitializeComponent();
             cbUf.SelectedIndex = 24;
-            
         }
 
         public frmCadastroCidade(ModeloCidade modelo)
@@ -37,9 +36,16 @@ namespace LojaPadraoMYSQL.Formularios
             txtNome.Text = modelo.Nome;
             cbUf.Text = modelo.UF.ToString();
             if (modelo.Status.Equals('A'))
+            {
                 chkAtivo.Checked = true;
+                chkAtivo.BackColor = Color.DarkSlateGray;
+            }
             else if (modelo.Status.Equals('I'))
+            {
                 chkAtivo.Checked = false;
+                chkAtivo.BackColor = Color.DarkRed;
+            }
+                
            
         }
 
@@ -72,6 +78,7 @@ namespace LojaPadraoMYSQL.Formularios
                     modelo.CidadeId = int.Parse(txtID.Text);
                     bll.Alterar(modelo);
                 }
+                MessageBox.Show("Cadastro alterado com sucesso!", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Close();
                 
             }

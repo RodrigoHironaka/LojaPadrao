@@ -61,6 +61,12 @@ namespace BLL
             DALObj.Excluir(codigo);
         }
 
+        public DataTable Localizar()
+        {
+            DALCidade DALObj = new DALCidade(conexao);
+            return DALObj.Localizar();
+        }
+
         public DataTable Localizar(String valor)
         {
             DALCidade DALObj = new DALCidade(conexao);

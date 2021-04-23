@@ -89,6 +89,7 @@
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.pNomeForm = new System.Windows.Forms.Panel();
             this.lbNomeForm = new System.Windows.Forms.Label();
+            this.lbSit = new System.Windows.Forms.Label();
             this.tpageDadosPrincipais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).BeginInit();
@@ -784,6 +785,7 @@
             // 
             this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.gbBotoes.Controls.Add(this.lbSit);
             this.gbBotoes.Controls.Add(this.btSair);
             this.gbBotoes.Controls.Add(this.btSalvar);
             this.gbBotoes.Location = new System.Drawing.Point(12, 483);
@@ -802,7 +804,7 @@
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
-            this.btSair.Location = new System.Drawing.Point(770, 19);
+            this.btSair.Location = new System.Drawing.Point(784, 20);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(50, 50);
             this.btSair.TabIndex = 19;
@@ -819,7 +821,7 @@
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
-            this.btSalvar.Location = new System.Drawing.Point(714, 20);
+            this.btSalvar.Location = new System.Drawing.Point(717, 20);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(50, 50);
             this.btSalvar.TabIndex = 18;
@@ -859,6 +861,19 @@
             this.lbNomeForm.TabIndex = 0;
             this.lbNomeForm.Text = "CADASTRO CLIENTE";
             // 
+            // lbSit
+            // 
+            this.lbSit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbSit.AutoSize = true;
+            this.lbSit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSit.ForeColor = System.Drawing.Color.White;
+            this.lbSit.Location = new System.Drawing.Point(12, 32);
+            this.lbSit.Name = "lbSit";
+            this.lbSit.Size = new System.Drawing.Size(105, 24);
+            this.lbSit.TabIndex = 20;
+            this.lbSit.Text = "SITUAÇÃO";
+            this.lbSit.Visible = false;
+            // 
             // frmCadastroCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -883,6 +898,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctCpfcnpjInvalido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCalendario)).EndInit();
             this.gbBotoes.ResumeLayout(false);
+            this.gbBotoes.PerformLayout();
             this.tabControl1.ResumeLayout(false);
             this.pNomeForm.ResumeLayout(false);
             this.pNomeForm.PerformLayout();
@@ -952,5 +968,6 @@
         private System.Windows.Forms.GroupBox gbBotoes;
         private System.Windows.Forms.Panel pNomeForm;
         private System.Windows.Forms.Label lbNomeForm;
+        private System.Windows.Forms.Label lbSit;
     }
 }

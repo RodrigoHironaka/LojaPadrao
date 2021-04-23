@@ -84,9 +84,20 @@ namespace LojaPadraoMYSQL.Formularios
                 pbFoto.Image = null;
             }
             if (modelo.Status.Equals('A'))
+            {
                 chbAtivo.Checked = true;
+                lbSit.Text = "CLIENTE ATIVADO";
+                lbSit.Visible = true;
+                lbSit.ForeColor = Color.White;
+            }
             else if (modelo.Status.Equals('I'))
+            {
                 chbAtivo.Checked = false;
+                lbSit.Text = "CLIENTE INATIVADO";
+                lbSit.Visible = true;
+                lbSit.ForeColor = Color.DarkRed;
+            }
+                
             
         }
 

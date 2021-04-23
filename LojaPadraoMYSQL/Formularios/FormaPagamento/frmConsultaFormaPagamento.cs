@@ -22,15 +22,13 @@ namespace LojaPadraoMYSQL.Formularios
             dgvDados.Columns[0].HeaderText = "COD";
             dgvDados.Columns[1].HeaderText = "NOME";
             dgvDados.Columns[2].HeaderText = "Nº PARC";
-            dgvDados.Columns[3].HeaderText = " DIAS VENC";
+            dgvDados.Columns[3].HeaderText = "DIAS VENC";
             dgvDados.Columns[4].HeaderText = "SIT";
         }
 
         public frmConsultaFormaPagamento()
         {
             InitializeComponent();
-            cbStatus.SelectedIndex = 1;
-            this.AtualizaCabecalhoGridDados();
         }
 
         private void btAdd_Click(object sender, EventArgs e)
@@ -42,7 +40,8 @@ namespace LojaPadraoMYSQL.Formularios
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLFormaPagamento bll = new BLLFormaPagamento(cx);
             dgvDados.DataSource = bll.CarregaGridAtivo();
-            cbStatus.SelectedIndex = 1;
+            this.AtualizaCabecalhoGridDados();
+
         }
 
         private void btEdt_Click(object sender, EventArgs e)
@@ -65,7 +64,8 @@ namespace LojaPadraoMYSQL.Formularios
                 this.Opacity = 1;
                 f.Dispose();
                 dgvDados.DataSource = bll.CarregaGridAtivo();
-                cbStatus.SelectedIndex = 1;
+                this.AtualizaCabecalhoGridDados();
+
             }
         }
 
@@ -88,7 +88,8 @@ namespace LojaPadraoMYSQL.Formularios
                         bll.Excluir(Convert.ToInt32(dgvDados.CurrentRow.Cells[0].Value));
                         MessageBox.Show("Registro excluído com sucesso!", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         dgvDados.DataSource = bll.CarregaGridAtivo();
-                        cbStatus.SelectedIndex = 1;
+                        this.AtualizaCabecalhoGridDados();
+
                     }
                 }
             }
@@ -106,58 +107,34 @@ namespace LojaPadraoMYSQL.Formularios
         private void txtPesquisa_TextChanged(object sender, EventArgs e)
         {
             pFiltro.Visible = true;
-            if (cbStatus.SelectedIndex == 1)
+            if (rbAtivos.Checked)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLFormaPagamento bll = new BLLFormaPagamento(cx);
                 dgvDados.DataSource = bll.LocalizarAtivo(txtPesquisa.Text);
+                this.AtualizaCabecalhoGridDados();
             }
-            else if (cbStatus.SelectedIndex == 2)
+            else if (rbInativos.Checked)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLFormaPagamento bll = new BLLFormaPagamento(cx);
                 dgvDados.DataSource = bll.LocalizarInativo(txtPesquisa.Text);
+                this.AtualizaCabecalhoGridDados();
             }
-            else if (cbStatus.SelectedIndex == 0)
+            else if (rbTodos.Checked)
             {
                 DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
                 BLLFormaPagamento bll = new BLLFormaPagamento(cx);
                 dgvDados.DataSource = bll.Localizar(txtPesquisa.Text);
+                this.AtualizaCabecalhoGridDados();
             }
         }
 
         private void frmConsultaFormaPagamento_Load(object sender, EventArgs e)
         {
-            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-            BLLFormaPagamento bll = new BLLFormaPagamento(cx);
-            dgvDados.DataSource = bll.CarregaGridAtivo();
+            
         }
-
-        private void cbStatus_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            if (cbStatus.SelectedIndex == 1)
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLFormaPagamento bll = new BLLFormaPagamento(cx);
-                dgvDados.DataSource = bll.CarregaGridAtivo();
-            }
-            else if (cbStatus.SelectedIndex == 2)
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLFormaPagamento bll = new BLLFormaPagamento(cx);
-                dgvDados.DataSource = bll.CarregaGridInativo();
-            }
-            else
-            {
-                txtPesquisa.Clear();
-                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
-                BLLFormaPagamento bll = new BLLFormaPagamento(cx);
-                dgvDados.DataSource = bll.CarregaGrid();
-            }
-        }
-
+                
         private void dgvDados_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if (dgvDados.SelectedRows.Count == 0)
@@ -203,6 +180,30 @@ namespace LojaPadraoMYSQL.Formularios
         private void txtPesquisa_KeyDown(object sender, KeyEventArgs e)
         {
             pFiltro.Visible = false;
+        }
+
+        private void rbTodos_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisa.Clear();
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLFormaPagamento bll = new BLLFormaPagamento(cx);
+            dgvDados.DataSource = bll.CarregaGrid();
+        }
+
+        private void rbAtivos_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisa.Clear();
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLFormaPagamento bll = new BLLFormaPagamento(cx);
+            dgvDados.DataSource = bll.CarregaGridAtivo();
+        }
+
+        private void rbInativos_CheckedChanged(object sender, EventArgs e)
+        {
+            txtPesquisa.Clear();
+            DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+            BLLFormaPagamento bll = new BLLFormaPagamento(cx);
+            dgvDados.DataSource = bll.CarregaGridInativo();
         }
     }
 }
