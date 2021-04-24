@@ -97,10 +97,10 @@
             this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tabControl1.Controls.Add(this.tpageDadosPrincipais);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(8, 54);
+            this.tabControl1.Location = new System.Drawing.Point(8, 42);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(670, 432);
+            this.tabControl1.Size = new System.Drawing.Size(670, 444);
             this.tabControl1.TabIndex = 3;
             // 
             // tpageDadosPrincipais
@@ -155,7 +155,7 @@
             this.tpageDadosPrincipais.Location = new System.Drawing.Point(4, 22);
             this.tpageDadosPrincipais.Name = "tpageDadosPrincipais";
             this.tpageDadosPrincipais.Padding = new System.Windows.Forms.Padding(3);
-            this.tpageDadosPrincipais.Size = new System.Drawing.Size(662, 406);
+            this.tpageDadosPrincipais.Size = new System.Drawing.Size(662, 418);
             this.tpageDadosPrincipais.TabIndex = 0;
             this.tpageDadosPrincipais.Text = "Dados Principais";
             // 
@@ -207,8 +207,8 @@
             // btAddFoto
             // 
             this.btAddFoto.FlatAppearance.BorderSize = 0;
-            this.btAddFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btAddFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btAddFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btAddFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btAddFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAddFoto.Image = ((System.Drawing.Image)(resources.GetObject("btAddFoto.Image")));
             this.btAddFoto.Location = new System.Drawing.Point(608, 1);
@@ -221,8 +221,8 @@
             // btRemFoto
             // 
             this.btRemFoto.FlatAppearance.BorderSize = 0;
-            this.btRemFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btRemFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btRemFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btRemFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btRemFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btRemFoto.Image = ((System.Drawing.Image)(resources.GetObject("btRemFoto.Image")));
             this.btRemFoto.Location = new System.Drawing.Point(634, 2);
@@ -236,8 +236,9 @@
             // 
             this.btProcurarCidade.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btProcurarCidade.FlatAppearance.BorderSize = 0;
-            this.btProcurarCidade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btProcurarCidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btProcurarCidade.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btProcurarCidade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btProcurarCidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btProcurarCidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btProcurarCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btProcurarCidade.ForeColor = System.Drawing.Color.White;
@@ -726,9 +727,9 @@
             // 
             this.btSalvar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btSalvar.FlatAppearance.BorderSize = 0;
-            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
@@ -743,9 +744,9 @@
             // 
             this.btSair.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
@@ -760,7 +761,7 @@
             // 
             this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel1.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.panel1.Controls.Add(this.label4);
             this.panel1.Location = new System.Drawing.Point(-1, 0);
             this.panel1.Name = "panel1";

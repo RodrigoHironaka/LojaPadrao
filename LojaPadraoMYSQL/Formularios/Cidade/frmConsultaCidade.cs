@@ -296,6 +296,15 @@ namespace LojaPadraoMYSQL.Formularios
 
         private void dgvDados_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
+            //if(dgvDados.Columns[e.ColumnIndex].Name == "status")
+            //{
+            //    if(e.Value!=null && e.Value.ToString() == "I")
+            //    {
+            //        DataGridViewRow row = dgvDados.Rows[e.RowIndex];
+            //        row.DefaultCellStyle.ForeColor = Color.DarkRed;
+            //        row.DefaultCellStyle.SelectionBackColor = Color.DarkRed;
+            //    }
+            //}
             DataGridViewRow row = dgvDados.Rows[e.RowIndex];
             if (row.Cells["status"].Value.ToString() == "I")
             {

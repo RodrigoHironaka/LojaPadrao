@@ -45,9 +45,11 @@
             this.btnDesligar = new System.Windows.Forms.Button();
             this.pFormInfo = new System.Windows.Forms.Panel();
             this.tDataHora = new System.Windows.Forms.Timer(this.components);
+            this.pctIcone = new System.Windows.Forms.PictureBox();
             this.pPrincipal.SuspendLayout();
             this.pBotoesMenu.SuspendLayout();
             this.panel3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctIcone)).BeginInit();
             this.SuspendLayout();
             // 
             // pPrincipal
@@ -166,7 +168,8 @@
             // 
             this.panel3.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel3.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel3.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel3.Controls.Add(this.pctIcone);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Controls.Add(this.lbData);
             this.panel3.Controls.Add(this.lbHora);
@@ -182,7 +185,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 20F);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(3, 3);
+            this.label1.Location = new System.Drawing.Point(41, 2);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(267, 37);
             this.label1.TabIndex = 3;
@@ -260,6 +263,15 @@
             this.tDataHora.Interval = 1000;
             this.tDataHora.Tick += new System.EventHandler(this.tDataHora_Tick);
             // 
+            // pctIcone
+            // 
+            this.pctIcone.Image = ((System.Drawing.Image)(resources.GetObject("pctIcone.Image")));
+            this.pctIcone.Location = new System.Drawing.Point(3, 8);
+            this.pctIcone.Name = "pctIcone";
+            this.pctIcone.Size = new System.Drawing.Size(32, 32);
+            this.pctIcone.TabIndex = 4;
+            this.pctIcone.TabStop = false;
+            // 
             // frmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,6 +280,7 @@
             this.ClientSize = new System.Drawing.Size(900, 600);
             this.Controls.Add(this.pPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPrincipal";
@@ -277,6 +290,7 @@
             this.pBotoesMenu.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pctIcone)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -298,5 +312,6 @@
         public System.Windows.Forms.Panel pFormInfo;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox pctIcone;
     }
 }

@@ -84,12 +84,12 @@
             this.lbCelular = new System.Windows.Forms.Label();
             this.lbDataNasc = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.lbSit = new System.Windows.Forms.Label();
             this.btSair = new System.Windows.Forms.Button();
             this.btSalvar = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.pNomeForm = new System.Windows.Forms.Panel();
             this.lbNomeForm = new System.Windows.Forms.Label();
-            this.lbSit = new System.Windows.Forms.Label();
             this.tpageDadosPrincipais.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).BeginInit();
@@ -106,7 +106,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(841, 406);
+            this.tabPage2.Size = new System.Drawing.Size(841, 414);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Outros";
             // 
@@ -168,7 +168,7 @@
             this.tpageDadosPrincipais.Location = new System.Drawing.Point(4, 22);
             this.tpageDadosPrincipais.Name = "tpageDadosPrincipais";
             this.tpageDadosPrincipais.Padding = new System.Windows.Forms.Padding(3);
-            this.tpageDadosPrincipais.Size = new System.Drawing.Size(841, 406);
+            this.tpageDadosPrincipais.Size = new System.Drawing.Size(841, 414);
             this.tpageDadosPrincipais.TabIndex = 0;
             this.tpageDadosPrincipais.Text = "Dados Principais";
             this.tpageDadosPrincipais.Click += new System.EventHandler(this.tpageDadosPrincipais_Click);
@@ -205,8 +205,9 @@
             // btAddFoto
             // 
             this.btAddFoto.FlatAppearance.BorderSize = 0;
-            this.btAddFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btAddFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btAddFoto.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btAddFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btAddFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btAddFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAddFoto.Image = ((System.Drawing.Image)(resources.GetObject("btAddFoto.Image")));
             this.btAddFoto.Location = new System.Drawing.Point(787, 7);
@@ -219,8 +220,9 @@
             // btRemFoto
             // 
             this.btRemFoto.FlatAppearance.BorderSize = 0;
-            this.btRemFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btRemFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btRemFoto.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btRemFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btRemFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btRemFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btRemFoto.Image = ((System.Drawing.Image)(resources.GetObject("btRemFoto.Image")));
             this.btRemFoto.Location = new System.Drawing.Point(814, 8);
@@ -233,8 +235,8 @@
             // btProcurarCidade
             // 
             this.btProcurarCidade.FlatAppearance.BorderSize = 0;
-            this.btProcurarCidade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.GhostWhite;
-            this.btProcurarCidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.GhostWhite;
+            this.btProcurarCidade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btProcurarCidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btProcurarCidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btProcurarCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btProcurarCidade.Image = ((System.Drawing.Image)(resources.GetObject("btProcurarCidade.Image")));
@@ -242,7 +244,6 @@
             this.btProcurarCidade.Name = "btProcurarCidade";
             this.btProcurarCidade.Size = new System.Drawing.Size(35, 35);
             this.btProcurarCidade.TabIndex = 16;
-            this.btProcurarCidade.Text = "...";
             this.btProcurarCidade.UseVisualStyleBackColor = true;
             this.btProcurarCidade.Click += new System.EventHandler(this.btProcurarCidade_Click);
             // 
@@ -794,13 +795,26 @@
             this.gbBotoes.TabIndex = 1;
             this.gbBotoes.TabStop = false;
             // 
+            // lbSit
+            // 
+            this.lbSit.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbSit.AutoSize = true;
+            this.lbSit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbSit.ForeColor = System.Drawing.Color.White;
+            this.lbSit.Location = new System.Drawing.Point(12, 32);
+            this.lbSit.Name = "lbSit";
+            this.lbSit.Size = new System.Drawing.Size(105, 24);
+            this.lbSit.TabIndex = 20;
+            this.lbSit.Text = "SITUAÇÃO";
+            this.lbSit.Visible = false;
+            // 
             // btSair
             // 
             this.btSair.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
@@ -815,9 +829,9 @@
             // 
             this.btSalvar.BackColor = System.Drawing.Color.DarkSlateGray;
             this.btSalvar.FlatAppearance.BorderSize = 0;
-            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
@@ -833,16 +847,16 @@
             this.tabControl1.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.tabControl1.Controls.Add(this.tpageDadosPrincipais);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 49);
+            this.tabControl1.Location = new System.Drawing.Point(12, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(849, 432);
+            this.tabControl1.Size = new System.Drawing.Size(849, 440);
             this.tabControl1.TabIndex = 0;
             // 
             // pNomeForm
             // 
             this.pNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pNomeForm.BackColor = System.Drawing.Color.DarkCyan;
+            this.pNomeForm.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.pNomeForm.Controls.Add(this.lbNomeForm);
             this.pNomeForm.Location = new System.Drawing.Point(0, -1);
             this.pNomeForm.Name = "pNomeForm";
@@ -860,19 +874,6 @@
             this.lbNomeForm.Size = new System.Drawing.Size(198, 24);
             this.lbNomeForm.TabIndex = 0;
             this.lbNomeForm.Text = "CADASTRO CLIENTE";
-            // 
-            // lbSit
-            // 
-            this.lbSit.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbSit.AutoSize = true;
-            this.lbSit.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSit.ForeColor = System.Drawing.Color.White;
-            this.lbSit.Location = new System.Drawing.Point(12, 32);
-            this.lbSit.Name = "lbSit";
-            this.lbSit.Size = new System.Drawing.Size(105, 24);
-            this.lbSit.TabIndex = 20;
-            this.lbSit.Text = "SITUAÇÃO";
-            this.lbSit.Visible = false;
             // 
             // frmCadastroCliente
             // 

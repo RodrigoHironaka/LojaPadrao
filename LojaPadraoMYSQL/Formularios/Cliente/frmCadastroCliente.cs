@@ -86,14 +86,14 @@ namespace LojaPadraoMYSQL.Formularios
             if (modelo.Status.Equals('A'))
             {
                 chbAtivo.Checked = true;
-                lbSit.Text = "CLIENTE ATIVADO";
+                lbSit.Text = "CLIENTE ATIVO";
                 lbSit.Visible = true;
                 lbSit.ForeColor = Color.White;
             }
             else if (modelo.Status.Equals('I'))
             {
                 chbAtivo.Checked = false;
-                lbSit.Text = "CLIENTE INATIVADO";
+                lbSit.Text = "CLIENTE INATIVO";
                 lbSit.Visible = true;
                 lbSit.ForeColor = Color.DarkRed;
             }

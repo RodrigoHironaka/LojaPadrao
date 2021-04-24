@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>icone3-sem-fundo-48x48.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -480,6 +483,7 @@
     <Folder Include="bin\Release\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="icone3-sem-fundo-48x48.ico" />
     <Content Include="Resource\Delete48x48.ico" />
     <Content Include="Resource\Desligar32x32.ico" />
     <Content Include="Resource\Editar48x48.ico" />
