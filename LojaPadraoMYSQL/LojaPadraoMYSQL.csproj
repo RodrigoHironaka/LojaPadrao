@@ -119,6 +119,12 @@
     <Compile Include="Formularios\FormBotoes\Cadastros\frmBotoesCadastros.Designer.cs">
       <DependentUpon>frmBotoesCadastros.cs</DependentUpon>
     </Compile>
+    <Compile Include="Formularios\FormBotoes\Configuracoes\frmBotoesConfig.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\Configuracoes\frmBotoesConfig.Designer.cs">
+      <DependentUpon>frmBotoesConfig.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\FormBotoes\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,36 @@
       <DependentUpon>frmBotoesMovimentos.cs</DependentUpon>
     </Compile>
     <Compile Include="Formularios\FormBotoes\ObjetoValorForms\TituloForms.cs" />
+    <Compile Include="Formularios\FormBotoes\Relatorios\Financeiro\frmFinanceiroRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\Relatorios\Financeiro\frmFinanceiroRelatorios.Designer.cs">
+      <DependentUpon>frmFinanceiroRelatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\Relatorios\frmBotoesRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\Relatorios\frmBotoesRelatorios.Designer.cs">
+      <DependentUpon>frmBotoesRelatorios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\Relatorios\Geral\frmGeralRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\Relatorios\Geral\frmGeralRelatorio.Designer.cs">
+      <DependentUpon>frmGeralRelatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\Relatorios\PessoasEmpresas\frmPessoasEmpresasRelatorio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\Relatorios\PessoasEmpresas\frmPessoasEmpresasRelatorio.Designer.cs">
+      <DependentUpon>frmPessoasEmpresasRelatorio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\Relatorios\Produtos\frmProdutosRelatorios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Formularios\FormBotoes\Relatorios\Produtos\frmProdutosRelatorios.Designer.cs">
+      <DependentUpon>frmProdutosRelatorios.cs</DependentUpon>
+    </Compile>
     <Compile Include="Formularios\Fornecedor\frmCadastroFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -344,6 +380,9 @@
     <EmbeddedResource Include="Formularios\FormBotoes\Cadastros\frmBotoesCadastros.resx">
       <DependentUpon>frmBotoesCadastros.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormBotoes\Configuracoes\frmBotoesConfig.resx">
+      <DependentUpon>frmBotoesConfig.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormBotoes\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
@@ -352,6 +391,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\FormBotoes\Movimentos\frmBotoesMovimentos.resx">
       <DependentUpon>frmBotoesMovimentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormBotoes\Relatorios\Financeiro\frmFinanceiroRelatorios.resx">
+      <DependentUpon>frmFinanceiroRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormBotoes\Relatorios\frmBotoesRelatorios.resx">
+      <DependentUpon>frmBotoesRelatorios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormBotoes\Relatorios\Geral\frmGeralRelatorio.resx">
+      <DependentUpon>frmGeralRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormBotoes\Relatorios\PessoasEmpresas\frmPessoasEmpresasRelatorio.resx">
+      <DependentUpon>frmPessoasEmpresasRelatorio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Formularios\FormBotoes\Relatorios\Produtos\frmProdutosRelatorios.resx">
+      <DependentUpon>frmProdutosRelatorios.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Formularios\Fornecedor\frmCadastroFornecedor.resx">
       <DependentUpon>frmCadastroFornecedor.cs</DependentUpon>

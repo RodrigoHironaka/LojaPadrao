@@ -70,8 +70,9 @@
             // btSair
             // 
             this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
@@ -85,8 +86,9 @@
             // btSalvar
             // 
             this.btSalvar.FlatAppearance.BorderSize = 0;
-            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
@@ -165,7 +167,7 @@
             this.lbNomeForm.AutoSize = true;
             this.lbNomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNomeForm.ForeColor = System.Drawing.Color.White;
-            this.lbNomeForm.Location = new System.Drawing.Point(43, 9);
+            this.lbNomeForm.Location = new System.Drawing.Point(45, 9);
             this.lbNomeForm.Name = "lbNomeForm";
             this.lbNomeForm.Size = new System.Drawing.Size(278, 24);
             this.lbNomeForm.TabIndex = 17;
@@ -174,11 +176,11 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel2.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.panel2.Controls.Add(this.lbNomeForm);
-            this.panel2.Location = new System.Drawing.Point(1, 0);
+            this.panel2.Location = new System.Drawing.Point(-1, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(351, 36);
+            this.panel2.Size = new System.Drawing.Size(355, 36);
             this.panel2.TabIndex = 18;
             // 
             // frmCadastroDepartamento

@@ -44,9 +44,12 @@
             this.dtpInicio = new System.Windows.Forms.DateTimePicker();
             this.dtpFinal = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.pNomeForm = new System.Windows.Forms.Panel();
+            this.lbNomeForm = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.gbBotoes.SuspendLayout();
             this.pFiltro.SuspendLayout();
+            this.pNomeForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbStatus
@@ -76,7 +79,7 @@
             this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
-            this.btSair.Location = new System.Drawing.Point(753, 19);
+            this.btSair.Location = new System.Drawing.Point(768, 19);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(50, 50);
             this.btSair.TabIndex = 19;
@@ -92,7 +95,7 @@
             this.btExc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
             this.btExc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btExc.Image = ((System.Drawing.Image)(resources.GetObject("btExc.Image")));
-            this.btExc.Location = new System.Drawing.Point(697, 19);
+            this.btExc.Location = new System.Drawing.Point(712, 19);
             this.btExc.Name = "btExc";
             this.btExc.Size = new System.Drawing.Size(50, 50);
             this.btExc.TabIndex = 18;
@@ -108,7 +111,7 @@
             this.btEdt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
             this.btEdt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEdt.Image = ((System.Drawing.Image)(resources.GetObject("btEdt.Image")));
-            this.btEdt.Location = new System.Drawing.Point(641, 19);
+            this.btEdt.Location = new System.Drawing.Point(656, 19);
             this.btEdt.Name = "btEdt";
             this.btEdt.Size = new System.Drawing.Size(50, 50);
             this.btEdt.TabIndex = 17;
@@ -124,7 +127,7 @@
             this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
             this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAdd.Image = ((System.Drawing.Image)(resources.GetObject("btAdd.Image")));
-            this.btAdd.Location = new System.Drawing.Point(585, 19);
+            this.btAdd.Location = new System.Drawing.Point(600, 19);
             this.btAdd.Name = "btAdd";
             this.btAdd.Size = new System.Drawing.Size(50, 50);
             this.btAdd.TabIndex = 16;
@@ -141,7 +144,7 @@
             this.txtPesquisa.ForeColor = System.Drawing.Color.White;
             this.txtPesquisa.Location = new System.Drawing.Point(6, 30);
             this.txtPesquisa.Name = "txtPesquisa";
-            this.txtPesquisa.Size = new System.Drawing.Size(573, 26);
+            this.txtPesquisa.Size = new System.Drawing.Size(588, 26);
             this.txtPesquisa.TabIndex = 14;
             this.txtPesquisa.TextChanged += new System.EventHandler(this.txtPesquisa_TextChanged);
             this.txtPesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPesquisa_KeyDown);
@@ -174,7 +177,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDados.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDados.EnableHeadersVisualStyles = false;
-            this.dgvDados.Location = new System.Drawing.Point(12, 12);
+            this.dgvDados.Location = new System.Drawing.Point(5, 42);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.ReadOnly = true;
             this.dgvDados.RowHeadersVisible = false;
@@ -183,13 +186,14 @@
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDados.Size = new System.Drawing.Size(810, 363);
+            this.dgvDados.Size = new System.Drawing.Size(824, 347);
             this.dgvDados.TabIndex = 20;
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
             // gbBotoes
             // 
-            this.gbBotoes.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            this.gbBotoes.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
             this.gbBotoes.Controls.Add(this.txtPesquisa);
@@ -197,22 +201,24 @@
             this.gbBotoes.Controls.Add(this.btExc);
             this.gbBotoes.Controls.Add(this.btEdt);
             this.gbBotoes.Controls.Add(this.btAdd);
-            this.gbBotoes.Location = new System.Drawing.Point(12, 370);
+            this.gbBotoes.Location = new System.Drawing.Point(5, 384);
             this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(809, 80);
+            this.gbBotoes.Size = new System.Drawing.Size(824, 80);
             this.gbBotoes.TabIndex = 30;
             this.gbBotoes.TabStop = false;
             // 
             // pFiltro
             // 
-            this.pFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.pFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.pFiltro.BackColor = System.Drawing.Color.DarkSlateGray;
             this.pFiltro.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pFiltro.Controls.Add(this.dtpInicio);
             this.pFiltro.Controls.Add(this.dtpFinal);
             this.pFiltro.Controls.Add(this.cbStatus);
             this.pFiltro.Controls.Add(this.label1);
-            this.pFiltro.Location = new System.Drawing.Point(18, 284);
+            this.pFiltro.Location = new System.Drawing.Point(12, 298);
             this.pFiltro.Name = "pFiltro";
             this.pFiltro.Size = new System.Drawing.Size(265, 110);
             this.pFiltro.TabIndex = 20;
@@ -257,12 +263,36 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Cadastro";
             // 
+            // pNomeForm
+            // 
+            this.pNomeForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pNomeForm.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.pNomeForm.Controls.Add(this.lbNomeForm);
+            this.pNomeForm.Location = new System.Drawing.Point(5, 0);
+            this.pNomeForm.Name = "pNomeForm";
+            this.pNomeForm.Size = new System.Drawing.Size(824, 36);
+            this.pNomeForm.TabIndex = 37;
+            // 
+            // lbNomeForm
+            // 
+            this.lbNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbNomeForm.AutoSize = true;
+            this.lbNomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeForm.ForeColor = System.Drawing.Color.White;
+            this.lbNomeForm.Location = new System.Drawing.Point(269, 6);
+            this.lbNomeForm.Name = "lbNomeForm";
+            this.lbNomeForm.Size = new System.Drawing.Size(312, 24);
+            this.lbNomeForm.TabIndex = 0;
+            this.lbNomeForm.Text = "CONSULTA TRANSPORTADORAS";
+            // 
             // frmConsultaTransportadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(834, 462);
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.ClientSize = new System.Drawing.Size(834, 470);
+            this.Controls.Add(this.pNomeForm);
             this.Controls.Add(this.pFiltro);
             this.Controls.Add(this.dgvDados);
             this.Controls.Add(this.gbBotoes);
@@ -281,6 +311,8 @@
             this.gbBotoes.PerformLayout();
             this.pFiltro.ResumeLayout(false);
             this.pFiltro.PerformLayout();
+            this.pNomeForm.ResumeLayout(false);
+            this.pNomeForm.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -299,5 +331,7 @@
         private System.Windows.Forms.DateTimePicker dtpInicio;
         private System.Windows.Forms.DateTimePicker dtpFinal;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel pNomeForm;
+        private System.Windows.Forms.Label lbNomeForm;
     }
 }

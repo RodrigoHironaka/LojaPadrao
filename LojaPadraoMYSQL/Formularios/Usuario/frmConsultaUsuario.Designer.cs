@@ -41,9 +41,12 @@
             this.dgvDados = new System.Windows.Forms.DataGridView();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.pFiltro = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.gbBotoes.SuspendLayout();
             this.pFiltro.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // cbStatus
@@ -67,9 +70,9 @@
             // btSair
             // 
             this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
             this.btSair.Location = new System.Drawing.Point(473, 19);
@@ -82,9 +85,9 @@
             // btExc
             // 
             this.btExc.FlatAppearance.BorderSize = 0;
-            this.btExc.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btExc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btExc.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btExc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btExc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btExc.Image = ((System.Drawing.Image)(resources.GetObject("btExc.Image")));
             this.btExc.Location = new System.Drawing.Point(417, 19);
@@ -97,9 +100,9 @@
             // btEdt
             // 
             this.btEdt.FlatAppearance.BorderSize = 0;
-            this.btEdt.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btEdt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btEdt.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btEdt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btEdt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEdt.Image = ((System.Drawing.Image)(resources.GetObject("btEdt.Image")));
             this.btEdt.Location = new System.Drawing.Point(361, 19);
@@ -112,9 +115,9 @@
             // btAdd
             // 
             this.btAdd.FlatAppearance.BorderSize = 0;
-            this.btAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAdd.Image = ((System.Drawing.Image)(resources.GetObject("btAdd.Image")));
             this.btAdd.Location = new System.Drawing.Point(305, 19);
@@ -163,7 +166,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDados.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDados.EnableHeadersVisualStyles = false;
-            this.dgvDados.Location = new System.Drawing.Point(12, 12);
+            this.dgvDados.Location = new System.Drawing.Point(12, 41);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.ReadOnly = true;
             this.dgvDados.RowHeadersVisible = false;
@@ -172,7 +175,7 @@
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDados.Size = new System.Drawing.Size(529, 350);
+            this.dgvDados.Size = new System.Drawing.Size(529, 321);
             this.dgvDados.TabIndex = 6;
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
@@ -204,12 +207,35 @@
             this.pFiltro.TabIndex = 20;
             this.pFiltro.Visible = false;
             // 
+            // panel1
+            // 
+            this.panel1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.panel1.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Location = new System.Drawing.Point(13, -1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(528, 36);
+            this.panel1.TabIndex = 25;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(154, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(200, 24);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "CONSULTA USUARIO";
+            // 
             // frmConsultaUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(553, 446);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.pFiltro);
             this.Controls.Add(this.dgvDados);
             this.Controls.Add(this.gbBotoes);
@@ -228,6 +254,8 @@
             this.gbBotoes.ResumeLayout(false);
             this.gbBotoes.PerformLayout();
             this.pFiltro.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -243,5 +271,7 @@
         private System.Windows.Forms.DataGridView dgvDados;
         private System.Windows.Forms.GroupBox gbBotoes;
         private System.Windows.Forms.Panel pFiltro;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
     }
 }

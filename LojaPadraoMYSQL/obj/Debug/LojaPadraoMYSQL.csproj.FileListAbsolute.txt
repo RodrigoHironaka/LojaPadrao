@@ -213,3 +213,9 @@ C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Relato
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.ContasPagar.frmConsultaContaPagar.resources
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.ContasPagar.frmCadastroContaPagar.resources
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.FormBotoes.Inicio.frmInicioPadrao.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.FormBotoes.Configuracoes.frmBotoesConfig.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.FormBotoes.Relatorios.frmBotoesRelatorios.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.FormBotoes.Relatorios.Geral.frmGeralRelatorio.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.FormBotoes.Relatorios.PessoasEmpresas.frmPessoasEmpresasRelatorio.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.FormBotoes.Relatorios.Produtos.frmProdutosRelatorios.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.FormBotoes.Relatorios.Financeiro.frmFinanceiroRelatorios.resources

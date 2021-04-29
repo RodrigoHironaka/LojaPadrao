@@ -1,6 +1,8 @@
-﻿using LojaPadraoMYSQL.Formularios.FormBotoes.Inicio;
+﻿using LojaPadraoMYSQL.Formularios.FormBotoes.Configuracoes;
+using LojaPadraoMYSQL.Formularios.FormBotoes.Inicio;
 using LojaPadraoMYSQL.Formularios.FormBotoes.Movimentos;
 using LojaPadraoMYSQL.Formularios.FormBotoes.ObjetoValorForms;
+using LojaPadraoMYSQL.Formularios.FormBotoes.Relatorios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -53,25 +55,42 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes
             
         }
 
-        private void button3_Click(object sender, EventArgs e)
-        {
-            pFormInfo.Controls.Clear();
-            frmBotoesMovimentos f = new frmBotoesMovimentos();
-            f.TopLevel = false;
-            pFormInfo.Controls.Add(f);
-            f.Show();
-            
-        }
-
         private void tDataHora_Tick(object sender, EventArgs e)
         {
             lbHora.Text = (DateTime.Now.ToLongTimeString());
             lbData.Text = (DateTime.Now.ToShortDateString());
         }
 
+        private void btMovimentos_Click(object sender, EventArgs e)
+        {
+            pFormInfo.Controls.Clear();
+            frmBotoesMovimentos f = new frmBotoesMovimentos();
+            f.TopLevel = false;
+            pFormInfo.Controls.Add(f);
+            f.Show();
+        }
+
+        private void btConfig_Click(object sender, EventArgs e)
+        {
+            pFormInfo.Controls.Clear();
+            frmBotoesConfig f = new frmBotoesConfig();
+            f.TopLevel = false;
+            pFormInfo.Controls.Add(f);
+            f.Show();
+        }
+
+        private void btRelatorios_Click(object sender, EventArgs e)
+        {
+            pFormInfo.Controls.Clear();
+            frmBotoesRelatorios f = new frmBotoesRelatorios();
+            f.TopLevel = false;
+            pFormInfo.Controls.Add(f);
+            f.Show();
+        }
+
         //private void btTamanho_Click(object sender, EventArgs e)
         //{
-     
+
         //        if (WindowState != FormWindowState.Maximized) // se não está maximizado
         //        {
         //            WindowState = FormWindowState.Maximized; // maximiza
@@ -82,8 +101,8 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes
         //            this.WindowState = FormWindowState.Normal;
 
         //        }
-       
-            
+
+
         //}
     }
 }

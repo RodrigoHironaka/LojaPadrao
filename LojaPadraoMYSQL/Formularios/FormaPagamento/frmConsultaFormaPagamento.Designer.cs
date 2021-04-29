@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmConsultaFormaPagamento));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btSair = new System.Windows.Forms.Button();
             this.btExc = new System.Windows.Forms.Button();
             this.btEdt = new System.Windows.Forms.Button();
@@ -40,13 +40,13 @@
             this.dgvDados = new System.Windows.Forms.DataGridView();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.pFiltro = new System.Windows.Forms.Panel();
+            this.rbInativos = new System.Windows.Forms.RadioButton();
+            this.rbAtivos = new System.Windows.Forms.RadioButton();
+            this.rbTodos = new System.Windows.Forms.RadioButton();
             this.pInfo = new System.Windows.Forms.Panel();
             this.lbInfo = new System.Windows.Forms.Label();
             this.pNomeForm = new System.Windows.Forms.Panel();
             this.lbNomeForm = new System.Windows.Forms.Label();
-            this.rbInativos = new System.Windows.Forms.RadioButton();
-            this.rbAtivos = new System.Windows.Forms.RadioButton();
-            this.rbTodos = new System.Windows.Forms.RadioButton();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.gbBotoes.SuspendLayout();
             this.pFiltro.SuspendLayout();
@@ -57,9 +57,9 @@
             // btSair
             // 
             this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
@@ -73,9 +73,9 @@
             // btExc
             // 
             this.btExc.FlatAppearance.BorderSize = 0;
-            this.btExc.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btExc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btExc.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btExc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btExc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btExc.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExc.Image = ((System.Drawing.Image)(resources.GetObject("btExc.Image")));
@@ -89,9 +89,9 @@
             // btEdt
             // 
             this.btEdt.FlatAppearance.BorderSize = 0;
-            this.btEdt.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btEdt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btEdt.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btEdt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btEdt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btEdt.Image = ((System.Drawing.Image)(resources.GetObject("btEdt.Image")));
@@ -105,9 +105,9 @@
             // btAdd
             // 
             this.btAdd.FlatAppearance.BorderSize = 0;
-            this.btAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btAdd.Image = ((System.Drawing.Image)(resources.GetObject("btAdd.Image")));
@@ -139,34 +139,34 @@
             this.dgvDados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvDados.BackgroundColor = System.Drawing.Color.DarkSlateGray;
             this.dgvDados.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle19.BackColor = System.Drawing.Color.DarkSlateGray;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.DarkSlateGray;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDados.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvDados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle20.BackColor = System.Drawing.Color.DarkCyan;
-            dataGridViewCellStyle20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle20.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.CadetBlue;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvDados.DefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.DarkCyan;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.CadetBlue;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvDados.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDados.EnableHeadersVisualStyles = false;
-            this.dgvDados.Location = new System.Drawing.Point(14, 33);
+            this.dgvDados.Location = new System.Drawing.Point(14, 42);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.ReadOnly = true;
             this.dgvDados.RowHeadersVisible = false;
             this.dgvDados.RowHeadersWidth = 62;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dgvDados.RowsDefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dgvDados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDados.Size = new System.Drawing.Size(527, 331);
+            this.dgvDados.Size = new System.Drawing.Size(527, 322);
             this.dgvDados.TabIndex = 6;
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
@@ -200,52 +200,6 @@
             this.pFiltro.Size = new System.Drawing.Size(295, 36);
             this.pFiltro.TabIndex = 17;
             this.pFiltro.Visible = false;
-            // 
-            // pInfo
-            // 
-            this.pInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pInfo.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.pInfo.Controls.Add(this.lbInfo);
-            this.pInfo.Location = new System.Drawing.Point(22, 139);
-            this.pInfo.Name = "pInfo";
-            this.pInfo.Size = new System.Drawing.Size(512, 100);
-            this.pInfo.TabIndex = 34;
-            this.pInfo.Visible = false;
-            // 
-            // lbInfo
-            // 
-            this.lbInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbInfo.AutoSize = true;
-            this.lbInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfo.ForeColor = System.Drawing.Color.White;
-            this.lbInfo.Location = new System.Drawing.Point(113, 30);
-            this.lbInfo.Name = "lbInfo";
-            this.lbInfo.Size = new System.Drawing.Size(298, 48);
-            this.lbInfo.TabIndex = 0;
-            this.lbInfo.Text = "OPS!\r\nNENHUM DADO ENCONTRADO.";
-            this.lbInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // pNomeForm
-            // 
-            this.pNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pNomeForm.BackColor = System.Drawing.Color.DarkCyan;
-            this.pNomeForm.Controls.Add(this.lbNomeForm);
-            this.pNomeForm.Location = new System.Drawing.Point(14, 0);
-            this.pNomeForm.Name = "pNomeForm";
-            this.pNomeForm.Size = new System.Drawing.Size(527, 36);
-            this.pNomeForm.TabIndex = 35;
-            // 
-            // lbNomeForm
-            // 
-            this.lbNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbNomeForm.AutoSize = true;
-            this.lbNomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbNomeForm.ForeColor = System.Drawing.Color.White;
-            this.lbNomeForm.Location = new System.Drawing.Point(120, 6);
-            this.lbNomeForm.Name = "lbNomeForm";
-            this.lbNomeForm.Size = new System.Drawing.Size(325, 24);
-            this.lbNomeForm.TabIndex = 0;
-            this.lbNomeForm.Text = "CONSULTA FORMAS PAGAMENTO";
             // 
             // rbInativos
             // 
@@ -286,6 +240,52 @@
             this.rbTodos.Text = "Todos";
             this.rbTodos.UseVisualStyleBackColor = true;
             this.rbTodos.CheckedChanged += new System.EventHandler(this.rbTodos_CheckedChanged);
+            // 
+            // pInfo
+            // 
+            this.pInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pInfo.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.pInfo.Controls.Add(this.lbInfo);
+            this.pInfo.Location = new System.Drawing.Point(22, 139);
+            this.pInfo.Name = "pInfo";
+            this.pInfo.Size = new System.Drawing.Size(512, 100);
+            this.pInfo.TabIndex = 34;
+            this.pInfo.Visible = false;
+            // 
+            // lbInfo
+            // 
+            this.lbInfo.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbInfo.AutoSize = true;
+            this.lbInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInfo.ForeColor = System.Drawing.Color.White;
+            this.lbInfo.Location = new System.Drawing.Point(113, 30);
+            this.lbInfo.Name = "lbInfo";
+            this.lbInfo.Size = new System.Drawing.Size(298, 48);
+            this.lbInfo.TabIndex = 0;
+            this.lbInfo.Text = "OPS!\r\nNENHUM DADO ENCONTRADO.";
+            this.lbInfo.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // pNomeForm
+            // 
+            this.pNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pNomeForm.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.pNomeForm.Controls.Add(this.lbNomeForm);
+            this.pNomeForm.Location = new System.Drawing.Point(14, 0);
+            this.pNomeForm.Name = "pNomeForm";
+            this.pNomeForm.Size = new System.Drawing.Size(527, 36);
+            this.pNomeForm.TabIndex = 35;
+            // 
+            // lbNomeForm
+            // 
+            this.lbNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbNomeForm.AutoSize = true;
+            this.lbNomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeForm.ForeColor = System.Drawing.Color.White;
+            this.lbNomeForm.Location = new System.Drawing.Point(120, 6);
+            this.lbNomeForm.Name = "lbNomeForm";
+            this.lbNomeForm.Size = new System.Drawing.Size(325, 24);
+            this.lbNomeForm.TabIndex = 0;
+            this.lbNomeForm.Text = "CONSULTA FORMAS PAGAMENTO";
             // 
             // frmConsultaFormaPagamento
             // 

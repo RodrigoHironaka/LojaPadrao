@@ -26,6 +26,7 @@ namespace LojaPadraoMYSQL.Formularios
         public frmConsultaGrupo(bool selecao)
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
             cbStatus.SelectedIndex = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLGrupo bll = new BLLGrupo(cx);

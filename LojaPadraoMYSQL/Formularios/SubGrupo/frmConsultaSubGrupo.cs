@@ -33,6 +33,7 @@ namespace LojaPadraoMYSQL.Formularios
         public frmConsultaSubGrupo(bool selecao)
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
             cbStatus.SelectedIndex = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLSubGrupo bll = new BLLSubGrupo(cx);

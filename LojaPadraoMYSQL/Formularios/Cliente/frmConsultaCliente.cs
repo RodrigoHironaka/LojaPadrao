@@ -270,6 +270,22 @@ namespace LojaPadraoMYSQL.Formularios
                     int linhas = dgvDados.Rows.Count;
                     this.VerificaBuscaGrid(linhas);
                 }
+                else if ((rbAtivos.Checked) && (rbTodosTipo.Checked))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.LocalizarAtivo(txtPesquisa.Text);
+                    int linhas = dgvDados.Rows.Count;
+                    this.VerificaBuscaGrid(linhas);
+                }
+                else if ((rbInativos.Checked) && (rbTodosTipo.Checked))
+                {
+                    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                    BLLCliente bll = new BLLCliente(cx);
+                    dgvDados.DataSource = bll.LocalizarInativo(txtPesquisa.Text);
+                    int linhas = dgvDados.Rows.Count;
+                    this.VerificaBuscaGrid(linhas);
+                }
 
             } 
            

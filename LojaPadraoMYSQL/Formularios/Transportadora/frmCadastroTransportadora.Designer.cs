@@ -31,16 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmCadastroTransportadora));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tpageDadosPrincipais = new System.Windows.Forms.TabPage();
-            this.gbBotoes = new System.Windows.Forms.GroupBox();
-            this.btSair = new System.Windows.Forms.Button();
-            this.btSalvar = new System.Windows.Forms.Button();
             this.txtNomeResponsavel = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.pbFoto = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
             this.btAddFoto = new System.Windows.Forms.Button();
             this.btRemFoto = new System.Windows.Forms.Button();
-            this.btProcurarCidade = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtUf = new System.Windows.Forms.TextBox();
             this.txtNomeCidade = new System.Windows.Forms.TextBox();
@@ -82,20 +78,27 @@
             this.lbCodigo = new System.Windows.Forms.Label();
             this.lbIe = new System.Windows.Forms.Label();
             this.lbCelular = new System.Windows.Forms.Label();
+            this.btProcurarCidade = new System.Windows.Forms.Button();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.btSair = new System.Windows.Forms.Button();
+            this.btSalvar = new System.Windows.Forms.Button();
+            this.pNomeForm = new System.Windows.Forms.Panel();
+            this.lbNomeForm = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tpageDadosPrincipais.SuspendLayout();
-            this.gbBotoes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCnpjInvalido)).BeginInit();
+            this.gbBotoes.SuspendLayout();
+            this.pNomeForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tpageDadosPrincipais);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(0, -1);
+            this.tabControl1.Location = new System.Drawing.Point(12, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(746, 429);
@@ -159,47 +162,6 @@
             this.tpageDadosPrincipais.TabIndex = 0;
             this.tpageDadosPrincipais.Text = "Dados Principais";
             // 
-            // gbBotoes
-            // 
-            this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.gbBotoes.Controls.Add(this.btSair);
-            this.gbBotoes.Controls.Add(this.btSalvar);
-            this.gbBotoes.Location = new System.Drawing.Point(11, 434);
-            this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(726, 80);
-            this.gbBotoes.TabIndex = 318;
-            this.gbBotoes.TabStop = false;
-            // 
-            // btSair
-            // 
-            this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
-            this.btSair.Location = new System.Drawing.Point(670, 19);
-            this.btSair.Name = "btSair";
-            this.btSair.Size = new System.Drawing.Size(50, 50);
-            this.btSair.TabIndex = 19;
-            this.btSair.UseVisualStyleBackColor = true;
-            this.btSair.Click += new System.EventHandler(this.btSair_Click);
-            // 
-            // btSalvar
-            // 
-            this.btSalvar.FlatAppearance.BorderSize = 0;
-            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
-            this.btSalvar.Location = new System.Drawing.Point(614, 19);
-            this.btSalvar.Name = "btSalvar";
-            this.btSalvar.Size = new System.Drawing.Size(50, 50);
-            this.btSalvar.TabIndex = 18;
-            this.btSalvar.UseVisualStyleBackColor = true;
-            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
-            // 
             // txtNomeResponsavel
             // 
             this.txtNomeResponsavel.BackColor = System.Drawing.Color.DarkSlateGray;
@@ -247,9 +209,9 @@
             // btAddFoto
             // 
             this.btAddFoto.FlatAppearance.BorderSize = 0;
-            this.btAddFoto.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btAddFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btAddFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btAddFoto.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btAddFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btAddFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btAddFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAddFoto.Image = ((System.Drawing.Image)(resources.GetObject("btAddFoto.Image")));
             this.btAddFoto.Location = new System.Drawing.Point(685, 7);
@@ -262,9 +224,9 @@
             // btRemFoto
             // 
             this.btRemFoto.FlatAppearance.BorderSize = 0;
-            this.btRemFoto.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btRemFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btRemFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btRemFoto.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btRemFoto.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btRemFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btRemFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btRemFoto.Image = ((System.Drawing.Image)(resources.GetObject("btRemFoto.Image")));
             this.btRemFoto.Location = new System.Drawing.Point(710, 7);
@@ -273,22 +235,6 @@
             this.btRemFoto.TabIndex = 309;
             this.btRemFoto.UseVisualStyleBackColor = true;
             this.btRemFoto.Click += new System.EventHandler(this.btRemFoto_Click);
-            // 
-            // btProcurarCidade
-            // 
-            this.btProcurarCidade.FlatAppearance.BorderSize = 0;
-            this.btProcurarCidade.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btProcurarCidade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btProcurarCidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.btProcurarCidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btProcurarCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btProcurarCidade.Image = ((System.Drawing.Image)(resources.GetObject("btProcurarCidade.Image")));
-            this.btProcurarCidade.Location = new System.Drawing.Point(68, 283);
-            this.btProcurarCidade.Name = "btProcurarCidade";
-            this.btProcurarCidade.Size = new System.Drawing.Size(35, 35);
-            this.btProcurarCidade.TabIndex = 16;
-            this.btProcurarCidade.UseVisualStyleBackColor = true;
-            this.btProcurarCidade.Click += new System.EventHandler(this.btProcurarCidade_Click);
             // 
             // label1
             // 
@@ -764,24 +710,105 @@
             this.lbCelular.TabIndex = 274;
             this.lbCelular.Text = "Celular:";
             // 
+            // btProcurarCidade
+            // 
+            this.btProcurarCidade.FlatAppearance.BorderSize = 0;
+            this.btProcurarCidade.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btProcurarCidade.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btProcurarCidade.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btProcurarCidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btProcurarCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btProcurarCidade.Image = ((System.Drawing.Image)(resources.GetObject("btProcurarCidade.Image")));
+            this.btProcurarCidade.Location = new System.Drawing.Point(68, 283);
+            this.btProcurarCidade.Name = "btProcurarCidade";
+            this.btProcurarCidade.Size = new System.Drawing.Size(35, 35);
+            this.btProcurarCidade.TabIndex = 16;
+            this.btProcurarCidade.UseVisualStyleBackColor = true;
+            this.btProcurarCidade.Click += new System.EventHandler(this.btProcurarCidade_Click);
+            // 
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.Lavender;
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(709, 480);
+            this.tabPage2.Size = new System.Drawing.Size(738, 403);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Outros";
+            // 
+            // gbBotoes
+            // 
+            this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.gbBotoes.Controls.Add(this.btSair);
+            this.gbBotoes.Controls.Add(this.btSalvar);
+            this.gbBotoes.Location = new System.Drawing.Point(12, 467);
+            this.gbBotoes.Name = "gbBotoes";
+            this.gbBotoes.Size = new System.Drawing.Size(746, 80);
+            this.gbBotoes.TabIndex = 318;
+            this.gbBotoes.TabStop = false;
+            // 
+            // btSair
+            // 
+            this.btSair.FlatAppearance.BorderSize = 0;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
+            this.btSair.Location = new System.Drawing.Point(687, 19);
+            this.btSair.Name = "btSair";
+            this.btSair.Size = new System.Drawing.Size(50, 50);
+            this.btSair.TabIndex = 19;
+            this.btSair.UseVisualStyleBackColor = true;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
+            // 
+            // btSalvar
+            // 
+            this.btSalvar.FlatAppearance.BorderSize = 0;
+            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
+            this.btSalvar.Location = new System.Drawing.Point(631, 19);
+            this.btSalvar.Name = "btSalvar";
+            this.btSalvar.Size = new System.Drawing.Size(50, 50);
+            this.btSalvar.TabIndex = 18;
+            this.btSalvar.UseVisualStyleBackColor = true;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
+            // 
+            // pNomeForm
+            // 
+            this.pNomeForm.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.pNomeForm.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.pNomeForm.Controls.Add(this.lbNomeForm);
+            this.pNomeForm.Location = new System.Drawing.Point(0, -1);
+            this.pNomeForm.Name = "pNomeForm";
+            this.pNomeForm.Size = new System.Drawing.Size(768, 36);
+            this.pNomeForm.TabIndex = 319;
+            // 
+            // lbNomeForm
+            // 
+            this.lbNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbNomeForm.AutoSize = true;
+            this.lbNomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeForm.ForeColor = System.Drawing.Color.White;
+            this.lbNomeForm.Location = new System.Drawing.Point(241, 6);
+            this.lbNomeForm.Name = "lbNomeForm";
+            this.lbNomeForm.Size = new System.Drawing.Size(289, 24);
+            this.lbNomeForm.TabIndex = 0;
+            this.lbNomeForm.Text = "CADASTRO TRANSPORTADOR";
             // 
             // frmCadastroTransportadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(745, 521);
-            this.Controls.Add(this.gbBotoes);
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.ClientSize = new System.Drawing.Size(768, 557);
+            this.Controls.Add(this.pNomeForm);
             this.Controls.Add(this.tabControl1);
+            this.Controls.Add(this.gbBotoes);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -793,10 +820,12 @@
             this.tabControl1.ResumeLayout(false);
             this.tpageDadosPrincipais.ResumeLayout(false);
             this.tpageDadosPrincipais.PerformLayout();
-            this.gbBotoes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbFoto)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCepInvalido)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pctCnpjInvalido)).EndInit();
+            this.gbBotoes.ResumeLayout(false);
+            this.pNomeForm.ResumeLayout(false);
+            this.pNomeForm.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -857,5 +886,7 @@
         private System.Windows.Forms.Label lbCelular;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.GroupBox gbBotoes;
+        private System.Windows.Forms.Panel pNomeForm;
+        private System.Windows.Forms.Label lbNomeForm;
     }
 }

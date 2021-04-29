@@ -43,7 +43,12 @@
             this.label5 = new System.Windows.Forms.Label();
             this.cbTipo = new System.Windows.Forms.ComboBox();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label6 = new System.Windows.Forms.Label();
             this.gbBotoes.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label3
@@ -51,7 +56,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(9, 113);
+            this.label3.Location = new System.Drawing.Point(5, 68);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(56, 20);
             this.label3.TabIndex = 31;
@@ -62,7 +67,7 @@
             this.txtID.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.White;
-            this.txtID.Location = new System.Drawing.Point(12, 32);
+            this.txtID.Location = new System.Drawing.Point(10, 39);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(78, 26);
@@ -73,7 +78,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(8, 9);
+            this.label2.Location = new System.Drawing.Point(6, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 29;
@@ -82,12 +87,12 @@
             // btSair
             // 
             this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
-            this.btSair.Location = new System.Drawing.Point(71, 10);
+            this.btSair.Location = new System.Drawing.Point(324, 10);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(50, 50);
             this.btSair.TabIndex = 6;
@@ -97,12 +102,12 @@
             // btSalvar
             // 
             this.btSalvar.FlatAppearance.BorderSize = 0;
-            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
-            this.btSalvar.Location = new System.Drawing.Point(6, 10);
+            this.btSalvar.Location = new System.Drawing.Point(259, 10);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(50, 50);
             this.btSalvar.TabIndex = 5;
@@ -116,7 +121,7 @@
             this.chkAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkAtivo.ForeColor = System.Drawing.Color.White;
-            this.chkAtivo.Location = new System.Drawing.Point(96, 34);
+            this.chkAtivo.Location = new System.Drawing.Point(201, 145);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(63, 24);
             this.chkAtivo.TabIndex = 0;
@@ -129,7 +134,7 @@
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.ForeColor = System.Drawing.Color.White;
-            this.txtNome.Location = new System.Drawing.Point(12, 84);
+            this.txtNome.Location = new System.Drawing.Point(94, 39);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(280, 26);
             this.txtNome.TabIndex = 1;
@@ -139,7 +144,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(8, 61);
+            this.label1.Location = new System.Drawing.Point(90, 16);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 24;
@@ -151,9 +156,9 @@
             this.txtSenha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSenha.ForeColor = System.Drawing.Color.White;
-            this.txtSenha.Location = new System.Drawing.Point(12, 136);
+            this.txtSenha.Location = new System.Drawing.Point(9, 91);
             this.txtSenha.Name = "txtSenha";
-            this.txtSenha.Size = new System.Drawing.Size(280, 26);
+            this.txtSenha.Size = new System.Drawing.Size(176, 26);
             this.txtSenha.TabIndex = 2;
             this.txtSenha.UseSystemPasswordChar = true;
             // 
@@ -163,9 +168,9 @@
             this.txtConfirmaSenha.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtConfirmaSenha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtConfirmaSenha.ForeColor = System.Drawing.Color.White;
-            this.txtConfirmaSenha.Location = new System.Drawing.Point(12, 188);
+            this.txtConfirmaSenha.Location = new System.Drawing.Point(201, 91);
             this.txtConfirmaSenha.Name = "txtConfirmaSenha";
-            this.txtConfirmaSenha.Size = new System.Drawing.Size(280, 26);
+            this.txtConfirmaSenha.Size = new System.Drawing.Size(173, 26);
             this.txtConfirmaSenha.TabIndex = 3;
             this.txtConfirmaSenha.UseSystemPasswordChar = true;
             // 
@@ -174,7 +179,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(8, 165);
+            this.label4.Location = new System.Drawing.Point(197, 68);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(124, 20);
             this.label4.TabIndex = 34;
@@ -185,7 +190,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(8, 217);
+            this.label5.Location = new System.Drawing.Point(5, 120);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(120, 20);
             this.label5.TabIndex = 36;
@@ -203,9 +208,9 @@
             "ADMINISTRADOR",
             "USUARIO",
             "OUTROS"});
-            this.cbTipo.Location = new System.Drawing.Point(12, 240);
+            this.cbTipo.Location = new System.Drawing.Point(9, 143);
             this.cbTipo.Name = "cbTipo";
-            this.cbTipo.Size = new System.Drawing.Size(280, 28);
+            this.cbTipo.Size = new System.Drawing.Size(178, 28);
             this.cbTipo.TabIndex = 4;
             // 
             // gbBotoes
@@ -213,30 +218,62 @@
             this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
             this.gbBotoes.Controls.Add(this.btSalvar);
             this.gbBotoes.Controls.Add(this.btSair);
-            this.gbBotoes.Location = new System.Drawing.Point(165, 9);
+            this.gbBotoes.Location = new System.Drawing.Point(11, 219);
             this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(127, 66);
+            this.gbBotoes.Size = new System.Drawing.Size(383, 68);
             this.gbBotoes.TabIndex = 37;
             this.gbBotoes.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.cbTipo);
+            this.groupBox1.Controls.Add(this.txtNome);
+            this.groupBox1.Controls.Add(this.label5);
+            this.groupBox1.Controls.Add(this.chkAtivo);
+            this.groupBox1.Controls.Add(this.txtConfirmaSenha);
+            this.groupBox1.Controls.Add(this.txtID);
+            this.groupBox1.Controls.Add(this.label4);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.txtSenha);
+            this.groupBox1.Location = new System.Drawing.Point(11, 42);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(383, 184);
+            this.groupBox1.TabIndex = 38;
+            this.groupBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(407, 36);
+            this.panel1.TabIndex = 39;
+            // 
+            // label6
+            // 
+            this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(88, 9);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(233, 24);
+            this.label6.TabIndex = 0;
+            this.label6.Text = "CADASTRO DE USUARIO";
             // 
             // frmCadastroUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(306, 283);
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.ClientSize = new System.Drawing.Size(406, 299);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbBotoes);
-            this.Controls.Add(this.cbTipo);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.txtConfirmaSenha);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.txtSenha);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.chkAtivo);
-            this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -246,8 +283,11 @@
             this.Text = "Cadastro de Usuário";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroUsuario_KeyDown);
             this.gbBotoes.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -266,5 +306,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox cbTipo;
         private System.Windows.Forms.GroupBox gbBotoes;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label6;
     }
 }

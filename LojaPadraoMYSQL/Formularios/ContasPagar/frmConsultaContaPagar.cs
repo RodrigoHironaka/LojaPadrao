@@ -149,9 +149,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             BLLContasPagar bll = new BLLContasPagar(cx);
             var ultimoidinserido = bll.VerificaUltimoIdInserido();
             frmCadastroContaPagar f = new frmCadastroContaPagar();
-            this.Visible = false;
             f.ShowDialog();
-            this.Visible = true;
             this.FiltroLocalizarDepoisIncluir(ultimoidinserido);
 
         }

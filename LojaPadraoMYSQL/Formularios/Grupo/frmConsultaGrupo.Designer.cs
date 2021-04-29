@@ -41,9 +41,12 @@
             this.cbStatus = new System.Windows.Forms.ComboBox();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
             this.pFiltro = new System.Windows.Forms.Panel();
+            this.pNomeForm = new System.Windows.Forms.Panel();
+            this.lbNomeForm = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDados)).BeginInit();
             this.gbBotoes.SuspendLayout();
             this.pFiltro.SuspendLayout();
+            this.pNomeForm.SuspendLayout();
             this.SuspendLayout();
             // 
             // dgvDados
@@ -72,7 +75,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDados.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDados.EnableHeadersVisualStyles = false;
-            this.dgvDados.Location = new System.Drawing.Point(12, 12);
+            this.dgvDados.Location = new System.Drawing.Point(12, 41);
             this.dgvDados.Name = "dgvDados";
             this.dgvDados.ReadOnly = true;
             this.dgvDados.RowHeadersVisible = false;
@@ -81,7 +84,7 @@
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDados.RowsDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDados.Size = new System.Drawing.Size(529, 352);
+            this.dgvDados.Size = new System.Drawing.Size(529, 323);
             this.dgvDados.TabIndex = 6;
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             // 
@@ -101,9 +104,9 @@
             // btAdd
             // 
             this.btAdd.FlatAppearance.BorderSize = 0;
-            this.btAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btAdd.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btAdd.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btAdd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btAdd.Image = ((System.Drawing.Image)(resources.GetObject("btAdd.Image")));
             this.btAdd.Location = new System.Drawing.Point(305, 19);
@@ -116,9 +119,9 @@
             // btEdt
             // 
             this.btEdt.FlatAppearance.BorderSize = 0;
-            this.btEdt.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btEdt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btEdt.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btEdt.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btEdt.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btEdt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btEdt.Image = ((System.Drawing.Image)(resources.GetObject("btEdt.Image")));
             this.btEdt.Location = new System.Drawing.Point(361, 20);
@@ -131,9 +134,9 @@
             // btExc
             // 
             this.btExc.FlatAppearance.BorderSize = 0;
-            this.btExc.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btExc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btExc.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btExc.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btExc.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btExc.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btExc.Image = ((System.Drawing.Image)(resources.GetObject("btExc.Image")));
             this.btExc.Location = new System.Drawing.Point(417, 20);
@@ -146,9 +149,9 @@
             // btSair
             // 
             this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
             this.btSair.Location = new System.Drawing.Point(473, 20);
@@ -202,12 +205,35 @@
             this.pFiltro.TabIndex = 18;
             this.pFiltro.Visible = false;
             // 
+            // pNomeForm
+            // 
+            this.pNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pNomeForm.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.pNomeForm.Controls.Add(this.lbNomeForm);
+            this.pNomeForm.Location = new System.Drawing.Point(12, -1);
+            this.pNomeForm.Name = "pNomeForm";
+            this.pNomeForm.Size = new System.Drawing.Size(529, 36);
+            this.pNomeForm.TabIndex = 19;
+            // 
+            // lbNomeForm
+            // 
+            this.lbNomeForm.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbNomeForm.AutoSize = true;
+            this.lbNomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbNomeForm.ForeColor = System.Drawing.Color.White;
+            this.lbNomeForm.Location = new System.Drawing.Point(171, 6);
+            this.lbNomeForm.Name = "lbNomeForm";
+            this.lbNomeForm.Size = new System.Drawing.Size(184, 24);
+            this.lbNomeForm.TabIndex = 0;
+            this.lbNomeForm.Text = "CONSULTA GRUPO";
+            // 
             // frmConsultaGrupo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(553, 446);
+            this.Controls.Add(this.pNomeForm);
             this.Controls.Add(this.pFiltro);
             this.Controls.Add(this.dgvDados);
             this.Controls.Add(this.gbBotoes);
@@ -226,6 +252,8 @@
             this.gbBotoes.ResumeLayout(false);
             this.gbBotoes.PerformLayout();
             this.pFiltro.ResumeLayout(false);
+            this.pNomeForm.ResumeLayout(false);
+            this.pNomeForm.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -241,5 +269,7 @@
         private System.Windows.Forms.ComboBox cbStatus;
         private System.Windows.Forms.GroupBox gbBotoes;
         private System.Windows.Forms.Panel pFiltro;
+        private System.Windows.Forms.Panel pNomeForm;
+        private System.Windows.Forms.Label lbNomeForm;
     }
 }

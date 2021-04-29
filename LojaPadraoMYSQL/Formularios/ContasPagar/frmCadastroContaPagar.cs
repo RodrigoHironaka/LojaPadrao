@@ -27,8 +27,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             cbPeriodo.SelectedIndex = 0;
             this.carregaFormaPagamento();
             this.carregaTipoGasto();
-            StartPosition = FormStartPosition.Manual;
-            Location = new Point(350, 150);
+            
 
         }
 

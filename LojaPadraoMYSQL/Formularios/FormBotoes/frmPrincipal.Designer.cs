@@ -32,20 +32,20 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPrincipal));
             this.pPrincipal = new System.Windows.Forms.Panel();
             this.pBotoesMenu = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btConfig = new System.Windows.Forms.Button();
             this.btInicio = new System.Windows.Forms.Button();
             this.btnCadastros = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btMovimentos = new System.Windows.Forms.Button();
+            this.btRelatorios = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.lbData = new System.Windows.Forms.Label();
             this.lbHora = new System.Windows.Forms.Label();
-            this.btMinimizar = new System.Windows.Forms.Button();
-            this.btnDesligar = new System.Windows.Forms.Button();
             this.pFormInfo = new System.Windows.Forms.Panel();
             this.tDataHora = new System.Windows.Forms.Timer(this.components);
             this.pctIcone = new System.Windows.Forms.PictureBox();
+            this.btMinimizar = new System.Windows.Forms.Button();
+            this.btnDesligar = new System.Windows.Forms.Button();
             this.pPrincipal.SuspendLayout();
             this.pBotoesMenu.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -71,42 +71,47 @@
             this.pBotoesMenu.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pBotoesMenu.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.pBotoesMenu.Controls.Add(this.button2);
+            this.pBotoesMenu.Controls.Add(this.btConfig);
             this.pBotoesMenu.Controls.Add(this.btInicio);
             this.pBotoesMenu.Controls.Add(this.btnCadastros);
-            this.pBotoesMenu.Controls.Add(this.button3);
-            this.pBotoesMenu.Controls.Add(this.button1);
+            this.pBotoesMenu.Controls.Add(this.btMovimentos);
+            this.pBotoesMenu.Controls.Add(this.btRelatorios);
             this.pBotoesMenu.Location = new System.Drawing.Point(0, 45);
             this.pBotoesMenu.Name = "pBotoesMenu";
-            this.pBotoesMenu.Size = new System.Drawing.Size(877, 37);
+            this.pBotoesMenu.Size = new System.Drawing.Size(877, 40);
             this.pBotoesMenu.TabIndex = 3;
             // 
-            // button2
+            // btConfig
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(723, 4);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(149, 30);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Configurações";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btConfig.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btConfig.FlatAppearance.BorderSize = 0;
+            this.btConfig.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btConfig.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btConfig.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btConfig.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btConfig.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btConfig.ForeColor = System.Drawing.Color.White;
+            this.btConfig.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btConfig.Location = new System.Drawing.Point(723, 6);
+            this.btConfig.Name = "btConfig";
+            this.btConfig.Size = new System.Drawing.Size(149, 30);
+            this.btConfig.TabIndex = 6;
+            this.btConfig.Text = "Configurações";
+            this.btConfig.UseVisualStyleBackColor = true;
+            this.btConfig.Click += new System.EventHandler(this.btConfig_Click);
             // 
             // btInicio
             // 
             this.btInicio.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btInicio.FlatAppearance.BorderSize = 0;
-            this.btInicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btInicio.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btInicio.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btInicio.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btInicio.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btInicio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInicio.ForeColor = System.Drawing.Color.White;
             this.btInicio.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btInicio.Location = new System.Drawing.Point(3, 3);
+            this.btInicio.Location = new System.Drawing.Point(3, 5);
             this.btInicio.Name = "btInicio";
             this.btInicio.Size = new System.Drawing.Size(149, 30);
             this.btInicio.TabIndex = 1;
@@ -118,12 +123,14 @@
             // 
             this.btnCadastros.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.btnCadastros.FlatAppearance.BorderSize = 0;
-            this.btnCadastros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btnCadastros.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnCadastros.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btnCadastros.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btnCadastros.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCadastros.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCadastros.ForeColor = System.Drawing.Color.White;
             this.btnCadastros.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCadastros.Location = new System.Drawing.Point(183, 3);
+            this.btnCadastros.Location = new System.Drawing.Point(183, 5);
             this.btnCadastros.Name = "btnCadastros";
             this.btnCadastros.Size = new System.Drawing.Size(149, 30);
             this.btnCadastros.TabIndex = 1;
@@ -131,38 +138,43 @@
             this.btnCadastros.UseVisualStyleBackColor = true;
             this.btnCadastros.Click += new System.EventHandler(this.btnCadastros_Click);
             // 
-            // button3
+            // btMovimentos
             // 
-            this.button3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button3.Location = new System.Drawing.Point(363, 3);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(149, 30);
-            this.button3.TabIndex = 2;
-            this.button3.Text = "Movimentos";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.btMovimentos.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btMovimentos.FlatAppearance.BorderSize = 0;
+            this.btMovimentos.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btMovimentos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btMovimentos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btMovimentos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btMovimentos.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btMovimentos.ForeColor = System.Drawing.Color.White;
+            this.btMovimentos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btMovimentos.Location = new System.Drawing.Point(363, 5);
+            this.btMovimentos.Name = "btMovimentos";
+            this.btMovimentos.Size = new System.Drawing.Size(149, 30);
+            this.btMovimentos.TabIndex = 2;
+            this.btMovimentos.Text = "Movimentos";
+            this.btMovimentos.UseVisualStyleBackColor = true;
+            this.btMovimentos.Click += new System.EventHandler(this.btMovimentos_Click);
             // 
-            // button1
+            // btRelatorios
             // 
-            this.button1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(543, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(149, 30);
-            this.button1.TabIndex = 6;
-            this.button1.Text = "Relatórios";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btRelatorios.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btRelatorios.FlatAppearance.BorderSize = 0;
+            this.btRelatorios.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btRelatorios.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btRelatorios.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btRelatorios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btRelatorios.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btRelatorios.ForeColor = System.Drawing.Color.White;
+            this.btRelatorios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btRelatorios.Location = new System.Drawing.Point(543, 5);
+            this.btRelatorios.Name = "btRelatorios";
+            this.btRelatorios.Size = new System.Drawing.Size(149, 30);
+            this.btRelatorios.TabIndex = 6;
+            this.btRelatorios.Text = "Relatórios";
+            this.btRelatorios.UseVisualStyleBackColor = true;
+            this.btRelatorios.Click += new System.EventHandler(this.btRelatorios_Click);
             // 
             // panel3
             // 
@@ -218,32 +230,6 @@
             this.lbHora.TabIndex = 0;
             this.lbHora.Text = "00:00:00";
             // 
-            // btMinimizar
-            // 
-            this.btMinimizar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btMinimizar.FlatAppearance.BorderSize = 0;
-            this.btMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btMinimizar.Image")));
-            this.btMinimizar.Location = new System.Drawing.Point(787, 0);
-            this.btMinimizar.Name = "btMinimizar";
-            this.btMinimizar.Size = new System.Drawing.Size(45, 45);
-            this.btMinimizar.TabIndex = 2;
-            this.btMinimizar.UseVisualStyleBackColor = true;
-            this.btMinimizar.Click += new System.EventHandler(this.btMinimizar_Click);
-            // 
-            // btnDesligar
-            // 
-            this.btnDesligar.Dock = System.Windows.Forms.DockStyle.Right;
-            this.btnDesligar.FlatAppearance.BorderSize = 0;
-            this.btnDesligar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnDesligar.Image = ((System.Drawing.Image)(resources.GetObject("btnDesligar.Image")));
-            this.btnDesligar.Location = new System.Drawing.Point(832, 0);
-            this.btnDesligar.Name = "btnDesligar";
-            this.btnDesligar.Size = new System.Drawing.Size(45, 45);
-            this.btnDesligar.TabIndex = 0;
-            this.btnDesligar.UseVisualStyleBackColor = true;
-            this.btnDesligar.Click += new System.EventHandler(this.button1_Click);
-            // 
             // pFormInfo
             // 
             this.pFormInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -271,6 +257,32 @@
             this.pctIcone.Size = new System.Drawing.Size(32, 32);
             this.pctIcone.TabIndex = 4;
             this.pctIcone.TabStop = false;
+            // 
+            // btMinimizar
+            // 
+            this.btMinimizar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btMinimizar.FlatAppearance.BorderSize = 0;
+            this.btMinimizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btMinimizar.Image")));
+            this.btMinimizar.Location = new System.Drawing.Point(787, 0);
+            this.btMinimizar.Name = "btMinimizar";
+            this.btMinimizar.Size = new System.Drawing.Size(45, 45);
+            this.btMinimizar.TabIndex = 2;
+            this.btMinimizar.UseVisualStyleBackColor = true;
+            this.btMinimizar.Click += new System.EventHandler(this.btMinimizar_Click);
+            // 
+            // btnDesligar
+            // 
+            this.btnDesligar.Dock = System.Windows.Forms.DockStyle.Right;
+            this.btnDesligar.FlatAppearance.BorderSize = 0;
+            this.btnDesligar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnDesligar.Image = ((System.Drawing.Image)(resources.GetObject("btnDesligar.Image")));
+            this.btnDesligar.Location = new System.Drawing.Point(832, 0);
+            this.btnDesligar.Name = "btnDesligar";
+            this.btnDesligar.Size = new System.Drawing.Size(45, 45);
+            this.btnDesligar.TabIndex = 0;
+            this.btnDesligar.UseVisualStyleBackColor = true;
+            this.btnDesligar.Click += new System.EventHandler(this.button1_Click);
             // 
             // frmPrincipal
             // 
@@ -301,7 +313,7 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btnDesligar;
         private System.Windows.Forms.Button btnCadastros;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btMovimentos;
         private System.Windows.Forms.Button btInicio;
         private System.Windows.Forms.Button btMinimizar;
         private System.Windows.Forms.Label lbHora;
@@ -310,8 +322,8 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel pBotoesMenu;
         public System.Windows.Forms.Panel pFormInfo;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btConfig;
+        private System.Windows.Forms.Button btRelatorios;
         private System.Windows.Forms.PictureBox pctIcone;
     }
 }

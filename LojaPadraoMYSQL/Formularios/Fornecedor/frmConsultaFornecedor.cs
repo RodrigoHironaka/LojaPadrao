@@ -49,6 +49,7 @@ namespace LojaPadraoMYSQL.Formularios
         public frmConsultaFornecedor(bool selecao)
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
             cbStatus.SelectedIndex = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLFornecedor bll = new BLLFornecedor(cx);

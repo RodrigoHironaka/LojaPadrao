@@ -39,7 +39,12 @@
             this.txtSigla = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.gbBotoes.SuspendLayout();
+            this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtID
@@ -47,7 +52,7 @@
             this.txtID.BackColor = System.Drawing.Color.DarkSlateGray;
             this.txtID.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtID.ForeColor = System.Drawing.Color.White;
-            this.txtID.Location = new System.Drawing.Point(16, 33);
+            this.txtID.Location = new System.Drawing.Point(10, 40);
             this.txtID.Name = "txtID";
             this.txtID.ReadOnly = true;
             this.txtID.Size = new System.Drawing.Size(100, 26);
@@ -58,7 +63,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(12, 9);
+            this.label2.Location = new System.Drawing.Point(6, 16);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(59, 20);
             this.label2.TabIndex = 21;
@@ -72,7 +77,7 @@
             this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
-            this.btSair.Location = new System.Drawing.Point(71, 10);
+            this.btSair.Location = new System.Drawing.Point(430, 12);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(50, 50);
             this.btSair.TabIndex = 4;
@@ -87,7 +92,7 @@
             this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
-            this.btSalvar.Location = new System.Drawing.Point(6, 10);
+            this.btSalvar.Location = new System.Drawing.Point(365, 12);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(50, 50);
             this.btSalvar.TabIndex = 3;
@@ -101,7 +106,7 @@
             this.chkAtivo.CheckState = System.Windows.Forms.CheckState.Checked;
             this.chkAtivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkAtivo.ForeColor = System.Drawing.Color.White;
-            this.chkAtivo.Location = new System.Drawing.Point(122, 35);
+            this.chkAtivo.Location = new System.Drawing.Point(418, 42);
             this.chkAtivo.Name = "chkAtivo";
             this.chkAtivo.Size = new System.Drawing.Size(63, 24);
             this.chkAtivo.TabIndex = 0;
@@ -114,7 +119,7 @@
             this.txtNome.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNome.ForeColor = System.Drawing.Color.White;
-            this.txtNome.Location = new System.Drawing.Point(16, 98);
+            this.txtNome.Location = new System.Drawing.Point(116, 40);
             this.txtNome.Name = "txtNome";
             this.txtNome.Size = new System.Drawing.Size(229, 26);
             this.txtNome.TabIndex = 1;
@@ -124,7 +129,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(12, 75);
+            this.label1.Location = new System.Drawing.Point(112, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(51, 20);
             this.label1.TabIndex = 16;
@@ -136,7 +141,7 @@
             this.txtSigla.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtSigla.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSigla.ForeColor = System.Drawing.Color.White;
-            this.txtSigla.Location = new System.Drawing.Point(251, 98);
+            this.txtSigla.Location = new System.Drawing.Point(351, 40);
             this.txtSigla.Name = "txtSigla";
             this.txtSigla.Size = new System.Drawing.Size(61, 26);
             this.txtSigla.TabIndex = 2;
@@ -146,7 +151,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(247, 75);
+            this.label3.Location = new System.Drawing.Point(347, 17);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 20);
             this.label3.TabIndex = 23;
@@ -157,26 +162,58 @@
             this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
             this.gbBotoes.Controls.Add(this.btSair);
             this.gbBotoes.Controls.Add(this.btSalvar);
-            this.gbBotoes.Location = new System.Drawing.Point(185, 12);
+            this.gbBotoes.Location = new System.Drawing.Point(9, 112);
             this.gbBotoes.Name = "gbBotoes";
-            this.gbBotoes.Size = new System.Drawing.Size(127, 66);
+            this.gbBotoes.Size = new System.Drawing.Size(483, 68);
             this.gbBotoes.TabIndex = 24;
             this.gbBotoes.TabStop = false;
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.chkAtivo);
+            this.groupBox1.Controls.Add(this.txtNome);
+            this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Controls.Add(this.txtSigla);
+            this.groupBox1.Controls.Add(this.txtID);
+            this.groupBox1.Location = new System.Drawing.Point(9, 40);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(483, 81);
+            this.groupBox1.TabIndex = 25;
+            this.groupBox1.TabStop = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.DarkGoldenrod;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Location = new System.Drawing.Point(-1, -2);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(502, 36);
+            this.panel1.TabIndex = 26;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(136, 9);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(235, 24);
+            this.label4.TabIndex = 0;
+            this.label4.Text = "CADASTRO UN MEDIDAS";
             // 
             // frmCadastroUnidadeMedida
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.ClientSize = new System.Drawing.Size(320, 144);
+            this.BackColor = System.Drawing.Color.CadetBlue;
+            this.ClientSize = new System.Drawing.Size(501, 192);
+            this.Controls.Add(this.panel1);
+            this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.gbBotoes);
-            this.Controls.Add(this.txtSigla);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtID);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.chkAtivo);
-            this.Controls.Add(this.txtNome);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.KeyPreview = true;
             this.MaximizeBox = false;
@@ -186,8 +223,11 @@
             this.Text = "Cadastro de Unidade de Medida";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.frmCadastroUnidadeMedida_KeyDown);
             this.gbBotoes.ResumeLayout(false);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -202,5 +242,8 @@
         private System.Windows.Forms.TextBox txtSigla;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox gbBotoes;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label4;
     }
 }

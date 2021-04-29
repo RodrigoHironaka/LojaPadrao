@@ -92,6 +92,7 @@ namespace LojaPadraoMYSQL.Formularios
         public frmConsultaCidade(bool selecao)
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
         }
 
         private void btAdd_Click(object sender, EventArgs e)

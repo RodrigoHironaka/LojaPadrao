@@ -75,9 +75,9 @@
             // btSair
             // 
             this.btSair.FlatAppearance.BorderSize = 0;
-            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSair.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
@@ -91,9 +91,9 @@
             // btSalvar
             // 
             this.btSalvar.FlatAppearance.BorderSize = 0;
-            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkCyan;
-            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkCyan;
+            this.btSalvar.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSalvar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btSalvar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btSalvar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btSalvar.Image")));
@@ -185,7 +185,7 @@
             "22",
             "23",
             "24"});
-            this.cbQtdParcelas.Location = new System.Drawing.Point(114, 92);
+            this.cbQtdParcelas.Location = new System.Drawing.Point(112, 91);
             this.cbQtdParcelas.Name = "cbQtdParcelas";
             this.cbQtdParcelas.Size = new System.Drawing.Size(65, 26);
             this.cbQtdParcelas.TabIndex = 2;
@@ -244,11 +244,11 @@
             // panel2
             // 
             this.panel2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.panel2.BackColor = System.Drawing.Color.DarkCyan;
+            this.panel2.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.panel2.Controls.Add(this.lbNomeForm);
-            this.panel2.Location = new System.Drawing.Point(11, 1);
+            this.panel2.Location = new System.Drawing.Point(0, 1);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(391, 36);
+            this.panel2.Size = new System.Drawing.Size(417, 36);
             this.panel2.TabIndex = 19;
             // 
             // lbNomeForm
@@ -257,7 +257,7 @@
             this.lbNomeForm.AutoSize = true;
             this.lbNomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNomeForm.ForeColor = System.Drawing.Color.White;
-            this.lbNomeForm.Location = new System.Drawing.Point(77, 8);
+            this.lbNomeForm.Location = new System.Drawing.Point(90, 8);
             this.lbNomeForm.Name = "lbNomeForm";
             this.lbNomeForm.Size = new System.Drawing.Size(241, 24);
             this.lbNomeForm.TabIndex = 17;

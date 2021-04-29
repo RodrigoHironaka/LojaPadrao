@@ -202,7 +202,7 @@
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.dgvDados.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvDados.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDados.Size = new System.Drawing.Size(841, 373);
+            this.dgvDados.Size = new System.Drawing.Size(841, 404);
             this.dgvDados.TabIndex = 7;
             this.dgvDados.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDados_CellDoubleClick);
             this.dgvDados.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dgvDados_CellFormatting);
@@ -217,7 +217,7 @@
             this.gbBotoes.Controls.Add(this.btExc);
             this.gbBotoes.Controls.Add(this.txtPesquisa);
             this.gbBotoes.Controls.Add(this.btSair);
-            this.gbBotoes.Location = new System.Drawing.Point(4, 409);
+            this.gbBotoes.Location = new System.Drawing.Point(4, 436);
             this.gbBotoes.Name = "gbBotoes";
             this.gbBotoes.Size = new System.Drawing.Size(841, 80);
             this.gbBotoes.TabIndex = 8;
@@ -233,7 +233,7 @@
             this.pFiltro.Controls.Add(this.panel2);
             this.pFiltro.Controls.Add(this.panel3);
             this.pFiltro.Controls.Add(this.panel1);
-            this.pFiltro.Location = new System.Drawing.Point(10, 312);
+            this.pFiltro.Location = new System.Drawing.Point(12, 339);
             this.pFiltro.Name = "pFiltro";
             this.pFiltro.Size = new System.Drawing.Size(455, 122);
             this.pFiltro.TabIndex = 9;
@@ -422,9 +422,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.pNomeForm.BackColor = System.Drawing.Color.DarkGoldenrod;
             this.pNomeForm.Controls.Add(this.lbNomeForm);
-            this.pNomeForm.Location = new System.Drawing.Point(4, 0);
+            this.pNomeForm.Location = new System.Drawing.Point(4, -2);
             this.pNomeForm.Name = "pNomeForm";
-            this.pNomeForm.Size = new System.Drawing.Size(841, 36);
+            this.pNomeForm.Size = new System.Drawing.Size(841, 38);
             this.pNomeForm.TabIndex = 17;
             // 
             // lbNomeForm
@@ -433,7 +433,7 @@
             this.lbNomeForm.AutoSize = true;
             this.lbNomeForm.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbNomeForm.ForeColor = System.Drawing.Color.White;
-            this.lbNomeForm.Location = new System.Drawing.Point(327, 6);
+            this.lbNomeForm.Location = new System.Drawing.Point(327, 7);
             this.lbNomeForm.Name = "lbNomeForm";
             this.lbNomeForm.Size = new System.Drawing.Size(196, 24);
             this.lbNomeForm.TabIndex = 0;
@@ -469,7 +469,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
-            this.ClientSize = new System.Drawing.Size(850, 501);
+            this.ClientSize = new System.Drawing.Size(850, 519);
             this.Controls.Add(this.pFiltro);
             this.Controls.Add(this.pInfo);
             this.Controls.Add(this.dgvDados);

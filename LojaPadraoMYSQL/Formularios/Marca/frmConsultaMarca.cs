@@ -34,6 +34,7 @@ namespace LojaPadraoMYSQL.Formularios
         public frmConsultaMarca(bool selecao)
         {
             InitializeComponent();
+            this.WindowState = FormWindowState.Normal;
             cbStatus.SelectedIndex = 1;
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLMarca bll = new BLLMarca(cx);
