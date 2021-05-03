@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DAL;
+using Ferramentas.Backup;
+using LojaPadraoMYSQL.Formularios.Configuracoes.BackupRestore;
+using LojaPadraoMYSQL.Formularios.Configuracoes.ConfigBD;
+using System;
 using System.Windows.Forms;
 
 namespace LojaPadraoMYSQL.Formularios.FormBotoes.Configuracoes
@@ -20,6 +17,22 @@ namespace LojaPadraoMYSQL.Formularios.FormBotoes.Configuracoes
         private void frmBotoesConfig_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btBackup_Click(object sender, EventArgs e)
+        {
+            frmBackupRestore f = new frmBackupRestore();
+            f.TopLevel = false;
+            Parent.Controls.Add(f);
+            f.Show();
+        }
+
+        private void btBD_Click(object sender, EventArgs e)
+        {
+            frmConfigBD f = new frmConfigBD();
+            f.TopLevel = false;
+            Parent.Controls.Add(f);
+            f.Show();
         }
     }
 }

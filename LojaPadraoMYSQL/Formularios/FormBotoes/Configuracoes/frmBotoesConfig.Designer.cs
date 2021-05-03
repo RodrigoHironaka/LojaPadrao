@@ -31,11 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBotoesConfig));
             this.pNomeForm = new System.Windows.Forms.Panel();
             this.lbNomeForm = new System.Windows.Forms.Label();
-            this.btEmpresa = new System.Windows.Forms.Button();
-            this.btBD = new System.Windows.Forms.Button();
             this.btGeral = new System.Windows.Forms.Button();
             this.btSistema = new System.Windows.Forms.Button();
             this.btFinanceiro = new System.Windows.Forms.Button();
+            this.btBackup = new System.Windows.Forms.Button();
+            this.btBD = new System.Windows.Forms.Button();
+            this.btEmpresa = new System.Windows.Forms.Button();
             this.pNomeForm.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,47 +61,6 @@
             this.lbNomeForm.Size = new System.Drawing.Size(174, 24);
             this.lbNomeForm.TabIndex = 0;
             this.lbNomeForm.Text = "CONFIGURAÇÕES";
-            // 
-            // btEmpresa
-            // 
-            this.btEmpresa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btEmpresa.AutoSize = true;
-            this.btEmpresa.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btEmpresa.FlatAppearance.BorderSize = 0;
-            this.btEmpresa.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btEmpresa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btEmpresa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEmpresa.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.btEmpresa.ForeColor = System.Drawing.Color.White;
-            this.btEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("btEmpresa.Image")));
-            this.btEmpresa.Location = new System.Drawing.Point(12, 42);
-            this.btEmpresa.Name = "btEmpresa";
-            this.btEmpresa.Size = new System.Drawing.Size(120, 120);
-            this.btEmpresa.TabIndex = 61;
-            this.btEmpresa.Text = "EMPRESA";
-            this.btEmpresa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btEmpresa.UseVisualStyleBackColor = false;
-            // 
-            // btBD
-            // 
-            this.btBD.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.btBD.AutoSize = true;
-            this.btBD.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.btBD.FlatAppearance.BorderSize = 0;
-            this.btBD.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btBD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btBD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
-            this.btBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btBD.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
-            this.btBD.ForeColor = System.Drawing.Color.White;
-            this.btBD.Location = new System.Drawing.Point(516, 42);
-            this.btBD.Name = "btBD";
-            this.btBD.Size = new System.Drawing.Size(120, 120);
-            this.btBD.TabIndex = 78;
-            this.btBD.Text = "CONFIG BD";
-            this.btBD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btBD.UseVisualStyleBackColor = false;
             // 
             // btGeral
             // 
@@ -162,12 +122,78 @@
             this.btFinanceiro.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btFinanceiro.UseVisualStyleBackColor = false;
             // 
+            // btBackup
+            // 
+            this.btBackup.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btBackup.AutoSize = true;
+            this.btBackup.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btBackup.FlatAppearance.BorderSize = 0;
+            this.btBackup.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btBackup.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btBackup.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btBackup.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btBackup.ForeColor = System.Drawing.Color.White;
+            this.btBackup.Image = ((System.Drawing.Image)(resources.GetObject("btBackup.Image")));
+            this.btBackup.Location = new System.Drawing.Point(12, 168);
+            this.btBackup.Name = "btBackup";
+            this.btBackup.Size = new System.Drawing.Size(120, 120);
+            this.btBackup.TabIndex = 82;
+            this.btBackup.Text = "BACKUP";
+            this.btBackup.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btBackup.UseVisualStyleBackColor = false;
+            this.btBackup.Click += new System.EventHandler(this.btBackup_Click);
+            // 
+            // btBD
+            // 
+            this.btBD.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btBD.AutoSize = true;
+            this.btBD.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btBD.FlatAppearance.BorderSize = 0;
+            this.btBD.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btBD.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btBD.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btBD.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btBD.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btBD.ForeColor = System.Drawing.Color.White;
+            this.btBD.Image = ((System.Drawing.Image)(resources.GetObject("btBD.Image")));
+            this.btBD.Location = new System.Drawing.Point(516, 42);
+            this.btBD.Name = "btBD";
+            this.btBD.Size = new System.Drawing.Size(120, 120);
+            this.btBD.TabIndex = 78;
+            this.btBD.Text = "CONFIG BD";
+            this.btBD.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btBD.UseVisualStyleBackColor = false;
+            this.btBD.Click += new System.EventHandler(this.btBD_Click);
+            // 
+            // btEmpresa
+            // 
+            this.btEmpresa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btEmpresa.AutoSize = true;
+            this.btEmpresa.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.btEmpresa.FlatAppearance.BorderSize = 0;
+            this.btEmpresa.FlatAppearance.CheckedBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btEmpresa.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btEmpresa.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
+            this.btEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btEmpresa.Font = new System.Drawing.Font("Segoe UI Semibold", 8F);
+            this.btEmpresa.ForeColor = System.Drawing.Color.White;
+            this.btEmpresa.Image = ((System.Drawing.Image)(resources.GetObject("btEmpresa.Image")));
+            this.btEmpresa.Location = new System.Drawing.Point(12, 42);
+            this.btEmpresa.Name = "btEmpresa";
+            this.btEmpresa.Size = new System.Drawing.Size(120, 120);
+            this.btEmpresa.TabIndex = 61;
+            this.btEmpresa.Text = "EMPRESA";
+            this.btEmpresa.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btEmpresa.UseVisualStyleBackColor = false;
+            // 
             // frmBotoesConfig
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.CadetBlue;
             this.ClientSize = new System.Drawing.Size(647, 500);
+            this.Controls.Add(this.btBackup);
             this.Controls.Add(this.btFinanceiro);
             this.Controls.Add(this.btSistema);
             this.Controls.Add(this.btGeral);
@@ -199,5 +225,6 @@
         private System.Windows.Forms.Button btGeral;
         private System.Windows.Forms.Button btSistema;
         private System.Windows.Forms.Button btFinanceiro;
+        private System.Windows.Forms.Button btBackup;
     }
 }
