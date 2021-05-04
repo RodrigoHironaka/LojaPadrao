@@ -88,6 +88,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Backup\BackupBD.cs" />
+    <Compile Include="Backup\Config.cs" />
     <Compile Include="Mascaras\Moeda.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Validacoes\ValidaCEP.cs" />

@@ -49,7 +49,6 @@ namespace LojaPadraoMYSQL.Formularios
            
         }
 
-       
         private void btSalvar_Click(object sender, EventArgs e)
         {
             try

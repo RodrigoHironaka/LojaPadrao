@@ -11,10 +11,12 @@ namespace Ferramentas.Backup
     public class BackupBD
     {
         private DALConexao conexao;
+
         public BackupBD(DALConexao cx)
         {
             this.conexao = cx;
         }
+
         public void GerarBackup(string caminho)
         {
             try
@@ -36,6 +38,7 @@ namespace Ferramentas.Backup
                 throw new Exception("Houve um erro ao realizar o backup! Contate o suporte técnico");
             }
         }
+
         public void RestaurarBackup(string caminho)
         {
             try

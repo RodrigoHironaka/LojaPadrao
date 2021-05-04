@@ -7,6 +7,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,12 +17,40 @@ namespace LojaPadraoMYSQL.Formularios.Configuracoes.BackupRestore
 {
     public partial class frmBackupRestore : Form
     {
+        public void GerarArquivoBackup()
+        {
+            if (txtCaminho.Text == string.Empty) 
+            { 
+                MessageBox.Show("Caminho é obrigatorio!", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                try
+                {
+                    //cria o arquivo
+                    StreamWriter arquivo = new StreamWriter("CaminhoBk.ini", false);
+                    arquivo.WriteLine(txtCaminho.Text);
+                    if (rbBackup.Checked)
+                    {
+                        arquivo.WriteLine("Backup");
+                    }
+                    else if (rbRestore.Checked)
+                    {
+                        arquivo.WriteLine("Restore");
+                    }
+                    arquivo.Close();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+        }
 
         public frmBackupRestore()
         {
             InitializeComponent();
         }
-
        
         private void btRealizar_Click(object sender, EventArgs e)
         {
@@ -57,7 +86,6 @@ namespace LojaPadraoMYSQL.Formularios.Configuracoes.BackupRestore
 
         }
 
-
         private void btPesquisa_Click(object sender, EventArgs e)
         {
             if (rbBackup.Checked == true)
@@ -68,6 +96,7 @@ namespace LojaPadraoMYSQL.Formularios.Configuracoes.BackupRestore
                     if (res == DialogResult.OK)
                     {
                         txtCaminho.Text = caminho.SelectedPath;
+                        this.GerarArquivoBackup();
                     }
                 }
             }
@@ -79,6 +108,7 @@ namespace LojaPadraoMYSQL.Formularios.Configuracoes.BackupRestore
                     if (res == DialogResult.OK)
                     {
                         txtCaminho.Text = caminho.FileName;
+                        this.GerarArquivoBackup();
                     }
                 }
             }
@@ -87,7 +117,7 @@ namespace LojaPadraoMYSQL.Formularios.Configuracoes.BackupRestore
 
         private void btSair_Click(object sender, EventArgs e)
         {
-            DialogResult d = MessageBox.Show("Nunca deixe de realizar o backup!\n\rEle é uma segurança para seus dados.\r\nDeseja realmente sair?.", "Backup", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
+            DialogResult d = MessageBox.Show("Nunca deixe de realizar o backup!\n\rEle é uma segurança para seus dados.\r\nDeseja realmente sair?", "Backup", MessageBoxButtons.YesNo, MessageBoxIcon.Information);
             if (d.ToString() == "Yes")
             {
                 this.Close();
@@ -96,12 +126,42 @@ namespace LojaPadraoMYSQL.Formularios.Configuracoes.BackupRestore
 
         private void rbBackup_CheckedChanged(object sender, EventArgs e)
         {
-            
+            txtCaminho.Clear();
         }
 
         private void rbRestore_CheckedChanged(object sender, EventArgs e)
         {
+            txtCaminho.Clear();
+        }
 
+        private void frmBackupRestore_Load(object sender, EventArgs e)
+        {
+            try
+            {
+                if (File.Exists(@"C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\CaminhoBk.ini"))
+                {
+                    StreamReader arquivo = new StreamReader("CaminhoBk.ini");
+                    txtCaminho.Text = arquivo.ReadLine();
+                    if (arquivo.ReadLine() == "Backup")
+                    {
+                        rbBackup.Checked = true;
+                    }
+                    else
+                    {
+                        rbRestore.Checked = true;
+                    }
+                    arquivo.Close();
+                }
+                else
+                {
+                    rbBackup.Checked = true;
+                    //txtCaminho.Text = "C:\_Projetos\DESKTOP\LojaPadrao\BD\BACKUP";
+                }
+            }
+            catch (Exception erro)// erro sistema
+            {
+                MessageBox.Show(erro.Message);
+            }
         }
     }
 }

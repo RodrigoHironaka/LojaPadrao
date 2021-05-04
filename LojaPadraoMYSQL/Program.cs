@@ -1,6 +1,8 @@
-﻿using LojaPadraoMYSQL.Formularios.FormBotoes;
+﻿using LojaPadraoMYSQL.Formularios.Configuracoes.ConfigBD;
+using LojaPadraoMYSQL.Formularios.FormBotoes;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -17,7 +19,18 @@ namespace LojaPadraoMYSQL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmPrincipal());
+            if (File.Exists(@"C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\ConfigBD.ini"))
+            {
+                Application.Run(new frmPrincipal());
+            }
+            else
+            {
+                frmConfigBD f = new frmConfigBD();
+                f.WindowState = FormWindowState.Normal;
+                f.ShowDialog();
+                Application.Run(new frmPrincipal());
+            }
+                
         }
     }
 }

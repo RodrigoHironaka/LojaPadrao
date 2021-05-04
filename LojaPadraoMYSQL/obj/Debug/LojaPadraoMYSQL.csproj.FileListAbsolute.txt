@@ -246,3 +246,7 @@ C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\BLL.dll.config
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\DAL.dll.config
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\MySql.Data.xml
 C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\obj\Debug\LojaPadraoMYSQL.Formularios.Configuracoes.ConfigBD.frmConfigBD.resources
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\MySqlConnector.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\MySqlConnector.xml
+C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\System.Threading.Tasks.Extensions.xml

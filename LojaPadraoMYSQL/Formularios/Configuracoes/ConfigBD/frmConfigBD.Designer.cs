@@ -32,25 +32,26 @@
             this.pNomeForm = new System.Windows.Forms.Panel();
             this.lbNomeForm = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtCaminho = new System.Windows.Forms.TextBox();
+            this.txtServidor = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSenha = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtUid = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtBanco = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
-            this.gbTipo = new System.Windows.Forms.GroupBox();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.gbTipo = new System.Windows.Forms.GroupBox();
+            this.rbServidor = new System.Windows.Forms.RadioButton();
+            this.rbTerminal = new System.Windows.Forms.RadioButton();
             this.gbBotoes = new System.Windows.Forms.GroupBox();
+            this.lbResposta = new System.Windows.Forms.Label();
             this.btSalvar = new System.Windows.Forms.Button();
             this.btSair = new System.Windows.Forms.Button();
             this.pNomeForm.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.gbTipo.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.gbTipo.SuspendLayout();
             this.gbBotoes.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,14 +85,14 @@
             this.label1.TabIndex = 80;
             this.label1.Text = "Servidor";
             // 
-            // txtCaminho
+            // txtServidor
             // 
-            this.txtCaminho.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.txtCaminho.ForeColor = System.Drawing.Color.White;
-            this.txtCaminho.Location = new System.Drawing.Point(7, 23);
-            this.txtCaminho.Name = "txtCaminho";
-            this.txtCaminho.Size = new System.Drawing.Size(233, 26);
-            this.txtCaminho.TabIndex = 79;
+            this.txtServidor.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.txtServidor.ForeColor = System.Drawing.Color.White;
+            this.txtServidor.Location = new System.Drawing.Point(7, 23);
+            this.txtServidor.Name = "txtServidor";
+            this.txtServidor.Size = new System.Drawing.Size(233, 26);
+            this.txtServidor.TabIndex = 0;
             // 
             // label2
             // 
@@ -102,14 +103,15 @@
             this.label2.TabIndex = 82;
             this.label2.Text = "Senha";
             // 
-            // textBox1
+            // txtSenha
             // 
-            this.textBox1.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.textBox1.ForeColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(7, 179);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(233, 26);
-            this.textBox1.TabIndex = 81;
+            this.txtSenha.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.txtSenha.ForeColor = System.Drawing.Color.White;
+            this.txtSenha.Location = new System.Drawing.Point(7, 179);
+            this.txtSenha.Name = "txtSenha";
+            this.txtSenha.PasswordChar = '*';
+            this.txtSenha.Size = new System.Drawing.Size(233, 26);
+            this.txtSenha.TabIndex = 3;
             // 
             // label3
             // 
@@ -120,14 +122,14 @@
             this.label3.TabIndex = 84;
             this.label3.Text = "Uid";
             // 
-            // textBox2
+            // txtUid
             // 
-            this.textBox2.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.textBox2.ForeColor = System.Drawing.Color.White;
-            this.textBox2.Location = new System.Drawing.Point(7, 127);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(233, 26);
-            this.textBox2.TabIndex = 83;
+            this.txtUid.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.txtUid.ForeColor = System.Drawing.Color.White;
+            this.txtUid.Location = new System.Drawing.Point(7, 127);
+            this.txtUid.Name = "txtUid";
+            this.txtUid.Size = new System.Drawing.Size(233, 26);
+            this.txtUid.TabIndex = 2;
             // 
             // label4
             // 
@@ -138,14 +140,14 @@
             this.label4.TabIndex = 86;
             this.label4.Text = "Banco";
             // 
-            // textBox3
+            // txtBanco
             // 
-            this.textBox3.BackColor = System.Drawing.Color.DarkSlateGray;
-            this.textBox3.ForeColor = System.Drawing.Color.White;
-            this.textBox3.Location = new System.Drawing.Point(7, 75);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(233, 26);
-            this.textBox3.TabIndex = 85;
+            this.txtBanco.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.txtBanco.ForeColor = System.Drawing.Color.White;
+            this.txtBanco.Location = new System.Drawing.Point(7, 75);
+            this.txtBanco.Name = "txtBanco";
+            this.txtBanco.Size = new System.Drawing.Size(233, 26);
+            this.txtBanco.TabIndex = 1;
             // 
             // panel1
             // 
@@ -153,52 +155,18 @@
             this.panel1.BackColor = System.Drawing.Color.DarkSlateGray;
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.gbTipo);
-            this.panel1.Controls.Add(this.txtCaminho);
+            this.panel1.Controls.Add(this.txtServidor);
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.textBox1);
+            this.panel1.Controls.Add(this.txtBanco);
+            this.panel1.Controls.Add(this.txtSenha);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.txtUid);
             this.panel1.Location = new System.Drawing.Point(12, 43);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(461, 216);
             this.panel1.TabIndex = 87;
-            // 
-            // radioButton1
-            // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 24);
-            this.radioButton1.TabIndex = 0;
-            this.radioButton1.Text = "Servidor";
-            this.radioButton1.UseVisualStyleBackColor = true;
-            // 
-            // gbTipo
-            // 
-            this.gbTipo.Controls.Add(this.radioButton1);
-            this.gbTipo.Controls.Add(this.radioButton2);
-            this.gbTipo.ForeColor = System.Drawing.Color.White;
-            this.gbTipo.Location = new System.Drawing.Point(257, 4);
-            this.gbTipo.Name = "gbTipo";
-            this.gbTipo.Size = new System.Drawing.Size(189, 45);
-            this.gbTipo.TabIndex = 87;
-            this.gbTipo.TabStop = false;
-            this.gbTipo.Text = "Tipo";
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Checked = true;
-            this.radioButton2.Location = new System.Drawing.Point(97, 19);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(87, 24);
-            this.radioButton2.TabIndex = 1;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.Text = "Terminal";
-            this.radioButton2.UseVisualStyleBackColor = true;
             // 
             // pictureBox1
             // 
@@ -210,10 +178,45 @@
             this.pictureBox1.TabIndex = 88;
             this.pictureBox1.TabStop = false;
             // 
+            // gbTipo
+            // 
+            this.gbTipo.Controls.Add(this.rbServidor);
+            this.gbTipo.Controls.Add(this.rbTerminal);
+            this.gbTipo.ForeColor = System.Drawing.Color.White;
+            this.gbTipo.Location = new System.Drawing.Point(257, 4);
+            this.gbTipo.Name = "gbTipo";
+            this.gbTipo.Size = new System.Drawing.Size(189, 45);
+            this.gbTipo.TabIndex = 87;
+            this.gbTipo.TabStop = false;
+            this.gbTipo.Text = "Tipo";
+            // 
+            // rbServidor
+            // 
+            this.rbServidor.AutoSize = true;
+            this.rbServidor.Location = new System.Drawing.Point(6, 19);
+            this.rbServidor.Name = "rbServidor";
+            this.rbServidor.Size = new System.Drawing.Size(85, 24);
+            this.rbServidor.TabIndex = 4;
+            this.rbServidor.Text = "Servidor";
+            this.rbServidor.UseVisualStyleBackColor = true;
+            // 
+            // rbTerminal
+            // 
+            this.rbTerminal.AutoSize = true;
+            this.rbTerminal.Checked = true;
+            this.rbTerminal.Location = new System.Drawing.Point(97, 19);
+            this.rbTerminal.Name = "rbTerminal";
+            this.rbTerminal.Size = new System.Drawing.Size(87, 24);
+            this.rbTerminal.TabIndex = 5;
+            this.rbTerminal.TabStop = true;
+            this.rbTerminal.Text = "Terminal";
+            this.rbTerminal.UseVisualStyleBackColor = true;
+            // 
             // gbBotoes
             // 
             this.gbBotoes.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.gbBotoes.Controls.Add(this.lbResposta);
             this.gbBotoes.Controls.Add(this.btSalvar);
             this.gbBotoes.Controls.Add(this.btSair);
             this.gbBotoes.Location = new System.Drawing.Point(12, 252);
@@ -221,6 +224,16 @@
             this.gbBotoes.Size = new System.Drawing.Size(461, 73);
             this.gbBotoes.TabIndex = 88;
             this.gbBotoes.TabStop = false;
+            // 
+            // lbResposta
+            // 
+            this.lbResposta.AutoSize = true;
+            this.lbResposta.Location = new System.Drawing.Point(6, 26);
+            this.lbResposta.Name = "lbResposta";
+            this.lbResposta.Size = new System.Drawing.Size(142, 20);
+            this.lbResposta.TabIndex = 85;
+            this.lbResposta.Text = "Resposta conexão";
+            this.lbResposta.Visible = false;
             // 
             // btSalvar
             // 
@@ -235,8 +248,9 @@
             this.btSalvar.Location = new System.Drawing.Point(344, 11);
             this.btSalvar.Name = "btSalvar";
             this.btSalvar.Size = new System.Drawing.Size(50, 50);
-            this.btSalvar.TabIndex = 3;
+            this.btSalvar.TabIndex = 6;
             this.btSalvar.UseVisualStyleBackColor = false;
+            this.btSalvar.Click += new System.EventHandler(this.btSalvar_Click);
             // 
             // btSair
             // 
@@ -251,8 +265,9 @@
             this.btSair.Location = new System.Drawing.Point(405, 11);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(50, 50);
-            this.btSair.TabIndex = 4;
+            this.btSair.TabIndex = 7;
             this.btSair.UseVisualStyleBackColor = false;
+            this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
             // frmConfigBD
             // 
@@ -271,14 +286,16 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmConfigBD";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmConfigBD_Load);
             this.pNomeForm.ResumeLayout(false);
             this.pNomeForm.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbTipo.ResumeLayout(false);
             this.gbTipo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.gbBotoes.ResumeLayout(false);
+            this.gbBotoes.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -288,20 +305,21 @@
         private System.Windows.Forms.Panel pNomeForm;
         private System.Windows.Forms.Label lbNomeForm;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox txtCaminho;
+        private System.Windows.Forms.TextBox txtServidor;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtSenha;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtUid;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtBanco;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox gbTipo;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.RadioButton radioButton2;
+        private System.Windows.Forms.RadioButton rbServidor;
+        private System.Windows.Forms.RadioButton rbTerminal;
         private System.Windows.Forms.GroupBox gbBotoes;
         private System.Windows.Forms.Button btSalvar;
         private System.Windows.Forms.Button btSair;
+        private System.Windows.Forms.Label lbResposta;
     }
 }

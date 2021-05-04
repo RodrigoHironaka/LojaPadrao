@@ -74,7 +74,7 @@
             this.rbBackup.Location = new System.Drawing.Point(81, 9);
             this.rbBackup.Name = "rbBackup";
             this.rbBackup.Size = new System.Drawing.Size(81, 24);
-            this.rbBackup.TabIndex = 19;
+            this.rbBackup.TabIndex = 0;
             this.rbBackup.TabStop = true;
             this.rbBackup.Text = "Backup";
             this.rbBackup.UseVisualStyleBackColor = true;
@@ -86,7 +86,7 @@
             this.rbRestore.Location = new System.Drawing.Point(168, 9);
             this.rbRestore.Name = "rbRestore";
             this.rbRestore.Size = new System.Drawing.Size(84, 24);
-            this.rbRestore.TabIndex = 20;
+            this.rbRestore.TabIndex = 1;
             this.rbRestore.Text = "Restore";
             this.rbRestore.UseVisualStyleBackColor = true;
             this.rbRestore.CheckedChanged += new System.EventHandler(this.rbRestore_CheckedChanged);
@@ -116,10 +116,10 @@
             this.btSair.FlatAppearance.MouseOverBackColor = System.Drawing.Color.DarkGoldenrod;
             this.btSair.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btSair.Image = ((System.Drawing.Image)(resources.GetObject("btSair.Image")));
-            this.btSair.Location = new System.Drawing.Point(552, 66);
+            this.btSair.Location = new System.Drawing.Point(552, 68);
             this.btSair.Name = "btSair";
             this.btSair.Size = new System.Drawing.Size(48, 48);
-            this.btSair.TabIndex = 22;
+            this.btSair.TabIndex = 5;
             this.btSair.UseVisualStyleBackColor = true;
             this.btSair.Click += new System.EventHandler(this.btSair_Click);
             // 
@@ -133,7 +133,7 @@
             this.btRealizar.Location = new System.Drawing.Point(498, 66);
             this.btRealizar.Name = "btRealizar";
             this.btRealizar.Size = new System.Drawing.Size(48, 48);
-            this.btRealizar.TabIndex = 21;
+            this.btRealizar.TabIndex = 4;
             this.btRealizar.UseVisualStyleBackColor = true;
             this.btRealizar.Click += new System.EventHandler(this.btRealizar_Click);
             // 
@@ -165,7 +165,7 @@
             this.btPesquisa.Location = new System.Drawing.Point(565, 34);
             this.btPesquisa.Name = "btPesquisa";
             this.btPesquisa.Size = new System.Drawing.Size(35, 28);
-            this.btPesquisa.TabIndex = 2;
+            this.btPesquisa.TabIndex = 3;
             this.btPesquisa.Text = "...";
             this.btPesquisa.UseVisualStyleBackColor = true;
             this.btPesquisa.Click += new System.EventHandler(this.btPesquisa_Click);
@@ -185,8 +185,9 @@
             this.txtCaminho.ForeColor = System.Drawing.Color.White;
             this.txtCaminho.Location = new System.Drawing.Point(7, 34);
             this.txtCaminho.Name = "txtCaminho";
+            this.txtCaminho.ReadOnly = true;
             this.txtCaminho.Size = new System.Drawing.Size(552, 26);
-            this.txtCaminho.TabIndex = 0;
+            this.txtCaminho.TabIndex = 2;
             this.txtCaminho.Text = "C:\\_Projetos\\DESKTOP\\LojaPadrao\\BD\\BACKUP";
             // 
             // frmBackupRestore
@@ -205,6 +206,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmBackupRestore";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.frmBackupRestore_Load);
             this.pNomeForm.ResumeLayout(false);
             this.pNomeForm.PerformLayout();
             this.pCampo.ResumeLayout(false);
