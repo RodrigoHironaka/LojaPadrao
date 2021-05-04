@@ -159,6 +159,24 @@ namespace DAL
             return tabela;
         }
 
+        //LOCALIZA ULTIMO(S) ID PARA MOSTRAR NO GRID APOS ALTERAR--------------------------------------------------------
+        public DataTable LocalizarUltimoItemAlterar(Int64 idAlterado)
+        {
+            var ultimoId = idAlterado;
+
+            ModeloContaPagar modelo = CarregaModeloContaPagar(Convert.ToInt32(ultimoId));
+            DataTable tabela = new DataTable();
+            MySqlDataAdapter da = new MySqlDataAdapter("select cp.id, cp.numDoc, cp.nome, if(cp.tipoPessoa ='CLIENTE', c.nomefantasia, f.nomeFantasia ), cp.valor, cp.vencimento, cp.emissao, cp.dataCadastro, tg.nome, cp.status" +
+                    " from contapagar cp" +
+                    " inner join cliente c on(cp.idpessoa = c.id)" +
+                    " inner join fornecedor f on(cp.idpessoa = f.id)" +
+                    " inner join tipogasto tg on(cp.idTipoGasto = tg.id)" +
+                    " where cp.id = " + ultimoId +
+                    " group by cp.id ", conexao.StringConexao);
+            da.Fill(tabela);
+            return tabela;
+        }
+
         //Localizar Cliente COM  e  SEM  parametros -----------------------------------------------------------------------------
         public DataTable LocalizarCliente()
         {
@@ -383,6 +401,8 @@ namespace DAL
             conexao.Desconectar();
             return idinterno;
         }
+
+        
 
         //CALCULA DIFERENCA NA DIVISAO---------------------------------------------------------
         public decimal CalculoComDiferenca(decimal valortotal, int qtdparcelas)

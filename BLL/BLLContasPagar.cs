@@ -176,6 +176,12 @@ namespace BLL
             return DALObj.LocalizarUltimoItemInserido();
         }
 
+        public DataTable LocalizarUltimoItemAlterar(Int64 idAlterado)
+        {
+            DALContaPagar DALObj = new DALContaPagar(conexao);
+            return DALObj.LocalizarUltimoItemAlterar(idAlterado);
+        }
+
         public DataTable LocalizarPorDataAtual()
         {
             DALContaPagar DALObj = new DALContaPagar(conexao);

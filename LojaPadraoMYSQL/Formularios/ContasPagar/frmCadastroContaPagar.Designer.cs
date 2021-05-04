@@ -33,7 +33,7 @@
             this.btPesqFornecedor = new System.Windows.Forms.Button();
             this.txtValor = new System.Windows.Forms.TextBox();
             this.txtCod = new System.Windows.Forms.TextBox();
-            this.lbPrecoNota = new System.Windows.Forms.Label();
+            this.lbValor = new System.Windows.Forms.Label();
             this.lbCod = new System.Windows.Forms.Label();
             this.lbNome = new System.Windows.Forms.Label();
             this.txtDataCadastro = new System.Windows.Forms.TextBox();
@@ -92,6 +92,7 @@
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label8 = new System.Windows.Forms.Label();
+            this.lbTotalConta = new System.Windows.Forms.Label();
             this.gbDadosCompra.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.gbBotoes.SuspendLayout();
@@ -160,16 +161,16 @@
             this.txtCod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_KeyPress);
             this.txtCod.Leave += new System.EventHandler(this.txtCod_Leave);
             // 
-            // lbPrecoNota
+            // lbValor
             // 
-            this.lbPrecoNota.AutoSize = true;
-            this.lbPrecoNota.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPrecoNota.ForeColor = System.Drawing.Color.White;
-            this.lbPrecoNota.Location = new System.Drawing.Point(377, 171);
-            this.lbPrecoNota.Name = "lbPrecoNota";
-            this.lbPrecoNota.Size = new System.Drawing.Size(50, 20);
-            this.lbPrecoNota.TabIndex = 365;
-            this.lbPrecoNota.Text = "Valor:";
+            this.lbValor.AutoSize = true;
+            this.lbValor.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbValor.ForeColor = System.Drawing.Color.White;
+            this.lbValor.Location = new System.Drawing.Point(377, 171);
+            this.lbValor.Name = "lbValor";
+            this.lbValor.Size = new System.Drawing.Size(50, 20);
+            this.lbValor.TabIndex = 365;
+            this.lbValor.Text = "Valor:";
             // 
             // lbCod
             // 
@@ -259,7 +260,7 @@
             this.gbDadosCompra.Controls.Add(this.dtpVencimento);
             this.gbDadosCompra.Controls.Add(this.label2);
             this.gbDadosCompra.Controls.Add(this.dtpEmissão);
-            this.gbDadosCompra.Controls.Add(this.lbPrecoNota);
+            this.gbDadosCompra.Controls.Add(this.lbValor);
             this.gbDadosCompra.Controls.Add(this.label1);
             this.gbDadosCompra.Controls.Add(this.txtValor);
             this.gbDadosCompra.Controls.Add(this.cbTipoGasto);
@@ -382,9 +383,9 @@
             this.label11.ForeColor = System.Drawing.Color.White;
             this.label11.Location = new System.Drawing.Point(484, 171);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(113, 20);
+            this.label11.Size = new System.Drawing.Size(109, 20);
             this.label11.TabIndex = 382;
-            this.label11.Text = "Comprado em:";
+            this.label11.Text = "Comprado no:";
             // 
             // txtNome
             // 
@@ -685,6 +686,7 @@
             // gbBotoes
             // 
             this.gbBotoes.BackColor = System.Drawing.Color.DarkSlateGray;
+            this.gbBotoes.Controls.Add(this.lbTotalConta);
             this.gbBotoes.Controls.Add(this.lbStatus);
             this.gbBotoes.Controls.Add(this.btSair);
             this.gbBotoes.Controls.Add(this.btSalvar);
@@ -922,6 +924,18 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "CADASTRO A PAGAR";
             // 
+            // lbTotalConta
+            // 
+            this.lbTotalConta.AutoSize = true;
+            this.lbTotalConta.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTotalConta.ForeColor = System.Drawing.Color.White;
+            this.lbTotalConta.Location = new System.Drawing.Point(177, 29);
+            this.lbTotalConta.Name = "lbTotalConta";
+            this.lbTotalConta.Size = new System.Drawing.Size(139, 20);
+            this.lbTotalConta.TabIndex = 377;
+            this.lbTotalConta.Text = "Total dessa conta:";
+            this.lbTotalConta.Visible = false;
+            // 
             // frmCadastroContaPagar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -935,6 +949,7 @@
             this.Name = "frmCadastroContaPagar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCadastroContaPagar";
+            this.Load += new System.EventHandler(this.frmCadastroContaPagar_Load);
             this.gbDadosCompra.ResumeLayout(false);
             this.gbDadosCompra.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -959,7 +974,7 @@
         public System.Windows.Forms.Button btPesqFornecedor;
         public System.Windows.Forms.TextBox txtValor;
         public System.Windows.Forms.TextBox txtCod;
-        private System.Windows.Forms.Label lbPrecoNota;
+        private System.Windows.Forms.Label lbValor;
         private System.Windows.Forms.Label lbCod;
         private System.Windows.Forms.Label lbNome;
         public System.Windows.Forms.TextBox txtDataCadastro;
@@ -1018,5 +1033,6 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lbTotalConta;
     }
 }

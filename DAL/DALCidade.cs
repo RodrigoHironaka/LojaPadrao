@@ -201,7 +201,7 @@ namespace DAL
         //LOCALIZA ULTIMO(S) PARA MOSTRAR NO GRID APOS ALTERAR--------------------------------------------------------
         public DataTable LocalizarUltimoItemAlterar(Int64 idAlterado)
         {
-            var ultimoId = idAlterado; ;
+            var ultimoId = idAlterado; 
 
             ModeloCidade modelo = CarregaModeloCidade(Convert.ToInt32(ultimoId));
             DataTable tabela = new DataTable();

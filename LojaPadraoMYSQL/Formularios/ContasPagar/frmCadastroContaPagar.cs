@@ -62,7 +62,16 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
         //--------------------SAIR-----------------------------------------------------------------
         private void btSair_Click(object sender, EventArgs e)
         {
-            this.Close();
+            try
+            {
+                DialogResult resultado = MessageBox.Show("Deseja sair sem salvar?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (resultado == DialogResult.Yes)
+                    Close();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Não foi possivel sair! Erro: " + ex.Message);
+            }
         }
 
         //--------------------CAMPO PARA DEFINIR SE É CLIENTE OU FORNECEDOR------------------------
@@ -550,6 +559,30 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                 txtQtdParcelas.Clear();
                 txtQtdParcelas.ReadOnly = false;
                 txtQtdParcelas.Select();
+            }
+        }
+
+        private void frmCadastroContaPagar_Load(object sender, EventArgs e)
+        {
+            if(txtID.Text != string.Empty)
+            {
+                DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+                BLLContasPagar bll = new BLLContasPagar(cx);
+                ModeloContaPagar modelo = bll.CarregaModeloContaPagar(Convert.ToInt32(txtID.Text));
+                if(modelo.QtdParcelas > 0)
+                {
+                    lbValor.Text = "Parcela:";
+                    lbTotalConta.Visible = true;
+                    lbTotalConta.Text = lbTotalConta.Text +"R$ "+ modelo.Total;
+                }
+                cbPeriodo.Enabled = false;
+                txtQtdParcelas.Enabled = false;
+                txtValor.Enabled = false;
+            }
+            else
+            {
+                lbValor.Text = "Valor:";
+                lbTotalConta.Visible = false;
             }
         }
     }

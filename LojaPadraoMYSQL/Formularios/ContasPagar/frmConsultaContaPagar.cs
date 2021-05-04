@@ -82,13 +82,14 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             }
 
         }
+
         public void FiltroLocalizarDepoisAlterar(Int64 idAlterado)
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLContasPagar bll = new BLLContasPagar(cx);
             if (id != 0)
             {
-                dgvDados.DataSource = bll.LocalizarUltimoItemInserido();
+                dgvDados.DataSource = bll.LocalizarUltimoItemAlterar(idAlterado);
                 this.AtualizaCabecalhoGridConsulta();
             }
 
