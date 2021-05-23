@@ -234,7 +234,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
         private void btFecharPanelFiltro_Click(object sender, EventArgs e)
         {
             pFiltro.Visible = false;
-            this.LimpaFiltro();
+            //this.LimpaFiltro();
         }
     }
 }

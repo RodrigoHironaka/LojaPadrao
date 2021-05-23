@@ -402,8 +402,6 @@ namespace DAL
             return idinterno;
         }
 
-        
-
         //CALCULA DIFERENCA NA DIVISAO---------------------------------------------------------
         public decimal CalculoComDiferenca(decimal valortotal, int qtdparcelas)
         {
@@ -457,6 +455,11 @@ namespace DAL
             }
         }
 
+        //VERIFICA SE DADOS FORAM ALTERADOS
+        //public bool VerificaDadosAlterados()
+        //{
+           
+        //}
     }
 
 

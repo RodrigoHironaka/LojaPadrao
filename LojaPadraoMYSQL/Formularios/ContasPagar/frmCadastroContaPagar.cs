@@ -250,12 +250,12 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
         }
 
         //--------------------CARREGA DADOS DIGITADOS NO FORM PARA CLASSE MODELO-------------------
-        public ModeloContaPagar CarregaDadosFormParaModelo()
+        public ModeloContaPagar CarregaDadosFormParaModelo(ModeloContaPagar modelo)
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLContasPagar bll = new BLLContasPagar(cx);
             var IdInterno = bll.GeraIdInterno();
-            ModeloContaPagar modelo = new ModeloContaPagar();
+            //ModeloContaPagar modelo = new ModeloContaPagar();
             //veriifca se numero do documento esta em branco e preenche com zero se ele estiver
             if (txtNumDoc.Text != "")
             {
@@ -296,7 +296,8 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
         {
             DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
             BLLContasPagar bll = new BLLContasPagar(cx);
-            ModeloContaPagar modelo = this.CarregaDadosFormParaModelo();
+            ModeloContaPagar modelo = new ModeloContaPagar();
+            this.CarregaDadosFormParaModelo(modelo);
             
             try
             {
@@ -493,6 +494,208 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
 
         }
 
+        //--------------------ANTES DE INCLUIR ELE FAZ ALGUMA VERIFICAÇÕES-------------------------
+        //public void VerificaAntesAlterar()
+        //{
+        //    DALConexao cx = new DALConexao(DadosDaConexao.StringDeConexao);
+        //    BLLContasPagar bll = new BLLContasPagar(cx);
+        //    ModeloContaPagar modelo = this.CarregaDadosFormParaModelo(modelo);
+
+        //    try
+        //    {
+        //        int qtd = modelo.QtdParcelas;
+
+        //        if (qtd == 0)
+        //        {
+        //            //altera dados da tabela contapagar apenas 1 vez
+        //            bll.Alterar(modelo);
+        //            this.Close();
+        //        }
+        //        else
+        //        {
+        //            if (modelo.Descricao == "")//faço essa verificaçao fora do BLL pq ele salva descrição somente com 1/3 por exemplo
+        //            {
+        //                MessageBox.Show("A descrição deve ser prenchida.", "Informação", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //                txtNome.Select();
+        //                return;
+        //            }
+        //            else
+        //            {
+        //                //altera a qtd definida
+        //                int periodo = cbPeriodo.SelectedIndex;
+        //                decimal valor = modelo.Valor;
+        //                string des = modelo.Descricao;
+        //                var descricao = " ";
+
+        //                for (int i = 1; i <= qtd; i++)
+        //                {
+        //                    descricao = des + " " + i + "/" + qtd;
+        //                    modelo.Descricao = descricao;
+        //                    if (periodo == 1)
+        //                    {
+        //                        if (i == 1)
+        //                        {
+        //                            modelo.Vencimento = dtpVencimento.Value;
+        //                            var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+        //                            modelo.Valor = valorComDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+        //                        else
+        //                        {
+        //                            int dias = Convert.ToInt32(PeriodoDias.Diario);
+        //                            modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
+        //                            var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+        //                            modelo.Valor = valorSemDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+
+        //                    }
+        //                    else if (periodo == 2)
+        //                    {
+        //                        if (i == 1)
+        //                        {
+        //                            modelo.Vencimento = dtpVencimento.Value;
+        //                            var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+        //                            modelo.Valor = valorComDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+        //                        else
+        //                        {
+        //                            int dias = Convert.ToInt32(PeriodoDias.Semanal);
+        //                            modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
+        //                            var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+        //                            modelo.Valor = valorSemDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+
+        //                    }
+        //                    else if (periodo == 3)
+        //                    {
+        //                        if (i == 1)
+        //                        {
+        //                            modelo.Vencimento = dtpVencimento.Value;
+        //                            var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+        //                            modelo.Valor = valorComDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+        //                        else
+        //                        {
+        //                            int dias = Convert.ToInt32(PeriodoDias.Quinzenal);
+        //                            modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddDays(dias);
+        //                            var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+        //                            modelo.Valor = valorSemDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+
+        //                    }
+        //                    else if (periodo == 4)
+        //                    {
+        //                        if (i == 1)
+        //                        {
+        //                            modelo.Vencimento = dtpVencimento.Value;
+        //                            var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+        //                            modelo.Valor = valorComDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+        //                        else
+        //                        {
+        //                            int meses = Convert.ToInt32(PeriodoMes.Mensal);
+        //                            modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddMonths(meses);
+        //                            var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+        //                            modelo.Valor = valorSemDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+
+        //                    }
+        //                    else if (periodo == 5)
+        //                    {
+        //                        if (i == 1)
+        //                        {
+        //                            modelo.Vencimento = dtpVencimento.Value;
+        //                            var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+        //                            modelo.Valor = valorComDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+        //                        else
+        //                        {
+        //                            int meses = Convert.ToInt32(PeriodoMes.Bimestral);
+        //                            modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddMonths(meses);
+        //                            var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+        //                            modelo.Valor = valorSemDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+
+        //                    }
+        //                    else if (periodo == 6)
+        //                    {
+        //                        if (i == 1)
+        //                        {
+        //                            modelo.Vencimento = dtpVencimento.Value;
+        //                            var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+        //                            modelo.Valor = valorComDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+        //                        else
+        //                        {
+        //                            int meses = Convert.ToInt32(PeriodoMes.Timestral);
+        //                            modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddMonths(meses);
+        //                            var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+        //                            modelo.Valor = valorSemDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+
+        //                    }
+        //                    else if (periodo == 7)
+        //                    {
+        //                        if (i == 1)
+        //                        {
+        //                            modelo.Vencimento = dtpVencimento.Value;
+        //                            var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+        //                            modelo.Valor = valorComDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+        //                        else
+        //                        {
+        //                            int meses = Convert.ToInt32(PeriodoMes.Semestral);
+        //                            modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddMonths(meses);
+        //                            var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+        //                            modelo.Valor = valorSemDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+
+        //                    }
+        //                    else if (periodo == 8)
+        //                    {
+        //                        if (i == 1)
+        //                        {
+        //                            modelo.Vencimento = dtpVencimento.Value;
+        //                            var valorComDiferenca = bll.CalculoComDiferenca(valor, qtd);
+        //                            modelo.Valor = valorComDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+        //                        else
+        //                        {
+        //                            modelo.Vencimento = dtpVencimento.Value = dtpVencimento.Value.AddYears(1);
+        //                            var valorSemDiferenca = bll.CalculoSemDiferenca(valor, qtd);
+        //                            modelo.Valor = valorSemDiferenca;
+        //                            bll.Incluir(modelo);
+        //                        }
+        //                    }
+        //                }
+
+        //            }
+        //        }
+        //        this.LimpaTela();
+        //        this.Close();
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show(ex.Message);
+
+        //    }
+
+        //}
+
         //--------------------SALVAR INCLUIR OU ALTERAR--------------------------------------------
         private void btSalvar_Click(object sender, EventArgs e)
         {
@@ -562,6 +765,7 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
             }
         }
 
+        //--------------------VERIFICA QUANDO A FORM É CARREGADO E FAZ AS REGARS DE CAMPOS---------
         private void frmCadastroContaPagar_Load(object sender, EventArgs e)
         {
             if(txtID.Text != string.Empty)
@@ -574,10 +778,18 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                     lbValor.Text = "Parcela:";
                     lbTotalConta.Visible = true;
                     lbTotalConta.Text = lbTotalConta.Text +"R$ "+ modelo.Total;
+                    cbPeriodo.Enabled = false;
+                    txtQtdParcelas.Enabled = false;
+                    txtValor.Enabled = false;
                 }
-                cbPeriodo.Enabled = false;
-                txtQtdParcelas.Enabled = false;
-                txtValor.Enabled = false;
+                else
+                {
+                    lbValor.Text = "Valor:";
+                    lbTotalConta.Visible = false;
+                    cbPeriodo.Enabled = true;
+                    txtQtdParcelas.Enabled = true;
+                    txtValor.Enabled = true;
+                }
             }
             else
             {
@@ -585,5 +797,8 @@ namespace LojaPadraoMYSQL.Formularios.ContasPagar
                 lbTotalConta.Visible = false;
             }
         }
+
+        
+        
     }
 }

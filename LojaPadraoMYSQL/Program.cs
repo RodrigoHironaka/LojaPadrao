@@ -19,7 +19,7 @@ namespace LojaPadraoMYSQL
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            if (File.Exists(@"C:\_Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\ConfigBD.ini"))
+            if (File.Exists(@"C:\Users\Hironaka\Google Drive\Projetos\DESKTOP\LojaPadrao\LojaPadraoMYSQL\bin\Debug\ConfigBD.ini"))
             {
                 Application.Run(new frmPrincipal());
             }
