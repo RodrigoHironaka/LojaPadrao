@@ -9,5 +9,6 @@ namespace Modelos
     public class ModeloBase
     {
         public int id { get; set; }
+        public int numero { get; set; }
     }
 }
